@@ -5,11 +5,10 @@ created: "2026-07-31"
 maturity: developing
 tags:
   - algorithm-w
-  - catena
-  - effect-rows
   - hindley-milner
+  - let-polymorphism
   - principal-types
-  - trait-constraints
+  - type-inference
 aliases:
   - "Hindley–Milner type inference"
   - "HM inference"
@@ -19,654 +18,457 @@ aliases:
 
 ## Executive conclusion
 
-Hindley–Milner inference is best understood as four cooperating mechanisms:
+Hindley–Milner inference is four cooperating mechanisms:
 
-1. Traverse the syntax and assign fresh unknowns to facts not yet known.
-2. Use **unification** to solve equality requirements imposed by application
-   and other syntax.
-3. At a `let` boundary, **generalize** only the unknowns not fixed by the
-   surrounding environment.
-4. At each use of a polymorphic binding, **instantiate** its quantified
-   unknowns freshly.
+1. assign fresh type unknowns to facts not yet known;
+2. solve equality requirements with most-general unification;
+3. at a `let`, generalize only unknowns not fixed by the surrounding
+   environment; and
+4. at every use of a polymorphic binding, instantiate its quantified variables
+   freshly.
 
-The result is stronger than “the compiler found a type.” For the classic
-rank-1 core, Algorithm W is sound and complete and computes a **principal type
-scheme**: every other valid type of the term is a substitution instance of the
-inferred one. Hindley established the principal-scheme idea for combinatory
-logic; Milner gave the practical programming-language discipline and Algorithm
-W; Damas and Milner proved W's completeness and principality for the
-`let`-polymorphic core. See the reading trail beginning with
-[Hindley 1969](../30-sources/hindley-1969-principal-type-scheme.md),
-[Milner 1978](../30-sources/milner-1978-type-polymorphism.md), and
-[Damas–Milner 1982](../30-sources/damas-and-milner-1982-principal-type-schemes.md).
+For the classic rank-1 core, Algorithm W is sound and complete and computes a
+**principal type scheme**: every other valid type is a substitution instance of
+the inferred result. This is a precise theorem about a small language, not a
+label that transfers automatically to traits, effects, subtyping, higher-rank
+types, or local equality assumptions.
 
-Catena should keep this core as a deliberately small trusted kernel, then state
-separate guarantees for traits, kinds, and effect rows. Those features can fit
-an HM-shaped algorithm, but their solver properties and generalization rules
-are additional proof obligations. The current implementation contains most of
-the named mechanisms; it does not yet expose one obvious, unified invariant
-from which principal type-and-effect inference follows.
+This note is deliberately implementation-independent. It contains no evidence
+or constraints imported from any Catena repository. Its role is to establish
+the mathematical baseline used by
+[A Greenfield Type System for Catena](catena-greenfield-type-system.md).
 
-## Question and scope
+## Scope and terminology
 
-This note asks:
+“Correct inference” separates four properties:
 
-> How does Hindley–Milner inference work mechanically and theoretically, and
-> where does Catena's trait-, higher-kinded-, and effect-aware system extend or
-> constrain the classic model?
+- **soundness** — an inferred typing is derivable in the declarative system;
+- **completeness** — every term typable in the promised fragment is accepted;
+- **principality** — every other valid typing is an instance of the inferred
+  scheme;
+- **termination** — inference decides the fragment rather than merely being
+  sound when it returns.
 
-“Works” has four operational meanings here:
+[Milner 1978](../30-sources/milner-1978-type-polymorphism.md) supplies the
+programming-language discipline and Algorithm W.
+[Damas and Milner 1982](../30-sources/damas-and-milner-1982-principal-type-schemes.md)
+prove completeness and the principal-type result for the `let` core.
+[Hindley 1969](../30-sources/hindley-1969-principal-type-scheme.md) establishes
+the earlier principal-scheme foundation in combinatory logic.
 
-- **soundness** — inferred typings are valid in the declarative type system;
-- **completeness** — if the designated core can type a term, inference succeeds;
-- **principality** — a successful result is at least as general as every other
-  valid typing;
-- **termination** — type inference and every attached solver decide their
-  obligations for the accepted language fragment.
+The note covers variables, functions, application, nonrecursive `let`,
+substitutions, first-order unification, and the standard boundary around
+recursive groups. It then identifies additional obligations introduced by
+qualified constraints, kinds, rows, effects, and richer polymorphism.
 
-The deep dive covers rank-1 `let` polymorphism, substitutions, unification,
-Algorithm W, recursive bindings, qualified constraints, kinds, and effect rows.
-It does not attempt a proof for the full Catena language or prescribe a
-higher-rank type system.
+## Formal objects
 
-## The formal objects
-
-A minimal HM presentation distinguishes **monotypes** from **type schemes**:
+A minimal presentation distinguishes monotypes from schemes:
 
 ```text
-monotype  τ ::= α | C | τ -> τ | C τ ... τ
-scheme    σ ::= ∀ α1 ... αn. τ
-context   Γ ::= name ↦ σ
+monotype  t ::= a | C | t -> t | C t ... t
+scheme    s ::= forall a1 ... an. t
+context   G ::= name : s
 ```
 
-- A type variable such as `α` is a unification unknown.
-- A constructor such as `Integer`, `Boolean`, or `List` is rigid.
-- A monotype may contain unknowns but no nested `forall`.
-- A scheme quantifies zero or more variables at the outside only.
-- The environment maps program variables to schemes, not directly to
-  monotypes.
+- A variable such as `a` is a flexible unification unknown.
+- A constructor such as `Int`, `Bool`, or `List` is rigid.
+- A monotype contains no nested `forall`.
+- A scheme quantifies zero or more variables at the outermost level.
+- A typing context maps term names to schemes.
 
-The distinction between a free unknown and a quantified variable is semantic.
-In `α -> α`, the same unresolved `α` must be chosen consistently. In
-`∀α. α -> α`, each use may choose a new instance.
+The difference between a free unknown and a quantified variable is semantic.
+In `a -> a`, the two appearances must receive the same eventual solution. In
+`forall a. a -> a`, each use of the scheme can choose a fresh instance.
 
-For any type-like object `X`, `ftv(X)` is its set of free type variables. The
-two central operations are:
+For a type-like object `X`, write `ftv(X)` for its free type variables. The
+central operations are:
 
 ```text
-generalize(Γ, τ) = ∀(ftv(τ) − ftv(Γ)). τ
-instantiate(∀α1...αn. τ) = [fresh β1/α1, ..., fresh βn/αn]τ
+generalize(G, t) = forall (ftv(t) - ftv(G)). t
+
+instantiate(forall a1 ... an. t)
+  = [fresh b1/a1, ..., fresh bn/an]t
 ```
 
-The subtraction in `generalize` prevents inference from quantifying an unknown
-that belongs to an enclosing scope. This rule is one of the system's primary
-soundness and principality boundaries.
+Subtracting `ftv(G)` prevents a local scheme from quantifying an unknown fixed
+by an enclosing scope.
 
 ## Declarative typing before algorithms
 
-It helps to separate the language's typing rules from the procedure that finds
-a derivation. A compact declarative core is:
+Typing rules state which programs are valid; an inference algorithm searches
+for a derivation. A compact declarative core has these essential rules:
 
 | Form | Essential condition |
 | --- | --- |
-| Variable `x` | Instantiate the scheme `Γ(x)` |
-| Lambda `fn x -> e` | Give `x` a fresh **monomorphic** type and type `e` |
-| Application `f x` | `f` must have a type compatible with `type(x) -> β` |
-| Let `let x = e1 in e2` | Type `e1`, generalize relative to `Γ`, then type `e2` with the resulting scheme |
+| Variable `x` | Use an instance of `G(x)` |
+| Lambda `fn x -> e` | Give `x` a monotype and type `e` under that assumption |
+| Application `f x` | The type of `f` must equal `type(x) -> result` |
+| Let `let x = e1 in e2` | Type `e1`, generalize relative to `G`, and type `e2` with that scheme |
 
-The declarative system may be written with explicit generalization and
-instantiation rules that can appear at several points in a derivation.
-Algorithm W makes the same discipline syntax-directed: instantiation happens
-at variables and generalization happens at `let`.
+The declarative relation may permit generalization and instantiation at several
+points. Algorithm W makes the process syntax-directed: it instantiates at
+variables and generalizes at `let`.
 
-This separation matters. An implementation is **sound** if its answers are
-derivable; it is **complete** if it can find an answer whenever a declarative
-derivation exists. Without a declarative system, tests can show consistency
-between implementations but cannot define principality on their own.
+An implementation is sound if every answer corresponds to a declarative
+derivation. It is complete if it finds an answer whenever the declarative
+system has one. Without a declarative system, tests can compare two programs
+but cannot define principality.
 
-## Unification is the constraint solver
+## Unification is the equality solver
 
-Application does not guess a concrete type. It generates an equality problem.
-If `f : τf`, `x : τx`, and the result has a fresh type `β`, then:
+Application generates an equation rather than guessing a concrete type. If
+`f : tf`, `x : tx`, and `b` is a fresh result unknown, inference requires:
 
 ```text
-τf ~ τx -> β
+tf ~ tx -> b
 ```
 
 A unifier is a substitution making both sides equal. A **most general unifier**
-(MGU) commits only to structure forced by the equation, so every other unifier
-can be expressed as an additional substitution after it. The MGU property is
-what lets W retain principal types.
+(MGU) commits only to structure forced by the equations; every other unifier
+can be expressed by applying a further substitution to it. This property is a
+key ingredient of principal inference.
 
-A first-order unifier repeatedly applies a small set of ideas:
+A first-order unifier repeatedly applies a small set of rules:
 
-- identical types need no substitution;
-- matching constructors decompose into equations between their arguments;
+- identical types need no work;
+- applications of the same rigid constructor decompose componentwise;
 - distinct rigid constructors fail;
-- an unknown `α` may be bound to `τ` if `α` does not occur inside `τ`;
-- substitutions discovered earlier must be applied before solving later
-  equations.
+- a variable `a` may bind to `t` only if `a` does not occur in `t`;
+- each new substitution is applied to the remaining equations.
 
-The **occurs check** rejects an infinite equation such as:
-
-```text
-α ~ α -> β
-```
-
-Without recursive types, no finite type can satisfy it. The term
-`fn x -> x x` creates exactly this equation: `x` must be both the function and
-its own argument.
-
-Substitution composition order is observable. If `S1` was learned first and
-`S2` later under `S1`, the combined substitution must satisfy:
+The occurs check rejects an infinite equation such as:
 
 ```text
-apply(S2 ∘ S1, τ) = apply(S2, apply(S1, τ))
+a ~ a -> b
 ```
 
-Reversing this order can leave stale variables in results or environments.
+Without recursive types, no finite type satisfies it. The term `fn x -> x x`
+creates exactly this equation.
+
+Substitution composition order matters. If `S1` was learned first and `S2`
+later under `S1`, composition must satisfy:
+
+```text
+apply(S2 after S1, t) = apply(S2, apply(S1, t))
+```
+
+The same substitution operation must act consistently on types, schemes,
+constraints, and contexts while avoiding quantified variables. The executable
+presentation in
 [Typing Haskell in Haskell](../30-sources/jones-1999-typing-haskell-in-haskell.md)
-is an executable primary reference for these implementation invariants,
-including occurs and kind checks.
+is useful for these invariants, even when designing a non-Haskell language.
 
-## Algorithm W, case by case
+## Algorithm W
 
-Write `W(Γ, e) = (S, τ)` for inference of expression `e` under environment
-`Γ`, producing substitution `S` and monotype `τ`.
+Write `W(G, e) = (S, t)` for inference of `e` under context `G`, producing a
+substitution and monotype.
 
 ### Variable
 
 ```text
-W(Γ, x):
-  σ = lookup Γ x
-  return (identity, instantiate σ)
+W(G, x):
+  return (identity, instantiate(G[x]))
 ```
 
-Instantiation must create fresh variables every time. Reusing quantified
-variables would accidentally make separate uses monomorphic.
+Fresh instantiation is required at every occurrence. Reusing the quantified
+variables would accidentally make a polymorphic binding monomorphic.
 
 ### Lambda
 
 ```text
-W(Γ, fn x -> e):
-  α = fresh()
-  (S1, τbody) = W(Γ[x ↦ α], e)
-  return (S1, apply(S1, α) -> τbody)
+W(G, fn x -> body):
+  a = fresh()
+  (S1, tbody) = W(G[x : a], body)
+  return (S1, apply(S1, a) -> tbody)
 ```
 
-The parameter gets a monotype, not a scheme. Classic HM therefore rejects:
-
-```text
-fn f -> (f 1, f true)
-```
-
-Both uses share the same parameter type. Supporting a polymorphic `f` here
-requires higher-rank polymorphism and usually annotations or bidirectional
-checking; it is not ordinary HM.
+Lambda parameters are monomorphic. This is what makes the system rank 1.
 
 ### Application
 
 ```text
-W(Γ, f x):
-  (S1, τf) = W(Γ, f)
-  (S2, τx) = W(apply(S1, Γ), x)
-  β = fresh()
-  S3 = mgu(apply(S2, τf), τx -> β)
-  return (S3 ∘ S2 ∘ S1, apply(S3, β))
+W(G, f arg):
+  (S1, tf) = W(G, f)
+  (S2, ta) = W(apply(S1, G), arg)
+  b = fresh()
+  S3 = unify(apply(S2, tf), ta -> b)
+  return (S3 after S2 after S1, apply(S3, b))
 ```
 
-The environment passed to the argument has already absorbed `S1`. The
-function type is also updated by `S2` before unification. These details keep
-the returned substitution and type mutually consistent.
+The substitution learned from the function must reach the context before
+inferring the argument. The final unifier must see the already-substituted
+function type.
 
-### Let
+### Nonrecursive let
 
 ```text
-W(Γ, let x = e1 in e2):
-  (S1, τ1) = W(Γ, e1)
-  Γ1 = apply(S1, Γ)
-  σ = generalize(Γ1, apply(S1, τ1))
-  (S2, τ2) = W(Γ1[x ↦ σ], e2)
-  return (S2 ∘ S1, τ2)
+W(G, let x = e1 in e2):
+  (S1, t1) = W(G, e1)
+  G1 = apply(S1, G)
+  s = generalize(G1, apply(S1, t1))
+  (S2, t2) = W(G1[x : s], e2)
+  return (S2 after S1, t2)
 ```
 
-The substituted environment `Γ1` is essential. Damas–Milner's closure is
-formed relative to the assumptions after the constraints from `e1` have been
-applied.
+Generalization is relative to the **substituted** context. Constraints learned
+while inferring `e1` may have refined unknowns captured from the surrounding
+scope.
 
 ## Worked examples
 
 ### Let polymorphism
 
-Consider:
-
 ```text
 let id = fn x -> x in (id 1, id true)
 ```
 
-1. Give `x` a fresh type `α`; the body returns `x`, so the lambda has
-   `α -> α`.
-2. The outer environment does not contain `α`, so generalize `id` to
-   `∀α. α -> α`.
-3. The first use instantiates the scheme as `β -> β`; unification with the
-   integer argument makes `β = Integer`.
-4. The second use instantiates it independently as `γ -> γ`; unification with
-   `true` makes `γ = Boolean`.
-5. The pair has type `(Integer, Boolean)`.
+1. The lambda has type `a -> a` for fresh `a`.
+2. `a` is not free in the outer context, so `id` receives
+   `forall a. a -> a`.
+3. The first occurrence instantiates the scheme with fresh `b`; applying it to
+   `1` solves `b = Int`.
+4. The second occurrence instantiates independently with fresh `c`; applying it
+   to `true` solves `c = Bool`.
+5. The pair has type `(Int, Bool)`.
 
-The polymorphism belongs to the `let`-bound name, not to the original
-unification variable. Fresh instantiation is what prevents the integer use from
-constraining the Boolean use.
+The scheme is reusable because uses are fresh. The original unification
+variable is not mutated into two types.
 
-### Why environment variables are not generalized
-
-Consider the body of a lambda:
+### Captured variables are not generalized
 
 ```text
 fn y -> let keep = fn x -> y in keep
 ```
 
-Suppose `y : α` in the environment. The inner function has type `β -> α`.
-Generalization may quantify `β`, but not `α`, because `α ∈ ftv(Γ)`. The scheme
-is therefore `∀β. β -> α`. Quantifying `α` would incorrectly sever the result
-type of `keep` from the actual captured value `y`.
+Assume `y : a` in the context. The inner function has type `b -> a`.
+Generalization may quantify `b`, but it must not quantify `a` because
+`a` is free in the context. The local scheme is `forall b. b -> a`.
 
-### Why the occurs check matters
+### The occurs check
 
-For `fn x -> x x`, let `x : α`. Application requires the left occurrence to
-have type `α -> β`, but it already has type `α`. Unification asks for
-`α ~ α -> β`; the occurs check rejects the recursive occurrence of `α`.
+For `fn x -> x x`, give `x` fresh type `a`. Application requires `x` to have
+type `a -> b`, but it already has type `a`. Solving `a ~ a -> b` fails the
+occurs check.
 
-## What “principal” guarantees—and what it does not
+## What principal means
 
-A scheme `σp` is principal for `e` under `Γ` when:
+A scheme `sp` is principal for expression `e` under context `G` when:
 
-1. `Γ ⊢ e : σp`; and
-2. every other valid scheme for `e` under `Γ` is an instance of `σp`.
+1. `G` derives `e : sp`; and
+2. every other valid scheme for `e` is an instance of `sp`.
 
-For example, `∀α. α -> α` is more general than `Integer -> Integer` and
-`Boolean -> Boolean`. Principality gives a stable compiler–programmer contract:
-inference does not arbitrarily choose one specialization and annotations can be
-checked as instances of the inferred result.
+For example, `forall a. a -> a` is more general than both `Int -> Int` and
+`Bool -> Bool`. Principality makes inference stable: the compiler does not
+arbitrarily choose a specialization, and a user annotation can be checked
+against the most-general result.
 
 Principality does not imply:
 
-- that the program's behavior is correct for its domain;
-- that error messages identify the programmer's intended repair;
-- that inference is cheap for every program or representation;
-- that every useful typed term is expressible in rank-1 HM;
-- that arbitrary extensions preserve a most-general result.
+- that the program computes the intended domain result;
+- that every useful typed program is expressible;
+- that diagnostics identify the intended repair;
+- that arbitrary extensions preserve a most-general result;
+- that a solver terminates unless termination is part of the theorem.
 
-Soundness, completeness, and principality are distinct. Milner proves the
-soundness direction for W; Damas–Milner proves the corresponding completeness
-and principal-type results for the specified core.
+Soundness, completeness, principality, and termination must be claimed
+separately.
 
-## The expressiveness boundary of classic HM
+## The classic expressiveness boundary
 
-Classic HM makes a valuable trade: complete annotation-free inference for a
-restricted form of polymorphism.
+Classic HM makes a deliberate trade:
 
-- Quantification is rank 1: `forall` appears only around schemes stored in the
-  environment, not inside arbitrary argument or result types.
-- Lambda parameters are monomorphic.
-- `let` introduces polymorphism; ordinary application does not.
-- Recursive definitions are normally inferred monomorphically within each
-  strongly connected binding group, then generalized outside the group.
-- Polymorphic recursion is not inferred in general; it needs a declaration or
-  a more expressive checking system.
-- There is no subtyping in the classic core.
-- Ad-hoc overloading is outside Milner's original parametric system.
+- quantification is rank 1 and occurs only in context schemes;
+- function parameters are monomorphic;
+- `let` introduces polymorphism;
+- recursive names are monomorphic while their binding group is inferred;
+- polymorphic recursion requires an annotation;
+- there is no subtyping in the core;
+- ad-hoc overloading is outside the original system.
 
-These restrictions are not accidental omissions. They preserve decidable,
-principal inference with first-order unification.
+These are not accidental omissions. They preserve decidable, principal
+inference through first-order equality unification.
 
-## Strict evaluation, effects, and generalization
+## Strict evaluation and generalization
 
-Pure HM can generalize any `let` right-hand side. In a strict language with
-shared references or control effects, that rule can be unsound: the type system
-may treat separate uses as independently instantiated even though evaluation
-created one shared stateful or control-bearing object.
+Pure HM can generalize every `let` right-hand side. In a strict language where
+evaluation may create shared references or capture control, that rule can be
+unsound: separate type instantiations describe one shared runtime object as if
+it were independently created.
 
-[Wright's value-restriction work](../30-sources/wright-1995-simple-imperative-polymorphism.md)
-generalizes only syntactic values. This is simple and sound but rejects some
-pure computations that ordinary HM accepts.
+[Wright 1995](../30-sources/wright-1995-simple-imperative-polymorphism.md)
+uses a syntactic value restriction: only value right-hand sides generalize.
+This is simple and sound but rejects some effect-free computations.
 
-[Koka's effect-row system](../30-sources/leijen-2014-koka-row-polymorphic-effects.md)
-shows another route: infer effects and restrict generalization based on the
-effect of the bound computation. That design can safely generalize more than a
-syntactic value rule, but only because its semantics and effect inference make
-the restriction meaningful.
+[Leijen 2014](../30-sources/leijen-2014-koka-row-polymorphic-effects.md)
+uses inferred effects to admit more generalization while preserving the safety
+condition in its chosen calculus. The important general lesson is not one
+specific rule: generalization must be justified by the evaluation semantics
+and the effect discipline.
 
-For Catena, first-class resumptions make this question concrete. A resumption
-can encode control authority even when no mutable reference appears in source.
-The language needs a stated rule for which type, effect-row, and resumption
-variables may be generalized after an effectful computation.
+## Qualified types and traits
 
-## Qualified types: the trait extension
-
-Traits change a scheme from:
+Qualified types extend a scheme to:
 
 ```text
-∀α. τ
+forall a. P => t
 ```
 
-to a qualified scheme:
+where `P` contains predicates such as `Eq a`. An HM-shaped algorithm now
+synthesizes predicates as well as substitutions and types:
 
-```text
-∀α. P => τ
-```
-
-where `P` contains obligations such as `Comparable α`. The W-shaped algorithm
-now synthesizes `(substitution, predicates, type)`:
-
-- variable use freshly instantiates both the type and its predicates;
+- variable use instantiates both type variables and predicates;
 - application substitutes through and combines predicate sets;
-- `let` generalizes variables across both `P` and `τ`;
-- a constraint solver simplifies, retains, defers, rejects, or discharges
-  predicates;
-- elaboration supplies evidence, commonly a selected dictionary of methods.
+- `let` decides which predicates belong in the scheme and which remain in the
+  enclosing scope;
+- a solver simplifies, retains, rejects, or discharges predicates;
+- elaboration supplies evidence such as method dictionaries.
 
-[Jones's qualified-type theory](../30-sources/jones-1994-theory-of-qualified-types.md)
-proves principal qualified typings under properties of the entailment system.
-It also exposes two guarantees that plain unification does not provide:
+[Jones 1994](../30-sources/jones-1994-theory-of-qualified-types.md) proves
+principal qualified typings under properties of predicate entailment. Two new
+questions remain beyond ordinary unification:
 
-- **termination** — instance search and superclass expansion must end;
-- **coherence** — different valid evidence derivations must not change program
-  meaning.
+- **termination** — does instance search and predicate simplification end?
+- **coherence** — do different valid evidence derivations preserve meaning?
 
-An inferred scheme can be principal yet ambiguous if a constrained variable
-appears only in predicates and is not determined by the visible type. Catena's
-trait design therefore needs ambiguity and evidence-coherence rules in addition
-to constraint storage.
+A scheme may also be ambiguous when a constrained variable is not determined
+by the visible type. Storing constraints in a scheme is therefore necessary
+but not sufficient for a sound trait design.
 
-## Kinds and higher-kinded constructors
+## Kinds and higher-kinded variables
 
-Kinds classify types and type constructors. A basic system might use:
+Kinds classify types and type constructors:
 
 ```text
-Type                -- inhabited value types
-Type -> Type        -- unary type constructors such as List
+Type
+Type -> Type
 (Type -> Type) -> Type
 ```
 
-Kinds do not require higher-rank *term* polymorphism. They do require every
-type substitution and unification binding to preserve kind. Inference can
-remain first order when type constructors are rigid applications and the type
-language avoids general computation or unrestricted type-level lambdas.
+Kinds do not imply higher-rank term polymorphism. They do require substitutions
+and unification bindings to preserve kind. Inference can remain first-order
+when constructor applications are rigid and the type language excludes
+unrestricted type-level reduction.
 
-This is a good boundary for Catena: validate higher-kinded applications before
-or alongside term inference, attach a kind to every flexible constructor
-variable, and reject kind mismatch separately from value-type mismatch. The
-executable Jones specification shows why allowing arbitrary reduction or
-rewriting in the type language can destroy decidable, unitary unification.
+This is a useful separation: a language can accept a parameter
+`f : Type -> Type` while still restricting term schemes to rank 1.
 
-## Effect rows: an additional unification domain
+## Rows are additional solving domains
 
-An effect-aware function type can be written:
+Rows can describe structural records, variants, or effects, but the word “row”
+does not determine one universal equality theory.
+
+Unique-label records and variants naturally generate lacks predicates when a
+field or alternative is extended. The system in
+[Gaster and Jones 1996](../30-sources/gaster-jones-1996-extensible-records-variants.md)
+uses qualified row types for this purpose.
+
+An effect-aware function can instead use:
 
 ```text
-τ1 ->{ε} τ2
-ε ::= <> | <IO, State | μ>
+A ->{<IO, State | e>} B
 ```
 
-Here `μ` is an effect-row variable. A higher-order function such as `map` needs
-effect polymorphism because its effect depends on the function passed to it.
-The HM skeleton can survive if effect rows have:
+Koka permits duplicate effect labels so handler removal retains a
+most-general solution without separate lacks constraints. Set-like effect rows
+usually need another mechanism, such as lacks constraints or presence flags.
 
-- a precise equality theory;
-- a terminating, most-general row unifier;
-- substitution over row variables everywhere they occur;
+For any row domain to participate in principal inference, it needs:
+
+- a declarative equality and predicate theory;
+- a terminating, most-general solver;
+- kind-preserving substitution everywhere rows occur;
 - generalization and fresh instantiation of row variables;
-- a defined rule for adding, combining, and removing effects;
-- a sound relationship to runtime evaluation and handlers.
+- an ambiguity policy for residual row predicates.
 
-Row design affects principality. Koka permits duplicate labels so certain
-effect-removal equations have a unique most-general solution. Set-like rows
-usually require alternatives such as lacks constraints or presence/absence
-flags. Catena should choose and document one semantic model; normalization by
-deduplication, multiset rows, and lacks constraints are not interchangeable.
+Sharing an implementation data structure does not prove these properties for
+two different row theories.
 
-## Reading Catena's current implementation
+## Beyond rank 1
 
-The following is a static reading of Catena at commit
-`0f61d16f4f51500e2c27790c0d8c94eaf4784797`. The exact evidence and commands
-are in the [implementation-audit journal](../50-journal/2026-07-31-catena-hm-implementation-audit.md),
-and the canonical project source is recorded separately in
-[Catena Type and Effect System](../30-sources/catena-2026-type-and-effect-system.md).
+Higher-rank types place `forall` inside function arguments or results. General
+implicit inference is no longer Algorithm W's problem. A language can retain a
+small inference core while checking richer types bidirectionally at annotated
+boundaries.
 
-### What already matches the HM model
+[Dunfield and Krishnaswami 2013](../30-sources/dunfield-krishnaswami-2013-bidirectional-typechecking.md)
+give a sound and complete algorithm for a predicative higher-rank calculus.
+This supports a layered contract: synthesize ordinary rank-1 code and check
+explicit higher-rank declarations.
 
-- `catena_infer_expr` instantiates schemes at variables, gives lambda
-  parameters fresh monotypes, unifies applications, and generalizes
-  nonrecursive `let` bindings.
-- `catena_infer_unify` applies the current substitution before solving,
-  composes new substitutions, performs occurs checks, and decomposes the
-  supported type constructors.
-- `catena_type_scheme` represents monomorphic and polymorphic schemes, with
-  optional trait constraints, and quantifies variables in both type and
-  constraint sets relative to free environment variables.
-- `catena_infer` substitutes and simplifies accumulated trait constraints and
-  resolves them against an instance database.
-- Kinds, record rows, effect-row types, and `Resumption k a b e` have explicit
-  representation and unification support.
+Local equality assumptions, such as those introduced by GADT patterns, pose a
+different challenge. [OutsideIn(X)](../30-sources/vytiniotis-et-al-2011-outsidein.md)
+shows that natural typing rules may admit programs without principal types and
+that constraint scope must be represented explicitly. A sound advanced checker
+may intentionally accept fewer programs than the declarative relation in order
+to return predictable principal results.
 
-### Boundaries that need an explicit contract or regression test
+## Design implications
 
-These observations identify proof and test targets; static inspection alone
-does not establish that each one is a user-visible bug.
+The evidence supports a disciplined language architecture:
 
-1. **Substituted environment at `let`.** The expression case substitutes the
-   inferred type before generalization, but passes the original environment to
-   `generalize`, which computes `ftv(Env)` without first applying the current
-   substitution. Standard W forms the closure relative to `SΓ`. A minimal
-   captured-variable regression should demonstrate that Catena neither
-   over-generalizes nor under-generalizes here.
-2. **Constraint ownership.** `generalize` reads all constraints accumulated in
-   the inference state. Qualified-type implementations normally distinguish
-   predicates belonging to the binding from predicates fixed by or deferred to
-   the enclosing scope. Catena needs a local-delta or retained/deferred rule so
-   unrelated obligations do not leak into schemes.
-3. **Two instantiation paths.** `catena_infer_expr` contains a local
-   implementation alongside `catena_type_scheme:instantiate/2`, with a TODO
-   acknowledging their behavioral difference. A single canonical invariant
-   would reduce semantic drift.
-4. **Top-level generalization.** `catena_infer:check_program` stores each
-   inferred binding as a monomorphic scheme. Expression-level `let` is
-   polymorphic, so module and top-level policy should say whether this
-   asymmetry is intentional.
-5. **Recursion policy.** `letrec` is inferred through a monomorphic placeholder
-   and remains monomorphic in its body. This avoids implicit polymorphic
-   recursion, but recursive binding groups and post-group generalization need a
-   stated module-level policy.
-6. **Effect representation.** Core function types validate concrete
-   `{effect_set, ...}` values and core function unification compares those sets
-   for equality. Separate modules represent effect variables and row-polymorphic
-   schemes, while `teffectrow` has a distinct row unifier. The intended bridge
-   among these forms should be canonical and end-to-end.
-7. **Effect variables in schemes.** `catena_types:type_vars/1` traverses value
-   types and standalone effect-row tails but ignores the effect component of a
-   function type. The core scheme generalizer therefore cannot by itself
-   quantify a function's separate effect-variable representation.
-8. **Lambda effects.** The core lambda case constructs a function with an empty
-   effect set (“pure for now”), while the body may update effect state. The
-   broader compiler may recover this information elsewhere, but a direct
-   higher-order test should show that body effects become latent function
-   effects rather than effects of merely constructing the closure.
-9. **Constraint solver guarantees.** Built-in resolution exists, along with
-   hierarchy and coherence modules. The language contract still needs explicit
-   termination, ambiguity, overlap, and evidence-selection rules matching the
-   assumptions under which principal qualified types are claimed.
+1. Name the fragment receiving complete principal inference.
+2. Give every additional solver its own declarative theory and termination
+   conditions.
+3. Generalize only at documented boundaries using the substituted context and
+   a semantics-justified effect rule.
+4. Preserve constraint scope rather than pooling every obligation globally.
+5. Require annotations for polymorphic recursion, higher-rank types, and local
+   equality assumptions.
+6. Elaborate implicit polymorphism, predicates, and effects into an explicit
+   typed core.
+7. Test solver order independence and inferred generality, not only acceptance.
 
-## A proposed architecture for Catena
+The concrete application of those principles is
+[A Greenfield Type System for Catena](catena-greenfield-type-system.md).
 
-The conservative design is a layered inference contract:
+## Falsification checklist
 
-```text
-surface syntax
-  -> kind validation
-  -> HM equality inference over value types
-  -> qualified constraint simplification and evidence selection
-  -> effect-row unification and handler constraints
-  -> generalized scheme + typed/elaborated core
-```
+A claim of principal HM-like inference must be narrowed if its promised
+fragment permits any of the following:
 
-The phases may be interleaved in the implementation, but their invariants
-should remain separately stateable.
+- two valid typings with no common principal scheme;
+- a scheme quantifying a variable fixed by the substituted context;
+- inference rejecting a declaratively typable unannotated term;
+- unification or attached constraint solving diverging;
+- solver output depending on traversal order;
+- ambiguous evidence with observably different elaborations;
+- an effectful generalized binding that breaks type safety.
 
-### 1. Name the guaranteed fragment
-
-Define a small Catena core for which the project intends sound, complete, and
-principal inference. State explicitly whether it contains records, variants,
-recursive groups, traits, higher-kinded variables, effects, and resumptions.
-Features outside the fragment can remain sound but annotation-requiring.
-
-### 2. Use one scheme model
-
-A canonical scheme should quantify variables with their sort or kind and carry
-the obligations that survive generalization:
-
-```text
-Scheme {
-  quantified: [TypeVar | ConstructorVar | RowVar | EffectVar],
-  predicates: [TraitPredicate | RowPredicate],
-  body: Type
-}
-```
-
-This does not require one numeric namespace internally, but it does require
-capture-free, kind-preserving substitution and fresh instantiation for every
-quantified domain.
-
-### 3. Make generalization a boundary operation
-
-Generalization should receive the substituted environment, the binding-local
-type and effect, and the binding-local constraints. It should return both the
-scheme and predicates deferred outward. The policy should state whether an
-effectful or resumption-producing right-hand side may be generalized.
-
-### 4. Separate equality solving from evidence solving
-
-First-order type and row equations should yield most-general substitutions.
-Trait entailment should then simplify predicates and select evidence under
-declared termination and coherence rules. Allowing instance selection to make
-hidden type choices risks losing principality unless improvement rules make
-those choices explicit.
-
-### 5. Infer recursive strongly connected components
-
-Bind every name in a recursive component to a fresh monotype, infer the group,
-unify the placeholders, then generalize only when leaving the component.
-Polymorphic recursion should require a signature and be checked, not guessed.
-
-### 6. Preserve constraint origins
-
-Every equality, trait predicate, kind requirement, and row operation should
-carry a source origin and a short reason. Solving can remain mathematically
-order-independent while diagnostics use those origins to explain the smallest
-useful conflict.
-
-## Verification strategy
-
-A proof-oriented test plan can start before a mechanized proof exists.
-
-### Small executable reference
-
-Build a deliberately slow reference inferencer for the designated Catena core,
-modeled after the clarity goal of *Typing Haskell in Haskell*. Differentially
-test the production Erlang implementation against it on generated well-scoped
-terms.
-
-### Algebraic properties
-
-Test at least:
-
-- substitution identity and composition;
-- capture-free scheme substitution;
-- fresh instantiations share no quantified variables;
-- a unifier makes both inputs equal;
-- occurs checks reject cyclic type and row substitutions;
-- generalization never quantifies a variable free in `SΓ`;
-- inferred annotated types are instances of the principal scheme;
-- alpha-renaming term binders does not change the inferred scheme;
-- trait resolution is deterministic or produces equivalent evidence;
-- handler removal and effect-row normalization obey the chosen row theory.
-
-### Exhaustive small terms
-
-Enumerate small closed terms for the pure core. Compare W's success with a
-bounded declarative derivation search and verify that enumerated alternative
-types are instances of W's result. This will not replace a proof, but it is
-particularly effective at finding substitution-order and generalization-scope
-mistakes.
-
-### Semantic checks
-
-For the executable core, evaluate well-typed generated programs and assert the
-chosen progress/preservation or “does not go wrong” property. Add targeted
-counterexamples for shared state, handlers, one-shot resumptions, and trait
-evidence ambiguity.
-
-## Falsification criteria
-
-The claim that Catena preserves HM-like principal inference should be narrowed
-or rejected if any of the following holds in the claimed fragment:
-
-- two valid typings exist with no common principal scheme under the defined
-  instance relation;
-- row unification produces incomparable solutions or depends on traversal
-  order;
-- inference rejects a declaratively typable unannotated term;
-- a scheme quantifies a variable fixed by the substituted environment;
-- different valid trait evidence changes observable behavior;
-- a well-typed closed program reaches a type- or effect-stuck state;
-- inference or instance resolution can diverge on a finite well-formed program.
-
-Finding one of these does not necessarily invalidate the language design. It
-means the guarantee must change—for example, to sound but incomplete
-inference, annotation-directed checking, or principality only for a smaller
-core.
-
-## Research priorities
-
-1. Specify Catena's declarative type-and-effect judgment and the exact fragment
-   for which principality is intended.
-2. Write captured-environment, constraint-scope, top-level-polymorphism, and
-   latent-effect regression tests for the current implementation seams.
-3. Choose one canonical effect-row equality and unification model, including
-   duplicate-label or lacks semantics.
-4. Define the effect/resumption generalization rule for strict evaluation.
-5. State and test trait solver termination, ambiguity, overlap, coherence, and
-   evidence elaboration.
-6. Build the small executable reference and generated differential suite.
-
-The active workbench is
-[How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md).
+Finding one does not necessarily invalidate the feature. It means the contract
+must change to annotation-directed checking, sound but incomplete inference,
+or a smaller principal fragment.
 
 ## Source trail
 
-- [Hindley 1969](../30-sources/hindley-1969-principal-type-scheme.md) — the
-  principal-scheme property in combinatory logic.
-- [Milner 1978](../30-sources/milner-1978-type-polymorphism.md) — the practical
-  polymorphic language, semantic soundness, and Algorithm W.
+- [Hindley 1969](../30-sources/hindley-1969-principal-type-scheme.md) —
+  principal schemes in combinatory logic.
+- [Milner 1978](../30-sources/milner-1978-type-polymorphism.md) — Algorithm W
+  and the programming-language discipline.
 - [Damas and Milner 1982](../30-sources/damas-and-milner-1982-principal-type-schemes.md)
-  — completeness and the principal-type theorem for the `let` core.
+  — completeness and principality for the `let` core.
 - [Jones 1994](../30-sources/jones-1994-theory-of-qualified-types.md) —
-  principal qualified types, evidence, ambiguity, and coherence.
+  predicates, evidence, ambiguity, and coherence.
 - [Jones 1999](../30-sources/jones-1999-typing-haskell-in-haskell.md) — an
-  executable specification spanning kinds, classes, schemes, and binding
-  groups.
+  executable specification of substitutions, kinds, classes, and groups.
 - [Wright 1995](../30-sources/wright-1995-simple-imperative-polymorphism.md) —
-  why effects constrain generalization.
-- [Leijen 2014](../30-sources/leijen-2014-koka-row-polymorphic-effects.md) — an
-  HM-shaped effect-row system with explicit principality choices.
-- [Current Catena source](../30-sources/catena-2026-type-and-effect-system.md) —
-  the project-specific type-and-effect implementation examined here.
+  strict effects and the value restriction.
+- [Gaster and Jones 1996](../30-sources/gaster-jones-1996-extensible-records-variants.md)
+  — unique-label record and variant rows.
+- [Jones 2000](../30-sources/jones-2000-functional-dependencies.md) —
+  dependencies and ambiguity in multi-parameter classes.
+- [Leijen 2014](../30-sources/leijen-2014-koka-row-polymorphic-effects.md) —
+  effect-row inference and effect-directed generalization.
+- [Dunfield and Krishnaswami 2013](../30-sources/dunfield-krishnaswami-2013-bidirectional-typechecking.md)
+  — predicative higher-rank bidirectional checking.
+- [OutsideIn(X)](../30-sources/vytiniotis-et-al-2011-outsidein.md) — scoped
+  constraints and principality under local assumptions.
 
 ## Connections
 
-- [Hindley–Milner type inference map](../10-maps/hindley-milner-type-inference.md)
-  provides the shortest reading routes through the foundations, mechanics,
-  extensions, and Catena work.
-- [Catena HM implementation audit](../50-journal/2026-07-31-catena-hm-implementation-audit.md)
-  preserves the exact local revision and static evidence behind the
-  implementation observations.
+- [Hindley–Milner Type Inference](../10-maps/hindley-milner-type-inference.md)
+  is the focused route through the foundation.
+- [Catena Type-System Design](../10-maps/catena-type-system-design.md) connects
+  the theory to the independent language proposal.
+- [What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+  tracks the remaining proof and design questions.

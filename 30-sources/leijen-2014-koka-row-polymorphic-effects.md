@@ -63,20 +63,20 @@ soundness properties, and experience from an implementation in Koka.
 
 ## Relevance
 
-This is the most direct comparison for Catena's effect rows and handlers. It
-shows that “add a row to function types” is insufficient: row equality,
-duplicate-label or lacks semantics, tail occurs checks, generalization policy,
-and handler subtraction collectively determine principality and soundness.
+This is direct evidence for a greenfield effect-row design. It shows that “add
+a row to function types” is insufficient: row equality, duplicate-label or
+lacks semantics, tail occurs checks, generalization policy, and handler
+subtraction collectively determine principality and soundness.
 
 ## Limits
 
 Koka's effects, row equality, state encapsulation, and operational semantics
-are not identical to Catena's process-backed handlers and `Resumption` values.
-The paper's proof cannot be transferred merely because both systems use the
-phrase “effect rows.”
+form one coherent calculus. The paper's proof cannot be transferred to a new
+language merely because it also uses the phrase “effect rows.”
 
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
-- [Catena HM implementation audit](../50-journal/2026-07-31-catena-hm-implementation-audit.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+- [Catena type-system design map](../10-maps/catena-type-system-design.md)

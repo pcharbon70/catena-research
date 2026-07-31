@@ -65,22 +65,22 @@ clarity and completeness of the account rather than production performance.
 
 ## Relevance
 
-The paper is the closest primary source in this set to Catena's implementation
-shape: explicit state, substitutions, kinds, qualified types, patterns, and
-trait-like instance lookup. It offers concrete invariants and a useful model
-for a small executable reference implementation against which the Erlang
-compiler could be tested.
+The paper offers concrete invariants and a useful model for a small executable
+reference implementation: explicit substitutions, kinds, qualified types,
+patterns, binding groups, and class-like instance lookup can be presented in
+code clearly enough to support differential testing.
 
 ## Limits
 
 The paper describes Haskell 98, including design choices such as its
-monomorphism restriction and class rules that Catena need not adopt. Jones
-explicitly states that the program is not intended as an efficient production
-implementation and, because it gives only an inference presentation, does not
-itself prove that its result is principal.
+monomorphism restriction and class rules that a new language need not adopt.
+Jones explicitly states that the program is not intended as an efficient
+production implementation and, because it gives only an inference
+presentation, does not itself prove that its result is principal.
 
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [Catena HM implementation audit](../50-journal/2026-07-31-catena-hm-implementation-audit.md)
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+- [Catena type-system design map](../10-maps/catena-type-system-design.md)

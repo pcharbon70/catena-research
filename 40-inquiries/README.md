@@ -30,9 +30,9 @@ to `20-notes`.
 
 ### Documents
 
-- [How Should Catena Preserve Principal Inference While Extending HM?](how-should-catena-preserve-principal-inference.md)
-  — investigates the precise guarantees and implementation boundaries for
-  traits, kinds, effect rows, and resumptions over Catena's HM core.
+- [What Should a Greenfield Catena Type System Guarantee?](what-should-a-greenfield-catena-type-system-guarantee.md)
+  — investigates the formal contract and annotation boundaries for an
+  inference-first language designed without inherited Catena constraints.
 
 ## Maintaining this index
 

@@ -62,10 +62,10 @@ W.
 
 ## Relevance
 
-This is the direct ancestor of Catena's modules named `catena_infer`,
-`catena_infer_expr`, and `catena_infer_unify`. Its substitution-threading
-discipline is also the standard against which environment application,
-generalization boundaries, and effect-aware extensions should be audited.
+This is the direct algorithmic foundation for a greenfield inference core. Its
+substitution-threading discipline is the standard against which environment
+application, generalization boundaries, and any effect-aware extension should
+be specified and tested.
 
 ## Limits
 
@@ -77,5 +77,6 @@ parametric polymorphism from ad-hoc overloading.
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [Catena HM implementation audit](../50-journal/2026-07-31-catena-hm-implementation-audit.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
 - [Hindley–Milner type inference map](../10-maps/hindley-milner-type-inference.md)

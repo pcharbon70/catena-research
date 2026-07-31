@@ -56,27 +56,27 @@ programs.
   functional HM-typable programs.
 - The restricted system retains principal inference: translate an expansive
   `let` into lambda application, then run ordinary HM inference.
-- Continuations are a particularly direct warning for Catena resumptions:
-  duplicating a control-producing computation by the reasoning used for
-  polymorphic `let` can change its meaning.
+- Continuations are a particularly direct warning for any language with
+  resumable control: duplicating a control-producing computation by the
+  reasoning used for polymorphic `let` can change its meaning.
 
 ## Relevance
 
-Catena is pure-by-default but supports algebraic effects and first-class
-resumptions. This paper establishes that the generalization policy is a semantic
-soundness boundary, not just a usability preference. Catena must either justify
-unrestricted generalization from its effect discipline or adopt an explicit
-restriction.
+A greenfield language considering algebraic effects must treat generalization
+as a semantic soundness boundary, not just a usability preference. It must
+either justify unrestricted generalization from its effect discipline or adopt
+an explicit restriction.
 
 ## Limits
 
 The proposal is intentionally conservative and syntactic. It predates modern
 algebraic-effect systems that can use inferred effects to permit more
 generalization than a value-only rule. Its empirical corpus is useful but not
-a proof that the usability tradeoff will be small for Catena programs.
+a proof that the usability tradeoff will be small in a new language.
 
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
 - [Hindley–Milner type inference map](../10-maps/hindley-milner-type-inference.md)

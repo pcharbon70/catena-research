@@ -14,25 +14,30 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
-  — defines the soundness, completeness, principality, coherence, and
-  termination guarantees that still need a precise Catena boundary.
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+  — defines the soundness, completeness, principality, coherence, termination,
+  and annotation boundaries for a language designed from a blank slate.
 
 ## Topic maps
 
-- [Hindley–Milner Type Inference](hindley-milner-type-inference.md) — connects
-  the foundational papers, implementation mechanics, extensions, and current
-  Catena evidence.
+- [Catena Type-System Design](catena-type-system-design.md) — routes through the
+  greenfield proposal, guarantee matrix, and independent primary evidence.
+- [Hindley–Milner Type Inference](hindley-milner-type-inference.md) — isolates
+  the principal rank-1 foundation and the proof obligations introduced by
+  extensions.
 
 ## Recently developed
 
+- [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
+  — proposes an inference-first language with structural rows, coherent traits,
+  algebraic effects, and explicit boundaries for richer typing.
 - [How Hindley–Milner Type Inference Works](../20-notes/hindley-milner-type-inference.md)
-  — a deep synthesis of Algorithm W, principal schemes, unification,
-  generalization, traits, effects, and the current Catena implementation.
+  — explains Algorithm W, principal schemes, unification, generalization, and
+  where the classic theorem stops.
 
 ## Unsettled threads
 
-- Catena needs one explicit principal-inference fragment and one canonical
-  generalization policy across value types, trait constraints, effect rows, and
-  resumptions. Follow the
-  [active inquiry](../40-inquiries/how-should-catena-preserve-principal-inference.md).
+- The proposed architecture still needs a formal kernel, independent row and
+  trait solver contracts, a proved effect-generalization rule, and usability
+  evidence for annotation boundaries. Follow the
+  [active inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md).
