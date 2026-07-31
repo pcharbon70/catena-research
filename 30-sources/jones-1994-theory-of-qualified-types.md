@@ -65,20 +65,20 @@ entailment.
 
 ## Relevance
 
-Catena's `{poly, Vars, Constraints, Type}` schemes closely match this model.
 The paper makes clear that retaining predicates in schemes is only one part of
-the design: entailment, satisfiability, evidence selection, ambiguity, and
+a trait design: entailment, satisfiability, evidence selection, ambiguity, and
 coherence are all part of the semantic contract.
 
 ## Limits
 
 The generic theory assumes suitable properties of the chosen predicate system.
-It does not prove those properties for Catena's concrete trait hierarchy and
-instance database. Multi-parameter classes and improving substitutions require
+It does not prove those properties for any concrete trait hierarchy or instance
+database. Multi-parameter classes and improving substitutions require
 additional design beyond the base presentation.
 
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
-- [Catena HM implementation audit](../50-journal/2026-07-31-catena-hm-implementation-audit.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+- [Catena type-system design map](../10-maps/catena-type-system-design.md)

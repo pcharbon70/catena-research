@@ -57,7 +57,7 @@ most-general substitutions needed when two type shapes must agree.
 ## Relevance
 
 This is the historical and mathematical foundation for the “principal” in
-Hindley–Milner. It tells Catena what a strong inference contract would mean:
+Hindley–Milner. It gives a greenfield language a strong inference contract:
 when inference succeeds, the result should be maximally reusable, and every
 more-specific valid type should be obtainable by instantiation.
 
@@ -65,10 +65,11 @@ more-specific valid type should be obtainable by instantiation.
 
 The object language is combinatory logic rather than the lambda calculus with
 `let`, algebraic data, traits, kinds, or effects. The result therefore supports
-the principal-type idea but does not by itself justify Catena's extensions.
+the principal-type idea but does not by itself justify any language extension.
 
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
 - [Hindley–Milner type inference map](../10-maps/hindley-milner-type-inference.md)

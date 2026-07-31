@@ -30,9 +30,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [A Greenfield Type System for Catena](catena-greenfield-type-system.md) —
+  proposes an inference-first language and separates principal implicit typing
+  from annotation-directed traits, effects, rows, and higher-rank features.
 - [How Hindley–Milner Type Inference Works](hindley-milner-type-inference.md) —
-  explains Algorithm W and principal types, then identifies the additional
-  contracts Catena needs for traits, kinds, effect rows, and resumptions.
+  explains Algorithm W and principal types independently of any existing
+  Catena specification or implementation.
 
 ## Maintaining this index
 

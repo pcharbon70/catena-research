@@ -30,12 +30,15 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
-- [Catena Type and Effect System at 0f61d16](catena-2026-type-and-effect-system.md)
-  — pins the project-specific inference and extension evidence to the inspected
-  committed revision.
 - [Principal Type-Schemes for Functional Programs](damas-and-milner-1982-principal-type-schemes.md)
   — proves Algorithm W's completeness and principal-type result for the
   `let`-polymorphic core.
+- [Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism](dunfield-krishnaswami-2013-bidirectional-typechecking.md)
+  — gives a sound and complete annotation-directed algorithm for predicative
+  higher-rank polymorphism.
+- [A Polymorphic Type System for Extensible Records and Variants](gaster-jones-1996-extensible-records-variants.md)
+  — develops unique-label structural rows with lacks predicates and effective
+  inference.
 - [The Principal Type-Scheme of an Object in Combinatory Logic](hindley-1969-principal-type-scheme.md)
   — establishes the principal-scheme foundation in combinatory logic.
 - [A Theory of Qualified Types](jones-1994-theory-of-qualified-types.md) —
@@ -43,11 +46,17 @@ mentions can remain as citations in the document that uses them.
 - [Typing Haskell in Haskell](jones-1999-typing-haskell-in-haskell.md) — gives
   an executable specification of substitutions, kinds, schemes, classes, and
   binding-group inference.
+- [Type Classes with Functional Dependencies](jones-2000-functional-dependencies.md)
+  — explains how declared dependencies improve ambiguity and precision in
+  multi-parameter class relations.
 - [Koka: Programming with Row-Polymorphic Effect Types](leijen-2014-koka-row-polymorphic-effects.md)
   — presents an HM-shaped, principal effect-row inference system and
   effect-directed generalization policy.
 - [A Theory of Type Polymorphism in Programming](milner-1978-type-polymorphism.md)
   — introduces the programming-language discipline and Algorithm W.
+- [OutsideIn(X): Modular Type Inference with Local Assumptions](vytiniotis-et-al-2011-outsidein.md)
+  — separates generation from solving and studies principality under scoped
+  local assumptions.
 - [Simple Imperative Polymorphism](wright-1995-simple-imperative-polymorphism.md)
   — motivates and studies the value restriction for strict effectful
   languages.

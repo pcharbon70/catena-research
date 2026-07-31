@@ -30,9 +30,9 @@ source notes.
 
 ### Documents
 
-- [2026-07-31 Catena HM Implementation Audit](2026-07-31-catena-hm-implementation-audit.md)
-  — records the inspected revision, read-only commands, and code-level evidence
-  behind the HM synthesis.
+- None yet. The former implementation audit is quarantined in the
+  [archive](../90-archive/README.md) because repository-derived evidence is
+  outside the greenfield research boundary.
 
 ## Maintaining this index
 

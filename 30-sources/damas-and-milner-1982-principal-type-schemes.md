@@ -61,9 +61,9 @@ typing derivations.
 ## Relevance
 
 This source supplies the contract behind claims that a compiler “implements
-HM” or “infers principal types.” For Catena, the proof shape highlights where
-extensions need new evidence: qualified constraints, kinds, and effect rows
-must preserve most-general solving and the correct generalization set.
+HM” or “infers principal types.” For a greenfield Catena, the proof shape marks
+where extensions need new evidence: qualified constraints, kinds, and effect
+rows must preserve most-general solving and the correct generalization set.
 
 ## Limits
 
@@ -75,5 +75,6 @@ those features.
 ## Derived work
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
-- [How should Catena preserve principal inference while extending HM?](../40-inquiries/how-should-catena-preserve-principal-inference.md)
+- [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
 - [Hindley–Milner type inference map](../10-maps/hindley-milner-type-inference.md)
