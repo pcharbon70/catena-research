@@ -93,8 +93,13 @@ boundary makes checking local, decidable, and understandable?
   surface syntax.
 - Test the proposed generalization rule against references, exceptions,
   captured continuations, and state encapsulation.
-- Decide whether lexical one-shot resumptions require linear types or can be
-  enforced by scope and runtime representation.
+- Integrate nominal signatures and lexical effect capabilities with the
+  duplicate-label row theory, then prove handler selection deterministic and
+  abstraction safe for higher-order effect-polymorphic code.
+- Test deep open handlers and affine resumptions against abort, forwarding,
+  resource capture, cleanup, and second resume.
+- Keep the detailed work in
+  [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md).
 
 ### Annotation-directed features
 
@@ -122,6 +127,11 @@ The independent literature supports a layered answer:
 - unique structural rows and effect rows need different predicate and equality
   theories;
 - strict effects constrain generalization;
+- effect rows alone do not determine handler identity, resumption depth,
+  multiplicity, or resource safety; the
+  [algebraic-effects synthesis](../20-notes/algebraic-effects-and-handlers.md)
+  recommends nominal signatures, lexical capabilities, deep open handlers, and
+  affine clause-scoped resumptions as a minimal hypothesis;
 - bidirectional checking extends expressiveness without pretending richer
   terms remain part of complete HM inference;
 - local equality assumptions can remove principal types, so GADT-like features
@@ -136,7 +146,8 @@ Open. Resolve this inquiry only when the archive contains:
 1. a declarative pure core and executable reference inferencer;
 2. a written feature/guarantee matrix in the language specification;
 3. separate formal row, trait, and effect solver contracts;
-4. a proved or otherwise explicitly bounded generalization rule;
+4. a proved or otherwise explicitly bounded generalization rule and a handler
+   calculus satisfying the focused algebraic-effect inquiry;
 5. an elaborated typed core and independent verifier; and
 6. representative programs showing that the annotation boundaries are usable.
 

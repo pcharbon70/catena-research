@@ -26,6 +26,9 @@ implementation, or test suite supplies requirements or evidence.
   tracks the formal obligations and design decisions that remain open.
 - [How Hindley–Milner Type Inference Works](../20-notes/hindley-milner-type-inference.md)
   is the independent foundation behind the principal rank-1 core.
+- [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) expands
+  the effect-row layer into handler semantics, instance identity, resumption
+  multiplicity, scoped computations, and implementation choices.
 
 ## Trails
 
@@ -55,6 +58,10 @@ implementation, or test suite supplies requirements or evidence.
 2. [Leijen 2014](../30-sources/leijen-2014-koka-row-polymorphic-effects.md)
    supplies a worked duplicate-label effect-row calculus and a more precise
    effect-directed restriction.
+3. [The algebraic-effects map](algebraic-effects-and-handlers.md) continues from
+   row inference to operation algebraicity, deep and shallow handlers, lexical
+   instances, abstraction safety, affine and multi-shot resumptions, scoped
+   effects, and runtime strategies.
 
 ### Cross explicit expressiveness boundaries
 
@@ -68,12 +75,15 @@ implementation, or test suite supplies requirements or evidence.
 
 - Do structural variants justify their surface and solver complexity alongside
   nominal algebraic data?
-- Can one-shot resumptions be enforced operationally, or does the type system
-  need a linear capability?
+- Can lexical effect capabilities coexist with duplicate-label rows while
+  retaining principal inference and higher-order abstraction safety?
+- Are affine core resumptions plus a runtime consumed token sufficient, or is
+  inferred control-flow linearity required?
 - Which trait termination condition is simple enough to teach and strong
   enough to guarantee resolution?
 - What prototype corpus will test whether public signatures and higher-rank
   annotations appear at acceptable locations?
 
 Keep conclusions in the [greenfield synthesis](../20-notes/catena-greenfield-type-system.md)
-and active work in the [guarantee inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md).
+and active work in the [guarantee inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+and [algebraic-effect inquiry](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).

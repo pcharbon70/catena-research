@@ -33,6 +33,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [A Greenfield Type System for Catena](catena-greenfield-type-system.md) —
   proposes an inference-first language and separates principal implicit typing
   from annotation-directed traits, effects, rows, and higher-rank features.
+- [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — defines
+  the mathematical and operational model, compares handler and resumption
+  designs, and proposes a constrained greenfield effect system for Catena.
 - [How Hindley–Milner Type Inference Works](hindley-milner-type-inference.md) —
   explains Algorithm W and principal types independently of any existing
   Catena specification or implementation.

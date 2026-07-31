@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — routes
+  through operation algebraicity, handler dynamics, effect typing, resumption
+  safety, scoped computations, and runtime strategies.
 - [Catena Type-System Design](catena-type-system-design.md) — routes through
   the greenfield proposal, its guarantee matrix, and the independent evidence
   for each recommended boundary.

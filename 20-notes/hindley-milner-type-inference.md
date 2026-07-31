@@ -372,6 +372,10 @@ A ->{<IO, State | e>} B
 Koka permits duplicate effect labels so handler removal retains a
 most-general solution without separate lacks constraints. Set-like effect rows
 usually need another mechanism, such as lacks constraints or presence flags.
+The row theory says which requests may escape; handler selection, resumption
+depth and multiplicity, effect-instance identity, and scoped computations are
+separate obligations developed in
+[Algebraic Effects and Handlers](algebraic-effects-and-handlers.md).
 
 For any row domain to participate in principal inference, it needs:
 
@@ -470,5 +474,8 @@ or a smaller principal fragment.
   is the focused route through the foundation.
 - [Catena Type-System Design](../10-maps/catena-type-system-design.md) connects
   the theory to the independent language proposal.
+- [Algebraic Effects and Handlers](../10-maps/algebraic-effects-and-handlers.md)
+  follows the effect-row extension into its independent operational and
+  resource-safety obligations.
 - [What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
   tracks the remaining proof and design questions.

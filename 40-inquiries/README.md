@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
+  — tests whether lexical capabilities, duplicate-label rows, deep open
+  handlers, affine resumptions, and optimized backends form one sound and
+  usable design.
 - [What Should a Greenfield Catena Type System Guarantee?](what-should-a-greenfield-catena-type-system-guarantee.md)
   — investigates the formal contract and annotation boundaries for an
   inference-first language designed without inherited Catena constraints.
