@@ -35,8 +35,9 @@ That points to a layered type system:
    constraints, not nominal subtyping;
 3. coherent traits represented as qualified types and elaborated to explicit
    evidence;
-4. algebraic effects tracked by a distinct effect-row theory, with handlers and
-   effect-directed generalization;
+4. nominal algebraic effects tracked by a distinct effect-row theory, with
+   lexical effect capabilities, deep affine resumptions, and effect-directed
+   generalization;
 5. higher-rank polymorphism available only through explicit `forall` types and
    bidirectional checking;
 6. public module signatures as stable contracts, even when private definitions
@@ -88,7 +89,7 @@ data         nominal algebraic data plus structural rows
 functions    A ->{e} B, with A -> B as the pure abbreviation
 polymorphism implicit rank 1; explicit predicative forall at signatures
 overloading  coherent traits, elaborated to dictionaries
-effects      algebraic operations and lexically scoped handlers
+effects      nominal operations, lexical capabilities, and deep open handlers
 modules      explicit public signatures; inferred private bodies
 ```
 
@@ -134,7 +135,7 @@ The manual and compiler should publish a feature matrix rather than use
 | Unique-label record and variant rows | Principal qualified inference if row solving is unitary and terminating | Annotation when a row constraint remains ambiguous |
 | Single-parameter traits | Principal qualified types and coherent evidence | Reject ambiguous or overlapping evidence |
 | Multi-parameter traits | Sound, terminating improvement only for declared dependencies | Explicit dependency declaration and coverage checks |
-| Algebraic effect rows | Principal type-and-effect inference for the specified row theory | Effectful expansive bindings are not generalized |
+| Algebraic effect rows | Principal type-and-effect inference for the specified row theory | Effectful expansive bindings are not generalized; instance identity and resumption multiplicity remain explicit |
 | Higher-rank predicative polymorphism | Sound and complete bidirectional checking | Explicit `forall` annotation at polymorphic boundaries |
 | GADTs or local equality assumptions | Sound annotation-directed checking only | Signature at the enclosing binding; no promised local generalization |
 | Type-level computation or associated type equations | Not in the initial language | Future design requires a terminating, confluent solver |
@@ -284,8 +285,14 @@ case that outweighs their impact on principality and modularity.
 
 ## 5. Effects have their own row theory
 
-Catena should model an algebraic operation as an effect label and a function's
-latent effects as a row:
+The full semantic and implementation design is developed in
+[Algebraic Effects and Handlers](algebraic-effects-and-handlers.md). The type
+row described here is only one layer: it tracks requests that may escape, but
+does not by itself choose a handler, define resumption depth, or make captured
+resources safe to duplicate.
+
+Catena should model each algebraic operation as a member of a nominal effect
+signature and a function's latent signature occurrences as a row:
 
 ```text
 A ->{<Console, State s | e>} B
@@ -328,16 +335,33 @@ with the additional precision available from effect inference. “Appears pure�
 must mean provably empty in the formal effect system, not absence of a syntactic
 operation in one compiler pass.
 
-### Handlers and resumptions
+### Handler identity, depth, and resumptions
 
-Handlers should expose a resumption only as a lexically scoped parameter of an
-operation clause. The initial language should specify it as one-shot and should
-not permit it to escape, be stored, or be returned as an ordinary value.
+An effect declaration should have nominal identity, and each use that requires
+distinction—two `State Int` cells, for example—should receive a lexically bound
+capability. Surface syntax may infer a unique ambient capability, but two
+matching capabilities must be an ambiguity error rather than silently making
+handler nesting choose identity. Higher-order code polymorphic in an effect
+must not intercept that effect unless its type gives it the corresponding
+authority.
 
-First-class or multi-shot resumptions could be designed later, but they need a
-separate answer for linear use, resource lifetime, effect masking, and
-polymorphic generalization. Keeping them out of the initial value language
-avoids turning every control effect into a hidden capability object.
+Handlers should be open and deep by default. Unmentioned operations forward to
+the outer context, while invoking a resumption reinstalls the current handler
+for subsequent matching requests. Operations performed directly by a handler
+clause follow the documented outer lookup rule; this behavior must appear in
+the operational semantics rather than emerge from the backend.
+
+A resumption should exist only as an affine, lexically scoped parameter of an
+operation clause. A clause may discard it or invoke it once. It cannot escape,
+be stored, be returned, or be generalized as an ordinary value, and a second
+invocation must be rejected or trap before duplicated user computation.
+
+First-class, shallow, or multi-shot resumptions could be designed later, but
+they need separate answers for control-flow linearity, resource lifetime,
+effect masking, continuation copying, and polymorphic generalization. Scoped
+operations such as `local`, `catch`, and `bracket` likewise need a higher-order
+or structured-scope design rather than being assumed to follow from
+first-order effect signatures.
 
 ## 6. Higher-rank polymorphism is annotation-directed
 
@@ -468,7 +492,7 @@ useful; conflating the theories is not.
 
 Unrestricted first-class control values multiply the obligations around
 linearity, sharing, and generalization before ordinary handlers are proven
-useful. Lexically scoped one-shot resumptions are a smaller semantic target.
+useful. Lexically scoped affine resumptions are a smaller semantic target.
 
 ## Development sequence
 
@@ -502,7 +526,11 @@ is delivered as a large surface language.
 - Define the operational semantics of algebraic operations and handlers.
 - Add duplicate-label effect rows and prove the chosen unifier most-general.
 - Prove the generalization restriction sound for the evaluation semantics.
-- Keep resumptions lexical and one-shot.
+- Add nominal signatures and lexical instance capabilities, then test the
+  handler-selection rule against higher-order accidental capture.
+- Keep handlers deep and open, and resumptions lexical and affine.
+- Keep scoped resource and concurrency operations outside the first-order
+  handler core until cancellation and cleanup are specified.
 
 ### Stage 4 — explicit advanced typing
 
@@ -534,6 +562,11 @@ At minimum, the project should test and, where feasible, prove:
 - effectful expansive bindings cannot recreate a polymorphic-reference or
   polymorphic-control counterexample;
 - handler reduction preserves the declared type and effect;
+- a higher-order effect-polymorphic function cannot accidentally intercept its
+  callback's effects;
+- lexical effect instances cannot escape their handler or become ambiguous by
+  nesting order;
+- affine resumptions cannot duplicate captured resources or execute twice;
 - accepted higher-rank programs check in the declarative bidirectional system;
 - typed-core verification succeeds independently of surface inference.
 
@@ -565,17 +598,21 @@ still require formal and user-level evaluation:
 - exact surface syntax for quantified variables, rows, effects, and handlers;
 - whether structural variants earn their complexity alongside nominal data;
 - the minimal termination check for trait instance contexts;
-- whether effect rows need masking or effect-instance identities in addition
-  to labels;
-- whether one-shot resumptions require linear typing or can be enforced by a
-  scoped operational representation;
+- the exact integration of duplicate-label rows with lexical effect-instance
+  identities;
+- whether affine resumptions require core linear typing, a runtime consumed
+  token, or both;
+- which scoped computations need higher-order effects and which must be
+  structured runtime primitives;
 - how much inferred information the compiler should print in public-signature
   suggestions;
 - what diagnostic provenance representation survives optimization without
   excessive memory use.
 
 These are tracked in
-[What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md).
+[What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+and the focused
+[algebraic-effect semantics inquiry](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).
 
 ## Source trail
 
@@ -614,3 +651,5 @@ These are tracked in
   the shortest reading paths through the proposal and its evidence.
 - [Hindley–Milner Type Inference](../10-maps/hindley-milner-type-inference.md)
   isolates the mathematical foundation from this language-design synthesis.
+- [Algebraic Effects and Handlers](../10-maps/algebraic-effects-and-handlers.md)
+  routes through the semantic and implementation choices behind Stage 3.

@@ -78,5 +78,8 @@ language merely because it also uses the phrase “effect rows.”
 
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
 - [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
+- [Algebraic effects and handlers](../20-notes/algebraic-effects-and-handlers.md)
 - [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
+- [Which algebraic-effect semantics should Catena adopt?](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md)
 - [Catena type-system design map](../10-maps/catena-type-system-design.md)
+- [Algebraic effects and handlers map](../10-maps/algebraic-effects-and-handlers.md)

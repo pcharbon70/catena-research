@@ -57,6 +57,9 @@ It contains no trail through an existing Catena specification or compiler.
 - [Koka's row-polymorphic effects](../30-sources/leijen-2014-koka-row-polymorphic-effects.md)
   presents an HM-shaped effect system with duplicate labels and
   effect-directed generalization.
+- [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) separates
+  that row-inference extension from handler identity, resumption depth and
+  multiplicity, scoped computations, and runtime implementation.
 - [Complete and Easy Bidirectional Typechecking](../30-sources/dunfield-krishnaswami-2013-bidirectional-typechecking.md)
   provides an annotation-directed path to predicative higher-rank types.
 - [OutsideIn(X)](../30-sources/vytiniotis-et-al-2011-outsidein.md) explains why
@@ -67,6 +70,7 @@ It contains no trail through an existing Catena specification or compiler.
 
 - Which extensions preserve a unitary, terminating solver?
 - Where should generalization stop in a strict effectful language?
+- Can instance-aware handler typing retain principal effect-row inference?
 - Which programs deserve complete inference, and which should require
   annotations?
 - How can evidence coherence be tested independently of deterministic search?
