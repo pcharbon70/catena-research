@@ -373,16 +373,27 @@ A guard runs only after its structural pattern matches:
 
 ```text
 match n with
-| Some x if x > 0 -> positive(x)
-| Some _          -> non_positive
-| None            -> absent
+| Some x when x > 0 -> positive(x)
+| Some _            -> non_positive
+| None              -> absent
 ```
 
-An arbitrary Boolean guard should contribute nothing to static exhaustiveness
-unless it is a compiler-recognized constant `true`. This is conservative but
-sound: proving a predicate total over an infinite domain is not the coverage
-checker's job. Redundancy diagnostics should distinguish a structurally
-unreachable row from a guard that merely appears contradictory.
+The initial guard should have type `Bool` and belong to a checked
+guard-safe fragment: effect-free, deterministic, total, and free of
+user-visible failure. It reads pattern bindings but introduces no new bindings.
+`true` commits to the body; `false` continues with the next
+clause. A partial operation is rejected rather than having its fault silently
+converted into a false guard.
+
+Structural analysis remains the sound coverage baseline. An unknown guard
+contributes nothing to exhaustiveness; a guard proved true may contribute its
+pattern, and a guard proved false makes its body inaccessible. A small
+proof-producing fact oracle may improve precision, but solver timeout or
+unsupported syntax remains unknown. Diagnostics must distinguish structural
+shadowing, a proved contradiction, and a condition the compiler cannot decide.
+
+The full semantic, typing, coverage, receive, and lowering proposal is in
+[Clause Guards](clause-guards.md).
 
 ### Exhaustiveness and usefulness
 

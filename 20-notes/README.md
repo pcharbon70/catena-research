@@ -47,6 +47,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   distinguishes compositional laws from operational guarantees and specifies
   the kinds, operations, laws, parents, and roles of Catena's seventeen-class
   starting hierarchy.
+- [Clause Guards](clause-guards.md) — proposes Boolean-only clause conditions,
+  a checked effect-free and total fragment, conservative guarded coverage, a
+  typed guard-tree IR, and separate ordinary and selective-receive lowering.
 - [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
   — develops a layered combinator policy for functions, sums, products, ADTs,
   categorical classes, domain libraries, and compiler representations, with

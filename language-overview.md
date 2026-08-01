@@ -184,6 +184,10 @@ features to smuggle into the initial data model. Their effects on inference,
 coverage, totality, and evaluation cost must be specified first. See
 [Algebraic Data Types](20-notes/algebraic-data-types.md).
 
+[Clause Guards](20-notes/clause-guards.md) develops the condition between a
+successful structural pattern and commitment to its body, including purity,
+totality, coverage, selective receive, and BEAM lowering.
+
 ### 4. Traits and categorical structure
 
 Category-inspired abstractions should be ordinary traits rather than privileged
@@ -337,6 +341,7 @@ and independently testable analyses.
 - coherent trait solver;
 - bidirectional checker for explicit higher-rank types;
 - match coverage and redundancy checker;
+- guard-safety, totality, and guarded-coverage checker;
 - variance, positivity, and derivation analysis;
 - public-signature and compatibility checker.
 
