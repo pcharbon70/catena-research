@@ -14,6 +14,9 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [How should Catena integrate specifications and governance into the language?](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
+  — tests typed claims, evidence distinctions, contract and proof boundaries,
+  authorization, provenance, lifecycle integrity, security, and usability.
 - [How should Catena expose mathematical structure without mathematical jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
   — tests behavior-first capability names, operation selection, transfer,
   diagnostics, and semantic fidelity before the learning vocabulary is fixed.
@@ -37,6 +40,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
+  — routes through contracts, executable and bounded evidence, temporal and
+  deductive claims, authority policy, signed provenance, and typed lifecycle.
 - [Approachable Catena Language Design](approachable-catena-language-design.md)
   — routes through the public vocabulary proposal, its evidence and validation
   plan, diagnostic design, and the formal semantic audit.
@@ -60,6 +66,9 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
+  — proposes a typed specification graph, honest evidence types, restricted
+  policy evaluation, signed external attestations, and append-only transitions.
 - [An Approachable Vocabulary for Catena](../20-notes/approachable-language-vocabulary.md)
   — separates behavior-first code and documentation terms from an exact
   internal semantic ledger, and makes guide publication contingent on
@@ -89,6 +98,11 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The specification-governance design still needs a core calculus, semantic
+  digests, higher-order and effect contract semantics, adversarial lifecycle
+  models, an evidence-provenance prototype, performance measurements, and
+  vocabulary testing. Follow the
+  [specification and governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md).
 - The public vocabulary still needs prediction, operation-selection,
   cross-type transfer, diagnostic-repair, name-collision, and semantic-fidelity
   testing before it should become a full guide set. Follow the

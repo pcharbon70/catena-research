@@ -54,6 +54,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [How Hindley–Milner Type Inference Works](hindley-milner-type-inference.md) —
   explains Algorithm W and principal types independently of any existing
   Catena specification or implementation.
+- [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
+  — proposes a typed specification graph, distinct evidence regimes, a
+  restricted authority language, and append-only governed lifecycle.
 
 ## Maintaining this index
 

@@ -164,7 +164,9 @@ computational data while native handlers provide direct language effects.
   `Extend`) enable useful APIs and lawful instances beyond their stronger
   descendants?
 - How should promised, tested, derived, trusted, and proved laws differ in the
-  elaborated core and optimizer?
+  elaborated core and optimizer? The
+  [specification and governance map](language-integrated-specifications-and-governance.md)
+  provides the shared claim, evidence, and admission vocabulary.
 - Which datatype shapes can derive maps, folds, and traversals, and what
   evaluation order do those derivations promise?
 - Does the applicative/monad boundary enable enough analysis, validation, or

@@ -79,6 +79,10 @@ path should remain usable without them.
   [its synthesis](../20-notes/catena-greenfield-type-system.md) constrain
   inference, requirements, evidence, coherence, and the technical details
   hidden behind plain-language type errors.
+- [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
+  constrains the public meanings of needs, promises, examples, properties,
+  evidence, approvals, activation, and replacement while keeping checking
+  method and authority visible.
 
 ### Move from prototypes to guides
 

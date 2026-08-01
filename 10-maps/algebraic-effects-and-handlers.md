@@ -117,6 +117,10 @@ not inherit semantics from another Catena repository.
   platforms, FFI, and debugging expectations?
 - Can `effect`, `operation`, `uses`, `handle`, and `resume` explain the model
   without collapsing domain outcomes, external abilities, and process faults?
+- How should contracts allocate promises across callers, handlers,
+  resumptions, and process boundaries, and when can traces count as evidence?
+  Follow the
+  [specification and governance map](language-integrated-specifications-and-governance.md).
 
 Track answers in
 [Which Algebraic-Effect Semantics Should Catena Adopt?](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md),

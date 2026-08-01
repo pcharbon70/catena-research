@@ -114,6 +114,10 @@ implementation, or test suite supplies requirements or evidence.
   annotations appear at acceptable locations?
 - Can default diagnostics explain type shape, requirements, and failed
   derivation without requiring kind, variance, or evidence terminology?
+- Can typed claims, higher-order contracts, proof-only values, and governance
+  policy elaborate without weakening principal inference, effect safety, or
+  coherence? Track this in the
+  [specification and governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md).
 
 Keep conclusions in the [greenfield synthesis](../20-notes/catena-greenfield-type-system.md)
 and active work in the [guarantee inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md),
@@ -121,3 +125,5 @@ and active work in the [guarantee inquiry](../40-inquiries/what-should-a-greenfi
 and [algebraic-effect inquiry](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).
 The corresponding vocabulary and repair tests are tracked in
 [How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
+The claim, evidence, and authority boundary is developed in
+[Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md).
