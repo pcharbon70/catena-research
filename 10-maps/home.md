@@ -14,6 +14,9 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [How should Catena design clause guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
+  — tests Boolean-only conditions, totality and effects, coverage facts, trait
+  evidence, match compilation, and mailbox-preserving receive lowering.
 - [How should Catena integrate specifications and governance into the language?](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   — tests typed claims, evidence distinctions, contract and proof boundaries,
   authorization, provenance, lifecycle integrity, security, and usability.
@@ -40,6 +43,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Clause Guards](clause-guards.md) — routes through ordered clause semantics,
+  guard safety, structural and semantic coverage, typed guard trees, and BEAM
+  selective receive.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — routes through contracts, executable and bounded evidence, temporal and
   deductive claims, authority policy, signed provenance, typed lifecycle, and
@@ -67,6 +73,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Clause Guards](../20-notes/clause-guards.md) — proposes a checked
+  Boolean-only condition fragment, conservative coverage, explicit
+  fallthrough, typed guard-tree elaboration, and separate native and ordinary
+  BEAM lowering.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, honest evidence types, restricted
   policy evaluation, signed external attestations, append-only transitions,
@@ -100,6 +110,10 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The clause-guard design still needs a total predicate checker, typed
+  guard-tree interpreter, certified fact oracle, differential backend tests,
+  portable receive subset, cost measurements, and usability evidence. Follow
+  the [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md).
 - The specification-governance design still needs a core calculus, semantic
   digests, higher-order and effect contract semantics, adversarial lifecycle
   models, an evidence-provenance prototype, performance measurements, and

@@ -64,9 +64,9 @@ structural variants, and GADTs.
 1. [Warnings for Pattern Matching](../30-sources/maranget-2007-warnings-pattern-matching.md)
    reduces exhaustiveness and redundancy to usefulness over typed pattern
    matrices and generates missing-case witnesses.
-2. Extend that route with explicit rules for empty types, guards, visible and
-   hidden constructors, open variant rows, or-patterns, and later GADT
-   equalities.
+2. [Clause Guards](clause-guards.md) extends that route with ordered Boolean
+   conditions, totality and effect restrictions, guarded coverage, fact
+   oracles, and BEAM lowering.
 3. Keep semantic coverage independent of the backend's decision-tree or
    backtracking match compilation.
 

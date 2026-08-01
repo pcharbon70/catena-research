@@ -89,5 +89,8 @@ specification.
 ## Derived work
 
 - [Algebraic Data Types](../20-notes/algebraic-data-types.md)
+- [Clause Guards](../20-notes/clause-guards.md)
 - [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+- [How Should Catena Design Clause Guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
 - [Algebraic Data Types map](../10-maps/algebraic-data-types.md)
+- [Clause Guards map](../10-maps/clause-guards.md)

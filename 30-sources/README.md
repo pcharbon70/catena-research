@@ -215,6 +215,27 @@ mentions can remain as citations in the document that uses them.
 - [QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs](claessen-hughes-2000-quickcheck.md)
   — makes properties executable through generated data while exposing sample,
   distribution, and finite-testing limits.
+- [Erlang/OTP Expressions and Guard Sequences](erlang-otp-expressions-and-guard-sequences.md)
+  — specifies ordered guarded clauses, the restricted side-effect-free guard
+  subset, guard-operation failure, and selective-receive mailbox scanning.
+- [Erlang/OTP Function Matching and Optimization](erlang-otp-function-matching-optimization.md)
+  — shows how overlapping guarded clauses constrain compiler test reordering
+  and generated match structure.
+- [Haskell 2010 Language Report](marlow-2010-haskell-language-report.md) —
+  defines Boolean, pattern, and binding guards and translates them into nested
+  matching and conditionals.
+- [Lower Your Guards: A Compositional Pattern-Match Coverage Checker](graf-et-al-2020-lower-your-guards.md)
+  — elaborates rich patterns into a small guard-tree IR for modular coverage,
+  refinement, witness, and accessibility analysis.
+- [OCaml 5.4 Expressions and Pattern-Matching Guards](ocaml-5-4-expressions-and-pattern-guards.md)
+  — supplies the ordered arbitrary-Boolean guard baseline: pattern bindings,
+  true selection, and false fallthrough.
+- [The Rust Reference: Match Expressions](rust-reference-match-expressions.md)
+  — specifies Boolean and conditional-let guards while exposing side effects,
+  binding scope, ownership, and multiple evaluation under or-patterns.
+- [Structural and Semantic Pattern Matching Analysis in Haskell](kalvoda-kerckhove-2019-structural-semantic-pattern-matching.md)
+  — evaluates an SMT-backed oracle that improves arithmetic guard coverage
+  while retaining explicit theory and complexity limits.
 
 ## Maintaining this index
 
