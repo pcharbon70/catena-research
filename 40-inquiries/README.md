@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
+  — tests capability names, operation selection, transfer, diagnostics, and
+  the semantic audit needed before Catena stabilizes its learning vocabulary.
 - [How Should Catena Specify Algebraic Data Types?](how-should-catena-specify-algebraic-data-types.md)
   — tests declaration elaboration, principal constructor typing, coverage,
   abstraction, derivation, layout, compatibility, and extension boundaries.

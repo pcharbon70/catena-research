@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Approachable Catena Language Design](approachable-catena-language-design.md)
+  — connects the behavior-first vocabulary, validation inquiry, diagnostic
+  research, and the formal models the public language must preserve.
 - [Algebraic Data Types](algebraic-data-types.md) — routes through nominal
   constructors, structural reasoning, HM inference, coverage, abstraction,
   derivation, runtime representation, row variants, and GADTs.

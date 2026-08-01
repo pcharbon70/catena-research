@@ -160,3 +160,6 @@ Open. Resolve this inquiry only when the archive contains:
 
 The relevant reading routes are collected in the
 [Catena Type-System Design map](../10-maps/catena-type-system-design.md).
+Plain-language type-shape, requirement, and derivation diagnostics are tested
+by the
+[vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

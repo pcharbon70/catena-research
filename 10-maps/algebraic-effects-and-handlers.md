@@ -115,8 +115,12 @@ not inherit semantics from another Catena repository.
   privileged structured runtime scope?
 - Does selective CPS or native stack segmentation better serve Catena's target
   platforms, FFI, and debugging expectations?
+- Can `effect`, `operation`, `uses`, `handle`, and `resume` explain the model
+  without collapsing domain outcomes, external abilities, and process faults?
 
 Track answers in
 [Which Algebraic-Effect Semantics Should Catena Adopt?](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md),
 and promote settled conclusions into the
 [main synthesis](../20-notes/algebraic-effects-and-handlers.md).
+The behavior-first effect vocabulary and diagnostic boundary are tested in
+[How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

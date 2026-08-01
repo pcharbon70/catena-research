@@ -45,6 +45,9 @@ mentions can remain as citations in the document that uses them.
 - [Automatic Synthesis of Typed Lambda-Programs on Term Algebras](bohm-berarducci-1985-typed-lambda-programs.md)
   — represents term-algebra values and their eliminators in second-order typed
   lambda calculus without primitive recursion or conditionals.
+- [Compiler Errors for Humans](czaplicki-2015-compiler-errors-for-humans.md)
+  — records Elm's source-local, contextual, deliberately laid-out approach to
+  compiler explanations and the limits of its design-report evidence.
 - [HOPE: An Experimental Applicative Language](burstall-et-al-1980-hope.md) —
   integrates declared algebraic constructors, parametric types, pattern
   equations, higher-order recursion patterns, and constructor hiding.
@@ -98,6 +101,9 @@ mentions can remain as citations in the document that uses them.
 - [How to Make Ad-Hoc Polymorphism Less Ad Hoc](wadler-blott-1989-ad-hoc-polymorphism.md)
   — introduces type classes as a systematic constrained-polymorphism
   mechanism with evidence-passing semantics.
+- [How Should Compilers Explain Problems to Developers?](barik-et-al-2018-compiler-explanations.md)
+  — empirically studies explanatory and repair information in compiler
+  messages using professional developers and Stack Overflow examples.
 - [Monadic Parsing in Haskell](hutton-meijer-1998-monadic-parsing.md) — builds
   parsers from pure, bind, failure, choice, character, repetition, expression,
   and token combinators while exposing recursive-descent limitations.
@@ -154,6 +160,10 @@ mentions can remain as citations in the document that uses them.
 - [Types, Abstraction and Parametric Polymorphism](reynolds-1983-types-abstraction-parametric-polymorphism.md)
   — develops relational parametricity as a uniformity and representation-
   independence principle for polymorphic programs.
+- [Usability Analysis of Visual Programming Environments: A Cognitive Dimensions Framework](green-petre-1996-cognitive-dimensions.md)
+  — develops a tradeoff-oriented vocabulary for evaluating notation through
+  closeness, consistency, hidden dependencies, abstraction, and related
+  dimensions.
 - [Theorems for Free!](wadler-1989-theorems-for-free.md) — derives useful
   program equations from polymorphic types through Reynolds's abstraction
   theorem.

@@ -233,3 +233,6 @@ Open. Resolve the initial combinator system only when the archive contains:
 
 Evidence routes are collected in the
 [Combinators for Algebraic Data and Categorical Programming map](../10-maps/combinators-for-algebraic-data-and-categorical-programming.md).
+The public operation names, task-selection tests, and concrete-first learning
+sequence are tracked by the
+[vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

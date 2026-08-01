@@ -147,6 +147,10 @@ structural variants, and GADTs.
   variants?
 - What smallest GADT annotation boundary preserves predictable errors and
   ordinary HM behavior for programs that do not use refinements?
+- Do `variant type`, `variant`, `payload`, and `match` communicate the ADT model
+  accurately without hiding derivation, coverage, or representation costs?
 
 Track experiments and resolution criteria in
 [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md).
+The public terminology and derivation diagnostics are tested in
+[How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

@@ -30,6 +30,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [An Approachable Vocabulary for Catena](approachable-language-vocabulary.md)
+  — proposes a behavior-first public language, an exact internal semantic
+  ledger, task-oriented operation families, diagnostic conventions, and an
+  evidence-gated path to approachable guides.
 - [A Greenfield Type System for Catena](catena-greenfield-type-system.md) —
   proposes an inference-first language and separates principal implicit typing
   from annotation-directed traits, effects, rows, and higher-rank features.
