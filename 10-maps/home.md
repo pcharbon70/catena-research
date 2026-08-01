@@ -14,6 +14,10 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [Which combinators should Catena provide and derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md)
+  — tests a layered vocabulary of universal, class-derived, datatype-derived,
+  domain, and compiler combinators against laws, effects, cost, coherence, and
+  real programs.
 - [How should Catena specify algebraic data types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
   — tests nominal generation, uniform constructor typing, exhaustive matching,
   abstraction, structural derivation, opaque layout, and the GADT boundary.
@@ -30,6 +34,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
+  — routes through function and data glue, ADT elimination, the seventeen
+  classes, dependency structure, domain libraries, and compiler IRs.
 - [Algebraic Data Types](algebraic-data-types.md) — routes from constructors
   and structural induction through HM inference, match coverage, abstraction,
   representation, derivation, structural variants, and GADTs.
@@ -47,6 +54,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Combinators for Algebraic Data and Categorical Programming](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md)
+  — proposes a small lawful core, one class-derived library, conditional ADT
+  derivation, explicit operational contracts, and separately staged domain
+  and compiler combinators.
 - [Algebraic Data Types](../20-notes/algebraic-data-types.md) — proposes
   closed nominal ordinary ADTs in the principal HM core, exhaustive matching,
   abstraction-aware constructor visibility, selective derivation, and opaque
@@ -68,6 +79,11 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The combinator design still needs exact pure/effectful signatures, an
+  operational-contract matrix, reference derived libraries, conditional ADT
+  generation, a strict early-termination protocol, domain prototypes, and
+  corpus evidence. Follow the
+  [combinator inquiry](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).
 - The ADT design still needs a declaration calculus, an empty-type-aware
   coverage checker, module visibility tests, formal derivation conditions,
   layout benchmarks, and explicit evolution rules. Follow the

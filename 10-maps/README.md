@@ -42,6 +42,10 @@ should explain why its links belong together rather than merely list files.
   routes through the seventeen-class hierarchy, typed composition,
   parametricity, datatype recursion, computations, optics, effects, and
   categorical compilation.
+- [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
+  — routes through universal function and data glue, ADT-derived operations,
+  the seventeen-class vocabulary, focused domain libraries, operational
+  contracts, and compiler combinators.
 - [Home](home.md) — the selective entry point to active Catena research.
 - [Hindley–Milner Type Inference](hindley-milner-type-inference.md) — routes
   through the principal-type foundations, Algorithm W mechanics, and the proof

@@ -34,6 +34,9 @@ optimizer trust.
 - [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
   turns the agreed class set into kinding, coherence, law, corpus, diagnostic,
   derivation, and operational questions.
+- [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
+  turns the hierarchy into a minimal primitive and derived vocabulary and
+  connects it to ADTs, strict execution, and focused libraries.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
   supplies the higher-kinded, coherent-trait, pure/effectful, and inference
   boundaries within which the categorical library would have to fit.
@@ -98,6 +101,9 @@ Read the hierarchy by kind rather than as one inheritance chain:
    derive ordinary lawful `map`, `fold`, and `traverse` operations inside the
    complete hierarchy, and leave generalized recursion schemes in a library
    until they improve a real corpus.
+4. Use the [combinator synthesis](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md)
+   to distinguish constructor eliminators, catamorphisms, `Foldable`
+   reductions, traversals, early-stopping iteration, and fusion conditions.
 
 ### Choose a computational dependency structure
 
@@ -169,6 +175,10 @@ computational data while native handlers provide direct language effects.
   coexist with effectful, control-flow, and machine-oriented IRs?
 - Which categorical equations remain contextual equivalences in Catena's
   strict, recursive, effectful semantics?
+- Which operations belong in minimal class dictionaries, which are derived
+  once, and which require datatype- or domain-specific operational contracts?
 
 Track the experiments and decision criteria in
 [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md).
+The focused API and execution questions are tracked in
+[Which Combinators Should Catena Provide and Derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).

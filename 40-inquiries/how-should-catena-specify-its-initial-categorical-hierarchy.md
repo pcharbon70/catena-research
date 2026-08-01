@@ -177,6 +177,10 @@ is not enough.
 
 ### Define operational contracts
 
+- Use the focused
+  [combinator inquiry](which-combinators-should-catena-provide-and-derive.md)
+  to turn minimal class methods into a derived API while keeping law,
+  evaluation, effect, and cost claims separate.
 - Specify left-to-right or other evaluation order for contextual application,
   sequencing, traversal, folds, arrow products, and extension.
 - State complexity, allocation, stack safety, laziness or strictness, early

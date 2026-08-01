@@ -125,6 +125,10 @@ Can Catena define and implement closed nominal ordinary ADTs such that:
 
 ### Derivation
 
+- Use the focused
+  [combinator inquiry](which-combinators-should-catena-provide-and-derive.md)
+  to distinguish class primitives, class-derived functions, datatype-generated
+  operations, and advanced recursion or optic libraries.
 - Define positivity, variance, regularity, and parameter-role analyses over
   constructor payload types.
 - Generate `Setoid`, `Ord`, `Functor`, `Bifunctor`, `Foldable`, `Traversable`,
