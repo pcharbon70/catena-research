@@ -14,6 +14,9 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [How should Catena specify algebraic data types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+  — tests nominal generation, uniform constructor typing, exhaustive matching,
+  abstraction, structural derivation, opaque layout, and the GADT boundary.
 - [How should Catena specify its initial categorical hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
   — tests the agreed seventeen-class set through kinding, coherent evidence,
   laws, operational contracts, datatype derivations, instances, and inference
@@ -27,6 +30,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Algebraic Data Types](algebraic-data-types.md) — routes from constructors
+  and structural induction through HM inference, match coverage, abstraction,
+  representation, derivation, structural variants, and GADTs.
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — routes
   from the mathematical foundation through handler dynamics, effect typing,
   abstraction safety, scoped effects, and runtime implementation.
@@ -41,6 +47,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Algebraic Data Types](../20-notes/algebraic-data-types.md) — proposes
+  closed nominal ordinary ADTs in the principal HM core, exhaustive matching,
+  abstraction-aware constructor visibility, selective derivation, and opaque
+  default layout.
 - [Algebraic Effects and Handlers](../20-notes/algebraic-effects-and-handlers.md)
   — develops a greenfield semantic model and recommends nominal effects,
   lexical capabilities, deep open handlers, and affine resumptions for an
@@ -58,6 +68,10 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The ADT design still needs a declaration calculus, an empty-type-aware
+  coverage checker, module visibility tests, formal derivation conditions,
+  layout benchmarks, and explicit evolution rules. Follow the
+  [algebraic-data-type inquiry](../40-inquiries/how-should-catena-specify-algebraic-data-types.md).
 - The categorical design still needs kinded declarations, parent-dictionary
   coherence, a language-specific parametricity theorem, explicit law trust
   levels, operational contracts, datatype-derivation rules, and corpus

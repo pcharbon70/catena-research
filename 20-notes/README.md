@@ -33,6 +33,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [A Greenfield Type System for Catena](catena-greenfield-type-system.md) —
   proposes an inference-first language and separates principal implicit typing
   from annotation-directed traits, effects, rows, and higher-rank features.
+- [Algebraic Data Types](algebraic-data-types.md) — develops constructor,
+  recursion, pattern, abstraction, derivation, evolution, representation, and
+  inference semantics for Catena's initial nominal data.
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — defines
   the mathematical and operational model, compares handler and resumption
   designs, and proposes a constrained greenfield effect system for Catena.

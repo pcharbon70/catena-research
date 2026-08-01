@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Catena Specify Algebraic Data Types?](how-should-catena-specify-algebraic-data-types.md)
+  — tests declaration elaboration, principal constructor typing, coverage,
+  abstraction, derivation, layout, compatibility, and extension boundaries.
 - [How Should Catena Specify Its Initial Categorical Hierarchy?](how-should-catena-specify-its-initial-categorical-hierarchy.md)
   — tests the agreed seventeen-class set through kinding, coherent evidence,
   laws, operational contracts, derivation rules, instances, and inference

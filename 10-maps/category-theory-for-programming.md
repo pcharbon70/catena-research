@@ -89,9 +89,12 @@ Read the hierarchy by kind rather than as one inheritance chain:
 
 ### Calculate over algebraic data
 
-1. [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](../30-sources/meijer-et-al-1991-functional-programming-bananas.md)
+1. [Algebraic Data Types](algebraic-data-types.md) supplies the declaration,
+   pattern, abstraction, representation, and positivity boundaries that make a
+   source datatype more than a polynomial equation.
+2. [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](../30-sources/meijer-et-al-1991-functional-programming-bananas.md)
    develops folds, unfolds, hylomorphisms, and laws from datatype fixed points.
-2. Compare its general calculus with the synthesis's public datatype policy:
+3. Compare its general calculus with the synthesis's public datatype policy:
    derive ordinary lawful `map`, `fold`, and `traverse` operations inside the
    complete hierarchy, and leave generalized recursion schemes in a library
    until they improve a real corpus.
