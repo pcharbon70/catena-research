@@ -30,32 +30,20 @@ the linked notes, maps, and inquiries.
 
 ## Architecture at a glance
 
-```text
-Catena source
-    |
-    v
-Approachable surface language
-    |  functions, algebraic data, patterns, traits, effects, specifications
-    v
-Static semantics
-    |  kinds, types, rows, traits, effects, coverage, derivation
-    v
-Typed elaborated core
-    |  explicit dictionaries, capabilities, handlers, and spec references
-    |
-    +---------------- verification path ----------------+
-    |                                                   |
-    v                                                   v
-Runtime lowering                               Specification graph
-    |  effect lowering, optimization               |  evidence, policy,
-    |                                               |  authorization, history
-    v                                               v
-BEAM code                                      Verification result
-    |                                                   |
-    +---------------- artifact binding -----------------+
-                            |
-                            v
-               .beam modules + signed manifest
+```mermaid
+flowchart TD
+    source["Catena source"] --> surface["Approachable surface language<br/>Functions, algebraic data, patterns, traits, effects, specifications"]
+    surface --> semantics["Static semantics<br/>Kinds, types, rows, traits, effects, coverage, derivation"]
+    semantics --> core["Typed elaborated core<br/>Explicit dictionaries, capabilities, handlers, and specification references"]
+
+    core --> runtime["Runtime lowering<br/>Effect lowering and optimization"]
+    core --> specifications["Specification graph<br/>Evidence, policy, authorization, and history"]
+
+    runtime --> beam["BEAM code"]
+    specifications --> verification["Verification result"]
+
+    beam --> artifacts[".beam modules and signed manifest"]
+    verification --> artifacts
 ```
 
 The architecture separates three concerns that are often conflated:
@@ -380,18 +368,18 @@ binding, policy interpretation, transition validation, and signature checks.
 
 The resulting pipeline is:
 
-```text
-parse
-  -> resolve names and kinds
-  -> infer types, rows, traits, and effects
-  -> check matches and derivations
-  -> elaborate dictionaries, capabilities, and handlers
-  -> verify the typed core
-  -> split verification and runtime material
-  -> check claims, evidence, policy, and transitions
-  -> erase verification-only material
-  -> lower effects and optimize
-  -> emit .beam modules and a bound signed manifest
+```mermaid
+flowchart TD
+    parse["Parse"] --> resolve["Resolve names and kinds"]
+    resolve --> infer["Infer types, rows, traits, and effects"]
+    infer --> data_checks["Check matches and derivations"]
+    data_checks --> elaborate["Elaborate dictionaries, capabilities, and handlers"]
+    elaborate --> verify_core["Verify the typed core"]
+    verify_core --> split["Split verification and runtime material"]
+    split --> assurance["Check claims, evidence, policy, and transitions"]
+    assurance --> erase["Erase verification-only material"]
+    erase --> lower["Lower effects and optimize"]
+    lower --> emit["Emit .beam modules and a bound signed manifest"]
 ```
 
 ## The BEAM runtime boundary
