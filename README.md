@@ -24,6 +24,9 @@ proven strengths of Erlang's runtime.
 Those mathematical foundations are intended to shape Catena's guarantees and
 composition, not become prerequisite vocabulary for ordinary programmers.
 
+For a consolidated view of the proposed language architecture, read the
+[Catena Language Overview](language-overview.md).
+
 ## Research archive
 
 This repository is a research and exploratory archive: a place for ideas to
@@ -128,6 +131,8 @@ connections, and duplicate source identifiers.
   instructions
 - [`frontmatter.schema.json`](frontmatter.schema.json) — authoritative metadata
   schema
+- [`language-overview.md`](language-overview.md) — consolidated language
+  layers, compiler architecture, runtime artifacts, and open design boundaries
 - [`requirements-validation.txt`](requirements-validation.txt) — pinned Python
   dependencies used by the validator
 - [`validate_archive.py`](validate_archive.py) — deterministic archive
