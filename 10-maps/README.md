@@ -61,6 +61,9 @@ should explain why its links belong together rather than merely list files.
   — routes through typed claims, honest evidence kinds, contracts, models,
   proof obligations, authority policy, provenance, lifecycle transitions, and
   erasure into production BEAM plus a signed sidecar manifest.
+- [List Comprehensions](list-comprehensions.md) — routes through list-specific
+  generators, explicit pattern filtering, Boolean qualifiers, effects,
+  desugaring, extension boundaries, and BEAM lowering.
 
 ## Maintaining this index
 

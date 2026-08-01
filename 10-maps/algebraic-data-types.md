@@ -67,7 +67,10 @@ structural variants, and GADTs.
 2. [Clause Guards](clause-guards.md) extends that route with ordered Boolean
    conditions, totality and effect restrictions, guarded coverage, fact
    oracles, and BEAM lowering.
-3. Keep semantic coverage independent of the backend's decision-tree or
+3. [List Comprehensions](list-comprehensions.md) applies the same typed pattern
+   analysis to total generators and visibly filtering generators without
+   making mismatch policy implicit.
+4. Keep semantic coverage independent of the backend's decision-tree or
    backtracking match compilation.
 
 ### Preserve abstraction
@@ -126,6 +129,9 @@ structural variants, and GADTs.
 
 ## Open questions
 
+- Should a filtering generator use `case`, another readable keyword, or a
+  distinct arrow while preserving the semantic distinction from a total
+  generator?
 - Should the first declaration checker accept negative and nested recursive
   payloads without derivation, or begin with positive regular recursion only?
 - What terminating inhabitation analysis is precise enough for empty and

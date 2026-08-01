@@ -217,13 +217,15 @@ mentions can remain as citations in the document that uses them.
   distribution, and finite-testing limits.
 - [Erlang/OTP Expressions and Guard Sequences](erlang-otp-expressions-and-guard-sequences.md)
   — specifies ordered guarded clauses, the restricted side-effect-free guard
-  subset, guard-operation failure, and selective-receive mailbox scanning.
+  subset, guard-operation failure, selective-receive mailbox scanning, and
+  nested list, binary, and map comprehensions.
 - [Erlang/OTP Function Matching and Optimization](erlang-otp-function-matching-optimization.md)
   — shows how overlapping guarded clauses constrain compiler test reordering
   and generated match structure.
 - [Haskell 2010 Language Report](marlow-2010-haskell-language-report.md) —
   defines Boolean, pattern, and binding guards and translates them into nested
-  matching and conditionals.
+  matching and conditionals; it also gives list-comprehension typing, scope,
+  evaluation order, and kernel translation.
 - [Lower Your Guards: A Compositional Pattern-Match Coverage Checker](graf-et-al-2020-lower-your-guards.md)
   — elaborates rich patterns into a small guard-tree IR for modular coverage,
   refinement, witness, and accessibility analysis.
@@ -236,6 +238,24 @@ mentions can remain as citations in the document that uses them.
 - [Structural and Semantic Pattern Matching Analysis in Haskell](kalvoda-kerckhove-2019-structural-semantic-pattern-matching.md)
   — evaluates an SMT-backed oracle that improves arithmetic guard coverage
   while retaining explicit theory and complexity limits.
+- [EEP 70: Strict and Relaxed Generators](erlang-eep-70-strict-and-relaxed-generators.md)
+  — distinguishes intentional pattern filtering from assertive matching and
+  documents the production risk of silently skipped malformed input.
+- [EEP 73: Zip Generator](erlang-eep-73-zip-generators.md) — specifies
+  lockstep comprehension traversal, unequal-length and pattern failures,
+  precedence, diagnostics, and tuple-allocation avoidance.
+- [Elixir 1.20 Comprehensions](elixir-1-20-comprehensions.md) — demonstrates
+  arbitrary enumerable sources, filtering patterns, truthy filters, effectful
+  qualifiers, bit strings, and generic result collectors on the BEAM.
+- [Scala 3.4 For Comprehensions](scala-3-4-for-comprehensions.md) — separates
+  exhaustive generators from explicit `case` filtering and translates the
+  surface through carrier-provided mapping and filtering methods.
+- [Comprehending Monads](wadler-1992-comprehending-monads.md) — derives
+  generator composition from monadic operations while showing that Boolean
+  filters require a separate lawful zero.
+- [Comprehensive Comprehensions](peyton-jones-wadler-2007-comprehensive-comprehensions.md)
+  — formalizes ordering, grouping, zip, qualifier scope, and transformations,
+  exposing both the power and semantic cost of richer comprehension syntax.
 
 ## Maintaining this index
 

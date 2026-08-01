@@ -93,6 +93,9 @@ and combinator-based compiler representations.
 6. Use the [categorical hierarchy inquiry](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
    to test minimal dictionaries, parent coherence, law evidence, and instance
    inference.
+7. [List Comprehensions](list-comprehensions.md) shows where an eager
+   list-specific control form may be explained by map-and-flatten algebra but
+   should not become open `Monad` dispatch.
 
 ### Express computational dependency without collapsing abstractions
 
@@ -147,6 +150,8 @@ and combinator-based compiler representations.
   the law-bearing dictionaries?
 - Should early termination use `fold_while`, a pull iterator, an effect, or a
   combination of protocols?
+- Should any future generic comprehension require an explicit iteration and
+  collection protocol rather than reuse `Monad` as an operational contract?
 - Which ADT shapes justify automatic `map`, `bimap`, `fold_map`, `traverse`,
   unfold, and recursion-scheme generation?
 - How should generated combinators expose constructor order, field order,

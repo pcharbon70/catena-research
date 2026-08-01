@@ -200,43 +200,49 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 6. List comprehensions, generators, and iteration
 
-- [ ] **Gap — list-comprehension surface syntax.** Decide whether Catena has
-  comprehensions and, if so, specify element, generator, filter, binding, and
-  nested qualifier forms.
-- [ ] **Gap — generator protocol.** Define whether generators consume only
-  lists, any iterable or foldable value, streams, effectful producers, or a
-  dedicated iterator type.
-- [ ] **Gap — multiple-generator meaning.** Define nesting order, Cartesian
-  behavior, dependency between later and earlier generators, and empty-input
-  behavior.
-- [ ] **Gap — filter semantics.** Decide whether filters accept arbitrary pure
-  Boolean expressions, the guard-safe fragment, pattern conditions, or
-  effectful predicates.
-- [ ] **Gap — pattern-generator failure.** Define whether a refutable generator
-  pattern skips an element, terminates, returns a typed failure, or is rejected.
-- [ ] **Gap — qualifier bindings and scope.** Define left-to-right visibility,
-  shadowing, repeated names, and whether bindings may be recursive.
-- [ ] **Gap — evaluation and effect order.** Define source traversal order,
-  qualifier evaluation order, callback multiplicity, short-circuiting, and the
-  inferred effect of a comprehension.
-- [ ] **Gap — eager versus lazy production.** Define whether results are built
-  eagerly, streamed, fused, or selected by the target type, including behavior
-  for infinite inputs.
-- [ ] **Gap — desugaring contract.** Specify whether comprehension forms lower
-  to `map`, `and_then` or `flat_map`, filtering, folds, builders, or iterator
-  primitives, and which operational behavior that translation must preserve.
-- [ ] **Gap — result type.** Decide whether the syntax is list-specific or can
-  target maps, sets, binaries, streams, validation values, or arbitrary
-  `Applicative` or `Monad` implementations.
-- [ ] **Gap — sequential versus parallel execution.** Make sequential behavior
-  the default or mark parallel comprehensions with distinct syntax and laws;
-  never infer parallelism merely from associativity.
-- [ ] **Gap — termination and cost.** Specify stack safety, builder allocation,
-  intermediate collection fusion, early termination, and debugger/profiler
-  visibility.
-- [ ] **Gap — neighboring iteration syntax.** Decide whether ranges, loops,
-  `for` forms, generators with `yield`, async streams, and binary or map
-  comprehensions exist independently of list comprehensions.
+The [list-comprehension synthesis](../20-notes/list-comprehensions.md) now
+proposes a coherent initial answer. Every item remains unchecked because the
+proposal still needs normative grammar, formalization, implementation, and
+validation.
+
+- [ ] **Partial — list-comprehension surface syntax.** Validate the proposed
+  result-producing `for ... yield` shape and specify total generator,
+  filtering generator, Boolean filter, binding, and nested qualifier grammar.
+- [ ] **Partial — generator protocol.** Confirm the proposed initial `List A`
+  source; keep iterators, streams, effectful producers, and generic foldable
+  sources explicitly outside that version.
+- [ ] **Partial — multiple-generator meaning.** Formalize the proposed
+  left-to-right, depth-first Cartesian traversal, dependency, source-evaluation
+  count, and empty-input behavior.
+- [ ] **Partial — filter semantics.** Validate ordinary typed `Bool` filters
+  with visible effects, false-as-skip, and propagation of all other failures.
+- [ ] **Partial — pattern-generator failure.** Formalize exhaustive ordinary
+  generators and explicitly marked filtering generators whose pattern mismatch
+  alone skips an element.
+- [ ] **Partial — qualifier bindings and scope.** Validate left-to-right
+  visibility, non-recursive exhaustive bindings, no escaping names, and the
+  proposed same-comprehension rebinding error.
+- [ ] **Partial — evaluation and effect order.** Specify and test exact source
+  traversal, qualifier order, multiplicity, short-circuiting, failure timing,
+  and effect-row inference.
+- [ ] **Partial — eager versus lazy production.** Confirm eager ordered list
+  results; keep lazy streams and infinite inputs under a separate resource and
+  cancellation contract.
+- [ ] **Partial — elaboration contract.** Formalize the typed qualifier-tree
+  target, pure extensional equations with `map` and `flat_map`, and the fused
+  worker behavior that must preserve effects and failures.
+- [ ] **Partial — result type.** Confirm initial `List B` output and explicitly
+  exclude maps, sets, binaries, streams, validation values, and arbitrary
+  `Applicative` or `Monad` targets.
+- [ ] **Partial — sequential versus parallel execution.** Make sequential
+  source-order behavior normative and require separate syntax, effects, and
+  structured-concurrency rules for any future parallel form.
+- [ ] **Partial — termination and cost.** Verify tail-recursive workers, linear
+  output allocation, no intermediate map/filter lists, Cartesian cost
+  explanations, and debugger/profiler source fidelity.
+- [ ] **Deferred — neighboring iteration syntax.** Research ranges,
+  effect-only loops, generator functions, async streams, binary and map
+  comprehensions, zip qualifiers, and generic collectors independently.
 
 ## 7. Type-system surface and advanced boundaries
 

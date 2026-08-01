@@ -395,6 +395,21 @@ shadowing, a proved contradiction, and a condition the compiler cannot decide.
 The full semantic, typing, coverage, receive, and lowering proposal is in
 [Clause Guards](clause-guards.md).
 
+### Patterns in list comprehensions
+
+List-comprehension generators reuse patterns but need an explicit mismatch
+policy. The initial proposal separates two forms: an ordinary generator
+requires a pattern proved total for the source element type, while a visibly
+filtering generator may use a refutable pattern and skips values that do not
+match. This prevents an accidental partial destructure from becoming an
+invisible filter.
+
+The coverage checker should reuse the typed pattern-matrix machinery used by
+`match`, but report a generator-specific witness and suggested repair. Binding
+scope follows qualifier order, and no comprehension-local binding escapes the
+comprehension. See [List Comprehensions](list-comprehensions.md) for the full
+typing, evaluation, effect, and lowering proposal.
+
 ### Exhaustiveness and usefulness
 
 Coverage is a semantic property of the typed pattern matrix:
@@ -416,8 +431,10 @@ Catena's initial policy should be:
 - a useless row is a compile error, with a narrowly scoped lint downgrade only
   for generated code;
 - diagnostics show at least one missing or shadowed pattern witness;
-- refutable patterns in `let`, parameters, and comprehensions are rejected or
-  must use an explicitly total result such as `Option` or `Result`; and
+- refutable patterns in `let`, parameters, and ordinary comprehension
+  generators are rejected; explicit filtering generators may request
+  mismatch-as-skip, while other contexts must use a total result such as
+  `Option` or `Result`; and
 - a wildcard suppresses a future missing-constructor diagnostic only because
   the programmer deliberately accepted all remaining values, not because it
   is automatically inserted.

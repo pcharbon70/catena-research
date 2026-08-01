@@ -46,6 +46,9 @@ to `20-notes`.
 - [How Should Catena Integrate Specifications and Governance Into the Language?](how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   — tests the semantic kernel, evidence distinctions, authority policy,
   lifecycle protocol, provenance, security, performance, and public vocabulary.
+- [How Should Catena Specify List Comprehensions?](how-should-catena-specify-list-comprehensions.md)
+  — tests list-specific syntax, total and filtering patterns, scope, effect
+  order, qualifier-tree elaboration, BEAM lowering, and extension pressure.
 - [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests whether lexical capabilities, duplicate-label rows, deep open
   handlers, affine resumptions, and optimized backends form one sound and

@@ -664,6 +664,21 @@ One unqualified `zip` forces programmers to memorize a truncation policy.
 Likewise `sort`, `group`, and `deduplicate` require order or equality evidence
 and are algorithms over a concrete sequence, not consequences of `Functor`.
 
+### List comprehensions are a control form, not another class method
+
+An eager list comprehension combines nested iteration, filtering, local
+bindings, and construction under one ordered evaluation contract. Its
+list-to-list kernel can be explained with mapping, flattening, and empty-list
+filtering, but that explanation does not justify a generic `Monad` surface:
+filtering additionally needs a choice or zero operation, while generic carrier
+methods would make effect order, cardinality, failure, and allocation harder to
+see.
+
+Catena should therefore elaborate a typed qualifier tree directly and keep
+ordinary `map`, `flat_map`, `filter`, `traverse`, and explicit zip functions as
+separate library operations. The proposed boundary and its algebraic evidence
+are developed in [List Comprehensions](list-comprehensions.md).
+
 ## Domain combinator libraries
 
 ### Parser combinators: laws do not specify parsing policy
