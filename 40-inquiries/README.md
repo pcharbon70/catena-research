@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [Which Categorical Abstractions Should Catena Expose?](which-categorical-abstractions-should-catena-expose.md)
+  — tests the minimal abstraction hierarchy, parametricity boundary, law
+  evidence, datatype derivations, optics representation, and categorical IR
+  against formal and practical evidence.
 - [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests whether lexical capabilities, duplicate-label rows, deep open
   handlers, affine resumptions, and optimized backends form one sound and

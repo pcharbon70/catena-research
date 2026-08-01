@@ -14,6 +14,10 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [Which categorical abstractions should Catena expose?](../40-inquiries/which-categorical-abstractions-should-catena-expose.md)
+  — tests the minimal categorical library, parametricity and law-evidence
+  boundary, datatype derivations, optics representation, and alternate
+  compiler interpretations.
 - [Which algebraic-effect semantics should Catena adopt?](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests lexical capability identity, deep open handlers, affine resumptions,
   scoped operations, and backend equivalence as one coherent language design.
@@ -26,6 +30,9 @@ This is the selective entry point to the archive. See the
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — routes
   from the mathematical foundation through handler dynamics, effect typing,
   abstraction safety, scoped effects, and runtime implementation.
+- [Category Theory for Programming](category-theory-for-programming.md) —
+  routes from typed composition and parametricity through data, computations,
+  optics, effects, and categorical compilation.
 - [Catena Type-System Design](catena-type-system-design.md) — routes through the
   greenfield proposal, guarantee matrix, and independent primary evidence.
 - [Hindley–Milner Type Inference](hindley-milner-type-inference.md) — isolates
@@ -38,6 +45,10 @@ This is the selective entry point to the archive. See the
   — develops a greenfield semantic model and recommends nominal effects,
   lexical capabilities, deep open handlers, and affine resumptions for an
   initial Catena.
+- [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
+  — separates compositional laws from operational behavior and proposes a
+  weakest-adequate-structure policy for Catena's core, libraries, derivations,
+  and compiler experiments.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
   — proposes an inference-first language with structural rows, coherent traits,
   algebraic effects, and explicit boundaries for richer typing.
@@ -47,6 +58,11 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The categorical design still needs a language-specific parametricity
+  theorem, higher-kinded inference evidence, explicit law trust levels,
+  datatype-derivation rules, and corpus results for the weakest useful
+  abstraction. Follow the
+  [categorical-abstractions inquiry](../40-inquiries/which-categorical-abstractions-should-catena-expose.md).
 - The effect design still needs an integrated calculus proving lexical
   capability scope, principal row inference, higher-order abstraction safety,
   and affine resource behavior. Follow the
