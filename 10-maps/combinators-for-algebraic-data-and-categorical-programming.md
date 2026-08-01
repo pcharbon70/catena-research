@@ -140,7 +140,9 @@ and combinator-based compiler representations.
 ## Open questions
 
 - What exact purity and effect-row contract belongs on every higher-order class
-  method and derived combinator?
+  method and derived combinator, and which evidence method can support each
+  claim? Follow the
+  [specification and governance map](language-integrated-specifications-and-governance.md).
 - Which derived functions materially improve real programs without enlarging
   the law-bearing dictionaries?
 - Should early termination use `fold_while`, a pull iterator, an effect, or a

@@ -137,7 +137,9 @@ structural variants, and GADTs.
 - Which view or pattern-synonym semantics can preserve abstraction without
   effect, coverage, evaluation-count, or cost surprises?
 - Which derived instances are canonical, and how are laws, constraints, field
-  order, and constructor precedence exposed?
+  order, and constructor precedence exposed? The
+  [specification and governance map](language-integrated-specifications-and-governance.md)
+  develops typed invariant, property, evidence, and evolution records.
 - Which datatype shapes justify generated eliminators, maps, folds,
   traversals, unfolds, optics, and recursion schemes, and which should remain
   explicit library code?

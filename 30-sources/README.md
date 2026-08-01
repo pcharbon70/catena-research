@@ -185,6 +185,36 @@ mentions can remain as citations in the document that uses them.
 - [A New Implementation Technique for Applicative Languages](turner-1979-applicative-language-implementation.md)
   — compiles lambda terms by bracket abstraction into variable-free
   combinator code for graph reduction.
+- [Applying Design by Contract](meyer-1992-applying-design-by-contract.md) —
+  makes preconditions, postconditions, invariants, and responsibility
+  executable parts of component interfaces.
+- [Contracts for Higher-Order Functions](findler-felleisen-2002-contracts-higher-order-functions.md)
+  — gives delayed higher-order monitoring and blame assignment a typed
+  language semantics.
+- [Dafny: An Automatic Program Verifier for Functional Correctness](leino-2010-dafny.md)
+  — integrates contracts, frames, invariants, termination, ghost state, and
+  solver-backed proof obligations with programs.
+- [Alloy: A Lightweight Object Modelling Notation](jackson-2002-alloy.md) —
+  provides a compact relational specification language and automatic bounded
+  counterexample search whose finite scope remains explicit.
+- [The Temporal Logic of Actions](lamport-1994-temporal-logic-actions.md) —
+  expresses concurrent systems, temporal properties, and refinement in one
+  logic over behaviors.
+- [An Overview of the K Semantic Framework](rosu-serbanuta-2010-k-semantic-framework.md)
+  — shows how executable configurations and rewrite rules can drive multiple
+  language-semantics tools from one definition.
+- [Typestate: A Programming Language Concept for Enhancing Software Reliability](strom-yemini-1986-typestate.md)
+  — makes permitted operations depend on a compiler-tracked lifecycle state.
+- [Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization](cutler-et-al-2024-cedar.md)
+  — isolates authorization decisions in a restricted language with validation
+  and exact policy analysis.
+- [in-toto: Providing Farm-to-Table Guarantees for Bits and Bytes](torres-arias-et-al-2019-in-toto.md)
+  — binds a signed process layout to signed artifact and step provenance.
+- [Proof-Carrying Code](necula-1997-proof-carrying-code.md) — separates
+  producer-side proof construction from consumer-side policy and checking.
+- [QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs](claessen-hughes-2000-quickcheck.md)
+  — makes properties executable through generated data while exposing sample,
+  distribution, and finite-testing limits.
 
 ## Maintaining this index
 

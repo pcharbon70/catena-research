@@ -40,6 +40,9 @@ to `20-notes`.
   — tests the agreed seventeen-class set through kinding, coherent evidence,
   laws, operational contracts, derivation rules, instances, and inference
   diagnostics.
+- [How Should Catena Integrate Specifications and Governance Into the Language?](how-should-catena-integrate-specifications-and-governance-into-the-language.md)
+  — tests the semantic kernel, evidence distinctions, authority policy,
+  lifecycle protocol, provenance, security, performance, and public vocabulary.
 - [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests whether lexical capabilities, duplicate-label rows, deep open
   handlers, affine resumptions, and optimized backends form one sound and

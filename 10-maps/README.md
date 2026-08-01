@@ -54,6 +54,9 @@ should explain why its links belong together rather than merely list files.
   through the principal-type foundations, Algorithm W mechanics, and the proof
   obligations introduced by qualified types, rows, effects, and richer
   polymorphism.
+- [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
+  — routes through typed claims, honest evidence kinds, contracts, models,
+  proof obligations, authority policy, provenance, and lifecycle transitions.
 
 ## Maintaining this index
 
