@@ -126,6 +126,8 @@ The surface language is responsible for:
 
 - approachable names for common abstractions;
 - readable algebraic data declarations and exhaustive pattern matching;
+- eager list comprehensions whose iteration, filtering, effects, and mismatch
+  behavior are visible in the language contract;
 - concise type and effect annotations;
 - syntax for declaring and handling effects;
 - syntax for traits, implementations, laws, and derived operations;
@@ -235,6 +237,12 @@ Pure mapping remains pure. Effectful traversal should be expressed through a
 traversal abstraction, an effect row, or a domain-specific operation rather
 than silently changing the meaning of `map`. See
 [Combinators for Algebraic Data and Categorical Programming](20-notes/combinators-for-algebraic-data-and-categorical-programming.md).
+
+List comprehensions are a dedicated list control form above this library
+vocabulary. Their typed qualifier tree preserves left-to-right, depth-first
+evaluation, distinguishes total from filtering patterns, and can lower to
+fused tail-recursive workers without making open class dispatch part of their
+meaning. See [List Comprehensions](20-notes/list-comprehensions.md).
 
 ### 6. Algebraic effects and capabilities
 
@@ -350,6 +358,8 @@ and independently testable analyses.
 - trait evidence and dictionary elaborator;
 - lexical capability elaborator;
 - handler translation;
+- typed list-comprehension qualifier-tree elaborator and fused worker
+  generator;
 - derived-operation generator;
 - typed core verifier.
 
@@ -390,7 +400,7 @@ parse
   -> resolve names and kinds
   -> infer types, rows, traits, and effects
   -> check matches and derivations
-  -> elaborate dictionaries, capabilities, and handlers
+  -> elaborate comprehensions, dictionaries, capabilities, and handlers
   -> verify the typed core
   -> split verification and runtime material
   -> check claims, evidence, policy, and transitions
@@ -476,7 +486,8 @@ The main unresolved areas are:
   certificates;
 - usability studies and performance measurements;
 - later features such as GADTs, multi-shot handlers, programmable views,
-  pattern synonyms, optics syntax, and recursion schemes.
+  pattern synonyms, generic or streaming comprehensions, optics syntax, and
+  recursion schemes.
 
 An open boundary should not be mistaken for an invitation to choose features
 independently. Each proposal must be checked against principal inference,
@@ -498,6 +509,9 @@ The following maps provide the evidence trails behind this overview:
   connects the initial trait hierarchy and its laws.
 - [Combinators for Algebraic Data and Categorical Programming](10-maps/combinators-for-algebraic-data-and-categorical-programming.md)
   connects the proposed reusable operation tiers.
+- [List Comprehensions](10-maps/list-comprehensions.md) connects surface
+  iteration, pattern coverage, effects, algebraic explanation, and BEAM
+  lowering.
 - [Algebraic Effects and Handlers](10-maps/algebraic-effects-and-handlers.md)
   connects effect semantics, typing, capability elaboration, and BEAM lowering.
 - [Language-Integrated Specifications and Governance](10-maps/language-integrated-specifications-and-governance.md)

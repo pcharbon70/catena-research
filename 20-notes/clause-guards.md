@@ -162,6 +162,15 @@ A pattern guard evaluates an expression, matches its result against another
 pattern, and may add bindings for later conditions or the body. It is closer to
 a nested match than to a Boolean predicate.
 
+### Comprehension filter
+
+A list-comprehension filter is an ordinary expression of type `Bool`, evaluated
+for every environment produced by the preceding qualifiers. Unlike a clause
+guard, it may perform declared effects and its failures propagate normally;
+`false` rejects only the current candidate. The shared Boolean appearance must
+not erase this semantic distinction. The complete proposal is in
+[List Comprehensions](list-comprehensions.md).
+
 ### Guard-safe
 
 Guard-safe is a static operational judgment. It means that an expression is

@@ -14,6 +14,10 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [How should Catena specify list comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
+  — tests a list-specific surface, total and explicitly filtering patterns,
+  effect order, scope, qualifier-tree elaboration, fused BEAM lowering, and
+  extension boundaries.
 - [How should Catena design clause guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
   — tests Boolean-only conditions, totality and effects, coverage facts, trait
   evidence, match compilation, and mailbox-preserving receive lowering.
@@ -43,6 +47,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [List Comprehensions](list-comprehensions.md) — routes through generators,
+  pattern failure, filters, bindings, list algebra, effects, extension
+  pressure, and BEAM implementation.
 - [Clause Guards](clause-guards.md) — routes through ordered clause semantics,
   guard safety, structural and semantic coverage, typed guard trees, and BEAM
   selective receive.
@@ -73,6 +80,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [List Comprehensions](../20-notes/list-comprehensions.md) — proposes an
+  eager list-to-list expression with total generators, explicit filtering
+  patterns, typed Boolean filters, visible effects, depth-first order, and a
+  fused list-worker backend.
 - [Clause Guards](../20-notes/clause-guards.md) — proposes a checked
   Boolean-only condition fragment, conservative coverage, explicit
   fallthrough, typed guard-tree elaboration, and separate native and ordinary
@@ -110,6 +121,11 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The list-comprehension design still needs surface and pattern-marker tests,
+  an integrated type/effect calculus, a qualifier-tree interpreter,
+  differential BEAM tests, cost measurements, and evidence before adding zip,
+  streams, binary targets, generic builders, reduction, or parallelism. Follow
+  the [list-comprehension inquiry](../40-inquiries/how-should-catena-specify-list-comprehensions.md).
 - The clause-guard design still needs a total predicate checker, typed
   guard-tree interpreter, certified fact oracle, differential backend tests,
   portable receive subset, cost measurements, and usability evidence. Follow

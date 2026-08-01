@@ -11,6 +11,7 @@ doi: null
 url: "https://www.erlang.org/doc/system/expressions.html"
 accessed: "2026-08-01"
 tags:
+  - comprehensions
   - compilers
   - pattern-matching
 aliases:
@@ -25,15 +26,17 @@ Erlang/OTP, “Expressions,” *Erlang/OTP System Documentation*, current online
 edition accessed 2026-08-01.
 [Canonical documentation](https://www.erlang.org/doc/system/expressions.html).
 
-The page is living documentation. It identified itself as Erlang/OTP 29.0.3
+The page is living documentation. It identified itself as Erlang/OTP 29.0.4
 when consulted; the canonical URL may later describe a newer release.
 
 ## Research question
 
-What selection, safety, failure, and mailbox-scanning semantics does the BEAM's
-source language attach to clause guards?
+What selection, iteration, filtering, failure, and mailbox-scanning semantics
+does the BEAM's source language attach to clause guards and comprehensions?
 
 ## Findings
+
+### Guards and clauses
 
 - `case` evaluates its scrutinee and tests clauses sequentially. A body is
   selected only when both its pattern and optional guard sequence succeed.
@@ -57,28 +60,59 @@ source language attach to clause guards?
   scanning continues. The reference records worst-case `O(N)` scanning
   cost in the number of earlier messages.
 
+### Comprehensions
+
+- Erlang/OTP 29 documents list, bit-string, and map result forms. Each uses a
+  sequence of generators and filters, and all generator kinds can feed all
+  result kinds.
+- Ordinary adjacent generators are nested and produce combinations in source
+  order. Zip generators advance two or more sources together.
+- List, bit-string, and map generators each have relaxed and strict variants.
+  Relaxed patterns skip mismatches; strict patterns raise. Map result collisions
+  keep the last value for a key.
+- Generator bindings shadow earlier bindings and do not escape the
+  comprehension. The documented rules can make a repeated name surprisingly
+  fresh rather than compare it with an outer value.
+- A filter must ultimately be Boolean, but failure behavior depends on its
+  syntactic category. A failing or non-Boolean guard expression counts as
+  false; a non-guard expression that returns a non-Boolean value raises
+  `bad_filter`; an exception from an ordinary call propagates.
+- The result expression runs once for every generator combination whose
+  patterns and filters succeed. Empty results have the identity value of the
+  target container.
+
 ## Relevance
 
 This is the nearest runtime precedent for Catena. It demonstrates that
 side-effect freedom is valuable for both ordinary clause selection and
-selective receive. It also exposes two choices Catena should make explicitly
-rather than inherit accidentally: whether guard faults mean false, and whether
-the source language should mirror a runtime-maintained whitelist of guard BIFs.
+selective receive. It also exposes choices Catena should make explicitly
+rather than inherit accidentally: whether guard faults mean false, whether a
+runtime whitelist defines source semantics, whether pattern mismatch filters,
+and whether filter failure depends on the filter's syntax.
 
 The receive rules show why guard cost is observable even when guards are pure:
 one source guard may run against many queued messages before a selection
 succeeds.
 
+The comprehension rules show that a BEAM backend can support nested list
+construction, strict and filtering patterns, and zip traversal. They do not
+require Catena to copy Erlang's symbolic operators or its split filter-failure
+rules.
+
 ## Limits
 
-Erlang is dynamically typed and treats guard failure as a normal filtering
-mechanism. Its exact-`true` rule and exception-to-failure conversion do not
+Erlang is dynamically typed and treats some guard and generator failures as
+normal filtering mechanisms. Its exact-`true` rule, exception-to-failure
+conversion, fresh-variable generator rules, and runtime match errors do not
 follow automatically for a statically typed language with explicit effects.
-The documented BIF set also changes between OTP releases, so it cannot be
-Catena's stable semantic definition.
+The documented feature and BIF sets also change between OTP releases, so they
+cannot be Catena's stable semantic definition.
 
 ## Derived work
 
 - [Clause Guards](../20-notes/clause-guards.md)
 - [How Should Catena Design Clause Guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
 - [Clause Guards map](../10-maps/clause-guards.md)
+- [List Comprehensions](../20-notes/list-comprehensions.md)
+- [How Should Catena Specify List Comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
+- [List Comprehensions map](../10-maps/list-comprehensions.md)

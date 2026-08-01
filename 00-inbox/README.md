@@ -29,7 +29,10 @@ review; do not let the inbox become permanent storage.
 
 ### Documents
 
-- None yet.
+- [Catena Language Specification Completeness Checklist](language-specification-completeness-checklist.md)
+  — temporary audit of unresolved or unconsolidated language-definition work,
+  including list comprehensions, runtime semantics, interoperability, tooling,
+  and conformance.
 
 ## Maintaining this index
 

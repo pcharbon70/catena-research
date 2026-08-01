@@ -61,6 +61,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes a typed specification graph, distinct evidence regimes, a
   restricted authority language, append-only governed lifecycle, and an
   erased verification layer with externally preserved provenance.
+- [List Comprehensions](list-comprehensions.md) — proposes an eager list-to-list
+  form with total generators, explicit filtering patterns, typed Boolean
+  filters, visible effects, ordered execution, and fused BEAM lowering.
 
 ## Maintaining this index
 

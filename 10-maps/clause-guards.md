@@ -85,6 +85,9 @@ proof-producing precision tier.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   distinguishes universal proof from tests, assumptions, and approvals when a
   specification is used to simplify a guard.
+- [List Comprehensions](list-comprehensions.md) separates effect-free,
+  guard-safe clause conditions from ordinary effect-typed Boolean
+  comprehension filters.
 - [Catena Language Overview](../language-overview.md) locates match coverage and
   guard elaboration in the whole compiler.
 
@@ -99,5 +102,7 @@ tracks:
 - deterministic proof-producing guard facts;
 - portable BEAM-native receive guards;
 - guard-tree interpretation and lowering equivalence;
-- diagnostics and public vocabulary; and
+- diagnostics and public vocabulary;
+- whether clause conditions and comprehension filters should share a surface
+  keyword despite different safety, failure, and coverage judgments; and
 - evidence needed before adding pattern or handler guards.
