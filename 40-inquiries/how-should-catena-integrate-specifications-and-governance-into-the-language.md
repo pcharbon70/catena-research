@@ -60,7 +60,9 @@ A satisfactory answer requires a prototype in which:
 11. invalid, stale, unauthorized, and out-of-order transitions are rejected;
 12. current governed state can be replayed from immutable history;
 13. policy replacement and emergency recovery have explicit trust roots; and
-14. programmers can understand diagnostics without formal-methods vocabulary.
+14. proof-only and build-time material is erased from production BEAM code
+    whenever no runtime obligation remains; and
+15. programmers can understand diagnostics without formal-methods vocabulary.
 
 ## Working hypotheses
 
@@ -115,6 +117,15 @@ properties, signed evidence, and a small lifecycle policy exercise the core
 architecture. Temporal models and deductive proof can then extend it without
 changing the meaning of earlier evidence.
 
+### H7: specifications are language-integrated but runtime-erased by default
+
+Claims, proof terms, ghost state, generators, models, evidence, and build-time
+policy should elaborate through a verification IR and disappear before BEAM
+code generation. A signed sidecar manifest preserves provenance and binds it
+to the emitted module. Runtime code retains only monitors or admission hooks
+that the selected profile explicitly requires. Erasing a required monitor is
+permitted only after static discharge or an explicit recorded assumption.
+
 ## Paths to explore
 
 ### Core semantic model
@@ -127,8 +138,11 @@ changing the meaning of earlier evidence.
   and replacement.
 - Specify a canonical, versioned intermediate representation and semantic
   digest.
+- Split verification IR from runtime IR and define which constructs are
+  erasable, retained, or forbidden from runtime reference.
 - Prove that specification elaboration preserves ordinary program typing and
   effects.
+- Prove type, effect, and observational preservation for erasure.
 
 ### Contracts
 
@@ -242,6 +256,21 @@ This path should follow the
 - Specify degraded behavior when identity, revocation, or log services are
   unavailable.
 
+### BEAM erasure and artifact binding
+
+- Define the production BEAM profile and prove that proof terms, ghost values,
+  generators, policies, approvals, and evidence do not enter executable code.
+- Generate an erasure report listing retained monitors and trusted assumptions.
+- Bind a signed sidecar manifest to the exact BEAM digest without making the
+  manifest runtime state after admission.
+- Ensure runtime code cannot reference erased verification values.
+- Define explicit `static`, `monitor`, `assume`, and `test`-like modes without
+  silently weakening one mode into another.
+- Measure code size, load time, startup, reductions, allocation, and steady-
+  state performance against the same program with no specification layer.
+- Test runtime admission and hot-upgrade profiles in which a minimal checker is
+  deliberately retained.
+
 ## Prototype experiments
 
 ### Experiment A: typed claim graph
@@ -303,6 +332,21 @@ Give representative programmers six tasks:
 
 Record prediction, completion, repair success, and terminology confusion.
 
+### Experiment G: erasure and zero-runtime-cost audit
+
+Compile matched programs with no specifications, fully discharged static
+specifications, monitored specifications, and trusted assumptions. Inspect the
+BEAM artifacts and run behavioral and performance comparisons. Require that:
+
+- proof terms, ghost state, generators, policies, evidence, and histories are
+  absent from the default executable artifact;
+- the fully discharged build performs no additional runtime checks;
+- the monitored build retains exactly the declared wrappers or checks;
+- the assumed build records each assumption in the sidecar manifest;
+- stripping the sidecar does not change already admitted program execution;
+- the sidecar digest fails against any changed BEAM artifact; and
+- the erasure report accounts for every retained check and metadata choice.
+
 ## Findings
 
 The current synthesis is
@@ -315,6 +359,8 @@ It provisionally recommends:
 - a pure and terminating specification/policy core;
 - signed external attestations with explicit trust;
 - certificate checking where practical;
+- proof and governance erasure from production BEAM code with provenance kept
+  in a signed sidecar manifest;
 - typed and append-only lifecycle transitions;
 - separate technical evidence and authorization decisions;
 - a compiler-owned semantic IR with external evidence producers; and
@@ -333,6 +379,8 @@ Open. Resolution requires:
   system;
 - adversarial validation of the lifecycle and authority model;
 - a prototype evidence and provenance pipeline;
+- a type-, effect-, and semantics-preserving BEAM erasure pass with artifact
+  inspection and zero-runtime-cost measurements;
 - performance measurements on representative projects; and
 - comprehension and diagnostic-repair evidence from programmers.
 

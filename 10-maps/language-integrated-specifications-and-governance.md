@@ -28,6 +28,12 @@ release evidence may leave draft work possible, but cannot produce a governed
 release. Coverage does not spread to unrelated modules or dependencies without
 an explicit policy or interface obligation.
 
+Language integration also does not imply runtime retention. The recommended
+default erases claims, proofs, ghost values, generators, and build-time policy
+before BEAM code generation. A signed sidecar manifest preserves provenance;
+the BEAM artifact retains only monitors or admission hooks that an explicit
+profile still requires.
+
 The topic is a fresh language-design investigation grounded in independent
 primary work on contracts, verification, models, semantics, typestate,
 authorization, provenance, and proof certificates.
@@ -108,6 +114,22 @@ shared by the compiler, evidence runner, documentation generator, policy
 evaluator, and transition validator. A shared semantics reduces drift but does
 not prove that the semantics itself is correct.
 
+### From checked specifications to erased BEAM code
+
+The [main synthesis](../20-notes/language-integrated-specifications-and-governance.md#erasure-and-output-artifacts)
+separates verification IR from runtime IR. Well-formedness, static proof, and
+trusted assumption are different compiler decisions: only a discharged claim
+or explicit assumption can remove a required monitor. Proofs, ghost state,
+generators, policies, and evidence move to a signed sidecar manifest rather
+than executable instructions.
+
+This trail connects [Dafny](../30-sources/leino-2010-dafny.md), which keeps
+verification-only material distinct from runtime state, with
+[Proof-Carrying Code](../30-sources/necula-1997-proof-carrying-code.md), which
+separates producer evidence from consumer checking. Catena still needs its own
+type-, effect-, and semantics-preserving erasure theorem and BEAM artifact
+measurements.
+
 ### Authority is not correctness
 
 [Cedar](../30-sources/cutler-et-al-2024-cedar.md) provides the policy-language
@@ -164,6 +186,12 @@ tracks the full workbench. The hardest unresolved questions are:
   coverage explicit without burdening projects that declare no governance?
 - Which local development actions remain available when publication or
   activation evidence is incomplete?
+- Which constructs are always erased, which profiles retain monitors, and what
+  theorem connects verification IR to emitted BEAM behavior?
+- Should a production BEAM file contain no specification metadata at all, or
+  an optional non-executable manifest digest under an explicit profile?
+- How should the compiler demonstrate zero runtime cost for fully discharged
+  claims and account for every retained check?
 - Which specification expressions are total and pure by construction?
 - How should semantic digests respond to refactoring and abstraction?
 - How do contracts wrap handlers, resumptions, callbacks, and process

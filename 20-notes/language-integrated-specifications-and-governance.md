@@ -72,6 +72,14 @@ and admission tooling must enforce its declarations exactly. Missing evidence
 may leave draft code locally buildable, but it cannot be silently treated as
 meeting a governed publication or activation gate.
 
+Specifications should also be **erasable by default**. Claims, proof terms,
+ghost definitions, test generators, and build-time governance logic belong to
+checking and evidence production, not ordinary runtime execution. Once their
+compile-time obligations are discharged, the compiler should omit them from
+the executable BEAM instructions and store their provenance in a separately
+signed manifest. A contract monitor is retained only when its obligation was
+not statically established and the active profile requires runtime checking.
+
 This proposal is a research direction, not a settled surface specification.
 Its core idea is stronger than syntax:
 
@@ -868,6 +876,102 @@ The specification intermediate representation should be versioned and have a
 canonical semantic digest. Tooling integrations consume this representation
 instead of reparsing source comments.
 
+### Erasure and output artifacts
+
+The default compilation model should separate **verification material** from
+**runtime material**. Language integration means the compiler understands and
+enforces specifications; it does not mean every specification becomes data or
+instructions in the resulting BEAM module.
+
+A successful build should produce two independently useful outputs:
+
+1. an executable BEAM artifact containing the program and only those runtime
+   checks or admission hooks that remain semantically required; and
+2. a content-addressed specification manifest containing claims, checking
+   methods, assumptions, evidence references, governance decisions, semantic
+   digests, and the digest of the exact BEAM artifact it admits.
+
+The manifest may be packaged, signed, cached, audited, or distributed beside
+the BEAM file. Losing the manifest loses provenance and governed admissibility,
+not the ability of an already admitted module to execute. Rebuilding a
+governed release without the manifest must not recreate an “approved” state
+from the BEAM file alone.
+
+#### Three different compiler decisions
+
+The compiler must not confuse declaration checking with claim discharge:
+
+| Decision | Meaning | Erasure consequence |
+| --- | --- | --- |
+| Declaration is well formed | names, types, effects, scopes, and methods are valid | proof-only declaration may be omitted, but this does not establish its claim |
+| Claim is statically established | a trusted checker accepted a proof or derivation for the exact semantic digest | corresponding runtime monitor may be erased |
+| Claim is assumed | an explicit trusted boundary accepts it without proof | monitor may be erased only when the profile permits the assumption, and the manifest must expose it |
+
+A successful property run, example suite, bounded search, approval, or
+signature does not by itself justify erasing a mandatory runtime monitor. The
+claim's active policy must admit that evidence method for erasure, and the
+language must describe the resulting guarantee honestly.
+
+#### Default artifact placement
+
+| Material | Default destination |
+| --- | --- |
+| Claim declarations and specification IR | signed sidecar manifest; erased from executable code |
+| Proof terms, lemmas, ghost state, and verification-only helpers | erased after checking |
+| Property generators, shrinkers, examples, models, and scenarios | evidence tooling or test artifacts; absent from production BEAM code |
+| Evidence envelopes, approvals, policies, and transition history | signed sidecar records or governance store |
+| Statically discharged contract monitor | erased |
+| Contract not statically discharged under a monitoring profile | retained as runtime BEAM code |
+| Runtime admission or hot-upgrade check required by policy | retain a minimal checker or hook; feed it authenticated external manifest data |
+| Optional documentation or debug information | non-executable artifact or explicitly selected metadata profile |
+
+The default production profile should not embed the full specification graph
+in a BEAM metadata chunk. Tooling that deliberately embeds a manifest digest
+or documentation subset must label that output profile and keep the embedded
+data non-executable. The executable semantics must never depend on an erased
+proof term or ghost value.
+
+#### Erasure obligations
+
+Erasure itself needs a compiler correctness contract:
+
+- **type preservation**: removing verification-only terms leaves a well-typed
+  runtime program;
+- **effect preservation**: erased terms cannot perform runtime effects whose
+  disappearance changes behavior;
+- **semantic preservation**: a program with successfully erased static
+  material has the same observable runtime behavior as its elaborated runtime
+  projection, except for monitors explicitly proved unnecessary;
+- **closure**: executable code contains no reference to an erased value,
+  dictionary, policy, generator, or proof object;
+- **artifact binding**: the sidecar manifest names the exact semantic IR,
+  compiler/checker versions, assumptions, and BEAM digest; and
+- **profile honesty**: build output states which monitors and metadata were
+  retained, erased, or accepted by assumption.
+
+The compiler should expose an erasure report that explains every retained
+runtime check and every trusted assumption. A “zero specification overhead”
+claim is valid only when emitted code, startup behavior, and steady-state
+measurements confirm it for the selected profile.
+
+#### Runtime escape hatch
+
+Some projects will deliberately choose runtime enforcement. Examples include
+untrusted plugin boundaries, deserialization of external values, dynamically
+loaded code, and hot upgrades admitted on a running node. Those are not
+failures of erasure. They are explicit runtime obligations.
+
+The source or build profile must distinguish:
+
+- `static`: establish the claim or reject the governed build;
+- `monitor`: retain a runtime check when static discharge is unavailable;
+- `assume`: erase the check under a named trusted assumption; and
+- `test`: produce finite evidence without satisfying a proof-required gate.
+
+These names remain provisional, but the modes must not be inferred silently.
+In particular, optimization must never convert `monitor` to `assume` merely to
+remove overhead.
+
 ### Trusted computing base
 
 The minimum trusted base includes:
@@ -897,6 +1001,8 @@ The initial design should:
 
 - evaluate policy and static specification expressions deterministically at
   build or admission time;
+- erase proof-only and build-time specification material before BEAM code
+  generation and bind the resulting module digest into the external manifest;
 - run effectful scenarios in supervised processes with explicit capabilities;
 - record message traces and scheduler models for concurrency evidence;
 - keep signed promotion history in durable storage rather than process memory;
@@ -1179,6 +1285,7 @@ Implement:
 - semantic digests;
 - source-to-claim navigation;
 - machine-readable evidence envelopes; and
+- an explicit runtime/verification IR split with an erasure report;
 - complete diagnostics for dangling or stale links.
 
 This stage tests the graph before introducing authority.
@@ -1223,6 +1330,7 @@ Add:
 Add only after the semantic core is stable:
 
 - proof-only definitions;
+- checked erasure of proof terms, ghost state, lemmas, and discharged monitors;
 - frames, termination, and abstraction obligations;
 - a small logical kernel;
 - certificate formats;
@@ -1261,6 +1369,13 @@ The proposal should advance only if a prototype can demonstrate:
 
 - one normative specification IR drives checking, documentation, and evidence
   plans;
+- proof-only terms, ghost state, generators, and build-time policy are absent
+  from default production BEAM instructions and runtime tables;
+- erased programs preserve typing, effects, and observable runtime behavior;
+- every retained monitor and every trusted assumption appears in an erasure
+  report;
+- the external manifest is cryptographically bound to the exact emitted BEAM
+  artifact without being required for ordinary execution after admission;
 - higher-order contract wrappers assign responsibility correctly;
 - every evidence summary states method, scope, assumptions, and subject digest;
 - temporal and bounded claims cannot be misreported as deductive proof; and
@@ -1290,6 +1405,9 @@ The proposal should advance only if a prototype can demonstrate:
 - deterministic policy evaluation has a hard resource bound;
 - incremental compilation rechecks only affected claims;
 - monitor overhead is measurable and controllable by declared mode;
+- a fully discharged specification adds no measurable runtime work in the
+  default production profile, and any file-size overhead is separately
+  attributable to an explicitly selected metadata profile;
 - evidence caching is content-addressed and safe under dependency changes;
 - proof and model jobs are cancellable and reproducible; and
 - transition verification remains cheap enough for local development and

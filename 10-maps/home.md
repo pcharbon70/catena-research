@@ -42,7 +42,8 @@ This is the selective entry point to the archive. See the
 
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — routes through contracts, executable and bounded evidence, temporal and
-  deductive claims, authority policy, signed provenance, and typed lifecycle.
+  deductive claims, authority policy, signed provenance, typed lifecycle, and
+  erasure from production BEAM code.
 - [Approachable Catena Language Design](approachable-catena-language-design.md)
   — routes through the public vocabulary proposal, its evidence and validation
   plan, diagnostic design, and the formal semantic audit.
@@ -68,7 +69,8 @@ This is the selective entry point to the archive. See the
 
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, honest evidence types, restricted
-  policy evaluation, signed external attestations, and append-only transitions.
+  policy evaluation, signed external attestations, append-only transitions,
+  and a signed sidecar for specifications erased from executable BEAM code.
 - [An Approachable Vocabulary for Catena](../20-notes/approachable-language-vocabulary.md)
   — separates behavior-first code and documentation terms from an exact
   internal semantic ledger, and makes guide publication contingent on

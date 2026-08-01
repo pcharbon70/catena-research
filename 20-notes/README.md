@@ -56,7 +56,8 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   Catena specification or implementation.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, distinct evidence regimes, a
-  restricted authority language, and append-only governed lifecycle.
+  restricted authority language, append-only governed lifecycle, and an
+  erased verification layer with externally preserved provenance.
 
 ## Maintaining this index
 
