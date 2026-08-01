@@ -56,7 +56,8 @@ should explain why its links belong together rather than merely list files.
   polymorphism.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — routes through typed claims, honest evidence kinds, contracts, models,
-  proof obligations, authority policy, provenance, and lifecycle transitions.
+  proof obligations, authority policy, provenance, lifecycle transitions, and
+  erasure into production BEAM plus a signed sidecar manifest.
 
 ## Maintaining this index
 
