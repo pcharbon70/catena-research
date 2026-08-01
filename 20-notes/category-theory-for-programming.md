@@ -1274,6 +1274,10 @@ effect-combining class must specify evaluation order. A separate `Parallel`
 wrapper or future trait can express commutative or concurrent combination
 rather than overloading one instance with incompatible behavior.
 
+The corresponding minimal methods, derived operations, ADT-generated
+operations, and execution contracts are developed in
+[Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md).
+
 The complete initial hierarchy is still a boundary, not an invitation to
 import every named categorical structure. `Contravariant`, `Profunctor`,
 specialized monoidal variants, generalized recursion schemes, and categorical
@@ -1509,6 +1513,8 @@ alternate interpretation such as differentiation.
 
 The active workbench is
 [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md).
+The focused library and datatype API workbench is
+[Which Combinators Should Catena Provide and Derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).
 
 ## Evidence route
 

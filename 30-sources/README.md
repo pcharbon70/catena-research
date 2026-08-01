@@ -42,6 +42,9 @@ mentions can remain as citations in the document that uses them.
 - [Binders by Day, Labels by Night](biernacki-et-al-2020-effect-instances-lexically-scoped-handlers.md)
   — models multiple uses of one effect signature as lexically scoped instance
   names tracked by the type-and-effect system.
+- [Automatic Synthesis of Typed Lambda-Programs on Term Algebras](bohm-berarducci-1985-typed-lambda-programs.md)
+  — represents term-algebra values and their eliminators in second-order typed
+  lambda calculus without primitive recursion or conditionals.
 - [HOPE: An Experimental Applicative Language](burstall-et-al-1980-hope.md) —
   integrates declared algebraic constructors, parametric types, pattern
   equations, higher-order recursion patterns, and constructor hiding.
@@ -55,6 +58,9 @@ mentions can remain as citations in the document that uses them.
   the typed-lambda-calculus/category correspondence into modular alternate
   interpretations for circuits, differentiation, incremental computation, and
   analysis.
+- [Data Types à la Carte](swierstra-2008-data-types-a-la-carte.md) — combines
+  functor components, coproducts, fixed points, folds, and inferred injection
+  to build modular syntax and semantics.
 - [Deductive Systems and Categories III](lambek-1972-deductive-systems-categories-iii.md)
   — relates cartesian closed categories, intuitionistic deduction, and typed
   combinatory structure.
@@ -92,6 +98,9 @@ mentions can remain as citations in the document that uses them.
 - [How to Make Ad-Hoc Polymorphism Less Ad Hoc](wadler-blott-1989-ad-hoc-polymorphism.md)
   — introduces type classes as a systematic constrained-polymorphism
   mechanism with evidence-passing semantics.
+- [Monadic Parsing in Haskell](hutton-meijer-1998-monadic-parsing.md) — builds
+  parsers from pure, bind, failure, choice, character, repetition, expression,
+  and token combinators while exposing recursive-descent limitations.
 - [Typing Haskell in Haskell](jones-1999-typing-haskell-in-haskell.md) — gives
   an executable specification of substitutions, kinds, schemes, classes, and
   binding-group inference.
@@ -133,6 +142,9 @@ mentions can remain as citations in the document that uses them.
 - [Simple Imperative Polymorphism](wright-1995-simple-imperative-polymorphism.md)
   — motivates and studies the value restriction for strict effectful
   languages.
+- [Selective Applicative Functors](mokhov-et-al-2019-selective-applicative-functors.md)
+  — develops analyzable conditional effects between applicative and monadic
+  dependency and evaluates them in build and remote-query systems.
 - [Soundly Handling Linearity](tang-et-al-2024-soundly-handling-linearity.md)
   — introduces control-flow linearity to prevent multi-shot resumptions from
   discarding or duplicating captured linear resources.
@@ -154,9 +166,15 @@ mentions can remain as citations in the document that uses them.
 - [Views: A Way for Pattern Matching to Cohabit with Data Abstraction](wadler-1987-views-pattern-matching.md)
   — separates an abstract representation from the constructor vocabulary used
   to pattern-match its public observations.
+- [Why Functional Programming Matters](hughes-1989-why-functional-programming-matters.md)
+  — explains higher-order functions and lazy producer/consumer boundaries as
+  program-decomposition glue.
 - [Warnings for Pattern Matching](maranget-2007-warnings-pattern-matching.md) —
   derives exhaustiveness, redundancy, and missing-pattern witnesses from a
   usefulness analysis over typed pattern matrices.
+- [A New Implementation Technique for Applicative Languages](turner-1979-applicative-language-implementation.md)
+  — compiles lambda terms by bracket abstraction into variable-free
+  combinator code for graph reduction.
 
 ## Maintaining this index
 

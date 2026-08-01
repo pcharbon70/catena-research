@@ -480,7 +480,11 @@ fold is useful when it:
 
 General recursion-scheme syntax should remain a library or research feature
 until examples show that it improves code and diagnostics over matches plus
-derived folds.
+derived folds. The focused
+[combinator synthesis](combinators-for-algebraic-data-and-categorical-programming.md)
+distinguishes constructor eliminators, recursive catamorphisms, `Foldable`
+element reductions, traversals, early-stopping iteration, and more general
+schemes.
 
 ### Regularity and nested datatypes
 
@@ -704,6 +708,10 @@ not every algebraic interface has a canonical instance.
 `Comonad`, `Category`, and `Arrow` generally do not follow canonically from an
 arbitrary constructor tree. The compiler must not derive them merely because
 the names appear in Catena's categorical hierarchy.
+
+The proposed primitive, class-derived, datatype-derived, and package layers
+are developed in
+[Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md).
 
 ### Positivity, variance, and failed derivations
 

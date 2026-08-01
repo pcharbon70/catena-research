@@ -28,6 +28,9 @@ structural variants, and GADTs.
 - [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
   turns that proposal into declaration, inference, coverage, module,
   derivation, representation, and corpus work.
+- [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
+  follows constructor elimination into mapping, folding, traversal, iteration,
+  recursion schemes, optics, and modular syntax.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
   supplies the wider principal-inference, row, trait, GADT, and module
   boundaries.
@@ -105,12 +108,19 @@ structural variants, and GADTs.
 
 ### Derive lawful categorical structure
 
-1. Follow the synthesis's positivity, variance, regularity, and traversal-order
+1. Follow the ADT synthesis's positivity, variance, regularity, and
+   traversal-order
    conditions for `Setoid`, `Ord`, `Functor`, `Bifunctor`, `Foldable`,
    `Traversable`, and folds.
-2. [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
+2. [Combinators for Algebraic Data and Categorical Programming](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md)
+   distinguishes constructor elimination, recursive catamorphisms, element
+   folds, effectful traversals, early-stopping iteration, and advanced schemes.
+3. [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
    supplies the laws and evidence boundary for Catena's initial hierarchy.
-3. [The categorical hierarchy inquiry](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
+4. [The combinator inquiry](../40-inquiries/which-combinators-should-catena-provide-and-derive.md)
+   tests generated operations, execution contracts, focused libraries, and
+   representative use.
+5. [The categorical hierarchy inquiry](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
    asks how derived dictionaries interact with kinding, coherence, testing,
    and optimizer trust.
 
@@ -128,6 +138,9 @@ structural variants, and GADTs.
   effect, coverage, evaluation-count, or cost surprises?
 - Which derived instances are canonical, and how are laws, constraints, field
   order, and constructor precedence exposed?
+- Which datatype shapes justify generated eliminators, maps, folds,
+  traversals, unfolds, optics, and recursion schemes, and which should remain
+  explicit library code?
 - What source and binary evolution rules follow from closed matching,
   `non_exhaustive` markers, derived ordering, and explicit layout schemas?
 - Where should explicit conversion connect nominal ADTs and structural open

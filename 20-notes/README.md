@@ -43,6 +43,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   distinguishes compositional laws from operational guarantees and specifies
   the kinds, operations, laws, parents, and roles of Catena's seventeen-class
   starting hierarchy.
+- [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
+  — develops a layered combinator policy for functions, sums, products, ADTs,
+  categorical classes, domain libraries, and compiler representations, with
+  separate law and execution contracts.
 - [How Hindley–Milner Type Inference Works](hindley-milner-type-inference.md) —
   explains Algorithm W and principal types independently of any existing
   Catena specification or implementation.

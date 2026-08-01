@@ -44,6 +44,10 @@ to `20-notes`.
 - [What Should a Greenfield Catena Type System Guarantee?](what-should-a-greenfield-catena-type-system-guarantee.md)
   — investigates the formal contract and annotation boundaries for an
   inference-first language designed without inherited Catena constraints.
+- [Which Combinators Should Catena Provide and Derive?](which-combinators-should-catena-provide-and-derive.md)
+  — tests a minimal law-bearing core, class and datatype derivation, strict
+  execution contracts, focused domain libraries, naming, and compiler
+  representations.
 
 ## Maintaining this index
 

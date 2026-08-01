@@ -76,3 +76,6 @@ safety, and instance coherence are outside its scope.
 - [Algebraic Effects and Handlers](../20-notes/algebraic-effects-and-handlers.md)
 - [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
 - [Category Theory for Programming map](../10-maps/category-theory-for-programming.md)
+- [Combinators for Algebraic Data and Categorical Programming](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md)
+- [Which Combinators Should Catena Provide and Derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md)
+- [Combinators research map](../10-maps/combinators-for-algebraic-data-and-categorical-programming.md)
