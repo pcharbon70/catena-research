@@ -14,6 +14,9 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [How should Catena expose mathematical structure without mathematical jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
+  — tests behavior-first capability names, operation selection, transfer,
+  diagnostics, and semantic fidelity before the learning vocabulary is fixed.
 - [Which combinators should Catena provide and derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md)
   — tests a layered vocabulary of universal, class-derived, datatype-derived,
   domain, and compiler combinators against laws, effects, cost, coherence, and
@@ -34,6 +37,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Approachable Catena Language Design](approachable-catena-language-design.md)
+  — routes through the public vocabulary proposal, its evidence and validation
+  plan, diagnostic design, and the formal semantic audit.
 - [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
   — routes through function and data glue, ADT elimination, the seventeen
   classes, dependency structure, domain libraries, and compiler IRs.
@@ -54,6 +60,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [An Approachable Vocabulary for Catena](../20-notes/approachable-language-vocabulary.md)
+  — separates behavior-first code and documentation terms from an exact
+  internal semantic ledger, and makes guide publication contingent on
+  comprehension and repair evidence.
 - [Combinators for Algebraic Data and Categorical Programming](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md)
   — proposes a small lawful core, one class-derived library, conditional ADT
   derivation, explicit operational contracts, and separately staged domain
@@ -79,6 +89,10 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
+- The public vocabulary still needs prediction, operation-selection,
+  cross-type transfer, diagnostic-repair, name-collision, and semantic-fidelity
+  testing before it should become a full guide set. Follow the
+  [vocabulary inquiry](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
 - The combinator design still needs exact pure/effectful signatures, an
   operational-contract matrix, reference derived libraries, conditional ADT
   generation, a strict early-termination protocol, domain prototypes, and

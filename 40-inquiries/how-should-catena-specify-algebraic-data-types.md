@@ -211,3 +211,5 @@ Open. Resolve the ordinary-ADT portion only when the archive contains:
 Views, GADTs, stable layout, and codata should close only through their own
 follow-on decision records. The evidence routes are collected in the
 [Algebraic Data Types map](../10-maps/algebraic-data-types.md).
+User-facing data terminology and failed-derivation explanations are tested by
+the [vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

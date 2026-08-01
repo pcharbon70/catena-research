@@ -112,8 +112,12 @@ implementation, or test suite supplies requirements or evidence.
   type features, and foreign boundary?
 - What prototype corpus will test whether public signatures and higher-rank
   annotations appear at acceptable locations?
+- Can default diagnostics explain type shape, requirements, and failed
+  derivation without requiring kind, variance, or evidence terminology?
 
 Keep conclusions in the [greenfield synthesis](../20-notes/catena-greenfield-type-system.md)
 and active work in the [guarantee inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md),
 [algebraic-data-type inquiry](../40-inquiries/how-should-catena-specify-algebraic-data-types.md),
 and [algebraic-effect inquiry](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).
+The corresponding vocabulary and repair tests are tracked in
+[How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

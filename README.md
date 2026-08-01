@@ -1,9 +1,37 @@
-# Catena Research Archive
+# Catena
+
+> A category theory-inspired functional programming language for the BEAM VM
+
+## Etymology
+
+**Catena** (Latin): literally "chain" or "series of connected links."
+
+Figuratively, a catena represents an unbroken sequence of related elements,
+each linked to form a coherent whole. In logic and mathematics, it describes a
+chain of reasoning where each step follows necessarily from the last. This
+reflects the language's emphasis on composition—where functions, types, and
+effects are chained together through category-theoretic principles to build
+reliable, fault-tolerant systems.
+
+## Overview
+
+Catena is a research project exploring the design of a programming language
+that unifies category theory's mathematical rigor with the BEAM VM's legendary
+fault tolerance and concurrency capabilities. The language aims to make
+abstract mathematical concepts practical and accessible while leveraging the
+proven strengths of Erlang's runtime.
+
+Those mathematical foundations are intended to shape Catena's guarantees and
+composition, not become prerequisite vocabulary for ordinary programmers.
+
+## Research archive
 
 This repository is a research and exploratory archive: a place for ideas to
 develop without losing their provenance, relationships, or open questions.
 
-Start at the [home map](10-maps/home.md).
+Start at the [home map](10-maps/home.md). The current language-accessibility
+work begins with
+[An Approachable Vocabulary for Catena](20-notes/approachable-language-vocabulary.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).

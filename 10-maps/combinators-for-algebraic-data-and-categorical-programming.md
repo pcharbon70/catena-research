@@ -159,6 +159,10 @@ and combinator-based compiler representations.
   algebraic handlers and effect rows?
 - Does a combinatory or categorical compiler IR improve optimization enough to
   pay for its translation, proof, debugging, and diagnostic costs?
+- Can programmers reliably choose `map`, `map2`, `and_then`, and `collect_map`
+  from dependency shape without first learning the formal class names?
 
 Track experiments and resolution criteria in
 [Which Combinators Should Catena Provide and Derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).
+Vocabulary prediction and transfer are tracked in
+[How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

@@ -177,8 +177,12 @@ computational data while native handlers provide direct language effects.
   strict, recursive, effectful semantics?
 - Which operations belong in minimal class dictionaries, which are derived
   once, and which require datatype- or domain-specific operational contracts?
+- Which formal structures need distinct public traits, and which behavior-first
+  names let programmers select them without learning the formal hierarchy?
 
 Track the experiments and decision criteria in
 [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md).
 The focused API and execution questions are tracked in
 [Which Combinators Should Catena Provide and Derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).
+The user-facing names and learning sequence are tested separately in
+[How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

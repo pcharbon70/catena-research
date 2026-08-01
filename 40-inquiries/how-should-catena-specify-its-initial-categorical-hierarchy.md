@@ -241,4 +241,7 @@ evidence elaboration, representative instances, derivation rules, and measured
 inference and diagnostic results. Promote the resulting language and library
 contract into the
 [category-theory synthesis](../20-notes/category-theory-for-programming.md)
-and retain unresolved implementation experiments here.
+and retain unresolved implementation experiments here. Public names and the
+question of whether every formal structure needs a beginner-facing trait are
+tested by the
+[vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

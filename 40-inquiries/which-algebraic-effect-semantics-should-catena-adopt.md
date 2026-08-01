@@ -239,3 +239,7 @@ Do not preserve the surface feature by weakening its guarantees silently.
 
 The curated evidence route is the
 [Algebraic Effects and Handlers map](../10-maps/algebraic-effects-and-handlers.md).
+Whether programmers can use that model through `effect`, `uses`, `handle`, and
+`resume` without confusing it with domain failure or process termination is
+tested by the
+[vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
