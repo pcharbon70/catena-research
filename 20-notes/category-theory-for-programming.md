@@ -54,10 +54,16 @@ verification vocabulary, not a surface-language theme. The initial language
 should make composition easy; provide products, sums, functions, algebraic
 data, higher-kinded parameters, and coherent traits; derive common structural
 operations from datatypes; and expose laws as documented and testable
-contracts. It should **not** grant compiler optimizations merely because an
-instance is named `Functor` or `Monad`, nor add arrows, comonads, profunctor
-optics, recursion-scheme syntax, or categorical compilation before concrete
-libraries prove the need.
+contracts. Its standard library should begin with the complete seventeen-class
+hierarchy developed below: `Setoid`, `Ord`, `Semigroup`, `Monoid`, `Foldable`,
+`Functor`, `Bifunctor`, `Apply`, `Applicative`, `Traversable`, `Chain`, `Monad`,
+`Semigroupoid`, `Category`, `Arrow`, `Extend`, and `Comonad`.
+
+Starting with the complete vocabulary does not turn class names into proofs.
+Catena should **not** grant compiler optimizations merely because an instance
+is named `Functor` or `Monad`, nor add profunctor-optic syntax, generalized
+recursion-scheme syntax, or categorical compilation before their separate
+requirements are demonstrated.
 
 The practical rule is:
 
@@ -85,11 +91,11 @@ papers establish correspondences and laws under stated assumptions. Example-
 driven papers establish expressibility and architectural leverage. Neither
 kind, by itself, establishes usability or runtime performance.
 
-A categorical abstraction earns a place in Catena only when all of the
-following can be supplied:
+A class in the agreed initial hierarchy becomes implementable only when all of
+the following can be supplied:
 
-- **Concrete problem:** at least two credible libraries need the same
-  composition pattern.
+- **Concrete role:** representative datatypes and functions demonstrate why
+  the weaker class is independently useful.
 - **Minimal interface:** each operation is necessary for those examples.
 - **Named laws:** equations are stated with evaluation and effect assumptions.
 - **Evidence boundary:** the language says whether laws are proved, derived,
@@ -103,8 +109,9 @@ following can be supplied:
 - **Measured benefit:** genericity, analyzability, optimization, or API
   composition is demonstrated against a simpler design.
 
-This standard intentionally rejects “it is a well-known category” as a
-language-design argument.
+The class membership is a design commitment. This standard determines whether
+its semantics and implementation are ready, and intentionally rejects “it is a
+well-known category” as a substitute for that work.
 
 ## The minimum categorical model
 
@@ -281,6 +288,539 @@ Catena should describe evidence for a law using explicit levels:
 An initial Catena should implement the first four levels. It may later add a
 proof layer, but ordinary traits should not pretend to be proofs.
 
+## The initial type-class hierarchy
+
+Catena should ship the following seventeen type classes from the beginning.
+Here *type class* names the user-facing algebraic interface; the eventual
+surface keyword may still be `trait`. The classes are grouped by kind and
+operation rather than presented as one misleading linear ladder.
+
+```text
+values
+  Setoid -> Ord
+  Semigroup -> Monoid
+
+unary constructors, F : Type -> Type
+  Functor -> Apply -> Applicative --\
+                   -> Chain ------+-> Monad
+  Functor -> Extend -> Comonad
+  Functor --\
+             +-> Traversable
+  Foldable --/
+
+binary constructors, P : Type -> Type -> Type
+  Semigroupoid -> Category -> Arrow
+  Bifunctor
+```
+
+`Bifunctor` is conceptually the two-argument counterpart of `Functor`, and
+fixing either argument of a bifunctor yields a unary functor. It should not
+literally inherit one ambiguous `Functor` dictionary: `P : Type -> Type -> Type`
+and `F : Type -> Type` have different kinds, and the compiler would not know
+which argument a unary `map` targets. Catena should derive explicit `map_first`
+and `map_second` operations from `bimap`, or expose partially applied
+constructor views when the type language can express them.
+
+The hierarchy deliberately preserves unitless structures. `Apply` has
+contextual application without `pure`; `Chain` has value-dependent sequencing
+without `pure`; `Extend` has context-dependent extension without `extract`;
+`Semigroup` and `Semigroupoid` have associative composition without identities.
+These are not incomplete mistakes. They let generic code request no more
+power than it uses and admit types for which no lawful identity or injection
+exists.
+
+[The algebraic interoperability specification](../30-sources/fantasy-land-algebraic-specification.md)
+provides the operation-and-law vocabulary for most of the weak/strong splits;
+[Hughes](../30-sources/hughes-2000-generalising-monads-arrows.md) supplies the
+arrow interface and laws.
+[Wadler and Blott](../30-sources/wadler-blott-1989-ad-hoc-polymorphism.md)
+provide the type-class mechanism; Catena's coherence restrictions continue to
+come from the qualified-type work already adopted by the type-system design.
+[Rivas and Jaskelioff](../30-sources/rivas-jaskelioff-2017-notions-computation-monoids.md)
+show why value monoids, applicatives, monads, and arrows can share algebraic
+patterns without becoming the same interface.
+
+### Summary matrix
+
+| Class | Parameter kind | Parent classes | Minimal new operation | Defining obligation |
+| --- | --- | --- | --- | --- |
+| `Setoid` | `Type` | None | `equivalent` | Reflexive, symmetric, transitive |
+| `Ord` | `Type` | `Setoid` | `compare` or `less_or_equal` | Total, transitive order coherent with equivalence |
+| `Semigroup` | `Type` | None | `combine` | Associativity |
+| `Monoid` | `Type` | `Semigroup` | `empty` | Left and right identity |
+| `Foldable` | `Type -> Type` | None | `fold_map` | Structural order/cardinality and monoid coherence |
+| `Functor` | `Type -> Type` | None | `map` | Identity and composition |
+| `Bifunctor` | `Type -> Type -> Type` | Kind-aware analogue of `Functor` | `bimap` | Identity and composition in both positions |
+| `Apply` | `Type -> Type` | `Functor` | `apply` | Associative contextual application |
+| `Applicative` | `Type -> Type` | `Apply` | `pure` | Identity, homomorphism, interchange, parent compatibility |
+| `Traversable` | `Type -> Type` | `Functor`, `Foldable` | `traverse` | Naturality, identity, composition, structural visitation |
+| `Chain` | `Type -> Type` | `Apply` | `chain` | Associative value-dependent sequencing and `apply` compatibility |
+| `Monad` | `Type -> Type` | `Applicative`, `Chain` | No additional primitive | Left and right sequencing identity and parent compatibility |
+| `Semigroupoid` | `Type -> Type -> Type` | None | `compose` | Associativity of typed composition |
+| `Category` | `Type -> Type -> Type` | `Semigroupoid` | `identity` | Left and right identity |
+| `Arrow` | `Type -> Type -> Type` | `Category` | `lift`, `first` | Preserve pure composition and interact coherently with products |
+| `Extend` | `Type -> Type` | `Functor` | `extend` | Associativity of context-dependent extension |
+| `Comonad` | `Type -> Type` | `Extend` | `extract` | Left and right extension identity and parent compatibility |
+
+The matrix gives minimal *new* operations, not the complete usable API.
+Derived conveniences should be standardized once, outside each instance, so
+that law-equivalent implementations do not fragment calling conventions.
+
+### `Setoid`: programmable equivalence
+
+```text
+trait Setoid A {
+  equivalent : A -> A -> Bool
+}
+```
+
+The required laws are:
+
+```text
+equivalent(x, x)
+equivalent(x, y) == equivalent(y, x)
+equivalent(x, y) && equivalent(y, z) implies equivalent(x, z)
+```
+
+A setoid is a type equipped with an equivalence relation. The relation need
+not be representation identity: case-insensitive names, normalized paths, and
+values modulo a unit conversion may have useful domain equivalences.
+
+Catena must not silently make `Setoid` the semantics of pattern matching,
+hashing, or compiler type equality. Those operations need separate contracts.
+If a hash table accepts `Setoid`, it must also require a hash function coherent
+with `equivalent`; equal values receiving unrelated hashes would break lookup.
+
+### `Ord`: total order compatible with equivalence
+
+```text
+trait Ord A : Setoid A {
+  compare : A -> A -> Ordering
+}
+```
+
+`Ordering` has `Less`, `Equal`, and `Greater`. A lawful instance is total and
+transitive, and:
+
+```text
+compare(x, y) == Equal  iff  equivalent(x, y)
+```
+
+Antisymmetry is stated through the parent equivalence, not representation
+identity. `Ord` supports sorting, ordered maps, ranges, minimum/maximum, and
+lexicographic derivation. Partial orders—dependency relations or subset
+inclusion—must use a different future class; forcing them into `Ord` would
+make sorting algorithms unsound.
+
+Derived comparison predicates should call `compare` so they cannot disagree.
+Floating-point exceptional values require an explicit policy or a wrapper
+type rather than a dishonest total-order instance.
+
+### `Semigroup`: associative combination
+
+```text
+trait Semigroup A {
+  combine : A -> A -> A
+}
+```
+
+Its single law is:
+
+```text
+combine(combine(x, y), z) == combine(x, combine(y, z))
+```
+
+Examples include concatenating nonempty sequences, accumulating validation
+errors, merging logs in a fixed order, composing endomorphisms, and selecting
+the first or last value through explicit wrappers. Associativity permits
+regrouping and tree reduction; it does not permit reordering. Parallel
+reduction additionally requires commutativity or a scheduler that preserves
+the documented order.
+
+### `Monoid`: a semigroup with an identity
+
+```text
+trait Monoid A : Semigroup A {
+  empty : A
+}
+```
+
+The added laws are:
+
+```text
+combine(empty, x) == x
+combine(x, empty) == x
+```
+
+Lists under concatenation, numbers under addition, booleans under conjunction
+or disjunction, maps under a specified merge, and endomorphisms under
+composition are common examples. The operation is part of the instance:
+numbers do not have one privileged monoid, so additive and multiplicative
+wrappers or explicit dictionaries avoid incoherent global choices.
+
+Monoids power generic folds, builders, summaries, writer-style accumulation,
+and balanced reduction. [Rivas and Jaskelioff](../30-sources/rivas-jaskelioff-2017-notions-computation-monoids.md)
+also show that the same composition-plus-unit pattern appears one level higher
+in applicatives, monads, and arrows.
+
+### `Foldable`: consume every structural element
+
+```text
+trait Foldable T {
+  fold_map : Monoid M => (A -> M) -> T A -> M
+}
+```
+
+`fold_map` exposes the most algebraic minimal interface: transform each
+element into a monoid and combine the results in the structure's documented
+order. `fold_left`, `fold_right`, `to_list`, `length`, `any`, and `all` can be
+derived, subject to strictness and short-circuiting contracts.
+
+A `Foldable` instance must state which elements occur, in what order, and with
+what multiplicity. Associativity makes parenthesization irrelevant, but a
+noncommutative monoid still observes order. A search tree may fold in-order;
+a hash table cannot promise a stable order unless its representation does.
+
+`Foldable` does not imply `Functor`: a structure may expose elements for
+consumption without supporting a shape-preserving replacement of their type.
+It also does not imply safe early termination in a strict language; that is an
+operational property of the derived fold.
+
+### `Functor`: map while preserving shape
+
+```text
+trait Functor F {
+  map : (A -> B) -> F A -> F B
+}
+```
+
+The identity and composition laws are:
+
+```text
+map(identity, x) == x
+map(g compose f, x) == map(g, map(f, x))
+```
+
+Lists, optional values, trees, one side of `Result E`, environments, and many
+syntax trees are examples. The laws say mapping changes the varying values
+without adding, deleting, duplicating, or reordering structure in an
+observable way.
+
+Parametricity often supports these equations, but a user-defined dictionary
+can still violate them. `Functor` is therefore the first major test of
+Catena's distinction between a method type and law evidence.
+
+### `Bifunctor`: map two covariant positions
+
+```text
+trait Bifunctor P {
+  bimap : (A -> C) -> (B -> D) -> P A B -> P C D
+}
+```
+
+The laws are identity and componentwise composition:
+
+```text
+bimap(identity, identity, x) == x
+bimap(f2 compose f1, g2 compose g1, x)
+  == bimap(f2, g2, bimap(f1, g1, x))
+```
+
+Pairs, `Result Error Value`, validation results, and syntax nodes with two
+varying parameter roles are typical instances. `map_first` and `map_second`
+are derived by using identity for the untouched side.
+
+Both arguments must be covariant. Function input is contravariant, so ordinary
+function arrows are profunctors rather than bifunctors. Catena should use kind
+checking to reject accidental attempts to treat every two-parameter type as a
+`Bifunctor`.
+
+### `Apply`: combine contexts without inventing one
+
+```text
+trait Apply F : Functor F {
+  apply : F (A -> B) -> F A -> F B
+}
+```
+
+`Apply` combines an effectful/contextual function with an effectful/contextual
+argument, but provides no `pure : A -> F A`. It is equivalently a strong
+semigroupal functor: from two inhabited contexts it can construct a context of
+pairs, coherently and associatively, without promising a context for an
+arbitrary standalone value.
+
+The key law is associative contextual composition. For appropriately typed
+`u`, `v`, and `w`:
+
+```text
+apply(apply(map(compose, u), v), w)
+  == apply(u, apply(v, w))
+```
+
+Equivalently, in product form, with `product` derived from `map` and `apply`:
+
+```text
+map(associate, product(product(x, y), z))
+  == product(x, product(y, z))
+```
+
+This class matters both for genuinely unitless structures and for generic
+functions that need combination but not injection. It preserves a more honest
+constraint than demanding `Applicative` everywhere. It still needs an
+operational order: `apply` does not imply parallel or commutative effects.
+
+### `Applicative`: `Apply` with pure injection
+
+```text
+trait Applicative F : Apply F {
+  pure : A -> F A
+}
+```
+
+Adding `pure` supplies the unit missing from `Apply`. Its laws make pure values
+the left and right unit for contextual product and, in application form,
+require identity, homomorphism, and interchange. In particular:
+
+```text
+apply(pure(identity), v) == v
+apply(pure(f), pure(x)) == pure(f(x))
+apply(u, pure(y)) == apply(pure(f -> f(y)), u)
+```
+
+Applicative programs have a fixed effectful shape: earlier values may
+contribute to the final pure function, but cannot select which later
+computation exists. This supports independent validation, static query or
+parser analysis, and generic traversal. The deeper evidence is in
+[McBride and Paterson](../30-sources/mcbride-paterson-2008-applicative-programming-effects.md).
+
+The parent dictionary must be compatible: its `map` and `apply` must agree
+with the operations derivable from `pure` and contextual application.
+
+### `Traversable`: map and accumulate in one structural pass
+
+```text
+trait Traversable T : Functor T, Foldable T {
+  traverse : Applicative F => (A -> F B) -> T A -> F (T B)
+}
+```
+
+The laws are:
+
+- **naturality:** changing the applicative representation before or after a
+  traversal agrees;
+- **identity:** traversing through the identity applicative is ordinary
+  mapping; and
+- **composition:** traversing through composed applicatives agrees with two
+  coherent traversals.
+
+[Gibbons and Oliveira](../30-sources/gibbons-oliveira-2009-essence-iterator-pattern.md)
+show that traversal combines the mapping and accumulation aspects of an
+iterator. They also expose an important limit: the familiar three laws alone
+do not transparently rule out every definition that duplicates visits.
+Catena-derived traversals should therefore guarantee by construction that
+each structural position is visited exactly once, in a documented order.
+
+`sequence : T (F A) -> F (T A)` and effectful mapping are derived. The class
+does not authorize concurrent traversal; a parallel applicative or separate
+effect evidence must do that.
+
+### `Chain`: associative value-dependent sequencing without a unit
+
+```text
+trait Chain M : Apply M {
+  chain : M A -> (A -> M B) -> M B
+}
+```
+
+The associativity law is:
+
+```text
+chain(chain(m, f), g)
+  == chain(m, x -> chain(f(x), g))
+```
+
+Unlike `Apply`, `Chain` lets an earlier value choose the entire later
+computation. Unlike `Monad`, it does not promise `pure`. This unitless form is
+also useful as the weakest constraint for generic sequencing functions, even
+when their concrete instances happen to be full monads.
+
+Because `Chain` extends `Apply`, the supplied `apply` must equal the definition
+derived by chaining the contextual function and mapping it over the contextual
+argument. This compatibility law prevents two contradictory notions of
+sequencing inside one instance.
+
+### `Monad`: applicative injection plus lawful chaining
+
+```text
+trait Monad M : Applicative M, Chain M {
+  // no additional primitive
+}
+```
+
+The added identity laws are:
+
+```text
+chain(pure(x), f) == f(x)
+chain(m, pure) == m
+```
+
+Associativity comes from `Chain`; fixed-shape application and injection come
+from `Applicative`. All inherited `map` and `apply` operations must agree with
+their definitions from `chain` and `pure`.
+
+Monads model dynamic data-dependent computation. They remain useful for
+explicit plans, parsers, workflows, and embedded languages even when Catena's
+native effects use direct operations and handlers. [Moggi](../30-sources/moggi-1991-notions-computation-monads.md)
+supplies the semantic separation of values and computations, while
+[Wadler](../30-sources/wadler-1995-monads-functional-programming.md) supplies
+the practical library pattern.
+
+### `Semigroupoid`: associative typed composition
+
+```text
+trait Semigroupoid P {
+  compose : P A B -> P B C -> P A C
+}
+```
+
+Composition is associative whenever the intermediate types align:
+
+```text
+compose(compose(f, g), h) == compose(f, compose(g, h))
+```
+
+The interface describes typed pipelines for which composition exists but a
+generic identity might not. Nonempty transformations, version migrations,
+restricted parsers, and subcategories whose identity representation is absent
+can use the weaker constraint.
+
+This is the arrow-shaped analogue of `Semigroup`: both provide associative
+composition without a unit, but a semigroupoid's inputs and outputs may have
+different types.
+
+### `Category`: a semigroupoid with typed identities
+
+```text
+trait Category P : Semigroupoid P {
+  identity : P A A
+}
+```
+
+The identity laws are:
+
+```text
+compose(identity, f) == f
+compose(f, identity) == f
+```
+
+Pure functions form the motivating instance. Kleisli arrows of a monad,
+isomorphisms, relations, transformations between schemas, and several compiler
+representations may form other categories when their composition and identity
+obey the laws.
+
+`Category` belongs in the initial standard hierarchy, but function composition
+should remain direct syntax or a normal function. Programmers should need the
+class only when abstracting over a non-function arrow type.
+
+### `Arrow`: a category supporting pure functions and products
+
+```text
+trait Arrow P : Category P {
+  lift  : (A -> B) -> P A B
+  first : P A B -> P (A * C) (B * C)
+}
+```
+
+`lift` must preserve identity and composition. `first` must preserve
+composition and interact coherently with product projections, reassociation,
+and untouched values. Representative equations, using the `compose` order
+defined above, are:
+
+```text
+lift(identity) == identity
+compose(lift(f), lift(g)) == lift(g compose f)
+first(identity) == identity
+first(compose(f, g)) == compose(first(f), first(g))
+compose(first(f), lift(first_projection))
+  == compose(lift(first_projection), f)
+```
+
+The remaining product naturality and reassociation equations prevent `first`
+from inspecting or changing the untouched component. These are the standard
+arrow laws developed by
+[Hughes](../30-sources/hughes-2000-generalising-monads-arrows.md).
+
+Arrows support computations whose input and output are explicit but whose
+representation is not an ordinary host-language function. Static parsers,
+circuits, dataflow graphs, and analyzable reactive networks are the motivating
+cases. Including the class initially supplies the vocabulary; specialized
+arrow notation should still wait for evidence that ordinary combinators are
+unusable.
+
+### `Extend`: context-dependent mapping without extraction
+
+```text
+trait Extend W : Functor W {
+  extend : (W A -> B) -> W A -> W B
+}
+```
+
+`extend` evaluates a context-dependent observation at every position while
+preserving the outer contextual shape. Its associativity law is:
+
+```text
+extend(f, extend(g, w))
+  == extend(x -> f(extend(g, x)), w)
+```
+
+The derived `duplicate = extend(identity)` exposes the context of contexts.
+There is no promise that a bare `A` can be extracted. As with `Chain`, this
+unitless class is useful both for genuinely weaker structures and for generic
+functions that do not need the stronger operation.
+
+### `Comonad`: extend with a distinguished local value
+
+```text
+trait Comonad W : Extend W {
+  extract : W A -> A
+}
+```
+
+The identity laws are:
+
+```text
+extend(extract, w) == w
+extract(extend(f, w)) == f(w)
+```
+
+The inherited `map` must agree with:
+
+```text
+map(f, w) == extend(f compose extract, w)
+```
+
+Zippers, nonempty focused structures, annotated syntax, cellular
+neighborhoods, and history-aware dataflow are representative uses.
+[Uustalu and Vene](../30-sources/uustalu-vene-2005-essence-dataflow-programming.md)
+show how coKleisli composition structures stream/dataflow computation and why
+the chosen context—not the class name—determines causality.
+
+### The hierarchy is laws plus compatibility
+
+Superclass inclusion alone is insufficient. Whenever a stronger class can
+derive a parent operation, Catena must require the supplied parent dictionary
+to agree with that derivation:
+
+- `Applicative.map` agrees with `apply(pure(f), x)`;
+- `Chain.apply` agrees with sequencing a contextual function and mapping it;
+- `Monad` uses one `map` and `apply`, not competing applicative and chain
+  interpretations;
+- `Comonad.map` agrees with extension plus extraction; and
+- `Traversable` agrees with both its functorial mapping and fold order.
+
+These coherence equations are part of law testing and future proof evidence.
+They must not be inferred merely because the constraint graph has an edge.
+
 ## Yoneda and adjunctions as design tools
 
 ### Yoneda asks how a value behaves under every observation
@@ -411,16 +951,21 @@ not a ladder of sophistication.
 | Structure | Core operation shape | Information retained | Typical use |
 | --- | --- | --- | --- |
 | Functor | map a pure function | One existing shape | Transform values in context |
+| Apply | combine existing contextual values | Associative combination without injection | Nonempty validation and unitless combination |
 | Applicative | combine fixed effectful arguments | Static dependency graph and order | Validation, independent queries, traversal |
+| Chain | choose the next context from a value | Dynamic dependency without injection | Nonempty dependent workflows |
 | Monad | choose the next computation from a value | Dynamic value-dependent control | Parsers, explicit effects, workflows |
 | Arrow | compose abstract input/output computations | Static structure unavailable through host functions | Circuits, analyzable parsers, dataflow |
+| Extend | recompute from surrounding context | Context dependence without extraction | Nonempty neighborhoods and histories |
 | Comonad | extend context-dependent observation | Neighborhood or history context | Streams, cellular/dataflow computation |
 
-These rows are not mutually exclusive. A monad normally supplies an
-applicative; a suitable arrow yields applicatives by fixing its input; Kleisli
-arrows arise from monads; and ordinary functions are arrows. The design
-question is which interface a function *requires*, because that determines
-what generic callers and optimizers are allowed to know.
+These rows are landmarks within the complete hierarchy, not mutually
+exclusive alternatives. `Applicative`, `Monad`, and `Comonad` add units to
+`Apply`, `Chain`, and `Extend`; a suitable arrow yields applicatives by fixing
+its input; Kleisli arrows arise from monads; and ordinary functions are arrows.
+The design question is which interface a function *requires*, because that
+determines what generic callers are allowed to assume. Optimizers need
+separate trusted law evidence before using any such assumption as a rewrite.
 
 ### Applicative: fixed shape is valuable information
 
@@ -695,39 +1240,39 @@ The categorical foundation strengthens choices already made in
 - Maintain an explicit evaluation and cost model alongside extensional
   typing.
 
-No built-in `Category` syntax is needed. Ordinary function composition already
-expresses the common case. A library trait for binary constructors can be
-added once arrows, parsers, or categorical compiler targets provide real
-clients.
+No built-in `Category` or `Arrow` syntax is needed. Ordinary function
+composition remains the direct common case. The initial `Semigroupoid`,
+`Category`, and `Arrow` classes let libraries abstract over other binary
+constructors without making categorical notation part of everyday Catena.
 
-### Standard abstraction layer
+### Initial standard hierarchy
 
-The first categorical library should be small:
+The standard abstraction layer should ship all seventeen classes specified in
+[the initial hierarchy](#the-initial-type-class-hierarchy):
 
-```text
-Functor F
-  map : (A -> B) -> F A -> F B
+- value relations and aggregation: `Setoid`, `Ord`, `Semigroup`, and `Monoid`;
+- unary structure and computation: `Foldable`, `Functor`, `Apply`,
+  `Applicative`, `Traversable`, `Chain`, `Monad`, `Extend`, and `Comonad`;
+- binary mapping: `Bifunctor`; and
+- typed composition: `Semigroupoid`, `Category`, and `Arrow`.
 
-Applicative F : Functor F
-  pure  : A -> F A
-  apply : F (A -> B) -> F A -> F B
+They should be ordinary library traits over the language's supported kinds,
+not seventeen new keywords. Packages may import focused branches, but every
+program should use the same canonical definitions and law names so instance
+evidence composes across libraries.
 
-Monad M : Applicative M
-  bind : M A -> (A -> M B) -> M B
+The weak/strong boundaries must stay visible: code that needs only `Apply`,
+`Chain`, or `Extend` should not acquire `pure` or `extract`, and code requiring
+only `Functor` should not demand `Monad`. Each class should provide one
+canonical minimal operation set plus standardized derived functions. Every
+effect-combining class must specify evaluation order. A separate `Parallel`
+wrapper or future trait can express commutative or concurrent combination
+rather than overloading one instance with incompatible behavior.
 
-Traversable T : Functor T
-  traverse : Applicative F => (A -> F B) -> T A -> F (T B)
-```
-
-Names may change after syntax studies, but the substructure should remain
-visible: code requiring only `Functor` or `Applicative` must not demand
-`Monad`. `Applicative` should specify effect order. A separate `Parallel`
-wrapper or trait can express commutative/concurrent combination rather than
-overloading the same instance with incompatible behavior.
-
-`Contravariant`, `Bifunctor`, `Profunctor`, `Category`, `Arrow`, and `Comonad`
-belong in focused libraries after examples justify them. They should not all
-ship merely to complete a taxonomy.
+The complete initial hierarchy is still a boundary, not an invitation to
+import every named categorical structure. `Contravariant`, `Profunctor`,
+specialized monoidal variants, generalized recursion schemes, and categorical
+compiler interfaces remain evidence-driven additions.
 
 ### Datatype derivation
 
@@ -867,11 +1412,14 @@ semantic models, and calculational laws. The theory can reveal that two APIs
 share a composition structure and can support proofs or generic algorithms
 that examples alone would not justify.
 
-### “Every categorical abstraction belongs in the standard library”
+### “A broad initial hierarchy makes every categorical abstraction core”
 
-A mathematically coherent hierarchy is not automatically a usable library.
-Each abstraction adds vocabulary, constraints, inference paths, laws,
-documentation, and instance choices. Unused generality is not free.
+Shipping the selected seventeen classes does not make every categorical
+construction a keyword, optimizer axiom, or standard dependency. Even a
+mathematically coherent hierarchy has costs in vocabulary, inference paths,
+laws, documentation, and instance choices. The initial set needs corpus and
+solver evidence; structures outside it still need a demonstrated programming
+role.
 
 ### “Types enforce the laws”
 
@@ -900,6 +1448,14 @@ The proposal should be revised if any of these observations hold:
 
 - Higher-kinded trait inference makes common `map` and `traverse` calls need
   annotations that a direct per-datatype API avoids.
+- The complete seventeen-class graph causes solver search, instance lookup, or
+  diagnostics to degrade materially compared with its focused branches.
+- `Apply`, `Chain`, `Extend`, or `Semigroupoid` have no representative lawful
+  instances or APIs that benefit from their missing unit operation.
+- Parent compatibility cannot prevent a nominal `Monad`, `Applicative`, or
+  `Comonad` from exposing mutually inconsistent inherited operations.
+- Kind-aware `Bifunctor` and arrow constraints require type-level machinery
+  that breaks the intended inference and termination boundary.
 - Global coherence prevents important domain-specific interpretations that
   explicit dictionary arguments cannot express cleanly.
 - Law property suites produce mostly vacuous tests or cannot generate useful
@@ -928,9 +1484,10 @@ alternate interpretation such as differentiation.
    follow.
 2. **Specify law evidence.** Separate promised, tested, derived, trusted, and
    proved laws in the elaborated core and optimizer.
-3. **Prototype the minimal hierarchy.** Measure inference, diagnostics, and
-   reuse for `Functor`, `Applicative`, `Monad`, and `Traversable` without
-   importing a mature language's entire class ecosystem.
+3. **Prototype the complete initial hierarchy.** Measure kind checking,
+   inference, evidence elaboration, parent compatibility, diagnostics, and
+   reuse across all seventeen classes, including the value, unary-constructor,
+   and binary-constructor branches.
 4. **Define datatype derivability.** Formalize positivity, variance,
    nonuniform recursion, traversal order, and generated operation semantics.
 5. **Relate laws to effects.** Determine when applicative nodes may commute,
@@ -946,7 +1503,7 @@ alternate interpretation such as differentiation.
    order, strictness, allocation, and stack-safety statements.
 
 The active workbench is
-[Which Categorical Abstractions Should Catena Expose?](../40-inquiries/which-categorical-abstractions-should-catena-expose.md).
+[How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md).
 
 ## Evidence route
 
@@ -959,6 +1516,18 @@ The active workbench is
   — relational parametricity and representation independence.
 - [Wadler 1989](../30-sources/wadler-1989-theorems-for-free.md) — programmer-
   facing equations derived from polymorphic types.
+- [Wadler and Blott 1989](../30-sources/wadler-blott-1989-ad-hoc-polymorphism.md)
+  — type classes as a systematic account of constrained polymorphism and
+  dictionary evidence.
+
+### Class hierarchy and laws
+
+- [Fantasy Land Algebraic Specification](../30-sources/fantasy-land-algebraic-specification.md)
+  — operation signatures, parent relationships, and laws for most of the
+  selected weak and strong algebraic interfaces.
+- [Rivas and Jaskelioff 2017](../30-sources/rivas-jaskelioff-2017-notions-computation-monoids.md)
+  — a monoidal account that unifies the recurring composition-plus-unit shape
+  of monoids, applicatives, monads, and arrows without identifying them.
 
 ### Data and computation
 
@@ -971,6 +1540,9 @@ The active workbench is
 - [McBride and Paterson 2008](../30-sources/mcbride-paterson-2008-applicative-programming-effects.md)
   — fixed effectful structure, traversals, and the weakest-adequate-interface
   principle.
+- [Gibbons and Oliveira 2009](../30-sources/gibbons-oliveira-2009-essence-iterator-pattern.md)
+  — traversal as shape-preserving iteration with accumulation, including the
+  limits of the familiar traversal laws.
 - [Hughes 2000](../30-sources/hughes-2000-generalising-monads-arrows.md) —
   abstract computations that retain static structure beyond monadic bind.
 - [Uustalu and Vene 2005](../30-sources/uustalu-vene-2005-essence-dataflow-programming.md)

@@ -14,10 +14,10 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
-- [Which categorical abstractions should Catena expose?](../40-inquiries/which-categorical-abstractions-should-catena-expose.md)
-  — tests the minimal categorical library, parametricity and law-evidence
-  boundary, datatype derivations, optics representation, and alternate
-  compiler interpretations.
+- [How should Catena specify its initial categorical hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
+  — tests the agreed seventeen-class set through kinding, coherent evidence,
+  laws, operational contracts, datatype derivations, instances, and inference
+  diagnostics.
 - [Which algebraic-effect semantics should Catena adopt?](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests lexical capability identity, deep open handlers, affine resumptions,
   scoped operations, and backend equivalence as one coherent language design.
@@ -46,9 +46,9 @@ This is the selective entry point to the archive. See the
   lexical capabilities, deep open handlers, and affine resumptions for an
   initial Catena.
 - [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
-  — separates compositional laws from operational behavior and proposes a
-  weakest-adequate-structure policy for Catena's core, libraries, derivations,
-  and compiler experiments.
+  — separates compositional laws from operational behavior and specifies the
+  roles, kinds, operations, laws, and parent relationships of Catena's
+  seventeen initial categorical classes.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
   — proposes an inference-first language with structural rows, coherent traits,
   algebraic effects, and explicit boundaries for richer typing.
@@ -58,11 +58,11 @@ This is the selective entry point to the archive. See the
 
 ## Unsettled threads
 
-- The categorical design still needs a language-specific parametricity
-  theorem, higher-kinded inference evidence, explicit law trust levels,
-  datatype-derivation rules, and corpus results for the weakest useful
-  abstraction. Follow the
-  [categorical-abstractions inquiry](../40-inquiries/which-categorical-abstractions-should-catena-expose.md).
+- The categorical design still needs kinded declarations, parent-dictionary
+  coherence, a language-specific parametricity theorem, explicit law trust
+  levels, operational contracts, datatype-derivation rules, and corpus
+  evidence for all seventeen classes. Follow the
+  [initial-hierarchy inquiry](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md).
 - The effect design still needs an integrated calculus proving lexical
   capability scope, principal row inference, higher-order abstraction safety,
   and affine resource behavior. Follow the

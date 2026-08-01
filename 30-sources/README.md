@@ -61,6 +61,12 @@ mentions can remain as citations in the document that uses them.
 - [The Essence of Dataflow Programming](uustalu-vene-2005-essence-dataflow-programming.md)
   — uses comonads and coKleisli arrows to structure context-dependent stream
   and dataflow computation.
+- [The Essence of the Iterator Pattern](gibbons-oliveira-2009-essence-iterator-pattern.md)
+  — characterizes traversal as shape-preserving mapping with applicative
+  accumulation and examines the limits of its usual laws.
+- [Fantasy Land Algebraic Specification](fantasy-land-algebraic-specification.md)
+  — provides operation signatures, parent relationships, and laws for most of
+  the selected weak and strong algebraic interfaces.
 - [Functional Programming with Bananas, Lenses, Envelopes and Barbed Wire](meijer-et-al-1991-functional-programming-bananas.md)
   — develops folds, unfolds, hylomorphisms, and program-calculation laws from
   recursive datatype structure.
@@ -80,6 +86,9 @@ mentions can remain as citations in the document that uses them.
 - [Handlers of Algebraic Effects](plotkin-pretnar-2009-handlers-algebraic-effects.md)
   — interprets handlers as models of effect theories and handling as the
   induced homomorphism from a free computation.
+- [How to Make Ad-Hoc Polymorphism Less Ad Hoc](wadler-blott-1989-ad-hoc-polymorphism.md)
+  — introduces type classes as a systematic constrained-polymorphism
+  mechanism with evidence-passing semantics.
 - [Typing Haskell in Haskell](jones-1999-typing-haskell-in-haskell.md) — gives
   an executable specification of substitutions, kinds, schemes, classes, and
   binding-group inference.
@@ -92,6 +101,9 @@ mentions can remain as citations in the document that uses them.
 - [Monads for Functional Programming](wadler-1995-monads-functional-programming.md)
   — applies monadic sequencing to evaluator modularity, state-like array code,
   and parsing.
+- [Notions of Computation as Monoids](rivas-jaskelioff-2017-notions-computation-monoids.md)
+  — unifies monads, applicatives, and arrows as monoids in suitable monoidal
+  categories while preserving their distinctions.
 - [Notions of Computation and Monads](moggi-1991-notions-computation-monads.md)
   — separates values from computations and gives multiple effect notions a
   common categorical sequencing semantics.
