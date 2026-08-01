@@ -873,6 +873,11 @@ representations empirically.
 
 ## Algebraic data, folds, and unfolds
 
+The source-language declaration, pattern, abstraction, representation, and
+inference sides of this topic are developed separately in
+[Algebraic Data Types](algebraic-data-types.md). This section isolates the
+positive regular shapes for which categorical folds and unfolds are justified.
+
 ### A datatype exposes a shape functor
 
 A regular recursive datatype can be separated into one layer of shape and its

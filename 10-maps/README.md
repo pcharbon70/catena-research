@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Algebraic Data Types](algebraic-data-types.md) — routes through nominal
+  constructors, structural reasoning, HM inference, coverage, abstraction,
+  derivation, runtime representation, row variants, and GADTs.
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — routes
   through operation algebraicity, handler dynamics, effect typing, resumption
   safety, scoped computations, and runtime strategies.

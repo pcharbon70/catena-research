@@ -216,6 +216,12 @@ Catena should combine nominal algebraic data with structural records and
 variants. Nominal data gives domain concepts stable identities; structural rows
 make adapters and data plumbing compositional.
 
+The nominal half is developed in
+[Algebraic Data Types](algebraic-data-types.md): ordinary constructors have one
+uniform declared result, matches are exhaustive by default, constructor export
+controls matching authority, structural derivation checks positivity and
+regularity, and the source declaration leaves layout opaque.
+
 Representative types are:
 
 ```text
@@ -414,6 +420,11 @@ later admitted:
 boundary but does not require Catena to inherit Haskell's entire constraint
 language.
 
+The focused
+[algebraic-data-type inquiry](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+tracks the ordinary declaration and coverage calculus as well as the exact
+boundary where refined results become this later checked feature.
+
 ## 8. The compiler elaborates into a small typed core
 
 The surface language should desugar into a typed intermediate language where
@@ -596,6 +607,8 @@ The architecture is specific enough to guide a prototype, but several choices
 still require formal and user-level evaluation:
 
 - exact surface syntax for quantified variables, rows, effects, and handlers;
+- the declaration, constructor-visibility, match-coverage, derivation, layout,
+  and evolution contract for nominal algebraic data;
 - whether structural variants earn their complexity alongside nominal data;
 - the minimal termination check for trait instance contexts;
 - the exact integration of duplicate-label rows with lexical effect-instance
@@ -611,8 +624,10 @@ still require formal and user-level evaluation:
 
 These are tracked in
 [What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
-and the focused
-[algebraic-effect semantics inquiry](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).
+and the focused inquiries on
+[algebraic data types](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+and
+[algebraic-effect semantics](../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).
 
 ## Source trail
 
@@ -633,6 +648,18 @@ and the focused
   — record and variant rows with lacks predicates.
 - [Jones 2000](../30-sources/jones-2000-functional-dependencies.md) — explicit
   dependencies and improvement for multi-parameter classes.
+
+### Nominal algebraic data
+
+- [HOPE](../30-sources/burstall-et-al-1980-hope.md) — parametric constructor
+  declarations, recursive pattern equations, and constructor hiding.
+- [The Definition of Standard ML](../30-sources/milner-et-al-1997-definition-standard-ml.md)
+  — nominal datatype generation and uniform constructor schemes in a formal
+  HM-family semantics.
+- [Warnings for Pattern Matching](../30-sources/maranget-2007-warnings-pattern-matching.md)
+  — usefulness-based exhaustiveness, redundancy, and witnesses.
+- [Simple Unification-Based Type Inference for GADTs](../30-sources/peyton-jones-et-al-2006-gadt-inference.md)
+  — the annotation and local-equality boundary beyond ordinary ADTs.
 
 ### Effects and advanced checking
 

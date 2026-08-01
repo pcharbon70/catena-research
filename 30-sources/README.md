@@ -42,6 +42,9 @@ mentions can remain as citations in the document that uses them.
 - [Binders by Day, Labels by Night](biernacki-et-al-2020-effect-instances-lexically-scoped-handlers.md)
   — models multiple uses of one effect signature as lexically scoped instance
   names tracked by the type-and-effect system.
+- [HOPE: An Experimental Applicative Language](burstall-et-al-1980-hope.md) —
+  integrates declared algebraic constructors, parametric types, pattern
+  equations, higher-order recursion patterns, and constructor hiding.
 - [Principal Type-Schemes for Functional Programs](damas-and-milner-1982-principal-type-schemes.md)
   — proves Algorithm W's completeness and principal-type result for the
   `let`-polymorphic core.
@@ -112,6 +115,9 @@ mentions can remain as citations in the document that uses them.
 - [OutsideIn(X): Modular Type Inference with Local Assumptions](vytiniotis-et-al-2011-outsidein.md)
   — separates generation from solving and studies principality under scoped
   local assumptions.
+- [Proving Properties of Programs by Structural Induction](burstall-1969-structural-induction.md)
+  — derives a program-proof principle from finite constructor-built data and
+  its well-founded constituent relation.
 - [Profunctor Optics: Modular Data Accessors](pickering-et-al-2017-profunctor-optics.md)
   — represents lenses, prisms, and traversals as composable profunctor
   transformations and proves equivalence to concrete accessors.
@@ -121,6 +127,9 @@ mentions can remain as citations in the document that uses them.
 - [Shallow Effect Handlers](hillerstrom-lindley-2018-shallow-effect-handlers.md)
   — formalizes shallow case-splitting handlers and their relationship to deep
   fold-style handlers.
+- [Simple Unification-Based Type Inference for GADTs](peyton-jones-et-al-2006-gadt-inference.md)
+  — separates ordinary uniform-result constructor inference from
+  annotation-directed GADT pattern refinement and local equalities.
 - [Simple Imperative Polymorphism](wright-1995-simple-imperative-polymorphism.md)
   — motivates and studies the value restriction for strict effectful
   languages.
@@ -136,6 +145,18 @@ mentions can remain as citations in the document that uses them.
 - [Theorems for Free!](wadler-1989-theorems-for-free.md) — derives useful
   program equations from polymorphic types through Reynolds's abstraction
   theorem.
+- [The Definition of Standard ML (Revised)](milner-et-al-1997-definition-standard-ml.md)
+  — formalizes nominal datatype generation, constructor schemes, ordered
+  pattern matching, match failure, and module abstraction.
+- [Unboxed Objects and Polymorphic Typing](leroy-1992-unboxed-objects.md) —
+  reconciles specialized unboxed representations with polymorphic and abstract
+  uniform-representation boundaries through typed coercions.
+- [Views: A Way for Pattern Matching to Cohabit with Data Abstraction](wadler-1987-views-pattern-matching.md)
+  — separates an abstract representation from the constructor vocabulary used
+  to pattern-match its public observations.
+- [Warnings for Pattern Matching](maranget-2007-warnings-pattern-matching.md) —
+  derives exhaustiveness, redundancy, and missing-pattern witnesses from a
+  usefulness analysis over typed pattern matrices.
 
 ## Maintaining this index
 

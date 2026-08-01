@@ -66,6 +66,9 @@ boundary makes checking local, decidable, and understandable?
 
 - Define the pure expression calculus, strict evaluation, and declarative
   rank-1 typing.
+- Specify nominal ADT generation, ordinary constructor schemes, typed
+  patterns, and exhaustive matching through the focused
+  [ADT inquiry](how-should-catena-specify-algebraic-data-types.md).
 - Implement Algorithm W in a small executable specification.
 - Prove substitution, preservation, progress, soundness, completeness, and
   principality for the promised core.
@@ -136,6 +139,10 @@ The independent literature supports a layered answer:
   terms remain part of complete HM inference;
 - local equality assumptions can remove principal types, so GADT-like features
   need a deliberately narrower checking contract.
+
+The focused [algebraic-data-type synthesis](../20-notes/algebraic-data-types.md)
+now supplies the declaration, pattern, abstraction, derivation, representation,
+and evolution proposal for the nominal-data part of the principal fragment.
 
 These findings are design recommendations, not yet formal results for Catena.
 

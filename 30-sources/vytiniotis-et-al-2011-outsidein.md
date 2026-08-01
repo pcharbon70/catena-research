@@ -82,6 +82,9 @@ same restriction wholesale.
 
 ## Derived work
 
+- [Algebraic Data Types](../20-notes/algebraic-data-types.md)
+- [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+- [Algebraic Data Types map](../10-maps/algebraic-data-types.md)
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
 - [What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
 - [Catena Type-System Design](../10-maps/catena-type-system-design.md)

@@ -74,6 +74,9 @@ those features.
 
 ## Derived work
 
+- [Algebraic Data Types](../20-notes/algebraic-data-types.md)
+- [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+- [Algebraic Data Types map](../10-maps/algebraic-data-types.md)
 - [Hindley–Milner type inference](../20-notes/hindley-milner-type-inference.md)
 - [A greenfield type system for Catena](../20-notes/catena-greenfield-type-system.md)
 - [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)

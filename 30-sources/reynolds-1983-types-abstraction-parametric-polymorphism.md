@@ -79,6 +79,9 @@ feature that can observe or disrupt relations.
 
 ## Derived work
 
+- [Algebraic Data Types](../20-notes/algebraic-data-types.md)
+- [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
+- [Algebraic Data Types map](../10-maps/algebraic-data-types.md)
 - [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
 - [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
 - [Category Theory for Programming map](../10-maps/category-theory-for-programming.md)
