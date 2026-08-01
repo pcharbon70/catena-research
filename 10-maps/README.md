@@ -35,6 +35,9 @@ should explain why its links belong together rather than merely list files.
 - [Catena Type-System Design](catena-type-system-design.md) — routes through
   the greenfield proposal, its guarantee matrix, and the independent evidence
   for each recommended boundary.
+- [Category Theory for Programming](category-theory-for-programming.md) —
+  routes from typed composition and parametricity through datatype recursion,
+  computational abstractions, optics, effects, and categorical compilation.
 - [Home](home.md) — the selective entry point to active Catena research.
 - [Hindley–Milner Type Inference](hindley-milner-type-inference.md) — routes
   through the principal-type foundations, Algorithm W mechanics, and the proof

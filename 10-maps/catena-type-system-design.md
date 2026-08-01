@@ -29,6 +29,9 @@ implementation, or test suite supplies requirements or evidence.
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) expands
   the effect-row layer into handler semantics, instance identity, resumption
   multiplicity, scoped computations, and implementation choices.
+- [Category Theory for Programming](category-theory-for-programming.md) tests
+  what the proposed higher-kinded parameters and coherent traits must support,
+  and separates categorical laws from typing and operational guarantees.
 
 ## Trails
 
@@ -81,6 +84,10 @@ implementation, or test suite supplies requirements or evidence.
   inferred control-flow linearity required?
 - Which trait termination condition is simple enough to teach and strong
   enough to guarantee resolution?
+- Can the initial higher-kinded trait system express functors, applicatives,
+  monads, and traversals with principal inference and usable diagnostics?
+- Which parametricity theorem survives Catena's recursion, effects, runtime
+  type features, and foreign boundary?
 - What prototype corpus will test whether public signatures and higher-rank
   annotations appear at acceptable locations?
 
