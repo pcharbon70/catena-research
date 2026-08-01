@@ -37,9 +37,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   the mathematical and operational model, compares handler and resumption
   designs, and proposes a constrained greenfield effect system for Catena.
 - [Category Theory for Programming](category-theory-for-programming.md) —
-  distinguishes compositional laws from operational guarantees and proposes a
-  staged categorical foundation, library, derivation, and compiler strategy
-  for Catena.
+  distinguishes compositional laws from operational guarantees and specifies
+  the kinds, operations, laws, parents, and roles of Catena's seventeen-class
+  starting hierarchy.
 - [How Hindley–Milner Type Inference Works](hindley-milner-type-inference.md) —
   explains Algorithm W and principal types independently of any existing
   Catena specification or implementation.

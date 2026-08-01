@@ -84,8 +84,11 @@ implementation, or test suite supplies requirements or evidence.
   inferred control-flow linearity required?
 - Which trait termination condition is simple enough to teach and strong
   enough to guarantee resolution?
-- Can the initial higher-kinded trait system express functors, applicatives,
-  monads, and traversals with principal inference and usable diagnostics?
+- Can the initial higher-kinded trait system express all seventeen categorical
+  classes across value, unary-constructor, and binary-constructor kinds with
+  principal inference, coherent shared parents, terminating resolution, and
+  usable diagnostics? Track this in the
+  [initial-hierarchy inquiry](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md).
 - Which parametricity theorem survives Catena's recursion, effects, runtime
   type features, and foreign boundary?
 - What prototype corpus will test whether public signatures and higher-rank

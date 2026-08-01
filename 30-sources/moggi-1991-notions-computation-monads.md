@@ -83,5 +83,5 @@ or cancellation.
 
 - [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
 - [Algebraic Effects and Handlers](../20-notes/algebraic-effects-and-handlers.md)
-- [Which Categorical Abstractions Should Catena Expose?](../40-inquiries/which-categorical-abstractions-should-catena-expose.md)
+- [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
 - [Category Theory for Programming map](../10-maps/category-theory-for-programming.md)

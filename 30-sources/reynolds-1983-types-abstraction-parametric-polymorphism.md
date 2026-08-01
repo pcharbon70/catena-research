@@ -80,5 +80,5 @@ feature that can observe or disrupt relations.
 ## Derived work
 
 - [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
-- [Which Categorical Abstractions Should Catena Expose?](../40-inquiries/which-categorical-abstractions-should-catena-expose.md)
+- [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
 - [Category Theory for Programming map](../10-maps/category-theory-for-programming.md)
