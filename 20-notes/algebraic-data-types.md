@@ -74,6 +74,13 @@ This is a fresh synthesis for the language imagined in this archive. It does
 not rely on a Catena specification, implementation, or summary from another
 repository.
 
+The selected rules are now consolidated in the normative
+[Data and Pattern Specification](../60-specification/data-and-patterns/README.md).
+That specification includes ordinary ADTs and the explicitly
+annotation-directed GADT boundary, while keeping structural variants,
+programmable patterns, stable external layouts, and categorical instance
+generation separate.
+
 ## Scope and evidence standard
 
 This note asks what a datatype declaration means in a strict, typed functional

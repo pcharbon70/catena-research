@@ -68,9 +68,13 @@ as small normative rules rather than copied wholesale into a specification.
   The [version 0.1 type-system specification](../60-specification/type-system/README.md)
   consolidates the principal core, advanced checking, rows, traits, effects,
   elaboration, metatheory, diagnostics, and executable conformance boundary.
-- [ ] **P002 — Partial — algebraic data types and pattern matching.** Consolidate data
-  declarations, visibility, positivity, derivation, ordered matching,
-  exhaustiveness, redundancy, and representation independence.
+- [x] **C002 — Complete — algebraic data types and pattern matching.** The
+  [version 0.2 normative specification](../60-specification/data-and-patterns/README.md)
+  and published compiler commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`
+  cover nominal declarations, recursive groups,
+  visibility, construction, the initial pattern grammar, ordered matching,
+  coverage, GADT scope, generated folds, interfaces, and representation
+  independence.
 - [ ] **P003 — Partial — clause guards.** Settle the exact guard-safe expression set,
   user-defined predicates, coverage-fact precision, receive-safe subset, and
   surface syntax.
@@ -97,8 +101,9 @@ as small normative rules rather than copied wholesale into a specification.
   behavior.
 - [ ] **P010 — Partial — formal semantic kernel.** Integrate types, value rows, effect
   rows, traits, patterns, guards, handlers, and elaboration in one core model.
-- [ ] **P011 — Partial — executable conformance suite.** C001 now has positive,
-  negative, bounded-oracle, core-verification, and OTP 29 runtime evidence.
+- [ ] **P011 — Partial — executable conformance suite.** C001 and C002 now have
+  positive, negative, bounded-oracle, core-verification, differential-layout,
+  and OTP 29 runtime evidence.
   Connect every remaining normative rule to positive programs, negative
   programs, expected diagnostics, and runtime observations.
 - [ ] **G012 — Gap — implementation limits.** Specify which limits may vary—arity,
@@ -136,9 +141,10 @@ as small normative rules rather than copied wholesale into a specification.
 - [ ] **G022 — Gap — imports and exports.** Define qualification, renaming, wildcard
   imports or their exclusion, re-exports, unused-import diagnostics, and
   visibility defaults.
-- [ ] **P023 — Partial — abstraction boundaries.** Finish constructor visibility,
-  opaque types, public signatures, stable layout opt-in, and separate
-  construction versus matching authority.
+- [ ] **P023 — Partial — abstraction boundaries.** C002 completes transparent
+  constructor export versus fully abstract type export and layout-free module
+  interfaces. Stable layout opt-in and any separate construction versus
+  matching authority remain open.
 - [ ] **G024 — Gap — dependency cycles.** Define whether module recursion exists and
   how initialization, inference, and separate compilation behave across cycles.
 - [ ] **G025 — Gap — package identity and dependency resolution.** Define manifests,
@@ -155,9 +161,10 @@ as small normative rules rather than copied wholesale into a specification.
 
 - [ ] **P029 — Partial — value and evaluation definition.** State precisely that the
   language is strict and define which forms are values.
-- [ ] **G030 — Gap — evaluation order.** Define order for function and operator
-  arguments, record fields, constructor fields, collection elements, guards,
-  trait operations, and interpolations.
+- [ ] **P030 — Partial — evaluation order.** C002 defines single scrutinee
+  evaluation, ordered clauses and guards, source-order constructor-field
+  evaluation, and declaration-order payloads. Function and operator arguments,
+  collections, traits, interpolation, and other forms remain open.
 - [ ] **G031 — Gap — bindings and sequencing.** Define `let`-like syntax, scope,
   recursive bindings, mutual recursion, unused values, and sequencing of
   effectful expressions.
@@ -185,9 +192,10 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 5. Data, collections, and patterns
 
-- [ ] **P039 — Partial — algebraic data declaration syntax.** Freeze type parameters,
-  constructor fields, record constructors, recursive types, derives, and
-  visibility syntax.
+- [x] **C039 — Complete — algebraic data declaration syntax.** The 0.2 normative specification
+  specifies kinded parameters, nullary, positional, and named-product
+  constructors, atomic recursive groups, explicit existentials and refined
+  results, `derives fold`, and transparent or abstract export.
 - [ ] **G040 — Gap — built-in data model.** Define unit, Boolean, numeric, string,
   binary, tuple, list, map, set, process, reference, and function types, or
   explicitly exclude each nonessential built-in.
@@ -197,18 +205,22 @@ as small normative rules rather than copied wholesale into a specification.
 - [ ] **G042 — Gap — collection construction and update.** Define persistent update,
   duplicate map keys, ordering, key equality, bounds failures, and complexity
   promises.
-- [ ] **P043 — Partial — complete pattern grammar.** Settle constructor, literal,
-  tuple, list, record, variant, binary, as-pattern, or-pattern, wildcard, and
-  nested patterns.
-- [ ] **P044 — Partial — refutability by context.** Define which patterns may appear in
-  function parameters, local bindings, generators, receives, handlers, and
-  exception clauses, and what failure means in each place.
-- [ ] **P045 — Partial — coverage and redundancy.** Freeze the coverage model for
-  closed data, open rows, guards, abstract types, integer ranges, strings, and
-  future refinements.
+- [x] **C043 — Complete — initial pattern grammar.** The 0.2 normative specification supports
+  wildcard, binder, integer and Boolean literal, tuple, positional and named
+  constructor, `as`, `or`, and nested patterns; it explicitly excludes list,
+  structural-record, row-variant, binary, range, and programmable forms.
+- [ ] **P044 — Partial — refutability by context.** C002 defines all supported
+  forms in exhaustive match clauses and forbids an implicit match exception.
+  Function parameters, local bindings, generators, receives, handlers, and
+  exception clauses still need their own admissibility and failure rules.
+- [x] **C045 — Complete — initial coverage and redundancy.** The 0.2 normative specification
+  uses one usefulness relation for closed nominal data, Booleans, tuples,
+  integer literals, abstract types, three-valued inhabitation, guards, `or`
+  patterns, and GADT refinements, with witnesses and deterministic limits.
 - [ ] **D046 — Deferred — programmable patterns.** Explicitly exclude or separately
   specify view patterns, pattern synonyms, active patterns, and their effects,
-  totality, coverage, evaluation count, and cost.
+  totality, coverage, evaluation count, and cost. C002 explicitly excludes
+  these forms without reserving hidden conversion semantics.
 
 ## 6. List comprehensions, generators, and iteration
 
@@ -302,9 +314,10 @@ validation.
 - [ ] **P072 — Partial — laws and trusted evidence.** Define which laws are
   documentation, generated evidence, checked properties, proof obligations, or
   optimizer assumptions.
-- [ ] **P073 — Partial — derivation.** Specify eligible datatype shapes, generated
-  names, customization, failure diagnostics, law provenance, and public API
-  stability.
+- [ ] **P073 — Partial — derivation.** C002 specifies an explicit
+  constructor-complete `Type.fold`, handler and field order, GADT and
+  existential exclusions, generated provenance, and verifier checks. Lawful
+  categorical instances, customization, and wider API stability remain open.
 - [ ] **P074 — Partial — operational contracts.** Freeze order, strictness,
   multiplicity, short-circuiting, stack safety, and effect policy for standard
   operations such as mapping, combining, chaining, folding, and traversing.
@@ -367,9 +380,10 @@ validation.
 
 ## 11. BEAM representation and Erlang interoperability
 
-- [ ] **G093 — Gap — Catena-to-BEAM value mapping.** Define representation of every
-  primitive, ADT, record, variant, closure, trait dictionary, capability, and
-  erased artifact.
+- [ ] **P093 — Partial — Catena-to-BEAM value mapping.** C002 defines and
+  differentially checks uniform and compact nominal ADT layouts behind a
+  layout-free typed interface. Records, variants, closures, trait dictionaries,
+  capabilities, erased artifacts, and the full primitive model remain open.
 - [ ] **G094 — Gap — calling conventions.** Define exported names and arities,
   currying, closures, tail calls, callbacks, stack traces, and module metadata.
 - [ ] **G095 — Gap — Erlang type boundary.** Specify how dynamically typed terms enter
@@ -491,16 +505,19 @@ validation.
 
 ## 16. Formal validation and release gates
 
-- [ ] **P132 — Partial — progress and preservation targets.** State the soundness
-  claims for the pure core, rows, traits, effects, pattern matching, guards,
-  elaboration, and erasure, with explicit foreign and panic boundaries.
-- [ ] **P133 — Partial — reference evaluator.** C001 now has an executable
-  inferencer, bounded declarative oracle, core verifier, and BEAM execution
-  tests. Implement the full typed semantic core as an executable oracle before
-  production BEAM optimizations obscure behavior.
-- [ ] **G134 — Gap — differential testing.** Run source programs through the reference
-  evaluator and BEAM backend and compare values, effects, failures, traces where
-  promised, and resource-scope behavior.
+- [ ] **P132 — Partial — progress and preservation targets.** C002 now states
+  nominal generativity, declaration atomicity, pattern substitution,
+  preservation, exhaustive progress, usefulness, GADT scope, decision
+  equivalence, fold validity, and representation-independence targets. Effects,
+  processes, foreign values, and erasure still need the integrated theorem.
+- [ ] **P133 — Partial — reference evaluator.** The executable oracle now covers
+  C001 pure expressions plus nominal construction, pattern matching, guards,
+  and generated folds. Effects, processes, foreign values, failures, and the
+  remaining language forms are not yet modeled.
+- [ ] **P134 — Partial — differential testing.** C002 compares typed source
+  observations across the reference evaluator and uniform and compact BEAM
+  layouts with deterministic fixtures. Effects, failures, traces, concurrency,
+  foreign values, and resource scopes remain open.
 - [ ] **G135 — Gap — optimizer validity.** Identify which rewrites rely on pure
   semantics, trait laws, evaluation order, totality, or trusted evidence and
   reject rewrites whose premises are absent.

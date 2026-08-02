@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C002 Executable Data and Pattern Conformance](2026-08-02-c002-executable-data-and-pattern-conformance.md)
+  — records nominal ADT elaboration, coverage, GADT and existential checks,
+  interfaces, folds, reference evaluation, dual-layout execution, and the
+  current evidence limits.
 - [C001 Executable Type-System Conformance](2026-08-01-c001-executable-type-system-conformance.md)
   — records the clean Elixir/OTP 29 bootstrap implementation, commands,
   passing tests, backend artifact inspection, and current evidence limits.

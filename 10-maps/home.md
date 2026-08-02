@@ -31,9 +31,6 @@ This is the selective entry point to the archive. See the
   — tests a layered vocabulary of universal, class-derived, datatype-derived,
   domain, and compiler combinators against laws, effects, cost, coherence, and
   real programs.
-- [How should Catena specify algebraic data types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
-  — tests nominal generation, uniform constructor typing, exhaustive matching,
-  abstraction, structural derivation, opaque layout, and the GADT boundary.
 - [How should Catena specify its initial categorical hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
   — tests the agreed seventeen-class set through kinding, coherent evidence,
   laws, operational contracts, datatype derivations, instances, and inference
@@ -81,6 +78,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena 0.2 Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
+  — defines the normative nominal ADT, construction, initial pattern grammar,
+  exhaustive matching, GADT scope, abstract interfaces, dual BEAM layouts,
+  generated folds, and executable differential evidence.
 - [Catena 0.1 Type-System Specification](../60-specification/type-system/README.md)
   — defines the principal and annotation-directed profiles, rows, traits,
   effects, GADT scope, elaboration, proof claims, and conformance gate.
@@ -148,10 +149,6 @@ This is the selective entry point to the archive. See the
   generation, a strict early-termination protocol, domain prototypes, and
   corpus evidence. Follow the
   [combinator inquiry](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).
-- The ADT design still needs a declaration calculus, an empty-type-aware
-  coverage checker, module visibility tests, formal derivation conditions,
-  layout benchmarks, and explicit evolution rules. Follow the
-  [algebraic-data-type inquiry](../40-inquiries/how-should-catena-specify-algebraic-data-types.md).
 - The categorical design still needs kinded declarations, parent-dictionary
   coherence, a language-specific parametricity theorem, explicit law trust
   levels, operational contracts, datatype-derivation rules, and corpus

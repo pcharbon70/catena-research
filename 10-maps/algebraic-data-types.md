@@ -23,6 +23,9 @@ structural variants, and GADTs.
 
 ## Start here
 
+- [Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
+  is the normative 0.2 declaration, matching, coverage, abstraction, GADT,
+  interface, layout, derivation, and conformance contract.
 - [Algebraic Data Types](../20-notes/algebraic-data-types.md) is the main
   synthesis and initial Catena design proposal.
 - [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
@@ -127,19 +130,19 @@ structural variants, and GADTs.
    asks how derived dictionaries interact with kinding, coherence, testing,
    and optimizer trust.
 
-## Open questions
+## Resolved 0.2 decisions and follow-on questions
 
-- Should a filtering generator use `case`, another readable keyword, or a
-  distinct arrow while preserving the semantic distinction from a total
-  generator?
-- Should the first declaration checker accept negative and nested recursive
-  payloads without derivation, or begin with positive regular recursion only?
-- What terminating inhabitation analysis is precise enough for empty and
-  recursively empty datatype coverage?
-- Are non-exhaustive matches always errors, and is any explicit partial escape
-  hatch worth having outside unsafe code?
-- Does the first module system need separate construct and match visibility,
-  or are transparent and abstract datatype signatures sufficient?
+- Version 0.2 accepts any well-kinded recursive payload, records positivity and
+  regularity separately, and derives no categorical instances.
+- Coverage uses a terminating three-valued least fixed point for inhabited,
+  empty, and unknown types. Non-exhaustive and redundant user matches are
+  errors, with no implicit partial escape.
+- Transparent versus abstract constructor export is the complete initial
+  boundary. Separate construction and matching authority is not in 0.2.
+- GADT result refinement and existential scope are annotation-directed parts
+  of C002 rather than deferred reinterpretations of ordinary ADTs.
+- Uniform and compact BEAM layouts are conformance targets behind one
+  layout-free source and module-interface meaning.
 - Which view or pattern-synonym semantics can preserve abstraction without
   effect, coverage, evaluation-count, or cost surprises?
 - Which derived instances are canonical, and how are laws, constraints, field
@@ -158,7 +161,7 @@ structural variants, and GADTs.
 - Do `variant type`, `variant`, `payload`, and `match` communicate the ADT model
   accurately without hiding derivation, coverage, or representation costs?
 
-Track experiments and resolution criteria in
+The resolved investigation and its evidence criteria remain in
 [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md).
 The public terminology and derivation diagnostics are tested in
 [How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

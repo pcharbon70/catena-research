@@ -33,7 +33,8 @@ the linked notes, maps, and inquiries.
 ```mermaid
 flowchart TD
     S[Catena source] --> U[Approachable surface language]
-    U --> ST[Static semantics<br/>types, rows, traits, effects, coverage]
+    U --> DE[Declaration elaboration<br/>nominal identity and module interfaces]
+    DE --> ST[Static semantics<br/>types, patterns, rows, traits, effects, coverage]
     ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
     TC --> V[Independent core verifier]
     V --> R[Runtime lowering and optimization]
@@ -162,9 +163,11 @@ and [Hindley–Milner Type Inference](20-notes/hindley-milner-type-inference.md)
 ### 3. Algebraic data and patterns
 
 Closed nominal algebraic data types are part of the ordinary inferred
-language. Initial constructors should have uniform result types, keeping them
-within the Hindley–Milner fragment. Structural row variants remain a separate
-tool for open data.
+language. Ordinary constructors have uniform result types, keeping them within
+the Hindley–Milner fragment. Atomic recursive groups may contain any
+well-kinded payload; positivity and regularity constrain derivation, not basic
+declaration validity. Structural row variants remain a separate tool for open
+data.
 
 Pattern matching is ordered, pure at the pattern boundary, and checked for
 exhaustiveness and redundancy. Diagnostics should provide useful witnesses for
@@ -172,14 +175,22 @@ missing cases. A module may hide constructors to preserve an abstract
 representation, and the runtime layout of a type is not part of its public
 contract unless a separate stable-layout mechanism says so.
 
-The compiler may derive operations when positivity, variance, regularity, and
-field order justify the derivation. Generalized algebraic data types are
-available only through the explicitly annotated advanced profile and still
-require complete declaration and coverage integration. Programmable views,
-pattern synonyms, and codata are later design spaces, not features to smuggle
-into the initial data model. Their effects on inference, coverage, totality,
-and evaluation cost must be specified first. See
-[Algebraic Data Types](20-notes/algebraic-data-types.md).
+Version 0.2 fixes wildcard, binder, integer and Boolean literal, tuple,
+constructor, `as`, `or`, and nested patterns. It checks exhaustiveness and
+redundancy through one usefulness analysis, accounts for empty and abstract
+types, and treats guards conservatively. Transparent interfaces expose the
+whole constructor family; abstract interfaces expose only nominal identity and
+kind.
+
+The only initial compiler derivation is an explicit constructor-complete
+`Type.fold`; it performs no implicit recursive traversal. Generalized
+algebraic datatypes and constructor existentials use the explicitly annotated
+advanced profile with branch-local equalities and non-escape checks. Uniform
+and compact BEAM layouts implement one layout-free source meaning and module
+interface. Programmable views, pattern synonyms, categorical instances, and
+  stable external layouts remain separate design spaces. See the normative
+[Data and Pattern Specification](60-specification/data-and-patterns/README.md)
+and its rationale in [Algebraic Data Types](20-notes/algebraic-data-types.md).
 
 [Clause Guards](20-notes/clause-guards.md) develops the condition between a
 successful structural pattern and commitment to its body, including purity,

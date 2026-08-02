@@ -29,6 +29,9 @@ behavior. Compiler behavior alone never changes the language.
 
 ### Subdirectories
 
+- [Data and Patterns](data-and-patterns/README.md) — the normative version 0.2 nominal
+  datatype, construction, pattern, match coverage, GADT, interface, layout,
+  and derived-fold contract.
 - [Type System](type-system/README.md) — the version 0.1 principal and
   annotation-directed static semantics, elaboration contract, and evidence.
 
