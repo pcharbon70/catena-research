@@ -22,8 +22,9 @@ shared elaboration contract.
 
 Keep normative type syntax, inference, generalization, rows, traits, effects,
 advanced checking, typed-core verification, metatheory targets, diagnostics,
-and conformance requirements here. Datatype, pattern, and handler rules remain
-partial unless a chapter explicitly incorporates them.
+and conformance requirements here. Normative nominal datatype and pattern rules are
+defined by the sibling [Data and Pattern Specification](../data-and-patterns/README.md);
+handler rules remain partial unless a chapter explicitly incorporates them.
 
 ## Index
 

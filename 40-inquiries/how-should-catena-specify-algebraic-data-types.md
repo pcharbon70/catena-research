@@ -2,7 +2,7 @@
 title: "How Should Catena Specify Algebraic Data Types?"
 kind: inquiry
 created: "2026-07-31"
-status: open
+status: resolved
 tags:
   - algebraic-data-types
   - catena
@@ -193,23 +193,29 @@ These findings justify a prototype, not a final language specification.
 
 ## Outcome
 
-Open. Resolve the ordinary-ADT portion only when the archive contains:
+Resolved for version 0.2 by the normative
+[Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
+and the published compiler evidence in the
+[C002 executable conformance record](../50-journal/2026-08-02-c002-executable-data-and-pattern-conformance.md).
 
-1. a declarative static and dynamic calculus for declarations, constructors,
-   patterns, matches, mutual recursion, and module visibility;
-2. an executable elaborator and typed core verifier with a documented
-   principality boundary;
-3. a coverage checker with witnesses, empty-type handling, complexity limits,
-   and a published conformance corpus;
-4. module tests demonstrating nominal generativity and constructor hiding;
-5. formal derivation conditions plus generated-code and law tests;
-6. an opaque layout interface evaluated across multiple strategies;
-7. written source, ABI, and serialization evolution rules; and
-8. representative programs showing that exhaustive matching and the initial
-   abstraction boundary are usable.
+The result provides the declaration and dynamic calculus, executable
+elaborator, independent typed-core verifier, usefulness checker, three-valued
+inhabitation analysis, concrete witnesses, nominal module interfaces,
+transparent and abstract constructor tests, explicit generated folds, two
+opaque BEAM layouts, a semantic evaluator, and bounded differential evidence.
 
-Views, GADTs, stable layout, and codata should close only through their own
-follow-on decision records. The evidence routes are collected in the
-[Algebraic Data Types map](../10-maps/algebraic-data-types.md).
-User-facing data terminology and failed-derivation explanations are tested by
-the [vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
+The investigation changed two initial boundaries deliberately. GADT patterns
+and explicit constructor existentials are included behind the C001
+annotation-directed profile because leaving them as an unspecified promise
+would make the data contract internally incomplete. Recursive declarations
+accept any well-kinded payload; positivity and regularity constrain later
+derivations rather than basic declaration validity.
+
+Version 0.2 explicitly excludes programmable views, structural variants,
+stable external layouts, `non_exhaustive` evolution, categorical instance
+generation, and foreign-term validation. Those remain follow-on work rather
+than unresolved parts of the normative slice. Promotion is supported by
+compiler commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`. The evidence route is retained in the
+[Algebraic Data Types map](../10-maps/algebraic-data-types.md), while public
+terminology continues in the
+[vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
