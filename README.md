@@ -39,6 +39,11 @@ work begins with
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
 
+The versioned normative definition lives in the
+[language specification](60-specification/README.md). Research notes explain
+why a design was selected; specification chapters define what conforming
+implementations and programs must do.
+
 ## Structure
 
 - [`00-inbox/`](00-inbox/README.md) — unprocessed captures
@@ -51,6 +56,8 @@ Repository-wide authoring and maintenance conventions are defined in
   workbenches
 - [`50-journal/`](50-journal/README.md) — dated observations and exploratory
   writing
+- [`60-specification/`](60-specification/README.md) — versioned normative
+  language rules and conformance obligations
 - [`90-archive/`](90-archive/README.md) — inactive or superseded material worth
   retaining
 - [`assets/`](assets/README.md) — images, PDFs, diagrams, datasets, and other
@@ -86,6 +93,8 @@ machine-readable metadata contract. Current document kinds are:
 - `inquiry` — an active research question; also requires `status`
 - `map` — a curated route through related material
 - `journal` — a dated observation or research-session record
+- `specification` — a versioned normative language chapter; also requires
+  `status` and `spec_version`
 
 Use lowercase kebab-case tags and YAML lists for both `tags` and `aliases`.
 Use `[]` for an intentionally empty list and `null` for an unknown nullable
@@ -96,6 +105,7 @@ Controlled lifecycle values:
 ```text
 maturity: seed | developing | stable
 status:   open | paused | resolved
+specification status: draft | candidate | normative
 ```
 
 ## Working rhythm

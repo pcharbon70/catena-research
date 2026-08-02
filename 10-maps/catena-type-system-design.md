@@ -20,6 +20,9 @@ implementation, or test suite supplies requirements or evidence.
 
 ## Start here
 
+- [Catena 0.1 Type-System Specification](../60-specification/type-system/README.md)
+  is the normative C001 result: two named profiles, separate solvers, explicit
+  elaboration, metatheory claims, diagnostics, and conformance obligations.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
   is the main proposal and guarantee matrix.
 - [What Should a Greenfield Catena Type System Guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
@@ -37,6 +40,24 @@ implementation, or test suite supplies requirements or evidence.
   and separates categorical laws from typing and operational guarantees.
 
 ## Trails
+
+### Follow the normative result
+
+1. [Type-System Overview](../60-specification/type-system/type-system-overview.md)
+   separates the principal core from annotation-directed advanced checking.
+2. [Type Language and Kinds](../60-specification/type-system/type-language-and-kinds.md)
+   and [Principal Inference and Generalization](../60-specification/type-system/principal-inference-and-generalization.md)
+   define the type syntax and inference promise.
+3. [Rows, Traits, and Effects](../60-specification/type-system/rows-traits-and-effects.md)
+   fixes the distinct solver contracts and coherence boundaries.
+4. [Advanced Type Checking](../60-specification/type-system/advanced-type-checking.md)
+   fixes explicit higher rank, GADT branch scope, and rigid existentials.
+5. [Typed-Core Elaboration](../60-specification/type-system/typed-core-elaboration.md),
+   [Type-System Metatheory](../60-specification/type-system/metatheory.md), and
+   [Type-System Diagnostics and Conformance](../60-specification/type-system/diagnostics-and-conformance.md)
+   connect claims to the verifier and OTP 29 evidence.
+6. [C001 Executable Type-System Conformance](../50-journal/2026-08-01-c001-executable-type-system-conformance.md)
+   records the pinned bootstrap experiment and its limits.
 
 ### Build the trusted core
 

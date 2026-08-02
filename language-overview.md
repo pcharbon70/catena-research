@@ -30,32 +30,21 @@ the linked notes, maps, and inquiries.
 
 ## Architecture at a glance
 
-```text
-Catena source
-    |
-    v
-Approachable surface language
-    |  functions, algebraic data, patterns, traits, effects, specifications
-    v
-Static semantics
-    |  kinds, types, rows, traits, effects, coverage, derivation
-    v
-Typed elaborated core
-    |  explicit dictionaries, capabilities, handlers, and spec references
-    |
-    +---------------- verification path ----------------+
-    |                                                   |
-    v                                                   v
-Runtime lowering                               Specification graph
-    |  effect lowering, optimization               |  evidence, policy,
-    |                                               |  authorization, history
-    v                                               v
-BEAM code                                      Verification result
-    |                                                   |
-    +---------------- artifact binding -----------------+
-                            |
-                            v
-               .beam modules + signed manifest
+```mermaid
+flowchart TD
+    S[Catena source] --> U[Approachable surface language]
+    U --> ST[Static semantics<br/>types, rows, traits, effects, coverage]
+    ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
+    TC --> V[Independent core verifier]
+    V --> R[Runtime lowering and optimization]
+    V --> SG[Specification graph<br/>evidence, policy, authority, history]
+    R --> EAF[Erlang Abstract Format]
+    EAF --> OTP[OTP 29 compile:noenv_forms/2]
+    OTP --> B[BEAM modules]
+    SG --> VR[Verification result]
+    B --> AB[Artifact binding]
+    VR --> AB
+    AB --> OUT[BEAM modules and signed manifest]
 ```
 
 The architecture separates three concerns that are often conflated:
@@ -79,10 +68,13 @@ to write ordinary programs. The current vocabulary research is developed in
 
 ### Inference for ordinary code, annotations at complexity boundaries
 
-Ordinary rank-1 code should receive complete Hindley–Milner inference and
-principal types. Explicit annotations become necessary when a programmer asks
-for higher-rank polymorphism, recursive polymorphism, abstraction boundaries,
-or other features whose inference would be unpredictable.
+Ordinary rank-1 code receives the named **principal core** guarantee: complete
+Hindley–Milner inference and principal types. Explicit predicative higher rank,
+GADT refinements, and rigid existentials use the named **annotation-directed
+advanced** profile. The advanced checker promises local sound and decidable
+checking, not global inference completeness or principal types. The normative
+boundary is the
+[Catena 0.1 Type-System Specification](60-specification/type-system/README.md).
 
 ### Mathematical laws are meaningful, but not magical
 
@@ -160,9 +152,10 @@ techniques but different theories; the compiler should not treat them as one
 undifferentiated row mechanism.
 
 The initial language deliberately avoids overlapping or local trait
-implementations, inferred polymorphic recursion, unrestricted type-level
-functions, implicit subtyping, and first-class resumptions. These exclusions
-protect predictability and leave room for later, evidence-driven extensions.
+implementations, inferred polymorphic recursion, impredicativity, unrestricted
+type-level functions, implicit subtyping, and first-class resumptions. These
+exclusions protect predictability and leave room for later, evidence-driven
+extensions.
 See [A Greenfield Type System for Catena](20-notes/catena-greenfield-type-system.md)
 and [Hindley–Milner Type Inference](20-notes/hindley-milner-type-inference.md).
 
@@ -180,10 +173,12 @@ representation, and the runtime layout of a type is not part of its public
 contract unless a separate stable-layout mechanism says so.
 
 The compiler may derive operations when positivity, variance, regularity, and
-field order justify the derivation. Generalized algebraic data types,
-programmable views, pattern synonyms, and codata are later design spaces, not
-features to smuggle into the initial data model. Their effects on inference,
-coverage, totality, and evaluation cost must be specified first. See
+field order justify the derivation. Generalized algebraic data types are
+available only through the explicitly annotated advanced profile and still
+require complete declaration and coverage integration. Programmable views,
+pattern synonyms, and codata are later design spaces, not features to smuggle
+into the initial data model. Their effects on inference, coverage, totality,
+and evaluation cost must be specified first. See
 [Algebraic Data Types](20-notes/algebraic-data-types.md).
 
 [Clause Guards](20-notes/clause-guards.md) develops the condition between a
@@ -390,23 +385,33 @@ binding, policy interpretation, transition validation, and signature checks.
 - effect and handler lowering;
 - selective continuation transformation where needed;
 - BEAM representation and calling-convention selection;
-- module and debug metadata emission;
-- `.beam` writer and artifact-manifest binder.
+- Erlang Abstract Format adapter with original-source annotations;
+- OTP 29 `compile:noenv_forms/2` integration;
+- module and debug metadata plus artifact-manifest binding.
+
+Catena is BEAM-only. The bootstrap compiler is written in Elixir and is
+intended to self-host later. It MUST delegate `.beam` construction to OTP's
+supported Erlang source or Abstract Format path; direct Core Erlang, BEAM
+assembly, and a custom `.beam` writer are not architectural alternatives. The
+exact boundary is specified in
+[Typed-Core Elaboration](60-specification/type-system/typed-core-elaboration.md).
 
 The resulting pipeline is:
 
-```text
-parse
-  -> resolve names and kinds
-  -> infer types, rows, traits, and effects
-  -> check matches and derivations
-  -> elaborate comprehensions, dictionaries, capabilities, and handlers
-  -> verify the typed core
-  -> split verification and runtime material
-  -> check claims, evidence, policy, and transitions
-  -> erase verification-only material
-  -> lower effects and optimize
-  -> emit .beam modules and a bound signed manifest
+```mermaid
+flowchart LR
+    P[Parse] --> N[Resolve names and kinds]
+    N --> I[Infer or check types, rows, traits, effects]
+    I --> M[Check matches and derivations]
+    M --> E[Elaborate explicit typed core]
+    E --> V[Verify typed core]
+    V --> A[Check assurance graph]
+    A --> X[Erase verification-only material]
+    X --> L[Lower effects and optimize]
+    L --> F[Erlang Abstract Format]
+    F --> O[OTP 29 compiler]
+    O --> B[BEAM modules]
+    A --> S[Signed bound manifest]
 ```
 
 ## The BEAM runtime boundary
@@ -451,9 +456,13 @@ explains why it was accepted.
 The research currently converges on these decisions:
 
 - a strict functional core with rank-1 principal inference;
+- a separate annotation-directed profile for explicit predicative higher rank,
+  signature-directed GADTs, and rigid constructor existentials;
 - closed nominal algebraic data types plus distinct structural row types;
 - exhaustive, pure pattern matching;
 - coherent traits with explicit elaboration;
+- multi-parameter traits with terminating functional dependencies and
+  associated types, but no overlap, local instances, or associated constants;
 - category-inspired abstractions expressed through ordinary traits and
   libraries;
 - nominal algebraic effects with static effect rows and lexical capabilities;
@@ -473,11 +482,11 @@ runtime representation still require validation.
 The main unresolved areas are:
 
 - exact surface syntax and behavior-first vocabulary;
-- a single formal calculus integrating types, rows, traits, effects, and
-  elaboration;
+- integration of the normative type-system slice with complete ADT, pattern,
+  handler, guard, and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;
-- effect-row duplication, handler selection, and the production lowering
-  strategy;
+- production integration and performance evidence for effect-row duplicates,
+  lexical handler selection, and handler lowering;
 - processes, supervision, structured concurrency, cancellation, and resource
   scopes;
 - modules, packages, foreign calls, stable layouts, and hot upgrades;
@@ -485,9 +494,9 @@ The main unresolved areas are:
 - the proof kernel and interchange format for externally produced
   certificates;
 - usability studies and performance measurements;
-- later features such as GADTs, multi-shot handlers, programmable views,
-  pattern synonyms, generic or streaming comprehensions, optics syntax, and
-  recursion schemes.
+- later features such as impredicativity, multi-shot handlers, programmable
+  views, pattern synonyms, generic or streaming comprehensions, optics syntax,
+  and recursion schemes.
 
 An open boundary should not be mistaken for an invitation to choose features
 independently. Each proposal must be checked against principal inference,
