@@ -188,13 +188,19 @@ algebraic datatypes and constructor existentials use the explicitly annotated
 advanced profile with branch-local equalities and non-escape checks. Uniform
 and compact BEAM layouts implement one layout-free source meaning and module
 interface. Programmable views, pattern synonyms, categorical instances, and
-  stable external layouts remain separate design spaces. See the normative
+stable external layouts remain separate design spaces. See the normative
 [Data and Pattern Specification](60-specification/data-and-patterns/README.md)
 and its rationale in [Algebraic Data Types](20-notes/algebraic-data-types.md).
 
-[Clause Guards](20-notes/clause-guards.md) develops the condition between a
-successful structural pattern and commitment to its body, including purity,
-totality, coverage, selective receive, and BEAM lowering.
+Normative version 0.3 defines the condition between a successful structural
+pattern and commitment to its body. It selects a closed total `Bool`/`Int`
+fragment, acyclic signed predicates, one-time ordered evaluation, conservative
+difference-constraint coverage, canonical interface evidence, and equivalent
+native or ordinary BEAM lowering. Ordinary matches and multi-clause functions
+must be exhaustive; a native-only typed receive harness may suspend, but does
+not yet define public receive syntax, timeouts, or process effects. See the
+[Clause Condition Specification](60-specification/clause-conditions/README.md)
+and its rationale in [Clause Guards](20-notes/clause-guards.md).
 
 ### 4. Traits and categorical structure
 
@@ -355,7 +361,8 @@ and independently testable analyses.
 - coherent trait solver;
 - bidirectional checker for explicit higher-rank types;
 - match coverage and redundancy checker;
-- guard-safety, totality, and guarded-coverage checker;
+- implemented normative guard-safety, acyclic predicate, and deterministic
+  guarded-coverage checker for the 0.3 `Bool`/`Int` fragment;
 - variance, positivity, and derivation analysis;
 - public-signature and compatibility checker.
 
@@ -367,6 +374,8 @@ and independently testable analyses.
 - typed list-comprehension qualifier-tree elaborator and fused worker
   generator;
 - derived-operation generator;
+- ordered guard-tree and shared-continuation lowering with selectable native
+  or ordinary condition paths;
 - typed core verifier.
 
 Elaboration is the architectural hinge: friendly source notation becomes a
@@ -493,8 +502,8 @@ runtime representation still require validation.
 The main unresolved areas are:
 
 - exact surface syntax and behavior-first vocabulary;
-- integration of the normative type-system slice with complete ADT, pattern,
-  handler, guard, and source-language calculi;
+- integration of the normative type-system, data, and clause-condition slices
+  with complete handler and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;
 - production integration and performance evidence for effect-row duplicates,
   lexical handler selection, and handler lowering;

@@ -19,8 +19,8 @@ This is the selective entry point to the archive. See the
   effect order, scope, qualifier-tree elaboration, fused BEAM lowering, and
   extension boundaries.
 - [How should Catena design clause guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
-  — tests Boolean-only conditions, totality and effects, coverage facts, trait
-  evidence, match compilation, and mailbox-preserving receive lowering.
+  — carries the normative implemented 0.3 core into remaining usability,
+  performance, trait, recursion, and public receive questions.
 - [How should Catena integrate specifications and governance into the language?](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   — tests typed claims, evidence distinctions, contract and proof boundaries,
   authorization, provenance, lifecycle integrity, security, and usability.
@@ -78,6 +78,10 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena 0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
+  — defines the exact safe `Bool`/`Int` fragment, acyclic predicates, ordered
+  guard trees, difference-constraint coverage, interface evidence, dual BEAM
+  lowering, and typed receive harness with published compiler evidence.
 - [Catena 0.2 Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
   — defines the normative nominal ADT, construction, initial pattern grammar,
   exhaustive matching, GADT scope, abstract interfaces, dual BEAM layouts,
@@ -90,9 +94,8 @@ This is the selective entry point to the archive. See the
   patterns, typed Boolean filters, visible effects, depth-first order, and a
   fused list-worker backend.
 - [Clause Guards](../20-notes/clause-guards.md) — proposes a checked
-  Boolean-only condition fragment, conservative coverage, explicit
-  fallthrough, typed guard-tree elaboration, and separate native and ordinary
-  BEAM lowering.
+  Boolean-only condition fragment and now connects the rationale to the exact
+  normative 0.3 specification and published 46-test executable evidence.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, honest evidence types, restricted
   policy evaluation, signed external attestations, append-only transitions,
@@ -131,10 +134,12 @@ This is the selective entry point to the archive. See the
   differential BEAM tests, cost measurements, and evidence before adding zip,
   streams, binary targets, generic builders, reduction, or parallelism. Follow
   the [list-comprehension inquiry](../40-inquiries/how-should-catena-specify-list-comprehensions.md).
-- The clause-guard design still needs a total predicate checker, typed
-  guard-tree interpreter, certified fact oracle, differential backend tests,
-  portable receive subset, cost measurements, and usability evidence. Follow
-  the [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md).
+- The normative clause-condition core has a total predicate checker,
+  ordered guard-tree metadata, deterministic fact checker, dual backend tests,
+  a typed portable receive harness, and published immutable evidence. Later
+  extensions still need representative-corpus validation, cost measurements,
+  usability evidence, and complete public receive semantics. Follow the
+  [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md).
 - The specification-governance design still needs a core calculus, semantic
   digests, higher-order and effect contract semantics, adversarial lifecycle
   models, an evidence-provenance prototype, performance measurements, and

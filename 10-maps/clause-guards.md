@@ -27,9 +27,19 @@ and initial Catena recommendation. It proposes checked Boolean-only clause
 conditions, a total effect-free guard fragment, conservative coverage, a typed
 guard-tree IR, and separate ordinary versus receive lowering.
 
+Then read the normative
+[Catena 0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
+for the exact implemented boundary: `Bool`/`Int` operations, acyclic signed
+predicates, difference-constraint facts, ordered selection, interface
+evidence, and native or ordinary BEAM lowering. The
+[C003 evidence journal](../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md)
+records the published compiler commit, 46-test implementation, and promotion
+evidence.
+
 Then use
 [How Should Catena Design Clause Guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
-for the unresolved proof, prototype, performance, and usability work.
+for the remaining proof, performance, usability, recursive
+predicate, trait, and public receive work.
 
 ## Trails
 
@@ -95,14 +105,13 @@ proof-producing precision tier.
 
 The active
 [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md)
-tracks:
+tracks questions left after the normative 0.3 implementation:
 
-- the smallest practical total expression fragment;
-- verified user predicates and trait evidence;
-- deterministic proof-producing guard facts;
-- portable BEAM-native receive guards;
-- guard-tree interpretation and lowering equivalence;
-- diagnostics and public vocabulary;
+- whether the exact initial fragment is practical in representative programs;
+- later recursive predicates and trait-carried safety evidence;
+- public receive syntax, timeouts, effects, protocols, and mailbox cost;
+- machine-checked metatheory beyond executable rechecking;
+- diagnostics, performance, and public vocabulary;
 - whether clause conditions and comprehension filters should share a surface
   keyword despite different safety, failure, and coverage judgments; and
 - evidence needed before adding pattern or handler guards.

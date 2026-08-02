@@ -29,6 +29,9 @@ behavior. Compiler behavior alone never changes the language.
 
 ### Subdirectories
 
+- [Clause Conditions](clause-conditions/README.md) — the normative version 0.3
+  safe expression, reusable predicate, ordered guard-tree, coverage-fact,
+  interface-evidence, BEAM lowering, and typed receive-harness contract.
 - [Data and Patterns](data-and-patterns/README.md) — the normative version 0.2 nominal
   datatype, construction, pattern, match coverage, GADT, interface, layout,
   and derived-fold contract.
@@ -41,6 +44,8 @@ behavior. Compiler behavior alone never changes the language.
 
 ## Maintaining this index
 
-Keep lifecycle state and versions explicit. Update the relevant research map,
-inquiry, conformance evidence, and every affected index in the same change as
-a normative rule.
+Keep lifecycle state and versions explicit. Candidate chapters may record
+local evidence but do not become authoritative until their immutable
+conformance identity is published. Update the relevant research map, inquiry,
+conformance evidence, and every affected index in the same change as a
+normative rule.

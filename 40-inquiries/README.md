@@ -31,8 +31,8 @@ to `20-notes`.
 ### Documents
 
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
-  — tests Boolean-only conditions, guard safety, totality, coverage facts,
-  trait evidence, match compilation, and mailbox-preserving BEAM lowering.
+  — records the normative implemented 0.3 semantic core while retaining open
+  usability, performance, trait, recursion, and public receive questions.
 - [How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
   — tests capability names, operation selection, transfer, diagnostics, and
   the semantic audit needed before Catena stabilizes its learning vocabulary.

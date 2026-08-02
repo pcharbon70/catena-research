@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C003 Executable Clause Condition Conformance](2026-08-02-c003-executable-clause-condition-conformance.md)
+  — records the published AST 0.3 safe-condition checker, predicate interfaces,
+  guarded coverage facts, native and ordinary BEAM lowering, receive harness,
+  passing suite, immutable compiler commit, and merge evidence.
 - [C002 Executable Data and Pattern Conformance](2026-08-02-c002-executable-data-and-pattern-conformance.md)
   — records nominal ADT elaboration, coverage, GADT and existential checks,
   interfaces, folds, reference evaluation, dual-layout execution, and the
