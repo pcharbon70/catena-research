@@ -85,9 +85,13 @@ as small normative rules rather than copied wholesale into a specification.
   native receive harness. Public parser syntax, usability, performance, traits,
   recursive totality, and full receive semantics remain separately identified
   later work.
-- [ ] **P004 — Partial — traits and category-inspired operations.** Freeze the initial
-  hierarchy, public vocabulary, implementation coherence, law evidence,
-  derivation rules, and operational contracts.
+- [x] **C004 — Complete — traits and category-inspired operations.** The
+  [normative 0.4 specification](../60-specification/traits-and-categorical-operations/README.md),
+  [executable conformance record](../50-journal/2026-08-02-c004-executable-trait-conformance.md),
+  and published compiler commit
+  [`b69f6f7e3da6015bf9b3385152ca3f3687422472`](https://github.com/pcharbon70/catena/commit/b69f6f7e3da6015bf9b3385152ca3f3687422472)
+  freeze the initial hierarchy, behavior-first ABI, coherence, law evidence,
+  derivation, operational contracts, specialization, and erasure.
 - [ ] **P005 — Partial — algebraic effects and handlers.** Turn the proposed nominal
   operations, effect rows, lexical capabilities, deep handlers, and affine
   resumptions into one calculus and surface design.
@@ -322,28 +326,31 @@ validation.
 
 ## 8. Traits, derivation, and categorical libraries
 
-- [ ] **P069 — Partial — declaration and implementation syntax.** Define parameters,
-  constraints, methods, defaults, visibility, documentation, and implementation
-  placement.
+- [x] **C069 — Complete — declaration and implementation forms.** Normative 0.4
+  defines kinded parameters, parents, constraints, exact minimal methods,
+  visibility metadata, implementation ownership, and placement through JSON
+  AST 0.4. Public parser punctuation remains deliberately unfrozen.
 - [x] **C070 — Complete — coherence and ownership.** Version 0.1 freezes
   trait-or-type ownership, prohibits overlap and local implementations, and
   requires import-order-independent identity and separate compilation.
 - [x] **C071 — Complete — associated information.** Traits support methods,
   multi-parameter constraints, functional dependencies, and associated types;
   associated constants are excluded.
-- [ ] **P072 — Partial — laws and trusted evidence.** Define which laws are
-  documentation, generated evidence, checked properties, proof obligations, or
-  optimizer assumptions.
-- [ ] **P073 — Partial — derivation.** C002 specifies an explicit
-  constructor-complete `Type.fold`, handler and field order, GADT and
-  existential exclusions, generated provenance, and verifier checks. Lawful
-  categorical instances, customization, and wider API stability remain open.
-- [ ] **P074 — Partial — operational contracts.** Freeze order, strictness,
-  multiplicity, short-circuiting, stack safety, and effect policy for standard
-  operations such as mapping, combining, chaining, folding, and traversing.
-- [ ] **G075 — Gap — dispatch and dictionary observability.** Define specialization,
-  dictionary identity, equality, reflection, performance, and whether
-  elaboration can change observable behavior.
+- [x] **C072 — Complete — laws and trusted evidence.** Normative 0.4 admits only
+  promised, tested, and compiler-derived evidence, reserves trusted and proved,
+  fixes the pure-total finite law domain, and forbids law rewrites.
+- [x] **C073 — Complete — derivation.** Normative 0.4 adds explicit-target
+  `Equatable`, `Orderable`, `Mapper`, `TwoSlotMapper`, `Reducible`, and
+  `CollectingMapper` instances and type-qualified functions without override
+  hooks, with tested stack-safe standard `List` mapping and reduction.
+- [x] **C074 — Complete — operational contracts.** Normative 0.4 freezes strict
+  left-to-right order, exact-once declaration-order visits, subject-last ABI,
+  separate early termination, no law-implied concurrency, and standard
+  collection stack safety.
+- [x] **C075 — Complete — dispatch and dictionary observability.** Normative 0.4
+  specifies deterministic manifest-directed specialization, direct calls, one
+  companion BEAM, no reflection, and complete evidence erasure, with published
+  artifact inspection and repeat-build evidence.
 
 ## 9. Effects, failure, and resource scopes
 
@@ -443,9 +450,10 @@ validation.
   arithmetic.
 - [ ] **G106 — Gap — environmental effects.** Define standard capabilities for I/O,
   files, network, time, randomness, environment, logging, and process control.
-- [ ] **P107 — Partial — category-inspired API names.** Validate the approachable
-  vocabulary, choose canonical operation names, and specify how formal names
-  appear in reference material without creating competing public APIs.
+- [ ] **P107 — Partial — category-inspired API names.** Normative 0.4 chooses the
+  canonical behavior-first trait and method ABI and confines formal names to
+  reference metadata. Independent comprehension and usability validation is
+  still required.
 - [ ] **G108 — Gap — stability and performance policy.** State which APIs, laws,
   traversal orders, asymptotic bounds, and representations are compatibility
   promises.

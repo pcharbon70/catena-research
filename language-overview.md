@@ -45,7 +45,7 @@ flowchart TD
     SG --> VR[Verification result]
     B --> AB[Artifact binding]
     VR --> AB
-    AB --> OUT[BEAM modules and signed manifest]
+    AB --> OUT[BEAM modules and digest-bound manifest]
 ```
 
 The architecture separates three concerns that are often conflated:
@@ -204,29 +204,29 @@ and its rationale in [Clause Guards](20-notes/clause-guards.md).
 
 ### 4. Traits and categorical structure
 
-Category-inspired abstractions should be ordinary traits rather than privileged
-syntax. The current starting hierarchy contains seventeen concepts:
+Category-inspired abstractions are ordinary traits rather than privileged
+syntax. Normative 0.4 fixes seventeen behavior-first public capabilities:
 
-- value structure: `Setoid`, `Ord`, `Semigroup`, and
-  `Monoid`;
-- unary structure: `Foldable`, `Functor`, `Apply`,
-  `Applicative`, `Chain`, `Monad`, `Extend`,
-  `Comonad`, and `Traversable`;
-- binary structure: `Bifunctor`;
-- composition structure: `Semigroupoid`, `Category`, and
-  `Arrow`.
+- value structure: `Equatable`, `Orderable`, `Combiner`, and
+  `EmptyCombiner`;
+- unary structure: `Reducible`, `Mapper`, `MultiMapper`,
+  `ValueEmbedder`, `CollectingMapper`, `Chainable`, `Workflow`,
+  `ContextualMapper`, and `FocusReader`;
+- binary structure: `TwoSlotMapper`; and
+- composition structure: `Composable`, `IdentityComposer`, and
+  `TransformRouter`.
 
 Their relationships matter more than a flat list. For example, ordering builds
 on equality; a monoid adds an identity to a semigroup; applicative structure
 builds on mapping and application; and traversing combines mapping with
 reduction-like structure.
 
-The formal hierarchy is a design commitment under active refinement, while
-public names remain experimental. Candidate behavior-first names include
-`Mapper`, `Combiner`, `Pipeline`, `Collector`,
-`Composable`, and `Flow`. Formal names should remain available in
-the semantic reference so experienced readers can recognize the underlying
-model. See
+These names and their method ABI are singular: formal names such as Functor,
+Monad, or Arrow appear in reference metadata, not as competing source aliases.
+Compile-time evidence is specialized into direct calls and erased before BEAM
+execution. See the
+[Trait and Categorical Operation Specification](60-specification/traits-and-categorical-operations/README.md)
+and its rationale in
 [Category Theory for Programming](20-notes/category-theory-for-programming.md).
 
 ### 5. Combinators and derived libraries

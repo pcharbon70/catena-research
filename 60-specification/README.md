@@ -14,12 +14,14 @@ aliases:
 
 ## Purpose
 
-This directory contains Catena's versioned normative language rules. Research
-notes supply rationale and evidence; these chapters determine conformance.
+This directory contains Catena's versioned candidate and normative language
+rules. Research notes supply rationale and evidence; normative chapters
+determine conformance, while candidate chapters state the contract being
+tested for promotion.
 
 ## What belongs here
 
-Put separately versioned specification areas and their local indexes here. A
+Put separately versioned candidate or normative specification areas and their local indexes here. A
 chapter becomes `normative` only when its required executable evidence and
 cross-references are present. Conflicts are resolved in this order: a newer
 normative specification version, its linked conformance cases, then compiler
@@ -29,6 +31,10 @@ behavior. Compiler behavior alone never changes the language.
 
 ### Subdirectories
 
+- [Traits and Categorical Operations](traits-and-categorical-operations/README.md)
+  — the normative version 0.4 behavior-first hierarchy, coherent evidence,
+  laws, structural derivation, operational contracts, specialization, and
+  BEAM erasure rules.
 - [Clause Conditions](clause-conditions/README.md) — the normative version 0.3
   safe expression, reusable predicate, ordered guard-tree, coverage-fact,
   interface-evidence, BEAM lowering, and typed receive-harness contract.

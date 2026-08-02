@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C004 Executable Trait Conformance](2026-08-02-c004-executable-trait-conformance.md)
+  — records the published kinded hierarchy, coherent evidence, derivation,
+  law tests, digest-bound interfaces, manifest specialization, direct-call
+  BEAM erasure, passing suite, immutable compiler commit, and merge evidence.
 - [C003 Executable Clause Condition Conformance](2026-08-02-c003-executable-clause-condition-conformance.md)
   — records the published AST 0.3 safe-condition checker, predicate interfaces,
   guarded coverage facts, native and ordinary BEAM lowering, receive harness,

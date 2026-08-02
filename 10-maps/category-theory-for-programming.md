@@ -28,12 +28,16 @@ optimizer trust.
 
 ## Start here
 
+- [Trait and Categorical Operation Specification](../60-specification/traits-and-categorical-operations/README.md)
+  is the normative 0.4 contract for the behavior-first public hierarchy,
+  kinds, coherence, laws, derivation, execution order, specialization, and
+  erased BEAM output, backed by published immutable conformance evidence.
 - [Category Theory for Programming](../20-notes/category-theory-for-programming.md)
   is the main synthesis. It separates categorical laws from operational cost
   and specifies the initial class hierarchy.
 - [How Should Catena Specify Its Initial Categorical Hierarchy?](../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)
-  turns the agreed class set into kinding, coherence, law, corpus, diagnostic,
-  derivation, and operational questions.
+  records how the agreed class set became kinding, coherence, law, corpus,
+  diagnostic, derivation, and operational rules.
 - [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
   turns the hierarchy into a minimal primitive and derived vocabulary and
   connects it to ADTs, strict execution, and focused libraries.

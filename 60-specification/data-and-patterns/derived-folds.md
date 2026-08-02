@@ -85,4 +85,7 @@ This narrow derivation supplies useful, predictable elimination without
 claiming the laws or traversal behavior of later categorical classes. The
 distinctions are developed in
 [Combinators for Algebraic Data and Categorical Programming](../../20-notes/combinators-for-algebraic-data-and-categorical-programming.md).
-P073 remains partial for all derivations beyond this C002 slice.
+Broader trait derivation is specified independently by normative
+[C073](../traits-and-categorical-operations/laws-derivation-and-testing.md);
+that later contract does not retroactively make this C002 fold a categorical
+operation.

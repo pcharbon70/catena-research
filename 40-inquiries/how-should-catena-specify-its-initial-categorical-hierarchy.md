@@ -2,7 +2,7 @@
 title: "How Should Catena Specify Its Initial Categorical Hierarchy?"
 kind: inquiry
 created: "2026-07-31"
-status: open
+status: resolved
 tags:
   - category-theory
   - catena
@@ -24,10 +24,11 @@ It will contain `Semigroupoid`, `Category`, `Arrow`, `Semigroup`, `Monoid`,
 `Setoid`, `Ord`, `Foldable`, `Functor`, `Traversable`, `Apply`, `Applicative`,
 `Chain`, `Monad`, `Bifunctor`, `Extend`, and `Comonad`.
 
-What remains open is whether these names can be turned into one precise,
-lawful, inferable, and operationally honest design. The
+The bounded question was whether these names could be turned into one precise,
+lawful, inferable, and operationally honest design. Normative version 0.4 now
+answers that question. The
 [category-theory synthesis](../20-notes/category-theory-for-programming.md)
-defines the intended hierarchy and programming roles. This inquiry tests its
+defines the intended hierarchy and programming roles. This inquiry records its
 kinds, method sets, parent relationships, evidence semantics, instance rules,
 derivation support, diagnostics, and runtime contracts.
 
@@ -230,18 +231,35 @@ The literature already establishes several boundaries for the prototype:
   [Uustalu and Vene](../30-sources/uustalu-vene-2005-essence-dataflow-programming.md)
   provide concrete programming roles for the arrow and comonadic branches.
 
-No local prototype evidence exists yet. The set of initial classes is fixed,
-but its exact specification remains a design hypothesis.
+Immutable evidence now exists at sibling-compiler commit
+[`b69f6f7e3da6015bf9b3385152ca3f3687422472`](https://github.com/pcharbon70/catena/commit/b69f6f7e3da6015bf9b3385152ca3f3687422472),
+merged through [compiler PR #66](https://github.com/pcharbon70/catena/pull/66).
+The Elixir/OTP 29 implementation checks rigid kinds,
+coherent parent evidence, ownership, non-overlap, decreasing contexts,
+functional dependencies, associated types, the three admitted law tiers, six
+explicit derivations, digest-bound interfaces, verified template closure,
+deterministic package specialization, and dictionary-free BEAM output. Its
+corpus exercises every capability, both positions of `TwoSlotMapper`, two
+examples for each unitless capability, explicit equality evidence, bounded
+function samples, callback order, and stack-safe standard `List` mapping and
+reduction over 250,000 elements. The rules are consolidated in the
+[normative 0.4 trait specification](../60-specification/traits-and-categorical-operations/README.md).
+
+The structural implementation deliberately accepts a narrow whole-field
+derivation profile. Broader nested derivation remains out of scope, while the
+standard recursive collection stack contract is closed for the 0.4 `List`
+instances. The [C004 journal](../50-journal/2026-08-02-c004-executable-trait-conformance.md)
+records the complete promotion evidence.
 
 ## Outcome
 
-Open. Resolve this inquiry when the seventeen classes have kinded declarations,
-law and compatibility suites, explicit operational contracts, a coherent
-evidence elaboration, representative instances, derivation rules, and measured
-inference and diagnostic results. Promote the resulting language and library
-contract into the
+Resolved for the bounded 0.4 specification question. The normative language
+and library contract is implemented, published, and supported by a complete
+verification sequence against one immutable identity. Longer-term usability
+and performance measurements remain separate follow-up evidence rather than
+conditions on this inquiry. Preserve the resulting contract in the
 [category-theory synthesis](../20-notes/category-theory-for-programming.md)
-and retain unresolved implementation experiments here. Public names and the
+and retain later implementation experiments separately. Public names and the
 question of whether every formal structure needs a beginner-facing trait are
 tested by the
 [vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
