@@ -33,8 +33,12 @@ standard predicates, diagnostics, or backend shortcuts become difficult to
 change.
 
 The developed proposal is in [Clause Guards](../20-notes/clause-guards.md);
-this inquiry remains open because its total fragment, receive subset, evidence
-format, and usability have not been prototyped.
+the normative
+[0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
+and published compiler implementation now settle one exact total fragment,
+typed receive harness, and evidence format. This inquiry remains open only for
+public syntax, usability, performance, trait, recursive-totality, and complete
+receive semantics beyond that bounded contract.
 
 ## Operational question
 
@@ -200,11 +204,39 @@ The evidence currently favors:
 - dual native and ordinary-branch lowering; and
 - a native-only portable subset for receive.
 
-These are proposals, not yet implementation results.
+This synthesis preceded the bounded implementation result recorded next; its
+wider trait, usability, and public receive claims remain proposals.
+
+### Normative 0.3 implementation
+
+Published sibling compiler commit
+[`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
+implements the normative answer with:
+
+- exact `Bool`/`Int` operations and no ordinary or recursive calls;
+- explicitly signed, first-order, acyclic condition predicates;
+- canonical predicate bodies and dependency evidence in version 0.3 module
+  interfaces;
+- ordered guard-tree metadata and shared continuations for or-patterns;
+- deterministic Boolean and integer difference-constraint coverage facts;
+- forced native and ordinary BEAM lowering checked against the pure evaluator;
+  and
+- a native-only receive harness requiring one closed message type.
+
+The [C003 evidence journal](../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md)
+records 46 passing tests on the pinned Elixir/OTP 29 toolchain. Nonlinear
+arithmetic remains conservatively unknown for coverage, and no external SMT
+solver participates in acceptance.
+
+This establishes executable conformance for the bounded semantic kernel. It
+does not provide performance measurements, mailbox experiments, or usability
+results for later extensions.
 
 ## Outcome
 
-Open. Resolve only after the semantic, coverage, and BEAM prototypes agree and
-the usable predicate corpus demonstrates that the total fragment is practical.
-The [Clause Guards map](../10-maps/clause-guards.md) is the curated route
-through current evidence.
+Open, with the 0.3 semantic core resolved. The normative specification and
+published compiler evidence agree on the bounded corpus. Remaining work asks
+whether later predicate, diagnostic, performance, usability, and public
+receive extensions are practical; it no longer blocks C003. The
+[Clause Guards map](../10-maps/clause-guards.md) is the curated route through
+current evidence.

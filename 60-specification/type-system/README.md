@@ -24,7 +24,10 @@ Keep normative type syntax, inference, generalization, rows, traits, effects,
 advanced checking, typed-core verification, metatheory targets, diagnostics,
 and conformance requirements here. Normative nominal datatype and pattern rules are
 defined by the sibling [Data and Pattern Specification](../data-and-patterns/README.md);
-handler rules remain partial unless a chapter explicitly incorporates them.
+the normative [Clause Condition Specification](../clause-conditions/README.md)
+uses the fixed `Bool` and `Int` types without changing inference or adding body
+refinement. Handler rules remain partial unless a chapter explicitly
+incorporates them.
 
 ## Index
 

@@ -109,8 +109,11 @@ Coverage consumes only this guard classification:
 The literal guards `true` and `false` supply the first two facts. Any other
 well-typed Boolean guard is unknown unless a separately specified certified
 oracle proves otherwise. C002 does not infer coverage from arbitrary user
-functions or effects. P003 remains responsible for the complete guard-safe
-expression set and receive-safe restrictions.
+functions or effects. The normative
+[0.3 clause-condition specification](../clause-conditions/README.md) defines
+one such separately checked oracle, exact safe expression set, and receive
+harness. Version 0.3 is the newer normative authority for accepted clause
+conditions and certified coverage facts.
 
 ## Deterministic implementation limit
 

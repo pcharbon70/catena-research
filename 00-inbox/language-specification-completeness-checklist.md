@@ -75,9 +75,16 @@ as small normative rules rather than copied wholesale into a specification.
   visibility, construction, the initial pattern grammar, ordered matching,
   coverage, GADT scope, generated folds, interfaces, and representation
   independence.
-- [ ] **P003 — Partial — clause guards.** Settle the exact guard-safe expression set,
-  user-defined predicates, coverage-fact precision, receive-safe subset, and
-  surface syntax.
+- [x] **C003 — Complete — clause conditions.** The
+  [version 0.3 normative specification](../60-specification/clause-conditions/README.md)
+  and published compiler commit
+  [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
+  define the exact `Bool`/`Int`
+  fragment, acyclic signed predicates, difference-constraint coverage,
+  ordered guard trees, interface evidence, dual BEAM lowering, and a typed
+  native receive harness. Public parser syntax, usability, performance, traits,
+  recursive totality, and full receive semantics remain separately identified
+  later work.
 - [ ] **P004 — Partial — traits and category-inspired operations.** Freeze the initial
   hierarchy, public vocabulary, implementation coherence, law evidence,
   derivation rules, and operational contracts.
@@ -99,11 +106,15 @@ as small normative rules rather than copied wholesale into a specification.
 - [ ] **G009 — Gap — conformance vocabulary.** Define required, implementation-defined,
   unspecified, and invalid behavior; avoid leaving accidental undefined
   behavior.
-- [ ] **P010 — Partial — formal semantic kernel.** Integrate types, value rows, effect
-  rows, traits, patterns, guards, handlers, and elaboration in one core model.
-- [ ] **P011 — Partial — executable conformance suite.** C001 and C002 now have
-  positive, negative, bounded-oracle, core-verification, differential-layout,
-  and OTP 29 runtime evidence.
+- [ ] **P010 — Partial — formal semantic kernel.** Normative 0.3 now adds a
+  typed safe condition core, ordered guard-tree metadata, rechecked coverage
+  facts, and BEAM lowering to the C001/C002 executable kernel. Integrate value rows,
+  effect rows, traits, handlers, public processes, and source syntax in one
+  model.
+- [ ] **P011 — Partial — executable conformance suite.** C001, C002, and C003
+  now have positive, negative, bounded-oracle,
+  core-verification, interface-integrity, differential-layout or
+  differential-lowering, receive-harness, and OTP 29 runtime evidence.
   Connect every remaining normative rule to positive programs, negative
   programs, expected diagnostics, and runtime observations.
 - [ ] **G012 — Gap — implementation limits.** Specify which limits may vary—arity,
@@ -162,9 +173,12 @@ as small normative rules rather than copied wholesale into a specification.
 - [ ] **P029 — Partial — value and evaluation definition.** State precisely that the
   language is strict and define which forms are values.
 - [ ] **P030 — Partial — evaluation order.** C002 defines single scrutinee
-  evaluation, ordered clauses and guards, source-order constructor-field
-  evaluation, and declaration-order payloads. Function and operator arguments,
-  collections, traits, interpolation, and other forms remain open.
+  evaluation and source-order constructor fields. C003 adds
+  pattern-before-condition order, exactly one condition evaluation, lazy
+  left-to-right Boolean composition, false fallthrough, irreversible body
+  commitment, and shared or-pattern continuations. General function and
+  operator arguments, collections, traits, interpolation, and other forms
+  remain open.
 - [ ] **G031 — Gap — bindings and sequencing.** Define `let`-like syntax, scope,
   recursive bindings, mutual recursion, unused values, and sequencing of
   effectful expressions.
@@ -174,12 +188,16 @@ as small normative rules rather than copied wholesale into a specification.
 - [ ] **G033 — Gap — conditionals and general branching.** Specify Boolean conditions,
   match expressions, branch typing, missing alternatives, and whether any
   statement-like control forms exist.
-- [ ] **P034 — Partial — recursion and termination.** Separate unrestricted program
-  recursion from total fragments used by guards, specifications, laws, and
-  compile-time evaluation.
-- [ ] **G035 — Gap — equality and ordering of primitive values.** Define integers,
-  floats including NaN, strings, binaries, functions, references, processes,
-  and mixed numeric types.
+- [ ] **P034 — Partial — recursion and termination.** C003 excludes
+  recursive condition predicates and verifies an acyclic first-order fragment.
+  Separate unrestricted program recursion from future recursive total
+  fragments used by conditions, specifications, laws, and compile-time
+  evaluation.
+- [ ] **P035 — Partial — equality and ordering of primitive values.** C003
+  defines exact equality for `Bool` and mathematical `Int`, plus integer
+  order, only inside the closed condition fragment. Define their general
+  expression forms and floats including NaN, strings, binaries, functions,
+  references, processes, mixed numeric types, traits, and coercions.
 - [ ] **G036 — Gap — runtime failure taxonomy.** Distinguish typed failure, explicit
   panic or crash, arithmetic faults, failed assertions, foreign exceptions,
   and VM termination.
@@ -210,9 +228,11 @@ as small normative rules rather than copied wholesale into a specification.
   constructor, `as`, `or`, and nested patterns; it explicitly excludes list,
   structural-record, row-variant, binary, range, and programmable forms.
 - [ ] **P044 — Partial — refutability by context.** C002 defines all supported
-  forms in exhaustive match clauses and forbids an implicit match exception.
-  Function parameters, local bindings, generators, receives, handlers, and
-  exception clauses still need their own admissibility and failure rules.
+  pattern forms in exhaustive matches. C003 makes multi-clause
+  functions exhaustive and gives the typed receive harness selective
+  nonconsuming rejection. Local bindings, generators, public receives,
+  handlers, and exception clauses still need their own admissibility and
+  failure rules.
 - [x] **C045 — Complete — initial coverage and redundancy.** The 0.2 normative specification
   uses one usefulness relation for closed nominal data, Booleans, tuples,
   integer literals, abstract types, three-valued inhabitation, guards, `or`
@@ -359,9 +379,11 @@ validation.
   structured task scopes.
 - [ ] **G085 — Gap — message semantics.** Define send results, copying and sharing,
   ordering guarantees, mailbox growth, unsupported values, and remote delivery.
-- [ ] **P086 — Partial — selective receive.** Connect patterns, receive-safe guards,
-  timeouts, mailbox scan order, starvation, and compiler lowering in one
-  normative rule.
+- [ ] **P086 — Partial — selective receive.** C003 provides a typed
+  native-only lowering harness requiring one closed message type and portable
+  inlined conditions, while preserving rejected messages. Connect public
+  syntax, effect and protocol typing, timeouts, mailbox scan order, starvation,
+  cancellation, and cost explanations in one normative rule.
 - [ ] **G087 — Gap — typed protocols.** Decide whether mailbox protocols, process
   handles, replies, and protocol evolution are statically tracked or library
   conventions.
@@ -505,19 +527,22 @@ validation.
 
 ## 16. Formal validation and release gates
 
-- [ ] **P132 — Partial — progress and preservation targets.** C002 now states
-  nominal generativity, declaration atomicity, pattern substitution,
-  preservation, exhaustive progress, usefulness, GADT scope, decision
-  equivalence, fold validity, and representation-independence targets. Effects,
-  processes, foreign values, and erasure still need the integrated theorem.
+- [ ] **P132 — Partial — progress and preservation targets.** C002 states the
+  nominal and structural claims; C003 adds condition typing, closed
+  safety, predicate expansion, fallthrough, commitment, guarded exhaustive
+  progress, fact soundness, lowering equivalence, receive preservation, and
+  evidence-erasure targets. Effects, public processes, foreign values, and the
+  integrated theorem remain open.
 - [ ] **P133 — Partial — reference evaluator.** The executable oracle now covers
-  C001 pure expressions plus nominal construction, pattern matching, guards,
-  and generated folds. Effects, processes, foreign values, failures, and the
+  C001 pure expressions, C002 nominal matching and folds, and C003
+  primitive conditions, lazy Boolean composition, predicate calls, and ordered
+  fallthrough. Effects, processes, foreign values, explicit failures, and the
   remaining language forms are not yet modeled.
-- [ ] **P134 — Partial — differential testing.** C002 compares typed source
-  observations across the reference evaluator and uniform and compact BEAM
-  layouts with deterministic fixtures. Effects, failures, traces, concurrency,
-  foreign values, and resource scopes remain open.
+- [ ] **P134 — Partial — differential testing.** C002 compares reference,
+  uniform-layout, and compact-layout observations; C003 compares the
+  reference evaluator with forced native and ordinary BEAM condition lowering.
+  Effects, failures, traces, public concurrency, foreign values, and resource
+  scopes remain open.
 - [ ] **G135 — Gap — optimizer validity.** Identify which rewrites rely on pure
   semantics, trait laws, evaluation order, totality, or trusted evidence and
   reject rewrites whose premises are absent.

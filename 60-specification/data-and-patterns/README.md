@@ -20,6 +20,10 @@ These chapters define Catena 0.2 nominal algebraic data, construction,
 patterns, matching, coverage, GADT refinement, module interfaces, BEAM
 representation independence, and the initial generated fold.
 
+The normative [Clause Condition Specification](../clause-conditions/README.md)
+refines 0.2's conservative nonliteral-guard boundary without changing its
+structural rules.
+
 ## What belongs here
 
 Keep normative rules that connect datatype declarations to static typing,

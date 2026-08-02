@@ -21,8 +21,11 @@ This chapter and its seven sibling chapters are the normative Catena 0.1
 type-system slice. They complete checklist item C001 without claiming that the
 whole language is specified. The
 [normative 0.2 data and pattern specification](../data-and-patterns/README.md)
-defines the complete nominal ADT and match slice. Source parsing, full handler
-dynamics, and the public trait library remain separate work.
+defines the complete nominal ADT and match slice. The normative
+[0.3 clause-condition specification](../clause-conditions/README.md) adds a
+closed first-order `Bool`/`Int` selection fragment without changing principal
+inference or refining body types. Source parsing, full handler dynamics, and
+the public trait library remain separate work.
 
 `MUST`, `MUST NOT`, `SHOULD`, and `MAY` express requirements. An *invalid*
 program MUST be rejected. *Implementation-defined* behavior must be documented

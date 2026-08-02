@@ -60,6 +60,39 @@ This proposal extends the shorter guard recommendation in
 effect, trait, coverage, and BEAM layers described in the
 [Catena Language Overview](../language-overview.md).
 
+## Version 0.3 decision and implementation result
+
+The normative
+[Clause Condition Specification](../60-specification/clause-conditions/README.md)
+now turns the recommendation into one deliberately smaller executable
+boundary. Version 0.3 selects:
+
+- Boolean and integer literals and immutable variables;
+- lazy `not`, `and`, and `or`;
+- exact `Bool` and `Int` equality and inequality;
+- integer order, unary negation, addition, subtraction, and multiplication;
+- explicitly signed, monomorphic, first-order, acyclic condition predicates;
+- a deterministic internal fact checker for Boolean formulas whose integer
+  atoms reduce to difference constraints;
+- ordinary matches and multi-clause functions, plus a typed native-only
+  receive lowering harness rather than public receive syntax; and
+- version 0.3 interfaces exposing canonical predicate bodies and digest-bound
+  evidence.
+
+Constructor observations, field projections, membership and range operations,
+trait methods, partial operations justified by path facts, recursive total
+predicates, and external solver integration remain later research. Sections
+below that discuss those possibilities are extension analysis, not part of the
+version 0.3 contract.
+
+The local Elixir/OTP 29 implementation passes 46 tests spanning reference
+evaluation, native and ordinary BEAM lowering, guarded coverage, interface
+tampering, and the receive harness. The
+[evidence journal](../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md)
+records the commands and limitations. Published compiler commit
+[`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
+provides the immutable executable evidence, so C003 is complete.
+
 ## Question, scope, and method
 
 ### Research question
@@ -965,6 +998,11 @@ message-selection code.
 
 ## Staged implementation recommendation
 
+The version 0.3 implementation covers the closed portions of stages 1 through
+3 and the internal difference-constraint portion of stage 4. The remaining
+items below are the route for widening or validating that boundary, not claims
+that the current prototype contains every stage.
+
 ### Stage 1: semantic kernel
 
 1. Define strict ordered clause selection in a small calculus.
@@ -1027,17 +1065,18 @@ The connected
 [inquiry](../40-inquiries/how-should-catena-design-clause-guards.md)
 tracks the unresolved choices. The highest-priority questions are:
 
-1. What is the smallest useful total expression fragment?
-2. Does Catena need a general termination checker or only verified predicate
+1. Does the selected `Bool`/`Int` fragment cover representative validation and
+   routing programs without excessive precomputation?
+2. Does Catena later need a general termination checker or only verified predicate
    forms?
 3. Which trait methods can carry guard-safe evidence without complicating
    inference?
-4. Which native operations form a stable portable receive subset across
-   supported OTP versions?
-5. Can the guard-tree IR serve both strict coverage and BEAM code generation
-   without coupling them?
-6. Which fact theory improves diagnostics enough to justify its trusted and
-   compile-time cost?
+4. How should the implemented native subset connect to public receive syntax,
+   timeout, effect, protocol, and mailbox-cost rules?
+5. What proof and property evidence is still needed beyond the implemented
+   typed-core rechecking and differential tests?
+6. Does the difference-constraint theory improve real diagnostics enough to
+   justify its compile-time cost?
 7. Do real programs justify pattern guards or handler-clause conditions?
 8. How should guard facts interact with later refinements, GADTs, and erased
    proof evidence?

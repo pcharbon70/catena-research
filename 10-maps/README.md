@@ -46,8 +46,8 @@ should explain why its links belong together rather than merely list files.
   parametricity, datatype recursion, computations, optics, effects, and
   categorical compilation.
 - [Clause Guards](clause-guards.md) — routes through ordered clause selection,
-  guard safety, totality, coverage facts, match compilation, and selective
-  receive.
+  guard safety, totality, coverage facts, the normative 0.3 specification,
+  executable evidence, match compilation, and selective receive.
 - [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
   — routes through universal function and data glue, ADT-derived operations,
   the seventeen-class vocabulary, focused domain libraries, operational
