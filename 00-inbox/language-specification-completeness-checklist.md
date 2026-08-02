@@ -34,9 +34,13 @@ Status labels describe the archive as of 2026-08-01:
   remains undecided or scattered.
 - **Deferred** — the research deliberately leaves the feature outside the
   initial core; the specification must still state that boundary explicitly.
+- **Complete** — a versioned normative boundary and its required evidence are
+  present for this item. Complete does not mean that neighboring items are
+  complete.
 
 Every checkbox has a unique reference identifier. `G` identifies a gap, `P`
-identifies a partial specification, and `D` identifies a deferred feature. The
+identifies a partial specification, `D` identifies a deferred feature, and `C`
+identifies a completed item. The
 three-digit suffix records the item's position in this audit and is never
 reused. When an item's status changes, preserve its numeric suffix, change the
 prefix, and update every reference to its former identifier in the same
@@ -60,10 +64,10 @@ that Catena does not support it in the relevant language version.
 These areas already have substantial research. They still need to be rewritten
 as small normative rules rather than copied wholesale into a specification.
 
-- [ ] **P001 — Partial — Hindley–Milner inference and the advanced typing boundary.**
-  Consolidate principal rank-1 inference, generalization, annotations,
-  higher-rank checking, rows, trait constraints, and deferred GADTs into one
-  formal static semantics.
+- [x] **C001 — Complete — Hindley–Milner inference and the advanced typing boundary.**
+  The [version 0.1 type-system specification](../60-specification/type-system/README.md)
+  consolidates the principal core, advanced checking, rows, traits, effects,
+  elaboration, metatheory, diagnostics, and executable conformance boundary.
 - [ ] **P002 — Partial — algebraic data types and pattern matching.** Consolidate data
   declarations, visibility, positivity, derivation, ordered matching,
   exhaustiveness, redundancy, and representation independence.
@@ -93,9 +97,10 @@ as small normative rules rather than copied wholesale into a specification.
   behavior.
 - [ ] **P010 — Partial — formal semantic kernel.** Integrate types, value rows, effect
   rows, traits, patterns, guards, handlers, and elaboration in one core model.
-- [ ] **G011 — Gap — executable conformance suite.** Connect every normative rule to
-  positive programs, negative programs, expected diagnostics, and runtime
-  observations.
+- [ ] **P011 — Partial — executable conformance suite.** C001 now has positive,
+  negative, bounded-oracle, core-verification, and OTP 29 runtime evidence.
+  Connect every remaining normative rule to positive programs, negative
+  programs, expected diagnostics, and runtime observations.
 - [ ] **G012 — Gap — implementation limits.** Specify which limits may vary—arity,
   literal size, type-checking resources, mailbox behavior, and generated module
   size—and how implementations report them.
@@ -253,42 +258,47 @@ validation.
 
 ## 7. Type-system surface and advanced boundaries
 
-- [ ] **P060 — Partial — type syntax.** Freeze function, tuple, constructor, record,
-  variant, effect-row, constrained, quantified, and higher-rank type notation.
+- [x] **C060 — Complete — type syntax.** Version 0.1 freezes function, tuple,
+  constructor, record, variant, effect-row, constrained, quantified, and
+  higher-rank type notation.
 - [ ] **G061 — Gap — primitive numeric relationships.** Decide whether numeric
   overloading uses traits, literal constraints, defaulting, coercions, or
   distinct operators.
 - [ ] **G062 — Gap — aliases, opaque types, and newtypes.** Define identity,
   representation, constructor access, coercion, deriving, and error messages.
-- [ ] **P063 — Partial — generalization boundary.** Freeze value restriction or
-  effect-aware generalization, signature subsumption, and recursive annotation
-  rules.
-- [ ] **P064 — Partial — row semantics.** Define record, variant, and effect row
-  equality separately, including duplicate labels, lacks constraints, and
+- [x] **C063 — Complete — generalization boundary.** The effect-aware hybrid
+  rule freezes generalization, signature subsumption, and recursive annotation
+  behavior.
+- [x] **C064 — Complete — row semantics.** Record, variant, and effect row
+  equality are separate, including duplicate effects, lacks constraints, and
   ambiguity.
-- [ ] **P065 — Partial — trait constraint solving.** Freeze instance scope,
-  termination, coherence, ambiguity, defaulting, and failure diagnostics.
+- [x] **C065 — Complete — trait constraint solving.** Version 0.1 freezes
+  instance scope, termination, coherence, ambiguity rejection, no defaulting,
+  and failure diagnostics.
 - [ ] **G066 — Gap — type-directed name resolution.** State whether field, method,
   constructor, literal, and operator resolution may depend on inferred types.
 - [ ] **G067 — Gap — dynamic and unsafe boundaries.** Define casts, runtime type
   inspection, unchecked operations, compiler intrinsics, and how unsafety is
   made visible—or explicitly exclude them.
-- [ ] **D068 — Deferred — advanced type features.** Record the initial exclusion and
-  future compatibility boundary for GADTs, existential types, higher-kinded
-  polymorphism, linear types beyond resumptions, dependent types, and
-  unrestricted type-level computation.
+- [x] **C068 — Complete — checked advanced type profile.** Predicative explicit
+  higher rank, signature-directed GADTs, branch-local equalities, and explicit
+  rigid constructor existentials are specified behind an annotation boundary.
+- [ ] **D140 — Deferred — excluded advanced type features.** Impredicativity,
+  inferred higher rank, general linear and dependent types, unrestricted
+  type-level computation, and higher-kinded polymorphism over arbitrary kinds stay
+  outside version 0.1.
 
 ## 8. Traits, derivation, and categorical libraries
 
 - [ ] **P069 — Partial — declaration and implementation syntax.** Define parameters,
   constraints, methods, defaults, visibility, documentation, and implementation
   placement.
-- [ ] **P070 — Partial — coherence and ownership.** Freeze orphan rules,
-  overlap prohibition, local implementations, implementation identity, and
-  separate-compilation behavior.
-- [ ] **P071 — Partial — associated information.** Decide whether traits support
-  associated types, functional dependencies, constants, or only methods and
-  constraints in the initial language.
+- [x] **C070 — Complete — coherence and ownership.** Version 0.1 freezes
+  trait-or-type ownership, prohibits overlap and local implementations, and
+  requires import-order-independent identity and separate compilation.
+- [x] **C071 — Complete — associated information.** Traits support methods,
+  multi-parameter constraints, functional dependencies, and associated types;
+  associated constants are excluded.
 - [ ] **P072 — Partial — laws and trusted evidence.** Define which laws are
   documentation, generated evidence, checked properties, proof obligations, or
   optimizer assumptions.
@@ -307,12 +317,12 @@ validation.
 - [ ] **P076 — Partial — effect declaration and use syntax.** Freeze operations,
   request syntax, effect annotations, capability binding, handling, forwarding,
   return clauses, and resumption syntax.
-- [ ] **P077 — Partial — handler selection.** Resolve repeated labels, multiple
-  instances of one effect, lexical inference, explicit capability passing, and
-  ambiguity diagnostics.
-- [ ] **P078 — Partial — resumption discipline.** Decide whether affine use is checked
-  statically, dynamically, or both, and specify escape, storage, thread, and
-  second-resume behavior.
+- [x] **C077 — Complete — handler selection.** Duplicate effect rows preserve
+  lexical capability identity; handling removes the statically selected
+  occurrence, never a runtime nearest-label match.
+- [x] **C078 — Complete — resumption discipline.** Affine use is checked in the
+  typed core and backed by a runtime consumed token; resumptions cannot escape,
+  be stored, or be resumed twice.
 - [ ] **P079 — Partial — effect ordering.** Define nested handler order, state and
   failure interaction, forwarding, abort, and behavior when return or operation
   clauses perform effects.
@@ -484,8 +494,10 @@ validation.
 - [ ] **P132 — Partial — progress and preservation targets.** State the soundness
   claims for the pure core, rows, traits, effects, pattern matching, guards,
   elaboration, and erasure, with explicit foreign and panic boundaries.
-- [ ] **G133 — Gap — reference evaluator.** Implement the typed semantic core as an
-  executable oracle before production BEAM optimizations obscure behavior.
+- [ ] **P133 — Partial — reference evaluator.** C001 now has an executable
+  inferencer, bounded declarative oracle, core verifier, and BEAM execution
+  tests. Implement the full typed semantic core as an executable oracle before
+  production BEAM optimizations obscure behavior.
 - [ ] **G134 — Gap — differential testing.** Run source programs through the reference
   evaluator and BEAM backend and compare values, effects, failures, traces where
   promised, and resource-scope behavior.

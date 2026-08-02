@@ -144,11 +144,18 @@ The focused [algebraic-data-type synthesis](../20-notes/algebraic-data-types.md)
 now supplies the declaration, pattern, abstraction, derivation, representation,
 and evolution proposal for the nominal-data part of the principal fragment.
 
-These findings are design recommendations, not yet formal results for Catena.
+The C001 portion has now been consolidated in the normative
+[Catena 0.1 Type-System Specification](../60-specification/type-system/README.md).
+Its written proof decomposition and the
+[executable conformance journal](../50-journal/2026-08-01-c001-executable-type-system-conformance.md)
+make the guarantee boundary testable while stating that the evidence is not a
+mechanized proof.
 
 ## Outcome
 
-Open. Resolve this inquiry only when the archive contains:
+Open for the complete language. C001 satisfies the type-system-specific parts
+of items 1, 2, 3, and 5 below, but the integrated ADT, handler, usability, and
+formal-proof obligations remain:
 
 1. a declarative pure core and executable reference inferencer;
 2. a written feature/guarantee matrix in the language specification;

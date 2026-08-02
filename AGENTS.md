@@ -29,6 +29,7 @@ use these conventions for every document and organizational change.
 30-sources/     Reading notes and bibliographic records
 40-inquiries/   Active questions and research workbenches
 50-journal/     Dated observations and research-session evidence
+60-specification/ Versioned normative language rules and conformance obligations
 90-archive/     Inactive or superseded material worth retaining
 assets/         Images, PDFs, diagrams, datasets, and attachments
 templates/      Starting points for documents and directory indexes
@@ -108,6 +109,8 @@ Additional requirements depend on `kind`:
 - `inquiry` requires `status: open | paused | resolved`.
 - `source` may use `authors`, `published`, `citation_key`, `container`,
   `edition`, `isbn`, `doi`, `url`, and `accessed`.
+- `specification` requires `status: draft | candidate | normative` and a
+  `spec_version` in `major.minor` form.
 - `map` and `journal` use the common fields unless the schema changes.
 
 Conventions:
@@ -147,6 +150,7 @@ Exceptions:
 | Source note | `30-sources/` | `templates/source.md` | A bibliographic record with evidence-focused analysis |
 | Inquiry | `40-inquiries/` | `templates/inquiry.md` | A live question, hypotheses, findings, and outcome |
 | Journal entry | `50-journal/` | `templates/journal.md` | A dated observation or reproducible research-session record |
+| Specification chapter | `60-specification/` | `templates/specification.md` | A versioned normative rule set with conformance obligations |
 
 Copy the closest template, replace every placeholder, and adapt its headings
 only as the material requires. Do not edit a template merely to customize one

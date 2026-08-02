@@ -219,6 +219,9 @@ mentions can remain as citations in the document that uses them.
   — specifies ordered guarded clauses, the restricted side-effect-free guard
   subset, guard-operation failure, selective-receive mailbox scanning, and
   nested list, binary, and map comprehensions.
+- [Erlang/OTP 29 Compiler Recommendations for Language Implementors](erlang-otp-29-compiler-recommendations-language-implementors.md)
+  — establishes Erlang source or Abstract Format as the supported route for a
+  BEAM language and warns against Core Erlang and BEAM assembly interfaces.
 - [Erlang/OTP Function Matching and Optimization](erlang-otp-function-matching-optimization.md)
   — shows how overlapping guarded clauses constrain compiler test reordering
   and generated match structure.

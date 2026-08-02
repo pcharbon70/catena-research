@@ -30,9 +30,13 @@ source notes.
 
 ### Documents
 
-- None yet. The former implementation audit is quarantined in the
-  [archive](../90-archive/README.md) because repository-derived evidence is
-  outside the greenfield research boundary.
+- [C001 Executable Type-System Conformance](2026-08-01-c001-executable-type-system-conformance.md)
+  — records the clean Elixir/OTP 29 bootstrap implementation, commands,
+  passing tests, backend artifact inspection, and current evidence limits.
+
+The former implementation audit is quarantined in the
+[archive](../90-archive/README.md) because repository-derived evidence is
+outside the greenfield research boundary.
 
 ## Maintaining this index
 

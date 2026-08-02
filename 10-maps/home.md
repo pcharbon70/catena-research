@@ -47,6 +47,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Catena Type-System Design](catena-type-system-design.md) — now routes from
+  independent research through the normative C001 chapters and executable
+  Elixir/OTP 29 evidence.
 - [List Comprehensions](list-comprehensions.md) — routes through generators,
   pattern failure, filters, bindings, list algebra, effects, extension
   pressure, and BEAM implementation.
@@ -72,14 +75,15 @@ This is the selective entry point to the archive. See the
 - [Category Theory for Programming](category-theory-for-programming.md) —
   routes from typed composition and parametricity through data, computations,
   optics, effects, and categorical compilation.
-- [Catena Type-System Design](catena-type-system-design.md) — routes through the
-  greenfield proposal, guarantee matrix, and independent primary evidence.
 - [Hindley–Milner Type Inference](hindley-milner-type-inference.md) — isolates
   the principal rank-1 foundation and the proof obligations introduced by
   extensions.
 
 ## Recently developed
 
+- [Catena 0.1 Type-System Specification](../60-specification/type-system/README.md)
+  — defines the principal and annotation-directed profiles, rows, traits,
+  effects, GADT scope, elaboration, proof claims, and conformance gate.
 - [List Comprehensions](../20-notes/list-comprehensions.md) — proposes an
   eager list-to-list expression with total generators, explicit filtering
   patterns, typed Boolean filters, visible effects, depth-first order, and a

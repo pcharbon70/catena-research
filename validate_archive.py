@@ -32,6 +32,7 @@ ARCHIVE_DIRECTORIES = {
     "30-sources",
     "40-inquiries",
     "50-journal",
+    "60-specification",
     "90-archive",
     "assets",
     "templates",
@@ -267,6 +268,7 @@ def validate() -> tuple[list[str], dict[str, int]]:
                 "source": "30-sources",
                 "inquiry": "40-inquiries",
                 "journal": "50-journal",
+                "specification": "60-specification",
             }
             expected = destinations.get(kind)
             if (
