@@ -27,7 +27,7 @@ implementable, testable, and versioned language definition.
 
 ## How to use this checklist
 
-Status labels describe the archive as of 2026-08-01:
+Status labels describe the archive at this document's current Git revision:
 
 - **Gap** — no focused research currently specifies the area.
 - **Partial** — related research constrains the answer, but normative behavior
@@ -92,9 +92,18 @@ as small normative rules rather than copied wholesale into a specification.
   [`b69f6f7e3da6015bf9b3385152ca3f3687422472`](https://github.com/pcharbon70/catena/commit/b69f6f7e3da6015bf9b3385152ca3f3687422472)
   freeze the initial hierarchy, behavior-first ABI, coherence, law evidence,
   derivation, operational contracts, specialization, and erasure.
-- [ ] **P005 — Partial — algebraic effects and handlers.** Turn the proposed nominal
-  operations, effect rows, lexical capabilities, deep handlers, and affine
-  resumptions into one calculus and surface design.
+- [x] **C005 — Complete — algebraic effects and handlers.** The
+  [normative 0.5 specification](../60-specification/effects-and-handlers/README.md),
+  [executable conformance record](../50-journal/2026-08-03-c005-executable-effect-conformance.md),
+  [compiler PR #67](https://github.com/pcharbon70/catena/pull/67), and
+  immutable compiler commit
+  [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
+  integrate nominal first-order requests, identity-aware rows, lexical
+  capabilities, named deep handlers, affine resumptions, explicit typed core,
+  effect-directed CPS, cross-module handlers, and differential reference/BEAM
+  traces. Cleanup, exceptions, host effects, scoped control, performance, and
+  usability remain separately identified work rather than incompleteness in
+  the bounded 0.5 feature.
 - [ ] **P006 — Partial — language-integrated specifications and governance.** Freeze
   claim forms, evidence semantics, governed scopes, authorization, erasure,
   artifact binding, and transition rules.
@@ -115,8 +124,8 @@ as small normative rules rather than copied wholesale into a specification.
   facts, and BEAM lowering to the C001/C002 executable kernel. Integrate value rows,
   effect rows, traits, handlers, public processes, and source syntax in one
   model.
-- [ ] **P011 — Partial — executable conformance suite.** C001, C002, and C003
-  now have positive, negative, bounded-oracle,
+- [ ] **P011 — Partial — executable conformance suite.** C001 through C005 now
+  have positive, negative, bounded-oracle,
   core-verification, interface-integrity, differential-layout or
   differential-lowering, receive-harness, and OTP 29 runtime evidence.
   Connect every remaining normative rule to positive programs, negative
@@ -354,18 +363,23 @@ validation.
 
 ## 9. Effects, failure, and resource scopes
 
-- [ ] **P076 — Partial — effect declaration and use syntax.** Freeze operations,
-  request syntax, effect annotations, capability binding, handling, forwarding,
-  return clauses, and resumption syntax.
+- [x] **C076 — Complete — effect declaration and use syntax.** Normative 0.5
+  freezes normal parameter-list operations, `request`, behavior-first `uses`,
+  optional explicit capability qualification, module-level `handler`
+  declarations, `handle ... using ... as ...`, mandatory return and complete
+  operation clauses, and `resume ... with ...`, with executable positive,
+  negative, interface, and cross-module conformance evidence.
 - [x] **C077 — Complete — handler selection.** Duplicate effect rows preserve
   lexical capability identity; handling removes the statically selected
   occurrence, never a runtime nearest-label match.
 - [x] **C078 — Complete — resumption discipline.** Affine use is checked in the
   typed core and backed by a runtime consumed token; resumptions cannot escape,
   be stored, or be resumed twice.
-- [ ] **P079 — Partial — effect ordering.** Define nested handler order, state and
-  failure interaction, forwarding, abort, and behavior when return or operation
-  clauses perform effects.
+- [x] **C079 — Complete — effect ordering.** Normative 0.5 freezes strict handler
+  argument order, exact identity forwarding, observable nesting order, abort,
+  deep reinstallation, and outer-scope effects from return and operation
+  clauses. The independent free-request evaluator and generated BEAM agree on
+  the bounded conformance traces.
 - [ ] **G080 — Gap — cleanup and resource scopes.** Specify acquisition, release,
   cancellation, abort, panic, normal return, process exit, and foreign-frame
   unwinding.

@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C005 Executable Effect Conformance](2026-08-03-c005-executable-effect-conformance.md)
+  — records the authorized immutable effect implementation, nominal lexical
+  capability rows, deep affine handling, independent free-request semantics,
+  selective CPS, cross-module BEAM execution, and passing differential suite.
 - [C004 Executable Trait Conformance](2026-08-02-c004-executable-trait-conformance.md)
   — records the published kinded hierarchy, coherent evidence, derivation,
   law tests, digest-bound interfaces, manifest specialization, direct-call
