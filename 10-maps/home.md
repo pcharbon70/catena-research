@@ -78,6 +78,9 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena 0.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
+  — freezes the bounded normative typed-rule, exact-example, additive-policy,
+  offline-root, lifecycle, artifact-binding, and total-erasure contract.
 - [Catena 0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
   — defines the exact safe `Bool`/`Int` fragment, acyclic predicates, ordered
   guard trees, difference-constraint coverage, interface evidence, dual BEAM
@@ -140,10 +143,10 @@ This is the selective entry point to the archive. See the
   extensions still need representative-corpus validation, cost measurements,
   usability evidence, and complete public receive semantics. Follow the
   [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md).
-- The specification-governance design still needs a core calculus, semantic
-  digests, higher-order and effect contract semantics, adversarial lifecycle
-  models, an evidence-provenance prototype, performance measurements, and
-  vocabulary testing. Follow the
+- The normative 0.6 specification-governance spine has an authorized immutable
+  compiler implementation and executable conformance record. Public syntax,
+  runtime contracts, stronger verification, long-term protocol evolution,
+  performance, and vocabulary testing remain later work. Follow the
   [specification and governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md).
 - The public vocabulary still needs prediction, operation-selection,
   cross-type transfer, diagnostic-repair, name-collision, and semantic-fidelity

@@ -312,7 +312,10 @@ local drafts may still compile if the declared policy permits them. Governance
 does not automatically spread through every dependency.
 
 See
-[Language-Integrated Specifications and Governance](20-notes/language-integrated-specifications-and-governance.md).
+[Language-Integrated Specifications and Governance](20-notes/language-integrated-specifications-and-governance.md)
+for the rationale and the
+[normative 0.6 specification](60-specification/specifications-and-governance/README.md)
+for the bounded semantic and conformance contract.
 
 ### 8. Verification erasure and artifact integrity
 
@@ -328,17 +331,16 @@ be assumed under an explicit policy without being proved. The compiler and
 manifest must preserve these distinctions rather than presenting all accepted
 builds as equally verified.
 
-The default release artifact is:
+The normative 0.6 release artifact is:
 
-- ordinary `.beam` modules containing the program and any genuinely
-  required runtime checks; and
+- ordinary `.beam` modules containing only the runtime program; and
 - a signed, content-addressed sidecar manifest containing claims, evidence,
   assumptions, policy decisions, transition records, and the exact digest of
   the BEAM artifacts it describes.
 
 The full specification graph should not be placed in BEAM metadata by default.
-An explicit profile may retain selected metadata for debugging or deployment
-inspection.
+Version 0.6 does not define a monitor-retaining profile; that later feature
+requires a separate runtime and cost contract.
 
 Safe erasure requires preservation of types, effects, observable semantics, and
 artifact binding. It also requires checking the transitive closure of runtime

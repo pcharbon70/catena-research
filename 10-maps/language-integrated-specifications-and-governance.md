@@ -29,10 +29,9 @@ release. Coverage does not spread to unrelated modules or dependencies without
 an explicit policy or interface obligation.
 
 Language integration also does not imply runtime retention. The recommended
-default erases claims, proofs, ghost values, generators, and build-time policy
+0.6 profile erases claims, verification definitions, and build-time policy
 before BEAM code generation. A signed sidecar manifest preserves provenance;
-the BEAM artifact retains only monitors or admission hooks that an explicit
-profile still requires.
+runtime monitors are deliberately deferred rather than silently retained.
 
 The topic is a fresh language-design investigation grounded in independent
 primary work on contracts, verification, models, semantics, typestate,
@@ -40,6 +39,14 @@ authorization, provenance, and proof certificates.
 
 ## Start here
 
+- [Catena 0.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
+  freezes the bounded normative contract: semantic JSON forms,
+  typed rules and examples, additive policy, offline Ed25519 roots,
+  hash-chained lifecycle, staged package output, and complete BEAM erasure.
+- [C006 Executable Specification and Governance Conformance](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md)
+  records the authorized immutable compiler identity, exact environment,
+  independent-oracle and adversarial results, erasure evidence, and artifact
+  digests that promoted version 0.6.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   is the main synthesis. It proposes the typed specification graph, claim and
   evidence taxonomy, restricted policy language, transition history, trust
@@ -159,6 +166,20 @@ This trail divides external evidence into:
 
 Each retains its own trust boundary.
 
+### Canonical bytes, signatures, and root continuity
+
+[RFC 8785](../30-sources/rundgren-et-al-2020-json-canonicalization-scheme.md)
+defines reproducible JSON bytes and rejects ambiguous input such as duplicate
+object names. [RFC 8032](../30-sources/josefsson-liusvaara-2017-eddsa.md)
+supplies Ed25519 algorithms and independent vectors. The
+[Update Framework specification](../30-sources/the-update-framework-specification.md)
+shows why distinct-key thresholds and old-plus-new authorization are necessary
+for a continuous root rotation.
+
+Catena 0.6 combines these only as a bounded offline protocol. Canonical bytes
+and signatures bind statements; policy and lifecycle rules decide whether
+their signers have authority for the exact action.
+
 ### Connections to the rest of Catena
 
 - [Catena Type-System Design](catena-type-system-design.md) constrains how
@@ -179,29 +200,22 @@ Each retains its own trust boundary.
 
 The active
 [specification and governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
-tracks the full workbench. The hardest unresolved questions are:
+tracks the full workbench. Normative 0.6 answers the bounded core-calculus,
+digest, offline-root, action-gate, and total-erasure questions. The hardest
+remaining questions are:
 
-- What is the smallest claim/evidence/policy/transition calculus?
-- Which syntax makes project, module, interface, action, and release-profile
-  coverage explicit without burdening projects that declare no governance?
+- Which public parser syntax best exposes the fixed semantic forms?
 - Which local development actions remain available when publication or
   activation evidence is incomplete?
-- Which constructs are always erased, which profiles retain monitors, and what
-  theorem connects verification IR to emitted BEAM behavior?
-- Should a production BEAM file contain no specification metadata at all, or
-  an optional non-executable manifest digest under an explicit profile?
-- How should the compiler demonstrate zero runtime cost for fully discharged
-  claims and account for every retained check?
-- Which specification expressions are total and pure by construction?
-- How should semantic digests respond to refactoring and abstraction?
+- What erasure theorem and performance evidence generalize beyond the 0.6
+  byte-identity and artifact-inspection checks?
 - How do contracts wrap handlers, resumptions, callbacks, and process
   messages?
 - Can one IR serve executable, bounded, temporal, and deductive claims without
   erasing their meanings?
-- What authorization rules are expressive enough while remaining total,
-  analyzable, and explainable?
-- How are root policy, recovery, identity, revocation, and event ordering
-  established across organizations?
+- How should cross-organization identity, archived evidence, transparency,
+  schema migration, and future-compiler interpretation extend the offline 0.6
+  protocol?
 - Which certificates can a small kernel recheck, and which external producers
   remain explicitly trusted?
 - Can ordinary programmers distinguish all evidence kinds and repair
@@ -209,6 +223,7 @@ tracks the full workbench. The hardest unresolved questions are:
 - Does language integration remain simpler than a stable language IR consumed
   by a separately deployed governance protocol?
 
-The map should remain open until a reference semantics, prototype, adversarial
-model, performance evaluation, and vocabulary study provide evidence beyond
-the current synthesis.
+The map should remain open until generalized formal semantics, representative
+performance evaluation, long-term protocol evolution, and a vocabulary study
+provide evidence beyond the bounded reference evaluator, implementation, and
+adversarial corpus recorded for 0.6.

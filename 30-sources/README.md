@@ -259,6 +259,16 @@ mentions can remain as citations in the document that uses them.
 - [Comprehensive Comprehensions](peyton-jones-wadler-2007-comprehensive-comprehensions.md)
   — formalizes ordering, grouping, zip, qualifier scope, and transformations,
   exposing both the power and semantic cost of richer comprehension syntax.
+- [JSON Canonicalization Scheme](rundgren-et-al-2020-json-canonicalization-scheme.md)
+  — defines reproducible JSON bytes, strict input constraints, recursive
+  UTF-16 property ordering, and the security-sensitive basis for signed Catena
+  governance payloads.
+- [Edwards-Curve Digital Signature Algorithm](josefsson-liusvaara-2017-eddsa.md)
+  — specifies Ed25519 encoding, signing, verification, security constraints,
+  and independent known-answer vectors.
+- [The Update Framework Specification](the-update-framework-specification.md)
+  — provides the distinct-key threshold, offline root, scoped delegation, and
+  dual-authority root-continuity model adapted by the 0.6 candidate.
 
 ## Maintaining this index
 

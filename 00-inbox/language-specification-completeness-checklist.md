@@ -104,9 +104,16 @@ as small normative rules rather than copied wholesale into a specification.
   traces. Cleanup, exceptions, host effects, scoped control, performance, and
   usability remain separately identified work rather than incompleteness in
   the bounded 0.5 feature.
-- [ ] **P006 — Partial — language-integrated specifications and governance.** Freeze
-  claim forms, evidence semantics, governed scopes, authorization, erasure,
-  artifact binding, and transition rules.
+- [x] **C006 — Complete — language-integrated specifications and governance.**
+  The
+  [normative 0.6 specification](../60-specification/specifications-and-governance/README.md),
+  [executable conformance record](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md),
+  and authorized immutable compiler commit
+  `2f6805e166a086f7d67c2cc0f3023e9e34fe2cec` freeze the bounded claim forms,
+  evidence semantics, governed scopes, authorization, erasure, artifact
+  binding, and transition rules. Public source punctuation and long-term
+  protocol evolution remain separately identified work rather than
+  incompleteness in the bounded 0.6 feature.
 
 ## 1. Specification form and conformance
 
@@ -124,7 +131,7 @@ as small normative rules rather than copied wholesale into a specification.
   facts, and BEAM lowering to the C001/C002 executable kernel. Integrate value rows,
   effect rows, traits, handlers, public processes, and source syntax in one
   model.
-- [ ] **P011 — Partial — executable conformance suite.** C001 through C005 now
+- [ ] **P011 — Partial — executable conformance suite.** C001 through C006 now
   have positive, negative, bounded-oracle,
   core-verification, interface-integrity, differential-layout or
   differential-lowering, receive-harness, and OTP 29 runtime evidence.
@@ -476,24 +483,36 @@ validation.
 
 - [ ] **P109 — Partial — surface grammar.** Freeze syntax for claims, evidence,
   assumptions, governed scopes, policy, authorization, decisions, and
-  transitions.
-- [ ] **P110 — Partial — checking language.** Define the pure, total, deterministic
-  fragment; termination checking; available data; and diagnostic behavior.
-- [ ] **P111 — Partial — enforcement modes.** Freeze project opt-in, inheritance,
-  local draft behavior, protected actions, dependency boundaries, and
-  fail-closed behavior.
-- [ ] **P112 — Partial — evidence lifecycle.** Define identity, attribution,
-  freshness, revocation, expiry, replacement, external observations, and
-  reproducibility.
-- [ ] **P113 — Partial — erasure semantics.** Formally preserve types, effects,
-  behavior, dependency closure, monitors, assumptions, and debugger behavior
-  when verification-only material is removed.
-- [ ] **P114 — Partial — artifact format.** Freeze canonical serialization, hashes,
-  signatures, manifests, BEAM binding, multi-module releases, and verification
-  profiles.
-- [ ] **G115 — Gap — governance identity and trust roots.** Define principals, key
-  rotation, delegation, compromised keys, transparency, organizational change,
-  and offline verification.
+  transitions. Normative 0.6 freezes semantic JSON forms but intentionally
+  leaves public parser punctuation open.
+- [x] **C110 — Complete — checking language.** Normative 0.6 fixes an explicitly
+  typed pure fragment, exact integer, Boolean, and nested-tuple examples,
+  deterministic left-to-right evaluation, distinct failure outcomes, and a
+  fixed 20,000-step bound. The compiler and independent tests enforce the
+  typing, purity, dependency, and budget boundaries.
+- [x] **C111 — Complete — enforcement modes.** Normative 0.6 selects optional
+  package adoption, separate specification and governance adoption, additive
+  package-to-subject scopes, inherited dependency claims, fail-closed policy,
+  and distinct `build`, `publish`, and `activate` gates.
+- [x] **C112 — Complete — evidence lifecycle.** Normative 0.6 binds compiler
+  evidence, signed attestations, and explicit assumptions to exact claim,
+  subject, tool, artifact, role, and logical sequence identities. Revocation,
+  delegation, replacement, and hash-chained lifecycle replay have executable
+  positive and adversarial coverage.
+- [x] **C113 — Complete — erasure semantics.** Normative 0.6 forbids runtime
+  reachability and export of verification-only definitions, erases the
+  specification graph before Erlang Abstract Format, and requires complete
+  accounting plus byte-identical package BEAM artifacts with and without fully
+  discharged specifications. Runtime monitors are outside this version.
+- [x] **C114 — Complete — artifact format.** Normative 0.6 fixes strict JCS,
+  SHA-256, domain-separated Ed25519 signatures, trust-root, governance-bundle,
+  and assurance-manifest formats, exact multi-module artifact binding, staged
+  output transactions, and an external-signer payload.
+- [x] **C115 — Complete — governance identity and trust roots.** Normative 0.6
+  fixes offline principals, distinct-actor role thresholds, scoped delegation,
+  revocation, old-and-new normal rotation, predeclared recovery, and historical
+  root replay. Transparency services and network identity are excluded from
+  the bounded offline protocol and remain possible later additions.
 - [ ] **G116 — Gap — long-term evolution.** Define schema migration, policy-version
   interpretation, archived evidence, reproducible historical decisions, and
   compatibility with newer compilers.

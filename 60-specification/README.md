@@ -31,6 +31,9 @@ behavior. Compiler behavior alone never changes the language.
 
 ### Subdirectories
 
+- [Specifications and Governance](specifications-and-governance/README.md) —
+  the normative version 0.6 typed-rule, exact-example, additive-policy,
+  offline-trust, lifecycle, artifact-binding, and total-erasure contract.
 - [Effects and Handlers](effects-and-handlers/README.md) — the normative
   version 0.5 nominal request, lexical capability, identity-aware row, deep
   handler, affine resumption, typed-core, and effect-directed CPS contract.
