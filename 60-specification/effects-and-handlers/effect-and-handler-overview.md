@@ -23,7 +23,8 @@ They extend the [0.1 type and row system](../type-system/README.md),
 [0.4 traits](../traits-and-categorical-operations/README.md). `MUST`,
 `MUST NOT`, `SHOULD`, and `MAY` state normative conformance requirements.
 
-Immutable compiler commit `b24e58d587c830dbb9d8c87770105714745fcd1b`
+Immutable compiler commit
+[`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
 satisfies the conformance gate. Its environment, commands, results, and
 bounded evidence are preserved in the
 [C005 conformance journal](../../50-journal/2026-08-03-c005-executable-effect-conformance.md).

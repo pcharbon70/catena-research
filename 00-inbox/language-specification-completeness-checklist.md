@@ -95,7 +95,9 @@ as small normative rules rather than copied wholesale into a specification.
 - [x] **C005 — Complete — algebraic effects and handlers.** The
   [normative 0.5 specification](../60-specification/effects-and-handlers/README.md),
   [executable conformance record](../50-journal/2026-08-03-c005-executable-effect-conformance.md),
-  and immutable compiler commit `b24e58d587c830dbb9d8c87770105714745fcd1b`
+  [compiler PR #67](https://github.com/pcharbon70/catena/pull/67), and
+  immutable compiler commit
+  [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
   integrate nominal first-order requests, identity-aware rows, lexical
   capabilities, named deep handlers, affine resumptions, explicit typed core,
   effect-directed CPS, cross-module handlers, and differential reference/BEAM

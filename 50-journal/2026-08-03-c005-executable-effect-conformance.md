@@ -19,11 +19,15 @@ aliases:
 
 The sibling Catena compiler implementation is frozen on branch
 `agent/c005-effects-handlers` at commit
-`b24e58d587c830dbb9d8c87770105714745fcd1b`, based on rewrite commit
+[`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b),
+based on rewrite commit
 `1b6b902b146a5539fc1a24f4303f9182fbe431fc`. The user explicitly authorized
 the immutable compiler commit on 2026-08-03 before this archive recorded the
 identity or promoted the
 [version 0.5 effect specification](../60-specification/effects-and-handlers/README.md).
+[Compiler PR #67](https://github.com/pcharbon70/catena/pull/67) publishes that
+exact identity against `rewrite`; its eventual merge identity is not yet
+known.
 
 The Elixir implementation adds:
 
@@ -61,6 +65,7 @@ Environment observed in `/home/ducky/code/catena`:
 branch: agent/c005-effects-handlers
 baseline rewrite commit: 1b6b902b146a5539fc1a24f4303f9182fbe431fc
 implementation commit: b24e58d587c830dbb9d8c87770105714745fcd1b
+compiler PR: https://github.com/pcharbon70/catena/pull/67
 authorization date: 2026-08-03
 Elixir: 1.20.2
 Erlang/OTP: 29.0.4
@@ -103,9 +108,9 @@ handler argument order; distinct same-family capabilities; nested handler
 order; and reference/BEAM value and trace agreement. The complete run keeps
 the C001 through C004 corpus green.
 
-The implementation commit has not yet been pushed or associated with a pull
-request. A later publication record must preserve this exact tested identity;
-it must not substitute a mutable branch name or an untested successor commit.
+Compiler PR #67 publishes the implementation commit without replacing the
+tested identity. A later merge record must preserve that identity rather than
+substituting the mutable branch head or an untested successor commit.
 
 ## Result
 
@@ -129,8 +134,7 @@ the boundaries deliberately excluded from 0.5.
 
 ## Follow-ups
 
-1. Add the pull-request and merge identities after this exact compiler commit
-   is published.
+1. Add the merge identity after compiler PR #67 is merged.
 2. Preserve the implementation identity when a later language version
    supersedes 0.5.
 3. Treat cleanup and cancellation as a separate resource-scope design, not an

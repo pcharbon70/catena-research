@@ -83,7 +83,8 @@ The complete C001–C005 suite remains green with warnings treated as errors.
 ## Conformance identity
 
 Version 0.5 is normative because immutable sibling-compiler commit
-`b24e58d587c830dbb9d8c87770105714745fcd1b` passed:
+[`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
+passed:
 
 ```bash
 mix format --check-formatted
@@ -97,10 +98,11 @@ git diff --check
 The [C005 conformance journal](../../50-journal/2026-08-03-c005-executable-effect-conformance.md)
 records the environment, results, focused trace cases, authorization, and
 compiler identity. C005, C076, and C079 name the resulting completed checklist
-boundaries. Publication metadata such as a later pull request or merge must be
-added without replacing this tested identity. The wider effect inquiry remains
-open because resources, exceptions, host effects, scoped control, performance,
-and usability exceed 0.5.
+boundaries. [Compiler PR #67](https://github.com/pcharbon70/catena/pull/67)
+publishes that identity; its later merge metadata must be added without
+replacing it. The wider effect inquiry remains open because resources,
+exceptions, host effects, scoped control, performance, and usability exceed
+0.5.
 
 ## Connections
 
