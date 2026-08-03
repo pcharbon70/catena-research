@@ -43,6 +43,12 @@ forwards the remainder. Resolution is lexical; the runtime MUST NOT search for
 the nearest handler by label. Effect-row normalization may sort for stable
 output but MUST preserve multiplicity and identity.
 
+The normative [0.5 effect specification](../effects-and-handlers/capabilities-rows-and-selection.md)
+refines this rule for known identities: repeated requests through the same
+capability coalesce, while distinct or still-abstract capabilities of one
+family preserve family-level multiplicity. This is a versioned 0.5 extension,
+not a retroactive change to 0.1.
+
 ## Traits
 
 Catena 0.1 has an open-world, coherent instance system with methods,

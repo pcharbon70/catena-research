@@ -29,9 +29,11 @@ Catena's earlier greenfield type-system synthesis chose effect rows and
 lexically scoped at-most-once resumptions—now described more precisely as
 affine—as a direction. The
 [algebraic-effects deep dive](../20-notes/algebraic-effects-and-handlers.md)
-refines that direction into a provisional semantic bundle, but the bundle has
-not yet been shown to have principal inference, abstraction safety, sound
-resource behavior, or usable surface syntax.
+refines that direction into a provisional semantic bundle. The normative 0.5
+slice now supplies bounded executable evidence for its rows, selection,
+handling, verifier, and BEAM lowering, but it does not establish principal
+inference or abstraction proofs, sound resource behavior, performance, or
+usable surface syntax.
 
 This inquiry is independent of any Catena repository outside this archive. It
 starts from the language-design goals recorded here and from the linked
@@ -217,9 +219,28 @@ The current evidence supports a constrained starting point:
 These findings motivate the working hypotheses; they do not prove that their
 combination is coherent.
 
+### Bounded 0.5 prototype finding
+
+The [C005 executable conformance record](../50-journal/2026-08-03-c005-executable-effect-conformance.md)
+freezes one authorized Elixir/OTP 29 compiler identity. Its 19 focused cases
+show agreement between an independently folded free-request evaluator and
+generated BEAM for lexical selection, exact identity forwarding and
+subtraction, deep resume, abort, nested handler order, and outer clause
+requests. The same implementation checks affine use statically and with a
+runtime consumed token, preserves identities through module interfaces, and
+executes a public handler across a module boundary.
+
+This is positive evidence for the bounded first-order design, not proof of the
+whole hypothesis bundle. The implementation deliberately rejects effectful
+anonymous functions and excludes resource cleanup, cancellation, exceptions,
+host effects, scoped operations, performance claims, and user-facing parser
+validation. Its finite corpus cannot establish most-generality, preservation,
+progress, contextual abstraction, or usability.
+
 ## Outcome
 
-Open. Resolve this inquiry only when the archive contains:
+Open. Normative 0.5 closes the bounded C005 implementation question, but this
+wider inquiry resolves only when the archive contains:
 
 1. one integrated operational and declarative Catena calculus;
 2. proofs or mechanized checks for type safety, instance scope, handler

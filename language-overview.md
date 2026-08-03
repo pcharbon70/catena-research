@@ -260,7 +260,7 @@ meaning. See [List Comprehensions](20-notes/list-comprehensions.md).
 
 An effect declaration introduces nominal request operations. A function's
 effect row records which families of requests it may perform, while a handler
-provides an interpretation. The leading initial design uses:
+provides an interpretation. Normative 0.5 fixes the bounded initial design:
 
 - first-order effect operations;
 - open effect rows with a defined policy for repeated labels;
@@ -269,6 +269,10 @@ provides an interpretation. The leading initial design uses:
 - affine resumptions that may be abandoned or resumed once;
 - clause-scoped, non-escaping resumption values;
 - open forwarding for requests a handler does not interpret.
+
+Request sites use `request`; signatures use `uses`; and module-level named
+handlers apply through `handle ... using ...`. An unqualified request requires
+one compatible lexical capability, while ambiguity requires an explicit name.
 
 Multi-shot resumptions, shallow handlers, higher-order scoped effects, and
 first-class resumption storage are intentionally outside the initial core.
@@ -280,7 +284,9 @@ The implementation path begins with a small typed handler calculus and a
 reference interpreter, then elaborates capabilities and uses a simple
 continuation-passing backend. Measurement should determine where selective CPS
 or native stack-segment support is worthwhile. See
-[Algebraic Effects and Handlers](20-notes/algebraic-effects-and-handlers.md).
+[Algebraic Effects and Handlers](20-notes/algebraic-effects-and-handlers.md)
+and the normative
+[Effect and Handler Specification](60-specification/effects-and-handlers/README.md).
 
 ### 7. Specifications and governance
 

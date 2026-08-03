@@ -31,6 +31,9 @@ behavior. Compiler behavior alone never changes the language.
 
 ### Subdirectories
 
+- [Effects and Handlers](effects-and-handlers/README.md) — the normative
+  version 0.5 nominal request, lexical capability, identity-aware row, deep
+  handler, affine resumption, typed-core, and effect-directed CPS contract.
 - [Traits and Categorical Operations](traits-and-categorical-operations/README.md)
   — the normative version 0.4 behavior-first hierarchy, coherent evidence,
   laws, structural derivation, operational contracts, specialization, and
