@@ -112,8 +112,14 @@ Additional requirements depend on `kind`:
 - `source` may use `authors`, `published`, `citation_key`, `container`,
   `edition`, `isbn`, `doi`, `url`, and `accessed`.
 - `specification` requires `status: draft | candidate | normative` and a
-  `spec_version` in `major.minor` form.
+  `spec_version` in exact `major.minor.patch` form.
 - `map` and `journal` use the common fields unless the schema changes.
+
+The current Catena prototype language line is `0.1`. C001 through C006 use
+patches `0.1.1` through `0.1.6`; each future semantic slice uses the next
+unused patch unless an approved versioning policy explicitly replaces this
+temporary convention. Compiler-package releases, external software versions,
+and historical artifact observations are separate version axes.
 
 Conventions:
 

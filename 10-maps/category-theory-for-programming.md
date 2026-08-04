@@ -29,7 +29,7 @@ optimizer trust.
 ## Start here
 
 - [Trait and Categorical Operation Specification](../60-specification/traits-and-categorical-operations/README.md)
-  is the normative 0.4 contract for the behavior-first public hierarchy,
+  is the normative 0.1.4 contract for the behavior-first public hierarchy,
   kinds, coherence, laws, derivation, execution order, specialization, and
   erased BEAM output, backed by published immutable conformance evidence.
 - [Category Theory for Programming](../20-notes/category-theory-for-programming.md)

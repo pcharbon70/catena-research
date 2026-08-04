@@ -3,14 +3,14 @@ title: "Type Language and Kinds"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - catena
   - principal-types
   - specification
   - type-inference
 aliases:
-  - "Catena 0.1 type syntax"
+  - "Catena 0.1.1 type syntax"
 ---
 
 # Type Language and Kinds
@@ -59,7 +59,7 @@ predicates apply only to unique record or variant rows.
 
 A scheme is ambiguous when a quantified variable appears in its constraints
 but is not determined by the result type, effect, or the declared functional
-dependencies of those constraints. Ambiguous schemes are invalid. Catena 0.1
+dependencies of those constraints. Ambiguous schemes are invalid. Catena 0.1.1
 has no numeric or other type defaulting.
 
 ## Signatures and exports

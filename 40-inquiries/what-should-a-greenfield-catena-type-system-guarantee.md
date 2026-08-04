@@ -145,7 +145,7 @@ now supplies the declaration, pattern, abstraction, derivation, representation,
 and evolution proposal for the nominal-data part of the principal fragment.
 
 The C001 portion has now been consolidated in the normative
-[Catena 0.1 Type-System Specification](../60-specification/type-system/README.md).
+[Catena 0.1.1 Type-System Specification](../60-specification/type-system/README.md).
 Its written proof decomposition and the
 [executable conformance journal](../50-journal/2026-08-01-c001-executable-type-system-conformance.md)
 make the guarantee boundary testable while stating that the evidence is not a

@@ -3,7 +3,7 @@ title: "Interfaces and Representation"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - beam-vm
@@ -17,7 +17,7 @@ aliases:
 
 ## Deterministic module interface
 
-Successful 0.2 compilation MUST produce a deterministic `.cati.json` module
+Successful 0.1.2 compilation MUST produce a deterministic `.cati.json` module
 interface beside the `.beam`. Checking without compilation MAY consume
 interfaces but MUST NOT write artifacts.
 
@@ -86,7 +86,7 @@ constructor name. `constructor_index` and payload order follow declaration
 order.
 
 Compact is the default production layout. Uniform is the reference layout.
-Every 0.2 conformance program MUST check and execute under both layouts. The
+Every 0.1.2 conformance program MUST check and execute under both layouts. The
 two raw Erlang terms need not compare equal; observation through typed Catena
 construction and matching MUST agree.
 
@@ -110,7 +110,7 @@ An untrusted Erlang term MUST NOT become a typed Catena ADT solely because it
 has a matching tuple or atom shape. The later G095 boundary must define
 validation and failure.
 
-Version 0.2 promises source representation independence, not stable ABI or
+Version 0.1.2 promises source representation independence, not stable ABI or
 wire compatibility. A stable external schema requires an explicit future
 contract. Closed transparent datatypes also provide no `non_exhaustive`
 evolution marker; an evolving API should export an abstract type and observer

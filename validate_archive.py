@@ -56,7 +56,8 @@ REQUIRED_README_HEADINGS = {
 KNOWLEDGE_FILENAME = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*\.md$")
 JOURNAL_FILENAME = re.compile(r"^\d{4}-\d{2}-\d{2}(?:-[a-z0-9]+(?:-[a-z0-9]+)*)?\.md$")
 PLACEHOLDER = re.compile(
-    r"\{(?:title|question|YYYY-MM-DD|author|directory title|directory-name)\}"
+    r"\{(?:title|question|YYYY-MM-DD|author|directory title|directory-name|"
+    r"MAJOR\.MINOR\.PATCH)\}"
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
 SPECIFICATION_CONTENT_LABEL = re.compile(
@@ -71,6 +72,14 @@ NON_NORMATIVE_HEADING_ROLE = re.compile(
 ILLUSTRATIVE_CUE = re.compile(r"\b(?:for example|illustrative)\b", re.IGNORECASE)
 NON_NORMATIVE_HEADING_SUFFIX = " (non-normative)"
 FENCE_START = re.compile(r"^(`{3,}|~{3,})")
+PROTOTYPE_SPECIFICATION_VERSIONS = {
+    "type-system": "0.1.1",
+    "data-and-patterns": "0.1.2",
+    "clause-conditions": "0.1.3",
+    "traits-and-categorical-operations": "0.1.4",
+    "effects-and-handlers": "0.1.5",
+    "specifications-and-governance": "0.1.6",
+}
 
 
 class StringDateLoader(yaml.SafeLoader):
@@ -531,6 +540,12 @@ def validate() -> tuple[list[str], dict[str, int]]:
                 errors.append(
                     f"{relative(area)}: specification chapters must share one "
                     "spec_version"
+                )
+            expected_version = PROTOTYPE_SPECIFICATION_VERSIONS.get(area.name)
+            if expected_version is not None and versions != {expected_version}:
+                errors.append(
+                    f"{relative(area)}: prototype specification version must be "
+                    f"{expected_version!r}"
                 )
             if len(statuses) != 1:
                 errors.append(

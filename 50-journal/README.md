@@ -30,34 +30,43 @@ source notes.
 
 ### Documents
 
+- [Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) —
+  records the approved `0.1.1` through `0.1.6` hard cutover, protocol and
+  signature impact, historical mapping, validation method, and pending
+  immutable-commit gate.
 - [C007 Normative Document Authority](2026-08-03-c007-normative-document-authority.md)
   — records the sole-authority policy, visible normative and non-normative
   labels, conflict procedure, complete specification migration, validator
   enforcement, and documentation-only compiler verification.
 - [C006 Executable Specification and Governance Conformance](2026-08-03-c006-executable-specification-governance-conformance.md)
-  — records the authorized immutable specification and governance
-  implementation, bounded checker, independent policy oracle, offline trust
-  lifecycle, artifact binding, complete BEAM erasure, and passing adversarial
-  suite.
+  — records the historically labelled `0.6` authorized immutable
+  specification and governance implementation, now designated
+  C006/`0.1.6`, including its bounded checker, independent policy oracle,
+  offline trust lifecycle, artifact binding, complete BEAM erasure, and
+  passing adversarial suite.
 - [C005 Executable Effect Conformance](2026-08-03-c005-executable-effect-conformance.md)
-  — records the authorized immutable effect implementation, nominal lexical
+  — records the historically labelled `0.5` authorized immutable effect
+  implementation, now designated C005/`0.1.5`, including nominal lexical
   capability rows, deep affine handling, independent free-request semantics,
   selective CPS, cross-module BEAM execution, and passing differential suite.
 - [C004 Executable Trait Conformance](2026-08-02-c004-executable-trait-conformance.md)
-  — records the published kinded hierarchy, coherent evidence, derivation,
-  law tests, digest-bound interfaces, manifest specialization, direct-call
-  BEAM erasure, passing suite, immutable compiler commit, and merge evidence.
+  — records the historically labelled `0.4` kinded hierarchy, now designated
+  C004/`0.1.4`, coherent evidence, derivation, law tests, digest-bound
+  interfaces, manifest specialization, direct-call BEAM erasure, passing
+  suite, immutable compiler commit, and merge evidence.
 - [C003 Executable Clause Condition Conformance](2026-08-02-c003-executable-clause-condition-conformance.md)
-  — records the published AST 0.3 safe-condition checker, predicate interfaces,
-  guarded coverage facts, native and ordinary BEAM lowering, receive harness,
-  passing suite, immutable compiler commit, and merge evidence.
+  — records the historically labelled AST `0.3` safe-condition checker, now
+  designated C003/`0.1.3`, predicate interfaces, guarded coverage facts,
+  BEAM lowering, immutable compiler commit, and merge evidence.
 - [C002 Executable Data and Pattern Conformance](2026-08-02-c002-executable-data-and-pattern-conformance.md)
-  — records nominal ADT elaboration, coverage, GADT and existential checks,
+  — records the historically labelled `0.2` nominal ADT implementation, now
+  designated C002/`0.1.2`, including coverage, GADT and existential checks,
   interfaces, folds, reference evaluation, dual-layout execution, and the
   current evidence limits.
 - [C001 Executable Type-System Conformance](2026-08-01-c001-executable-type-system-conformance.md)
-  — records the clean Elixir/OTP 29 bootstrap implementation, commands,
-  passing tests, backend artifact inspection, and current evidence limits.
+  — records the historically labelled `0.1` clean Elixir/OTP 29 bootstrap,
+  now designated C001/`0.1.1`, its commands, passing tests, backend artifact
+  inspection, and current evidence limits.
 
 The former implementation audit is quarantined in the
 [archive](../90-archive/README.md) because repository-derived evidence is

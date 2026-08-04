@@ -24,12 +24,14 @@ not inherit semantics from another Catena repository.
 ## Start here
 
 - [Effect and Handler Specification](../60-specification/effects-and-handlers/README.md)
-  is the bounded normative 0.5 contract for first-order requests, lexical
+  is the bounded normative 0.1.5 contract for first-order requests, lexical
   selection, identity-aware rows, named deep handlers, affine resumptions,
   typed core, and effect-directed CPS.
 - [C005 Executable Effect Conformance](../50-journal/2026-08-03-c005-executable-effect-conformance.md)
-  binds that contract to the authorized immutable compiler identity and its
-  reference/BEAM conformance results.
+  records the authorized historical compiler identity and its reference/BEAM
+  semantic conformance results under the retired identifier. The
+  [renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+  owns the fresh `0.1.5` protocol-evidence gate.
 - [Algebraic Effects and Handlers](../20-notes/algebraic-effects-and-handlers.md)
   is the main synthesis, operational model, design matrix, and provisional
   Catena contract.

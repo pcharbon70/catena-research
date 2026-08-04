@@ -3,7 +3,7 @@ title: "Declarations and Nominal Identity"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - modules
@@ -32,7 +32,7 @@ type DeliveryStatus =
 ```
 
 Parameters and explicit existential binders MUST carry kinds in the resolved
-syntax. The 0.2 executable slice accepts only `Type`-kinded parameters, while
+syntax. The 0.1.2 executable slice accepts only `Type`-kinded parameters, while
 the general kind grammar remains controlled by C001.
 
 Each constructor has exactly one payload product. A nullary constructor has
@@ -124,12 +124,12 @@ A public datatype interface is exactly one of:
 
 Code inside the declaring module may use all local constructors. A client may
 construct or match only constructors present in a transparent imported
-interface. Version 0.2 has no separate construct-only or match-only authority.
+interface. Version 0.1.2 has no separate construct-only or match-only authority.
 
 The canonical source reference is `Type.Constructor` locally and
 `Module.Type.Constructor` across modules. Imported constructors remain
 qualified unless an explicit constructor import supplies an unqualified name
-or alias. Wildcard constructor imports are not part of 0.2. Ambiguous or
+or alias. Wildcard constructor imports are not part of 0.1.2. Ambiguous or
 duplicate aliases are invalid.
 
 ## Diagnostics and evidence

@@ -12,6 +12,15 @@ aliases:
 
 # C001 Executable Type-System Conformance
 
+## Numbering amendment
+
+This record predates the approved prototype-slice renumbering. The observed
+compiler input and compile metadata at this historical run used `0.1`; those
+observations are preserved rather than rewritten. The current canonical C001
+designation is `0.1.1`. The complete mapping and the requirement for a fresh
+cross-slice executable identity are recorded in
+[Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md).
+
 ## Question
 
 Can the C001 specification be exercised by a clean Elixir bootstrap compiler

@@ -3,30 +3,30 @@ title: "Clause Condition Overview"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - catena
   - pattern-matching
   - specification
 aliases:
-  - "Catena 0.3 clause condition boundary"
+  - "Catena 0.1.3 clause condition boundary"
 ---
 
 # Clause Condition Overview
 
 ## Status and authority
 
-This chapter and its eight sibling chapters are the normative Catena 0.3
+This chapter and its eight sibling chapters are the normative Catena 0.1.3
 clause-condition slice. They refine the conservative guard boundary in the
-[0.2 data-and-pattern specification](../data-and-patterns/README.md) and use
-the types fixed by the [0.1 type-system specification](../type-system/README.md).
+[0.1.2 data-and-pattern specification](../data-and-patterns/README.md) and use
+the types fixed by the [0.1.1 type-system specification](../type-system/README.md).
 
 `MUST`, `MUST NOT`, `SHOULD`, and `MAY` express requirements. An invalid
 program MUST be rejected. These chapters are backed by published executable
 evidence at Catena compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce).
-The 0.3 condition rules explicitly apply where 0.2 left nonliteral condition
-behavior conservative; the 0.2 structural pattern rules remain applicable.
+The 0.1.3 condition rules explicitly apply where 0.1.2 left nonliteral condition
+behavior conservative; the 0.1.2 structural pattern rules remain applicable.
 Document status, content labels, rule references, and conflict handling follow
 the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
@@ -56,7 +56,7 @@ parser.
 
 ## Guarantees
 
-Version 0.3 provides:
+Version 0.1.3 provides:
 
 - Boolean-only conditions over immutable pattern and lexical bindings;
 - a closed, total, deterministic, empty-effect expression fragment;
@@ -78,13 +78,13 @@ inside the body. It affects clause selection and certified coverage only.
 
 ## Compiler boundary
 
-The executable bootstrap accepts JSON AST 0.3 and follows this path:
+The executable bootstrap accepts JSON AST 0.1.3 and follows this path:
 
 > **Non-normative diagram.**
 
 ```mermaid
 flowchart LR
-    A[JSON AST 0.3] --> D[Decode declarations and clauses]
+    A[JSON AST 0.1.3] --> D[Decode declarations and clauses]
     D --> S[Check explicit condition signatures]
     S --> N[Normalize safe condition core]
     N --> T[Infer and check typed clauses]
@@ -94,7 +94,7 @@ flowchart LR
     V --> L[Native or ordinary lowering]
     L --> E[Erlang Abstract Format]
     E --> O[OTP 29 compile:noenv_forms]
-    O --> B[BEAM plus version 0.3 interface]
+    O --> B[BEAM plus version 0.1.3 interface]
 ```
 
 The compiler MUST use OTP's supported Abstract Format compiler interface as
@@ -105,7 +105,7 @@ these chapters.
 
 ## Deliberate exclusions
 
-Version 0.3 does not add:
+Version 0.1.3 does not add:
 
 - unrestricted function calls, recursion, termination proofs, or higher-order
   values inside conditions;
@@ -121,7 +121,7 @@ Version 0.3 does not add:
 - an external SMT solver or acceptance-changing unchecked assertion.
 
 Those are explicit boundaries. Later versions MUST specify them rather than
-silently broadening the meaning of a 0.3 condition.
+silently broadening the meaning of a 0.1.3 condition.
 
 ## Connections (non-normative)
 

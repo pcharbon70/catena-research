@@ -3,26 +3,26 @@ title: "Type-System Overview"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - catena
   - principal-types
   - specification
   - type-inference
 aliases:
-  - "Catena 0.1 type-system profiles"
+  - "Catena 0.1.1 type-system profiles"
 ---
 
 # Type-System Overview
 
 ## Status and authority
 
-This chapter and its seven sibling chapters are the normative Catena 0.1
+This chapter and its seven sibling chapters are the normative Catena 0.1.1
 type-system slice. They complete checklist item C001 without claiming that the
 whole language is specified. The
-[normative 0.2 data and pattern specification](../data-and-patterns/README.md)
+[normative 0.1.2 data and pattern specification](../data-and-patterns/README.md)
 defines the complete nominal ADT and match slice. The normative
-[0.3 clause-condition specification](../clause-conditions/README.md) adds a
+[0.1.3 clause-condition specification](../clause-conditions/README.md) adds a
 closed first-order `Bool`/`Int` selection fragment without changing principal
 inference or refining body types. Source parsing, full handler dynamics, and
 the public trait library remain separate work.
@@ -75,7 +75,7 @@ candidate export signature, but absence of the written signature is invalid.
 
 ## Version boundary
 
-Version 0.1 supports the advanced features defined in
+Version 0.1.1 supports the advanced features defined in
 [Advanced Type Checking](advanced-type-checking.md). It deliberately excludes
 impredicativity, inference of higher-rank types, unrestricted type-level
 computation, dependent types, general linear types, polymorphic recursion

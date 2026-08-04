@@ -351,7 +351,7 @@ BEAM artifacts and run behavioral and performance comparisons. Require that:
 
 The current synthesis is
 [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md).
-The [normative 0.6 specification](../60-specification/specifications-and-governance/README.md)
+The [normative 0.1.6 specification](../60-specification/specifications-and-governance/README.md)
 now freezes and makes executable a bounded subset. It selects:
 
 - a typed specification graph rather than comments or disconnected test
@@ -368,15 +368,18 @@ now freezes and makes executable a bounded subset. It selects:
 - staged implementation beginning with typed rules, exact examples, offline
   trust, and lifecycle.
 
-The authorized implementation, independent oracle, adversarial corpus, and
-erasure audit satisfied the promotion gate, as recorded in the
+The historical authorized implementation, independent oracle, adversarial
+corpus, and erasure audit satisfied the C006 semantic promotion gate under the
+retired protocol identifier, as recorded in the
 [C006 conformance journal](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md).
+The [renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+owns the fresh `0.1.6` protocol-evidence gate.
 Runtime monitors, richer evidence producers, performance evaluation, and user
 study remain outside the bounded normative slice.
 
 ## Outcome
 
-Open. Normative 0.6 resolves only the bounded governance spine; the wider
+Open. Normative 0.1.6 resolves only the bounded governance spine; the wider
 inquiry still requires:
 
 - generalized metatheory for specification elaboration and erasure beyond the

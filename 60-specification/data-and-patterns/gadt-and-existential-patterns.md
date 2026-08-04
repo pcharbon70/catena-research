@@ -3,7 +3,7 @@ title: "GADT and Existential Patterns"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - pattern-matching
@@ -100,7 +100,7 @@ branch type.
 
 ## Limits
 
-Version 0.2 does not infer GADT signatures, support impredicative
+Version 0.1.2 does not infer GADT signatures, support impredicative
 instantiation, derive `fold` for GADTs or existential constructors, or expose
 equality proofs to ordinary source programs.
 

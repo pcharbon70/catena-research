@@ -49,7 +49,8 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   starting hierarchy.
 - [Clause Guards](clause-guards.md) — proposes Boolean-only clause conditions,
   a checked effect-free and total fragment, and now connects that rationale to
-  the normative 0.3 specification and published executable evidence.
+  the normative 0.1.3 specification and historical executable semantic
+  evidence.
 - [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
   — develops a layered combinator policy for functions, sums, products, ADTs,
   categorical classes, domain libraries, and compiler representations, with

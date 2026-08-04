@@ -29,7 +29,7 @@ Catena's earlier greenfield type-system synthesis chose effect rows and
 lexically scoped at-most-once resumptions—now described more precisely as
 affine—as a direction. The
 [algebraic-effects deep dive](../20-notes/algebraic-effects-and-handlers.md)
-refines that direction into a provisional semantic bundle. The normative 0.5
+refines that direction into a provisional semantic bundle. The normative 0.1.5
 slice now supplies bounded executable evidence for its rows, selection,
 handling, verifier, and BEAM lowering, but it does not establish principal
 inference or abstraction proofs, sound resource behavior, performance, or
@@ -219,7 +219,7 @@ The current evidence supports a constrained starting point:
 These findings motivate the working hypotheses; they do not prove that their
 combination is coherent.
 
-### Bounded 0.5 prototype finding
+### Bounded 0.1.5 prototype finding
 
 The [C005 executable conformance record](../50-journal/2026-08-03-c005-executable-effect-conformance.md)
 freezes one authorized Elixir/OTP 29 compiler identity. Its 19 focused cases
@@ -239,7 +239,7 @@ progress, contextual abstraction, or usability.
 
 ## Outcome
 
-Open. Normative 0.5 closes the bounded C005 implementation question, but this
+Open. Normative 0.1.5 closes the bounded C005 implementation question, but this
 wider inquiry resolves only when the archive contains:
 
 1. one integrated operational and declarative Catena calculus;

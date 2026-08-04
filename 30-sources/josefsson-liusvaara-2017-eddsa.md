@@ -54,7 +54,7 @@ considerations, and known-answer vectors for interoperable implementations.
 
 ## Relevance
 
-Catena 0.6 needs a small offline signature contract for evidence, approvals,
+Catena 0.1.6 needs a small offline signature contract for evidence, approvals,
 transitions, delegations, and trust-root changes. Ed25519 is supported by the
 OTP 29 cryptographic runtime used by the bootstrap compiler, so the compiler
 can verify without owning private keys.

@@ -3,13 +3,13 @@ title: "Declarations, Instances, and Coherence"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.4"
+spec_version: "0.1.4"
 tags:
   - specification
   - trait-constraints
   - type-inference
 aliases:
-  - "Catena 0.4 trait coherence"
+  - "Catena 0.1.4 trait coherence"
 ---
 
 # Declarations, Instances, and Coherence
@@ -34,7 +34,7 @@ Each argument MUST match its trait parameter kind. Constructor application is
 left-associated and kind checked. Multi-parameter traits MAY declare
 functional dependencies as input and output parameter positions. Associated
 types are permitted and reduce only after one coherent instance has been
-selected. Associated constants are excluded from 0.4.
+selected. Associated constants are excluded from 0.1.4.
 
 ## Ownership and overlap
 
@@ -80,7 +80,7 @@ Ordinary unqualified expressions retain principal rank-1 inference. Trait
 constraints are solved at monomorphic specialization roots or retained as
 verified interface templates. Ambiguous variables that do not determine one
 instance are rejected rather than defaulted. Higher-kinded trait parameters
-are rigid; 0.4 does not add arbitrary type lambdas or higher-rank inference.
+are rigid; 0.1.4 does not add arbitrary type lambdas or higher-rank inference.
 
 ## Connections (non-normative)
 

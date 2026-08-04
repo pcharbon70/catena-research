@@ -15,6 +15,15 @@ aliases:
 
 # C005 Executable Effect Conformance
 
+## Numbering amendment
+
+This record predates the approved prototype-slice renumbering. Commit
+`b24e58d587c830dbb9d8c87770105714745fcd1b` actually used the historical
+`0.5` AST and interface values, which remain part of this record. The current
+canonical C005 designation is `0.1.5`. See
+[Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) for
+the complete mapping and pending cross-slice conformance identity.
+
 ## Observations
 
 The sibling Catena compiler implementation is frozen on branch

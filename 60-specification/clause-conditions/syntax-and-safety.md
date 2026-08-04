@@ -3,7 +3,7 @@ title: "Clause Condition Syntax and Safety"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - pattern-matching
   - program-semantics
@@ -17,7 +17,7 @@ aliases:
 
 ## Clause form
 
-The version 0.3 surface shape is:
+The version 0.1.3 surface shape is:
 
 > **Normative definition.**
 
@@ -30,9 +30,9 @@ condition `true`, but implementations need not materialize that literal. A
 condition reads bindings established by its clause pattern and surrounding
 immutable lexical scope. It introduces no binding.
 
-The bootstrap JSON AST 0.3 represents unary and binary operations explicitly
+The bootstrap JSON AST 0.1.3 represents unary and binary operations explicitly
 and represents multi-clause definitions as one signed definition with a
-nonempty, common-arity clause list. Earlier AST versions MUST reject 0.3
+nonempty, common-arity clause list. Earlier AST versions MUST reject 0.1.3
 condition declarations, operators, and multi-clause definition encoding.
 
 ## Static judgment
@@ -51,7 +51,7 @@ the set of referenced predicate identities. Success requires:
 
 - the inferred result is exactly `Bool`;
 - the inferred effect is empty;
-- every operation belongs to the closed 0.3 set;
+- every operation belongs to the closed 0.1.3 set;
 - every operation is total for every value of its admitted type;
 - every predicate call is direct, fully applied, and resolves to verified
   condition evidence;
@@ -62,7 +62,7 @@ There is no truthiness conversion. A value of type `Int` is not a condition.
 
 ## Exact initial expression set
 
-The 0.3 fragment admits only:
+The 0.1.3 fragment admits only:
 
 | Form | Type and meaning |
 | --- | --- |
@@ -77,13 +77,13 @@ The 0.3 fragment admits only:
 | `a + b`, `a - b`, `a * b` | total mathematical-integer arithmetic |
 | `predicate(args...)` | direct, fully applied call to a verified condition predicate |
 
-`Int` in this version 0.3 slice is the unbounded mathematical integer already
+`Int` in this version 0.1.3 slice is the unbounded mathematical integer already
 used by the bootstrap model. A future fixed-width or foreign integer type MUST
 state overflow and comparison rules separately.
 
 Equality is exact: a Boolean is never numerically equal to an integer, and no
 coercion or defaulting occurs. Trait or method resolution does not participate
-in 0.3 condition operators.
+in 0.1.3 condition operators.
 
 ## Excluded forms
 

@@ -29,7 +29,7 @@ release. Coverage does not spread to unrelated modules or dependencies without
 an explicit policy or interface obligation.
 
 Language integration also does not imply runtime retention. The recommended
-0.6 profile erases claims, verification definitions, and build-time policy
+0.1.6 profile erases claims, verification definitions, and build-time policy
 before BEAM code generation. A signed sidecar manifest preserves provenance;
 runtime monitors are deliberately deferred rather than silently retained.
 
@@ -39,14 +39,16 @@ authorization, provenance, and proof certificates.
 
 ## Start here
 
-- [Catena 0.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
+- [Catena 0.1.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
   freezes the bounded normative contract: semantic JSON forms,
   typed rules and examples, additive policy, offline Ed25519 roots,
   hash-chained lifecycle, staged package output, and complete BEAM erasure.
 - [C006 Executable Specification and Governance Conformance](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md)
-  records the authorized immutable compiler identity, exact environment,
+  records the authorized historical compiler identity, exact environment,
   independent-oracle and adversarial results, erasure evidence, and artifact
-  digests that promoted version 0.6.
+  digests that promoted the C006 semantics under the retired identifier. The
+  [renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+  owns the fresh `0.1.6` protocol-evidence gate.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   is the main synthesis. It proposes the typed specification graph, claim and
   evidence taxonomy, restricted policy language, transition history, trust
@@ -176,7 +178,7 @@ supplies Ed25519 algorithms and independent vectors. The
 shows why distinct-key thresholds and old-plus-new authorization are necessary
 for a continuous root rotation.
 
-Catena 0.6 combines these only as a bounded offline protocol. Canonical bytes
+Catena 0.1.6 combines these only as a bounded offline protocol. Canonical bytes
 and signatures bind statements; policy and lifecycle rules decide whether
 their signers have authority for the exact action.
 
@@ -200,21 +202,21 @@ their signers have authority for the exact action.
 
 The active
 [specification and governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
-tracks the full workbench. Normative 0.6 answers the bounded core-calculus,
+tracks the full workbench. Normative 0.1.6 answers the bounded core-calculus,
 digest, offline-root, action-gate, and total-erasure questions. The hardest
 remaining questions are:
 
 - Which public parser syntax best exposes the fixed semantic forms?
 - Which local development actions remain available when publication or
   activation evidence is incomplete?
-- What erasure theorem and performance evidence generalize beyond the 0.6
+- What erasure theorem and performance evidence generalize beyond the 0.1.6
   byte-identity and artifact-inspection checks?
 - How do contracts wrap handlers, resumptions, callbacks, and process
   messages?
 - Can one IR serve executable, bounded, temporal, and deductive claims without
   erasing their meanings?
 - How should cross-organization identity, archived evidence, transparency,
-  schema migration, and future-compiler interpretation extend the offline 0.6
+  schema migration, and future-compiler interpretation extend the offline 0.1.6
   protocol?
 - Which certificates can a small kernel recheck, and which external producers
   remain explicitly trusted?
@@ -226,4 +228,4 @@ remaining questions are:
 The map should remain open until generalized formal semantics, representative
 performance evaluation, long-term protocol evolution, and a vocabulary study
 provide evidence beyond the bounded reference evaluator, implementation, and
-adversarial corpus recorded for 0.6.
+adversarial corpus recorded for 0.1.6.

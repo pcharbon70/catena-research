@@ -28,13 +28,15 @@ conditions, a total effect-free guard fragment, conservative coverage, a typed
 guard-tree IR, and separate ordinary versus receive lowering.
 
 Then read the normative
-[Catena 0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
+[Catena 0.1.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
 for the exact implemented boundary: `Bool`/`Int` operations, acyclic signed
 predicates, difference-constraint facts, ordered selection, interface
 evidence, and native or ordinary BEAM lowering. The
 [C003 evidence journal](../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md)
-records the published compiler commit, 46-test implementation, and promotion
-evidence.
+records the published compiler commit, 46-test historical semantic
+implementation, and promotion evidence under the retired identifier. The
+[renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+owns the fresh `0.1.3` protocol-evidence gate.
 
 Then use
 [How Should Catena Design Clause Guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
@@ -105,7 +107,7 @@ proof-producing precision tier.
 
 The active
 [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md)
-tracks questions left after the normative 0.3 implementation:
+tracks questions left after the normative 0.1.3 implementation:
 
 - whether the exact initial fragment is practical in representative programs;
 - later recursive predicates and trait-carried safety evidence;

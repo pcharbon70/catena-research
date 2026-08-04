@@ -16,12 +16,12 @@ aliases:
 
 ## Purpose
 
-These chapters define Catena 0.2 nominal algebraic data, construction,
+These chapters define Catena 0.1.2 nominal algebraic data, construction,
 patterns, matching, coverage, GADT refinement, module interfaces, BEAM
 representation independence, and the initial generated fold.
 
 The normative [Clause Condition Specification](../clause-conditions/README.md)
-refines 0.2's conservative nonliteral-guard boundary without changing its
+refines 0.1.2's conservative nonliteral-guard boundary without changing its
 structural rules.
 
 ## What belongs here
@@ -34,6 +34,13 @@ their own specification areas.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
+Every chapter is `normative`. The historical C002 commit exercised these
+semantics under retired `0.1` and `0.2` protocol identifiers. It remains
+semantic evidence, but it is not evidence for the exact `0.1.1` and `0.1.2`
+wire identities. The hard cutover and fresh cross-slice evidence requirement
+are recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 
 ## Index
 
@@ -49,7 +56,7 @@ Document authority and rendered content labels follow the repository
   declaration grammar, recursive groups, constructor schemes, visibility,
   and names.
 - [Construction and Pattern Typing](construction-and-pattern-typing.md) —
-  construction order, the complete 0.2 pattern grammar, binding rules, and
+  construction order, the complete 0.1.2 pattern grammar, binding rules, and
   typed-pattern elaboration.
 - [Match Semantics and Coverage](match-semantics-and-coverage.md) — ordered
   evaluation, guards, usefulness, inhabitedness, witnesses, redundancy, and
@@ -71,9 +78,10 @@ Document authority and rendered content labels follow the repository
 ## Executable evidence
 
 The sibling [Catena compiler](https://github.com/pcharbon70/catena) implements
-the 0.2 JSON-AST slice in Elixir on Erlang/OTP 29. It elaborates to verified
-typed core and delegates `.beam` generation exclusively to
-`compile:noenv_forms/2`. Reproduction commands and observed limits are in
+the renumbered `0.1.2` JSON-AST slice in its current working tree. It
+elaborates to verified typed core and delegates `.beam` generation exclusively
+to `compile:noenv_forms/2`. Historical reproduction commands and observed
+limits are in
 [C002 Executable Data and Pattern Conformance](../../50-journal/2026-08-02-c002-executable-data-and-pattern-conformance.md).
 
 ## Maintaining this index

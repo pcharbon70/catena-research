@@ -12,6 +12,15 @@ aliases:
 
 # C002 Executable Data and Pattern Conformance
 
+## Numbering amendment
+
+This record predates the approved prototype-slice renumbering. The cited
+immutable compiler commit actually used JSON AST `0.1` and `0.2`; those
+historical protocol observations and artifact hashes are preserved. Their
+current canonical designations are `0.1.1` and `0.1.2`. See
+[Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) for
+the complete mapping and new executable-evidence gate.
+
 ## Question
 
 Can the C002 data and pattern rules be implemented as an extension of the

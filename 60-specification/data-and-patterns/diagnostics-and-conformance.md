@@ -3,7 +3,7 @@ title: "Data and Pattern Diagnostics and Conformance"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - diagnostics
@@ -17,7 +17,7 @@ aliases:
 
 ## Stable diagnostics
 
-The 0.2 diagnostic families are:
+The 0.1.2 diagnostic families are:
 
 | ID | Meaning |
 | --- | --- |
@@ -30,7 +30,7 @@ The 0.2 diagnostic families are:
 | `M002` | Redundant match clause |
 | `M003` | Invalid pattern type, arity, field, binding, or `or` agreement |
 | `M004` | Deterministic coverage implementation limit exhausted |
-| `M005` | Unsupported 0.2 pattern form |
+| `M005` | Unsupported 0.1.2 pattern form |
 | `L001` | Invalid layout selection or verified typed-layout invariant |
 
 C001 `T009` remains the rigid existential or equality escape diagnostic.
@@ -50,7 +50,7 @@ A conforming implementation MUST accept and check:
   ordinary datatype declarations;
 - positional and named construction, including named fields written out of
   declaration order;
-- every pattern form enumerated by 0.2, including nested `as` and `or` forms;
+- every pattern form enumerated by 0.1.2, including nested `as` and `or` forms;
 - exhaustive Boolean, tuple, constructor, and proven-empty matches;
 - unknown guarded clauses followed by an unguarded exhaustive fallback;
 - transparent imported constructors and abstract values used opaquely;
@@ -94,12 +94,16 @@ The suite MUST include a deterministic bounded pattern corpus independent of
 the inference and coverage implementation. Bounded enumeration is evidence,
 not proof.
 
-## Promotion evidence
+## Promotion evidence (non-normative)
 
 The executable evidence is published in the sibling compiler repository on
-`rewrite` as commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`. That commit is
-the immutable implementation identity used to promote this slice; later
-compiler behavior does not alter these language rules.
+`rewrite` as commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`. That historical
+commit used the retired `0.1` and `0.2` protocol identifiers. It is the
+immutable semantic evidence originally used to promote C002, but it is not an
+implementation identity for the exact `0.1.1` and `0.1.2` strings.
 
 Commands and observed results are recorded in
 [C002 Executable Data and Pattern Conformance](../../50-journal/2026-08-02-c002-executable-data-and-pattern-conformance.md).
+The [prototype-slice renumbering record](../../50-journal/2026-08-04-prototype-slice-renumbering.md)
+requires a fresh cross-slice identity before the renumbered executable claim
+is published.

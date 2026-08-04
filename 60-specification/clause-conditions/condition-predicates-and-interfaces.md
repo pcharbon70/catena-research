@@ -3,7 +3,7 @@ title: "Condition Predicates and Interfaces"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - compilers
   - pattern-matching
@@ -17,7 +17,7 @@ aliases:
 
 ## Declaration contract
 
-The version 0.3 declaration shape is:
+The version 0.1.3 declaration shape is:
 
 > **Non-normative example.**
 
@@ -28,7 +28,7 @@ condition positive(value: Int) -> Bool = value > 0
 A condition predicate MUST:
 
 - have an explicit, monomorphic, first-order signature;
-- accept only `Bool` and `Int` parameters in 0.3;
+- accept only `Bool` and `Int` parameters in 0.1.3;
 - return exactly `Bool` with an empty effect;
 - have a body checked wholly by the
   [condition-safe judgment](syntax-and-safety.md);
@@ -43,7 +43,7 @@ unchanged; it simply cannot be reached from condition core.
 ## Canonical identity and core
 
 A condition exported from module `M` under name `p` has the canonical identity
-`M.p` within the 0.3 bootstrap contract. Package identity and dependency
+`M.p` within the 0.1.3 bootstrap contract. Package identity and dependency
 resolution remain governed by the broader unresolved module system; a later
 format may strengthen this identity without weakening evidence checks.
 
@@ -51,7 +51,7 @@ The compiler normalizes each accepted body into a core containing only:
 
 - Boolean and integer literals;
 - named parameter references;
-- the exact unary and binary operations defined by 0.3; and
+- the exact unary and binary operations defined by 0.1.3; and
 - calls naming canonical condition identities with normalized arguments.
 
 Source paths, inferred types already enforced by checking, formatting, and
@@ -62,13 +62,13 @@ The normalization is deterministic.
 
 Each exported condition carries:
 
-- evidence format version `0.3`;
+- evidence format version `0.1.3`;
 - canonical condition identity;
 - ordered parameter names;
 - a canonical portable body after transitive predicate inlining;
 - sorted direct dependency identities;
 - an `expanded_core` copy that MUST equal that canonical body in interface
-  version 0.3;
+  version 0.1.3;
 - a native-lowerability marker; and
 - a SHA-256 digest over the canonical evidence payload.
 
@@ -85,13 +85,13 @@ operation set before it affects acceptance or receive lowering.
 
 ## Module interfaces
 
-Version 0.3 `.cati.json` interfaces extend value entries with an optional
+Version 0.1.3 `.cati.json` interfaces extend value entries with an optional
 `condition` object. Non-condition values retain only their ordinary type
 scheme. Interface serialization is canonical and the whole interface remains
 protected by its own SHA-256 digest.
 
-Version 0.2 interfaces remain readable. They cannot supply condition evidence,
-so a value exported only by a 0.2 interface cannot be imported as a condition.
+Version 0.1.2 interfaces remain readable. They cannot supply condition evidence,
+so a value exported only by a 0.1.2 interface cannot be imported as a condition.
 The runtime ADT layout remains absent from both interface versions.
 
 ## Explicit imports
@@ -106,7 +106,7 @@ import condition Rules.positive as positive
 
 The import names one exported condition and one local alias. Wildcard condition
 imports, implicit discovery, type-directed selection, and import-order
-selection are outside 0.3. Duplicate aliases are invalid.
+selection are outside 0.1.3. Duplicate aliases are invalid.
 
 An ordinary value import does not become condition-safe merely because its
 scheme ends in `Bool`. Conversely, an imported condition retains an ordinary

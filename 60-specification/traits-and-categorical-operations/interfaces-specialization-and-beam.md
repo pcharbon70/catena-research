@@ -3,25 +3,25 @@ title: "Interfaces, Specialization, and BEAM"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.4"
+spec_version: "0.1.4"
 tags:
   - beam-vm
   - compilers
   - specification
   - trait-constraints
 aliases:
-  - "Catena 0.4 trait erasure"
+  - "Catena 0.1.4 trait erasure"
 ---
 
 # Interfaces, Specialization, and BEAM
 
-## Interface version 0.4
+## Interface version 0.1.4
 
-A module interface is canonical JSON bound by a SHA-256 digest. Version 0.4
+A module interface is canonical JSON bound by a SHA-256 digest. Version 0.1.4
 adds trait declarations, instances, law metadata, derivation provenance,
 verified specialization templates, helper closure, and the standard hierarchy
-digest to the 0.2 and 0.3 type, value, and condition evidence. Decoders MUST
-continue to accept valid 0.2 and 0.3 interfaces without inventing trait data.
+digest to the 0.1.2 and 0.1.3 type, value, and condition evidence. Decoders MUST
+continue to accept valid 0.1.2 and 0.1.3 interfaces without inventing trait data.
 
 Any byte-level semantic change alters the digest. A tampered interface, an
 incomplete helper closure, duplicate template identity, or a different
@@ -31,8 +31,8 @@ standard hierarchy digest is rejected before linking.
 
 The toolchain ships one compiled canonical standard interface. Projects do not
 declare it as a package dependency, and the compiler does not hard-code its
-traits. Every 0.4 interface records its digest. This is content binding, not
-cryptographic publisher signing; publisher identity remains outside 0.4.
+traits. Every 0.1.4 interface records its digest. This is content binding, not
+cryptographic publisher signing; publisher identity remains outside 0.1.4.
 
 ## Explicit build manifest
 
@@ -42,7 +42,7 @@ Package specialization is driven by a toolchain-only manifest with:
 
 ```text
 format              = catena-package-manifest
-version             = 0.4
+version             = 0.1.4
 companion_module    = one BEAM module name
 modules             = ordered source/BEAM/interface output records
 interfaces          = explicit dependency interface paths

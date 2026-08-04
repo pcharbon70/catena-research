@@ -3,7 +3,7 @@ title: "Construction and Pattern Typing"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - pattern-matching
@@ -42,9 +42,9 @@ Construction instantiates the constructor scheme freshly, checks each field,
 and returns the instantiated nominal result. Positional and named constructor
 styles MUST NOT be interchanged implicitly.
 
-## Complete 0.2 pattern grammar
+## Complete 0.1.2 pattern grammar
 
-Version 0.2 supports exactly these pattern forms:
+Version 0.1.2 supports exactly these pattern forms:
 
 > **Normative definition.**
 
@@ -67,7 +67,7 @@ clause. Parenthesization MUST disambiguate combinations where layout alone is
 insufficient.
 
 List, structural-record, row-variant, map, binary, string, range, view,
-active, and pattern-synonym forms are unsupported in 0.2 and MUST produce
+active, and pattern-synonym forms are unsupported in 0.1.2 and MUST produce
 `M005`. A later list type may use ordinary nominal constructors without
 retroactively adding list-pattern syntax here.
 
@@ -107,7 +107,7 @@ field order, bindings, and local equality evidence.
 
 ## Refutability boundary
 
-All 0.2 pattern forms may occur in match clauses. The executable 0.2 grammar
+All 0.1.2 pattern forms may occur in match clauses. The executable 0.1.2 grammar
 does not place patterns in function parameters or `let` bindings. When those
 contexts are specified, they MUST either admit only patterns proven
 irrefutable or define an explicit failure construct. They MUST NOT inherit an

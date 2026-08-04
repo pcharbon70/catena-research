@@ -14,6 +14,17 @@ aliases:
 
 # C006 Executable Specification and Governance Conformance
 
+## Numbering amendment
+
+This record predates the approved prototype-slice renumbering. Commit
+`2f6805e166a086f7d67c2cc0f3023e9e34fe2cec` actually used historical `0.6`
+AST, package, governance, assurance, claim, and signature-domain identifiers.
+The recorded hashes therefore remain unchanged. The current canonical C006
+designation is `0.1.6`. See
+[Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) for
+the mapping, hard-cutover consequences, and pending replacement protocol
+identity.
+
 ## Observations
 
 The sibling Catena compiler implementation is frozen on branch

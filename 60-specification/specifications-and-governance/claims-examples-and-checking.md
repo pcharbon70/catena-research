@@ -3,25 +3,25 @@ title: "Claims, Examples, and Bounded Checking"
 kind: specification
 created: "2026-08-03"
 status: normative
-spec_version: "0.6"
+spec_version: "0.1.6"
 tags:
   - governance
   - specification
   - type-inference
 aliases:
-  - "Catena 0.6 claim semantics"
+  - "Catena 0.1.6 claim semantics"
 ---
 
 # Claims, Examples, and Bounded Checking
 
 ## Module declarations
 
-The 0.6 semantic JSON AST MAY add `specifications` and MAY mark an ordinary
+The 0.1.6 semantic JSON AST MAY add `specifications` and MAY mark an ordinary
 definition `verification_only: true`. A specification contains a stable local
 name, one or more claims, and optional display text. A claim contains a stable
 local name, a `kind`, and a typed `subject`.
 
-Final source punctuation is outside 0.6. The JSON AST and the resulting typed
+Final source punctuation is outside 0.1.6. The JSON AST and the resulting typed
 specification graph are normative; a future parser MUST elaborate to the same
 graph.
 
@@ -54,7 +54,7 @@ A claim identifier is:
 
 ```text
 claim:sha256:<lowercase-hex SHA-256(
-  "catena:claim-id:0.6\n" ||
+  "catena:claim-id:0.1.6\n" ||
   JCS({origin, module, specification_name, claim_name})
 )>
 ```
@@ -68,7 +68,7 @@ invalidate it and all approvals or evidence bound to it.
 
 ## Claim vocabulary
 
-Version 0.6 admits exactly:
+Version 0.1.6 admits exactly:
 
 - `rule`: a typed parameterized Boolean checker implemented by a named
   verification-only Catena definition;
@@ -92,7 +92,7 @@ A rule checker MUST:
 - have an explicit signature ending in `Bool`;
 - accept all parameters declared by the rule;
 - infer the empty effect row;
-- use only version 0.6 pure Catena expressions and other pure definitions,
+- use only version 0.1.6 pure Catena expressions and other pure definitions,
   excluding `request`, `handle`, and `resume` even when locally handled; and
 - be unreachable from every retained runtime definition.
 
@@ -105,7 +105,7 @@ reference as `ERS001` before lowering.
 Example arguments are JSON integers, Booleans, or recursively nested tuple
 values admitted by the checker's parameter types. Floats, constructors, opaque
 host terms, functions, processes, references, ports, and binaries are invalid
-in 0.6. Evaluation is strict, left to right, and deterministic.
+in 0.1.6. Evaluation is strict, left to right, and deterministic.
 
 The checker has a fixed 20,000 semantic-step budget per example. A conforming
 evaluator reports exactly one outcome:

@@ -3,31 +3,35 @@ title: "Effect and Handler Overview"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.5"
+spec_version: "0.1.5"
 tags:
   - algebraic-effects
   - effect-handlers
   - specification
 aliases:
-  - "Catena 0.5 effect boundary"
+  - "Catena 0.1.5 effect boundary"
 ---
 
 # Effect and Handler Overview
 
 ## Status and authority
 
-This chapter and its five siblings are the normative Catena 0.5 effect slice.
-They extend the [0.1 type and row system](../type-system/README.md),
-[0.2 data model](../data-and-patterns/README.md),
-[0.3 clause conditions](../clause-conditions/README.md), and
-[0.4 traits](../traits-and-categorical-operations/README.md). `MUST`,
+This chapter and its five siblings are the normative Catena 0.1.5 effect slice.
+They extend the [0.1.1 type and row system](../type-system/README.md),
+[0.1.2 data model](../data-and-patterns/README.md),
+[0.1.3 clause conditions](../clause-conditions/README.md), and
+[0.1.4 traits](../traits-and-categorical-operations/README.md). `MUST`,
 `MUST NOT`, `SHOULD`, and `MAY` state normative conformance requirements.
 
-Immutable compiler commit
+Historical immutable compiler commit
 [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
-satisfies the conformance gate. Its environment, commands, results, and
-bounded evidence are preserved in the
+supports the C005 semantic boundary under the retired `0.1` through `0.5`
+identifiers. Its environment, commands, results, and bounded evidence are
+preserved in the
 [C005 conformance journal](../../50-journal/2026-08-03-c005-executable-effect-conformance.md).
+It is not evidence for the exact renumbered protocol strings; the fresh gate is
+recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 
 Document status, content labels, rule references, and conflict handling follow
 the repository
@@ -56,7 +60,7 @@ continuation remain explanatory vocabulary, not competing syntax.
 
 ## Guarantees
 
-Version 0.5 provides:
+Version 0.1.5 provides:
 
 - nominal effect-family and operation identity;
 - normal multi-parameter operations over data and closed pure functions;
@@ -75,7 +79,7 @@ Version 0.5 provides:
 
 ## Deliberate exclusions
 
-Version 0.5 does not define cleanup or resource scopes, an exception taxonomy,
+Version 0.1.5 does not define cleanup or resource scopes, an exception taxonomy,
 application host effects, process failure, cancellation, structured
 concurrency, higher-order or scoped operations, shallow handlers, multi-shot
 resumptions, first-class handler values, effect masking, or public parser

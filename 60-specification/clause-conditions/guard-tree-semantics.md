@@ -3,7 +3,7 @@ title: "Guard Tree Semantics"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - compilers
   - pattern-matching
@@ -61,7 +61,7 @@ into a body with different commitment behavior.
 ## Or-patterns
 
 An or-pattern remains one source pattern. Its alternatives MUST bind the same
-names at the same types as required by 0.2. The structural matcher may test
+names at the same types as required by 0.1.2. The structural matcher may test
 alternatives left to right, but after one alternative succeeds the shared
 condition runs once.
 
@@ -75,14 +75,14 @@ alternatives still have one condition evaluation and one fallthrough edge.
 Calling a verified predicate has the ordinary mathematical result of its
 normalized body. An implementation may call, inline, specialize, or
 constant-fold it when source evaluation order, result, and cost-visible failure
-boundaries remain unchanged. Because 0.3 predicates are total, deterministic,
+boundaries remain unchanged. Because 0.1.3 predicates are total, deterministic,
 effect-free, and acyclic, inlining cannot introduce a new language-visible
 failure.
 
 ## No exception-to-false rule
 
 Catena does not inherit Erlang's behavior of treating specified guard
-operation failures as failed guards. Every admitted 0.3 operation is defined
+operation failures as failed guards. Every admitted 0.1.3 operation is defined
 for all typed inputs. If a malformed typed core or foreign value violates that
 invariant, the result is a compiler or dynamic-boundary defect, not selection
 of the next source clause.

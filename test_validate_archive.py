@@ -1,10 +1,15 @@
 #!/usr/bin/env python3
 """Focused tests for Catena Research archive validation."""
 
+import json
 import unittest
 from pathlib import Path
 
+import jsonschema
+
 from validate_archive import (
+    ROOT,
+    PROTOTYPE_SPECIFICATION_VERSIONS,
     specification_authority_link_errors,
     specification_structure_errors,
 )
@@ -116,6 +121,49 @@ unclassified
                 {authority.resolve()},
                 authority,
             ),
+        )
+
+
+class SpecificationVersionTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls) -> None:
+        schema = json.loads((ROOT / "frontmatter.schema.json").read_text(encoding="utf-8"))
+        cls.validator = jsonschema.Draft202012Validator(
+            schema, format_checker=jsonschema.FormatChecker()
+        )
+
+    def metadata(self, version: str) -> dict[str, object]:
+        return {
+            "title": "Version Example",
+            "kind": "specification",
+            "created": "2026-08-04",
+            "status": "draft",
+            "spec_version": version,
+            "tags": [],
+            "aliases": [],
+        }
+
+    def test_accepts_exact_three_component_slice_version(self) -> None:
+        self.assertEqual([], list(self.validator.iter_errors(self.metadata("0.1.7"))))
+
+    def test_rejects_two_component_and_extended_versions(self) -> None:
+        for version in ("0.7", "0.1.7-preview", "0.01.7", "0.1.07"):
+            with self.subTest(version=version):
+                self.assertNotEqual(
+                    [], list(self.validator.iter_errors(self.metadata(version)))
+                )
+
+    def test_current_areas_use_the_canonical_patch_sequence(self) -> None:
+        self.assertEqual(
+            {
+                "type-system": "0.1.1",
+                "data-and-patterns": "0.1.2",
+                "clause-conditions": "0.1.3",
+                "traits-and-categorical-operations": "0.1.4",
+                "effects-and-handlers": "0.1.5",
+                "specifications-and-governance": "0.1.6",
+            },
+            PROTOTYPE_SPECIFICATION_VERSIONS,
         )
 
 

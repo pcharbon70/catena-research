@@ -35,7 +35,7 @@ rationale or proof sketches.
 The sibling compiler repository changes only documentation. No Catena source
 form, JSON AST, typed core, diagnostic, interface, assurance artifact, BEAM
 lowering, runtime behavior, or compiler test was changed. C007 therefore does
-not create version 0.7 and requires no immutable compiler conformance commit.
+not create version 0.1.7 and requires no immutable compiler conformance commit.
 
 ## Evidence
 

@@ -3,14 +3,14 @@ title: "Effect Capabilities, Rows, and Selection"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.5"
+spec_version: "0.1.5"
 tags:
   - algebraic-effects
   - effect-rows
   - specification
   - type-inference
 aliases:
-  - "Catena 0.5 capability rows"
+  - "Catena 0.1.5 capability rows"
 ---
 
 # Effect Capabilities, Rows, and Selection
@@ -80,14 +80,14 @@ family requirement cannot be used to intercept an effect introduced solely by
 an effect-polymorphic callback; such authority requires a named capability in
 the signature.
 
-Version 0.5 admits closed effect-free function values as operation arguments
+Version 0.1.5 admits closed effect-free function values as operation arguments
 but no effect-polymorphic operation arguments. This narrow rule makes the
 higher-order accidental-capture case unrepresentable in the initial request
 surface while retaining ordinary predicates and pure transformations.
 
-## Relationship to 0.1
+## Relationship to 0.1.1
 
-This chapter refines the 0.1 duplicate-family rule: multiplicity belongs to
+This chapter refines the 0.1.1 duplicate-family rule: multiplicity belongs to
 distinct or still-abstract capability slots, not to repeated requests through
 one known identity. C077 remains unchanged—selection is lexical and handling
 removes the statically selected occurrence.

@@ -3,21 +3,21 @@ title: "Type-System Metatheory"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - catena
   - principal-types
   - program-semantics
   - specification
 aliases:
-  - "Catena 0.1 type-system proof obligations"
+  - "Catena 0.1.1 type-system proof obligations"
 ---
 
 # Type-System Metatheory
 
 ## Normative claims
 
-For the principal core, Catena 0.1 claims:
+For the principal core, Catena 0.1.1 claims:
 
 1. **Soundness:** inferred schemes are derivable in the declarative judgment.
 2. **Completeness:** every declaratively typable principal-core term is

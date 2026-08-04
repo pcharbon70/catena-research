@@ -3,7 +3,7 @@ title: "Effect Typed Core, CPS, and BEAM"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.5"
+spec_version: "0.1.5"
 tags:
   - algebraic-effects
   - beam-vm
@@ -11,14 +11,14 @@ tags:
   - effect-handlers
   - specification
 aliases:
-  - "Catena 0.5 effect lowering"
+  - "Catena 0.1.5 effect lowering"
 ---
 
 # Effect Typed Core, CPS, and BEAM
 
 ## Explicit typed core
 
-Accepted 0.5 input elaborates every implicit choice into core records:
+Accepted 0.1.5 input elaborates every implicit choice into core records:
 
 > **Normative definition.**
 
@@ -60,23 +60,23 @@ conformance corpus.
 
 ## Effect-directed CPS
 
-Version 0.5 uses effect-directed CPS for definitions whose bodies contain a
+Version 0.1.5 uses effect-directed CPS for definitions whose bodies contain a
 request, handler, or resume boundary or whose `uses` row is nonempty. Their
 workers receive explicit lexical handler state and a continuation. Requests
 become statically identity-keyed dispatch; deep resumptions close over the
 current handler state; handler clauses run with the saved outer state.
 
-Definitions proven pure and containing no effect-control form retain the 0.4
+Definitions proven pure and containing no effect-control form retain the 0.1.4
 direct calling convention and ordinary direct Erlang Abstract Format. A pure
 caller may call a locally handling exported function through its direct wrapper.
-The implementation MUST demonstrate that adding 0.5 support does not CPS
+The implementation MUST demonstrate that adding 0.1.5 support does not CPS
 translate unrelated C001–C004 definitions.
 
 An effectful named definition lowers to an ordinary direct wrapper plus a
 private worker that receives lexical handler state and a continuation. Calls
 rebind each abstract signature capability to the statically selected caller
 identity before entering the worker. Anonymous effectful functions are outside
-0.5 as specified by the surface chapter, so the worker ABI never becomes an
+0.1.5 as specified by the surface chapter, so the worker ABI never becomes an
 untyped first-class closure convention.
 
 The affine consumed token is allocated only when a request captures a
@@ -91,9 +91,9 @@ Both direct and CPS forms lower to Erlang Abstract Format and use OTP 29
 MUST NOT introduce Rust, a Python compiler component, Core Erlang as a
 normative interchange, direct BEAM assembly, or another target VM.
 
-Module interfaces version 0.5 carry public effect families, operations, named
-handlers, normalized `uses` rows, origin identities, and the 0.4 categorical
-payload. Interface decoding retains versions 0.2 through 0.4. Imported handler
+Module interfaces version 0.1.5 carry public effect families, operations, named
+handlers, normalized `uses` rows, origin identities, and the 0.1.4 categorical
+payload. Interface decoding retains versions 0.1.2 through 0.1.4. Imported handler
 and effect identities are verified before lowering.
 
 A public handler additionally receives two deterministic hidden BEAM entry

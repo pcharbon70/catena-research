@@ -60,12 +60,12 @@ This proposal extends the shorter guard recommendation in
 effect, trait, coverage, and BEAM layers described in the
 [Catena Language Overview](../language-overview.md).
 
-## Version 0.3 decision and implementation result
+## Version 0.1.3 decision and implementation result
 
 The normative
 [Clause Condition Specification](../60-specification/clause-conditions/README.md)
 now turns the recommendation into one deliberately smaller executable
-boundary. Version 0.3 selects:
+boundary. Version 0.1.3 selects:
 
 - Boolean and integer literals and immutable variables;
 - lazy `not`, `and`, and `or`;
@@ -76,22 +76,25 @@ boundary. Version 0.3 selects:
   atoms reduce to difference constraints;
 - ordinary matches and multi-clause functions, plus a typed native-only
   receive lowering harness rather than public receive syntax; and
-- version 0.3 interfaces exposing canonical predicate bodies and digest-bound
+- version 0.1.3 interfaces exposing canonical predicate bodies and digest-bound
   evidence.
 
 Constructor observations, field projections, membership and range operations,
 trait methods, partial operations justified by path facts, recursive total
 predicates, and external solver integration remain later research. Sections
 below that discuss those possibilities are extension analysis, not part of the
-version 0.3 contract.
+version 0.1.3 contract.
 
-The local Elixir/OTP 29 implementation passes 46 tests spanning reference
+The historical Elixir/OTP 29 implementation passed 46 tests spanning reference
 evaluation, native and ordinary BEAM lowering, guarded coverage, interface
 tampering, and the receive harness. The
 [evidence journal](../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md)
 records the commands and limitations. Published compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
-provides the immutable executable evidence, so C003 is complete.
+provides immutable semantic evidence under retired identifier `0.3`, so C003
+is semantically complete. The
+[renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+tracks publication of the fresh `0.1.3` protocol identity.
 
 ## Question, scope, and method
 
@@ -998,10 +1001,13 @@ message-selection code.
 
 ## Staged implementation recommendation
 
-The version 0.3 implementation covers the closed portions of stages 1 through
-3 and the internal difference-constraint portion of stage 4. The remaining
-items below are the route for widening or validating that boundary, not claims
-that the current prototype contains every stage.
+The C003 implementation covers the closed portions of stages 1 through 3 and
+the internal difference-constraint portion of stage 4. Its published
+historical evidence used retired protocol identifier `0.3`; the
+[renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+tracks the fresh `0.1.3` identity. The remaining items below are the route for
+widening or validating that boundary, not claims that the current prototype
+contains every stage.
 
 ### Stage 1: semantic kernel
 

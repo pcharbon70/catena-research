@@ -3,7 +3,7 @@ title: "Clause Contexts and Receive"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - concurrency
   - pattern-matching
@@ -18,7 +18,7 @@ aliases:
 ## Ordinary matches
 
 Every ordinary `match` expression MUST be exhaustive under structural and
-certified 0.3 facts. A condition may reject a structurally matching value, so
+certified 0.1.3 facts. A condition may reject a structurally matching value, so
 the compiler requires a later accepting clause unless the supported fact
 theory proves that other guarded clauses cover the remainder.
 
@@ -40,12 +40,12 @@ condition evaluation count, and exported BEAM arity.
 
 ## Selective receive harness
 
-Version 0.3 specifies a typed lowering harness, not a public receive
+Version 0.1.3 specifies a typed lowering harness, not a public receive
 expression. The harness requires:
 
 - one explicit closed message type containing no free or rigid type variable;
 - clauses already pattern-typed against that message type;
-- only 0.3 conditions whose transitively expanded core is portable and
+- only 0.1.3 conditions whose transitively expanded core is portable and
   native-lowerable; and
 - no timeout, after-clause, protocol transition, or receive effect semantics.
 
@@ -65,7 +65,7 @@ ordinary match syntax and reports `CND006`.
 Ordinary matches and functions have both native and ordinary pure-branch
 lowering. Selective receive has no semantics-preserving fallback that consumes
 a message, calls arbitrary code, and re-enqueues a rejected message. Therefore
-the 0.3 harness accepts only the portable native intersection.
+the 0.1.3 harness accepts only the portable native intersection.
 
 An imported condition may be used in receive only when its verified expanded
 core can be inlined within the deterministic budget and every resulting

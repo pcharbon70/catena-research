@@ -3,7 +3,7 @@ title: "Clause Condition Diagnostics and Conformance"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - diagnostics
   - pattern-matching
@@ -16,7 +16,7 @@ aliases:
 
 ## Stable diagnostics
 
-The version 0.3 diagnostic family is:
+The version 0.1.3 diagnostic family is:
 
 | ID | Meaning |
 | --- | --- |
@@ -28,7 +28,7 @@ The version 0.3 diagnostic family is:
 | `CND006` | Selective-receive message type, pattern, or native-lowerability restriction |
 | `CND007` | Deterministic condition normalization, expansion, or safety budget exhausted |
 
-The 0.2 `M001`, `M002`, and `M004` diagnostics remain the non-exhaustive,
+The 0.1.2 `M001`, `M002`, and `M004` diagnostics remain the non-exhaustive,
 redundant, and structural-budget reports. A fact checker MUST NOT use `M001` or
 `M002` merely because a proposition is unsupported or times out.
 
@@ -52,8 +52,8 @@ A conforming implementation MUST check and execute:
   difference-constraint checker;
 - a condition false falling through to exactly the next clause;
 - overlapping or-pattern lowering with one shared condition continuation;
-- version 0.2 interfaces consumed without condition evidence;
-- version 0.3 interface round trips with canonical evidence; and
+- version 0.1.2 interfaces consumed without condition evidence;
+- version 0.1.3 interface round trips with canonical evidence; and
 - typed receive-harness clauses over an explicit closed message type.
 
 ## Required negative cases
@@ -69,7 +69,7 @@ The suite MUST reject:
 - division, remainder, and another unchecked partial primitive;
 - a recursive predicate dependency;
 - a missing, implicit, duplicate, or tampered condition import;
-- use of 0.3 condition syntax in an earlier AST version;
+- use of 0.1.3 condition syntax in an earlier AST version;
 - a proved-false or fact-shadowed redundant clause;
 - a nonlinear arithmetic partition claimed exhaustive without a fallback;
 - a condition or fact budget below the required minimum; and
@@ -92,18 +92,23 @@ The suite also independently corrupts condition evidence and asks the
 typed-core or interface verifier to reject it. A compiler that only trusts the
 inference path is not conforming.
 
-## Promotion evidence
+## Promotion evidence (non-normative)
 
 Published Catena compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce),
 merged by [compiler PR #65](https://github.com/pcharbon70/catena/pull/65),
 passes 46 tests on Elixir 1.20.2 and Erlang/OTP 29.0.4, including the required
-0.3 core cases. The exact commands and observations are in
+C003 semantic cases under the historical `0.3` protocol identifier. The exact
+commands and observations are in
 [C003 Executable Clause Condition Conformance](../../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md).
 
 The conformance suite was rerun with that commit checked out before normative
 promotion. This chapter, its eight sibling chapters, and checklist item C003
-therefore share one immutable implementation identity.
+therefore share one immutable historical semantic identity. That identity does
+not cover the exact `0.1.3` protocol string. The
+[prototype-slice renumbering record](../../50-journal/2026-08-04-prototype-slice-renumbering.md)
+requires fresh cross-slice evidence before the renumbered executable identity
+is published.
 
 ## Connections (non-normative)
 

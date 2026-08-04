@@ -3,25 +3,25 @@ title: "Data and Pattern Overview"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - catena
   - pattern-matching
   - specification
 aliases:
-  - "Catena 0.2 data and pattern boundary"
+  - "Catena 0.1.2 data and pattern boundary"
 ---
 
 # Data and Pattern Overview
 
 ## Status and authority
 
-This chapter and its eight sibling chapters are the normative Catena 0.2 data
+This chapter and its eight sibling chapters are the normative Catena 0.1.2 data
 and pattern slice. Together they complete checklist item C002. Their executable
 evidence is published as Catena compiler commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`.
 They extend rather than replace the
-[0.1 type-system specification](../type-system/README.md).
+[0.1.1 type-system specification](../type-system/README.md).
 
 `MUST`, `MUST NOT`, `SHOULD`, and `MAY` express conformance requirements. An
 *invalid* program MUST be rejected before BEAM generation. Examples and
@@ -33,7 +33,7 @@ the repository
 
 ## Guarantees
 
-Version 0.2 provides:
+Version 0.1.2 provides:
 
 - fresh nominal, closed algebraic datatypes with kinded parameters;
 - atomic mutually recursive declaration groups;
@@ -56,7 +56,7 @@ annotation-directed profile described by
 
 ## Deliberate exclusions
 
-Version 0.2 does not add:
+Version 0.1.2 does not add:
 
 - structural row variants or row records;
 - list, record, map, binary, range, view, active, or pattern-synonym patterns;
@@ -70,12 +70,12 @@ Version 0.2 does not add:
 
 Those exclusions are semantic boundaries, not reserved implementation hooks.
 Later versions MUST introduce them through explicit contracts rather than
-reinterpret 0.2 programs.
+reinterpret 0.1.2 programs.
 
 ## Compiler boundary
 
-The executable bootstrap accepts JSON AST 0.1 and 0.2. Input 0.1 is normalized
-into the 0.2 internal form and contains no datatype declarations. JSON is a
+The executable bootstrap accepts JSON AST 0.1.1 and 0.1.2. Input 0.1.1 is normalized
+into the 0.1.2 internal form and contains no datatype declarations. JSON is a
 temporary toolchain interface, not Catena's source syntax.
 
 The required compilation path is:
@@ -84,7 +84,7 @@ The required compilation path is:
 
 ```mermaid
 flowchart LR
-    A[JSON AST 0.1 or 0.2] --> D[Declaration elaboration]
+    A[JSON AST 0.1.1 or 0.1.2] --> D[Declaration elaboration]
     D --> T[Type and pattern checking]
     T --> C[Coverage and decision chain]
     C --> V[Typed-core verifier]

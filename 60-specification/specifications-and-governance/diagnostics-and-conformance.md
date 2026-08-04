@@ -3,20 +3,20 @@ title: "Specification and Governance Diagnostics and Conformance"
 kind: specification
 created: "2026-08-03"
 status: normative
-spec_version: "0.6"
+spec_version: "0.1.6"
 tags:
   - diagnostics
   - governance
   - specification
 aliases:
-  - "Catena 0.6 assurance conformance gate"
+  - "Catena 0.1.6 assurance conformance gate"
 ---
 
 # Specification and Governance Diagnostics and Conformance
 
 ## Stable diagnostic families
 
-Version 0.6 reserves:
+Version 0.1.6 reserves:
 
 | Identifier | Meaning |
 | --- | --- |
@@ -45,8 +45,8 @@ duplicate counts separately.
 
 The immutable conformance revision MUST pass:
 
-- all 0.1 through 0.5 tests unchanged;
-- an ungoverned 0.6 compatibility package;
+- all 0.1.1 through 0.1.5 tests unchanged;
+- an ungoverned 0.1.6 compatibility package;
 - optional adoption and build-versus-publish scope cases;
 - subject resolution for every supported kind and rejection of future kinds;
 - typed, mistyped, effectful, and runtime-referenced rule checkers;
@@ -78,7 +78,8 @@ uses RFC 8032 vectors in addition to local round trips.
 
 ## Promotion gate
 
-Version 0.6 becomes normative only when one immutable compiler commit has:
+The C006 semantic boundary became normative only after one immutable compiler
+commit had:
 
 1. passed `mix test` and `mix format --check-formatted`;
 2. passed the independent oracle and all adversarial corpus cases;
@@ -90,14 +91,20 @@ Version 0.6 becomes normative only when one immutable compiler commit has:
    digests in a dated journal entry.
 
 The authorized compiler commit
-`2f6805e166a086f7d67c2cc0f3023e9e34fe2cec` satisfied this gate on
-2026-08-03. The exact environment, commands, results, and artifact digests are
-recorded in the
+`2f6805e166a086f7d67c2cc0f3023e9e34fe2cec` satisfied this semantic gate on
+2026-08-03 under the retired `0.1` through `0.6` protocol identifiers. The
+exact environment, commands, results, and artifact digests are recorded in the
 [C006 conformance journal](../../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md).
 Consequently, P006, P110 through P114, and G115 became C006 and C110 through
-C115. P109 remains partial because public source punctuation is outside 0.6,
+C115. P109 remains partial because public source punctuation is outside 0.1.6,
 and G116 remains open because long-term schema and compiler evolution are
 deliberately excluded.
+
+That historical identity does not establish the exact `0.1.1` through
+`0.1.6` protocol strings, regenerated canonical artifacts, or signatures. The
+[prototype-slice renumbering record](../../50-journal/2026-08-04-prototype-slice-renumbering.md)
+requires fresh cross-slice evidence before a renumbered immutable compiler
+identity is published.
 
 ## Connections (non-normative)
 

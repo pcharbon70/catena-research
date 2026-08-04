@@ -3,14 +3,14 @@ title: "Evidence, Identity, Trust, and Lifecycle"
 kind: specification
 created: "2026-08-03"
 status: normative
-spec_version: "0.6"
+spec_version: "0.1.6"
 tags:
   - cryptography
   - governance
   - provenance
   - specification
 aliases:
-  - "Catena 0.6 trust and transition protocol"
+  - "Catena 0.1.6 trust and transition protocol"
 ---
 
 # Evidence, Identity, Trust, and Lifecycle
@@ -51,7 +51,7 @@ one domain-separated payload:
 > **Normative definition.**
 
 ```text
-"catena:<payload-kind>:0.6\n" || JCS(payload)
+"catena:<payload-kind>:0.1.6\n" || JCS(payload)
 ```
 
 `payload-kind` is one of `root`, `delegation`, `evidence`, `approval`,
@@ -65,7 +65,7 @@ and the signature basis is
 
 ## Offline trust root
 
-`catena-trust-root` version `0.6` contains:
+`catena-trust-root` version `0.1.6` contains:
 
 - a package namespace and positive logical sequence;
 - a map of principal IDs to Ed25519 public keys;
@@ -92,7 +92,7 @@ normal authority. Recovery authority cannot be introduced by the root it is
 being used to recover.
 
 Revocation takes effect at its recorded logical sequence. Later signatures by
-the revoked identity do not count. Version 0.6 uses no wall-clock truth:
+the revoked identity do not count. Version 0.1.6 uses no wall-clock truth:
 freshness and validity are inclusive logical sequence windows.
 
 These continuity and threshold rules adapt the established root-rotation
@@ -103,7 +103,7 @@ repository or transport protocol.
 
 ## Lifecycle state machine
 
-The complete 0.6 transition relation is:
+The complete 0.1.6 transition relation is:
 
 > **Normative definition.**
 

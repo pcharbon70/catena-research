@@ -268,7 +268,7 @@ mentions can remain as citations in the document that uses them.
   and independent known-answer vectors.
 - [The Update Framework Specification](the-update-framework-specification.md)
   — provides the distinct-key threshold, offline root, scoped delegation, and
-  dual-authority root-continuity model adapted by the 0.6 candidate.
+  dual-authority root-continuity model adapted by the 0.1.6 candidate.
 
 ## Maintaining this index
 

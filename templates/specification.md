@@ -3,7 +3,7 @@ title: "{title}"
 kind: specification
 created: "{YYYY-MM-DD}"
 status: draft
-spec_version: "0.1"
+spec_version: "{MAJOR.MINOR.PATCH}"
 tags: []
 aliases: []
 ---
