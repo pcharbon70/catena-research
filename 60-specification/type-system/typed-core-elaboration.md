@@ -3,14 +3,14 @@ title: "Typed-Core Elaboration"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - beam-vm
   - catena
   - specification
   - type-inference
 aliases:
-  - "Catena 0.1 elaboration contract"
+  - "Catena 0.1.1 elaboration contract"
 ---
 
 # Typed-Core Elaboration
@@ -63,7 +63,7 @@ Catena targets only the BEAM VM. The bootstrap compiler is implemented in
 Elixir and is intended to self-host after the language can express its own
 toolchain.
 
-The required Catena 0.1 lowering path is:
+The required Catena 0.1.1 lowering path is:
 
 > **Normative definition.**
 

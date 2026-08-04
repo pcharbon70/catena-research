@@ -32,27 +32,33 @@ reference, or compiler behavior never overrides normative text by itself. An
 explicit normative applicability or replacement statement is required when
 language chapters overlap.
 
+The C001 through C006 chapters retain normative semantic status through the
+identifier-only `0.1.1` through `0.1.6` migration. Their historical commits
+remain semantic evidence, while the exact renumbered protocol identity awaits
+the fresh gate in
+[Prototype Slice Renumbering](../50-journal/2026-08-04-prototype-slice-renumbering.md).
+
 ## Index
 
 ### Subdirectories
 
 - [Specifications and Governance](specifications-and-governance/README.md) —
-  the normative version 0.6 typed-rule, exact-example, additive-policy,
+  the normative version 0.1.6 typed-rule, exact-example, additive-policy,
   offline-trust, lifecycle, artifact-binding, and total-erasure contract.
 - [Effects and Handlers](effects-and-handlers/README.md) — the normative
-  version 0.5 nominal request, lexical capability, identity-aware row, deep
+  version 0.1.5 nominal request, lexical capability, identity-aware row, deep
   handler, affine resumption, typed-core, and effect-directed CPS contract.
 - [Traits and Categorical Operations](traits-and-categorical-operations/README.md)
-  — the normative version 0.4 behavior-first hierarchy, coherent evidence,
+  — the normative version 0.1.4 behavior-first hierarchy, coherent evidence,
   laws, structural derivation, operational contracts, specialization, and
   BEAM erasure rules.
-- [Clause Conditions](clause-conditions/README.md) — the normative version 0.3
+- [Clause Conditions](clause-conditions/README.md) — the normative version 0.1.3
   safe expression, reusable predicate, ordered guard-tree, coverage-fact,
   interface-evidence, BEAM lowering, and typed receive-harness contract.
-- [Data and Patterns](data-and-patterns/README.md) — the normative version 0.2 nominal
+- [Data and Patterns](data-and-patterns/README.md) — the normative version 0.1.2 nominal
   datatype, construction, pattern, match coverage, GADT, interface, layout,
   and derived-fold contract.
-- [Type System](type-system/README.md) — the version 0.1 principal and
+- [Type System](type-system/README.md) — the version 0.1.1 principal and
   annotation-directed static semantics, elaboration contract, and evidence.
 
 ### Documents
@@ -63,7 +69,9 @@ language chapters overlap.
 
 Keep lifecycle state and versions explicit. Candidate chapters may record
 local evidence but do not become authoritative until their immutable
-conformance identity is published. Update the relevant research map, inquiry,
+conformance identity is published. A recorded identifier-only migration of an
+already normative slice may preserve its semantic authority while requiring a
+fresh executable protocol identity. Update the relevant research map, inquiry,
 conformance evidence, and every affected index in the same change as a
 normative rule. Keep every fenced block and every non-normative section visibly
 classified according to the

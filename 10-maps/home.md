@@ -19,7 +19,7 @@ This is the selective entry point to the archive. See the
   effect order, scope, qualifier-tree elaboration, fused BEAM lowering, and
   extension boundaries.
 - [How should Catena design clause guards?](../40-inquiries/how-should-catena-design-clause-guards.md)
-  — carries the normative implemented 0.3 core into remaining usability,
+  — carries the normative implemented 0.1.3 core into remaining usability,
   performance, trait, recursion, and public receive questions.
 - [How should Catena integrate specifications and governance into the language?](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   — tests typed claims, evidence distinctions, contract and proof boundaries,
@@ -78,18 +78,22 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
-- [Catena 0.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
+- [Prototype Slice Renumbering](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+  — maps C001 through C006 to `0.1.1` through `0.1.6`, retires the old protocol
+  values, records every affected identity boundary, and requires a fresh
+  cross-slice compiler identity without rewriting historical evidence.
+- [Catena 0.1.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
   — freezes the bounded normative typed-rule, exact-example, additive-policy,
   offline-root, lifecycle, artifact-binding, and total-erasure contract.
-- [Catena 0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
+- [Catena 0.1.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
   — defines the exact safe `Bool`/`Int` fragment, acyclic predicates, ordered
   guard trees, difference-constraint coverage, interface evidence, dual BEAM
   lowering, and typed receive harness with published compiler evidence.
-- [Catena 0.2 Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
+- [Catena 0.1.2 Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
   — defines the normative nominal ADT, construction, initial pattern grammar,
   exhaustive matching, GADT scope, abstract interfaces, dual BEAM layouts,
   generated folds, and executable differential evidence.
-- [Catena 0.1 Type-System Specification](../60-specification/type-system/README.md)
+- [Catena 0.1.1 Type-System Specification](../60-specification/type-system/README.md)
   — defines the principal and annotation-directed profiles, rows, traits,
   effects, GADT scope, elaboration, proof claims, and conformance gate.
 - [List Comprehensions](../20-notes/list-comprehensions.md) — proposes an
@@ -98,7 +102,8 @@ This is the selective entry point to the archive. See the
   fused list-worker backend.
 - [Clause Guards](../20-notes/clause-guards.md) — proposes a checked
   Boolean-only condition fragment and now connects the rationale to the exact
-  normative 0.3 specification and published 46-test executable evidence.
+  normative 0.1.3 specification and published 46-test historical semantic
+  evidence.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, honest evidence types, restricted
   policy evaluation, signed external attestations, append-only transitions,
@@ -143,8 +148,9 @@ This is the selective entry point to the archive. See the
   extensions still need representative-corpus validation, cost measurements,
   usability evidence, and complete public receive semantics. Follow the
   [clause-guard inquiry](../40-inquiries/how-should-catena-design-clause-guards.md).
-- The normative 0.6 specification-governance spine has an authorized immutable
-  compiler implementation and executable conformance record. Public syntax,
+- The normative 0.1.6 specification-governance spine has an authorized
+  historical semantic implementation and conformance record; its exact
+  renumbered protocol identity awaits the recorded migration gate. Public syntax,
   runtime contracts, stronger verification, long-term protocol evolution,
   performance, and vocabulary testing remain later work. Follow the
   [specification and governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md).

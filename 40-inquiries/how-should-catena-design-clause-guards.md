@@ -34,11 +34,14 @@ change.
 
 The developed proposal is in [Clause Guards](../20-notes/clause-guards.md);
 the normative
-[0.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
-and published compiler implementation now settle one exact total fragment,
-typed receive harness, and evidence format. This inquiry remains open only for
-public syntax, usability, performance, trait, recursive-totality, and complete
-receive semantics beyond that bounded contract.
+[0.1.3 Clause Condition Specification](../60-specification/clause-conditions/README.md)
+and published historical compiler implementation settle one exact total
+fragment, typed receive harness, and evidence format. That implementation used
+the retired identifier; the fresh `0.1.3` protocol-evidence gate is in the
+[renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md).
+This inquiry remains open only for public syntax, usability, performance,
+trait, recursive-totality, and complete receive semantics beyond that bounded
+contract.
 
 ## Operational question
 
@@ -207,15 +210,16 @@ The evidence currently favors:
 This synthesis preceded the bounded implementation result recorded next; its
 wider trait, usability, and public receive claims remain proposals.
 
-### Normative 0.3 implementation
+### Normative 0.1.3 semantics and historical implementation
 
 Published sibling compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
-implements the normative answer with:
+implements the normative semantic answer under the retired `0.3` protocol
+identifier with:
 
 - exact `Bool`/`Int` operations and no ordinary or recursive calls;
 - explicitly signed, first-order, acyclic condition predicates;
-- canonical predicate bodies and dependency evidence in version 0.3 module
+- canonical predicate bodies and dependency evidence in version 0.1.3 module
   interfaces;
 - ordered guard-tree metadata and shared continuations for or-patterns;
 - deterministic Boolean and integer difference-constraint coverage facts;
@@ -228,13 +232,14 @@ records 46 passing tests on the pinned Elixir/OTP 29 toolchain. Nonlinear
 arithmetic remains conservatively unknown for coverage, and no external SMT
 solver participates in acceptance.
 
-This establishes executable conformance for the bounded semantic kernel. It
-does not provide performance measurements, mailbox experiments, or usability
-results for later extensions.
+This establishes historical executable conformance for the bounded semantic
+kernel. It does not establish the renumbered wire identity or provide
+performance measurements, mailbox experiments, or usability results for later
+extensions.
 
 ## Outcome
 
-Open, with the 0.3 semantic core resolved. The normative specification and
+Open, with the 0.1.3 semantic core resolved. The normative specification and
 published compiler evidence agree on the bounded corpus. Remaining work asks
 whether later predicate, diagnostic, performance, usability, and public
 receive extensions are practical; it no longer blocks C003. The

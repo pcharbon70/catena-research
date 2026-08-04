@@ -15,7 +15,7 @@ aliases:
 
 ## Purpose
 
-These normative chapters define Catena 0.3 clause conditions: their surface
+These normative chapters define Catena 0.1.3 clause conditions: their surface
 placement, safe expression language, reusable predicates, ordered selection,
 coverage facts, module evidence, BEAM lowering, and restricted receive use.
 
@@ -31,8 +31,11 @@ Document authority and rendered content labels follow the repository
 
 Every chapter is `normative`. Published compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
-provides the executable promotion evidence, and checklist item C003 records the
-completed specification slice.
+provides historical semantic evidence under the retired `0.1` through `0.3`
+protocol identifiers, and checklist item C003 records the completed semantic
+slice. It is not evidence for the exact renumbered wire identities. The hard
+cutover and fresh cross-slice evidence requirement are recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 
 ## Index
 
@@ -69,10 +72,11 @@ completed specification slice.
 ## Executable evidence
 
 The sibling [Catena compiler](https://github.com/pcharbon70/catena) contains the
-published 0.3 implementation at commit
+historical C003 implementation at commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce),
 merged through [compiler PR #65](https://github.com/pcharbon70/catena/pull/65).
-The reproducible commands and observed test count are recorded in
+That commit used the retired `0.3` identifier. The reproducible commands and
+observed test count are recorded in
 [C003 Executable Clause Condition Conformance](../../50-journal/2026-08-02-c003-executable-clause-condition-conformance.md).
 
 ## Maintaining this index

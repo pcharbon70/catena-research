@@ -98,7 +98,7 @@ machine-readable metadata contract. Current document kinds are:
 - `map` — a curated route through related material
 - `journal` — a dated observation or research-session record
 - `specification` — a versioned normative language chapter; also requires
-  `status` and `spec_version`
+  `status` and an exact `major.minor.patch` `spec_version`
 
 Use lowercase kebab-case tags and YAML lists for both `tags` and `aliases`.
 Use `[]` for an intentionally empty list and `null` for an unknown nullable
@@ -111,6 +111,18 @@ maturity: seed | developing | stable
 status:   open | paused | resolved
 specification status: draft | candidate | normative
 ```
+
+## Prototype slice numbering
+
+Catena's current language line is `0.1`. The completed C001 through C006
+semantic slices are `0.1.1` through `0.1.6`; subsequent prototype slices use
+the next unused patch. These identifiers are distinct from the sibling
+compiler's package release, external tool versions, and the historical labels
+preserved in conformance journals.
+
+The former `0.1` through `0.6` slice identifiers are retired protocol values,
+not aliases. This hard cutover does not define end-user editions,
+compatibility promises, deprecation, or migration policy; those remain G008.
 
 ## Working rhythm
 

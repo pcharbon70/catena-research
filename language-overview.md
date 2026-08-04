@@ -75,7 +75,7 @@ GADT refinements, and rigid existentials use the named **annotation-directed
 advanced** profile. The advanced checker promises local sound and decidable
 checking, not global inference completeness or principal types. The normative
 boundary is the
-[Catena 0.1 Type-System Specification](60-specification/type-system/README.md).
+[Catena 0.1.1 Type-System Specification](60-specification/type-system/README.md).
 
 ### Mathematical laws are meaningful, but not magical
 
@@ -175,7 +175,7 @@ missing cases. A module may hide constructors to preserve an abstract
 representation, and the runtime layout of a type is not part of its public
 contract unless a separate stable-layout mechanism says so.
 
-Version 0.2 fixes wildcard, binder, integer and Boolean literal, tuple,
+Version 0.1.2 fixes wildcard, binder, integer and Boolean literal, tuple,
 constructor, `as`, `or`, and nested patterns. It checks exhaustiveness and
 redundancy through one usefulness analysis, accounts for empty and abstract
 types, and treats guards conservatively. Transparent interfaces expose the
@@ -192,7 +192,7 @@ stable external layouts remain separate design spaces. See the normative
 [Data and Pattern Specification](60-specification/data-and-patterns/README.md)
 and its rationale in [Algebraic Data Types](20-notes/algebraic-data-types.md).
 
-Normative version 0.3 defines the condition between a successful structural
+Normative version 0.1.3 defines the condition between a successful structural
 pattern and commitment to its body. It selects a closed total `Bool`/`Int`
 fragment, acyclic signed predicates, one-time ordered evaluation, conservative
 difference-constraint coverage, canonical interface evidence, and equivalent
@@ -205,7 +205,7 @@ and its rationale in [Clause Guards](20-notes/clause-guards.md).
 ### 4. Traits and categorical structure
 
 Category-inspired abstractions are ordinary traits rather than privileged
-syntax. Normative 0.4 fixes seventeen behavior-first public capabilities:
+syntax. Normative 0.1.4 fixes seventeen behavior-first public capabilities:
 
 - value structure: `Equatable`, `Orderable`, `Combiner`, and
   `EmptyCombiner`;
@@ -260,7 +260,7 @@ meaning. See [List Comprehensions](20-notes/list-comprehensions.md).
 
 An effect declaration introduces nominal request operations. A function's
 effect row records which families of requests it may perform, while a handler
-provides an interpretation. Normative 0.5 fixes the bounded initial design:
+provides an interpretation. Normative 0.1.5 fixes the bounded initial design:
 
 - first-order effect operations;
 - open effect rows with a defined policy for repeated labels;
@@ -314,7 +314,7 @@ does not automatically spread through every dependency.
 See
 [Language-Integrated Specifications and Governance](20-notes/language-integrated-specifications-and-governance.md)
 for the rationale and the
-[normative 0.6 specification](60-specification/specifications-and-governance/README.md)
+[normative 0.1.6 specification](60-specification/specifications-and-governance/README.md)
 for the bounded semantic and conformance contract.
 
 ### 8. Verification erasure and artifact integrity
@@ -331,7 +331,7 @@ be assumed under an explicit policy without being proved. The compiler and
 manifest must preserve these distinctions rather than presenting all accepted
 builds as equally verified.
 
-The normative 0.6 release artifact is:
+The normative 0.1.6 release artifact is:
 
 - ordinary `.beam` modules containing only the runtime program; and
 - a signed, content-addressed sidecar manifest containing claims, evidence,
@@ -339,7 +339,7 @@ The normative 0.6 release artifact is:
   the BEAM artifacts it describes.
 
 The full specification graph should not be placed in BEAM metadata by default.
-Version 0.6 does not define a monitor-retaining profile; that later feature
+Version 0.1.6 does not define a monitor-retaining profile; that later feature
 requires a separate runtime and cost contract.
 
 Safe erasure requires preservation of types, effects, observable semantics, and
@@ -370,7 +370,7 @@ and independently testable analyses.
 - bidirectional checker for explicit higher-rank types;
 - match coverage and redundancy checker;
 - implemented normative guard-safety, acyclic predicate, and deterministic
-  guarded-coverage checker for the 0.3 `Bool`/`Int` fragment;
+  guarded-coverage checker for the 0.1.3 `Bool`/`Int` fragment;
 - variance, positivity, and derivation analysis;
 - public-signature and compatibility checker.
 

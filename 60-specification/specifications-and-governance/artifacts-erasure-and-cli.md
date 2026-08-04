@@ -3,13 +3,13 @@ title: "Assurance Artifacts, Erasure, and CLI"
 kind: specification
 created: "2026-08-03"
 status: normative
-spec_version: "0.6"
+spec_version: "0.1.6"
 tags:
   - beam-vm
   - governance
   - specification
 aliases:
-  - "Catena 0.6 assurance manifest"
+  - "Catena 0.1.6 assurance manifest"
 ---
 
 # Assurance Artifacts, Erasure, and CLI
@@ -36,7 +36,7 @@ symlink escape, output collision, and input overwrite are `ART001`.
 
 ## Assurance manifest
 
-`catena-assurance-manifest` version `0.6` contains at least:
+`catena-assurance-manifest` version `0.1.6` contains at least:
 
 - package and profile identity;
 - compiler, frontend, specification, OTP, and canonicalization versions;
@@ -57,7 +57,7 @@ BEAM or interface byte MUST make later verification fail.
 
 ## Erasure rule
 
-The 0.6 runtime profile retains no specification or governance material.
+The 0.1.6 runtime profile retains no specification or governance material.
 Verification-only definitions, claims, examples, evidence, policies,
 approvals, histories, public keys, signatures, signing payloads, and assurance
 digests MUST NOT occur in:
@@ -74,7 +74,7 @@ runtime definitions, and `runtime_monitors: []`. Any runtime reference to
 erased material or any retained assurance term is `ERS001`.
 
 For identical runtime input, layout, condition lowering, compiler identity,
-and source path, adding fully discharged 0.6 specifications MUST produce
+and source path, adding fully discharged 0.1.6 specifications MUST produce
 byte-identical BEAM modules. The comparison includes all BEAM chunks.
 
 ## CLI contract
@@ -105,7 +105,7 @@ root; it does not independently prove every external attestation true.
 
 ## Interface boundary
 
-A 0.6 module interface MAY export claim summaries and inherited obligations as
+A 0.1.6 module interface MAY export claim summaries and inherited obligations as
 non-runtime build artifacts. It MUST NOT export verification-only values as
 ordinary callable values. The interface digest covers all summaries so that a
 dependent package cannot silently discard an obligation.

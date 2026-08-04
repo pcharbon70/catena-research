@@ -3,7 +3,7 @@ title: "Coverage and Fact Evidence"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - compilers
   - pattern-matching
@@ -17,14 +17,14 @@ aliases:
 
 ## Structural baseline
 
-The 0.2 typed-pattern usefulness relation remains authoritative for structural
+The 0.1.2 typed-pattern usefulness relation remains authoritative for structural
 coverage. Conditions add a precision layer; they do not replace constructor,
 literal, tuple, abstraction, inhabitation, or GADT reasoning.
 
 A compiler MUST accept a guarded set as exhaustive only when:
 
 - structural analysis and proved-true conditions close the domain; or
-- the 0.3 fact checker proves that the disjunction of applicable conditions is
+- the 0.1.3 fact checker proves that the disjunction of applicable conditions is
   true for every value remaining in that structural region.
 
 Unsupported propositions, an exhausted budget, or incomplete binding
@@ -42,11 +42,11 @@ For coverage, a condition is:
 A proved-false clause is redundant. A later clause is redundant when the fact
 checker proves that its condition has no satisfying input outside the union of
 earlier applicable conditions. Structural shadowing remains independently
-redundant under 0.2 rules.
+redundant under 0.1.2 rules.
 
 ## Supported fact theory
 
-The 0.3 checker supports Boolean formulas built from `not`, `and`, and `or`
+The 0.1.3 checker supports Boolean formulas built from `not`, `and`, and `or`
 whose integer atoms normalize exactly to difference constraints:
 
 > **Normative definition.**
@@ -93,7 +93,7 @@ unsatisfiable.
 An implementation may use another algorithm only if it is deterministic,
 sound for the same theory, conservative for unsupported terms, and produces
 evidence the typed-core verifier can recheck without trusting an external
-solver. Version 0.3 does not invoke an external SMT solver.
+solver. Version 0.1.3 does not invoke an external SMT solver.
 
 ## Evidence and rechecking
 
@@ -117,6 +117,6 @@ unknown; it MUST NOT be mislabeled as a semantic proof.
 ## Connections (non-normative)
 
 The structural baseline is defined by the
-[0.2 coverage chapter](../data-and-patterns/match-semantics-and-coverage.md).
+[0.1.2 coverage chapter](../data-and-patterns/match-semantics-and-coverage.md).
 The evidence requirements become executable cases in
 [Clause Condition Diagnostics and Conformance](diagnostics-and-conformance.md).

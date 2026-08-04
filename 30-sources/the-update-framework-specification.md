@@ -58,7 +58,7 @@ root.
 
 ## Relevance
 
-Catena 0.6 adapts dual-threshold root continuity, distinct-signer counting,
+Catena 0.1.6 adapts dual-threshold root continuity, distinct-signer counting,
 offline keys, scoped delegation, and explicit recovery to language governance.
 It replaces wall-clock and repository-version assumptions with logical
 sequence windows and an initially declared recovery quorum.

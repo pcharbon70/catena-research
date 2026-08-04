@@ -3,14 +3,14 @@ title: "Laws, Derivation, and Testing"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.4"
+spec_version: "0.1.4"
 tags:
   - algebraic-data-types
   - category-theory
   - specification
   - trait-constraints
 aliases:
-  - "Catena 0.4 trait laws and derivation"
+  - "Catena 0.1.4 trait laws and derivation"
 ---
 
 # Laws, Derivation, and Testing
@@ -30,7 +30,7 @@ evidence.
 
 ## Evidence tiers
 
-Version 0.4 admits exactly three law statuses:
+Version 0.1.4 admits exactly three law statuses:
 
 - `promised`: the instance author accepts the obligations;
 - `tested`: a named finite property suite passed for recorded generators and
@@ -39,11 +39,11 @@ Version 0.4 admits exactly three law statuses:
   structural algorithm.
 
 `trusted` and `proved` are reserved for a later proof and governance design
-and MUST be rejected in 0.4 input. None of the three admitted tiers authorizes
+and MUST be rejected in 0.1.4 input. None of the three admitted tiers authorizes
 an optimizer rewrite. Law metadata supports documentation, tests, diagnostics,
 and future evidence work only.
 
-There is no general user law language in 0.4. The standard interface carries
+There is no general user law language in 0.1.4. The standard interface carries
 named schemas and their domains; an instance supplies a status, not arbitrary
 compiler-executed propositions.
 
@@ -69,7 +69,7 @@ A successful request generates one implicit `derived` instance and a
 type-qualified operation such as `Tree.map`. The generated implementation is
 constructor complete, preserves shape, evaluates fields in declaration order,
 and carries compiler provenance. Instance authors cannot supply optimized
-derived-operation overrides in 0.4; the minimal method set remains singular.
+derived-operation overrides in 0.1.4; the minimal method set remains singular.
 
 `CollectingMapper` derivation sequences callback-produced contexts through
 the selected `ValueEmbedder` and `MultiMapper` evidence. It is not an alias for
@@ -77,11 +77,11 @@ ordinary pure mapping. Standard recursive collection instances MUST use
 stack-safe library implementations even when a general user datatype's
 structural derivation is not stack safe.
 
-The 0.4 standard interface supplies tested `Mapper` and `Reducible` instances
+The 0.1.4 standard interface supplies tested `Mapper` and `Reducible` instances
 for `List`. Their ordinary-library implementations use reverse accumulation
 and an iterative left fold, respectively, so their public whole-list paths do
 not consume stack in proportion to list length. `CollectingMapper` for standard
-collections remains outside 0.4; the derived datatype template is not evidence
+collections remains outside 0.1.4; the derived datatype template is not evidence
 for such an instance.
 
 ## Law testing

@@ -3,21 +3,21 @@ title: "Categorical Operation Semantics"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.4"
+spec_version: "0.1.4"
 tags:
   - category-theory
   - evaluation-order
   - specification
   - trait-constraints
 aliases:
-  - "Catena 0.4 trait operation order"
+  - "Catena 0.1.4 trait operation order"
 ---
 
 # Categorical Operation Semantics
 
 ## Strict sequential baseline
 
-All 0.4 standard operations are strict and sequential. Arguments are
+All 0.1.4 standard operations are strict and sequential. Arguments are
 evaluated left to right. A callback receives positions once in source
 declaration order unless the operation's type says it may change cardinality,
 as `and_then` can. A mapper, reducer, or collector MUST NOT reorder, duplicate,
@@ -67,10 +67,10 @@ shape for which the derivation algorithm cannot meet its declared stack
 contract. Interfaces carry semantic templates and provenance, not a guarantee
 that every operation is constant time or allocation free.
 
-Version 0.4 applies that obligation to the standard `List` `Mapper` and
+Version 0.1.4 applies that obligation to the standard `List` `Mapper` and
 `Reducible` instances and requires conformance execution on at least 250,000
 elements. It makes no stack-safety claim for a standard collection capability
-that 0.4 does not provide.
+that 0.1.4 does not provide.
 
 ## Connections (non-normative)
 

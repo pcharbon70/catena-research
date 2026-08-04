@@ -3,14 +3,14 @@ title: "Advanced Type Checking"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - algebraic-data-types
   - catena
   - specification
   - type-inference
 aliases:
-  - "Catena 0.1 annotation-directed profile"
+  - "Catena 0.1.1 annotation-directed profile"
 ---
 
 # Advanced Type Checking
@@ -76,7 +76,7 @@ compiler defect bypasses static checking.
 
 ## Explicit exclusions
 
-Catena 0.1 excludes impredicative instantiation, inferred higher rank,
+Catena 0.1.1 excludes impredicative instantiation, inferred higher rank,
 first-class existential packages beyond declared constructors, general linear
 types, dependent types, unrestricted type families, higher-kinded
 polymorphism over arbitrary kinds, and unrestricted GADT inference. Rejection

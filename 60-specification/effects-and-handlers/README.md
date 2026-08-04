@@ -16,7 +16,7 @@ aliases:
 
 ## Purpose
 
-These normative chapters define Catena 0.5 first-order effects and handlers:
+These normative chapters define Catena 0.1.5 first-order effects and handlers:
 nominal request families, behavior-first signatures, lexical capabilities,
 identity-aware effect rows, named deep handlers, affine resumptions, typed
 core, effect-directed CPS, BEAM execution, and conformance obligations.
@@ -27,7 +27,7 @@ Keep rules for declaring, selecting, typing, handling, elaborating, and
 lowering first-order requests here. Cleanup and resource scopes, exception
 taxonomy, application host effects, structured concurrency, higher-order and
 scoped operations, shallow handlers, and multi-shot resumptions remain outside
-0.5.
+0.1.5.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
@@ -35,8 +35,12 @@ Document authority and rendered content labels follow the repository
 Every chapter is `normative`. The immutable sibling-compiler commit and
 reproducible results are recorded in
 [C005 Executable Effect Conformance](../../50-journal/2026-08-03-c005-executable-effect-conformance.md).
+That historical evidence used the retired `0.1` through `0.5` identifiers. It
+supports the unchanged semantics, but not the exact renumbered wire identities.
+The hard cutover and fresh cross-slice evidence requirement are recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 C005, C076, and C079 were completed atomically with that record; C077 and C078
-are the earlier normative constraints preserved by 0.5.
+are the earlier normative constraints preserved by 0.1.5.
 
 ## Index
 
@@ -62,7 +66,7 @@ are the earlier normative constraints preserved by 0.5.
   direct paths, and OTP 29 lowering.
 - [Effect Diagnostics and Conformance](diagnostics-and-conformance.md) — stable
   diagnostic families, positive and negative corpora, differential traces,
-  compatibility, and the immutable conformance identity.
+  compatibility, and conformance identity requirements.
 
 ## Maintaining this index
 

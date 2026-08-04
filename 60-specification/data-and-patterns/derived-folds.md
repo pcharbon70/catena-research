@@ -3,7 +3,7 @@ title: "Derived Folds"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - combinators
@@ -16,7 +16,7 @@ aliases:
 
 ## Explicit request
 
-Version 0.2 supports exactly one datatype derivation:
+Version 0.1.2 supports exactly one datatype derivation:
 
 > **Non-normative example.**
 
@@ -68,7 +68,7 @@ iterator, or categorical `Foldable` implementation.
 Negative and nested recursive payloads do not invalidate this nonrecursive
 eliminator. The compiler still records positivity, variance, and regularity so
 later recursive or categorical derivations can enforce their own conditions.
-Version 0.2 generates no mapping, traversal, ordering, equality, optics, or
+Version 0.1.2 generates no mapping, traversal, ordering, equality, optics, or
 type-class dictionaries.
 
 ## Generated evidence

@@ -12,6 +12,15 @@ aliases:
 
 # C003 Executable Clause Condition Conformance
 
+## Numbering amendment
+
+This record predates the approved prototype-slice renumbering. Commit
+`165fc4837f101d01016248e62479ef4caa0f20ce` actually accepted and emitted the
+historical `0.3` protocol, so the observations below remain unchanged. The
+current canonical C003 designation is `0.1.3`. See
+[Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) for
+the mapping and pending cross-slice conformance identity.
+
 ## Observations
 
 The sibling Catena compiler now has a published implementation of the

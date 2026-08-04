@@ -3,14 +3,14 @@ title: "Effect Declarations, Requests, and Signatures"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.5"
+spec_version: "0.1.5"
 tags:
   - algebraic-effects
   - effect-handlers
   - specification
   - type-inference
 aliases:
-  - "Catena 0.5 effect surface"
+  - "Catena 0.1.5 effect surface"
 ---
 
 # Effect Declarations, Requests, and Signatures
@@ -80,7 +80,7 @@ allows repeated uses of one family. Inferred private signatures normalize to
 the same representation. Public definitions MUST write their `uses` entries;
 an empty list states a closed pure boundary.
 
-Version 0.5 attaches latent effects only to named definition signatures.
+Version 0.1.5 attaches latent effects only to named definition signatures.
 Anonymous function bodies therefore MUST have a closed empty latent effect
 row. An anonymous function that captures a request is rejected with `CPS001`;
 one that would carry a freshly handled capability out of its `handle` is

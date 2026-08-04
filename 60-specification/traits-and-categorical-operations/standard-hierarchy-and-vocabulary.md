@@ -3,13 +3,13 @@ title: "Standard Hierarchy and Vocabulary"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.4"
+spec_version: "0.1.4"
 tags:
   - category-theory
   - specification
   - trait-constraints
 aliases:
-  - "Catena 0.4 standard traits"
+  - "Catena 0.1.4 standard traits"
 ---
 
 # Standard Hierarchy and Vocabulary
@@ -81,7 +81,7 @@ unary `Mapper` view, preserving which two positions are transformed.
 
 The hierarchy is an ordinary standard-library interface compiled and shipped
 with the toolchain. The compiler does not recognize these names as semantic
-built-ins. A canonical SHA-256 digest binds the interface used by every 0.4
+built-ins. A canonical SHA-256 digest binds the interface used by every 0.1.4
 module; a mismatched digest is rejected before evidence selection.
 
 ## Connections (non-normative)

@@ -3,14 +3,14 @@ title: "Governed Scopes, Policy, and Authorization"
 kind: specification
 created: "2026-08-03"
 status: normative
-spec_version: "0.6"
+spec_version: "0.1.6"
 tags:
   - authorization
   - governance
   - policy
   - specification
 aliases:
-  - "Catena 0.6 policy algebra"
+  - "Catena 0.1.6 policy algebra"
 ---
 
 # Governed Scopes, Policy, and Authorization
@@ -31,7 +31,7 @@ more evidence or authority but MUST NOT cancel a broader requirement.
 No bundle means no policy decision for an otherwise ungoverned `build`, even
 when the package uses typed rules. Once a bundle declares governed scopes, no
 matching policy is `GOV001` and denies the protected action. An ungoverned
-package cannot `publish` or `activate` through the 0.6 package gate.
+package cannot `publish` or `activate` through the 0.1.6 package gate.
 
 ## Closed policy algebra
 
@@ -82,7 +82,7 @@ most-specific-wins behavior.
 
 ## Protected actions
 
-`build`, `publish`, and `activate` are the only actions in 0.6:
+`build`, `publish`, and `activate` are the only actions in 0.1.6:
 
 - `build` checks and stages package artifacts and may emit an unsigned
   candidate signing payload;
@@ -91,7 +91,7 @@ most-specific-wins behavior.
 - `activate` authorizes the lifecycle transition to `Active`.
 
 An implementation may expose additional ungoverned tool operations, but it
-MUST reject them if encoded as a governed 0.6 action.
+MUST reject them if encoded as a governed 0.1.6 action.
 
 ## Dependency boundary
 

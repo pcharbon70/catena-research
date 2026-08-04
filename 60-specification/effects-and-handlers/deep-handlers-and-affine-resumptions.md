@@ -3,7 +3,7 @@ title: "Deep Handlers and Affine Resumptions"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.5"
+spec_version: "0.1.5"
 tags:
   - algebraic-effects
   - effect-handlers
@@ -11,7 +11,7 @@ tags:
   - resumptions
   - specification
 aliases:
-  - "Catena 0.5 handler dynamics"
+  - "Catena 0.1.5 handler dynamics"
 ---
 
 # Deep Handlers and Affine Resumptions
@@ -60,7 +60,7 @@ outer effect row. A handler may change the result type and may introduce outer
 effects.
 
 Omitting `resume` aborts the captured remainder and the clause result becomes
-the result of the complete `handle` expression. Version 0.5 defines this
+the result of the complete `handle` expression. Version 0.1.5 defines this
 control transfer but makes no cleanup, finalization, cancellation, or resource
 unwinding promise; those are G080 rather than implicit behavior.
 

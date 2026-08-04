@@ -3,7 +3,7 @@ title: "Data and Pattern Metatheory"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - pattern-matching
@@ -17,7 +17,7 @@ aliases:
 
 ## Judgment boundary
 
-The 0.2 model adds these judgment families to C001:
+The 0.1.2 model adds these judgment families to C001:
 
 > **Normative definition.**
 

@@ -3,7 +3,7 @@ title: "Match Semantics and Coverage"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.2"
+spec_version: "0.1.2"
 tags:
   - algebraic-data-types
   - pattern-matching
@@ -43,7 +43,7 @@ match expression has that type. Effects of the scrutinee, guards, and selected
 body are accounted for by the surrounding effect system, while patterns add
 none.
 
-No well-typed 0.2 program may reach an implicit match-failure exception.
+No well-typed 0.1.2 program may reach an implicit match-failure exception.
 Failure at a foreign or corrupted representation boundary is an internal or
 dynamic-boundary failure, not source match semantics.
 
@@ -79,7 +79,7 @@ Coverage treats:
   with the scrutinee indices.
 
 String, range, structural-variant, list-syntax, and binary coverage are outside
-0.2 rather than approximated silently.
+0.1.2 rather than approximated silently.
 
 ## Empty and recursive types
 
@@ -114,15 +114,15 @@ The literal guards `true` and `false` supply the first two facts. Any other
 well-typed Boolean guard is unknown unless a separately specified certified
 oracle proves otherwise. C002 does not infer coverage from arbitrary user
 functions or effects. The normative
-[0.3 clause-condition specification](../clause-conditions/README.md) defines
+[0.1.3 clause-condition specification](../clause-conditions/README.md) defines
 one such separately checked oracle, exact safe expression set, and receive
-harness. The 0.3 clause-condition specification explicitly replaces this
+harness. The 0.1.3 clause-condition specification explicitly replaces this
 conservative condition boundary for accepted conditions and certified coverage
-facts; the 0.2 structural pattern rules remain applicable.
+facts; the 0.1.2 structural pattern rules remain applicable.
 
 ## Deterministic implementation limit
 
-Coverage MUST terminate. A conforming 0.2 implementation MUST support at least
+Coverage MUST terminate. A conforming 0.1.2 implementation MUST support at least
 20,000 usefulness steps for one match. If its deterministic budget is
 exhausted, it MUST report `M004` as an implementation limit. It MUST NOT label
 the source program semantically non-exhaustive or redundant merely because

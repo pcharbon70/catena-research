@@ -40,8 +40,9 @@ are not completed archive documents until copied and filled in.
 - [Source template](source.md) — a bibliographic record and evidence-focused
   reading note.
 - [Specification template](specification.md) — a versioned language chapter
-  with normative rules, visible authority labels, diagnostics, and
-  non-normative evidence.
+  whose `MAJOR.MINOR.PATCH` placeholder must be replaced with the approved
+  slice identifier, with normative rules, visible authority labels,
+  diagnostics, and non-normative evidence.
 
 ## Maintaining this index
 

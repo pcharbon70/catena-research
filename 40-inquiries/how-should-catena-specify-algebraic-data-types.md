@@ -193,7 +193,7 @@ These findings justify a prototype, not a final language specification.
 
 ## Outcome
 
-Resolved for version 0.2 by the normative
+Resolved for version 0.1.2 by the normative
 [Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
 and the published compiler evidence in the
 [C002 executable conformance record](../50-journal/2026-08-02-c002-executable-data-and-pattern-conformance.md).
@@ -211,11 +211,15 @@ would make the data contract internally incomplete. Recursive declarations
 accept any well-kinded payload; positivity and regularity constrain later
 derivations rather than basic declaration validity.
 
-Version 0.2 explicitly excludes programmable views, structural variants,
+Version 0.1.2 explicitly excludes programmable views, structural variants,
 stable external layouts, `non_exhaustive` evolution, categorical instance
 generation, and foreign-term validation. Those remain follow-on work rather
-than unresolved parts of the normative slice. Promotion is supported by
-compiler commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`. The evidence route is retained in the
+than unresolved parts of the normative slice. Semantic promotion is supported
+by historical compiler commit
+`ae311604ef587a022ce2b7b46599200fcb96a7ab`, which used retired protocol
+identifiers. The fresh `0.1.2` executable-identity gate is in the
+[renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md).
+The evidence route is retained in the
 [Algebraic Data Types map](../10-maps/algebraic-data-types.md), while public
 terminology continues in the
 [vocabulary inquiry](how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).

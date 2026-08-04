@@ -3,14 +3,14 @@ title: "Type-System Diagnostics and Conformance"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - catena
   - diagnostics
   - specification
   - type-inference
 aliases:
-  - "Catena 0.1 type-system conformance"
+  - "Catena 0.1.1 type-system conformance"
 ---
 
 # Type-System Diagnostics and Conformance
@@ -19,7 +19,7 @@ aliases:
 
 Every rejection MUST have a stable family identifier, a primary source span,
 and a human explanation. Relevant inferred types, originating constraints, and
-secondary spans SHOULD be included. Version 0.1 reserves:
+secondary spans SHOULD be included. Version 0.1.1 reserves:
 
 | Family | Meaning |
 | --- | --- |
@@ -43,7 +43,7 @@ may subdivide a family but MUST document the compatibility mapping.
 
 Until Catena source syntax is normative, executable conformance cases use a
 canonical JSON document containing `version`, `module`, `exports`, and
-`definitions`. Version 0.1 expressions include variables, integer and Boolean
+`definitions`. Version 0.1.1 expressions include variables, integer and Boolean
 literals, lambdas, calls, non-recursive lets, tuples, and annotations. Unknown
 versions or node tags are `T012`.
 
@@ -71,6 +71,14 @@ The current executable model lives in the sibling Catena toolchain repository;
 its path and commands are recorded in the
 [Type-System Specification index](README.md). These tests cover C001, not the
 unimplemented surface parser or every broader language checklist item.
+
+## Numbering provenance (non-normative)
+
+The original C001 run used the retired `0.1` protocol identifier. It supports
+the unchanged semantic rules above, but it does not establish that the
+`0.1.1` discriminator or derived bytes existed in that historical run. The
+[prototype-slice renumbering record](../../50-journal/2026-08-04-prototype-slice-renumbering.md)
+defines the hard cutover and the fresh executable-evidence gate.
 
 ## Rationale (non-normative)
 

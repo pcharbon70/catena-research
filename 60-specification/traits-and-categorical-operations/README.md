@@ -16,7 +16,7 @@ aliases:
 
 ## Purpose
 
-These normative chapters define Catena 0.4 traits and its initial
+These normative chapters define Catena 0.1.4 traits and its initial
 category-inspired standard operations: their behavior-first vocabulary,
 kinds, coherence, laws, derivation, execution, interface evidence, package
 specialization, BEAM erasure, and conformance obligations.
@@ -36,6 +36,10 @@ Every chapter is `normative`. The implementation commit, merged compiler PR,
 reproducible verification sequence, deterministic specialization evidence,
 and direct-call artifact inspection are recorded in
 [C004 Executable Trait Conformance](../../50-journal/2026-08-02-c004-executable-trait-conformance.md).
+That historical evidence used the retired `0.1` through `0.4` identifiers. It
+supports the unchanged semantics, but not the exact renumbered wire identities.
+The hard cutover and fresh cross-slice evidence requirement are recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 
 ## Index
 
@@ -70,12 +74,12 @@ and direct-call artifact inspection are recorded in
 ## Executable evidence
 
 The sibling [Catena compiler](https://github.com/pcharbon70/catena) implements
-JSON AST and interface version 0.4 at immutable commit
+the historical C004 JSON AST and interface boundary at immutable commit
 [`b69f6f7e3da6015bf9b3385152ca3f3687422472`](https://github.com/pcharbon70/catena/commit/b69f6f7e3da6015bf9b3385152ca3f3687422472),
-merged by [PR #66](https://github.com/pcharbon70/catena/pull/66). It retains 0.2
-and 0.3 interface decoding, uses an Elixir/OTP 29/BEAM-only toolchain, and
-exercises the normative rules, including stack-safe standard `List` mapping
-and reduction over 250,000 elements.
+merged by [PR #66](https://github.com/pcharbon70/catena/pull/66). That commit
+used retired `0.1` through `0.4` identifiers. It uses an Elixir/OTP
+29/BEAM-only toolchain and exercises the normative rules, including stack-safe
+standard `List` mapping and reduction over 250,000 elements.
 
 ## Maintaining this index
 

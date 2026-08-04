@@ -59,80 +59,92 @@ An item is complete only when the language reference states, as applicable:
 Checking an item may therefore mean either specifying the feature or recording
 that Catena does not support it in the relevant language version.
 
+### Prototype numbering note
+
+C001 through C006 now designate language slices `0.1.1` through `0.1.6`.
+Their cited immutable commits remain evidence for the same bounded semantics,
+but those commits emitted the retired two-component protocol identifiers. They
+do not establish the new wire strings, canonical bytes, or signatures. The
+[prototype-slice renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+tracks the hard cutover and fresh cross-slice executable-evidence gate. This
+identifier migration does not reopen the completed semantic checklist items.
+
 ## Existing research that needs normative consolidation
 
 These areas already have substantial research. They still need to be rewritten
 as small normative rules rather than copied wholesale into a specification.
 
 - [x] **C001 — Complete — Hindley–Milner inference and the advanced typing boundary.**
-  The [version 0.1 type-system specification](../60-specification/type-system/README.md)
+  The [version 0.1.1 type-system specification](../60-specification/type-system/README.md)
   consolidates the principal core, advanced checking, rows, traits, effects,
   elaboration, metatheory, diagnostics, and executable conformance boundary.
 - [x] **C002 — Complete — algebraic data types and pattern matching.** The
-  [version 0.2 normative specification](../60-specification/data-and-patterns/README.md)
-  and published compiler commit `ae311604ef587a022ce2b7b46599200fcb96a7ab`
-  cover nominal declarations, recursive groups,
+  [version 0.1.2 normative specification](../60-specification/data-and-patterns/README.md)
+  covers nominal declarations, recursive groups,
   visibility, construction, the initial pattern grammar, ordered matching,
   coverage, GADT scope, generated folds, interfaces, and representation
-  independence.
+  independence. Historical compiler commit
+  `ae311604ef587a022ce2b7b46599200fcb96a7ab` supplies semantic evidence under
+  the retired identifiers.
 - [x] **C003 — Complete — clause conditions.** The
-  [version 0.3 normative specification](../60-specification/clause-conditions/README.md)
-  and published compiler commit
+  [version 0.1.3 normative specification](../60-specification/clause-conditions/README.md)
+  and historical compiler commit
   [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
-  define the exact `Bool`/`Int`
+  together define and exercise the exact `Bool`/`Int`
   fragment, acyclic signed predicates, difference-constraint coverage,
   ordered guard trees, interface evidence, dual BEAM lowering, and a typed
   native receive harness. Public parser syntax, usability, performance, traits,
   recursive totality, and full receive semantics remain separately identified
   later work.
 - [x] **C004 — Complete — traits and category-inspired operations.** The
-  [normative 0.4 specification](../60-specification/traits-and-categorical-operations/README.md),
+  [normative 0.1.4 specification](../60-specification/traits-and-categorical-operations/README.md),
   [executable conformance record](../50-journal/2026-08-02-c004-executable-trait-conformance.md),
   and published compiler commit
   [`b69f6f7e3da6015bf9b3385152ca3f3687422472`](https://github.com/pcharbon70/catena/commit/b69f6f7e3da6015bf9b3385152ca3f3687422472)
-  freeze the initial hierarchy, behavior-first ABI, coherence, law evidence,
+  define and exercise the initial hierarchy, behavior-first ABI, coherence, law evidence,
   derivation, operational contracts, specialization, and erasure.
 - [x] **C005 — Complete — algebraic effects and handlers.** The
-  [normative 0.5 specification](../60-specification/effects-and-handlers/README.md),
+  [normative 0.1.5 specification](../60-specification/effects-and-handlers/README.md),
   [executable conformance record](../50-journal/2026-08-03-c005-executable-effect-conformance.md),
   [compiler PR #67](https://github.com/pcharbon70/catena/pull/67), and
   immutable compiler commit
   [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
-  integrate nominal first-order requests, identity-aware rows, lexical
+  define and exercise nominal first-order requests, identity-aware rows, lexical
   capabilities, named deep handlers, affine resumptions, explicit typed core,
   effect-directed CPS, cross-module handlers, and differential reference/BEAM
   traces. Cleanup, exceptions, host effects, scoped control, performance, and
   usability remain separately identified work rather than incompleteness in
-  the bounded 0.5 feature.
+  the bounded 0.1.5 feature.
 - [x] **C006 — Complete — language-integrated specifications and governance.**
   The
-  [normative 0.6 specification](../60-specification/specifications-and-governance/README.md),
+  [normative 0.1.6 specification](../60-specification/specifications-and-governance/README.md),
   [executable conformance record](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md),
-  and authorized immutable compiler commit
-  `2f6805e166a086f7d67c2cc0f3023e9e34fe2cec` freeze the bounded claim forms,
+  and historical authorized immutable compiler commit
+  `2f6805e166a086f7d67c2cc0f3023e9e34fe2cec` define and exercise the bounded claim forms,
   evidence semantics, governed scopes, authorization, erasure, artifact
   binding, and transition rules. Public source punctuation and long-term
   protocol evolution remain separately identified work rather than
-  incompleteness in the bounded 0.6 feature.
+  incompleteness in the bounded 0.1.6 feature.
 
 ## 1. Specification form and conformance
 
 - [x] **C007 — Complete — normative document structure.** The repository-level
   [Specification Authority](../SPECIFICATION-AUTHORITY.md), enforced template
-  and validator, complete 0.1–0.6 chapter migration, aligned compiler-facing
+  and validator, complete 0.1.1–0.1.6 chapter migration, aligned compiler-facing
   guides, and [C007 validation record](../50-journal/2026-08-03-c007-normative-document-authority.md)
   define which documents are normative, visibly distinguish definitions,
   examples, rationale, and evidence, require document-and-heading citations,
   and make normative text the sole authority when reference paths, compiler
   behavior, and tests disagree. This governance completion creates no Catena
-  0.7 slice or immutable compiler commit.
-- [ ] **G008 — Gap — language editions and feature lifecycle.** Define version syntax,
-  compatibility promises, deprecation, experimental features, and migration
-  between editions.
+  0.1.7 slice or immutable compiler commit.
+- [ ] **G008 — Gap — language editions and feature lifecycle.** Relate the
+  established `major.minor.patch` prototype-slice syntax to end-user editions,
+  then define edition selection, compatibility promises, deprecation,
+  experimental features, and migration between editions.
 - [ ] **G009 — Gap — conformance vocabulary.** Define required, implementation-defined,
   unspecified, and invalid behavior; avoid leaving accidental undefined
   behavior.
-- [ ] **P010 — Partial — formal semantic kernel.** Normative 0.3 now adds a
+- [ ] **P010 — Partial — formal semantic kernel.** Normative 0.1.3 now adds a
   typed safe condition core, ordered guard-tree metadata, rechecked coverage
   facts, and BEAM lowering to the C001/C002 executable kernel. Integrate value rows,
   effect rows, traits, handlers, public processes, and source syntax in one
@@ -236,7 +248,7 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 5. Data, collections, and patterns
 
-- [x] **C039 — Complete — algebraic data declaration syntax.** The 0.2 normative specification
+- [x] **C039 — Complete — algebraic data declaration syntax.** The 0.1.2 normative specification
   specifies kinded parameters, nullary, positional, and named-product
   constructors, atomic recursive groups, explicit existentials and refined
   results, `derives fold`, and transparent or abstract export.
@@ -249,7 +261,7 @@ as small normative rules rather than copied wholesale into a specification.
 - [ ] **G042 — Gap — collection construction and update.** Define persistent update,
   duplicate map keys, ordering, key equality, bounds failures, and complexity
   promises.
-- [x] **C043 — Complete — initial pattern grammar.** The 0.2 normative specification supports
+- [x] **C043 — Complete — initial pattern grammar.** The 0.1.2 normative specification supports
   wildcard, binder, integer and Boolean literal, tuple, positional and named
   constructor, `as`, `or`, and nested patterns; it explicitly excludes list,
   structural-record, row-variant, binary, range, and programmable forms.
@@ -259,7 +271,7 @@ as small normative rules rather than copied wholesale into a specification.
   nonconsuming rejection. Local bindings, generators, public receives,
   handlers, and exception clauses still need their own admissibility and
   failure rules.
-- [x] **C045 — Complete — initial coverage and redundancy.** The 0.2 normative specification
+- [x] **C045 — Complete — initial coverage and redundancy.** The 0.1.2 normative specification
   uses one usefulness relation for closed nominal data, Booleans, tuples,
   integer literals, abstract types, three-valued inhabitation, guards, `or`
   patterns, and GADT refinements, with witnesses and deterministic limits.
@@ -316,7 +328,7 @@ validation.
 
 ## 7. Type-system surface and advanced boundaries
 
-- [x] **C060 — Complete — type syntax.** Version 0.1 freezes function, tuple,
+- [x] **C060 — Complete — type syntax.** Version 0.1.1 freezes function, tuple,
   constructor, record, variant, effect-row, constrained, quantified, and
   higher-rank type notation.
 - [ ] **G061 — Gap — primitive numeric relationships.** Decide whether numeric
@@ -330,7 +342,7 @@ validation.
 - [x] **C064 — Complete — row semantics.** Record, variant, and effect row
   equality are separate, including duplicate effects, lacks constraints, and
   ambiguity.
-- [x] **C065 — Complete — trait constraint solving.** Version 0.1 freezes
+- [x] **C065 — Complete — trait constraint solving.** Version 0.1.1 freezes
   instance scope, termination, coherence, ambiguity rejection, no defaulting,
   and failure diagnostics.
 - [ ] **G066 — Gap — type-directed name resolution.** State whether field, method,
@@ -344,39 +356,39 @@ validation.
 - [ ] **D140 — Deferred — excluded advanced type features.** Impredicativity,
   inferred higher rank, general linear and dependent types, unrestricted
   type-level computation, and higher-kinded polymorphism over arbitrary kinds stay
-  outside version 0.1.
+  outside version 0.1.1.
 
 ## 8. Traits, derivation, and categorical libraries
 
-- [x] **C069 — Complete — declaration and implementation forms.** Normative 0.4
+- [x] **C069 — Complete — declaration and implementation forms.** Normative 0.1.4
   defines kinded parameters, parents, constraints, exact minimal methods,
   visibility metadata, implementation ownership, and placement through JSON
-  AST 0.4. Public parser punctuation remains deliberately unfrozen.
-- [x] **C070 — Complete — coherence and ownership.** Version 0.1 freezes
+  AST 0.1.4. Public parser punctuation remains deliberately unfrozen.
+- [x] **C070 — Complete — coherence and ownership.** Version 0.1.1 freezes
   trait-or-type ownership, prohibits overlap and local implementations, and
   requires import-order-independent identity and separate compilation.
 - [x] **C071 — Complete — associated information.** Traits support methods,
   multi-parameter constraints, functional dependencies, and associated types;
   associated constants are excluded.
-- [x] **C072 — Complete — laws and trusted evidence.** Normative 0.4 admits only
+- [x] **C072 — Complete — laws and trusted evidence.** Normative 0.1.4 admits only
   promised, tested, and compiler-derived evidence, reserves trusted and proved,
   fixes the pure-total finite law domain, and forbids law rewrites.
-- [x] **C073 — Complete — derivation.** Normative 0.4 adds explicit-target
+- [x] **C073 — Complete — derivation.** Normative 0.1.4 adds explicit-target
   `Equatable`, `Orderable`, `Mapper`, `TwoSlotMapper`, `Reducible`, and
   `CollectingMapper` instances and type-qualified functions without override
   hooks, with tested stack-safe standard `List` mapping and reduction.
-- [x] **C074 — Complete — operational contracts.** Normative 0.4 freezes strict
+- [x] **C074 — Complete — operational contracts.** Normative 0.1.4 freezes strict
   left-to-right order, exact-once declaration-order visits, subject-last ABI,
   separate early termination, no law-implied concurrency, and standard
   collection stack safety.
-- [x] **C075 — Complete — dispatch and dictionary observability.** Normative 0.4
+- [x] **C075 — Complete — dispatch and dictionary observability.** Normative 0.1.4
   specifies deterministic manifest-directed specialization, direct calls, one
   companion BEAM, no reflection, and complete evidence erasure, with published
   artifact inspection and repeat-build evidence.
 
 ## 9. Effects, failure, and resource scopes
 
-- [x] **C076 — Complete — effect declaration and use syntax.** Normative 0.5
+- [x] **C076 — Complete — effect declaration and use syntax.** Normative 0.1.5
   freezes normal parameter-list operations, `request`, behavior-first `uses`,
   optional explicit capability qualification, module-level `handler`
   declarations, `handle ... using ... as ...`, mandatory return and complete
@@ -388,7 +400,7 @@ validation.
 - [x] **C078 — Complete — resumption discipline.** Affine use is checked in the
   typed core and backed by a runtime consumed token; resumptions cannot escape,
   be stored, or be resumed twice.
-- [x] **C079 — Complete — effect ordering.** Normative 0.5 freezes strict handler
+- [x] **C079 — Complete — effect ordering.** Normative 0.1.5 freezes strict handler
   argument order, exact identity forwarding, observable nesting order, abort,
   deep reinstallation, and outer-scope effects from return and operation
   clauses. The independent free-request evaluator and generated BEAM agree on
@@ -477,7 +489,7 @@ validation.
   arithmetic.
 - [ ] **G106 — Gap — environmental effects.** Define standard capabilities for I/O,
   files, network, time, randomness, environment, logging, and process control.
-- [ ] **P107 — Partial — category-inspired API names.** Normative 0.4 chooses the
+- [ ] **P107 — Partial — category-inspired API names.** Normative 0.1.4 chooses the
   canonical behavior-first trait and method ABI and confines formal names to
   reference metadata. Independent comprehension and usability validation is
   still required.
@@ -489,32 +501,32 @@ validation.
 
 - [ ] **P109 — Partial — surface grammar.** Freeze syntax for claims, evidence,
   assumptions, governed scopes, policy, authorization, decisions, and
-  transitions. Normative 0.6 freezes semantic JSON forms but intentionally
+  transitions. Normative 0.1.6 freezes semantic JSON forms but intentionally
   leaves public parser punctuation open.
-- [x] **C110 — Complete — checking language.** Normative 0.6 fixes an explicitly
+- [x] **C110 — Complete — checking language.** Normative 0.1.6 fixes an explicitly
   typed pure fragment, exact integer, Boolean, and nested-tuple examples,
   deterministic left-to-right evaluation, distinct failure outcomes, and a
   fixed 20,000-step bound. The compiler and independent tests enforce the
   typing, purity, dependency, and budget boundaries.
-- [x] **C111 — Complete — enforcement modes.** Normative 0.6 selects optional
+- [x] **C111 — Complete — enforcement modes.** Normative 0.1.6 selects optional
   package adoption, separate specification and governance adoption, additive
   package-to-subject scopes, inherited dependency claims, fail-closed policy,
   and distinct `build`, `publish`, and `activate` gates.
-- [x] **C112 — Complete — evidence lifecycle.** Normative 0.6 binds compiler
+- [x] **C112 — Complete — evidence lifecycle.** Normative 0.1.6 binds compiler
   evidence, signed attestations, and explicit assumptions to exact claim,
   subject, tool, artifact, role, and logical sequence identities. Revocation,
   delegation, replacement, and hash-chained lifecycle replay have executable
   positive and adversarial coverage.
-- [x] **C113 — Complete — erasure semantics.** Normative 0.6 forbids runtime
+- [x] **C113 — Complete — erasure semantics.** Normative 0.1.6 forbids runtime
   reachability and export of verification-only definitions, erases the
   specification graph before Erlang Abstract Format, and requires complete
   accounting plus byte-identical package BEAM artifacts with and without fully
   discharged specifications. Runtime monitors are outside this version.
-- [x] **C114 — Complete — artifact format.** Normative 0.6 fixes strict JCS,
+- [x] **C114 — Complete — artifact format.** Normative 0.1.6 fixes strict JCS,
   SHA-256, domain-separated Ed25519 signatures, trust-root, governance-bundle,
   and assurance-manifest formats, exact multi-module artifact binding, staged
   output transactions, and an external-signer payload.
-- [x] **C115 — Complete — governance identity and trust roots.** Normative 0.6
+- [x] **C115 — Complete — governance identity and trust roots.** Normative 0.1.6
   fixes offline principals, distinct-actor role thresholds, scoped delegation,
   revocation, old-and-new normal rotation, predeclared recovery, and historical
   root replay. Transparency services and network identity are excluded from

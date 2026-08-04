@@ -81,7 +81,7 @@ signed manifest. A contract monitor is retained only when its obligation was
 not statically established and the active profile requires runtime checking.
 
 The bounded core now has a
-[normative 0.6 specification](../60-specification/specifications-and-governance/README.md)
+[normative 0.1.6 specification](../60-specification/specifications-and-governance/README.md)
 and an authorized
 [executable conformance record](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md).
 Public parser syntax, runtime monitoring, stronger verification methods,
@@ -1464,7 +1464,7 @@ separately implemented protocol with the same normative semantics.
 
 ## Proposed initial position
 
-Catena begins with the smaller boundary frozen by normative 0.6: a typed
+Catena begins with the smaller boundary frozen by normative 0.1.6: a typed
 specification graph, parameterized rules, exact examples, compiler conformance
 evidence, signed attestations, explicit assumptions, and a closed deterministic
 governance language. This spine has passed its promotion gate. Runtime
@@ -1484,7 +1484,7 @@ today's guarantees:
 
 ## Connections
 
-- [Catena 0.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
+- [Catena 0.1.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
   turns the bounded proposal into normative semantic and conformance rules.
 - [How should Catena integrate specifications and governance into the language?](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   turns this proposal into explicit semantic, security, usability, and

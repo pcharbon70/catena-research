@@ -15,7 +15,7 @@ aliases:
 
 ## Purpose
 
-These chapters define Catena 0.1's two named type-checking profiles and their
+These chapters define Catena 0.1.1's two named type-checking profiles and their
 shared elaboration contract.
 
 ## What belongs here
@@ -31,6 +31,12 @@ incorporates them.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
+Every chapter is `normative`. The historical C001 run exercised these
+semantics under the retired `0.1` protocol identifier. It remains semantic
+evidence, but it is not evidence for the exact `0.1.1` wire identity. The hard
+cutover and fresh cross-slice evidence requirement are recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 
 ## Index
 
@@ -75,6 +81,8 @@ asdf exec mix escript.build
 
 The exact environment, observations, and limits of the current run are in
 [C001 Executable Type-System Conformance](../../50-journal/2026-08-01-c001-executable-type-system-conformance.md).
+That record is historical; publication of the renumbered executable identity
+awaits the migration gate linked above.
 
 ## Maintaining this index
 

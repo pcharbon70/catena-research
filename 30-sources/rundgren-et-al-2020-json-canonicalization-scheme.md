@@ -57,7 +57,7 @@ stricter local rule.
 
 ## Relevance
 
-Catena 0.6 uses JCS for semantic digests and every signed governance payload.
+Catena 0.1.6 uses JCS for semantic digests and every signed governance payload.
 It narrows the profile to safe integers and rejects floats and negative zero,
 removing number-format interoperability from the initial assurance base.
 

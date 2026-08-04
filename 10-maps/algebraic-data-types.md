@@ -24,7 +24,7 @@ structural variants, and GADTs.
 ## Start here
 
 - [Data and Pattern Specification](../60-specification/data-and-patterns/README.md)
-  is the normative 0.2 declaration, matching, coverage, abstraction, GADT,
+  is the normative 0.1.2 declaration, matching, coverage, abstraction, GADT,
   interface, layout, derivation, and conformance contract.
 - [Algebraic Data Types](../20-notes/algebraic-data-types.md) is the main
   synthesis and initial Catena design proposal.
@@ -130,15 +130,15 @@ structural variants, and GADTs.
    asks how derived dictionaries interact with kinding, coherence, testing,
    and optimizer trust.
 
-## Resolved 0.2 decisions and follow-on questions
+## Resolved 0.1.2 decisions and follow-on questions
 
-- Version 0.2 accepts any well-kinded recursive payload, records positivity and
+- Version 0.1.2 accepts any well-kinded recursive payload, records positivity and
   regularity separately, and derives no categorical instances.
 - Coverage uses a terminating three-valued least fixed point for inhabited,
   empty, and unknown types. Non-exhaustive and redundant user matches are
   errors, with no implicit partial escape.
 - Transparent versus abstract constructor export is the complete initial
-  boundary. Separate construction and matching authority is not in 0.2.
+  boundary. Separate construction and matching authority is not in 0.1.2.
 - GADT result refinement and existential scope are annotation-directed parts
   of C002 rather than deferred reinterpretations of ordinary ADTs.
 - Uniform and compact BEAM layouts are conformance targets behind one

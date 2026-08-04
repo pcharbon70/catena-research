@@ -3,14 +3,14 @@ title: "Principal Inference and Generalization"
 kind: specification
 created: "2026-08-01"
 status: normative
-spec_version: "0.1"
+spec_version: "0.1.1"
 tags:
   - catena
   - principal-types
   - specification
   - type-inference
 aliases:
-  - "Catena 0.1 Algorithm W contract"
+  - "Catena 0.1.1 Algorithm W contract"
 ---
 
 # Principal Inference and Generalization

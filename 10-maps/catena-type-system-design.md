@@ -20,7 +20,7 @@ implementation, or test suite supplies requirements or evidence.
 
 ## Start here
 
-- [Catena 0.1 Type-System Specification](../60-specification/type-system/README.md)
+- [Catena 0.1.1 Type-System Specification](../60-specification/type-system/README.md)
   is the normative C001 result: two named profiles, separate solvers, explicit
   elaboration, metatheory claims, diagnostics, and conformance obligations.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)

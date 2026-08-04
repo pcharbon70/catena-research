@@ -3,7 +3,7 @@ title: "Clause Condition Metatheory"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.3"
+spec_version: "0.1.3"
 tags:
   - formal-methods
   - pattern-matching
@@ -17,7 +17,7 @@ aliases:
 
 ## Judgment boundary
 
-Version 0.3 adds these judgment families:
+Version 0.1.3 adds these judgment families:
 
 > **Normative definition.**
 
@@ -38,7 +38,7 @@ ordinary for normal matches and native only for the receive harness.
 
 ## Required claims
 
-The version 0.3 design targets:
+The version 0.1.3 design targets:
 
 1. **Condition typing.** Normalization preserves the source condition's exact
    `Bool` type.
@@ -116,5 +116,5 @@ new trusted boundary and cannot be inferred from these claims.
 ## Connections (non-normative)
 
 The inherited type claims are in the
-[0.1 metatheory](../type-system/metatheory.md), and the structural pattern
-claims are in the [0.2 metatheory](../data-and-patterns/metatheory.md).
+[0.1.1 metatheory](../type-system/metatheory.md), and the structural pattern
+claims are in the [0.1.2 metatheory](../data-and-patterns/metatheory.md).

@@ -15,6 +15,16 @@ aliases:
 
 # C004 Executable Trait Conformance
 
+## Numbering amendment
+
+This record predates the approved prototype-slice renumbering. Commit
+`b69f6f7e3da6015bf9b3385152ca3f3687422472` actually used the historical
+`0.4` AST, interfaces, manifest, standard identity, and digests; those facts
+must not be retroactively changed. The current canonical C004 designation is
+`0.1.4`. See
+[Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) for
+the mapping and replacement protocol-evidence gate.
+
 ## Observations
 
 The sibling Catena compiler implementation is frozen at commit

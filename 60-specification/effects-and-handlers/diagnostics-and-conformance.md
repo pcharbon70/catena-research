@@ -3,21 +3,21 @@ title: "Effect Diagnostics and Conformance"
 kind: specification
 created: "2026-08-02"
 status: normative
-spec_version: "0.5"
+spec_version: "0.1.5"
 tags:
   - algebraic-effects
   - compilers
   - effect-handlers
   - specification
 aliases:
-  - "Catena 0.5 effect conformance"
+  - "Catena 0.1.5 effect conformance"
 ---
 
 # Effect Diagnostics and Conformance
 
 ## Stable diagnostics
 
-Version 0.5 reserves these families:
+Version 0.1.5 reserves these families:
 
 | ID | Meaning |
 | --- | --- |
@@ -55,8 +55,8 @@ Conformance requires:
 - clause-introduced outer effects and exact selected-identity subtraction;
 - reference/BEAM trace agreement;
 - a dynamic consumed-token double-resume trap before duplicated user action;
-- version 0.5 interface round trips, cross-module public-handler execution,
-  and 0.2–0.4 compatibility; and
+- version 0.1.5 interface round trips, cross-module public-handler execution,
+  and 0.1.2–0.1.4 compatibility; and
 - pure C001–C004 functions remaining on the direct lowering path.
 
 ## Negative corpus
@@ -70,7 +70,7 @@ storage or closure capture of a resumption, effectful anonymous functions,
 static double resume, forged core evidence, and malformed interfaces.
 
 G080, G081, G082, and D083 remain explicit gaps or deferrals; absence of their
-features is not a negative conformance failure for 0.5.
+features is not a negative conformance failure for 0.1.5.
 
 ## Differential traces and compatibility
 
@@ -80,9 +80,9 @@ handlers, deep resume, abort, clause requests, and handler-order reversal.
 Generated forms must show CPS workers only where effect control requires them.
 The complete C001–C005 suite remains green with warnings treated as errors.
 
-## Conformance identity
+## Conformance identity (non-normative)
 
-Version 0.5 is normative because immutable sibling-compiler commit
+The C005 semantic boundary was promoted after immutable sibling-compiler commit
 [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
 passed:
 
@@ -104,7 +104,13 @@ boundaries. [Compiler PR #67](https://github.com/pcharbon70/catena/pull/67)
 publishes that identity; its later merge metadata must be added without
 replacing it. The wider effect inquiry remains open because resources,
 exceptions, host effects, scoped control, performance, and usability exceed
-0.5.
+0.1.5.
+
+That immutable commit used the retired `0.1` through `0.5` protocol
+identifiers. It does not establish the exact `0.1.1` through `0.1.5` strings.
+The [prototype-slice renumbering record](../../50-journal/2026-08-04-prototype-slice-renumbering.md)
+requires fresh cross-slice evidence before the renumbered executable identity
+is published.
 
 ## Connections (non-normative)
 

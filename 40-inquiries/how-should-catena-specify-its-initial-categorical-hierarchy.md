@@ -25,7 +25,7 @@ It will contain `Semigroupoid`, `Category`, `Arrow`, `Semigroup`, `Monoid`,
 `Chain`, `Monad`, `Bifunctor`, `Extend`, and `Comonad`.
 
 The bounded question was whether these names could be turned into one precise,
-lawful, inferable, and operationally honest design. Normative version 0.4 now
+lawful, inferable, and operationally honest design. Normative version 0.1.4 now
 answers that question. The
 [category-theory synthesis](../20-notes/category-theory-for-programming.md)
 defines the intended hierarchy and programming roles. This inquiry records its
@@ -231,9 +231,12 @@ The literature already establishes several boundaries for the prototype:
   [Uustalu and Vene](../30-sources/uustalu-vene-2005-essence-dataflow-programming.md)
   provide concrete programming roles for the arrow and comonadic branches.
 
-Immutable evidence now exists at sibling-compiler commit
+Historical immutable semantic evidence exists at sibling-compiler commit
 [`b69f6f7e3da6015bf9b3385152ca3f3687422472`](https://github.com/pcharbon70/catena/commit/b69f6f7e3da6015bf9b3385152ca3f3687422472),
 merged through [compiler PR #66](https://github.com/pcharbon70/catena/pull/66).
+That commit used the retired `0.4` protocol identifier; the
+[renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
+owns the fresh `0.1.4` executable-identity gate.
 The Elixir/OTP 29 implementation checks rigid kinds,
 coherent parent evidence, ownership, non-overlap, decreasing contexts,
 functional dependencies, associated types, the three admitted law tiers, six
@@ -243,19 +246,20 @@ corpus exercises every capability, both positions of `TwoSlotMapper`, two
 examples for each unitless capability, explicit equality evidence, bounded
 function samples, callback order, and stack-safe standard `List` mapping and
 reduction over 250,000 elements. The rules are consolidated in the
-[normative 0.4 trait specification](../60-specification/traits-and-categorical-operations/README.md).
+[normative 0.1.4 trait specification](../60-specification/traits-and-categorical-operations/README.md).
 
-The structural implementation deliberately accepts a narrow whole-field
+The historical structural implementation deliberately accepts a narrow whole-field
 derivation profile. Broader nested derivation remains out of scope, while the
-standard recursive collection stack contract is closed for the 0.4 `List`
+standard recursive collection stack contract is closed for the 0.1.4 `List`
 instances. The [C004 journal](../50-journal/2026-08-02-c004-executable-trait-conformance.md)
-records the complete promotion evidence.
+records the complete semantic promotion evidence under the retired identifier.
 
 ## Outcome
 
-Resolved for the bounded 0.4 specification question. The normative language
-and library contract is implemented, published, and supported by a complete
-verification sequence against one immutable identity. Longer-term usability
+Resolved for the bounded 0.1.4 specification question. The normative language
+and library semantics are implemented, published, and supported by a complete
+historical verification sequence against one immutable identity. Publication
+of the renumbered protocol identity is tracked separately. Longer-term usability
 and performance measurements remain separate follow-up evidence rather than
 conditions on this inquiry. Preserve the resulting contract in the
 [category-theory synthesis](../20-notes/category-theory-for-programming.md)

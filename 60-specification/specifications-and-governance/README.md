@@ -15,14 +15,14 @@ aliases:
 
 ## Purpose
 
-These candidate chapters define Catena 0.6's bounded specification and
+These candidate chapters define Catena 0.1.6's bounded specification and
 governance spine: typed rules, executable examples, honest evidence kinds,
 governed subjects, additive policy, offline trust, lifecycle replay, artifact
 binding, and complete erasure from executable BEAM modules.
 
 ## What belongs here
 
-Keep the version 0.6 semantic JSON forms, checking rules, governance bundle,
+Keep the version 0.1.6 semantic JSON forms, checking rules, governance bundle,
 trust-root, assurance-manifest, package gate, and conformance obligations here.
 Public parser punctuation, runtime monitors, general theorem proving, temporal
 models, network identity, transparency services, and schema migration remain
@@ -30,14 +30,19 @@ outside this bounded version.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md). This repository
-policy is distinct from the Catena 0.6 governance language feature defined in
+policy is distinct from the Catena 0.1.6 governance language feature defined in
 this directory.
 
 Every chapter is `normative`. The authorized immutable compiler commit,
 independent policy-oracle agreement, adversarial and erasure tests, and
 reproducible [C006 conformance journal](../../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md)
-satisfied the promotion gate. The chapters settle the bounded 0.6 contract;
-the research inquiry remains active for the deliberately excluded work.
+satisfied the historical semantic promotion gate under retired `0.1` through
+`0.6` identifiers. That evidence does not establish the exact renumbered wire
+identities. The hard cutover and fresh cross-slice evidence requirement are
+recorded in
+[Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
+The chapters settle the bounded 0.1.6 semantic contract; the research inquiry
+remains active for the deliberately excluded work.
 
 ## Index
 

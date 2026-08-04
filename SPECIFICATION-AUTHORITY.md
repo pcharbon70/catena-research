@@ -46,6 +46,33 @@ If two apparently applicable normative chapters disagree and neither contains
 that relationship, the specification is defective. The disputed behavior has
 no conforming interpretation until the conflict is repaired.
 
+## Prototype slice identifiers
+
+`spec_version` uses exact `major.minor.patch` syntax. The current prototype
+language line is `0.1`; its completed semantic slices are:
+
+| Boundary | Version |
+| --- | --- |
+| C001 type system | `0.1.1` |
+| C002 data and patterns | `0.1.2` |
+| C003 clause conditions | `0.1.3` |
+| C004 traits and categorical operations | `0.1.4` |
+| C005 effects and handlers | `0.1.5` |
+| C006 specifications and governance | `0.1.6` |
+
+Each future prototype semantic slice uses the next unused `0.1.n` patch until
+an approved policy replaces this convention. This sequence identifies
+language slices and the Catena protocol boundaries that name them. It is
+independent of compiler-package releases and third-party dependency versions.
+It also does not make a larger patch automatically applicable or
+authoritative.
+
+The previous two-component identifiers remain visible only where a historical
+record describes bytes emitted by an immutable compiler commit. They are not
+current language or protocol aliases. G008 remains responsible for end-user
+editions, compatibility promises, deprecation, experimental features, and
+migration policy.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is
