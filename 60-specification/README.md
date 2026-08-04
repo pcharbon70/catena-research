@@ -19,13 +19,18 @@ rules. Research notes supply rationale and evidence; normative chapters
 determine conformance, while candidate chapters state the contract being
 tested for promotion.
 
+The repository-level [Specification Authority](../SPECIFICATION-AUTHORITY.md)
+defines document status, rendered content labels, rule references, and
+conflict handling independently of Catena language versions.
+
 ## What belongs here
 
 Put separately versioned candidate or normative specification areas and their local indexes here. A
 chapter becomes `normative` only when its required executable evidence and
-cross-references are present. Conflicts are resolved in this order: a newer
-normative specification version, its linked conformance cases, then compiler
-behavior. Compiler behavior alone never changes the language.
+cross-references are present. A version number, conformance case, executable
+reference, or compiler behavior never overrides normative text by itself. An
+explicit normative applicability or replacement statement is required when
+language chapters overlap.
 
 ## Index
 
@@ -60,4 +65,6 @@ Keep lifecycle state and versions explicit. Candidate chapters may record
 local evidence but do not become authoritative until their immutable
 conformance identity is published. Update the relevant research map, inquiry,
 conformance evidence, and every affected index in the same change as a
-normative rule.
+normative rule. Keep every fenced block and every non-normative section visibly
+classified according to the
+[Specification Authority](../SPECIFICATION-AUTHORITY.md).

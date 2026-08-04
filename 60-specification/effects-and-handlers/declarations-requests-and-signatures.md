@@ -21,6 +21,8 @@ An effect declaration introduces one origin-qualified family identity, zero or
 more `Type` parameters, and one or more uniquely named operations. An operation
 uses an ordinary ordered parameter list and one reply type:
 
+> **Normative definition.**
+
 ```text
 effect Prompt {
   ask(message: Text, validate: Text -> Bool) -> Text
@@ -43,6 +45,8 @@ identity.
 
 The public forms are:
 
+> **Normative definition.**
+
 ```text
 request ask("Name?", nonempty)
 request console.ask("Name?", nonempty)
@@ -62,6 +66,8 @@ nearest family or operation label is forbidden.
 ## Function signatures
 
 `uses` is the only public effect annotation word:
+
+> **Normative definition.**
 
 ```text
 lookup : Key -> Value uses Store[Key, Value]
@@ -107,6 +113,8 @@ without requiring an unreachable return path to perform the same request.
 
 The application form is:
 
+> **Normative definition.**
+
 ```text
 handle expression using Handler(arguments) as capability
 ```
@@ -115,7 +123,7 @@ handle expression using Handler(arguments) as capability
 participates in unique inference. A written binder is scoped only over the
 handled expression, not over handler arguments or the handler's own clauses.
 
-## Connections
+## Connections (non-normative)
 
 The first-order boundary and public vocabulary specialize the research in
 [Algebraic Effects and Handlers](../../20-notes/algebraic-effects-and-handlers.md)

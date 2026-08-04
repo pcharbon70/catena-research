@@ -19,6 +19,8 @@ aliases:
 
 The abstract type language is:
 
+> **Normative definition.**
+
 ```text
 k ::= Type | Row(record) | Row(variant) | Row(effect) | k -> k
 t ::= a | C | t t | (t1, ..., tn) | { r } | < r >

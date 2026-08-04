@@ -84,7 +84,7 @@ remains partial until a later specification connects:
 - protocol evolution; and
 - debugging and cost explanations.
 
-## Connections
+## Connections (non-normative)
 
 The native operation mapping is in [BEAM Lowering](beam-lowering.md). The wider
 process architecture remains open in the

@@ -83,6 +83,8 @@ and incorporated by merge commit
 [`1b6b902b146a5539fc1a24f4303f9182fbe431fc`](https://github.com/pcharbon70/catena/commit/1b6b902b146a5539fc1a24f4303f9182fbe431fc).
 The following sequence passed from the immutable implementation commit:
 
+> **Non-normative evidence.**
+
 ```bash
 mix format --check-formatted
 mix clean
@@ -98,7 +100,7 @@ artifact inspection, standard collection stress case, and compatibility
 results. P107 remains partial until the public vocabulary has independent
 usability evidence.
 
-## Connections
+## Connections (non-normative)
 
 The promotion rule follows the archive's
 [language specification lifecycle](../README.md) and keeps prototype behavior

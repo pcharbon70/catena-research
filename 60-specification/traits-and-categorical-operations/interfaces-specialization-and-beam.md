@@ -38,6 +38,8 @@ cryptographic publisher signing; publisher identity remains outside 0.4.
 
 Package specialization is driven by a toolchain-only manifest with:
 
+> **Normative definition.**
+
 ```text
 format              = catena-package-manifest
 version             = 0.4
@@ -91,7 +93,7 @@ linker and ordinary module compiler both lower through Erlang Abstract Format
 and OTP 29 `compile:noenv_forms/2`; no direct Core Erlang or BEAM emission is
 permitted by this bootstrap profile.
 
-## Connections
+## Connections (non-normative)
 
 The erasure rule aligns with the language-wide
 [specification erasure principle](../../20-notes/language-integrated-specifications-and-governance.md):

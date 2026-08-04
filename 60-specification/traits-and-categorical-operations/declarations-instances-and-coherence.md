@@ -69,7 +69,8 @@ not with unresolved declaration variables. Evidence solving memoizes each
 canonical trait-and-argument goal. When parent paths form a diamond, equal
 goals reuse the same evidence identity and method set.
 
-`Workflow m`, for example, entails one `ValueEmbedder m` and one `Chainable m`;
+In the standard hierarchy, `Workflow m` entails one `ValueEmbedder m` and one
+`Chainable m`;
 their routes to `Mapper m` MUST select the same globally coherent Mapper
 instance. Parent evidence is compiler data and is erased after specialization.
 
@@ -81,7 +82,7 @@ verified interface templates. Ambiguous variables that do not determine one
 instance are rejected rather than defaulted. Higher-kinded trait parameters
 are rigid; 0.4 does not add arbitrary type lambdas or higher-rank inference.
 
-## Connections
+## Connections (non-normative)
 
 The type-theoretic rationale is in
 [A Greenfield Type System for Catena](../../20-notes/catena-greenfield-type-system.md)

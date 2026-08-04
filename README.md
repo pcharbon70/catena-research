@@ -44,6 +44,10 @@ The versioned normative definition lives in the
 why a design was selected; specification chapters define what conforming
 implementations and programs must do.
 
+[Specification Authority](SPECIFICATION-AUTHORITY.md) defines exactly which
+documents are normative, how examples and rationale are marked, and what to do
+when the specification, compiler, reference paths, or tests disagree.
+
 ## Structure
 
 - [`00-inbox/`](00-inbox/README.md) — unprocessed captures
@@ -133,7 +137,12 @@ git diff --check
 
 The validator checks frontmatter, schema conformance, placeholders, filenames,
 local links, directory README structure and inventories, conceptual
-connections, and duplicate source identifiers.
+connections, duplicate source identifiers, and the specification-authority
+labeling contract. Run its focused unit tests with:
+
+```bash
+python3 -m unittest test_validate_archive.py
+```
 
 ## Repository files
 
@@ -143,7 +152,12 @@ connections, and duplicate source identifiers.
   schema
 - [`language-overview.md`](language-overview.md) — consolidated language
   layers, compiler architecture, runtime artifacts, and open design boundaries
+- [`SPECIFICATION-AUTHORITY.md`](SPECIFICATION-AUTHORITY.md) — normative
+  document classification, rendered content labels, references, and conflict
+  handling
 - [`requirements-validation.txt`](requirements-validation.txt) — pinned Python
   dependencies used by the validator
+- [`test_validate_archive.py`](test_validate_archive.py) — focused unit tests
+  for deterministic archive and specification-structure checks
 - [`validate_archive.py`](validate_archive.py) — deterministic archive
   validation

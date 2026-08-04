@@ -18,6 +18,8 @@ aliases:
 
 Version 0.2 supports exactly one datatype derivation:
 
+> **Non-normative example.**
+
 ```catena
 type Option A =
   | None
@@ -40,11 +42,15 @@ curried function receiving fields in declaration order.
 
 For `Option`:
 
+> **Normative definition.**
+
 ```text
 Option.fold : forall A R. R -> (A -> R) -> Option A -> R
 ```
 
 For `Pair A B = Pair A B`:
+
+> **Normative definition.**
 
 ```text
 Pair.fold : forall A B R. (A -> B -> R) -> Pair A B -> R
@@ -79,7 +85,7 @@ Generated code MUST:
 The backend MAY lower the verified fold directly to a constructor dispatch,
 provided both required layouts have identical source observations.
 
-## Rationale and evidence
+## Rationale and evidence (non-normative)
 
 This narrow derivation supplies useful, predictable elimination without
 claiming the laws or traversal behavior of later categorical classes. The

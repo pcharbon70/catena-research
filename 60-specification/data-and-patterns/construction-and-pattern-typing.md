@@ -19,11 +19,15 @@ aliases:
 
 A positional construction supplies exactly the constructor arity:
 
+> **Non-normative example.**
+
 ```catena
 Option.Some(7)
 ```
 
 A named construction supplies every declared field exactly once:
+
+> **Non-normative example.**
 
 ```catena
 DeliveryStatus.InTransit { tracking_id: id }
@@ -41,6 +45,8 @@ styles MUST NOT be interchanged implicitly.
 ## Complete 0.2 pattern grammar
 
 Version 0.2 supports exactly these pattern forms:
+
+> **Normative definition.**
 
 ```text
 pattern ::=

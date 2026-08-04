@@ -48,6 +48,8 @@ Digests are lowercase hexadecimal SHA-256. Public keys and signatures are
 lowercase hexadecimal Ed25519 values implementing RFC 8032. A signature covers
 one domain-separated payload:
 
+> **Normative definition.**
+
 ```text
 "catena:<payload-kind>:0.6\n" || JCS(payload)
 ```
@@ -102,6 +104,8 @@ repository or transport protocol.
 ## Lifecycle state machine
 
 The complete 0.6 transition relation is:
+
+> **Normative definition.**
 
 ```text
 Draft      -> Proposed

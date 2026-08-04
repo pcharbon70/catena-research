@@ -25,13 +25,19 @@ the types fixed by the [0.1 type-system specification](../type-system/README.md)
 program MUST be rejected. These chapters are backed by published executable
 evidence at Catena compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce).
-When the 0.3 rules refine an earlier conservative clause-condition boundary,
-the newer normative version controls.
+The 0.3 condition rules explicitly apply where 0.2 left nonliteral condition
+behavior conservative; the 0.2 structural pattern rules remain applicable.
+Document status, content labels, rule references, and conflict handling follow
+the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
 
 ## User-facing model
 
 A clause condition answers one approachable question: “After this pattern
-matches, should this clause run?” The illustrative source forms are:
+matches, should this clause run?” The source forms below demonstrate the model
+without fixing parser punctuation or layout:
+
+> **Non-normative example.**
 
 ```catena
 condition positive(value: Int) -> Bool = value > 0
@@ -74,6 +80,8 @@ inside the body. It affects clause selection and certified coverage only.
 
 The executable bootstrap accepts JSON AST 0.3 and follows this path:
 
+> **Non-normative diagram.**
+
 ```mermaid
 flowchart LR
     A[JSON AST 0.3] --> D[Decode declarations and clauses]
@@ -115,7 +123,7 @@ Version 0.3 does not add:
 Those are explicit boundaries. Later versions MUST specify them rather than
 silently broadening the meaning of a 0.3 condition.
 
-## Connections
+## Connections (non-normative)
 
 The design rationale and primary-source trail remain in
 [Clause Guards](../../20-notes/clause-guards.md) and its

@@ -27,6 +27,10 @@ The immutable implementation and conformance identity are recorded in
 Conflicts with compiler behavior are defects to resolve, not silent changes to
 this specification or earlier normative versions.
 
+Document status, content labels, rule references, and conflict handling follow
+the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 ## User-facing model
 
 Programmers ask for recognizable behaviors such as “can these values be
@@ -43,6 +47,8 @@ ordinary Catena code can inspect.
 ## Compiler boundary
 
 The bootstrap boundary is versioned JSON AST 0.4, not a frozen source parser:
+
+> **Non-normative diagram.**
 
 ```mermaid
 flowchart LR
@@ -92,7 +98,7 @@ parallelism, cryptographic package signing, a source package manager, or
 public parser syntax. Collection-specific short-circuiting remains a distinct
 operation rather than a hidden property of mapping or reduction.
 
-## Connections
+## Connections (non-normative)
 
 The research rationale and evidence trail remain in
 [Category Theory for Programming](../../20-notes/category-theory-for-programming.md),

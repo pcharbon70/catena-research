@@ -81,6 +81,8 @@ byte-identical BEAM modules. The comparison includes all BEAM chunks.
 
 The package compiler accepts:
 
+> **Normative definition.**
+
 ```text
 catena compile-package-ir \
   --action build|publish|activate \
@@ -108,7 +110,7 @@ non-runtime build artifacts. It MUST NOT export verification-only values as
 ordinary callable values. The interface digest covers all summaries so that a
 dependent package cannot silently discard an obligation.
 
-## Connections
+## Connections (non-normative)
 
 The [language overview](../../language-overview.md#8-verification-erasure-and-artifact-integrity)
 places this artifact split in the wider compiler architecture. Exact failure

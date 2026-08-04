@@ -50,6 +50,8 @@ opaque.
 
 A claim identifier is:
 
+> **Normative definition.**
+
 ```text
 claim:sha256:<lowercase-hex SHA-256(
   "catena:claim-id:0.6\n" ||

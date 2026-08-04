@@ -19,6 +19,8 @@ aliases:
 
 The version 0.3 declaration shape is:
 
+> **Non-normative example.**
+
 ```catena
 condition positive(value: Int) -> Bool = value > 0
 ```
@@ -96,6 +98,8 @@ The runtime ADT layout remains absent from both interface versions.
 
 Unqualified predicate use requires an explicit import:
 
+> **Normative definition.**
+
 ```text
 import condition Rules.positive as positive
 ```
@@ -117,7 +121,7 @@ deterministic node budget. A conforming implementation MUST support at least
 an implementation limit; it never silently drops verification or accepts an
 opaque call.
 
-## Connections
+## Connections (non-normative)
 
 The interface extends the layout-free module contract in
 [Interfaces and Representation](../data-and-patterns/interfaces-and-representation.md).

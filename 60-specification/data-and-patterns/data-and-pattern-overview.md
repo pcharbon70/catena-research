@@ -27,6 +27,10 @@ They extend rather than replace the
 *invalid* program MUST be rejected before BEAM generation. Examples and
 rationale are non-normative unless a conformance section says otherwise.
 
+Document status, content labels, rule references, and conflict handling follow
+the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 ## Guarantees
 
 Version 0.2 provides:
@@ -76,6 +80,8 @@ temporary toolchain interface, not Catena's source syntax.
 
 The required compilation path is:
 
+> **Non-normative diagram.**
+
 ```mermaid
 flowchart LR
     A[JSON AST 0.1 or 0.2] --> D[Declaration elaboration]
@@ -91,7 +97,7 @@ flowchart LR
 The verifier MUST reject malformed constructor, binding, equality, coverage,
 derivation, or layout evidence independently of the inference path.
 
-## Connections
+## Connections (non-normative)
 
 The design rationale and evidence trail remain in
 [Algebraic Data Types](../../20-notes/algebraic-data-types.md) and its

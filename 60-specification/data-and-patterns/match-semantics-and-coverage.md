@@ -19,6 +19,8 @@ aliases:
 
 The canonical form is:
 
+> **Non-normative example.**
+
 ```catena
 match value with
 | Option.None -> fallback
@@ -83,6 +85,8 @@ String, range, structural-variant, list-syntax, and binary coverage are outside
 
 Implementations MUST calculate a terminating three-valued inhabitation fact:
 
+> **Normative definition.**
+
 ```text
 inhabited | empty | unknown
 ```
@@ -112,8 +116,9 @@ oracle proves otherwise. C002 does not infer coverage from arbitrary user
 functions or effects. The normative
 [0.3 clause-condition specification](../clause-conditions/README.md) defines
 one such separately checked oracle, exact safe expression set, and receive
-harness. Version 0.3 is the newer normative authority for accepted clause
-conditions and certified coverage facts.
+harness. The 0.3 clause-condition specification explicitly replaces this
+conservative condition boundary for accepted conditions and certified coverage
+facts; the 0.2 structural pattern rules remain applicable.
 
 ## Deterministic implementation limit
 
@@ -135,6 +140,8 @@ corresponding to its checked clauses.
 
 `M001` reports non-exhaustiveness and a witness. `M002` reports the first
 redundant clause. `M004` reports only deterministic analysis exhaustion.
+
+## Evidence route (non-normative)
 
 The usefulness model is based on the evidence route through
 [Maranget 2007](../../30-sources/maranget-2007-warnings-pattern-matching.md).

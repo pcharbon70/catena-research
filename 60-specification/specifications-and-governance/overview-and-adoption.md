@@ -28,6 +28,12 @@ The research [synthesis](../../20-notes/language-integrated-specifications-and-g
 and [inquiry](../../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
 retain unresolved work beyond this deliberately small spine.
 
+Document status, content labels, rule references, and conflict handling follow
+the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md). That policy is
+separate from the Catena declarations and governed actions specified by this
+0.6 language slice.
+
 ## Adoption boundary
 
 Specification and governance adoption is optional per package and occurs at

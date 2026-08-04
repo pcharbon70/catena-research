@@ -29,6 +29,9 @@ parser punctuation, collection-specific APIs, package distribution, proof
 languages, cryptographic publisher identity, and law-directed optimization
 remain in their own specification areas.
 
+Document authority and rendered content labels follow the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 Every chapter is `normative`. The implementation commit, merged compiler PR,
 reproducible verification sequence, deterministic specialization evidence,
 and direct-call artifact inspection are recorded in

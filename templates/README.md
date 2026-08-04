@@ -39,8 +39,9 @@ are not completed archive documents until copied and filled in.
 - [Note template](note.md) — an idea or synthesis in the author's own words.
 - [Source template](source.md) — a bibliographic record and evidence-focused
   reading note.
-- [Specification template](specification.md) — a versioned normative chapter
-  with static, elaboration, diagnostic, and conformance obligations.
+- [Specification template](specification.md) — a versioned language chapter
+  with normative rules, visible authority labels, diagnostics, and
+  non-normative evidence.
 
 ## Maintaining this index
 

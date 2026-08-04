@@ -99,7 +99,7 @@ C115. P109 remains partial because public source punctuation is outside 0.6,
 and G116 remains open because long-term schema and compiler evolution are
 deliberately excluded.
 
-## Connections
+## Connections (non-normative)
 
 The rationale, wider assurance methods, and usability questions remain in the
 [main synthesis](../../20-notes/language-integrated-specifications-and-governance.md),

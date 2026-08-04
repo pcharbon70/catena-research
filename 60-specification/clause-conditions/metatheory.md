@@ -19,6 +19,8 @@ aliases:
 
 Version 0.3 adds these judgment families:
 
+> **Normative definition.**
+
 ```text
 K ; Γ ; P ⊢condition e : Bool ⇒ c ; deps
 K ⊢ predicates acyclic
@@ -67,7 +69,7 @@ The version 0.3 design targets:
 14. **Evidence erasure.** Removing analysis-only condition and fact evidence
     from `.beam` does not change runtime selection.
 
-## Proof and evidence status
+## Proof and evidence status (non-normative)
 
 These are written proof targets, not machine-checked theorems. Current local
 evidence consists of:
@@ -111,7 +113,7 @@ public receive syntax, foreign values, failures, and optimizer validity. A
 future proof-producing solver or recursive total predicate language requires a
 new trusted boundary and cannot be inferred from these claims.
 
-## Connections
+## Connections (non-normative)
 
 The inherited type claims are in the
 [0.1 metatheory](../type-system/metatheory.md), and the structural pattern

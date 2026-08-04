@@ -117,9 +117,15 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 1. Specification form and conformance
 
-- [ ] **G007 — Gap — normative document structure.** Define which documents are
-  normative, how examples and rationale are distinguished, and how conflicts
-  between the reference, compiler, and tests are resolved.
+- [x] **C007 — Complete — normative document structure.** The repository-level
+  [Specification Authority](../SPECIFICATION-AUTHORITY.md), enforced template
+  and validator, complete 0.1–0.6 chapter migration, aligned compiler-facing
+  guides, and [C007 validation record](../50-journal/2026-08-03-c007-normative-document-authority.md)
+  define which documents are normative, visibly distinguish definitions,
+  examples, rationale, and evidence, require document-and-heading citations,
+  and make normative text the sole authority when reference paths, compiler
+  behavior, and tests disagree. This governance completion creates no Catena
+  0.7 slice or immutable compiler commit.
 - [ ] **G008 — Gap — language editions and feature lifecycle.** Define version syntax,
   compatibility promises, deprecation, experimental features, and migration
   between editions.

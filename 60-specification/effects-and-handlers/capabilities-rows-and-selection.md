@@ -37,6 +37,8 @@ the same nominal family remain two occurrences.
 
 Consequently:
 
+> **Normative definition.**
+
 ```text
 {left: State[Int]} union {left: State[Int]} = {left: State[Int]}
 {left: State[Int]} union {right: State[Int]}
@@ -90,7 +92,7 @@ distinct or still-abstract capability slots, not to repeated requests through
 one known identity. C077 remains unchanged—selection is lexical and handling
 removes the statically selected occurrence.
 
-## Connections
+## Connections (non-normative)
 
 The identity and principality risks remain falsifiable questions in
 [Which Algebraic-Effect Semantics Should Catena Adopt?](../../40-inquiries/which-algebraic-effect-semantics-should-catena-adopt.md).

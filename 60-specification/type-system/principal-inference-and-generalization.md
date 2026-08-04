@@ -26,6 +26,8 @@ duplicate-row union in source evaluation order.
 
 The core rules, with fresh variables chosen away from `Γ`, are:
 
+> **Normative definition.**
+
 ```text
 (VAR)  x : forall a. C => t in Γ      S = [fresh/a]
        ------------------------------------------------

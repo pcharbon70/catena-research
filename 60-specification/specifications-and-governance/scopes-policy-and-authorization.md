@@ -100,7 +100,7 @@ interface contributes only the claims, policy obligations, and artifact
 digests that it explicitly exports. A consuming package cannot weaken those
 obligations; it may add its own.
 
-## Connections
+## Connections (non-normative)
 
 The restricted-language rationale and wider authorization questions remain in
 the [specification and governance synthesis](../../20-notes/language-integrated-specifications-and-governance.md#authorization-policy).

@@ -28,6 +28,11 @@ Public parser punctuation, runtime monitors, general theorem proving, temporal
 models, network identity, transparency services, and schema migration remain
 outside this bounded version.
 
+Document authority and rendered content labels follow the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md). This repository
+policy is distinct from the Catena 0.6 governance language feature defined in
+this directory.
+
 Every chapter is `normative`. The authorized immutable compiler commit,
 independent policy-oracle agreement, adversarial and erasure tests, and
 reproducible [C006 conformance journal](../../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md)

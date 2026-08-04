@@ -19,6 +19,8 @@ aliases:
 
 The version 0.3 surface shape is:
 
+> **Normative definition.**
+
 ```text
 pattern when condition -> body
 ```
@@ -36,6 +38,8 @@ condition declarations, operators, and multi-clause definition encoding.
 ## Static judgment
 
 The checking judgment is conceptually:
+
+> **Normative definition.**
 
 ```text
 K ; Γ ; P ⊢condition e : Bool ⇒ c ; deps
@@ -118,7 +122,7 @@ or add a proposition to the body environment. The coverage checker may consume
 verified truth facts to decide whether the set of clauses is complete, but
 body typing uses only the structural pattern's bindings and type equalities.
 
-## Connections
+## Connections (non-normative)
 
 Reusable predicate and evidence rules are in
 [Condition Predicates and Interfaces](condition-predicates-and-interfaces.md).

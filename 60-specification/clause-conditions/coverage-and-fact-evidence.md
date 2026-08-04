@@ -49,6 +49,8 @@ redundant under 0.2 rules.
 The 0.3 checker supports Boolean formulas built from `not`, `and`, and `or`
 whose integer atoms normalize exactly to difference constraints:
 
+> **Normative definition.**
+
 ```text
 x - y <= c
 ```
@@ -68,7 +70,9 @@ General multiplication such as `x * y`, nonlinear arithmetic, trait calls,
 and opaque ordinary values are unknown for coverage even though total integer
 multiplication is valid at runtime inside a condition.
 
-Strict integer comparison is normalized exactly, for example:
+The following strict integer comparison normalization is required:
+
+> **Normative conformance example.**
 
 ```text
 x < y  ≡  x - y <= -1
@@ -110,7 +114,7 @@ normalization and expansion separately guarantee at least 20,000 nodes and use
 implementation limit MUST be reported as an implementation limit or treated as
 unknown; it MUST NOT be mislabeled as a semantic proof.
 
-## Connections
+## Connections (non-normative)
 
 The structural baseline is defined by the
 [0.2 coverage chapter](../data-and-patterns/match-semantics-and-coverage.md).

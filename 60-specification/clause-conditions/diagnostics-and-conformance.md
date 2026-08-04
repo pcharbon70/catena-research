@@ -105,7 +105,7 @@ The conformance suite was rerun with that commit checked out before normative
 promotion. This chapter, its eight sibling chapters, and checklist item C003
 therefore share one immutable implementation identity.
 
-## Connections
+## Connections (non-normative)
 
 The diagnostic vocabulary follows the usability direction in
 [Clause Guards](../../20-notes/clause-guards.md). The formal claims and limits

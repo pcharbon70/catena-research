@@ -59,6 +59,8 @@ an identity mismatch.
 
 The semantic value of a constructor is:
 
+> **Normative definition.**
+
 ```text
 NominalValue(constructor identity, payload values in declaration order)
 ```
@@ -69,6 +71,8 @@ tag. Pattern selection compares semantic constructor identity.
 ## Required BEAM layouts
 
 A conforming bootstrap compiler supports these two layouts:
+
+> **Normative definition.**
 
 ```text
 uniform = {:catena_adt, type_id_atom, constructor_index, payload_tuple}
@@ -111,6 +115,8 @@ wire compatibility. A stable external schema requires an explicit future
 contract. Closed transparent datatypes also provide no `non_exhaustive`
 evolution marker; an evolving API should export an abstract type and observer
 functions.
+
+## Rationale (non-normative)
 
 The representation rationale follows
 [Leroy 1992](../../30-sources/leroy-1992-unboxed-objects.md) and the

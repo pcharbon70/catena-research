@@ -55,6 +55,8 @@ operations predictable. `compose first next` means “run `first`, then run
 
 Using ordinary type notation, representative method shapes are:
 
+> **Normative definition.**
+
 ```text
 equals            : a -> a -> Bool
 compare           : a -> a -> Ordering
@@ -82,7 +84,7 @@ with the toolchain. The compiler does not recognize these names as semantic
 built-ins. A canonical SHA-256 digest binds the interface used by every 0.4
 module; a mismatched digest is rejected before evidence selection.
 
-## Connections
+## Connections (non-normative)
 
 The pedagogical rationale is developed in
 [An Approachable Vocabulary for Catena](../../20-notes/approachable-language-vocabulary.md).

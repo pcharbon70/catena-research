@@ -10,13 +10,16 @@ aliases: []
 
 # {title}
 
-## Status and scope
+## Status and authority
 
-<!-- Identify the covered language slice and its lifecycle state. -->
+<!-- Identify the covered slice, lifecycle state, applicability, exclusions,
+and relationship to SPECIFICATION-AUTHORITY.md. -->
 
 ## Normative rules
 
-<!-- Use MUST, MUST NOT, SHOULD, MAY, and invalid deliberately. -->
+<!-- Rules are normative by default. Use the conformance vocabulary
+deliberately. Before a fenced grammar, judgment, schema, or state transition,
+write: > **Normative definition.** -->
 
 ## Static semantics
 
@@ -28,8 +31,11 @@ aliases: []
 
 ## Diagnostics and conformance
 
-<!-- Give stable diagnostic identifiers and positive and negative obligations. -->
+<!-- Give stable diagnostic identifiers and positive and negative obligations.
+Before a binding example, write: > **Normative conformance example.** -->
 
-## Rationale and evidence
+## Rationale and evidence (non-normative)
 
-<!-- Link non-normative research, primary sources, and executable evidence. -->
+<!-- Link research, primary sources, and executable evidence. Local exceptions
+may instead use the visible Non-normative example, rationale, note, diagram,
+or evidence callouts defined by SPECIFICATION-AUTHORITY.md. -->

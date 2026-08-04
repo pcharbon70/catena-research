@@ -20,6 +20,8 @@ aliases:
 
 Accepted 0.5 input elaborates every implicit choice into core records:
 
+> **Normative definition.**
+
 ```text
 capability c : Family[types] in computation
 request c operation evaluated_arguments
@@ -102,7 +104,7 @@ code cannot call, store, inspect, or dynamically choose them. An importing
 module derives them only from a digest-verified handler interface and retains
 the same static capability rebinding and typed-core checks as a local handler.
 
-## Connections
+## Connections (non-normative)
 
 The BEAM route extends the normative
 [typed-core boundary](../type-system/typed-core-elaboration.md) and the
