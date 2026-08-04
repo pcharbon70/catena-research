@@ -39,6 +39,8 @@ Only condition value `false` performs ordinary fallthrough.
 Accepted clauses elaborate to an ordered acyclic guard tree with conceptual
 nodes:
 
+> **Normative definition.**
+
 ```text
 PatternTest(pattern, success, failure)
 ConditionTest(condition, yes, no)
@@ -85,7 +87,7 @@ for all typed inputs. If a malformed typed core or foreign value violates that
 invariant, the result is a compiler or dynamic-boundary defect, not selection
 of the next source clause.
 
-## Connections
+## Connections (non-normative)
 
 Structural pattern rules remain in
 [Match Semantics and Coverage](../data-and-patterns/match-semantics-and-coverage.md).

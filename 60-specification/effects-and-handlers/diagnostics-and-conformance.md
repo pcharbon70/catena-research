@@ -86,6 +86,8 @@ Version 0.5 is normative because immutable sibling-compiler commit
 [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)
 passed:
 
+> **Non-normative evidence.**
+
 ```bash
 mix format --check-formatted
 mix clean
@@ -104,7 +106,7 @@ replacing it. The wider effect inquiry remains open because resources,
 exceptions, host effects, scoped control, performance, and usability exceed
 0.5.
 
-## Connections
+## Connections (non-normative)
 
 The bounded promotion rule follows the archive's
 [specification lifecycle](../README.md) and the falsification program in the

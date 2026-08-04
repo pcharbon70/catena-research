@@ -25,6 +25,8 @@ except ModuleNotFoundError as error:
 
 ROOT = Path(__file__).resolve().parent
 SCHEMA_PATH = ROOT / "frontmatter.schema.json"
+SPECIFICATION_ROOT = ROOT / "60-specification"
+SPECIFICATION_AUTHORITY_PATH = ROOT / "SPECIFICATION-AUTHORITY.md"
 ARCHIVE_DIRECTORIES = {
     "00-inbox",
     "10-maps",
@@ -57,6 +59,18 @@ PLACEHOLDER = re.compile(
     r"\{(?:title|question|YYYY-MM-DD|author|directory title|directory-name)\}"
 )
 MARKDOWN_LINK = re.compile(r"!?\[[^\]]*\]\(([^)]+)\)")
+SPECIFICATION_CONTENT_LABEL = re.compile(
+    r"^> \*\*(?:Normative definition|Normative conformance example|"
+    r"Non-normative (?:example|rationale|note|diagram|evidence))\.\*\*(?:\s+.*)?$"
+)
+NON_NORMATIVE_HEADING_ROLE = re.compile(
+    r"(?:\brationale\b|^connections$|^proof (?:outline|status)$|"
+    r"^proof and evidence status$|^evidence route$)",
+    flags=re.IGNORECASE,
+)
+ILLUSTRATIVE_CUE = re.compile(r"\b(?:for example|illustrative)\b", re.IGNORECASE)
+NON_NORMATIVE_HEADING_SUFFIX = " (non-normative)"
+FENCE_START = re.compile(r"^(`{3,}|~{3,})")
 
 
 class StringDateLoader(yaml.SafeLoader):
@@ -198,6 +212,96 @@ def github_heading_anchors(markdown: str) -> set[str]:
     return anchors
 
 
+def specification_structure_errors(
+    display_path: str, body: str, line_offset: int = 0
+) -> tuple[list[str], int]:
+    """Validate rendered authority labels in one specification chapter."""
+
+    errors: list[str] = []
+    active_non_normative_level: int | None = None
+    previous_nonempty = ""
+    fence_marker = ""
+    fenced_blocks = 0
+
+    for body_line_number, line in enumerate(body.splitlines(), start=1):
+        line_number = body_line_number + line_offset
+        stripped = line.strip()
+
+        if fence_marker:
+            if stripped.startswith(fence_marker):
+                fence_marker = ""
+            continue
+
+        heading = re.match(r"^(#{1,6})\s+(.+?)\s*#*\s*$", line)
+        if heading:
+            level = len(heading.group(1))
+            heading_text = heading.group(2).strip()
+            if (
+                active_non_normative_level is not None
+                and level <= active_non_normative_level
+            ):
+                active_non_normative_level = None
+
+            is_non_normative = heading_text.casefold().endswith(
+                NON_NORMATIVE_HEADING_SUFFIX
+            )
+            role_text = (
+                heading_text[: -len(NON_NORMATIVE_HEADING_SUFFIX)]
+                if is_non_normative
+                else heading_text
+            )
+            if NON_NORMATIVE_HEADING_ROLE.search(role_text) and not is_non_normative:
+                errors.append(
+                    f"{display_path}:{line_number}: non-normative section heading "
+                    "must end with '(non-normative)'"
+                )
+            if is_non_normative:
+                active_non_normative_level = level
+            previous_nonempty = stripped
+            continue
+
+        fence = FENCE_START.match(stripped)
+        if fence:
+            fenced_blocks += 1
+            if (
+                active_non_normative_level is None
+                and SPECIFICATION_CONTENT_LABEL.fullmatch(previous_nonempty) is None
+            ):
+                errors.append(
+                    f"{display_path}:{line_number}: specification fenced block must "
+                    "follow a visible authority callout or appear in a "
+                    "non-normative section"
+                )
+            fence_marker = fence.group(1)
+            continue
+
+        if (
+            active_non_normative_level is None
+            and ILLUSTRATIVE_CUE.search(line)
+            and SPECIFICATION_CONTENT_LABEL.fullmatch(stripped) is None
+            and SPECIFICATION_CONTENT_LABEL.fullmatch(previous_nonempty) is None
+        ):
+            errors.append(
+                f"{display_path}:{line_number}: illustrative material must use a "
+                "visible normative or non-normative callout"
+            )
+
+        if stripped:
+            previous_nonempty = stripped
+
+    return errors, fenced_blocks
+
+
+def specification_authority_link_errors(
+    display_path: str, indexed_targets: set[Path], authority_path: Path
+) -> list[str]:
+    """Require a specification index to expose the authority policy."""
+
+    if authority_path.resolve() in indexed_targets:
+        return []
+    return [f"{display_path}: missing link to SPECIFICATION-AUTHORITY.md"]
+
+
 def validate() -> tuple[list[str], dict[str, int]]:
     """Run all checks and return errors plus summary counts."""
 
@@ -279,6 +383,17 @@ def validate() -> tuple[list[str], dict[str, int]]:
                 errors.append(
                     f"{relative(path)}: kind {kind!r} belongs in {expected}/"
                 )
+
+            if kind == "specification":
+                counts["specification_documents"] += 1
+                raw_text = path.read_text(encoding="utf-8")
+                frontmatter_end = raw_text.find("\n---\n", 4) + 5
+                line_offset = raw_text[:frontmatter_end].count("\n")
+                structure_errors, fenced_blocks = specification_structure_errors(
+                    relative(path), body, line_offset=line_offset
+                )
+                errors.extend(structure_errors)
+                counts["specification_fenced_blocks"] += fenced_blocks
 
     # Template placeholders must not leak into completed Markdown.
     for path in sorted(ROOT.rglob("*.md")):
@@ -374,6 +489,62 @@ def validate() -> tuple[list[str], dict[str, int]]:
                     f"{relative(readme)}: unindexed direct child {child.name!r}"
                 )
 
+    # Specification areas must expose one authority contract and one coherent
+    # version/status boundary. READMEs are indexes, not language authority.
+    if not SPECIFICATION_AUTHORITY_PATH.is_file():
+        errors.append("SPECIFICATION-AUTHORITY.md: missing authority policy")
+    else:
+        authority_target = SPECIFICATION_AUTHORITY_PATH.resolve()
+        specification_readmes = [SPECIFICATION_ROOT / "README.md"]
+        specification_readmes.extend(
+            child / "README.md"
+            for child in sorted(SPECIFICATION_ROOT.iterdir())
+            if child.is_dir() and not is_ignored(child)
+        )
+        for readme in specification_readmes:
+            if readme.is_file():
+                errors.extend(
+                    specification_authority_link_errors(
+                        relative(readme),
+                        links_by_source.get(readme.resolve(), set()),
+                        authority_target,
+                    )
+                )
+
+        for area in sorted(
+            child
+            for child in SPECIFICATION_ROOT.iterdir()
+            if child.is_dir() and not is_ignored(child)
+        ):
+            chapters = [
+                records[path.resolve()]
+                for path in sorted(area.glob("*.md"))
+                if path.name != "README.md" and path.resolve() in records
+            ]
+            if not chapters:
+                errors.append(f"{relative(area)}: specification area has no chapters")
+                continue
+
+            versions = {metadata.get("spec_version") for metadata, _body in chapters}
+            statuses = {metadata.get("status") for metadata, _body in chapters}
+            if len(versions) != 1:
+                errors.append(
+                    f"{relative(area)}: specification chapters must share one "
+                    "spec_version"
+                )
+            if len(statuses) != 1:
+                errors.append(
+                    f"{relative(area)}: specification chapters must share one status"
+                )
+            if not any(
+                re.search(r"^## Status and authority\s*$", body, flags=re.MULTILINE)
+                for _metadata, body in chapters
+            ):
+                errors.append(
+                    f"{relative(area)}: specification area lacks a chapter with "
+                    "## Status and authority"
+                )
+
     # Require conceptual connections beyond automatic directory inventories.
     completed_paths = set(records)
     for path, (metadata, _body) in sorted(
@@ -425,7 +596,9 @@ def main() -> int:
         f"{counts['completed_documents']} completed documents, "
         f"{counts['directories']} directories, "
         f"{counts['local_links']} local links, and "
-        f"{counts['source_documents']} source notes checked."
+        f"{counts['source_documents']} source notes checked; "
+        f"{counts['specification_documents']} specification chapters and "
+        f"{counts['specification_fenced_blocks']} classified fenced blocks checked."
     )
     return 0
 

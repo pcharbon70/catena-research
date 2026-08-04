@@ -97,7 +97,7 @@ explicit equality evidence, and bounded extensional callback comparisons.
 Tests do not make nontermination, exhaustive function equality, or proof
 claims.
 
-## Connections
+## Connections (non-normative)
 
 The evidence ladder and limitations come from the
 [categorical hierarchy inquiry](../../40-inquiries/how-should-catena-specify-its-initial-categorical-hierarchy.md)

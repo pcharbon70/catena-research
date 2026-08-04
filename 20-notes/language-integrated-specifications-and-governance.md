@@ -80,8 +80,13 @@ the executable BEAM instructions and store their provenance in a separately
 signed manifest. A contract monitor is retained only when its obligation was
 not statically established and the active profile requires runtime checking.
 
-This proposal is a research direction, not a settled surface specification.
-Its core idea is stronger than syntax:
+The bounded core now has a
+[normative 0.6 specification](../60-specification/specifications-and-governance/README.md)
+and an authorized
+[executable conformance record](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md).
+Public parser syntax, runtime monitoring, stronger verification methods,
+long-term protocol evolution, performance, and usability remain research
+directions. The core idea is stronger than syntax:
 
 > A governed claim is never just text or a status label. It has a precise
 > subject, a checking meaning, typed evidence, authorized transitions, and a
@@ -1459,10 +1464,12 @@ separately implemented protocol with the same normative semantics.
 
 ## Proposed initial position
 
-Catena should begin with a typed specification graph, honest evidence types,
-first-order contracts, executable examples and properties, and a small
-deterministic governance language. It should stage temporal models and
-deductive proof after the semantic and usability foundations work.
+Catena begins with the smaller boundary frozen by normative 0.6: a typed
+specification graph, parameterized rules, exact examples, compiler conformance
+evidence, signed attestations, explicit assumptions, and a closed deterministic
+governance language. This spine has passed its promotion gate. Runtime
+contracts, generated properties, temporal models, and deductive proof remain
+separate future features with their own semantic and conformance obligations.
 
 The architecture should make future strength possible without overstating
 today's guarantees:
@@ -1477,6 +1484,8 @@ today's guarantees:
 
 ## Connections
 
+- [Catena 0.6 Specification and Governance Specification](../60-specification/specifications-and-governance/README.md)
+  turns the bounded proposal into normative semantic and conformance rules.
 - [How should Catena integrate specifications and governance into the language?](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   turns this proposal into explicit semantic, security, usability, and
   implementation tests.
@@ -1513,6 +1522,9 @@ today's guarantees:
 ### Lifecycle, policy, provenance, and certificates
 
 - [Typestate: A Programming Language Concept for Enhancing Software Reliability](../30-sources/strom-yemini-1986-typestate.md)
+- [JSON Canonicalization Scheme](../30-sources/rundgren-et-al-2020-json-canonicalization-scheme.md)
+- [Edwards-Curve Digital Signature Algorithm](../30-sources/josefsson-liusvaara-2017-eddsa.md)
+- [The Update Framework Specification](../30-sources/the-update-framework-specification.md)
 - [Cedar: A New Language for Expressive, Fast, Safe, and Analyzable Authorization](../30-sources/cutler-et-al-2024-cedar.md)
 - [in-toto: Providing Farm-to-Table Guarantees for Bits and Bytes](../30-sources/torres-arias-et-al-2019-in-toto.md)
 - [Proof-Carrying Code](../30-sources/necula-1997-proof-carrying-code.md)

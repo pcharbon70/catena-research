@@ -32,9 +32,11 @@ program MUST be rejected. *Implementation-defined* behavior must be documented
 by an implementation; this type-system slice introduces none. Examples and
 rationale are non-normative unless a conformance obligation says otherwise.
 
-When artifacts disagree, the newest applicable normative chapter controls,
-then its linked conformance cases. A compiler bug does not amend the
-specification. See the [specification index](../README.md) for lifecycle rules.
+Document status, content labels, rule references, and conflict handling follow
+the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md). Executable
+conformance cases and compiler behavior are evidence, not fallback language
+authority.
 
 ## Two guarantee profiles
 

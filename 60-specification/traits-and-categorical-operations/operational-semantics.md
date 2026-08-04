@@ -72,7 +72,7 @@ Version 0.4 applies that obligation to the standard `List` `Mapper` and
 elements. It makes no stack-safety claim for a standard collection capability
 that 0.4 does not provide.
 
-## Connections
+## Connections (non-normative)
 
 These rules specialize the distinction between algebraic law and execution in
 [Combinators for Algebraic Data and Categorical Programming](../../20-notes/combinators-for-algebraic-data-and-categorical-programming.md).

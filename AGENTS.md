@@ -43,12 +43,14 @@ through tags, links, and maps first.
 
 Use these files for different decisions:
 
-1. `frontmatter.schema.json` defines valid metadata fields and values.
-2. `templates/` defines the minimum starting structure for each artifact.
-3. The root `README.md` explains the archive to human readers.
-4. Each directory's `README.md` describes and inventories that directory.
-5. `10-maps/` provides curated thematic navigation.
-6. `validate_archive.py` performs the deterministic structural checks.
+1. `SPECIFICATION-AUTHORITY.md` defines language-document authority, content
+   labels, and conflict handling.
+2. `frontmatter.schema.json` defines valid metadata fields and values.
+3. `templates/` defines the minimum starting structure for each artifact.
+4. The root `README.md` explains the archive to human readers.
+5. Each directory's `README.md` describes and inventories that directory.
+6. `10-maps/` provides curated thematic navigation.
+7. `validate_archive.py` performs the deterministic structural checks.
 
 If documentation and the filesystem disagree, inspect the intended change and
 bring them back into sync. Never preserve a stale index merely because it was
@@ -130,9 +132,9 @@ Conventions:
 
 Exceptions:
 
-- The root `README.md`, `AGENTS.md`, `validate_archive.py`, and validation
-  requirements are repository documentation or tooling and do not use archive
-  frontmatter.
+- The root `README.md`, `AGENTS.md`, `SPECIFICATION-AUTHORITY.md`,
+  `validate_archive.py`, its tests, and validation requirements are repository
+  documentation or tooling and do not use archive frontmatter.
 - Placeholder files in `templates/` are not valid completed documents until
   copied and filled. `templates/README.md` is completed and must validate.
 - A transient inbox capture may begin incomplete, but it must have valid
@@ -167,6 +169,21 @@ If a metadata field or document kind changes:
 
 Do not add a document kind when an existing role plus links or tags expresses
 the same work.
+
+## Producing normative specification chapters
+
+- Follow `SPECIFICATION-AUTHORITY.md` for document status, applicability,
+  rendered content labels, citations, and conflict handling.
+- Treat a `kind: specification` chapter as language authority only when its
+  frontmatter says `status: normative`.
+- In a normative chapter, rules are normative by default. Mark rationale,
+  proof sketches, evidence reports, connections, notes, diagrams, and
+  illustrative examples visibly as non-normative.
+- Classify every fenced block with the prescribed callout unless it is already
+  inside a section whose heading ends with `(non-normative)`.
+- Cite a governing rule by relative document link and heading anchor. Do not
+  let a compiler, executable reference, test, or guide supply behavior that
+  normative text leaves silent or ambiguous.
 
 ## Filenames and paths
 
@@ -314,6 +331,8 @@ The validator checks:
 - required directory README headings and complete direct-child inventories;
 - at least one conceptual connection for every durable document;
 - duplicate citation keys, DOIs, and canonical source URLs.
+- specification authority links, non-normative section labels, illustrative
+  cues, and fenced-block classifications.
 
 If the validator's behavior and these instructions disagree, repair both in
 the same change rather than silently bypassing a check.

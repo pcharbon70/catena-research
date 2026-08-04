@@ -30,6 +30,15 @@ source notes.
 
 ### Documents
 
+- [C007 Normative Document Authority](2026-08-03-c007-normative-document-authority.md)
+  — records the sole-authority policy, visible normative and non-normative
+  labels, conflict procedure, complete specification migration, validator
+  enforcement, and documentation-only compiler verification.
+- [C006 Executable Specification and Governance Conformance](2026-08-03-c006-executable-specification-governance-conformance.md)
+  — records the authorized immutable specification and governance
+  implementation, bounded checker, independent policy oracle, offline trust
+  lifecycle, artifact binding, complete BEAM erasure, and passing adversarial
+  suite.
 - [C005 Executable Effect Conformance](2026-08-03-c005-executable-effect-conformance.md)
   — records the authorized immutable effect implementation, nominal lexical
   capability rows, deep affine handling, independent free-request semantics,

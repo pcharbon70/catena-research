@@ -29,6 +29,9 @@ uses the fixed `Bool` and `Int` types without changing inference or adding body
 refinement. Handler rules remain partial unless a chapter explicitly
 incorporates them.
 
+Document authority and rendered content labels follow the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 ## Index
 
 ### Subdirectories
@@ -61,6 +64,8 @@ The clean bootstrap implementation lives in the sibling
 [Catena compiler repository](https://github.com/pcharbon70/catena). Its
 `.tool-versions` pins Erlang/OTP 29.0.4 and Elixir 1.20.2 for OTP 29. From that
 repository, run:
+
+> **Non-normative evidence.**
 
 ```bash
 asdf exec mix compile --warnings-as-errors

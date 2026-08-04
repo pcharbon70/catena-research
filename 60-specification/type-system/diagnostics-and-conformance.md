@@ -72,6 +72,8 @@ its path and commands are recorded in the
 [Type-System Specification index](README.md). These tests cover C001, not the
 unimplemented surface parser or every broader language checklist item.
 
+## Rationale (non-normative)
+
 Research rationale remains available through the
 [Hindley–Milner map](../../10-maps/hindley-milner-type-inference.md) and the
 [greenfield type-system inquiry](../../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md).

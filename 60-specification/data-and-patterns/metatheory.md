@@ -19,6 +19,8 @@ aliases:
 
 The 0.2 model adds these judgment families to C001:
 
+> **Normative definition.**
+
 ```text
 Δ ⊢ group ok ⇒ Δ'
 Δ ; Γ ⊢ constructor(args) : T ⇒ e
@@ -64,7 +66,7 @@ The normative design targets these claims:
 11. **Representation independence.** Uniform and compact lowering are
     contextually equivalent for typed Catena observations.
 
-## Proof status
+## Proof status (non-normative)
 
 These claims are written metatheory targets, not machine-checked theorems. The
 current evidence consists of:
@@ -96,7 +98,7 @@ C002 must be revised or its implementation rejected if any typed test can:
   results; or
 - observe runtime layout through a public `.cati.json` interface.
 
-## Evidence route
+## Evidence route (non-normative)
 
 The formal basis and limitations are developed through
 [Standard ML](../../30-sources/milner-et-al-1997-definition-standard-ml.md),

@@ -19,6 +19,8 @@ aliases:
 
 An ordinary datatype has this canonical shape:
 
+> **Non-normative example.**
+
 ```catena
 type Option A =
   | None
@@ -42,6 +44,8 @@ records and do not acquire row-polymorphic selection or update.
 
 Each declaration MUST generate a fresh nominal type identity. Its compilation
 identity is the triple:
+
+> **Normative definition.**
 
 ```text
 {canonical package/build origin, module, type name}
@@ -77,6 +81,8 @@ allowing a later operation whose meaning depends on either property.
 
 For an ordinary declaration
 
+> **Non-normative example.**
+
 ```catena
 type Result E A =
   | Error E
@@ -84,6 +90,8 @@ type Result E A =
 ```
 
 the constructors have rank-1 schemes equivalent to:
+
+> **Normative definition.**
 
 ```text
 Error : forall E A. E -> Result E A
@@ -96,6 +104,8 @@ MUST preserve the C001 principal-core guarantee.
 
 An explicit `returns` clause selects the GADT rule rather than weakening this
 ordinary rule:
+
+> **Non-normative example.**
 
 ```catena
 type Expr A =
@@ -127,6 +137,8 @@ duplicate aliases are invalid.
 Ill-kinded declarations use `A001`; duplicate identities use `A002`; invalid
 payloads or results use `A003`; inaccessible constructors use `A004`; nominal
 identity disagreement uses `A005`.
+
+## Rationale and evidence (non-normative)
 
 The elaboration and abstraction rationale follows the
 [ADT synthesis](../../20-notes/algebraic-data-types.md). Executable cases cover

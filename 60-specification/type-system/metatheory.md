@@ -37,7 +37,7 @@ scope safety for rigid variables and equalities, affine resumption use, and
 termination. It does not claim global inference completeness or principal
 types.
 
-## Proof outline
+## Proof outline (non-normative)
 
 The written argument decomposes by solver boundary:
 
@@ -126,13 +126,15 @@ binding is generalized only when the conditions in
 establish that duplicating its value cannot duplicate an effect or affine
 resource.
 
-## Evidence status and falsification
+## Evidence status (non-normative)
 
 The written decomposition and executable model jointly support this
 specification slice; they are not a mechanized proof. The conformance suite
 must compare inference with a separately implemented declarative checker on a
 bounded generated term space, permute solver schedules, test negative scope
 and ambiguity cases, verify elaborated core, and run generated BEAM artifacts.
+
+## Falsification and conformance
 
 A counterexample to any numbered claim makes the affected chapter
 non-conforming and requires demotion or repair. Passing bounded tests does not

@@ -351,36 +351,42 @@ BEAM artifacts and run behavioral and performance comparisons. Require that:
 
 The current synthesis is
 [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md).
-It provisionally recommends:
+The [normative 0.6 specification](../60-specification/specifications-and-governance/README.md)
+now freezes and makes executable a bounded subset. It selects:
 
 - a typed specification graph rather than comments or disconnected test
   names;
 - distinct evidence types rather than one confidence status;
-- a pure and terminating specification/policy core;
+- a pure 20,000-step specification checker and closed policy core;
 - signed external attestations with explicit trust;
 - certificate checking where practical;
-- proof and governance erasure from production BEAM code with provenance kept
+- complete specification and governance erasure from production BEAM code with provenance kept
   in a signed sidecar manifest;
 - typed and append-only lifecycle transitions;
 - separate technical evidence and authorization decisions;
 - a compiler-owned semantic IR with external evidence producers; and
-- staged implementation beginning with traceability, contracts, properties,
-  and lifecycle.
+- staged implementation beginning with typed rules, exact examples, offline
+  trust, and lifecycle.
 
-These are design hypotheses. No Catena calculus, prototype, security analysis,
-performance evaluation, or user study yet validates the combined system.
+The authorized implementation, independent oracle, adversarial corpus, and
+erasure audit satisfied the promotion gate, as recorded in the
+[C006 conformance journal](../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md).
+Runtime monitors, richer evidence producers, performance evaluation, and user
+study remain outside the bounded normative slice.
 
 ## Outcome
 
-Open. Resolution requires:
+Open. Normative 0.6 resolves only the bounded governance spine; the wider
+inquiry still requires:
 
-- a normative core calculus and executable reference semantics;
-- proof that specification elaboration preserves the program type-and-effect
-  system;
-- adversarial validation of the lifecycle and authority model;
-- a prototype evidence and provenance pipeline;
-- a type-, effect-, and semantics-preserving BEAM erasure pass with artifact
-  inspection and zero-runtime-cost measurements;
+- generalized metatheory for specification elaboration and erasure beyond the
+  bounded executable checks and byte-identity evidence;
+- runtime-contract semantics for effects, handlers, messages, failures, and
+  retained monitoring costs;
+- richer evidence producers, certificate formats, and temporal or deductive
+  checking methods;
+- long-term schema migration, archived decision replay, transparency, and
+  cross-organization authority;
 - performance measurements on representative projects; and
 - comprehension and diagnostic-repair evidence from programmers.
 

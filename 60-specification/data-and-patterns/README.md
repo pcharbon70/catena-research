@@ -32,6 +32,9 @@ lowering here. Structural row variants, programmable patterns, collection
 syntax, stable foreign layouts, and categorical instance generation remain in
 their own specification areas.
 
+Document authority and rendered content labels follow the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 ## Index
 
 ### Subdirectories

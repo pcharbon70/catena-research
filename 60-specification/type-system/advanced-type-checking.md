@@ -29,6 +29,8 @@ universal type introduces rigid skolems whose scope is the checked term.
 
 The controlling rules are:
 
+> **Normative definition.**
+
 ```text
 (FORALL-I) Γ, a rigid ⊢ expression ⇐ body
            --------------------------------

@@ -26,6 +26,9 @@ selection here. General effects, unrestricted recursion, trait-defined
 operators, public process protocols, receive timeouts, pattern guards, handler
 guards, and programmable patterns remain in their own specification areas.
 
+Document authority and rendered content labels follow the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 Every chapter is `normative`. Published compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
 provides the executable promotion evidence, and checklist item C003 records the

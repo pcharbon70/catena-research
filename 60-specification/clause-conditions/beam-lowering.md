@@ -97,7 +97,7 @@ The version 0.3 `.cati.json` sidecar retains exported condition core and
 digests needed for separate compilation. Erasing compiler evidence from BEAM
 does not erase that interface contract.
 
-## Connections
+## Connections (non-normative)
 
 The general OTP path and layout independence are specified in
 [Interfaces and Representation](../data-and-patterns/interfaces-and-representation.md).

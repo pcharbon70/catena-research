@@ -29,6 +29,10 @@ satisfies the conformance gate. Its environment, commands, results, and
 bounded evidence are preserved in the
 [C005 conformance journal](../../50-journal/2026-08-03-c005-executable-effect-conformance.md).
 
+Document status, content labels, rule references, and conflict handling follow
+the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 ## Public model
 
 An effect names a family of typed requests. `request` asks for one operation;
@@ -37,6 +41,8 @@ a lexical capability identifies the intended use of a family; and a named
 handler interprets requests around one expression.
 
 The initial surface uses three structural words:
+
+> **Non-normative example.**
 
 ```text
 handler Recover for failure: Failure[error] { ... }
@@ -76,7 +82,7 @@ resumptions, first-class handler values, effect masking, or public parser
 implementation. Those exclusions preserve checklist items G080, G081, G082,
 and D083.
 
-## Connections
+## Connections (non-normative)
 
 The rationale and unresolved wider design remain in
 [Algebraic Effects and Handlers](../../20-notes/algebraic-effects-and-handlers.md),

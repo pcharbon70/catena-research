@@ -29,6 +29,9 @@ taxonomy, application host effects, structured concurrency, higher-order and
 scoped operations, shallow handlers, and multi-shot resumptions remain outside
 0.5.
 
+Document authority and rendered content labels follow the repository
+[Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+
 Every chapter is `normative`. The immutable sibling-compiler commit and
 reproducible results are recorded in
 [C005 Executable Effect Conformance](../../50-journal/2026-08-03-c005-executable-effect-conformance.md).

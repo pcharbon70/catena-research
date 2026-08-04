@@ -33,6 +33,8 @@ remainder. Handler order is observable and no commutativity is implied.
 For an evaluation context `C` with no intervening handler for capability `c`,
 the normative dynamics are:
 
+> **Normative definition.**
+
 ```text
 handle return value using H as c
   --> H.return(value)
@@ -66,6 +68,8 @@ unwinding promise; those are G080 rather than implicit behavior.
 
 The only invocation form is:
 
+> **Normative definition.**
+
 ```text
 resume continuation with reply
 ```
@@ -89,7 +93,7 @@ A clause that aborts performs no action from the discarded remainder. A deep
 resume runs that remainder exactly once from the request point and later
 matching requests use the reinstalled handler.
 
-## Connections
+## Connections (non-normative)
 
 The distinctions among deep, shallow, affine, and multi-shot control are
 developed with primary-source links in

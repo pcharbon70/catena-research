@@ -19,6 +19,8 @@ aliases:
 
 A constructor result refinement uses `returns`:
 
+> **Non-normative example.**
+
 ```catena
 type Expr A =
   | IntLit(Int) returns Expr Int
@@ -26,6 +28,8 @@ type Expr A =
 ```
 
 An existential payload uses an explicit binder:
+
+> **Non-normative example.**
 
 ```catena
 type Packed =
@@ -44,7 +48,10 @@ principal-type or completeness claim for this annotation-directed region.
 Programs using only ordinary uniform-result constructors remain in the C001
 principal profile.
 
-For example:
+A source-level definition at this boundary can be written as follows without
+fixing final parser punctuation:
+
+> **Non-normative example.**
 
 ```catena
 evaluate : forall A. Expr A -> A
@@ -91,11 +98,13 @@ The coverage checker MAY use local equalities to reject impossible
 constructors, but MUST NOT let a coverage approximation justify an unsound
 branch type.
 
-## Limits and rationale
+## Limits
 
 Version 0.2 does not infer GADT signatures, support impredicative
 instantiation, derive `fold` for GADTs or existential constructors, or expose
 equality proofs to ordinary source programs.
+
+## Rationale (non-normative)
 
 The evidence and annotation rationale follow
 [Peyton Jones et al. 2006](../../30-sources/peyton-jones-et-al-2006-gadt-inference.md)

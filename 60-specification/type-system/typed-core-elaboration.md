@@ -32,6 +32,8 @@ executable code consumes them.
 
 The relevant typed-core forms are:
 
+> **Normative definition.**
+
 ```text
 term ::= x | literal | fn (x:t) -> term | term term
        | type_fn a -> term | term @t
@@ -62,6 +64,8 @@ Elixir and is intended to self-host after the language can express its own
 toolchain.
 
 The required Catena 0.1 lowering path is:
+
+> **Normative definition.**
 
 ```text
 Catena source or versioned JSON AST
