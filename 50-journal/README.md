@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C008 Edition and Feature-Lifecycle Conformance](2026-08-05-c008-edition-conformance.md)
+  — records the authorized immutable compiler identity, edition-selection,
+  lifecycle, migration, interface, artifact, signature-domain, governance,
+  erasure evidence, promotion result, and escript-packaging limitation.
 - [Prototype Slice Renumbering](2026-08-04-prototype-slice-renumbering.md) —
   records the approved `0.1.1` through `0.1.6` hard cutover, protocol and
   signature impact, historical mapping, validation method, and pending

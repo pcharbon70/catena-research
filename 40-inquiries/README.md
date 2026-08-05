@@ -47,6 +47,10 @@ to `20-notes`.
 - [How Should Catena Integrate Specifications and Governance Into the Language?](how-should-catena-integrate-specifications-and-governance-into-the-language.md)
   — tests the semantic kernel, evidence distinctions, authority policy,
   lifecycle protocol, provenance, security, performance, and public vocabulary.
+- [How Should Catena Version Editions and Language Features?](how-should-catena-version-editions-and-language-features.md)
+  — carries the settled package-local edition, exact-revision, preview,
+  compatibility, migration, and artifact model through normative C008's
+  executable evidence and immutable promotion record.
 - [How Should Catena Specify List Comprehensions?](how-should-catena-specify-list-comprehensions.md)
   — tests list-specific syntax, total and filtering patterns, scope, effect
   order, qualifier-tree elaboration, BEAM lowering, and extension pressure.

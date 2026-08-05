@@ -38,9 +38,10 @@ repository workflow.
 
 A chapter applies only within the scope and exclusions stated by its
 specification area. A larger `spec_version` does not automatically replace an
-older rule. Until the edition and feature lifecycle is specified by checklist
-item G008, a later chapter overrides an earlier chapter only when normative
-text explicitly states the replacement or applicability relationship.
+older rule. Normative C008 defines cumulative same-edition applicability and
+requires an explicit lifecycle and migration record for replacement,
+deprecation, or removal. A later chapter therefore overrides an earlier
+chapter only when normative text explicitly states that relationship.
 
 If two apparently applicable normative chapters disagree and neither contains
 that relationship, the specification is defective. The disputed behavior has
@@ -49,16 +50,17 @@ no conforming interpretation until the conflict is repaired.
 ## Prototype slice identifiers
 
 `spec_version` uses exact `major.minor.patch` syntax. The current prototype
-language line is `0.1`; its completed semantic slices are:
+language line is `0.1`; its completed semantic boundaries are:
 
-| Boundary | Version |
-| --- | --- |
-| C001 type system | `0.1.1` |
-| C002 data and patterns | `0.1.2` |
-| C003 clause conditions | `0.1.3` |
-| C004 traits and categorical operations | `0.1.4` |
-| C005 effects and handlers | `0.1.5` |
-| C006 specifications and governance | `0.1.6` |
+| Boundary | Version | Status |
+| --- | --- | --- |
+| C001 type system | `0.1.1` | normative |
+| C002 data and patterns | `0.1.2` | normative |
+| C003 clause conditions | `0.1.3` | normative |
+| C004 traits and categorical operations | `0.1.4` | normative |
+| C005 effects and handlers | `0.1.5` | normative |
+| C006 specifications and governance | `0.1.6` | normative |
+| C008 editions and feature lifecycle | `0.1.7` | normative |
 
 Each future prototype semantic slice uses the next unused `0.1.n` patch until
 an approved policy replaces this convention. This sequence identifies
@@ -67,11 +69,14 @@ independent of compiler-package releases and third-party dependency versions.
 It also does not make a larger patch automatically applicable or
 authoritative.
 
+The normative 0.1.7 chapters distinguish edition, language revision, artifact
+format, and compiler-package release, and define applicability within the
+retained `0.1` edition.
+
 The previous two-component identifiers remain visible only where a historical
 record describes bytes emitted by an immutable compiler commit. They are not
-current language or protocol aliases. G008 remains responsible for end-user
-editions, compatibility promises, deprecation, experimental features, and
-migration policy.
+current language or protocol aliases. C008 defines the end-user edition,
+compatibility, deprecation, preview, and migration policy.
 
 ## Normative and non-normative material
 
@@ -157,8 +162,9 @@ settle an ambiguity, or amend a normative chapter.
 
 This policy leaves the following questions open:
 
-- G008 defines editions, compatibility, deprecation, and replacement
-  lifecycle.
+- C008 defines editions, compatibility, deprecation, and replacement
+  lifecycle; future edition retirement and broader API/ABI policy remain
+  separately tracked.
 - G009 defines the complete conformance vocabulary.
 - P011 connects every normative rule to executable evidence and may introduce
   permanent rule identifiers.

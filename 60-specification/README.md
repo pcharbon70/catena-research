@@ -37,11 +37,17 @@ identifier-only `0.1.1` through `0.1.6` migration. Their historical commits
 remain semantic evidence, while the exact renumbered protocol identity awaits
 the fresh gate in
 [Prototype Slice Renumbering](../50-journal/2026-08-04-prototype-slice-renumbering.md).
+The normative C008 boundary is `0.1.7`; its explicitly authorized immutable
+compiler evidence is recorded in the linked conformance journal.
 
 ## Index
 
 ### Subdirectories
 
+- [Editions and Feature Lifecycle](editions-and-feature-lifecycle/README.md) —
+  the normative version 0.1.7 package-local edition, exact-revision, preview,
+  compatibility, migration, diagnostics, selection-bound artifact, and
+  version-aware governance contract.
 - [Specifications and Governance](specifications-and-governance/README.md) —
   the normative version 0.1.6 typed-rule, exact-example, additive-policy,
   offline-trust, lifecycle, artifact-binding, and total-erasure contract.

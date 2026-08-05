@@ -37,7 +37,7 @@ slices use the next unused `0.1.n` patch. The compiler package remains version
 `0.1.0`; package-release version and accepted language version are separate.
 
 This decision establishes prototype slice numbering only. It does not resolve
-[G008 editions and feature lifecycle](../00-inbox/language-specification-completeness-checklist.md#1-specification-form-and-conformance).
+[C008 editions and feature lifecycle](../00-inbox/language-specification-completeness-checklist.md#1-specification-form-and-conformance).
 
 ## Contract impact
 

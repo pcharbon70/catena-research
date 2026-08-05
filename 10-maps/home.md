@@ -14,6 +14,10 @@ This is the selective entry point to the archive. See the
 
 ## Active inquiries
 
+- [How should Catena version editions and language features?](../40-inquiries/how-should-catena-version-editions-and-language-features.md)
+  — carries edition `0.1`, exact retained revisions, named previews,
+  compatibility, migration, and selection-bound artifacts through normative
+  C008 and its immutable promotion evidence.
 - [How should Catena specify list comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
   — tests a list-specific surface, total and explicitly filtering patterns,
   effect order, scope, qualifier-tree elaboration, fused BEAM lowering, and
@@ -44,6 +48,10 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
+  — routes through package-local selection, exact revisions, previews,
+  compatibility classifications, migration data, artifact identity,
+  signatures, and compiler bootstrap boundaries.
 - [Catena Type-System Design](catena-type-system-design.md) — now routes from
   independent research through the normative C001 chapters and executable
   Elixir/OTP 29 evidence.
@@ -78,6 +86,13 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Language Editions and Feature Lifecycle](../20-notes/language-editions-and-feature-lifecycle.md)
+  — proposes the four-axis version model, retained exact pins, named preview
+  lifecycle, conservative migrations, optional selection policy, and
+  version-aware signatures behind normative 0.1.7.
+- [Catena 0.1.7 Editions and Feature Lifecycle Specification](../60-specification/editions-and-feature-lifecycle/README.md)
+  — defines the normative package selection, compatibility, preview,
+  interface, artifact, governance, diagnostic, and conformance obligations.
 - [Prototype Slice Renumbering](../50-journal/2026-08-04-prototype-slice-renumbering.md)
   — maps C001 through C006 to `0.1.1` through `0.1.6`, retires the old protocol
   values, records every affected identity boundary, and requires a fresh
