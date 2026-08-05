@@ -61,6 +61,10 @@ should explain why its links belong together rather than merely list files.
   — routes through typed claims, honest evidence kinds, contracts, models,
   proof obligations, authority policy, provenance, lifecycle transitions, and
   erasure into production BEAM plus a signed sidecar manifest.
+- [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
+  — routes through package-local editions, exact revisions, previews,
+  compatibility, migration, selection-bound artifacts, versioned signatures,
+  and normative C008 promotion evidence.
 - [List Comprehensions](list-comprehensions.md) — routes through list-specific
   generators, explicit pattern filtering, Boolean qualifiers, effects,
   desugaring, extension boundaries, and BEAM lowering.

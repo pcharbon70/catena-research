@@ -112,7 +112,7 @@ dependent package cannot silently discard an obligation.
 
 ## Connections (non-normative)
 
-The [language overview](../../language-overview.md#8-verification-erasure-and-artifact-integrity)
+The [language overview](../../language-overview.md#9-verification-erasure-and-artifact-integrity)
 places this artifact split in the wider compiler architecture. Exact failure
 families and the byte-identity audit are specified in
 [Diagnostics and Conformance](diagnostics-and-conformance.md).

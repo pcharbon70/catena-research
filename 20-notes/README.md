@@ -62,6 +62,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes a typed specification graph, distinct evidence regimes, a
   restricted authority language, append-only governed lifecycle, and an
   erased verification layer with externally preserved provenance.
+- [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
+  — separates edition, exact language revision, artifact schema, and compiler
+  release while proposing package-local selection, named previews, retained
+  pins, migration records, and version-aware artifact binding.
 - [List Comprehensions](list-comprehensions.md) — proposes an eager list-to-list
   form with total generators, explicit filtering patterns, typed Boolean
   filters, visible effects, ordered execution, and fused BEAM lowering.

@@ -35,6 +35,8 @@ develop without losing their provenance, relationships, or open questions.
 Start at the [home map](10-maps/home.md). The current language-accessibility
 work begins with
 [An Approachable Vocabulary for Catena](20-notes/approachable-language-vocabulary.md).
+The normative compatibility model begins with
+[Language Editions and Feature Lifecycle](20-notes/language-editions-and-feature-lifecycle.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -115,14 +117,19 @@ specification status: draft | candidate | normative
 ## Prototype slice numbering
 
 Catena's current language line is `0.1`. The completed C001 through C006
-semantic slices are `0.1.1` through `0.1.6`; subsequent prototype slices use
-the next unused patch. These identifiers are distinct from the sibling
-compiler's package release, external tool versions, and the historical labels
-preserved in conformance journals.
+semantic slices are `0.1.1` through `0.1.6`, and normative C008 is `0.1.7`.
+C007 is a document-authority milestone rather than a language revision; the
+next prototype semantic slice uses the next unused patch. C008 defines
+package-local editions, exact revisions, previews, compatibility, and
+migration. These identifiers are distinct from the sibling compiler's package
+release, external tool versions, and the historical labels preserved in
+conformance journals.
 
 The former `0.1` through `0.6` slice identifiers are retired protocol values,
-not aliases. This hard cutover does not define end-user editions,
-compatibility promises, deprecation, or migration policy; those remain G008.
+not aliases. The renumbering hard cutover did not itself define end-user
+editions, compatibility promises, deprecation, or migration policy. Normative
+C008 now defines those relationships at revision `0.1.7`, supported by its
+authorized immutable promotion record.
 
 ## Working rhythm
 

@@ -87,7 +87,7 @@ every rule.
 
 ## Threads
 
-- [G008](../00-inbox/language-specification-completeness-checklist.md#1-specification-form-and-conformance)
+- [C008](../00-inbox/language-specification-completeness-checklist.md#1-specification-form-and-conformance)
   remains responsible for editions, compatibility, and lifecycle rules.
 - G009 remains responsible for the complete conformance vocabulary.
 - P011 remains responsible for exhaustive rule-to-test traceability and any

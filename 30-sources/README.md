@@ -30,6 +30,15 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [JEP 12: Preview Features](buckley-2018-preview-features.md) — defines
+  explicit release-bound opt-in, impermanent-but-complete language features,
+  artifact marking, diagnostics, and stabilization or removal outcomes.
+- [Semantic Versioning 2.0.0](preston-werner-2013-semantic-versioning.md) —
+  relates major, minor, and patch components to a declared public contract and
+  explicitly treats the pre-1.0 line as unstable.
+- [The Rust Edition Guide](rust-project-edition-guide.md) — documents
+  package-local compatibility selection, retained earlier editions,
+  interoperable dependencies, and conservative migration edits.
 - [Abstraction-Safe Effect Handlers via Tunneling](zhang-myers-2019-abstraction-safe-effect-handlers.md)
   — shows that nearest matching handlers can violate higher-order abstraction
   and develops a tunneling semantics with stronger guarantees.

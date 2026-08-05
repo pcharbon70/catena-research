@@ -68,6 +68,9 @@ do not establish the new wire strings, canonical bytes, or signatures. The
 [prototype-slice renumbering record](../50-journal/2026-08-04-prototype-slice-renumbering.md)
 tracks the hard cutover and fresh cross-slice executable-evidence gate. This
 identifier migration does not reopen the completed semantic checklist items.
+Normative C008 uses `0.1.7` for editions and feature lifecycle. Its explicitly
+authorized immutable compiler commit and promotion evidence are recorded in
+the [C008 conformance journal](../50-journal/2026-08-05-c008-edition-conformance.md).
 
 ## Existing research that needs normative consolidation
 
@@ -137,10 +140,21 @@ as small normative rules rather than copied wholesale into a specification.
   and make normative text the sole authority when reference paths, compiler
   behavior, and tests disagree. This governance completion creates no Catena
   0.1.7 slice or immutable compiler commit.
-- [ ] **G008 — Gap — language editions and feature lifecycle.** Relate the
-  established `major.minor.patch` prototype-slice syntax to end-user editions,
-  then define edition selection, compatibility promises, deprecation,
-  experimental features, and migration between editions.
+- [x] **C008 — Complete — language editions and feature lifecycle.** The
+  [normative 0.1.7 specification](../60-specification/editions-and-feature-lifecycle/README.md),
+  [synthesis](../20-notes/language-editions-and-feature-lifecycle.md), and
+  [resolved inquiry](../40-inquiries/how-should-catena-version-editions-and-language-features.md)
+  define edition `0.1`, exact retained revisions, package-local selection,
+  named previews, lifecycle transitions, pre-1.0 and post-1.0 compatibility,
+  deprecation, migration records, selection-bound interfaces and artifacts,
+  versioned signatures, optional governance constraints, and structured
+  diagnostics. The sibling compiler implements the contract with focused
+  positive and adversarial evidence. The
+  [C008 conformance record](../50-journal/2026-08-05-c008-edition-conformance.md)
+  records the authorized immutable compiler commit
+  [`8ef7835d1d7f9b2ab14843ac7817798d58eb2bd4`](https://github.com/pcharbon70/catena/commit/8ef7835d1d7f9b2ab14843ac7817798d58eb2bd4),
+  its parent and tree, the post-commit suites, artifact hashes, and the known
+  non-reproducible escript-packaging limitation.
 - [ ] **G009 — Gap — conformance vocabulary.** Define required, implementation-defined,
   unspecified, and invalid behavior; avoid leaving accidental undefined
   behavior.
@@ -153,6 +167,10 @@ as small normative rules rather than copied wholesale into a specification.
   have positive, negative, bounded-oracle,
   core-verification, interface-integrity, differential-layout or
   differential-lowering, receive-harness, and OTP 29 runtime evidence.
+  C008 adds exact-selection, lifecycle, migration, interface,
+  specialization, artifact, approval, signature-domain, downgrade, and
+  no-runtime-dispatch cases, but does not complete exhaustive rule-to-test
+  traceability.
   Connect every remaining normative rule to positive programs, negative
   programs, expected diagnostics, and runtime observations.
 - [ ] **G012 — Gap — implementation limits.** Specify which limits may vary—arity,
@@ -537,10 +555,12 @@ validation.
 
 ## 14. Diagnostics, tools, and developer experience
 
-- [ ] **P117 — Partial — diagnostic contract.** Define stable identifiers, severity,
-  primary and secondary locations, inferred-type presentation, constraint
-  provenance, missing-pattern witnesses, guard explanations, and generated-code
-  attribution.
+- [ ] **P117 — Partial — diagnostic contract.** C008 adds explicit
+  error/warning severity, stable `EDN`, `PRV`, and `DEP` families,
+  deterministic details, ordered structured edits, and warning denial. Define
+  secondary locations, inferred-type presentation, constraint provenance,
+  missing-pattern witnesses, guard explanations, generated-code attribution,
+  and a complete cross-language contract.
 - [ ] **G118 — Gap — formatter.** Define canonical formatting, comments, idempotence,
   version coupling, and whether formatting is part of source compatibility.
 - [ ] **G119 — Gap — documentation tool.** Define doc attachment, links, examples,
@@ -560,8 +580,11 @@ validation.
 - [ ] **G124 — Gap — debugging and observability.** Define breakpoints, stack traces,
   handlers, processes, messages, generated derivations, erased declarations,
   tracing, profiling, and crash reports.
-- [ ] **G125 — Gap — migration tools.** Define edition fixes, API refactors, deprecated
-  syntax handling, and machine-applicable diagnostic edits.
+- [ ] **P125 — Partial — migration tools.** C008 defines conservative
+  `json-edit` suggestions with explicit applicability and requires the C008
+  compiler to report rather than apply them. Define transactional application,
+  backups, rollback, source rewrites, API refactors, and deprecated-syntax
+  handling.
 
 ## 15. Security, reproducibility, and operational limits
 
@@ -605,9 +628,11 @@ validation.
 - [ ] **G135 — Gap — optimizer validity.** Identify which rewrites rely on pure
   semantics, trait laws, evaluation order, totality, or trusted evidence and
   reject rewrites whose premises are absent.
-- [ ] **G136 — Gap — compatibility suite.** Test public signatures, data evolution,
-  package resolution, artifact manifests, OTP versions, hot upgrades, and
-  language editions.
+- [ ] **P136 — Partial — compatibility suite.** C008 tests retained
+  exact pins, neutral interfaces, selection-bound manifests, historical 0.1.6
+  signature domains, and 0.1.7 downgrade/substitution rejection. Extend this
+  to public signatures, data evolution, package resolution, OTP versions, hot
+  upgrades, ecosystem-scale dependency graphs, and future edition boundaries.
 - [ ] **G137 — Gap — usability gate.** Test whether programmers can predict `map`,
   `map2`, `and_then`, traversal, handlers, guards, comprehensions, and
   diagnostics without prerequisite mathematical vocabulary.
@@ -617,6 +642,14 @@ validation.
 - [ ] **G139 — Gap — release-readiness definition.** State the minimum normative
   chapters, conformance coverage, platform support, known limitations, and
   stability promises required before calling a version complete.
+- [ ] **G141 — Gap — compiler self-hosting.** Define the late-0.x milestone at
+  which Catena can implement its own compiler, including the required language
+  subset, parser and module facilities, tool effects, host interoperability,
+  bootstrap trust, stage-one and stage-two builds, fixed-point or semantic
+  equivalence checks, reproducibility, rollback, distribution, and the
+  retained OTP 29 Abstract Format boundary. Elixir remains the bootstrap
+  implementation through C008; changing the implementation language
+  does not change Catena's BEAM-only target.
 
 ## Suggested research order
 

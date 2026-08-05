@@ -79,6 +79,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "traits-and-categorical-operations": "0.1.4",
     "effects-and-handlers": "0.1.5",
     "specifications-and-governance": "0.1.6",
+    "editions-and-feature-lifecycle": "0.1.7",
 }
 
 

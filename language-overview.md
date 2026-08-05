@@ -32,7 +32,8 @@ the linked notes, maps, and inquiries.
 
 ```mermaid
 flowchart TD
-    S[Catena source] --> U[Approachable surface language]
+    P[Package or standalone language selection] --> U[Approachable surface language]
+    S[Catena source] --> U
     U --> DE[Declaration elaboration<br/>nominal identity and module interfaces]
     DE --> ST[Static semantics<br/>types, patterns, rows, traits, effects, coverage]
     ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
@@ -44,6 +45,7 @@ flowchart TD
     OTP --> B[BEAM modules]
     SG --> VR[Verification result]
     B --> AB[Artifact binding]
+    P --> AB
     VR --> AB
     AB --> OUT[BEAM modules and digest-bound manifest]
 ```
@@ -91,6 +93,15 @@ remain separate contracts.
 A function's type should distinguish its returned value from the requests it
 may make. Handlers interpret those requests. Capabilities should be lexical and
 statically elaborated, avoiding runtime searches for an appropriate handler.
+
+### Language changes are selected, not ambient
+
+A package should name one edition, exact language revision, and preview set.
+A compiler update must not silently move that package to newer semantics.
+Dependencies may retain different selections and interoperate through checked
+semantic interfaces; runtime functions do not dispatch on an edition service.
+The candidate model is developed in
+[Language Editions and Feature Lifecycle](20-notes/language-editions-and-feature-lifecycle.md).
 
 ### Governance is opt-in at the project boundary and strict inside its scope
 
@@ -317,7 +328,34 @@ for the rationale and the
 [normative 0.1.6 specification](60-specification/specifications-and-governance/README.md)
 for the bounded semantic and conformance contract.
 
-### 8. Verification erasure and artifact integrity
+### 8. Editions, previews, and compatibility
+
+Normative C008 at 0.1.7 separates four identities: edition, exact language revision,
+artifact schema, and compiler-package release. Edition `0.1` is the prototype
+compatibility track, while revisions `0.1.1` through `0.1.7` name cumulative
+semantic boundaries. A new package records its exact selection; retained pins
+do not float when a compiler learns a later revision.
+
+A named preview is complete enough for bounded use but deliberately
+impermanent. Preview can become stable or withdrawn; stable can become
+deprecated and then removed. Public preview use propagates through module
+interfaces, while private use does not force a dependency opt-in. Version
+0.1.7 intentionally publishes no actual preview feature.
+
+Interfaces, specialization identities, BEAM compile metadata, assurance
+records, approvals, and applicable governance policy bind the selection.
+These are compile-time and artifact identities rather than runtime dispatch.
+Historical 0.1.6 signed records keep their old domain; 0.1.7 records use one
+version-aware domain without downgrade fallback.
+
+The bounded contract is supported by explicitly authorized immutable
+implementation evidence. See the
+[normative specification](60-specification/editions-and-feature-lifecycle/README.md),
+the [resolved inquiry](40-inquiries/how-should-catena-version-editions-and-language-features.md),
+and the
+[C008 conformance record](50-journal/2026-08-05-c008-edition-conformance.md).
+
+### 9. Verification erasure and artifact integrity
 
 After checking, the compiler divides specification material into two
 categories:
@@ -356,6 +394,8 @@ and independently testable analyses.
 
 ### Front end
 
+- edition, exact revision, and preview selection resolver;
+- immutable feature-state and compatibility-change registry;
 - lexer, parser, and concrete syntax tree;
 - name and module resolver;
 - kind checker;
@@ -418,7 +458,9 @@ binding, policy interpretation, transition validation, and signature checks.
 - module and debug metadata plus artifact-manifest binding.
 
 Catena is BEAM-only. The bootstrap compiler is written in Elixir and is
-intended to self-host later. It MUST delegate `.beam` construction to OTP's
+intended to self-host at the separately gated late-0.x G141 milestone, after
+the language can express the compiler and reproduce its outputs. It MUST
+delegate `.beam` construction to OTP's
 supported Erlang source or Abstract Format path; direct Core Erlang, BEAM
 assembly, and a custom `.beam` writer are not architectural alternatives. The
 exact boundary is specified in
@@ -428,7 +470,8 @@ The resulting pipeline is:
 
 ```mermaid
 flowchart LR
-    P[Parse] --> N[Resolve names and kinds]
+    S[Resolve edition, revision, and previews] --> P[Parse]
+    P --> N[Resolve names and kinds]
     N --> I[Infer or check types, rows, traits, effects]
     I --> M[Check matches and derivations]
     M --> E[Elaborate explicit typed core]
@@ -475,6 +518,7 @@ The proposed toolchain produces several conceptually distinct artifacts:
 | Runtime IR | Only executable values, operations, capabilities, handlers, and required checks |
 | BEAM modules | Deployable code and selected runtime/debug metadata |
 | Signed manifest | Content-addressed assurance record bound to the exact executable artifacts |
+| Language registry | Retained editions, exact revisions, feature histories, compatibility changes, and migration edits |
 
 This separation lets a release remain small without severing the evidence that
 explains why it was accepted.
@@ -495,6 +539,8 @@ The research currently converges on these decisions:
   libraries;
 - nominal algebraic effects with static effect rows and lexical capabilities;
 - deep affine handlers as the initial resumption discipline;
+- package-local edition and exact-revision selection with named previews and
+  retained historical pins under normative C008;
 - opt-in language-integrated specifications that become enforced within their
   declared scope;
 - explicit separation of claims, evidence, authority, and historical
@@ -518,6 +564,8 @@ The main unresolved areas are:
 - processes, supervision, structured concurrency, cancellation, and resource
   scopes;
 - modules, packages, foreign calls, stable layouts, and hot upgrades;
+- ecosystem-scale compatibility across future editions and eventual compiler
+  self-hosting under G141;
 - governance identity, revocation, transparency logs, and long-lived evidence;
 - the proof kernel and interchange format for externally produced
   certificates;
@@ -553,3 +601,6 @@ The following maps provide the evidence trails behind this overview:
   connects effect semantics, typing, capability elaboration, and BEAM lowering.
 - [Language-Integrated Specifications and Governance](10-maps/language-integrated-specifications-and-governance.md)
   connects specifications, evidence, policy, history, and erasure.
+- [Language Editions and Feature Lifecycle](10-maps/language-editions-and-feature-lifecycle.md)
+  connects package selection, exact revisions, previews, compatibility,
+  migration, artifacts, signatures, and compiler bootstrap boundaries.
