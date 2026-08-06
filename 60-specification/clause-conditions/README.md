@@ -28,6 +28,9 @@ guards, and programmable patterns remain in their own specification areas.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Every chapter is `normative`. Published compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce)
@@ -36,6 +39,16 @@ protocol identifiers, and checklist item C003 records the completed semantic
 slice. It is not evidence for the exact renumbered wire identities. The hard
 cutover and fresh cross-slice evidence requirement are recorded in
 [Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [Guard Tree Semantics — Guard-tree core](guard-tree-semantics.md#guard-tree-core) | Structural tests and continuations can be shared only when selection order, multiplicity, bindings, values, and effects remain identical. |
+| [BEAM Lowering — Ordinary lowering](beam-lowering.md#ordinary-lowering) | `auto`, `native`, and `ordinary` are explicit lowering selections, not unreported implementation variation; all applicable paths preserve the same typed observations. |
+| [Diagnostics and Conformance — Stable diagnostics](diagnostics-and-conformance.md#stable-diagnostics) | Task-facing “clause condition” wording is a `SHOULD` diagnostic-quality recommendation. The current compiler deviation is disclosed and tracked by P117. |
+| [Condition Predicates and Interfaces — Budget](condition-predicates-and-interfaces.md#budget) | Normalization and transitive inlining support at least 20,000 nodes and report `CND007` as an implementation limit. |
+| [Coverage and Fact Evidence — Budgets and diagnostics](coverage-and-fact-evidence.md#budgets-and-diagnostics) | Structural analysis inherits the 20,000-step `M004` minimum; fact-analysis exhaustion is an implementation limit or conservative unknown, never a semantic proof. |
 
 ## Index
 

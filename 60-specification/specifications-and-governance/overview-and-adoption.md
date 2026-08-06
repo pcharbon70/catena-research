@@ -17,8 +17,9 @@ aliases:
 
 This chapter and its five siblings are the normative Catena 0.1.6 assurance
 slice. They extend the normative 0.1.1 through 0.1.5 language slices without
-changing an ungoverned program's meaning. `MUST`, `MUST NOT`, `SHOULD`, and
-`MAY` state conformance requirements.
+changing an ungoverned program's meaning. Requirement words, invalidity,
+permitted variation, limits, and explicit failures follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 The [conformance gate](diagnostics-and-conformance.md#promotion-gate) was
 satisfied for the C006 semantic boundary by the authorized immutable compiler

@@ -32,6 +32,9 @@ Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md). This repository
 policy is distinct from the Catena 0.1.6 governance language feature defined in
 this directory.
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Every chapter is `normative`. The authorized immutable compiler commit,
 independent policy-oracle agreement, adversarial and erasure tests, and
@@ -43,6 +46,16 @@ recorded in
 [Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 The chapters settle the bounded 0.1.6 semantic contract; the research inquiry
 remains active for the deliberately excluded work.
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [Claims, Examples, and Checking — Module declarations](claims-examples-and-checking.md#module-declarations) | `MAY` permits the semantic AST to add specifications and mark ordinary definitions verification-only; adoption remains explicit and typed. |
+| [Artifacts, Erasure, and CLI — Interface boundary](artifacts-erasure-and-cli.md#interface-boundary) | Interfaces `MAY` export non-runtime claim summaries and inherited obligations but cannot export verification-only values. The bootstrap profile records that summaries are emitted. |
+| [Claims, Examples, and Checking — Exact executable examples](claims-examples-and-checking.md#exact-executable-examples) | Each example has a fixed 20,000 semantic-step budget and reports `EVD003` separately from counterexamples and runtime errors. |
+| [Scopes, Policy, and Authorization — Closed policy algebra](scopes-policy-and-authorization.md#closed-policy-algebra) | All matching policies share a fixed 20,000-step budget; exhaustion reports `GOV002` and denies rather than silently dropping policy. |
+| Area result | This slice defines no implementation-defined choice, unspecified presentation, or `SHOULD` recommendation. |
 
 ## Index
 

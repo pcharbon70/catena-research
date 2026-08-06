@@ -88,8 +88,9 @@ without changing its ID. Governance may require the same absence through the
 policy rule defined in
 [Edition Interfaces, Artifacts, and Governance](interfaces-artifacts-and-governance.md#optional-governance-constraints).
 
-This bounded severity contract does not complete G009's general conformance
-vocabulary or P117's full source-location and provenance model.
+This bounded severity contract is interpreted through the repository-wide
+[C009 conformance vocabulary](../../CONFORMANCE-VOCABULARY.md), but it does not
+complete P117's full source-location and provenance model.
 
 ## Language information contract
 

@@ -42,7 +42,8 @@ are not completed archive documents until copied and filled in.
 - [Specification template](specification.md) — a versioned language chapter
   whose `MAJOR.MINOR.PATCH` placeholder must be replaced with the approved
   slice identifier, with normative rules, visible authority labels,
-  diagnostics, and non-normative evidence.
+  conformance vocabulary, variability and limit declarations, diagnostics,
+  and non-normative evidence.
 
 ## Maintaining this index
 
@@ -50,3 +51,5 @@ Update this page whenever a template is added, renamed, or its intended use
 changes. Keep document metadata aligned with
 [`frontmatter.schema.json`](../frontmatter.schema.json) and authoring guidance
 aligned with [`AGENTS.md`](../AGENTS.md).
+Specification scaffolds must also remain aligned with
+[`CONFORMANCE-VOCABULARY.md`](../CONFORMANCE-VOCABULARY.md).

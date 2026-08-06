@@ -10,8 +10,11 @@ import jsonschema
 from validate_archive import (
     ROOT,
     PROTOTYPE_SPECIFICATION_VERSIONS,
+    conformance_vocabulary_link_errors,
     specification_authority_link_errors,
     specification_structure_errors,
+    specification_vocabulary_errors,
+    variability_register_errors,
 )
 
 
@@ -165,6 +168,157 @@ class SpecificationVersionTests(unittest.TestCase):
                 "editions-and-feature-lifecycle": "0.1.7",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
+        )
+
+
+class SpecificationVocabularyTests(unittest.TestCase):
+    def assert_valid(self, body: str) -> None:
+        self.assertEqual([], specification_vocabulary_errors("chapter.md", body))
+
+    def test_accepts_canonical_keywords_and_plain_declarative_rules(self) -> None:
+        self.assert_valid(
+            """# Example
+
+## Rules
+
+Implementations MUST reject the input. They SHOULD explain the failure and
+MAY include technical detail. Successful output is transactional.
+"""
+        )
+
+    def test_rejects_uppercase_requirement_aliases(self) -> None:
+        for alias in (
+            "REQUIRED",
+            "SHALL",
+            "SHALL NOT",
+            "RECOMMENDED",
+            "NOT RECOMMENDED",
+            "OPTIONAL",
+        ):
+            with self.subTest(alias=alias):
+                errors = specification_vocabulary_errors(
+                    "chapter.md", f"# Example\n\n## Rules\n\nThe behavior is {alias}.\n"
+                )
+                self.assertTrue(any("requirement alias" in error for error in errors))
+
+    def test_ignores_non_normative_sections_and_quotations(self) -> None:
+        self.assert_valid(
+            """# Example
+
+## Rules
+
+The result is exact.
+
+> A source says SHALL, OPTIONAL, and undefined behavior.
+
+## Rationale (non-normative)
+
+Historical standards say SHALL and undefined behavior. Their behavior is
+implementation-defined or unspecified.
+"""
+        )
+
+    def test_scans_normative_fences_and_ignores_non_normative_fences(self) -> None:
+        errors = specification_vocabulary_errors(
+            "chapter.md",
+            """# Example
+
+## Rules
+
+> **Normative definition.**
+
+```text
+the result is OPTIONAL and has undefined behavior
+```
+
+> **Non-normative example.**
+
+```text
+historical text says SHALL and unspecified behavior
+```
+""",
+        )
+        self.assertTrue(any("requirement alias" in error for error in errors))
+        self.assertTrue(any("undefined behavior" in error for error in errors))
+        self.assertFalse(any(":14:" in error for error in errors))
+
+    def test_rejects_undefined_behavior(self) -> None:
+        errors = specification_vocabulary_errors(
+            "chapter.md", "# Example\n\n## Rules\n\nThis has undefined behavior.\n"
+        )
+        self.assertTrue(any("undefined behavior" in error for error in errors))
+
+    def test_rejects_unlabelled_variability_classes(self) -> None:
+        for phrase in ("implementation-defined behavior", "unspecified behavior"):
+            with self.subTest(phrase=phrase):
+                errors = specification_vocabulary_errors(
+                    "chapter.md", f"# Example\n\n## Rules\n\nThis is {phrase}.\n"
+                )
+                self.assertTrue(any("visible" in error for error in errors))
+
+    def test_accepts_visible_behavior_callouts(self) -> None:
+        self.assert_valid(
+            """# Example
+
+## Choices
+
+> **Normative implementation-defined choice.**
+
+The byte order is implementation-defined: an implementation selects either
+little endian or big endian and publishes the selection in its profile.
+
+> **Normative unspecified presentation.**
+
+Fresh display names are bounded unspecified presentation: names can differ
+only by alpha-renaming and cannot change the accepted typed core.
+"""
+        )
+
+    def test_rejects_unbounded_unspecified_presentation(self) -> None:
+        errors = specification_vocabulary_errors(
+            "chapter.md",
+            """# Example
+
+## Choices
+
+> **Normative unspecified presentation.**
+
+The result uses unspecified presentation.
+""",
+        )
+        self.assertTrue(any("must label bounded" in error for error in errors))
+
+
+class SpecificationConformanceIndexTests(unittest.TestCase):
+    def test_requires_vocabulary_link_from_specification_index(self) -> None:
+        vocabulary = Path("/archive/CONFORMANCE-VOCABULARY.md")
+        self.assertEqual(
+            1,
+            len(
+                conformance_vocabulary_link_errors(
+                    "60-specification/example/README.md", set(), vocabulary
+                )
+            ),
+        )
+        self.assertEqual(
+            [],
+            conformance_vocabulary_link_errors(
+                "60-specification/example/README.md",
+                {vocabulary.resolve()},
+                vocabulary,
+            ),
+        )
+
+    def test_requires_variability_register_from_area_index(self) -> None:
+        self.assertEqual(
+            ["area/README.md: missing section ## Variability register"],
+            variability_register_errors("area/README.md", "# Area\n"),
+        )
+        self.assertEqual(
+            [],
+            variability_register_errors(
+                "area/README.md", "# Area\n\n## Variability register\n\nNone.\n"
+            ),
         )
 
 

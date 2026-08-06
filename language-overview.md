@@ -94,6 +94,17 @@ A function's type should distinguish its returned value from the requests it
 may make. Handlers interpret those requests. Capabilities should be lexical and
 statically elaborated, avoiding runtime searches for an appropriate handler.
 
+### Failure and variation are explicit
+
+Catena has no undefined behavior. Invalid input fails without publishing
+successful output, implementation limits retain distinct diagnostics, and
+runtime failures or traps are specified outcomes. Any implementation-defined
+choice must be enumerated and published; unprofiled variation is limited to
+bounded presentation or internal strategy that cannot change semantics,
+stable diagnostic identity, governance, or artifact identity. The
+repository-level [Catena Conformance Vocabulary](CONFORMANCE-VOCABULARY.md)
+governs these interpretations across all normative language revisions.
+
 ### Language changes are selected, not ambient
 
 A package should name one edition, exact language revision, and preview set.
@@ -541,6 +552,9 @@ The research currently converges on these decisions:
 - deep affine handlers as the initial resumption discipline;
 - package-local edition and exact-revision selection with named previews and
   retained historical pins under normative C008;
+- one conformance vocabulary across every normative chapter, with no undefined
+  behavior and explicit invalidity, variability, limit, and trap classes under
+  governance milestone C009;
 - opt-in language-integrated specifications that become enforced within their
   declared scope;
 - explicit separation of claims, evidence, authority, and historical
@@ -604,3 +618,6 @@ The following maps provide the evidence trails behind this overview:
 - [Language Editions and Feature Lifecycle](10-maps/language-editions-and-feature-lifecycle.md)
   connects package selection, exact revisions, previews, compatibility,
   migration, artifacts, signatures, and compiler bootstrap boundaries.
+- [Catena Conformance Vocabulary](10-maps/catena-conformance-vocabulary.md)
+  connects requirement force, behavior classes, standards evidence,
+  variability registers, validation, and the compiler profile.

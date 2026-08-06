@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C009 Conformance Vocabulary](2026-08-05-c009-conformance-vocabulary.md) —
+  records the requirement-word and behavior-class policy, complete normative
+  corpus audit, variability registers, validator enforcement, bootstrap
+  compiler profile, documentation-only verification, and absence of a new
+  semantic revision or immutable promotion gate.
 - [C008 Edition and Feature-Lifecycle Conformance](2026-08-05-c008-edition-conformance.md)
   — records the authorized immutable compiler identity, edition-selection,
   lifecycle, migration, interface, artifact, signature-domain, governance,

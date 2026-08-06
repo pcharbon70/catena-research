@@ -48,6 +48,10 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Catena Conformance Vocabulary](catena-conformance-vocabulary.md) — routes
+  through requirement force, invalidity, profiled choices, bounded
+  presentation, implementation limits, explicit traps, validator enforcement,
+  and the compiler conformance profile.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,
@@ -86,6 +90,14 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Conformance Vocabulary and Behavior Classes](../20-notes/catena-conformance-vocabulary-and-behavior-classes.md)
+  — develops the five-keyword and behavior-class model, makes specification
+  silence a defect, and connects area variability registers to the bootstrap
+  implementation profile under governance milestone C009.
+- [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md) — governs
+  requirement words, invalid input, implementation-defined choices, bounded
+  unspecified presentation, limits, explicit runtime failures, and the
+  prohibition on undefined behavior across every normative revision.
 - [Language Editions and Feature Lifecycle](../20-notes/language-editions-and-feature-lifecycle.md)
   — proposes the four-axis version model, retained exact pins, named preview
   lifecycle, conservative migrations, optional selection policy, and

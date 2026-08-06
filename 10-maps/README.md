@@ -38,6 +38,10 @@ should explain why its links belong together rather than merely list files.
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — routes
   through operation algebraicity, handler dynamics, effect typing, resumption
   safety, scoped computations, and runtime strategies.
+- [Catena Conformance Vocabulary](catena-conformance-vocabulary.md) — routes
+  through canonical requirement words, behavior classes, invalidity,
+  variability, limits, explicit traps, validator enforcement, and the
+  bootstrap implementation profile.
 - [Catena Type-System Design](catena-type-system-design.md) — routes through
   the greenfield proposal, its guarantee matrix, and the independent evidence
   for each recommended boundary.

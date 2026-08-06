@@ -43,6 +43,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [Algebraic Effects and Handlers](algebraic-effects-and-handlers.md) — defines
   the mathematical and operational model, compares handler and resumption
   designs, and proposes a constrained greenfield effect system for Catena.
+- [Catena Conformance Vocabulary and Behavior Classes](catena-conformance-vocabulary-and-behavior-classes.md)
+  — separates normative force from behavior class, defines deterministic
+  invalidity and bounded variation, rejects undefined behavior, and develops
+  the implementation-profile model adopted by C009.
 - [Category Theory for Programming](category-theory-for-programming.md) —
   distinguishes compositional laws from operational guarantees and specifies
   the kinds, operations, laws, parents, and roles of Catena's seventeen-class

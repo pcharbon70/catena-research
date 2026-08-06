@@ -13,13 +13,22 @@ aliases: []
 ## Status and authority
 
 <!-- Identify the covered slice, lifecycle state, applicability, exclusions,
-and relationship to SPECIFICATION-AUTHORITY.md. -->
+and relationship to SPECIFICATION-AUTHORITY.md and
+CONFORMANCE-VOCABULARY.md. -->
 
 ## Normative rules
 
-<!-- Rules are normative by default. Use the conformance vocabulary
-deliberately. Before a fenced grammar, judgment, schema, or state transition,
-write: > **Normative definition.** -->
+<!-- Rules are normative by default. Use only MUST, MUST NOT, SHOULD, SHOULD
+NOT, and MAY as uppercase requirement words. Plain declarative rules remain
+binding. Before a fenced grammar, judgment, schema, or state transition, write:
+> **Normative definition.** -->
+
+## Variability and limits
+
+<!-- Enumerate any MAY, SHOULD, SHOULD NOT, implementation limit, or permitted
+variation. Use the visible implementation-defined or bounded unspecified-
+presentation callout from CONFORMANCE-VOCABULARY.md when applicable, and keep
+the specification area's README register synchronized. -->
 
 ## Static semantics
 

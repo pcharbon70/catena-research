@@ -89,7 +89,8 @@ every rule.
 
 - [C008](../00-inbox/language-specification-completeness-checklist.md#1-specification-form-and-conformance)
   remains responsible for editions, compatibility, and lifecycle rules.
-- G009 remains responsible for the complete conformance vocabulary.
+- [C009](2026-08-05-c009-conformance-vocabulary.md) later completed the
+  repository-wide conformance vocabulary without adding a language revision.
 - P011 remains responsible for exhaustive rule-to-test traceability and any
   permanent per-rule identifiers.
 

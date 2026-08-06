@@ -155,9 +155,19 @@ as small normative rules rather than copied wholesale into a specification.
   [`8ef7835d1d7f9b2ab14843ac7817798d58eb2bd4`](https://github.com/pcharbon70/catena/commit/8ef7835d1d7f9b2ab14843ac7817798d58eb2bd4),
   its parent and tree, the post-commit suites, artifact hashes, and the known
   non-reproducible escript-packaging limitation.
-- [ ] **G009 — Gap — conformance vocabulary.** Define required, implementation-defined,
-  unspecified, and invalid behavior; avoid leaving accidental undefined
-  behavior.
+- [x] **C009 — Complete — conformance vocabulary.** The repository-level
+  [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md),
+  [synthesis](../20-notes/catena-conformance-vocabulary-and-behavior-classes.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-classify-conformance-behavior.md),
+  area variability registers, enforced validator, and bootstrap compiler
+  profile define the five canonical requirement words; required, invalid,
+  implementation-defined, bounded unspecified-presentation,
+  implementation-limit, and explicit-trap classes; and Catena's prohibition
+  on undefined behavior. The
+  [C009 record](../50-journal/2026-08-05-c009-conformance-vocabulary.md)
+  records the complete `MAY`, `SHOULD`, and invalidity audit. This
+  repository-governance completion creates no language revision `0.1.8`,
+  compiler semantic change, or immutable promotion commit.
 - [ ] **P010 — Partial — formal semantic kernel.** Normative 0.1.3 now adds a
   typed safe condition core, ordered guard-tree metadata, rechecked coverage
   facts, and BEAM lowering to the C001/C002 executable kernel. Integrate value rows,

@@ -22,6 +22,11 @@ tested for promotion.
 The repository-level [Specification Authority](../SPECIFICATION-AUTHORITY.md)
 defines document status, rendered content labels, rule references, and
 conflict handling independently of Catena language versions.
+The companion
+[Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md) defines
+requirement force, behavior and failure classes, visible variability
+declarations, limits, explicit traps, and implementation profiles across every
+normative area.
 
 ## What belongs here
 
@@ -81,4 +86,6 @@ fresh executable protocol identity. Update the relevant research map, inquiry,
 conformance evidence, and every affected index in the same change as a
 normative rule. Keep every fenced block and every non-normative section visibly
 classified according to the
-[Specification Authority](../SPECIFICATION-AUTHORITY.md).
+[Specification Authority](../SPECIFICATION-AUTHORITY.md). Keep each area's
+variability register and all normative wording aligned with the
+[Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md).

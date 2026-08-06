@@ -31,12 +31,25 @@ incorporates them.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Every chapter is `normative`. The historical C001 run exercised these
 semantics under the retired `0.1` protocol identifier. It remains semantic
 evidence, but it is not evidence for the exact `0.1.1` wire identity. The hard
 cutover and fresh cross-slice evidence requirement are recorded in
 [Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [Type-System Overview — Two guarantee profiles](type-system-overview.md#two-guarantee-profiles) | Private principal-core inference and an optional candidate export-signature display are source/tool permissions; the written export signature remains mandatory. |
+| [Principal Inference — Determinism and failure](principal-inference-and-generalization.md#determinism-and-failure) | Fresh names and equivalent constraint order are bounded unspecified presentation; alpha-equivalence, stable diagnostic identity, typed core, and artifact identity cannot change. |
+| [Diagnostics — Diagnostic contract](diagnostics-and-conformance.md#diagnostic-contract) | Secondary spans are a `SHOULD` quality recommendation. A deviation needs a conformance-profile rationale and remains tracked by P117. |
+| [Typed-Core Elaboration — BEAM-only backend boundary](typed-core-elaboration.md#beam-only-backend-boundary) | Original Catena locations and toolchain metadata are a `SHOULD` provenance recommendation. Missing source locations need a profile disposition and remain tracked by P117 and the source-file gaps. |
+| [Metatheory — Normative claims](metatheory.md#normative-claims) | An explicit resource limit may refuse otherwise typable input only as an implementation limit, not as a semantic counterexample. The bootstrap profile publishes its current trait-resolution budget. |
 
 ## Index
 

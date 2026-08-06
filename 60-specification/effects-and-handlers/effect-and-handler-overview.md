@@ -20,8 +20,10 @@ This chapter and its five siblings are the normative Catena 0.1.5 effect slice.
 They extend the [0.1.1 type and row system](../type-system/README.md),
 [0.1.2 data model](../data-and-patterns/README.md),
 [0.1.3 clause conditions](../clause-conditions/README.md), and
-[0.1.4 traits](../traits-and-categorical-operations/README.md). `MUST`,
-`MUST NOT`, `SHOULD`, and `MAY` state normative conformance requirements.
+[0.1.4 traits](../traits-and-categorical-operations/README.md). Requirement
+words, invalidity, permitted variation, limits, and explicit failures follow
+the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Historical immutable compiler commit
 [`b24e58d587c830dbb9d8c87770105714745fcd1b`](https://github.com/pcharbon70/catena/commit/b24e58d587c830dbb9d8c87770105714745fcd1b)

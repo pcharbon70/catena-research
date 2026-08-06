@@ -21,9 +21,10 @@ clause-condition slice. They refine the conservative guard boundary in the
 [0.1.2 data-and-pattern specification](../data-and-patterns/README.md) and use
 the types fixed by the [0.1.1 type-system specification](../type-system/README.md).
 
-`MUST`, `MUST NOT`, `SHOULD`, and `MAY` express requirements. An invalid
-program MUST be rejected. These chapters are backed by published executable
-evidence at Catena compiler commit
+Requirement words, invalidity, permitted variation, limits, and explicit
+failures follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md). These
+chapters are backed by published executable evidence at Catena compiler commit
 [`165fc4837f101d01016248e62479ef4caa0f20ce`](https://github.com/pcharbon70/catena/commit/165fc4837f101d01016248e62479ef4caa0f20ce).
 The 0.1.3 condition rules explicitly apply where 0.1.2 left nonliteral condition
 behavior conservative; the 0.1.2 structural pattern rules remain applicable.

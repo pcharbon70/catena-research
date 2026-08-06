@@ -91,10 +91,15 @@ testing subsumption. A skolem MUST NOT escape its signature scope.
 
 ## Determinism and failure
 
-Fresh variable names and constraint presentation MAY differ, but alpha-equivalent
-input and irrelevant solver work-list order MUST yield alpha-equivalent
-schemes and equivalent typed core. The implementation MUST reject infinite
-types, kind mismatches, unresolved ambiguity, and unsatisfied constraints with
+> **Normative unspecified presentation.**
+
+Fresh variable names and equivalent constraint ordering are bounded
+unspecified presentation: they MAY differ only by alpha-renaming and ordering
+that preserves the same constraint set. Alpha-equivalent input and irrelevant
+solver work-list order MUST yield alpha-equivalent schemes, equivalent typed
+core, the same stable diagnostic family, and the same artifact identity. The
+implementation MUST reject infinite types, kind mismatches, unresolved
+ambiguity, and unsatisfied constraints with
 the diagnostic families in
 [Diagnostics and Conformance](diagnostics-and-conformance.md).
 

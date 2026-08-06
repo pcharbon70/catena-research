@@ -31,6 +31,9 @@ scoped operations, shallow handlers, and multi-shot resumptions remain outside
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Every chapter is `normative`. The immutable sibling-compiler commit and
 reproducible results are recorded in
@@ -41,6 +44,14 @@ The hard cutover and fresh cross-slice evidence requirement are recorded in
 [Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
 C005, C076, and C079 were completed atomically with that record; C077 and C078
 are the earlier normative constraints preserved by 0.1.5.
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [Declarations, Requests, and Signatures — Nominal declarations](declarations-requests-and-signatures.md#nominal-declarations) | `MAY` permits operation parameter and reply types to contain data and functions with a syntactically closed empty latent effect row; effectful functions, capabilities, handlers, and resumptions remain prohibited. |
+| [Typed Core, CPS, and BEAM — Effect-directed CPS](typed-core-cps-and-beam.md#effect-directed-cps) | Effect-directed CPS and proven-pure direct lowering are required by their typed evidence. Internal sharing or optimization cannot change values, traces, capability selection, affine use, or artifact-bound selection inputs. |
+| Area result | This slice defines no profiled choice, unspecified presentation, recommendation deviation, or numeric implementation limit beyond inherited rules. |
 
 ## Index
 
