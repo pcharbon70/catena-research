@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Catena Classify Conformance Behavior?](how-should-catena-classify-conformance-behavior.md)
+  — records the resolved C009 distinction among normative force, invalidity,
+  profiled choices, bounded presentation, limits, explicit traps, and the
+  prohibition on undefined behavior.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.

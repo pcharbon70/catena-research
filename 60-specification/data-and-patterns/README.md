@@ -34,6 +34,9 @@ their own specification areas.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Every chapter is `normative`. The historical C002 commit exercised these
 semantics under retired `0.1` and `0.2` protocol identifiers. It remains
@@ -41,6 +44,18 @@ semantic evidence, but it is not evidence for the exact `0.1.1` and `0.1.2`
 wire identities. The hard cutover and fresh cross-slice evidence requirement
 are recorded in
 [Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [GADT and Existential Patterns — Explicit advanced declarations](gadt-and-existential-patterns.md#explicit-advanced-declarations) | `MAY` permits an explicitly bound existential variable in constructor fields; the datatype result prohibition and rigid non-escape rules still apply. |
+| [Construction and Pattern Typing — Construction](construction-and-pattern-typing.md#construction) | `MAY` permits source authors to write named fields in any order and permits a selected physical layout only while written evaluation order and declaration-order payload semantics remain fixed. |
+| [Interfaces and Representation — Deterministic module interface](interfaces-and-representation.md#deterministic-module-interface) | Checking `MAY` consume interfaces but writes no artifact. The bootstrap profile records that interface consumption is enabled. |
+| [Match Semantics and Coverage — Usefulness model](match-semantics-and-coverage.md#usefulness-model) | Shared pattern matrices are a `SHOULD` performance technique; usefulness results cannot vary. The current deviation is tracked by G138. |
+| [GADT and Existential Patterns — Typed-core evidence](gadt-and-existential-patterns.md#typed-core-evidence) | GADT coverage `MAY` use local equalities to exclude impossible constructors, but coverage precision cannot justify an unsound branch. The bootstrap profile records that this path is enabled. |
+| [Derived Folds — Generated evidence](derived-folds.md#generated-evidence) | Direct verified fold lowering is permitted when observations match both required layouts. The bootstrap instead uses the verified ordinary lowering path. |
+| [Match Semantics and Coverage — Deterministic implementation limit](match-semantics-and-coverage.md#deterministic-implementation-limit) | Coverage supports at least 20,000 usefulness steps and reports `M004` on exhaustion; a limit cannot masquerade as non-exhaustiveness or redundancy. |
 
 ## Index
 

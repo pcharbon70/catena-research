@@ -19,8 +19,10 @@ aliases:
 This chapter and its six sibling chapters are the normative Catena 0.1.4 trait
 slice. They extend the [0.1.1 type system](../type-system/README.md), the
 [0.1.2 data model](../data-and-patterns/README.md), and the
-[0.1.3 clause-condition boundary](../clause-conditions/README.md). `MUST`,
-`MUST NOT`, `SHOULD`, and `MAY` state conformance requirements.
+[0.1.3 clause-condition boundary](../clause-conditions/README.md). Requirement
+words, invalidity, permitted variation, limits, and explicit failures follow
+the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 The historical immutable semantic evidence is recorded in
 [C004 Executable Trait Conformance](../../50-journal/2026-08-02-c004-executable-trait-conformance.md).

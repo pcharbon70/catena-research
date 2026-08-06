@@ -34,6 +34,22 @@ are `normative`. Their coordinated promotion is supported by the immutable
 compiler identity and reproducible evidence described in
 [Migration, Diagnostics, and Conformance](migration-diagnostics-and-conformance.md#promotion-gate)
 and the linked conformance journal.
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [Edition Selection and Applicability — Package selection](edition-selection-and-applicability.md#package-selection) | A frontend schema `MAY` differ from the selected language revision, but decoded forms are checked against the exact package selection. |
+| [Edition Selection and Applicability — Standalone and interactive selection](edition-selection-and-applicability.md#standalone-and-interactive-selection) | A legacy frontend `MAY` imply its historical revision with mandatory `EDN002` disclosure. The bootstrap profile records that this compatibility inference is enabled. |
+| [Edition Selection and Applicability — Prototype compatibility boundary](edition-selection-and-applicability.md#prototype-compatibility-boundary) | A later 0.1 patch `MAY` contain a documented breaking change only at a revision boundary with the required migration and lifecycle record. |
+| [Feature Lifecycle and Compatibility — Preview selection](feature-lifecycle-and-compatibility.md#preview-selection) | A semantics-preserving stale-preview removal edit is a `SHOULD` migration-quality recommendation. The bootstrap deviation is tracked by P125. |
+| [Feature Lifecycle and Compatibility — Deprecation and removal](feature-lifecycle-and-compatibility.md#deprecation-and-removal) | Diagnostic or governance policy `MAY` deny a deprecation warning, transactionally failing the build. |
+| [Feature Lifecycle and Compatibility — Package-local interoperation](feature-lifecycle-and-compatibility.md#package-local-interoperation) | Retained editions `MAY` coexist as dependencies through verified semantic interfaces; different selections `MAY` change compile metadata and artifact digests but never introduce runtime selection dispatch. |
+| [Interfaces, Artifacts, and Governance — BEAM metadata and erasure](interfaces-artifacts-and-governance.md#beam-metadata-and-erasure) | Selection metadata `MAY` remain only in the non-executable compile-information chunk. The bootstrap profile records that it is emitted. |
+| [Interfaces, Artifacts, and Governance — Optional governance constraints](interfaces-artifacts-and-governance.md#optional-governance-constraints) | Governance `MAY` narrow an otherwise valid selection but cannot admit a selection or diagnostic state rejected by language rules. |
 
 ## Index
 

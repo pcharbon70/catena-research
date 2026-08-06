@@ -45,12 +45,14 @@ Use these files for different decisions:
 
 1. `SPECIFICATION-AUTHORITY.md` defines language-document authority, content
    labels, and conflict handling.
-2. `frontmatter.schema.json` defines valid metadata fields and values.
-3. `templates/` defines the minimum starting structure for each artifact.
-4. The root `README.md` explains the archive to human readers.
-5. Each directory's `README.md` describes and inventories that directory.
-6. `10-maps/` provides curated thematic navigation.
-7. `validate_archive.py` performs the deterministic structural checks.
+2. `CONFORMANCE-VOCABULARY.md` defines requirement words, behavior classes,
+   variability declarations, and implementation-profile obligations.
+3. `frontmatter.schema.json` defines valid metadata fields and values.
+4. `templates/` defines the minimum starting structure for each artifact.
+5. The root `README.md` explains the archive to human readers.
+6. Each directory's `README.md` describes and inventories that directory.
+7. `10-maps/` provides curated thematic navigation.
+8. `validate_archive.py` performs the deterministic structural checks.
 
 If documentation and the filesystem disagree, inspect the intended change and
 bring them back into sync. Never preserve a stale index merely because it was
@@ -116,10 +118,12 @@ Additional requirements depend on `kind`:
 - `map` and `journal` use the common fields unless the schema changes.
 
 The current Catena prototype language line is `0.1`. C001 through C006 use
-patches `0.1.1` through `0.1.6`; each future semantic slice uses the next
-unused patch unless an approved versioning policy explicitly replaces this
-temporary convention. Compiler-package releases, external software versions,
-and historical artifact observations are separate version axes.
+patches `0.1.1` through `0.1.6`, and semantic milestone C008 uses `0.1.7`.
+Repository-governance milestones C007 and C009 add no language revision. The
+next semantic slice is `0.1.8` unless an approved versioning policy explicitly
+replaces this temporary convention. Compiler-package releases, external
+software versions, and historical artifact observations are separate version
+axes.
 
 Conventions:
 
@@ -139,8 +143,9 @@ Conventions:
 Exceptions:
 
 - The root `README.md`, `AGENTS.md`, `SPECIFICATION-AUTHORITY.md`,
-  `validate_archive.py`, its tests, and validation requirements are repository
-  documentation or tooling and do not use archive frontmatter.
+  `CONFORMANCE-VOCABULARY.md`, `validate_archive.py`, its tests, and validation
+  requirements are repository documentation or tooling and do not use archive
+  frontmatter.
 - Placeholder files in `templates/` are not valid completed documents until
   copied and filled. `templates/README.md` is completed and must validate.
 - A transient inbox capture may begin incomplete, but it must have valid
@@ -180,6 +185,9 @@ the same work.
 
 - Follow `SPECIFICATION-AUTHORITY.md` for document status, applicability,
   rendered content labels, citations, and conflict handling.
+- Follow `CONFORMANCE-VOCABULARY.md` for the five canonical keywords,
+  behavior classes, variability callouts, invalidity, limits, explicit traps,
+  and the prohibition on undefined behavior.
 - Treat a `kind: specification` chapter as language authority only when its
   frontmatter says `status: normative`.
 - In a normative chapter, rules are normative by default. Mark rationale,
@@ -187,6 +195,10 @@ the same work.
   illustrative examples visibly as non-normative.
 - Classify every fenced block with the prescribed callout unless it is already
   inside a section whose heading ends with `(non-normative)`.
+- Give every implementation-defined choice or bounded unspecified presentation
+  the prescribed visible callout, and keep the area's variability register in
+  sync with every `MAY`, `SHOULD`, `SHOULD NOT`, presentation allowance, and
+  implementation limit.
 - Cite a governing rule by relative document link and heading anchor. Do not
   let a compiler, executable reference, test, or guide supply behavior that
   normative text leaves silent or ambiguous.
@@ -337,8 +349,10 @@ The validator checks:
 - required directory README headings and complete direct-child inventories;
 - at least one conceptual connection for every durable document;
 - duplicate citation keys, DOIs, and canonical source URLs.
-- specification authority links, non-normative section labels, illustrative
-  cues, and fenced-block classifications.
+- specification authority and conformance-vocabulary links, variability
+  registers, canonical keywords, prohibited behavior classes, non-normative
+  exemptions, visible callouts, illustrative cues, and fenced-block
+  classifications.
 
 If the validator's behavior and these instructions disagree, repair both in
 the same change rather than silently bypassing a check.

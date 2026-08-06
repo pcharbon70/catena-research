@@ -31,6 +31,9 @@ remain in their own specification areas.
 
 Document authority and rendered content labels follow the repository
 [Specification Authority](../../SPECIFICATION-AUTHORITY.md).
+Requirement words, behavior classes, permitted variation, limits, and profile
+disclosure follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
 
 Every chapter is `normative`. The implementation commit, merged compiler PR,
 reproducible verification sequence, deterministic specialization evidence,
@@ -40,6 +43,15 @@ That historical evidence used the retired `0.1` through `0.4` identifiers. It
 supports the unchanged semantics, but not the exact renumbered wire identities.
 The hard cutover and fresh cross-slice evidence requirement are recorded in
 [Prototype Slice Renumbering](../../50-journal/2026-08-04-prototype-slice-renumbering.md).
+
+## Variability register
+
+| Governing rule | Classification and bound |
+| --- | --- |
+| [Declarations, Instances, and Coherence — Kinds and relations](declarations-instances-and-coherence.md#kinds-and-relations) | `MAY` permits multi-parameter trait declarations to state functional dependencies; associated constants remain excluded. |
+| [Operational Semantics — Early termination](operational-semantics.md#early-termination) | `equals` and `compare` may short-circuit only when the selected operation documents that exact behavior; laws alone cannot introduce it. |
+| [Declarations, Instances, and Coherence — Termination](declarations-instances-and-coherence.md#termination) | Trait resolution supports a minimum 20,000-step budget and reports exhaustion instead of dynamic lookup. |
+| [Interfaces, Specialization, and BEAM — Specialization](interfaces-specialization-and-beam.md#specialization) | Specialization supports a minimum 20,000-step budget, rejects type-growing polymorphic recursion, and preserves byte identity for identical inputs. |
 
 ## Index
 

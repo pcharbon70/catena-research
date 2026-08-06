@@ -49,6 +49,10 @@ implementations and programs must do.
 [Specification Authority](SPECIFICATION-AUTHORITY.md) defines exactly which
 documents are normative, how examples and rationale are marked, and what to do
 when the specification, compiler, reference paths, or tests disagree.
+[Catena Conformance Vocabulary](CONFORMANCE-VOCABULARY.md) defines the five
+canonical requirement words, failure and variability classes, the absence of
+undefined behavior, and implementation-profile obligations across those
+normative documents.
 
 ## Structure
 
@@ -118,8 +122,8 @@ specification status: draft | candidate | normative
 
 Catena's current language line is `0.1`. The completed C001 through C006
 semantic slices are `0.1.1` through `0.1.6`, and normative C008 is `0.1.7`.
-C007 is a document-authority milestone rather than a language revision; the
-next prototype semantic slice uses the next unused patch. C008 defines
+C007 and C009 are repository-governance milestones rather than language
+revisions; the next prototype semantic slice is `0.1.8`. C008 defines
 package-local editions, exact revisions, previews, compatibility, and
 migration. These identifiers are distinct from the sibling compiler's package
 release, external tool versions, and the historical labels preserved in
@@ -156,8 +160,9 @@ git diff --check
 
 The validator checks frontmatter, schema conformance, placeholders, filenames,
 local links, directory README structure and inventories, conceptual
-connections, duplicate source identifiers, and the specification-authority
-labeling contract. Run its focused unit tests with:
+connections, duplicate source identifiers, specification authority,
+conformance vocabulary, variability registers, and visible content labels.
+Run its focused unit tests with:
 
 ```bash
 python3 -m unittest test_validate_archive.py
@@ -167,6 +172,9 @@ python3 -m unittest test_validate_archive.py
 
 - [`AGENTS.md`](AGENTS.md) — authoring, research, organization, and handoff
   instructions
+- [`CONFORMANCE-VOCABULARY.md`](CONFORMANCE-VOCABULARY.md) — canonical
+  requirement words, behavior classes, variability, limits, traps, and
+  implementation profiles
 - [`frontmatter.schema.json`](frontmatter.schema.json) — authoritative metadata
   schema
 - [`language-overview.md`](language-overview.md) — consolidated language

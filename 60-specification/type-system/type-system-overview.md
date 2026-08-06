@@ -27,9 +27,9 @@ closed first-order `Bool`/`Int` selection fragment without changing principal
 inference or refining body types. Source parsing, full handler dynamics, and
 the public trait library remain separate work.
 
-`MUST`, `MUST NOT`, `SHOULD`, and `MAY` express requirements. An *invalid*
-program MUST be rejected. *Implementation-defined* behavior must be documented
-by an implementation; this type-system slice introduces none. Examples and
+Requirement words, invalidity, permitted variation, limits, and explicit
+failures follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md). Examples and
 rationale are non-normative unless a conformance obligation says otherwise.
 
 Document status, content labels, rule references, and conflict handling follow

@@ -30,6 +30,22 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [RFC 2119: Key Words for Use in RFCs to Indicate Requirement Levels](bradner-1997-rfc-2119.md)
+  — distinguishes absolute requirements, justified recommendations, and
+  genuinely optional behavior while cautioning against unnecessary
+  imperatives.
+- [RFC 8174: Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words](leiba-2017-rfc-8174.md)
+  — gives uppercase requirement words their specialized meaning, leaves
+  lowercase words as ordinary English, and confirms that declarative prose can
+  remain normative.
+- [WG14 N1570: ISO/IEC 9899:201x Committee Draft](wg14-2011-n1570.md) —
+  distinguishes implementation-defined and unspecified values, traps,
+  conformance, and translation limits while exposing the undefined-behavior
+  model Catena rejects.
+- [WebAssembly Core Specification 3.0](rossberg-2026-webassembly-core-specification.md)
+  — separates representation well-formedness, declarative validation,
+  execution, explicit traps, bounded nondeterminism, and implementation
+  limitations.
 - [JEP 12: Preview Features](buckley-2018-preview-features.md) — defines
   explicit release-bound opt-in, impermanent-but-complete language features,
   artifact marking, diagnostics, and stabilization or removal outcomes.

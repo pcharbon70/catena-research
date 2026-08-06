@@ -23,8 +23,9 @@ evidence is published as Catena compiler commit `ae311604ef587a022ce2b7b46599200
 They extend rather than replace the
 [0.1.1 type-system specification](../type-system/README.md).
 
-`MUST`, `MUST NOT`, `SHOULD`, and `MAY` express conformance requirements. An
-*invalid* program MUST be rejected before BEAM generation. Examples and
+Requirement words, invalidity, permitted variation, limits, and explicit
+failures follow the repository
+[Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md). Examples and
 rationale are non-normative unless a conformance section says otherwise.
 
 Document status, content labels, rule references, and conflict handling follow

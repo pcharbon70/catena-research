@@ -3,7 +3,10 @@
 This policy defines how to identify and interpret Catena's normative language
 specification. It governs documents and conformance evidence; it is not a
 Catena language edition and does not add source syntax, static semantics, or
-runtime behavior.
+runtime behavior. The companion
+[Catena Conformance Vocabulary](CONFORMANCE-VOCABULARY.md) defines requirement
+words, behavior classes, variability declarations, and implementation-profile
+obligations inside the normative material identified here.
 
 ## Authority classes
 
@@ -25,9 +28,10 @@ The following are not normative language definitions:
   artifacts, and recorded conformance runs.
 
 This document is authoritative for document classification and conflict
-handling, but it is repository governance rather than a normative Catena
-language chapter. `AGENTS.md`, the specification template, and the archive
-validator implement this policy.
+handling, while `CONFORMANCE-VOCABULARY.md` is authoritative for conformance
+wording and behavior classification. Both are repository governance rather
+than normative Catena language chapters. `AGENTS.md`, the specification
+template, and the archive validator implement these policies.
 
 ## Status and applicability
 
@@ -62,8 +66,10 @@ language line is `0.1`; its completed semantic boundaries are:
 | C006 specifications and governance | `0.1.6` | normative |
 | C008 editions and feature lifecycle | `0.1.7` | normative |
 
-Each future prototype semantic slice uses the next unused `0.1.n` patch until
-an approved policy replaces this convention. This sequence identifies
+Governance milestones C007 and C009 apply across the normative corpus and do
+not occupy language revisions. The next semantic slice is therefore `0.1.8`.
+Each later prototype semantic slice uses the next unused `0.1.n` patch until an
+approved policy replaces this convention. This sequence identifies
 language slices and the Catena protocol boundaries that name them. It is
 independent of compiler-package releases and third-party dependency versions.
 It also does not make a larger patch automatically applicable or
@@ -81,9 +87,11 @@ compatibility, deprecation, preview, and migration policy.
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is
-binding even when it does not use an uppercase requirement word. The complete
-vocabulary for required, implementation-defined, unspecified, and invalid
-behavior remains tracked by G009.
+binding even when it does not use an uppercase requirement word. Requirement
+force, invalidity, implementation-defined choices, bounded unspecified
+presentation, implementation limits, explicit failures, and the prohibition
+on undefined behavior follow the
+[Catena Conformance Vocabulary](CONFORMANCE-VOCABULARY.md).
 
 Use visible rendered labels rather than hidden comments:
 
@@ -93,16 +101,22 @@ Use visible rendered labels rather than hidden comments:
 - Introduce an example that imposes an acceptance, rejection, diagnostic, or
   observable-result obligation with
   `> **Normative conformance example.**`.
+- Introduce an enumerated, profiled implementation-defined choice with
+  `> **Normative implementation-defined choice.**`.
+- Introduce a bounded presentation or internal-strategy equivalence class with
+  `> **Normative unspecified presentation.**`.
 - Introduce local explanatory material with one of
   `> **Non-normative example.**`, `> **Non-normative rationale.**`,
   `> **Non-normative note.**`, `> **Non-normative diagram.**`, or
   `> **Non-normative evidence.**`.
 
-A fenced block in a specification chapter must either follow one of these
-callouts or appear inside a section marked non-normative. The label applies to
-the immediately following block. Non-normative material may explain a rule but
-cannot add a requirement, narrow or widen its domain, resolve an ambiguity, or
-override normative text.
+A fenced block in a specification chapter must either follow the applicable
+definition, conformance-example, or non-normative callout or appear inside a
+section marked non-normative. That label applies to the immediately following
+block. The two variability labels instead apply to the immediately following
+paragraph or table and carry the additional requirements in the conformance
+policy. Non-normative material may explain a rule but cannot add a requirement,
+narrow or widen its domain, resolve an ambiguity, or override normative text.
 
 Source notation is an illustrative example unless a normative chapter
 explicitly classifies it as a normative definition or conformance example.
@@ -165,7 +179,8 @@ This policy leaves the following questions open:
 - C008 defines editions, compatibility, deprecation, and replacement
   lifecycle; future edition retirement and broader API/ABI policy remain
   separately tracked.
-- G009 defines the complete conformance vocabulary.
+- G012 defines which implementation limits may vary and their portability
+  contract; C009 defines how a stated limit is classified and reported.
 - P011 connects every normative rule to executable evidence and may introduce
   permanent rule identifiers.
 

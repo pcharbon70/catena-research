@@ -27,6 +27,7 @@ ROOT = Path(__file__).resolve().parent
 SCHEMA_PATH = ROOT / "frontmatter.schema.json"
 SPECIFICATION_ROOT = ROOT / "60-specification"
 SPECIFICATION_AUTHORITY_PATH = ROOT / "SPECIFICATION-AUTHORITY.md"
+CONFORMANCE_VOCABULARY_PATH = ROOT / "CONFORMANCE-VOCABULARY.md"
 ARCHIVE_DIRECTORIES = {
     "00-inbox",
     "10-maps",
@@ -64,6 +65,28 @@ SPECIFICATION_CONTENT_LABEL = re.compile(
     r"^> \*\*(?:Normative definition|Normative conformance example|"
     r"Non-normative (?:example|rationale|note|diagram|evidence))\.\*\*(?:\s+.*)?$"
 )
+IMPLEMENTATION_DEFINED_CALLOUT = (
+    "> **Normative implementation-defined choice.**"
+)
+UNSPECIFIED_PRESENTATION_CALLOUT = (
+    "> **Normative unspecified presentation.**"
+)
+SPECIFICATION_BEHAVIOR_CALLOUTS = {
+    IMPLEMENTATION_DEFINED_CALLOUT: "implementation-defined",
+    UNSPECIFIED_PRESENTATION_CALLOUT: "unspecified-presentation",
+}
+UPPERCASE_REQUIREMENT_ALIAS = re.compile(
+    r"\b(?:REQUIRED|SHALL(?: NOT)?|RECOMMENDED|NOT RECOMMENDED|OPTIONAL)\b"
+)
+UNDEFINED_BEHAVIOR = re.compile(r"\bundefined behavior\b", re.IGNORECASE)
+IMPLEMENTATION_DEFINED_TERM = re.compile(
+    r"\bimplementation[- ]defined\b", re.IGNORECASE
+)
+UNSPECIFIED_TERM = re.compile(r"\bunspecified\b", re.IGNORECASE)
+UNSPECIFIED_PRESENTATION_TERM = re.compile(
+    r"\bunspecified presentation\b", re.IGNORECASE
+)
+BOUNDED_TERM = re.compile(r"\bbounded\b", re.IGNORECASE)
 NON_NORMATIVE_HEADING_ROLE = re.compile(
     r"(?:\brationale\b|^connections$|^proof (?:outline|status)$|"
     r"^proof and evidence status$|^evidence route$)",
@@ -302,6 +325,161 @@ def specification_structure_errors(
     return errors, fenced_blocks
 
 
+def specification_vocabulary_errors(
+    display_path: str, body: str, line_offset: int = 0
+) -> list[str]:
+    """Validate conformance vocabulary in normative chapter material."""
+
+    errors: list[str] = []
+    active_non_normative_level: int | None = None
+    fence_marker = ""
+    scan_fence = False
+    previous_nonempty = ""
+    pending_label: tuple[str, int] | None = None
+    labeled_lines: list[tuple[int, str]] = []
+
+    def finish_labeled_block() -> None:
+        nonlocal pending_label, labeled_lines
+        if pending_label is None:
+            return
+
+        label, label_line = pending_label
+        text = " ".join(line for _line_number, line in labeled_lines)
+        if not text:
+            errors.append(
+                f"{display_path}:{label_line}: conformance behavior callout "
+                "must label the immediately following paragraph or table"
+            )
+        elif label == "implementation-defined":
+            if IMPLEMENTATION_DEFINED_TERM.search(text) is None:
+                errors.append(
+                    f"{display_path}:{label_line}: implementation-defined callout "
+                    "must label an implementation-defined choice"
+                )
+            if UNSPECIFIED_TERM.search(text):
+                errors.append(
+                    f"{display_path}:{label_line}: implementation-defined callout "
+                    "cannot label unspecified behavior"
+                )
+        else:
+            if (
+                UNSPECIFIED_PRESENTATION_TERM.search(text) is None
+                or BOUNDED_TERM.search(text) is None
+            ):
+                errors.append(
+                    f"{display_path}:{label_line}: unspecified-presentation callout "
+                    "must label bounded unspecified presentation"
+                )
+            if IMPLEMENTATION_DEFINED_TERM.search(text):
+                errors.append(
+                    f"{display_path}:{label_line}: unspecified-presentation callout "
+                    "cannot label an implementation-defined choice"
+                )
+
+        pending_label = None
+        labeled_lines = []
+
+    def scan_normative_text(
+        text: str, line_number: int, behavior_labeled: bool = False
+    ) -> None:
+        if UPPERCASE_REQUIREMENT_ALIAS.search(text):
+            errors.append(
+                f"{display_path}:{line_number}: uppercase requirement alias is "
+                "prohibited; use MUST, MUST NOT, SHOULD, SHOULD NOT, or MAY"
+            )
+        if UNDEFINED_BEHAVIOR.search(text):
+            errors.append(
+                f"{display_path}:{line_number}: Catena normative text must not "
+                "specify undefined behavior"
+            )
+        if behavior_labeled:
+            return
+        if IMPLEMENTATION_DEFINED_TERM.search(text):
+            errors.append(
+                f"{display_path}:{line_number}: implementation-defined choice "
+                "requires a visible normative callout"
+            )
+        if UNSPECIFIED_TERM.search(text):
+            errors.append(
+                f"{display_path}:{line_number}: unspecified behavior requires a "
+                "visible bounded unspecified-presentation callout"
+            )
+
+    for body_line_number, line in enumerate(body.splitlines(), start=1):
+        line_number = body_line_number + line_offset
+        stripped = line.strip()
+
+        if fence_marker:
+            if stripped.startswith(fence_marker):
+                fence_marker = ""
+                scan_fence = False
+            elif scan_fence and stripped:
+                scan_normative_text(stripped, line_number)
+            continue
+
+        heading = re.match(r"^(#{1,6})\s+(.+?)\s*#*\s*$", line)
+        if heading:
+            finish_labeled_block()
+            level = len(heading.group(1))
+            heading_text = heading.group(2).strip()
+            if (
+                active_non_normative_level is not None
+                and level <= active_non_normative_level
+            ):
+                active_non_normative_level = None
+            if heading_text.casefold().endswith(NON_NORMATIVE_HEADING_SUFFIX):
+                active_non_normative_level = level
+            previous_nonempty = stripped
+            continue
+
+        fence = FENCE_START.match(stripped)
+        if fence:
+            if active_non_normative_level is None:
+                finish_labeled_block()
+                scan_fence = previous_nonempty.startswith(
+                    "> **Normative definition.**"
+                ) or previous_nonempty.startswith(
+                    "> **Normative conformance example.**"
+                )
+            fence_marker = fence.group(1)
+            continue
+
+        if active_non_normative_level is not None:
+            continue
+
+        behavior_label = SPECIFICATION_BEHAVIOR_CALLOUTS.get(stripped)
+        if behavior_label is not None:
+            finish_labeled_block()
+            pending_label = (behavior_label, line_number)
+            previous_nonempty = stripped
+            continue
+
+        # Markdown block quotations are source material or explanatory callouts,
+        # not chapter-authored normative prose. Behavior labels above are the
+        # only blockquotes that affect this check.
+        if stripped.startswith(">"):
+            finish_labeled_block()
+            previous_nonempty = stripped
+            continue
+
+        if not stripped:
+            if labeled_lines:
+                finish_labeled_block()
+            continue
+
+        scan_normative_text(stripped, line_number, pending_label is not None)
+
+        if pending_label is not None:
+            labeled_lines.append((line_number, stripped))
+            previous_nonempty = stripped
+            continue
+
+        previous_nonempty = stripped
+
+    finish_labeled_block()
+    return errors
+
+
 def specification_authority_link_errors(
     display_path: str, indexed_targets: set[Path], authority_path: Path
 ) -> list[str]:
@@ -310,6 +488,24 @@ def specification_authority_link_errors(
     if authority_path.resolve() in indexed_targets:
         return []
     return [f"{display_path}: missing link to SPECIFICATION-AUTHORITY.md"]
+
+
+def conformance_vocabulary_link_errors(
+    display_path: str, indexed_targets: set[Path], vocabulary_path: Path
+) -> list[str]:
+    """Require a specification index to expose the conformance vocabulary."""
+
+    if vocabulary_path.resolve() in indexed_targets:
+        return []
+    return [f"{display_path}: missing link to CONFORMANCE-VOCABULARY.md"]
+
+
+def variability_register_errors(display_path: str, markdown: str) -> list[str]:
+    """Require an area index to summarize its permitted variability."""
+
+    if re.search(r"^## Variability register\s*$", markdown, flags=re.MULTILINE):
+        return []
+    return [f"{display_path}: missing section ## Variability register"]
 
 
 def validate() -> tuple[list[str], dict[str, int]]:
@@ -404,6 +600,12 @@ def validate() -> tuple[list[str], dict[str, int]]:
                 )
                 errors.extend(structure_errors)
                 counts["specification_fenced_blocks"] += fenced_blocks
+                if metadata.get("status") == "normative":
+                    errors.extend(
+                        specification_vocabulary_errors(
+                            relative(path), body, line_offset=line_offset
+                        )
+                    )
 
     # Template placeholders must not leak into completed Markdown.
     for path in sorted(ROOT.rglob("*.md")):
@@ -499,8 +701,9 @@ def validate() -> tuple[list[str], dict[str, int]]:
                     f"{relative(readme)}: unindexed direct child {child.name!r}"
                 )
 
-    # Specification areas must expose one authority contract and one coherent
-    # version/status boundary. READMEs are indexes, not language authority.
+    # Specification areas must expose the authority and vocabulary contracts,
+    # a variability register, and one coherent version/status boundary.
+    # READMEs are indexes, not language authority.
     if not SPECIFICATION_AUTHORITY_PATH.is_file():
         errors.append("SPECIFICATION-AUTHORITY.md: missing authority policy")
     else:
@@ -521,6 +724,40 @@ def validate() -> tuple[list[str], dict[str, int]]:
                     )
                 )
 
+    if not CONFORMANCE_VOCABULARY_PATH.is_file():
+        errors.append("CONFORMANCE-VOCABULARY.md: missing conformance policy")
+    else:
+        vocabulary_target = CONFORMANCE_VOCABULARY_PATH.resolve()
+        specification_readmes = [SPECIFICATION_ROOT / "README.md"]
+        specification_readmes.extend(
+            child / "README.md"
+            for child in sorted(SPECIFICATION_ROOT.iterdir())
+            if child.is_dir() and not is_ignored(child)
+        )
+        for readme in specification_readmes:
+            if readme.is_file():
+                errors.extend(
+                    conformance_vocabulary_link_errors(
+                        relative(readme),
+                        links_by_source.get(readme.resolve(), set()),
+                        vocabulary_target,
+                    )
+                )
+
+        for area in sorted(
+            child
+            for child in SPECIFICATION_ROOT.iterdir()
+            if child.is_dir() and not is_ignored(child)
+        ):
+            readme = area / "README.md"
+            if readme.is_file():
+                errors.extend(
+                    variability_register_errors(
+                        relative(readme), readme.read_text(encoding="utf-8")
+                    )
+                )
+
+    if SPECIFICATION_AUTHORITY_PATH.is_file():
         for area in sorted(
             child
             for child in SPECIFICATION_ROOT.iterdir()
