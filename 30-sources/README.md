@@ -30,6 +30,24 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [Actors: A Model of Concurrent Computation in Distributed Systems](agha-1986-actors.md)
+  — supplies the actor-model foundation for asynchronous messages, local
+  state, and dynamically created communicating agents.
+- [A Core Erlang Formalisation](bereczky-et-al-2024-core-erlang-formalisation.md)
+  — records a mechanized sequential Core Erlang semantics and the boundary
+  between formal core evaluation and full actor behavior.
+- [Erlang/OTP 29 Processes](erlang-otp-29-processes.md) — documents the target
+  runtime's process isolation, asynchronous send, mailbox order, links, and
+  termination behavior.
+- [Structural Operational Semantics](plotkin-2004-structural-operational-semantics.md)
+  — provides the transition-system method used for Catena's configurations,
+  evaluation order, and explicit terminal states.
+- [Syntactic Type Soundness for Actors](fowler-et-al-2023-mailbox-types.md) —
+  develops mailbox types, selective receive, and preservation/progress
+  arguments for typed actor calculi.
+- [A Syntactic Approach to Type Soundness](wright-felleisen-1994-syntactic-type-soundness.md)
+  — supplies the preservation-and-progress proof method for the sequential
+  kernel.
 - [RFC 2119: Key Words for Use in RFCs to Indicate Requirement Levels](bradner-1997-rfc-2119.md)
   — distinguishes absolute requirements, justified recommendations, and
   genuinely optional behavior while cautioning against unnecessary

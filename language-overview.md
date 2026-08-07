@@ -33,11 +33,15 @@ the linked notes, maps, and inquiries.
 ```mermaid
 flowchart TD
     P[Package or standalone language selection] --> U[Approachable surface language]
+    P --> K[Exact normative 0.1.8 semantic kernel]
     S[Catena source] --> U
     U --> DE[Declaration elaboration<br/>nominal identity and module interfaces]
     DE --> ST[Static semantics<br/>types, patterns, rows, traits, effects, coverage]
     ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
+    K --> KST[Bounded integrated kernel checker]
+    KST --> KTC[Spanned verified kernel core]
     TC --> V[Independent core verifier]
+    KTC --> V
     V --> R[Runtime lowering and optimization]
     V --> SG[Specification graph<br/>evidence, policy, authority, history]
     R --> EAF[Erlang Abstract Format]
@@ -365,6 +369,30 @@ implementation evidence. See the
 the [resolved inquiry](40-inquiries/how-should-catena-version-editions-and-language-features.md),
 and the
 [C008 conformance record](50-journal/2026-08-05-c008-edition-conformance.md).
+
+### Normative formal semantic kernel
+
+Normative C010 defines exact revision 0.1.8 through a separate executable
+semantic-kernel input. It does not replace the future approachable frontend or
+re-encode every feature of the retained JSON revisions. Instead, its closed
+S-expression grammar composes a deliberately bounded subset in one model:
+annotated rank-1 functions and local schemes, regular positional data,
+structural record and variant terms, head-bounded matching, one-parameter
+closed traits, named deep handlers with affine resume, explicit traps, and
+typed local actors.
+
+The kernel gives C010 an end-to-end audit route: spanned input, integrated
+type/effect checking, independently rederived core evidence, a CEK-style local
+machine, nondeterministic actor configurations, bounded schedule exploration,
+fixed BEAM values, public process interfaces, and OTP 29 lowering. `Process M`
+guarantees only a closed sendable message type; it does not promise a protocol,
+fairness, deadlock freedom, links, supervision, distribution, or time.
+
+The seven [Formal Semantic Kernel chapters](60-specification/formal-semantic-kernel/README.md)
+have normative authority through the explicitly authorized immutable compiler
+identity and post-commit evidence recorded in the
+[C010 journal](50-journal/2026-08-06-c010-formal-semantic-kernel.md). Earlier
+0.1.1 through 0.1.7 inputs and their normative behavior remain unchanged.
 
 ### 9. Verification erasure and artifact integrity
 

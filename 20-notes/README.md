@@ -47,6 +47,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — separates normative force from behavior class, defines deterministic
   invalidity and bounded variation, rejects undefined behavior, and develops
   the implementation-profile model adopted by C009.
+- [Catena's Formal Semantic Kernel](catena-formal-semantic-kernel.md) —
+  synthesizes the normative 0.1.8 executable calculus, including exact
+  S-expression input, rows, strict dynamics, typed actors, explicit traps,
+  bounded exploration, and promotion evidence.
 - [Category Theory for Programming](category-theory-for-programming.md) —
   distinguishes compositional laws from operational guarantees and specifies
   the kinds, operations, laws, parents, and roles of Catena's seventeen-class

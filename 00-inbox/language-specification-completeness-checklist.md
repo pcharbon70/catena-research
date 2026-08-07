@@ -71,6 +71,9 @@ identifier migration does not reopen the completed semantic checklist items.
 Normative C008 uses `0.1.7` for editions and feature lifecycle. Its explicitly
 authorized immutable compiler commit and promotion evidence are recorded in
 the [C008 conformance journal](../50-journal/2026-08-05-c008-edition-conformance.md).
+Normative C010 uses `0.1.8` for the formal semantic kernel. Its explicitly
+authorized immutable compiler commit and promotion evidence are recorded in
+the [C010 conformance journal](../50-journal/2026-08-06-c010-formal-semantic-kernel.md).
 
 ## Existing research that needs normative consolidation
 
@@ -168,11 +171,17 @@ as small normative rules rather than copied wholesale into a specification.
   records the complete `MAY`, `SHOULD`, and invalidity audit. This
   repository-governance completion creates no language revision `0.1.8`,
   compiler semantic change, or immutable promotion commit.
-- [ ] **P010 — Partial — formal semantic kernel.** Normative 0.1.3 now adds a
-  typed safe condition core, ordered guard-tree metadata, rechecked coverage
-  facts, and BEAM lowering to the C001/C002 executable kernel. Integrate value rows,
-  effect rows, traits, handlers, public processes, and source syntax in one
-  model.
+- [x] **C010 — Complete — formal semantic kernel.** The normative
+  [0.1.8 specification](../60-specification/formal-semantic-kernel/README.md)
+  integrates a closed S-expression conformance input, regular data, structural
+  value rows, duplicate ordinary effect rows, bounded traits, deep affine
+  handlers, explicit traps, typed public process entries, a small-step actor
+  machine, independent core verification, and fixed BEAM lowering. The
+  [resolved inquiry](../40-inquiries/how-should-catena-integrate-its-formal-semantic-kernel.md),
+  [conformance journal](../50-journal/2026-08-06-c010-formal-semantic-kernel.md),
+  and immutable compiler commit
+  [`ef8bcf85adde84fed4a7cab3a533eb8399fbe67a`](https://github.com/pcharbon70/catena/commit/ef8bcf85adde84fed4a7cab3a533eb8399fbe67a)
+  record the atomic promotion and post-commit executable evidence.
 - [ ] **P011 — Partial — executable conformance suite.** C001 through C006 now
   have positive, negative, bounded-oracle,
   core-verification, interface-integrity, differential-layout or

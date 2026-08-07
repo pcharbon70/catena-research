@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Catena Integrate Its Formal Semantic Kernel?](how-should-catena-integrate-its-formal-semantic-kernel.md)
+  — records the resolved C010 contract, executable correspondence, bounded
+  concurrency evidence, immutable compiler identity, and normative promotion.
 - [How Should Catena Classify Conformance Behavior?](how-should-catena-classify-conformance-behavior.md)
   — records the resolved C009 distinction among normative force, invalidity,
   profiled choices, bounded presentation, limits, explicit traps, and the
