@@ -103,6 +103,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "effects-and-handlers": "0.1.5",
     "specifications-and-governance": "0.1.6",
     "editions-and-feature-lifecycle": "0.1.7",
+    "formal-semantic-kernel": "0.1.8",
 }
 
 

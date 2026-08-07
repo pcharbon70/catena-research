@@ -54,7 +54,7 @@ no conforming interpretation until the conflict is repaired.
 ## Prototype slice identifiers
 
 `spec_version` uses exact `major.minor.patch` syntax. The current prototype
-language line is `0.1`; its completed semantic boundaries are:
+language line is `0.1`; its registered semantic boundaries are:
 
 | Boundary | Version | Status |
 | --- | --- | --- |
@@ -65,15 +65,16 @@ language line is `0.1`; its completed semantic boundaries are:
 | C005 effects and handlers | `0.1.5` | normative |
 | C006 specifications and governance | `0.1.6` | normative |
 | C008 editions and feature lifecycle | `0.1.7` | normative |
+| C010 formal semantic kernel | `0.1.8` | normative |
 
 Governance milestones C007 and C009 apply across the normative corpus and do
-not occupy language revisions. The next semantic slice is therefore `0.1.8`.
-Each later prototype semantic slice uses the next unused `0.1.n` patch until an
-approved policy replaces this convention. This sequence identifies
-language slices and the Catena protocol boundaries that name them. It is
-independent of compiler-package releases and third-party dependency versions.
-It also does not make a larger patch automatically applicable or
-authoritative.
+not occupy language revisions. Normative C010 occupies `0.1.8`; a later
+semantic slice begins at `0.1.9`. Each later prototype semantic slice uses the
+next unused `0.1.n` patch until an approved policy replaces this convention.
+This sequence identifies language slices and the Catena protocol boundaries
+that name them. It is independent of compiler-package releases and third-party
+dependency versions. It also does not make a larger patch automatically
+applicable or authoritative.
 
 The normative 0.1.7 chapters distinguish edition, language revision, artifact
 format, and compiler-package release, and define applicability within the

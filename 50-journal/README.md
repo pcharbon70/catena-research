@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C010 Formal Semantic Kernel Conformance](2026-08-06-c010-formal-semantic-kernel.md)
+  — records the normative 0.1.8 syntax, semantics, typed-actor decisions,
+  explicitly authorized immutable compiler identity, post-commit gate, and
+  atomic promotion.
 - [C009 Conformance Vocabulary](2026-08-05-c009-conformance-vocabulary.md) —
   records the requirement-word and behavior-class policy, complete normative
   corpus audit, variability registers, validator enforcement, bootstrap

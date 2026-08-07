@@ -48,6 +48,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through
+  small-step semantics, type soundness, actor and mailbox evidence, the exact
+  normative grammar, executable model, and C010 promotion record.
 - [Catena Conformance Vocabulary](catena-conformance-vocabulary.md) — routes
   through requirement force, invalidity, profiled choices, bounded
   presentation, implementation limits, explicit traps, validator enforcement,
@@ -90,6 +93,15 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena's Formal Semantic Kernel](../20-notes/catena-formal-semantic-kernel.md)
+  — bounds the normative 0.1.8 conformance language, structural rows, handlers,
+  local typed actors, reference exploration, and fixed BEAM correspondence.
+- [Formal Semantic Kernel Specification](../60-specification/formal-semantic-kernel/README.md)
+  — holds the seven normative C010 chapters and their immutable promotion
+  evidence.
+- [Resolved formal-kernel inquiry](../40-inquiries/how-should-catena-integrate-its-formal-semantic-kernel.md)
+  — records why the exact S-expression kernel, independent verifier, typed
+  actors, and fixed OTP lowering close P010 without defining ergonomic source.
 - [Catena Conformance Vocabulary and Behavior Classes](../20-notes/catena-conformance-vocabulary-and-behavior-classes.md)
   — develops the five-keyword and behavior-class model, makes specification
   silence a defect, and connects area variability registers to the bootstrap

@@ -43,12 +43,19 @@ remain semantic evidence, while the exact renumbered protocol identity awaits
 the fresh gate in
 [Prototype Slice Renumbering](../50-journal/2026-08-04-prototype-slice-renumbering.md).
 The normative C008 boundary is `0.1.7`; its explicitly authorized immutable
-compiler evidence is recorded in the linked conformance journal.
+compiler evidence is recorded in the linked conformance journal. The
+normative C010 formal semantic kernel is version `0.1.8`; its explicitly
+authorized immutable compiler evidence is recorded in the
+[C010 conformance journal](../50-journal/2026-08-06-c010-formal-semantic-kernel.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Formal Semantic Kernel](formal-semantic-kernel/README.md) — the normative
+  version 0.1.8 exact S-expression syntax, row and process typing, sequential
+  and actor dynamics, metatheory, BEAM correspondence, diagnostics, and
+  completed promotion record.
 - [Editions and Feature Lifecycle](editions-and-feature-lifecycle/README.md) —
   the normative version 0.1.7 package-local edition, exact-revision, preview,
   compatibility, migration, diagnostics, selection-bound artifact, and

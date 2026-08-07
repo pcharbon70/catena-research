@@ -42,6 +42,9 @@ should explain why its links belong together rather than merely list files.
   through canonical requirement words, behavior classes, invalidity,
   variability, limits, explicit traps, validator enforcement, and the
   bootstrap implementation profile.
+- [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through the
+  normative 0.1.8 kernel syntax, static and dynamic semantics, typed actors,
+  metatheory, executable reference, and immutable promotion evidence.
 - [Catena Type-System Design](catena-type-system-design.md) — routes through
   the greenfield proposal, its guarantee matrix, and the independent evidence
   for each recommended boundary.
