@@ -37,6 +37,10 @@ to `20-notes`.
   — records the resolved C009 distinction among normative force, invalidity,
   profiled choices, bounded presentation, limits, explicit traps, and the
   prohibition on undefined behavior.
+- [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
+  — owns the P011 scheme that gives every MUST/MUST NOT obligation a permanent
+  identifier, a normative heading anchor, and tagged compiler evidence, piloted
+  on clause-conditions 0.1.3 before scaling to the remaining normative areas.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.

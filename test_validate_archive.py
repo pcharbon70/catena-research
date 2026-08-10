@@ -14,6 +14,7 @@ from validate_archive import (
     specification_authority_link_errors,
     specification_structure_errors,
     specification_vocabulary_errors,
+    traceability_registry_errors,
     variability_register_errors,
 )
 
@@ -321,6 +322,48 @@ class SpecificationConformanceIndexTests(unittest.TestCase):
                 "area/README.md", "# Area\n\n## Variability register\n\nNone.\n"
             ),
         )
+
+
+class TraceabilityRegistryTests(unittest.TestCase):
+    def test_accepts_well_formed_rows_and_counts_status(self) -> None:
+        body = (
+            "# Registry\n\n"
+            "| ID | Obligation | Status |\n"
+            "| --- | --- | --- |\n"
+            "| CC-OBL-001 | first | traced |\n"
+            "| CC-OBL-002 | second | partial |\n"
+            "| CC-OBL-003 | third | untraced |\n"
+        )
+        errors, counts = traceability_registry_errors("map.md", body)
+        self.assertEqual([], errors)
+        self.assertEqual(3, counts["traceability_obligations"])
+        self.assertEqual(1, counts["traceability_traced"])
+        self.assertEqual(1, counts["traceability_partial"])
+        self.assertEqual(1, counts["traceability_untraced"])
+
+    def test_counts_untraced_separately_from_traced(self) -> None:
+        body = "| CC-OBL-010 | gap | untraced |\n"
+        _errors, counts = traceability_registry_errors("map.md", body)
+        self.assertEqual(1, counts["traceability_untraced"])
+        self.assertEqual(0, counts.get("traceability_traced", 0))
+
+    def test_rejects_malformed_identifier(self) -> None:
+        body = "| CC-OBL-1 | bad | traced |\n"
+        errors, _counts = traceability_registry_errors("map.md", body)
+        self.assertTrue(any("malformed obligation identifier" in e for e in errors))
+
+    def test_rejects_duplicate_identifier(self) -> None:
+        body = (
+            "| CC-OBL-001 | first | traced |\n"
+            "| CC-OBL-001 | duplicate | traced |\n"
+        )
+        errors, _counts = traceability_registry_errors("map.md", body)
+        self.assertTrue(any("duplicate obligation identifier" in e for e in errors))
+
+    def test_rejects_row_missing_status(self) -> None:
+        body = "| CC-OBL-001 | first | done |\n"
+        errors, _counts = traceability_registry_errors("map.md", body)
+        self.assertTrue(any("missing a status" in e for e in errors))
 
 
 if __name__ == "__main__":
