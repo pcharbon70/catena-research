@@ -1,0 +1,230 @@
+---
+title: "Conformance Traceability"
+kind: map
+created: "2026-08-10"
+tags:
+  - conformance
+  - specification
+  - testing
+aliases:
+  - "P011 traceability map"
+---
+
+# Conformance Traceability
+
+## Scope
+
+This map owns the scheme that connects every Catena normative rule to the
+executable evidence that exercises it. It is the workbench for checklist item
+P011 and implements the traceability and stable-identifier responsibilities
+that [Specification Authority](../SPECIFICATION-AUTHORITY.md) assigns to it. The
+map and its registry are non-normative: they describe and index the normative
+corpus; they never amend it. Compiler tests remain evidence, never authority.
+
+The first completion pass targets `MUST`/`MUST NOT` obligations only. `SHOULD`,
+`MAY`, declarative prose rules, and normative definitions become a separate
+follow-up item once C011 is reached.
+
+## Start here
+
+- [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](../40-inquiries/how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
+  — the open inquiry and decision record.
+- [Language Specification Completeness Checklist](../00-inbox/language-specification-completeness-checklist.md)
+  — P011 is the partial item this work closes into C011.
+- [Specification Authority](../SPECIFICATION-AUTHORITY.md) — assigns rule-ID and
+  traceability ownership to P011 and defines the heading-anchor citation unit.
+- [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md) — requirement
+  force and behavior classes the evidence must respect.
+
+## Identifier and registry convention
+
+An **obligation** is one conformance requirement. In the `MUST`/`MUST NOT`
+phase, every obligation receives a permanent, area-scoped identifier of the
+form `AREA-OBL-NNN`. The numeric suffix is never reused; if an obligation is
+retired its identifier is retired with it, mirroring the checklist's own
+convention.
+
+| Area code | Normative area | Slice |
+| --- | --- | --- |
+| `TS` | type-system | 0.1.1 |
+| `DP` | data-and-patterns | 0.1.2 |
+| `CC` | clause-conditions | 0.1.3 |
+| `TR` | traits-and-categorical-operations | 0.1.4 |
+| `EF` | effects-and-handlers | 0.1.5 |
+| `SG` | specifications-and-governance | 0.1.6 |
+| `ED` | editions-and-feature-lifecycle | 0.1.7 |
+| `FK` | formal-semantic-kernel | 0.1.8 |
+
+The **registry** lives in this map (per-area tables below) and records, for each
+obligation:
+
+| Column | Meaning |
+| --- | --- |
+| ID | The permanent `AREA-OBL-NNN` identifier. |
+| Obligation | A short noun phrase for the requirement. |
+| Normative anchor | A relative link to the governing heading, e.g. [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form). |
+| Evidence | The exercising compiler test path and name, plus any stable diagnostic identifier(s). Cross-repo evidence uses a GitHub web link so the archive's local-link check is unaffected. |
+| Status | `traced`, `in-progress`, or `untraced`. |
+
+A registry entry is `traced` only when at least one tagged, passing compiler
+test covers the obligation. A test tags its obligations with ExUnit
+`@tag obligation: "AREA-OBL-NNN"` (or `obligations: [...]`), scanned by the
+compiler coverage check.
+
+## Per-area status
+
+`MUST`/`MUST NOT` counts are approximate; they are fixed precisely when each
+area's obligation set is extracted.
+
+| Area | `MUST`/`MUST NOT` | Compiler tests (file) | Status |
+| --- | --- | --- | --- |
+| `CC` clause-conditions | 49 | `c003_clause_condition_test.exs` (7) | pilot — extraction complete, 11 gaps pending fill |
+| `TS` type-system | ~44 | `type_conformance_test.exs` (5) | untraced |
+| `DP` data-and-patterns | ~61 | `c002_data_test.exs` (22) | untraced |
+| `TR` traits | ~19 | `c004_categorical_test.exs` (9) | untraced |
+| `EF` effects | ~13 | `c005_effects_test.exs` (19) | untraced |
+| `SG` specifications-and-governance | ~37 | `c006_specification_governance_test.exs` (34) | untraced |
+| `ED` editions | ~32 | `c008_editions_lifecycle_test.exs` (16) | untraced |
+| `FK` formal-semantic-kernel | ~6 | `c010_formal_semantic_kernel_test.exs` (17) | untraced |
+
+## Trails
+
+### Pilot: clause-conditions 0.1.3
+
+The pilot extracts the `MUST`/`MUST NOT` obligation set for
+[Clause Conditions](../60-specification/clause-conditions/README.md), assigns
+`CC-OBL-NNN` identifiers, maps the seven existing tests, and records the gap
+set to fill. It is the template for the other seven areas. Tagging the tests,
+filling the gaps, and wiring the validator hook and compiler coverage check are
+the compiler-side steps P5–P7.
+
+## Pilot registry — clause-conditions (`CC`, 0.1.3)
+
+Evidence labels refer to tests in
+[`c003_clause_condition_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c003_clause_condition_test.exs):
+
+- **c003 #1** *checks exhaustive integer condition partitions and lowers them both ways*
+- **c003 #2** *requires safe, typed, acyclic condition declarations*
+- **c003 #3** *fact reasoning proves redundancy but remains conservative outside its theory*
+- **c003 #4** *exports canonical condition evidence and imports it explicitly*
+- **c003 #5** *rejects tampered nested condition evidence independently of the interface digest*
+- **c003 #6** *receive harness accepts only native conditions over a closed message type*
+- **c003 #7** *rejects unsupported partial and higher-order condition forms*
+
+`traced` = at least one current test exercises it; `partial` = some facets
+covered; `untraced` = no current test (a P6 gap). Process-only and future-type
+`MUST` clauses (the metatheory counterexample rule, the "later versions must
+specify" rule, and the future fixed-width integer rule) are intentionally
+outside this executable registry.
+
+### Positive execution
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-001 | Boolean literals and variables as conditions | [`syntax-and-safety.md#exact-initial-expression-set`](../60-specification/clause-conditions/syntax-and-safety.md#exact-initial-expression-set) | c003 #1, #2 | traced |
+| CC-OBL-002 | Lazy negation, conjunction, disjunction | [`syntax-and-safety.md#exact-initial-expression-set`](../60-specification/clause-conditions/syntax-and-safety.md#exact-initial-expression-set) | c003 #3 | traced |
+| CC-OBL-003 | Exact Boolean and integer equality and inequality | [`syntax-and-safety.md#exact-initial-expression-set`](../60-specification/clause-conditions/syntax-and-safety.md#exact-initial-expression-set) | c003 #1 | traced |
+| CC-OBL-004 | Integer order, negation, add, sub, multiply | [`syntax-and-safety.md#exact-initial-expression-set`](../60-specification/clause-conditions/syntax-and-safety.md#exact-initial-expression-set) | c003 #1 | traced |
+| CC-OBL-005 | Direct fully-applied local and imported predicates | [`condition-predicates-and-interfaces.md#declaration-contract`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#declaration-contract) | c003 #4 | traced |
+| CC-OBL-006 | Forward acyclic predicate dependencies | [`condition-predicates-and-interfaces.md#dependency-and-expansion-evidence`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#dependency-and-expansion-evidence) | c003 #4 | traced |
+| CC-OBL-007 | Ordinary matches and signed multi-clause functions | [`clause-contexts-and-receive.md#multi-clause-functions`](../60-specification/clause-conditions/clause-contexts-and-receive.md#multi-clause-functions) | c003 #1 | traced |
+| CC-OBL-008 | Negative/zero/positive integer partitions proved exhaustive | [`coverage-and-fact-evidence.md#supported-fact-theory`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#supported-fact-theory) | c003 #1 | traced |
+| CC-OBL-009 | Condition false falls through to exactly the next clause | [`guard-tree-semantics.md#ordered-selection`](../60-specification/clause-conditions/guard-tree-semantics.md#ordered-selection) | c003 #1 | traced |
+| CC-OBL-010 | Or-pattern lowering with one shared condition continuation | [`beam-lowering.md#shared-clause-continuation`](../60-specification/clause-conditions/beam-lowering.md#shared-clause-continuation) | — | untraced |
+| CC-OBL-011 | 0.1.2 interfaces consumed without condition evidence | [`condition-predicates-and-interfaces.md#module-interfaces`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#module-interfaces) | — | untraced |
+| CC-OBL-012 | 0.1.3 interface round-trips with canonical evidence | [`condition-predicates-and-interfaces.md#module-interfaces`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#module-interfaces) | c003 #4 | traced |
+| CC-OBL-013 | Typed receive harness over a closed message type | [`clause-contexts-and-receive.md#selective-receive-harness`](../60-specification/clause-conditions/clause-contexts-and-receive.md#selective-receive-harness) | c003 #6 | traced |
+
+### Negative rejection
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-014 | Malformed or missing condition signature | [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form) | CND001; c003 #2,#7 | partial |
+| CC-OBL-015 | Non-Boolean condition or predicate result rejected | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/clause-conditions/diagnostics-and-conformance.md#stable-diagnostics) | CND002; c003 #2 | traced |
+| CC-OBL-016 | Nonempty condition effect rejected | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/clause-conditions/diagnostics-and-conformance.md#stable-diagnostics) | CND002 | untraced |
+| CC-OBL-017 | Ordinary/lambda/partial/local/foreign/effect/trait ops excluded | [`syntax-and-safety.md#excluded-forms`](../60-specification/clause-conditions/syntax-and-safety.md#excluded-forms) | CND003; c003 #2,#7 | traced |
+| CC-OBL-018 | Division/remainder/unchecked partial primitives excluded | [`syntax-and-safety.md#excluded-forms`](../60-specification/clause-conditions/syntax-and-safety.md#excluded-forms) | CND001; c003 #7 | traced |
+| CC-OBL-019 | Recursive predicate dependency rejected | [`condition-predicates-and-interfaces.md#dependency-and-expansion-evidence`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#dependency-and-expansion-evidence) | CND004; c003 #2 | traced |
+| CC-OBL-020 | Missing/implicit/duplicate/tampered import rejected | [`condition-predicates-and-interfaces.md#explicit-imports`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#explicit-imports) | CND005; c003 #5 | traced |
+| CC-OBL-021 | 0.1.3 syntax in an earlier AST version rejected | [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form) | CND001; c003 #7 | traced |
+| CC-OBL-022 | Proved-false or fact-shadowed redundant clause rejected | [`coverage-and-fact-evidence.md#condition-classification`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#condition-classification) | M002; c003 #3 | traced |
+| CC-OBL-023 | Nonlinear partition claimed exhaustive rejected as unknown | [`coverage-and-fact-evidence.md#supported-fact-theory`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#supported-fact-theory) | M001; c003 #3 | traced |
+| CC-OBL-024 | Condition or fact budget below minimum rejected | [`condition-predicates-and-interfaces.md#budget`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#budget) | CND007; c003 #2 | traced |
+| CC-OBL-025 | Receive harness with free type/nonnative/expanded-or-pattern rejected | [`clause-contexts-and-receive.md#native-only-rule`](../60-specification/clause-conditions/clause-contexts-and-receive.md#native-only-rule) | c003 #6 | partial |
+
+### Differential, determinism, and independent verification
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-026 | Reference/native/ordinary lowering agree on clause and result | [`diagnostics-and-conformance.md#differential-evidence`](../60-specification/clause-conditions/diagnostics-and-conformance.md#differential-evidence) | c003 #1 | traced |
+| CC-OBL-027 | BEAM and interface output deterministic for identical inputs | [`diagnostics-and-conformance.md#differential-evidence`](../60-specification/clause-conditions/diagnostics-and-conformance.md#differential-evidence) | c003 #1 | partial |
+| CC-OBL-028 | Verifier independently rejects corrupted condition evidence | [`diagnostics-and-conformance.md#differential-evidence`](../60-specification/clause-conditions/diagnostics-and-conformance.md#differential-evidence) | c003 #5 | traced |
+| CC-OBL-029 | Fact checker must not report M001/M002 for unsupported or timed-out input | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/clause-conditions/diagnostics-and-conformance.md#stable-diagnostics) | c003 #3 | partial |
+
+### Lowering and pipeline invariants
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-030 | Three lowering selections exposed (auto/native/ordinary) | [`beam-lowering.md#native-lowering`](../60-specification/clause-conditions/beam-lowering.md#native-lowering) | c003 #1 | partial |
+| CC-OBL-031 | Receive harness emits native Erlang receive guards only | [`beam-lowering.md#selective-receive`](../60-specification/clause-conditions/beam-lowering.md#selective-receive) | c003 #6 | traced |
+| CC-OBL-032 | OTP Abstract Format is the sole BEAM-generation boundary | [`clause-condition-overview.md#compiler-boundary`](../60-specification/clause-conditions/clause-condition-overview.md#compiler-boundary) | — | untraced |
+| CC-OBL-033 | Typed core, effects, source attribution preserved through lowering | [`clause-condition-overview.md#compiler-boundary`](../60-specification/clause-conditions/clause-condition-overview.md#compiler-boundary) | — | untraced |
+
+### Exhaustiveness, clause structure, and guard-tree semantics
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-034 | Ordinary match expressions must be exhaustive | [`clause-contexts-and-receive.md#ordinary-matches`](../60-specification/clause-conditions/clause-contexts-and-receive.md#ordinary-matches) | — (c002) | untraced in c003 |
+| CC-OBL-035 | Multi-clause set exhaustive with uniform result type | [`clause-contexts-and-receive.md#multi-clause-functions`](../60-specification/clause-conditions/clause-contexts-and-receive.md#multi-clause-functions) | c003 #1 | traced |
+| CC-OBL-036 | Elaboration preserves source clause order and bindings | [`clause-contexts-and-receive.md#multi-clause-functions`](../60-specification/clause-conditions/clause-contexts-and-receive.md#multi-clause-functions) | c003 #1 | partial |
+| CC-OBL-037 | Structural match then condition evaluated once, in order | [`guard-tree-semantics.md#ordered-selection`](../60-specification/clause-conditions/guard-tree-semantics.md#ordered-selection) | c003 #1 | traced |
+| CC-OBL-038 | Body failure or divergence does not resume clause selection | [`guard-tree-semantics.md#ordered-selection`](../60-specification/clause-conditions/guard-tree-semantics.md#ordered-selection) | — | untraced |
+| CC-OBL-039 | Verifier rejects duplicated condition evaluation | [`guard-tree-semantics.md#guard-tree-core`](../60-specification/clause-conditions/guard-tree-semantics.md#guard-tree-core) | — | untraced |
+| CC-OBL-040 | Or-pattern alternatives bind the same names | [`guard-tree-semantics.md#or-patterns`](../60-specification/clause-conditions/guard-tree-semantics.md#or-patterns) | — | untraced |
+| CC-OBL-041 | Exhaustiveness accepted only under the stated conditions | [`coverage-and-fact-evidence.md#structural-baseline`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#structural-baseline) | c003 #1 | traced |
+| CC-OBL-042 | Unknown never closes an exhaustiveness gap or proves redundancy | [`coverage-and-fact-evidence.md#condition-classification`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#condition-classification) | c003 #3 | traced |
+
+### Predicate and interface integrity
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-043 | Predicate well-formedness: signature, totality, effect-free | [`condition-predicates-and-interfaces.md#declaration-contract`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#declaration-contract) | c003 #2 | traced |
+| CC-OBL-044 | `expanded_core` equals the canonical body | [`condition-predicates-and-interfaces.md#canonical-identity-and-core`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#canonical-identity-and-core) | c003 #4 | traced |
+| CC-OBL-045 | Consumer recomputes digest and verifies evidence | [`condition-predicates-and-interfaces.md#explicit-imports`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#explicit-imports) | c003 #4,#5 | traced |
+| CC-OBL-046 | Normalization and inlining terminate under the budget | [`condition-predicates-and-interfaces.md#budget`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#budget) | c003 #2 | traced |
+| CC-OBL-047 | Minimum supported budget is 20,000 | [`condition-predicates-and-interfaces.md#budget`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#budget) | c003 #2 | traced |
+
+### Coverage reporting and no-conversion
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CC-OBL-048 | Implementation limit reported as limit or unknown, not semantic proof | [`coverage-and-fact-evidence.md#budgets-and-diagnostics`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#budgets-and-diagnostics) | — | untraced |
+| CC-OBL-049 | No truthiness or invalid-operation conversion | [`syntax-and-safety.md#evaluation`](../60-specification/clause-conditions/syntax-and-safety.md#evaluation) | — | untraced |
+
+### Pilot gap set (P6)
+
+Eleven obligations currently have no covering test and are the pilot gap-fill
+target: CC-OBL-010, 011, 016, 032, 033, 034, 038, 039, 040, 048, 049. A further
+eight are `partial` and need additional assertions. The compiler-side work
+(P5–P7) tags the seven existing tests with their obligation IDs, adds tests for
+each gap, and makes the coverage check fail until every `CC-OBL-*` has at least
+one tagged passing test.
+
+### Scale-out
+
+After the pilot validates the scheme, one coordinated research/compiler PR pair
+per area applies it. The research side assigns identifiers and records anchors;
+the compiler side tags and fills tests. The pair mirrors the C010 coordination
+(`catena-research#24` ↔ `catena#74`).
+
+## Open questions
+
+- Registry placement: keep identifiers in this non-normative map (preferred) or
+  embed them in each normative `diagnostics-and-conformance.md` chapter, which
+  is a per-area normative edit.
+- Evidence-link durability: pin cross-repo evidence URLs to an immutable commit
+  or reference the `rewrite` path.
+- Validator enforcement ramp: warn before failing, so the registry can grow
+  incrementally.
+- Whether the `SHOULD`/`MAY`/declarative/definitions follow-up is a new
+  checklist item or a sub-item of C011.

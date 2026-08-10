@@ -509,6 +509,63 @@ def variability_register_errors(display_path: str, markdown: str) -> list[str]:
     return [f"{display_path}: missing section ## Variability register"]
 
 
+TRACEABILITY_REGISTRY = ROOT / "10-maps" / "conformance-traceability.md"
+OBLIGATION_ROW = re.compile(r"^\|\s*([A-Z]+-OBL-[^\s|]+)")
+OBLIGATION_ID = re.compile(r"^[A-Z]{2}-OBL-\d{3}$")
+OBLIGATION_STATUS_TOKENS = ("untraced", "partial", "traced")
+
+
+def traceability_registry_errors(
+    display_path: str, markdown: str
+) -> tuple[list[str], dict[str, int]]:
+    """Check the conformance-traceability obligation registry.
+
+    The registry is non-normative. This check guards its internal integrity
+    only: each obligation row carries a well-formed, unique identifier and a
+    recognized status. Per-area completeness is reported as counts, not
+    enforced, so the registry can grow one area at a time. ``untraced`` is
+    tested before ``traced`` because the latter is a substring of the former.
+    """
+
+    errors: list[str] = []
+    counts: dict[str, int] = defaultdict(int)
+    seen: dict[str, int] = {}
+
+    for line_number, line in enumerate(markdown.splitlines(), start=1):
+        match = OBLIGATION_ROW.match(line)
+        if not match:
+            continue
+        identifier = match.group(1)
+        if not OBLIGATION_ID.fullmatch(identifier):
+            errors.append(
+                f"{display_path}:{line_number}: malformed obligation identifier "
+                f"{identifier!r} (expected AREA-OBL-NNN)"
+            )
+            continue
+        counts["traceability_obligations"] += 1
+        if not any(token in line for token in OBLIGATION_STATUS_TOKENS):
+            errors.append(
+                f"{display_path}:{line_number}: obligation {identifier!r} row "
+                "missing a status (traced, partial, or untraced)"
+            )
+        elif "untraced" in line:
+            counts["traceability_untraced"] += 1
+        elif "partial" in line:
+            counts["traceability_partial"] += 1
+        else:
+            counts["traceability_traced"] += 1
+        seen[identifier] = seen.get(identifier, 0) + 1
+
+    for identifier, occurrences in sorted(seen.items()):
+        if occurrences > 1:
+            errors.append(
+                f"{display_path}: duplicate obligation identifier "
+                f"{identifier!r} ({occurrences} rows)"
+            )
+
+    return errors, counts
+
+
 def validate() -> tuple[list[str], dict[str, int]]:
     """Run all checks and return errors plus summary counts."""
 
@@ -834,6 +891,14 @@ def validate() -> tuple[list[str], dict[str, int]]:
                 joined = ", ".join(relative(path) for path in sorted(paths))
                 errors.append(f"duplicate {key} {value!r}: {joined}")
 
+    if TRACEABILITY_REGISTRY.is_file():
+        traceability_errors, traceability_counts = traceability_registry_errors(
+            relative(TRACEABILITY_REGISTRY),
+            TRACEABILITY_REGISTRY.read_text(encoding="utf-8"),
+        )
+        errors.extend(traceability_errors)
+        counts.update(traceability_counts)
+
     return sorted(set(errors)), counts
 
 
@@ -845,15 +910,24 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print(
+    summary = (
         "Archive validation passed: "
         f"{counts['completed_documents']} completed documents, "
         f"{counts['directories']} directories, "
         f"{counts['local_links']} local links, and "
         f"{counts['source_documents']} source notes checked; "
         f"{counts['specification_documents']} specification chapters and "
-        f"{counts['specification_fenced_blocks']} classified fenced blocks checked."
+        f"{counts['specification_fenced_blocks']} classified fenced blocks checked"
     )
+    obligations = counts.get("traceability_obligations", 0)
+    if obligations:
+        summary += (
+            f"; {obligations} traceability obligations "
+            f"({counts.get('traceability_traced', 0)} traced, "
+            f"{counts.get('traceability_partial', 0)} partial, "
+            f"{counts.get('traceability_untraced', 0)} untraced)"
+        )
+    print(summary + ".")
     return 0
 
 
