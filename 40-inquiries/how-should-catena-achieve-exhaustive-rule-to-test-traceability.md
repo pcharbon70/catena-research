@@ -77,15 +77,17 @@ obligation-level identifiers, `MUST`/`MUST NOT` first, clause-conditions 0.1.3
 as pilot, coordinated research/compiler PRs per area mirroring the C010
 `catena-research#24` ↔ `catena#74` pattern.
 
-The pilot extraction is complete. The clause-conditions 0.1.3 area yields
-**49 `MUST`/`MUST NOT` obligations** (`CC-OBL-001` through `CC-OBL-049`),
-against the seven existing `c003` tests. Coverage after mapping: 30 `traced`,
-8 `partial`, 11 `untraced`. The eleven untraced obligations — CC-OBL-010, 011,
-016, 032, 033, 034, 038, 039, 040, 048, 049 — and the eight partial ones are
-the compiler-side P6 gap-fill target. The archive validator now guards registry
-integrity (well-formed, unique identifiers and a status per row) and reports
-the obligation counts; per-area completeness enforcement ramps on as further
-areas populate.
+All eight normative areas are now extracted on the map. The clause-conditions
+pilot (`CC-OBL-001`..`049`) validated the scheme; its compiler side is merged
+with three pilot gaps filled (CC-OBL-016, 034, 040) and seven architectural or
+not-yet-filled gaps allow-listed. Six further areas — type-system (`TS`),
+traits (`TR`), effects (`EF`), governance (`SG`), editions (`ED`), and the
+formal semantic kernel (`FK`) — are extracted on the map and compiler-tagged
+with a per-area coverage gate; five are merged and type-system is open as
+compiler PR #84. The data-and-patterns area (`DP-OBL-001`..`071`, the largest)
+is extracted on the map and is the last area awaiting its compiler tagging PR.
+The archive validator guards registry integrity (well-formed, unique
+identifiers, and a status per row) and reports the obligation counts.
 
 ## Outcome
 

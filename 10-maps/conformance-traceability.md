@@ -73,19 +73,22 @@ compiler coverage check.
 
 ## Per-area status
 
-`MUST`/`MUST NOT` counts are approximate; they are fixed precisely when each
-area's obligation set is extracted.
+`MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
+extracted; all eight areas are now extracted. "Compiler-tagged + gated" means
+the per-area tests carry `@tag obligations: [...]` and a
+`<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
+sibling compiler repository.
 
 | Area | `MUST`/`MUST NOT` | Compiler tests (file) | Status |
 | --- | --- | --- | --- |
-| `CC` clause-conditions | 49 | `c003_clause_condition_test.exs` (7) | pilot — extraction complete, 11 gaps pending fill |
-| `TS` type-system | 44 | `type_conformance_test.exs` + `compiler_test.exs` (13) | extraction complete, mapping in progress |
-| `DP` data-and-patterns | ~61 | `c002_data_test.exs` (22) | untraced |
-| `TR` traits | 32 | `c004_categorical_test.exs` (9) | extraction complete, mapping in progress |
-| `EF` effects | 27 | `c005_effects_test.exs` (19) | extraction complete, mapping in progress |
-| `SG` specifications-and-governance | 44 | `c006_specification_governance_test.exs` (34) | extraction complete, mapping in progress |
-| `ED` editions | 36 | `c008_editions_lifecycle_test.exs` (16) | extraction complete, mapping in progress |
-| `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | extraction complete, mapping in progress |
+| `CC` clause-conditions | 49 | `c003_clause_condition_test.exs` (10) | compiler-tagged + gated (merged); 3 gaps filled, 7 allow-listed |
+| `TS` type-system | 44 | `type_conformance_test.exs` + `compiler_test.exs` (13) | compiler-tagged + gated (PR #84 open) |
+| `DP` data-and-patterns | 71 | `c002_data_test.exs` (22) | extraction complete; compiler tagging in progress |
+| `TR` traits | 32 | `c004_categorical_test.exs` (9) | compiler-tagged + gated (merged) |
+| `EF` effects | 27 | `c005_effects_test.exs` (19) | compiler-tagged + gated (merged) |
+| `SG` specifications-and-governance | 44 | `c006_specification_governance_test.exs` (34) | compiler-tagged + gated (merged) |
+| `ED` editions | 36 | `c008_editions_lifecycle_test.exs` (16) | compiler-tagged + gated (merged) |
+| `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | compiler-tagged + gated (merged) |
 
 ## Trails
 
@@ -594,6 +597,157 @@ authoritative links and gap set.
 | TS-OBL-044 | Corpus: runtime affine double-consumption and no direct BEAM output path | [`diagnostics-and-conformance.md#conformance-gate`](../60-specification/type-system/diagnostics-and-conformance.md#conformance-gate) | resumption_token, co#7 | traced |
 
 Provisional coverage: 26 `traced`, 16 `partial`, 2 `untraced` (TS-OBL-007 type aliases; TS-OBL-038 family-subdivision mapping). TS is foundational: many `partial` obligations are exercised transitively by the data, trait, effect, and kernel suites, which the compiler-side gate scans as well.
+
+## Registry — data-and-patterns (`DP`, 0.1.2)
+
+Evidence labels refer to tests in
+[`c002_data_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c002_data_test.exs).
+DP is the largest area (nine normative chapters). The mapping is provisional;
+the compiler-side tagging PR establishes the authoritative test-to-obligation
+links and the gap set.
+
+- **c002 #1** *the durable C002 conformance fixture stays executable under reference, uniform, and compact lowering and hides layout from the interface*
+- **c002 #2** *AST 0.1.1 normalizes into the 0.1.2 compiler representation with frontend provenance*
+- **c002 #3** *duplicate declarations and unsupported pattern forms keep stable diagnostics A002 and M005*
+- **c002 #4** *exhaustive nominal matches infer, verify, evaluate, and compile deterministically in both layouts with a sorted interface*
+- **c002 #5** *non-exhaustive matches are rejected with a concrete machine-readable witness*
+- **c002 #6** *redundant clauses are rejected with M002*
+- **c002 #7** *empty and negative recursive declarations are accepted with computed inhabitation, positivity, and variance*
+- **c002 #8** *an empty match is accepted only over a proven-empty type*
+- **c002 #9** *named-field evaluation runs left to right in written order while payloads stay in declaration order*
+- **c002 #10** *an explicit constructor-complete fold is generated, verified, and dispatched once*
+- **c002 #11** *interfaces preserve nominal identity and hide abstract constructors (A004)*
+- **c002 #12** *explicit constructor imports are the sole unqualified imported access*
+- **c002 #13** *a tampered interface digest is rejected with A005*
+- **c002 #14** *an origin change is a nominal identity change and mismatches are rejected with A005*
+- **c002 #15** *annotated GADT matches use local equalities under the annotation-directed profile*
+- **c002 #16** *existential values escaping a match branch are rejected with T009*
+- **c002 #17** *ordered guard fallthrough is preserved and a false guard is redundant (M002)*
+- **c002 #18** *exhaustive or patterns expand without changing branch bindings*
+- **c002 #19** *deterministic coverage budget exhaustion is reported as M004*
+- **c002 #20** *mutually recursive groups elaborate atomically with computed inhabitation*
+- **c002 #21** *the typed-core verifier independently rejects corrupted constructor and decision evidence*
+- **c002 #22** *a bounded Boolean pattern corpus agrees with the finite coverage model*
+
+### Declarations and nominal identity
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-001 | Parameters and explicit existential binders carry kinds in the resolved syntax | [`declarations-and-nominal-identity.md#surface-form`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#surface-form) | c002 #7 | partial |
+| DP-OBL-002 | Each declaration generates a fresh nominal type identity | [`declarations-and-nominal-identity.md#nominal-generation`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#nominal-generation) | c002 #14 | traced |
+| DP-OBL-003 | An alias is a different declaration form and must not silently generate a new identity | [`declarations-and-nominal-identity.md#nominal-generation`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#nominal-generation) | — | untraced |
+| DP-OBL-004 | A mutually recursive group elaborates atomically; a failed group publishes nothing | [`declarations-and-nominal-identity.md#recursive-groups`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#recursive-groups) | c002 #20 | traced |
+| DP-OBL-005 | Duplicate type, constructor, field, binder, or alias names are invalid (A002) | [`declarations-and-nominal-identity.md#recursive-groups`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#recursive-groups) | A002; c002 #3 | traced |
+| DP-OBL-006 | Positivity and regularity are calculated before any operation depending on either | [`declarations-and-nominal-identity.md#recursive-groups`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#recursive-groups) | c002 #7 | partial |
+| DP-OBL-007 | Every ordinary constructor returns the declared type applied to its parameters in declaration order | [`declarations-and-nominal-identity.md#constructor-schemes`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#constructor-schemes) | c002 #4, #9 | traced |
+| DP-OBL-008 | Ordinary constructor schemes preserve the C001 principal-core guarantee | [`declarations-and-nominal-identity.md#constructor-schemes`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#constructor-schemes) | c002 #4 | partial |
+| DP-OBL-009 | An explicit `returns` result is the declared nominal type at the correct arity | [`declarations-and-nominal-identity.md#constructor-schemes`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#constructor-schemes) | c002 #15 | traced |
+| DP-OBL-010 | A public datatype interface is exactly transparent or abstract | [`declarations-and-nominal-identity.md#visibility-and-names`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#visibility-and-names) | c002 #11 | traced |
+| DP-OBL-011 | A client may construct or match only constructors in a transparent imported interface | [`declarations-and-nominal-identity.md#visibility-and-names`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#visibility-and-names) | A004; c002 #11, #12 | traced |
+| DP-OBL-012 | Imported constructors stay qualified unless an explicit import supplies a name or alias; ambiguous or duplicate aliases are invalid | [`declarations-and-nominal-identity.md#visibility-and-names`](../60-specification/data-and-patterns/declarations-and-nominal-identity.md#visibility-and-names) | c002 #12 | traced |
+| DP-OBL-013 | Unit, empty, phantom, nested, mutually recursive, positive, and negative ordinary declarations are accepted | [`diagnostics-and-conformance.md#required-positive-cases`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#required-positive-cases) | c002 #7, #20 | traced |
+| DP-OBL-014 | Unknown kinds, unsaturated named types, invalid constructor results, and existential result escape are rejected | [`diagnostics-and-conformance.md#required-negative-cases`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#required-negative-cases) | c002 #3 | partial |
+
+### Construction and pattern typing
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-015 | Positional construction supplies exactly the constructor arity | [`construction-and-pattern-typing.md#construction`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#construction) | c002 #4, #9 | traced |
+| DP-OBL-016 | Named construction supplies every field once, in any order; fields evaluate left to right in written order; payload is stored in declaration order | [`construction-and-pattern-typing.md#construction`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#construction) | c002 #9 | traced |
+| DP-OBL-017 | Positional and named constructor styles must not be interchanged implicitly | [`construction-and-pattern-typing.md#construction`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#construction) | — | untraced |
+| DP-OBL-018 | The 0.1.2 pattern grammar supports exactly the enumerated forms | [`construction-and-pattern-typing.md#complete-012-pattern-grammar`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#complete-012-pattern-grammar) | c002 #4, #18 | partial |
+| DP-OBL-019 | Unsupported pattern forms (list, record, row-variant, map, binary, string, range, view, active, synonym) produce M005 | [`construction-and-pattern-typing.md#complete-012-pattern-grammar`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#complete-012-pattern-grammar) | M005; c002 #3 | traced |
+| DP-OBL-020 | Wildcard, binder, and `as` binding rules; `as` checks its inner pattern then binds the complete value | [`construction-and-pattern-typing.md#binding-rules`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#binding-rules) | c002 #4, #18 | partial |
+| DP-OBL-021 | A variable name occurs at most once in a single pattern; equality is written as a guard | [`construction-and-pattern-typing.md#binding-rules`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#binding-rules) | — | untraced |
+| DP-OBL-022 | Every `or` alternative binds the same names at the same types and establishes the same GADT refinements | [`construction-and-pattern-typing.md#binding-rules`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#binding-rules) | c002 #18 | partial |
+| DP-OBL-023 | Pattern typing is a checking judgment against an already inferred scrutinee type | [`construction-and-pattern-typing.md#structural-pattern-typing`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#structural-pattern-typing) | c002 #4 | partial |
+| DP-OBL-024 | Patterns are pure: no calls, effects, conversions, or user-defined tests | [`construction-and-pattern-typing.md#structural-pattern-typing`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#structural-pattern-typing) | — | untraced |
+| DP-OBL-025 | Invalid bindings, arity, field use, or alternative agreement use M003 | [`construction-and-pattern-typing.md#diagnostics-and-evidence`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#diagnostics-and-evidence) | — | untraced |
+| DP-OBL-026 | Non-match contexts admit only irrefutable patterns or an explicit failure construct; no implicit runtime match exception | [`construction-and-pattern-typing.md#refutability-boundary`](../60-specification/data-and-patterns/construction-and-pattern-typing.md#refutability-boundary) | — | untraced |
+
+### Match semantics and coverage
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-027 | Match evaluation tests top to bottom, structural-then-guard, selecting the first true-guard body after one scrutinee evaluation | [`match-semantics-and-coverage.md#dynamic-semantics`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#dynamic-semantics) | c002 #4, #17 | traced |
+| DP-OBL-028 | A false guard resumes with the next clause; clause bodies share one unifiable result type | [`match-semantics-and-coverage.md#dynamic-semantics`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#dynamic-semantics) | c002 #17 | traced |
+| DP-OBL-029 | No well-typed 0.1.2 program reaches an implicit match-failure exception | [`match-semantics-and-coverage.md#dynamic-semantics`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#dynamic-semantics) | c002 #8 | partial |
+| DP-OBL-030 | Exhaustiveness and redundancy are determined from one typed usefulness relation | [`match-semantics-and-coverage.md#usefulness-model`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#usefulness-model) | c002 #5, #6, #22 | traced |
+| DP-OBL-031 | Coverage analysis is independent of backend match lowering | [`match-semantics-and-coverage.md#usefulness-model`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#usefulness-model) | c002 #4 | partial |
+| DP-OBL-032 | A missing case is invalid (M001) with a deterministic concrete witness when the witness language can express one | [`match-semantics-and-coverage.md#usefulness-model`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#usefulness-model) | M001; c002 #5 | traced |
+| DP-OBL-033 | A useless clause is invalid (M002); `or` is semantic union and sharing must not change usefulness | [`match-semantics-and-coverage.md#usefulness-model`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#usefulness-model) | M002; c002 #6, #17, #18 | traced |
+| DP-OBL-034 | Coverage treats each type domain as specified (nominal finite, Boolean, tuple product, integer points, abstract open, GADT refined-result) | [`match-semantics-and-coverage.md#type-domains`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#type-domains) | c002 #22 | partial |
+| DP-OBL-035 | String, range, structural-variant, list-syntax, and binary coverage are outside 0.1.2, not silently approximated | [`match-semantics-and-coverage.md#type-domains`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#type-domains) | — | untraced |
+| DP-OBL-036 | A terminating three-valued inhabitation fact is calculated; only a proven-empty scrutinee permits a zero-clause match | [`match-semantics-and-coverage.md#empty-and-recursive-types`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#empty-and-recursive-types) | c002 #7, #8 | partial |
+| DP-OBL-037 | Coverage consumes only proved-true, proved-false, or unknown guard classification | [`match-semantics-and-coverage.md#guards-and-coverage-facts`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#guards-and-coverage-facts) | c002 #17 | partial |
+| DP-OBL-038 | Coverage terminates with at least 20,000 usefulness steps; exhaustion reports M004 and must not mislabel as M001 or M002 | [`match-semantics-and-coverage.md#deterministic-implementation-limit`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#deterministic-implementation-limit) | M004; c002 #19 | traced |
+| DP-OBL-039 | Backend lowering preserves source order, guard fallthrough, and bindings | [`match-semantics-and-coverage.md#decision-representation`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#decision-representation) | c002 #4, #17 | partial |
+| DP-OBL-040 | The typed-core verifier rejects a decision representation not marked exhaustive or not corresponding to its checked clauses | [`match-semantics-and-coverage.md#decision-representation`](../60-specification/data-and-patterns/match-semantics-and-coverage.md#decision-representation) | c002 #21 | traced |
+
+### GADT and existential patterns
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-041 | A refined `returns` result is the declared nominal type at full arity | [`gadt-and-existential-patterns.md#explicit-advanced-declarations`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#explicit-advanced-declarations) | c002 #15 | traced |
+| DP-OBL-042 | An existential variable may appear in constructor fields but must not appear in the datatype result | [`gadt-and-existential-patterns.md#explicit-advanced-declarations`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#explicit-advanced-declarations) | — | untraced |
+| DP-OBL-043 | A definition matching a refined or existential constructor must have an enclosing signature; absence is invalid (T010) | [`gadt-and-existential-patterns.md#required-annotation-boundary`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#required-annotation-boundary) | — | untraced |
+| DP-OBL-044 | GADT pattern checking freshens parameters, instantiates existentials as rigid skolems, compares the result, and scopes equalities to the branch | [`gadt-and-existential-patterns.md#branch-local-checking`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#branch-local-checking) | c002 #15 | partial |
+| DP-OBL-045 | The branch environment is not generalized under active equality; an impossible constructor is excluded from coverage | [`gadt-and-existential-patterns.md#branch-local-checking`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#branch-local-checking) | c002 #15 | partial |
+| DP-OBL-046 | No rigid existential or branch-local equality escapes to a result, scheme, closure, or interface; escape is invalid (T009) | [`gadt-and-existential-patterns.md#escape-prevention`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#escape-prevention) | T009; c002 #16 | traced |
+| DP-OBL-047 | The verifier independently checks field arity, nominal result identity, branch binding types, equality scope, and non-escape | [`gadt-and-existential-patterns.md#typed-core-evidence`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#typed-core-evidence) | c002 #21 | partial |
+| DP-OBL-048 | Coverage may use local equalities to reject impossible constructors but must not justify an unsound branch type | [`gadt-and-existential-patterns.md#typed-core-evidence`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#typed-core-evidence) | — | untraced |
+
+### Interfaces and representation
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-049 | Successful compilation produces a deterministic `.cati.json` interface beside the `.beam`; check-only consumes but does not write artifacts | [`interfaces-and-representation.md#deterministic-module-interface`](../60-specification/data-and-patterns/interfaces-and-representation.md#deterministic-module-interface) | c002 #4 | partial |
+| DP-OBL-050 | Consumers verify the digest before trusting an interface and reject tampering (A005) | [`interfaces-and-representation.md#deterministic-module-interface`](../60-specification/data-and-patterns/interfaces-and-representation.md#deterministic-module-interface) | A005; c002 #13, #14 | traced |
+| DP-OBL-051 | An interface must not expose the chosen runtime layout (no tag, tuple shape, boxing, niche, or coercion) | [`interfaces-and-representation.md#deterministic-module-interface`](../60-specification/data-and-patterns/interfaces-and-representation.md#deterministic-module-interface) | c002 #1, #4 | traced |
+| DP-OBL-052 | A transparent import supplies the constructor family; an abstract import supplies only nominal kinded identity | [`interfaces-and-representation.md#separate-compilation`](../60-specification/data-and-patterns/interfaces-and-representation.md#separate-compilation) | A004; c002 #11 | traced |
+| DP-OBL-053 | An origin, module, or type disagreement is nominal incompatibility regardless of shape; layout equality never repairs identity | [`interfaces-and-representation.md#separate-compilation`](../60-specification/data-and-patterns/interfaces-and-representation.md#separate-compilation) | A005; c002 #14 | traced |
+| DP-OBL-054 | Constructor semantic value is identity plus payload in declaration order; pattern selection compares semantic identity | [`interfaces-and-representation.md#source-semantic-value`](../60-specification/data-and-patterns/interfaces-and-representation.md#source-semantic-value) | c002 #1, #9 | traced |
+| DP-OBL-055 | Uniform and compact layouts are both supported; every conformance program checks and executes under both and typed observation agrees | [`interfaces-and-representation.md#required-beam-layouts`](../60-specification/data-and-patterns/interfaces-and-representation.md#required-beam-layouts) | c002 #1, #4 | traced |
+| DP-OBL-056 | Layout selection occurs after typed-core verification; the backend must not reconstruct nominal meaning from spelling or tuple arity | [`interfaces-and-representation.md#typed-layout-boundary`](../60-specification/data-and-patterns/interfaces-and-representation.md#typed-layout-boundary) | — | untraced |
+| DP-OBL-057 | The verifier rejects inconsistent arity, type identity, ordinal, payload, dispatch, or layout coercion as L001 implementation failure | [`interfaces-and-representation.md#typed-layout-boundary`](../60-specification/data-and-patterns/interfaces-and-representation.md#typed-layout-boundary) | — | untraced |
+| DP-OBL-058 | Only OTP 29 `compile:noenv_forms/2` may generate `.beam` content; Core Erlang, assembly, and binary construction are not alternate paths | [`interfaces-and-representation.md#typed-layout-boundary`](../60-specification/data-and-patterns/interfaces-and-representation.md#typed-layout-boundary) | — | untraced |
+| DP-OBL-059 | An untrusted Erlang term must not become a typed Catena ADT by shape alone; the later G095 boundary defines validation | [`interfaces-and-representation.md#dynamic-and-evolution-boundary`](../60-specification/data-and-patterns/interfaces-and-representation.md#dynamic-and-evolution-boundary) | — | untraced |
+
+### Derived folds
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-060 | Only `derives fold` is supported; unknown derivations are invalid (A001) and GADT or existential constructors are ineligible (A003) | [`derived-folds.md#explicit-request`](../60-specification/data-and-patterns/derived-folds.md#explicit-request) | c002 #10 | partial |
+| DP-OBL-061 | The generated fold takes one handler per constructor in declaration order, then the value; a nullary handler is a result and a payload handler is curried in field order | [`derived-folds.md#signature`](../60-specification/data-and-patterns/derived-folds.md#signature) | c002 #10 | traced |
+| DP-OBL-062 | The selected handler is invoked exactly once; unselected handlers are not invoked; payload values pass without recursive traversal | [`derived-folds.md#signature`](../60-specification/data-and-patterns/derived-folds.md#signature) | c002 #10 | traced |
+| DP-OBL-063 | The generated operation is constructor-complete case elimination only; it is not a recursive catamorphism, traversal, or categorical instance | [`derived-folds.md#meaning-and-limits`](../60-specification/data-and-patterns/derived-folds.md#meaning-and-limits) | c002 #10 | partial |
+| DP-OBL-064 | Generated code carries `compiler-derived` provenance, lives in typed core, is rejected on inconsistency, and is public only when constructors are transparent | [`derived-folds.md#generated-evidence`](../60-specification/data-and-patterns/derived-folds.md#generated-evidence) | c002 #10, #11 | partial |
+
+### Diagnostics, differential, and deterministic evidence
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-065 | Diagnostics include the JSON path or eventual source span when one is available | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#stable-diagnostics) | — | untraced |
+| DP-OBL-066 | M001 carries a machine-readable witness; M004 states the minimum budget and must not masquerade as M001 or M002 | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#stable-diagnostics) | M001, M004; c002 #5, #19 | traced |
+| DP-OBL-067 | A conformance fixture runs through the reference evaluator, uniform-layout BEAM, and compact-layout BEAM, compared by typed observation | [`diagnostics-and-conformance.md#differential-and-deterministic-evidence`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#differential-and-deterministic-evidence) | c002 #1, #4 | traced |
+| DP-OBL-068 | Generated BEAM and `.cati.json` output is byte-for-byte deterministic for identical inputs and options | [`diagnostics-and-conformance.md#differential-and-deterministic-evidence`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#differential-and-deterministic-evidence) | c002 #4 | traced |
+| DP-OBL-069 | The suite includes a deterministic bounded pattern corpus independent of the inference and coverage implementation | [`diagnostics-and-conformance.md#differential-and-deterministic-evidence`](../60-specification/data-and-patterns/diagnostics-and-conformance.md#differential-and-deterministic-evidence) | c002 #22 | traced |
+
+### Compiler boundary and independent verification
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DP-OBL-070 | Input JSON AST 0.1.1 is normalized into the 0.1.2 internal form and carries no datatype declarations | [`data-and-pattern-overview.md#compiler-boundary`](../60-specification/data-and-patterns/data-and-pattern-overview.md#compiler-boundary) | c002 #2 | traced |
+| DP-OBL-071 | The verifier independently rejects malformed constructor, binding, equality, coverage, derivation, or layout evidence | [`data-and-pattern-overview.md#compiler-boundary`](../60-specification/data-and-patterns/data-and-pattern-overview.md#compiler-boundary) | c002 #21 | traced |
+
+Provisional coverage: 35 `traced`, 21 `partial`, 15 `untraced`. Six of the
+untraced obligations are architectural, future-version, or diagnostic-quality
+boundaries with no focused c002 unit (DP-OBL-026 future refutability context
+P044; DP-OBL-056 backend reconstruction prevention; DP-OBL-057 L001
+implementation-failure path; DP-OBL-058 sole-OTP-boundary architectural;
+DP-OBL-059 future G095 validation boundary; DP-OBL-065 P117 diagnostic
+quality). The remaining nine (DP-OBL-003, 017, 021, 024, 025, 035, 042, 043,
+048) are the compiler-side gap-fill target.
 
 ## Open questions
 
