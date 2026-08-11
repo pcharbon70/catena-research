@@ -84,7 +84,7 @@ area's obligation set is extracted.
 | `TR` traits | 32 | `c004_categorical_test.exs` (9) | extraction complete, mapping in progress |
 | `EF` effects | 27 | `c005_effects_test.exs` (19) | extraction complete, mapping in progress |
 | `SG` specifications-and-governance | ~37 | `c006_specification_governance_test.exs` (34) | untraced |
-| `ED` editions | ~32 | `c008_editions_lifecycle_test.exs` (16) | untraced |
+| `ED` editions | 36 | `c008_editions_lifecycle_test.exs` (16) | extraction complete, mapping in progress |
 | `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | extraction complete, mapping in progress |
 
 ## Trails
@@ -376,6 +376,71 @@ than in the CC, FK, or EF areas.
 | TR-OBL-032 | Negative battery: wrong kinds, undeclared, cycles, foreign ownership, overlap, nondecreasing, missing/extra methods, unresolved/ambiguous, reserved tiers, invalid derivation, tampered interfaces, missing helpers, recursive specialization, exhausted budgets | [`diagnostics-and-conformance.md#negative-corpus`](../60-specification/traits-and-categorical-operations/diagnostics-and-conformance.md#negative-corpus) | c004 #8, #9 | partial |
 
 Provisional coverage: 19 `traced`, 12 `partial`, 1 `untraced` (TR-OBL-013 unsafe-recursion disclosure). TR has the thinnest test-to-obligation ratio of the traced areas; the compiler-side gate is expected to carry a larger allow-list until dedicated tests are added.
+
+## Registry — editions-and-feature-lifecycle (`ED`, 0.1.7)
+
+Evidence labels refer to tests in
+[`c008_editions_lifecycle_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c008_editions_lifecycle_test.exs).
+The mapping is provisional; the compiler-side tagging PR establishes the
+authoritative test-to-obligation links and the gap set.
+
+- **c008 #1** *the language registry exposes exact retained selections and a closed lifecycle*
+- **c008 #2** *selection validation rejects aliases, mismatches, duplicate previews, and unknown pins*
+- **c008 #3** *every retained exact revision compiles through the 0.1.7 artifact schema*
+- **c008 #4** *a module-level selection cannot contradict its package selection*
+- **c008 #5** *standalone compilation reports current selection and legacy inference without byte changes*
+- **c008 #6** *an explicit older pin rejects newer constructs but accepts neutral newer transport*
+- **c008 #7** *0.1.2 matching is not mistaken for 0.1.3 clause conditions*
+- **c008 #8** *0.1.7 retains 0.1.6 verification-only definitions*
+- **c008 #9** *0.1.7 package manifests require exact selection and legacy manifests report safe additions*
+- **c008 #10** *making a legacy manifest selection explicit preserves all output bytes*
+- **c008 #11** *interfaces bind enabled and publicly required previews and consumers fail closed*
+- **c008 #12** *0.1.7 artifacts and assurance bind the package selection without runtime dispatch*
+- **c008 #13** *specialization identities change with exact selection*
+- **c008 #14** *the 0.1.7 policy algebra constrains selection and agrees with its reference oracle*
+- **c008 #15** *trust roots and signatures use one declared version domain without fallback*
+- **c008 #16** *language-info is available as mutation-free JSON from the CLI*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| ED-OBL-001 | Revision major/minor must equal its edition; numeric resemblance is not a substitution | [`edition-selection-and-applicability.md#version-axes`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#version-axes) | EDN001; c008 #2 | traced |
+| ED-OBL-002 | Package manifest requires `edition`, `language_revision`, and `previews` | [`edition-selection-and-applicability.md#package-selection`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#package-selection) | c008 #9 | traced |
+| ED-OBL-003 | Edition names a retained edition, revision a published revision, previews a duplicate-free sorted accepted list | [`edition-selection-and-applicability.md#package-selection`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#package-selection) | c008 #2, #9 | traced |
+| ED-OBL-004 | Construct availability is checked against the selection; a newer construct is rejected | [`edition-selection-and-applicability.md#package-selection`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#package-selection) | EDN001; c008 #6, #7 | traced |
+| ED-OBL-005 | A module-level selection must equal the package selection or `EDN001` | [`edition-selection-and-applicability.md#package-selection`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#package-selection) | c008 #4 | traced |
+| ED-OBL-006 | Standalone compilation reports the resolved selection in success output and every artifact | [`edition-selection-and-applicability.md#standalone-and-interactive-selection`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#standalone-and-interactive-selection) | c008 #5 | traced |
+| ED-OBL-007 | Legacy inference issues the `EDN002` advisory and reports the inferred selection | [`edition-selection-and-applicability.md#standalone-and-interactive-selection`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#standalone-and-interactive-selection) | c008 #5, #9, #10 | traced |
+| ED-OBL-008 | No numeric-larger rule preference when applicability overlaps | [`edition-selection-and-applicability.md#cumulative-applicability`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#cumulative-applicability) | c008 #2 | partial |
+| ED-OBL-009 | Accept every published stable revision; an exact pin must not float | [`edition-selection-and-applicability.md#retention`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#retention) | c008 #1, #3, #6 | traced |
+| ED-OBL-010 | Changing the current default must not change a package with an explicit pin | [`edition-selection-and-applicability.md#retention`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#retention) | c008 #6 | partial |
+| ED-OBL-011 | A language change occurs at a revision boundary and satisfies its compatibility rule | [`edition-selection-and-applicability.md#prototype-compatibility-boundary`](../60-specification/editions-and-feature-lifecycle/edition-selection-and-applicability.md#prototype-compatibility-boundary) | c008 #1 | partial |
+| ED-OBL-012 | A withdrawn or removed identifier must not be reused | [`feature-lifecycle-and-compatibility.md#lifecycle-registry`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#lifecycle-registry) | c008 #1, #14 | partial |
+| ED-OBL-013 | Reserved features must not appear as package previews | [`feature-lifecycle-and-compatibility.md#states-and-transitions`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#states-and-transitions) | c008 #2 | partial |
+| ED-OBL-014 | A preview name must be in the published preview set | [`feature-lifecycle-and-compatibility.md#preview-selection`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#preview-selection) | PRV001; c008 #2 | traced |
+| ED-OBL-015 | Implementations must not add vendor preview names | [`feature-lifecycle-and-compatibility.md#preview-selection`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#preview-selection) | — | untraced |
+| ED-OBL-016 | A compatibility change identifies the affected dimensions | [`feature-lifecycle-and-compatibility.md#compatibility-dimensions`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#compatibility-dimensions) | c008 #14 | traced |
+| ED-OBL-017 | A consumer must understand the interface schema, nominal identities, and types | [`feature-lifecycle-and-compatibility.md#package-local-interoperation`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#package-local-interoperation) | c008 #11 | traced |
+| ED-OBL-018 | Evidence or inherited public obligation must not appear in the interface | [`feature-lifecycle-and-compatibility.md#package-local-interoperation`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#package-local-interoperation) | c008 #11 | partial |
+| ED-OBL-019 | Generated runtime code must not dispatch on edition | [`feature-lifecycle-and-compatibility.md#package-local-interoperation`](../60-specification/editions-and-feature-lifecycle/feature-lifecycle-and-compatibility.md#package-local-interoperation) | c008 #12 | traced |
+| ED-OBL-020 | Decoding an implication must not rewrite or redigest the artifact | [`interfaces-artifacts-and-governance.md#selection-bearing-interfaces`](../60-specification/editions-and-feature-lifecycle/interfaces-artifacts-and-governance.md#selection-bearing-interfaces) | c008 #10 | traced |
+| ED-OBL-021 | Interfaces, artifacts, and assurance bind the resolved selection | [`interfaces-artifacts-and-governance.md#package-and-assurance-artifacts`](../60-specification/editions-and-feature-lifecycle/interfaces-artifacts-and-governance.md#package-and-assurance-artifacts) | c008 #3, #12, #13 | traced |
+| ED-OBL-022 | Replacing any artifact component without recomputation or reauthorization must fail verification | [`interfaces-artifacts-and-governance.md#package-and-assurance-artifacts`](../60-specification/editions-and-feature-lifecycle/interfaces-artifacts-and-governance.md#package-and-assurance-artifacts) | c008 #15 | traced |
+| ED-OBL-023 | Historical 0.1.6 artifacts remain independently verifiable with no cross-version fallback | [`interfaces-artifacts-and-governance.md#version-aware-signature-domains`](../60-specification/editions-and-feature-lifecycle/interfaces-artifacts-and-governance.md#version-aware-signature-domains) | c008 #8, #15 | traced |
+| ED-OBL-024 | Edition, revision, preview, migration, and governance selection must not cause runtime dispatch | [`interfaces-artifacts-and-governance.md#beam-metadata-and-erasure`](../60-specification/editions-and-feature-lifecycle/interfaces-artifacts-and-governance.md#beam-metadata-and-erasure) | c008 #12 | traced |
+| ED-OBL-025 | No retry of another version domain after a signature failure | [`interfaces-artifacts-and-governance.md#version-aware-signature-domains`](../60-specification/editions-and-feature-lifecycle/interfaces-artifacts-and-governance.md#version-aware-signature-domains) | c008 #15 | traced |
+| ED-OBL-026 | Safe edits are reported; C008 must not modify a file | [`migration-diagnostics-and-conformance.md#safe-edit-suggestions`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#safe-edit-suggestions) | c008 #9 | traced |
+| ED-OBL-027 | The `EDN002` advisory must not alter source, interfaces, BEAM bytes, assurance, signing payloads, or paths | [`migration-diagnostics-and-conformance.md#legacy-manifest-behavior`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#legacy-manifest-behavior) | c008 #5, #10 | traced |
+| ED-OBL-028 | `language-info` returns canonical mutation-free JSON and performs no mutation | [`migration-diagnostics-and-conformance.md#language-information-contract`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#language-information-contract) | c008 #16 | traced |
+| ED-OBL-029 | Corpus: every retained revision plus rejection of invalid pairs, floats, aliases, prereleases, and unknown pins | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #1, #2, #3 | traced |
+| ED-OBL-030 | Corpus: lifecycle edges, identifier non-reuse, stale preview opt-in, revision-bound state lookup | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #14 | partial |
+| ED-OBL-031 | Corpus: private vs public preview propagation and downstream opt-in rejection | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | PRV002; c008 #11 | traced |
+| ED-OBL-032 | Corpus: exact selection binding across digests, specialization, BEAM metadata, assurance, approvals, and governance | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #12, #13 | traced |
+| ED-OBL-033 | Corpus: 0.1.6 verification, 0.1.7 domains, and downgrade, substitution, removal, and tampering attacks | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #15 | traced |
+| ED-OBL-034 | Corpus: default deprecation warnings and project/governance promotion to failure | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | DEP001 | partial |
+| ED-OBL-035 | Corpus: absence of runtime edition dispatch and preservation of 0.1.6 erasure guarantees | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #8, #12 | traced |
+| ED-OBL-036 | Corpus: normalized interfaces across retained revisions and modelled future edition boundaries | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #11 | partial |
+
+Provisional coverage: 26 `traced`, 9 `partial`, 1 `untraced` (ED-OBL-015 vendor-preview prohibition). The compiler-side PR establishes the authoritative mapping and gap set.
 
 ## Open questions
 
