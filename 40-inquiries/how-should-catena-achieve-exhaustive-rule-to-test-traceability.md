@@ -77,17 +77,18 @@ obligation-level identifiers, `MUST`/`MUST NOT` first, clause-conditions 0.1.3
 as pilot, coordinated research/compiler PRs per area mirroring the C010
 `catena-research#24` ↔ `catena#74` pattern.
 
-All eight normative areas are now extracted on the map. The clause-conditions
-pilot (`CC-OBL-001`..`049`) validated the scheme; its compiler side is merged
-with three pilot gaps filled (CC-OBL-016, 034, 040) and seven architectural or
-not-yet-filled gaps allow-listed. Six further areas — type-system (`TS`),
-traits (`TR`), effects (`EF`), governance (`SG`), editions (`ED`), and the
-formal semantic kernel (`FK`) — are extracted on the map and compiler-tagged
-with a per-area coverage gate; five are merged and type-system is open as
-compiler PR #84. The data-and-patterns area (`DP-OBL-001`..`071`, the largest)
-is extracted on the map and is the last area awaiting its compiler tagging PR.
-The archive validator guards registry integrity (well-formed, unique
-identifiers, and a status per row) and reports the obligation counts.
+All eight normative areas are now extracted on the map and merged on the
+compiler side with a per-area coverage gate. The clause-conditions pilot
+(`CC-OBL-001`..`049`) validated the scheme; three pilot gaps were filled
+(CC-OBL-016, 034, 040) and seven architectural or not-yet-filled gaps are
+allow-listed. The other six areas — type-system (`TS`), data-and-patterns
+(`DP`), traits (`TR`), effects (`EF`), governance (`SG`), editions (`ED`), and
+the formal semantic kernel (`FK`) — are compiler-tagged and gated. The
+data-and-patterns area (`DP-OBL-001`..`071`, the largest) filled seven gaps in
+a follow-up (DP-OBL-017, 021, 024, 025, 035, 042, 043); eight remain
+allow-listed, with DP-OBL-048 the one substantive open gap. The archive
+validator guards registry integrity (well-formed, unique identifiers, and a
+status per row) and reports the obligation counts.
 
 ## Outcome
 
