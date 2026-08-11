@@ -85,7 +85,7 @@ area's obligation set is extracted.
 | `EF` effects | ~13 | `c005_effects_test.exs` (19) | untraced |
 | `SG` specifications-and-governance | ~37 | `c006_specification_governance_test.exs` (34) | untraced |
 | `ED` editions | ~32 | `c008_editions_lifecycle_test.exs` (16) | untraced |
-| `FK` formal-semantic-kernel | ~6 | `c010_formal_semantic_kernel_test.exs` (17) | untraced |
+| `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | extraction complete, mapping in progress |
 
 ## Trails
 
@@ -216,6 +216,51 @@ After the pilot validates the scheme, one coordinated research/compiler PR pair
 per area applies it. The research side assigns identifiers and records anchors;
 the compiler side tags and fills tests. The pair mirrors the C010 coordination
 (`catena-research#24` ↔ `catena#74`).
+
+## Registry — formal-semantic-kernel (`FK`, 0.1.8)
+
+Evidence labels refer to tests in
+[`c010_formal_semantic_kernel_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c010_formal_semantic_kernel_test.exs).
+The mapping is provisional; the compiler-side tagging PR establishes the
+authoritative test-to-obligation links and the gap set.
+
+- **c010 #1** *the exact S-expression envelope preserves spans and rejects malformed input*
+- **c010 #2** *parser node and nesting limits are distinct from malformed syntax*
+- **c010 #3** *kernel selection is exact and JSON frontends remain bounded at 0.1.7*
+- **c010 #4** *rows, closed variants, strict order, and integrated core evidence check together*
+- **c010 #5** *regular nominal data is typed, exhaustive, sendable, and fixed-layout*
+- **c010 #6** *trait evidence and deep affine handling are integrated and erased*
+- **c010 #7** *proper tail calls agree between the stepper and generated BEAM*
+- **c010 #8** *selective receive preserves skipped messages and process traps stay local*
+- **c010 #9** *dead-target send drops the message and waiting configurations are quiescent*
+- **c010 #10** *bounded exploration admits both cross-sender receive orders*
+- **c010 #11** *self-send preserves per-sender FIFO order*
+- **c010 #12** *generated closed terms make progress and preserve their checked result types*
+- **c010 #13** *local let bindings generalize only under the value and effect restriction*
+- **c010 #14** *interfaces bind public process identities and reject substitution*
+- **c010 #15** *sendability, process contexts, and forged core evidence are rejected*
+- **c010 #16** *explicit trap is a typed bottom and lowers to the fixed BEAM trap*
+- **c010 #17** *kernel artifacts and interfaces are deterministic and record the kernel frontend*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| FK-OBL-001 | Accepted kernel module elaborates to unified typed core, independent verification, and small-step meaning | [`overview-and-applicability.md#integrated-boundary`](../60-specification/formal-semantic-kernel/overview-and-applicability.md#integrated-boundary) | c010 #4, #12 | traced |
+| FK-OBL-002 | Command or package selection must equal the written edition and revision | [`canonical-kernel-syntax.md#input-envelope`](../60-specification/formal-semantic-kernel/canonical-kernel-syntax.md#input-envelope) | c010 #3 | traced |
+| FK-OBL-003 | Elaboration preserves the span of the source form | [`canonical-kernel-syntax.md#source-locations`](../60-specification/formal-semantic-kernel/canonical-kernel-syntax.md#source-locations) | c010 #1 | traced |
+| FK-OBL-004 | Verifier independently rechecks the integrated kernel judgment | [`static-semantics-and-elaboration.md#independent-verification`](../60-specification/formal-semantic-kernel/static-semantics-and-elaboration.md#independent-verification) | c010 #4, #15 | traced |
+| FK-OBL-005 | Tail calls, including after selection and receive loops, must not grow the call stack | [`sequential-dynamics.md#functions-bindings-and-branching`](../60-specification/formal-semantic-kernel/sequential-dynamics.md#functions-bindings-and-branching) | c010 #7 | traced |
+| FK-OBL-006 | Local filesystem path is diagnostic context only; it must not alter interface identity or BEAM bytes | [`beam-diagnostics-and-conformance.md#fixed-beam-representation`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#fixed-beam-representation) | c010 #17 | traced |
+| FK-OBL-007 | Envelope accept plus malformed, delimiter, unknown-form, duplicate-export, node-limit, and depth-limit rejection | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | SYN001-003; c010 #1, #2 | traced |
+| FK-OBL-008 | Records, open-row rejection, closed/open variant coverage, constructors, local generalization, forged evidence, fixed layout, strict order | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #4, #5, #13 | traced |
+| FK-OBL-009 | One source fixture combining value rows, a trait call, a handled ordinary effect, a process entry, spawn, send, and receive | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #4, #5, #6, #8 | partial |
+| FK-OBL-010 | Sendability, process-context rejection, interface substitution, and forged-core attacks | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | PRC001-004; c010 #14, #15 | traced |
+| FK-OBL-011 | Self, per-sender order, cross-sender outcomes, skipped-message preservation, dead-target send, return, trap, and quiescence | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #8, #9, #10, #11, #16 | traced |
+| FK-OBL-012 | Proper-tail-call stress cases | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #7 | traced |
+| FK-OBL-013 | Generated closed-term progress, result-type, and reference/BEAM agreement | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #12 | traced |
+| FK-OBL-014 | Bounded all-schedule reference exploration and focused reference/BEAM observations | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #10 | traced |
+| FK-OBL-015 | Exact selection, backward-interface, deterministic artifact, erasure, and sole-OTP-compiler boundary | [`beam-diagnostics-and-conformance.md#required-executable-evidence`](../60-specification/formal-semantic-kernel/beam-diagnostics-and-conformance.md#required-executable-evidence) | c010 #3, #14, #17 | partial |
+
+Provisional coverage: 13 `traced`, 2 `partial` (FK-OBL-009 combined fixture, FK-OBL-015 sole-OTP-boundary is architectural). The compiler-side PR establishes the authoritative mapping and gap set.
 
 ## Open questions
 
