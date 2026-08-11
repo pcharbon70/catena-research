@@ -84,9 +84,10 @@ compiler side with a per-area coverage gate. The clause-conditions pilot
 allow-listed. The other six areas — type-system (`TS`), data-and-patterns
 (`DP`), traits (`TR`), effects (`EF`), governance (`SG`), editions (`ED`), and
 the formal semantic kernel (`FK`) — are compiler-tagged and gated. The
-data-and-patterns area (`DP-OBL-001`..`071`, the largest) filled seven gaps in
-a follow-up (DP-OBL-017, 021, 024, 025, 035, 042, 043); eight remain
-allow-listed, with DP-OBL-048 the one substantive open gap. The archive
+data-and-patterns area (`DP-OBL-001`..`071`, the largest) filled eight gaps in
+follow-ups (DP-OBL-017, 021, 024, 025, 035, 042, 043, 048); the seven remaining
+allow-listed entries are all architectural, future-version, or P117
+diagnostic-quality boundaries. The archive
 validator guards registry integrity (well-formed, unique identifiers, and a
 status per row) and reports the obligation counts.
 

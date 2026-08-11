@@ -83,7 +83,7 @@ sibling compiler repository.
 | --- | --- | --- | --- |
 | `CC` clause-conditions | 49 | `c003_clause_condition_test.exs` (10) | compiler-tagged + gated (merged); 3 gaps filled, 7 allow-listed |
 | `TS` type-system | 44 | `type_conformance_test.exs` + `compiler_test.exs` (13) | compiler-tagged + gated (PR #84 open) |
-| `DP` data-and-patterns | 71 | `c002_data_test.exs` (28) | compiler-tagged + gated (merged); 7 gaps filled, 8 allow-listed |
+| `DP` data-and-patterns | 71 | `c002_data_test.exs` (29) | compiler-tagged + gated (merged); all substantive gaps filled, 7 architectural/future allow-listed |
 | `TR` traits | 32 | `c004_categorical_test.exs` (9) | compiler-tagged + gated (merged) |
 | `EF` effects | 27 | `c005_effects_test.exs` (19) | compiler-tagged + gated (merged) |
 | `SG` specifications-and-governance | 44 | `c006_specification_governance_test.exs` (34) | compiler-tagged + gated (merged) |
@@ -634,6 +634,7 @@ links and the gap set.
 - **c002 #26** *a constructor pattern with the wrong arity is rejected (M003)*
 - **c002 #27** *an existential variable appearing in the datatype result is rejected (T009)*
 - **c002 #28** *a GADT pattern match without an enclosing signature is rejected (T010)*
+- **c002 #29** *coverage uses GADT equalities to exclude impossible constructors but not to excuse a missing case (M001 over a generic index)*
 
 ### Declarations and nominal identity
 
@@ -701,7 +702,7 @@ links and the gap set.
 | DP-OBL-045 | The branch environment is not generalized under active equality; an impossible constructor is excluded from coverage | [`gadt-and-existential-patterns.md#branch-local-checking`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#branch-local-checking) | c002 #15 | partial |
 | DP-OBL-046 | No rigid existential or branch-local equality escapes to a result, scheme, closure, or interface; escape is invalid (T009) | [`gadt-and-existential-patterns.md#escape-prevention`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#escape-prevention) | T009; c002 #16 | traced |
 | DP-OBL-047 | The verifier independently checks field arity, nominal result identity, branch binding types, equality scope, and non-escape | [`gadt-and-existential-patterns.md#typed-core-evidence`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#typed-core-evidence) | c002 #21 | partial |
-| DP-OBL-048 | Coverage may use local equalities to reject impossible constructors but must not justify an unsound branch type | [`gadt-and-existential-patterns.md#typed-core-evidence`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#typed-core-evidence) | — | untraced |
+| DP-OBL-048 | Coverage may use local equalities to reject impossible constructors but must not justify an unsound branch type | [`gadt-and-existential-patterns.md#typed-core-evidence`](../60-specification/data-and-patterns/gadt-and-existential-patterns.md#typed-core-evidence) | M001; c002 #29 | traced |
 
 ### Interfaces and representation
 
@@ -746,15 +747,14 @@ links and the gap set.
 | DP-OBL-070 | Input JSON AST 0.1.1 is normalized into the 0.1.2 internal form and carries no datatype declarations | [`data-and-pattern-overview.md#compiler-boundary`](../60-specification/data-and-patterns/data-and-pattern-overview.md#compiler-boundary) | c002 #2 | traced |
 | DP-OBL-071 | The verifier independently rejects malformed constructor, binding, equality, coverage, derivation, or layout evidence | [`data-and-pattern-overview.md#compiler-boundary`](../60-specification/data-and-patterns/data-and-pattern-overview.md#compiler-boundary) | c002 #21 | traced |
 
-Provisional coverage: 42 `traced`, 21 `partial`, 8 `untraced`. Six of the
-untraced obligations are architectural, future-version, or diagnostic-quality
-boundaries with no focused c002 unit (DP-OBL-026 future refutability context
-P044; DP-OBL-056 backend reconstruction prevention; DP-OBL-057 L001
-implementation-failure path; DP-OBL-058 sole-OTP-boundary architectural;
-DP-OBL-059 future G095 validation boundary; DP-OBL-065 P117 diagnostic
-quality). Two more have no current focused unit: DP-OBL-003 (alias is a future
-declaration form) and DP-OBL-048 (coverage must not justify an unsound branch
-type), the substantive open gap.
+Provisional coverage: 43 `traced`, 21 `partial`, 7 `untraced`. Every substantive
+data-and-patterns obligation now has a focused test. The seven remaining
+untraced obligations are all architectural, future-version, or diagnostic-quality
+boundaries with no focused c002 unit (DP-OBL-003 future alias declaration form;
+DP-OBL-026 future refutability context P044; DP-OBL-056 backend reconstruction
+prevention; DP-OBL-057 L001 implementation-failure path; DP-OBL-058
+sole-OTP-boundary architectural; DP-OBL-059 future G095 validation boundary;
+DP-OBL-065 P117 diagnostic quality).
 
 ## Open questions
 
