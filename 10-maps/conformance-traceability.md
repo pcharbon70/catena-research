@@ -83,7 +83,7 @@ area's obligation set is extracted.
 | `DP` data-and-patterns | ~61 | `c002_data_test.exs` (22) | untraced |
 | `TR` traits | 32 | `c004_categorical_test.exs` (9) | extraction complete, mapping in progress |
 | `EF` effects | 27 | `c005_effects_test.exs` (19) | extraction complete, mapping in progress |
-| `SG` specifications-and-governance | ~37 | `c006_specification_governance_test.exs` (34) | untraced |
+| `SG` specifications-and-governance | 44 | `c006_specification_governance_test.exs` (34) | extraction complete, mapping in progress |
 | `ED` editions | 36 | `c008_editions_lifecycle_test.exs` (16) | extraction complete, mapping in progress |
 | `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | extraction complete, mapping in progress |
 
@@ -441,6 +441,98 @@ authoritative test-to-obligation links and the gap set.
 | ED-OBL-036 | Corpus: normalized interfaces across retained revisions and modelled future edition boundaries | [`migration-diagnostics-and-conformance.md#conformance-corpus`](../60-specification/editions-and-feature-lifecycle/migration-diagnostics-and-conformance.md#conformance-corpus) | c008 #11 | partial |
 
 Provisional coverage: 26 `traced`, 9 `partial`, 1 `untraced` (ED-OBL-015 vendor-preview prohibition). The compiler-side PR establishes the authoritative mapping and gap set.
+
+## Registry — specifications-and-governance (`SG`, 0.1.6)
+
+Evidence labels refer to tests in
+[`c006_specification_governance_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c006_specification_governance_test.exs).
+The mapping is provisional; the compiler-side tagging PR establishes the
+authoritative test-to-obligation links and the gap set. SG has the densest
+test corpus of the traced areas.
+
+- **c006 #1** *Catena's JCS profile is deterministic and rejects ambiguous signed JSON*
+- **c006 #2** *OTP 29 Ed25519 verification agrees with the RFC 8032 empty-message vector*
+- **c006 #3** *AST 0.1.6 type-checks exact rules, exports claim summaries, and erases checkers*
+- **c006 #4** *fully discharged specifications do not change emitted BEAM bytes*
+- **c006 #5** *runtime references to verification-only definitions fail before lowering*
+- **c006 #6** *claim subject and example failures keep stable diagnostic families*
+- **c006 #7** *all 0.1.6 claim subject kinds resolve against the typed module and package graph*
+- **c006 #8** *semantic claim digests ignore JSON formatting but change with meaning*
+- **c006 #9** *mistyped, effectful, failing, and over-budget rule checkers remain distinct*
+- **c006 #10** *verification definitions cannot become runtime exports*
+- **c006 #11** *the rule evaluator reports deterministic budget exhaustion separately*
+- **c006 #12** *production policy evaluation agrees with the independent oracle*
+- **c006 #13** *governance combines every matching policy additively and fails closed*
+- **c006 #14** *the 20000-step policy budget is shared across every matching policy*
+- **c006 #15** *package, module, subject, action, output, interface, and profile scopes add*
+- **c006 #16** *trust roots count distinct Ed25519 principals and require old plus new rotation authority*
+- **c006 #17** *signature thresholds reject duplicate actors and cross-domain substitution*
+- **c006 #18** *predeclared recovery can replace normal authority without new-root self-authorization*
+- **c006 #19** *delegated signatures remain bounded by action, subject, profile, and sequence*
+- **c006 #20** *assumptions count only when policy names them and an authorized role signs the exact decision*
+- **c006 #21** *external attestations are signed, sequence-bounded, and claim-bound*
+- **c006 #22** *lifecycle replay rejects skipped, terminal, and broken hash-chain transitions*
+- **c006 #23** *activate requires a signed lifecycle transition into Active*
+- **c006 #24** *lifecycle replay covers every valid edge and rejects reordering*
+- **c006 #25** *0.1.6 package build stages outputs, emits a sidecar, and verifies exact artifacts*
+- **c006 #26** *fully discharged specifications leave every package BEAM byte-identical*
+- **c006 #27** *a governed build consumes compiler evidence and emits the external signing payload*
+- **c006 #28** *imported interfaces carry claim obligations and semantic dependency digests*
+- **c006 #29** *signed assurance manifests bind the exact payload and artifact*
+- **c006 #30** *publish exposes an exact candidate payload, writes nothing, then accepts external signing*
+- **c006 #31** *failed governed gates and unsafe paths leave final outputs absent*
+- **c006 #32** *package-level claim subjects must name declared outputs, interfaces, actions, and profiles*
+- **c006 #33** *artifact substitution invalidates a previously valid assurance manifest*
+- **c006 #34** *assurance verification refuses artifact paths that escape through symlinks*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| SG-OBL-001 | Every rule and example is well formed, type checked, and evaluated | [`overview-and-adoption.md#adoption-boundary`](../60-specification/specifications-and-governance/overview-and-adoption.md#adoption-boundary) | c006 #3 | traced |
+| SG-OBL-002 | Verification material satisfies the erasure and artifact-binding rules | [`overview-and-adoption.md#adoption-boundary`](../60-specification/specifications-and-governance/overview-and-adoption.md#adoption-boundary) | c006 #3, #27 | traced |
+| SG-OBL-003 | Every matching policy is enforced | [`overview-and-adoption.md#adoption-boundary`](../60-specification/specifications-and-governance/overview-and-adoption.md#adoption-boundary) | c006 #13 | traced |
+| SG-OBL-004 | Malformed, missing, stale, unauthorized, or contradictory material is rejected | [`overview-and-adoption.md#adoption-boundary`](../60-specification/specifications-and-governance/overview-and-adoption.md#adoption-boundary) | c006 #13 | partial |
+| SG-OBL-005 | No ignore/force switch reports a governed action as ungoverned | [`overview-and-adoption.md#adoption-boundary`](../60-specification/specifications-and-governance/overview-and-adoption.md#adoption-boundary) | — | untraced |
+| SG-OBL-006 | Narrower scope must not weaken policy inherited from a broader scope | [`overview-and-adoption.md#adoption-boundary`](../60-specification/specifications-and-governance/overview-and-adoption.md#adoption-boundary) | c006 #13, #15 | traced |
+| SG-OBL-007 | Diagnostics use formal terminology internally while leading with source concepts | [`overview-and-adoption.md#public-and-internal-vocabulary`](../60-specification/specifications-and-governance/overview-and-adoption.md#public-and-internal-vocabulary) | c006 #6 | partial |
+| SG-OBL-008 | A future parser must elaborate to the same specification graph | [`claims-examples-and-checking.md#module-declarations`](../60-specification/specifications-and-governance/claims-examples-and-checking.md#module-declarations) | c006 #3 | partial |
+| SG-OBL-009 | The compiler resolves subjects against the typed module and package graph | [`claims-examples-and-checking.md#subject-resolution`](../60-specification/specifications-and-governance/claims-examples-and-checking.md#subject-resolution) | SPC001; c006 #7, #32 | traced |
+| SG-OBL-010 | A meaning-preserving change keeps the semantic digest; a meaning change alters it | [`claims-examples-and-checking.md#stable-identity-and-semantic-digest`](../60-specification/specifications-and-governance/claims-examples-and-checking.md#stable-identity-and-semantic-digest) | c006 #8 | traced |
+| SG-OBL-011 | An assumption remains distinct from technical evidence and approval | [`claims-examples-and-checking.md#claim-vocabulary`](../60-specification/specifications-and-governance/claims-examples-and-checking.md#claim-vocabulary) | c006 #20 | traced |
+| SG-OBL-012 | A rule checker is verification-only, pure, total, and effect-free | [`claims-examples-and-checking.md#rule-checking-fragment`](../60-specification/specifications-and-governance/claims-examples-and-checking.md#rule-checking-fragment) | SPC003; c006 #9, #11 | traced |
+| SG-OBL-013 | Verification-only definitions are absent from the runtime definition | [`claims-examples-and-checking.md#erasure-dependency`](../60-specification/specifications-and-governance/claims-examples-and-checking.md#erasure-dependency) | ERS001; c006 #5, #10 | traced |
+| SG-OBL-014 | A signature from one version domain must not verify in another | [`evidence-identity-and-lifecycle.md#canonical-signed-values`](../60-specification/specifications-and-governance/evidence-identity-and-lifecycle.md#canonical-signed-values) | c006 #17 | traced |
+| SG-OBL-015 | The compiler verifies supplied signatures and must never handle private keys | [`evidence-identity-and-lifecycle.md#offline-trust-root`](../60-specification/specifications-and-governance/evidence-identity-and-lifecycle.md#offline-trust-root) | c006 #27, #30 | traced |
+| SG-OBL-016 | `activate` requires a contiguous signed `Accepted -> Active` transition | [`evidence-identity-and-lifecycle.md#immutable-transition-history`](../60-specification/specifications-and-governance/evidence-identity-and-lifecycle.md#immutable-transition-history) | c006 #23 | traced |
+| SG-OBL-017 | Approval, claim, subject, and artifact binding exactly reproduces the decision | [`evidence-identity-and-lifecycle.md#immutable-transition-history`](../60-specification/specifications-and-governance/evidence-identity-and-lifecycle.md#immutable-transition-history) | c006 #28, #29 | traced |
+| SG-OBL-018 | Sequences are contiguous, prior digests match, and every edge appears; reordering, deletion, and skipping are rejected | [`evidence-identity-and-lifecycle.md#immutable-transition-history`](../60-specification/specifications-and-governance/evidence-identity-and-lifecycle.md#immutable-transition-history) | GOV004; c006 #22, #24 | traced |
+| SG-OBL-019 | A module declaration must not contain private key material | [`scopes-policy-and-authorization.md#placement-and-coverage`](../60-specification/specifications-and-governance/scopes-policy-and-authorization.md#placement-and-coverage) | c006 #27 | partial |
+| SG-OBL-020 | Participating policies combine additively; a narrower policy must not cancel a broader requirement | [`scopes-policy-and-authorization.md#placement-and-coverage`](../60-specification/specifications-and-governance/scopes-policy-and-authorization.md#placement-and-coverage) | c006 #13, #15 | traced |
+| SG-OBL-021 | An invalid signature or unrecognized subject denies without shadowing or guessing | [`scopes-policy-and-authorization.md#decision-combination`](../60-specification/specifications-and-governance/scopes-policy-and-authorization.md#decision-combination) | GOV003; c006 #17 | traced |
+| SG-OBL-022 | Ungoverned-shaped material encoded as a governed 0.1.6 action is rejected | [`scopes-policy-and-authorization.md#protected-actions`](../60-specification/specifications-and-governance/scopes-policy-and-authorization.md#protected-actions) | c006 #13 | partial |
+| SG-OBL-023 | A failed gate before final output leaves no new or partially replaced output | [`artifacts-erasure-and-cli.md#package-build-transaction`](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md#package-build-transaction) | c006 #25, #30, #31 | traced |
+| SG-OBL-024 | Declared output paths stay within the manifest directory unless explicitly allowed | [`artifacts-erasure-and-cli.md#package-build-transaction`](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md#package-build-transaction) | ART001; c006 #34 | traced |
+| SG-OBL-025 | An admitted build must not change BEAM execution; changing a bound byte fails later verification | [`artifacts-erasure-and-cli.md#assurance-manifest`](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md#assurance-manifest) | c006 #25, #29, #33 | traced |
+| SG-OBL-026 | Verification digests must not occur in runtime positions | [`artifacts-erasure-and-cli.md#erasure-rule`](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md#erasure-rule) | c006 #3, #5, #10 | traced |
+| SG-OBL-027 | Adding fully discharged specifications must produce byte-identical output | [`artifacts-erasure-and-cli.md#erasure-rule`](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md#erasure-rule) | c006 #4, #26 | traced |
+| SG-OBL-028 | Verification-only values must not be exported as callable runtime values | [`artifacts-erasure-and-cli.md#interface-boundary`](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md#interface-boundary) | c006 #3, #10, #28 | traced |
+| SG-OBL-029 | Diagnostics name action, subject, policy, requirement, digest/state, and path | [`diagnostics-and-conformance.md#stable-diagnostic-families`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#stable-diagnostic-families) | c006 #6 | traced |
+| SG-OBL-030 | The immutable conformance revision passes the required corpus | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 corpus | partial |
+| SG-OBL-031 | A separately structured reference evaluator reproduces the production decision | [`diagnostics-and-conformance.md#independent-oracle`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#independent-oracle) | c006 #12 | traced |
+| SG-OBL-032 | The reference evaluator must not call the production policy evaluator | [`diagnostics-and-conformance.md#independent-oracle`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#independent-oracle) | c006 #12 | traced |
+| SG-OBL-033 | Corpus: subject resolution for every supported kind and rejection of future kinds | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #7, #32 | traced |
+| SG-OBL-034 | Corpus: typed, mistyped, effectful, and runtime-referenced rule checkers | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #9 | traced |
+| SG-OBL-035 | Corpus: counterexample, runtime-error, and budget-exhausted examples | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | EVD002, EVD003; c006 #11 | traced |
+| SG-OBL-036 | Corpus: formatting-invariant and meaning-sensitive semantic digest | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #8 | traced |
+| SG-OBL-037 | Corpus: additive policies and explicit deny | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #13, #15 | traced |
+| SG-OBL-038 | Corpus: duplicate-actor, threshold, assumption-authorization, and policy-budget cases | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #14, #16, #17, #20 | traced |
+| SG-OBL-039 | Corpus: valid/invalid Ed25519, domain substitution, duplicate names, unsafe integers, noncanonical payloads | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #1, #2, #17 | traced |
+| SG-OBL-040 | Corpus: evidence/artifact substitution, revocation, replay, and logical-window attacks | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #19, #21, #33 | traced |
+| SG-OBL-041 | Corpus: every valid lifecycle edge and every invalid/backward/terminal/skipped/reordered/broken edge | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #22, #24 | traced |
+| SG-OBL-042 | Corpus: normal dual-threshold root rotation and predeclared recovery | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #16, #18 | traced |
+| SG-OBL-043 | Corpus: output traversal, symlink escape, collision, and failed-gate no-output | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | ART001; c006 #31, #34 | traced |
+| SG-OBL-044 | Corpus: byte-identical BEAM with and without fully discharged specifications | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #4, #26 | traced |
+
+Provisional coverage: 36 `traced`, 7 `partial`, 1 `untraced` (SG-OBL-005 no ignore/force switch). SG has the densest test corpus of the traced areas.
 
 ## Open questions
 
