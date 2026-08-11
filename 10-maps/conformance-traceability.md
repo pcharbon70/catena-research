@@ -79,7 +79,7 @@ area's obligation set is extracted.
 | Area | `MUST`/`MUST NOT` | Compiler tests (file) | Status |
 | --- | --- | --- | --- |
 | `CC` clause-conditions | 49 | `c003_clause_condition_test.exs` (7) | pilot — extraction complete, 11 gaps pending fill |
-| `TS` type-system | ~44 | `type_conformance_test.exs` (5) | untraced |
+| `TS` type-system | 44 | `type_conformance_test.exs` + `compiler_test.exs` (13) | extraction complete, mapping in progress |
 | `DP` data-and-patterns | ~61 | `c002_data_test.exs` (22) | untraced |
 | `TR` traits | 32 | `c004_categorical_test.exs` (9) | extraction complete, mapping in progress |
 | `EF` effects | 27 | `c005_effects_test.exs` (19) | extraction complete, mapping in progress |
@@ -533,6 +533,67 @@ test corpus of the traced areas.
 | SG-OBL-044 | Corpus: byte-identical BEAM with and without fully discharged specifications | [`diagnostics-and-conformance.md#required-corpus`](../60-specification/specifications-and-governance/diagnostics-and-conformance.md#required-corpus) | c006 #4, #26 | traced |
 
 Provisional coverage: 36 `traced`, 7 `partial`, 1 `untraced` (SG-OBL-005 no ignore/force switch). SG has the densest test corpus of the traced areas.
+
+## Registry — type-system (`TS`, 0.1.1)
+
+Evidence labels refer to tests in
+[`type_conformance_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/type_conformance_test.exs)
+(`tc#N`) and
+[`compiler_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/compiler_test.exs)
+(`co#N`). TS is the foundational area: many of its obligations are also
+exercised transitively by the data (`c002`), trait (`c004`), effect (`c005`),
+kernel (`c010`), and resumption-token suites; those are noted where relevant.
+The mapping is provisional; the compiler-side tagging PR establishes the
+authoritative links and gap set.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| TS-OBL-001 | The compiler identifies an advanced-profile annotation and must not silently weaken the principal-core guarantee | [`type-system-overview.md#two-guarantee-profiles`](../60-specification/type-system/type-system-overview.md#two-guarantee-profiles) | T010; co#6 | partial |
+| TS-OBL-002 | Both profiles satisfy the shared static contract | [`type-system-overview.md#shared-static-contract`](../60-specification/type-system/type-system-overview.md#shared-static-contract) | c002–c010 | partial |
+| TS-OBL-003 | All exported values have explicit signatures; private principal-core generalizes | [`type-system-overview.md#shared-static-contract`](../60-specification/type-system/type-system-overview.md#shared-static-contract) | T008; co#2 | traced |
+| TS-OBL-004 | Higher-rank quantification is explicit; the implementation prints kinds | [`type-language-and-kinds.md#type-grammar`](../60-specification/type-system/type-language-and-kinds.md#type-grammar) | co#6 | traced |
+| TS-OBL-005 | Unification performs an occurs check and a kind check | [`type-language-and-kinds.md#rows-and-kinds`](../60-specification/type-system/type-language-and-kinds.md#rows-and-kinds) | T003, T004; co#5 | traced |
+| TS-OBL-006 | Every exported value declares a signature | [`type-language-and-kinds.md#signatures-and-exports`](../60-specification/type-system/type-language-and-kinds.md#signatures-and-exports) | T008; co#2 | traced |
+| TS-OBL-007 | Type aliases are expanded for equality and preserved where possible | [`type-language-and-kinds.md#signatures-and-exports`](../60-specification/type-system/type-language-and-kinds.md#signatures-and-exports) | — | untraced |
+| TS-OBL-008 | Inference follows Algorithm W with kinded, occurs-checked unification | [`principal-inference-and-generalization.md#declarative-judgment`](../60-specification/type-system/principal-inference-and-generalization.md#declarative-judgment) | tc#1, co#1 | traced |
+| TS-OBL-009 | Principal-core inference returns a scheme at least as general as every alternative | [`principal-inference-and-generalization.md#declarative-judgment`](../60-specification/type-system/principal-inference-and-generalization.md#declarative-judgment) | tc#1 | traced |
+| TS-OBL-010 | Generalization rejects ambiguity | [`principal-inference-and-generalization.md#generalization`](../60-specification/type-system/principal-inference-and-generalization.md#generalization) | T006 | partial |
+| TS-OBL-011 | A skolem must not escape its signature scope | [`principal-inference-and-generalization.md#recursive-bindings-and-signatures`](../60-specification/type-system/principal-inference-and-generalization.md#recursive-bindings-and-signatures) | T009; co#4 | traced |
+| TS-OBL-012 | Solver work-list order yields alpha-equivalent schemes and equivalent typed core | [`principal-inference-and-generalization.md#determinism-and-failure`](../60-specification/type-system/principal-inference-and-generalization.md#determinism-and-failure) | c004 | partial |
+| TS-OBL-013 | Infinite types, kind mismatches, and unresolved constraints are rejected | [`principal-inference-and-generalization.md#determinism-and-failure`](../60-specification/type-system/principal-inference-and-generalization.md#determinism-and-failure) | T003, T004, T007; co#5 | traced |
+| TS-OBL-014 | Lacks constraints survive generalization | [`rows-traits-and-effects.md#unique-value-rows`](../60-specification/type-system/rows-traits-and-effects.md#unique-value-rows) | T005; tc#2 | traced |
+| TS-OBL-015 | Capability resolution is lexical; the runtime must not search for a handler | [`rows-traits-and-effects.md#duplicate-effect-rows-and-capabilities`](../60-specification/type-system/rows-traits-and-effects.md#duplicate-effect-rows-and-capabilities) | tc#3; c005 | traced |
+| TS-OBL-016 | Duplicate effect rows preserve multiplicity and identity | [`rows-traits-and-effects.md#duplicate-effect-rows-and-capabilities`](../60-specification/type-system/rows-traits-and-effects.md#duplicate-effect-rows-and-capabilities) | tc#3 | traced |
+| TS-OBL-017 | An instance head is headed by an owned nominal type constructor | [`rows-traits-and-effects.md#traits`](../60-specification/type-system/rows-traits-and-effects.md#traits) | T007; tc#4 | traced |
+| TS-OBL-018 | Visible instances must not unify (no overlap) | [`rows-traits-and-effects.md#traits`](../60-specification/type-system/rows-traits-and-effects.md#traits) | T007; tc#4 | traced |
+| TS-OBL-019 | Resolution is stable under import order | [`rows-traits-and-effects.md#traits`](../60-specification/type-system/rows-traits-and-effects.md#traits) | tc#4 | partial |
+| TS-OBL-020 | Functional-dependency coverage: output positions occur in inputs | [`rows-traits-and-effects.md#traits`](../60-specification/type-system/rows-traits-and-effects.md#traits) | tc#4 | partial |
+| TS-OBL-021 | Functional-dependency determinism: equal inputs agree on outputs | [`rows-traits-and-effects.md#traits`](../60-specification/type-system/rows-traits-and-effects.md#traits) | — | partial |
+| TS-OBL-022 | Associated types normalize only after instance selection | [`rows-traits-and-effects.md#traits`](../60-specification/type-system/rows-traits-and-effects.md#traits) | tc#4 | partial |
+| TS-OBL-023 | Each solver step progresses, rechecks, or reports a diagnostic | [`rows-traits-and-effects.md#solver-interface`](../60-specification/type-system/rows-traits-and-effects.md#solver-interface) | c004 | partial |
+| TS-OBL-024 | Solver scheduling must not affect accepted programs | [`rows-traits-and-effects.md#solver-interface`](../60-specification/type-system/rows-traits-and-effects.md#solver-interface) | c004 | partial |
+| TS-OBL-025 | A GADT-matching function has an enclosing signature | [`advanced-type-checking.md#gadt-patterns`](../60-specification/type-system/advanced-type-checking.md#gadt-patterns) | c002 | partial |
+| TS-OBL-026 | GADT equalities must not refine sibling branches or the environment | [`advanced-type-checking.md#gadt-patterns`](../60-specification/type-system/advanced-type-checking.md#gadt-patterns) | tc#5 | traced |
+| TS-OBL-027 | Existential constructor variables are explicit and must not escape the branch | [`advanced-type-checking.md#gadt-patterns`](../60-specification/type-system/advanced-type-checking.md#gadt-patterns) | T009; tc#5 | traced |
+| TS-OBL-028 | Rigid existentials must not be generalized without a local signature | [`advanced-type-checking.md#gadt-patterns`](../60-specification/type-system/advanced-type-checking.md#gadt-patterns) | tc#5 | traced |
+| TS-OBL-029 | The affine resumption runtime token rejects double consumption | [`advanced-type-checking.md#affine-resumptions`](../60-specification/type-system/advanced-type-checking.md#affine-resumptions) | T011; resumption_token, c005 | traced |
+| TS-OBL-030 | Advanced-profile inference identifies the profile boundary | [`advanced-type-checking.md#explicit-exclusions`](../60-specification/type-system/advanced-type-checking.md#explicit-exclusions) | T010; co#6 | traced |
+| TS-OBL-031 | Every accepted term elaborates to a typed core | [`typed-core-elaboration.md#explicit-core`](../60-specification/type-system/typed-core-elaboration.md#explicit-core) | co#8; c002 | traced |
+| TS-OBL-032 | Source spans remain attached through elaboration | [`typed-core-elaboration.md#explicit-core`](../60-specification/type-system/typed-core-elaboration.md#explicit-core) | c010 | partial |
+| TS-OBL-033 | An inference-independent verifier checks the elaborated core | [`typed-core-elaboration.md#core-verifier`](../60-specification/type-system/typed-core-elaboration.md#core-verifier) | c002, c010 | traced |
+| TS-OBL-034 | The verifier rechecks types, effects, evidence, coercion, and affine use; lowering accepts only verified core | [`typed-core-elaboration.md#core-verifier`](../60-specification/type-system/typed-core-elaboration.md#core-verifier) | c002, c010 | traced |
+| TS-OBL-035 | A verifier failure after successful surface checking is an implementation defect, not a user error | [`typed-core-elaboration.md#core-verifier`](../60-specification/type-system/typed-core-elaboration.md#core-verifier) | — | partial |
+| TS-OBL-036 | The backend uses OTP Erlang source or Abstract Format; it must not emit BEAM assembly or construct `.beam` directly | [`typed-core-elaboration.md#beam-only-backend-boundary`](../60-specification/type-system/typed-core-elaboration.md#beam-only-backend-boundary) | co#7 | traced |
+| TS-OBL-037 | Every rejection has a stable family identifier, primary span, and explanation | [`diagnostics-and-conformance.md#diagnostic-contract`](../60-specification/type-system/diagnostics-and-conformance.md#diagnostic-contract) | T001–T012; co#3, co#6 | traced |
+| TS-OBL-038 | A later edition may subdivide a family but must document the compatibility mapping | [`diagnostics-and-conformance.md#diagnostic-contract`](../60-specification/type-system/diagnostics-and-conformance.md#diagnostic-contract) | — | untraced |
+| TS-OBL-039 | Alpha-renaming and declaration-order variants normalize to the same result | [`diagnostics-and-conformance.md#executable-input-boundary`](../60-specification/type-system/diagnostics-and-conformance.md#executable-input-boundary) | tc#1 | partial |
+| TS-OBL-040 | Corpus: positive and negative tests for every diagnostic family | [`diagnostics-and-conformance.md#conformance-gate`](../60-specification/type-system/diagnostics-and-conformance.md#conformance-gate) | co#3, co#5, co#6 | partial |
+| TS-OBL-041 | Corpus: principal-core examples versus a separately structured declarative checker | [`diagnostics-and-conformance.md#conformance-gate`](../60-specification/type-system/diagnostics-and-conformance.md#conformance-gate) | tc#1 | traced |
+| TS-OBL-042 | Corpus: solver-order and alpha-renaming stability | [`diagnostics-and-conformance.md#conformance-gate`](../60-specification/type-system/diagnostics-and-conformance.md#conformance-gate) | tc#1 | partial |
+| TS-OBL-043 | Corpus: typed-core verification and OTP 29 compile, load, and execute | [`diagnostics-and-conformance.md#conformance-gate`](../60-specification/type-system/diagnostics-and-conformance.md#conformance-gate) | co#7 | traced |
+| TS-OBL-044 | Corpus: runtime affine double-consumption and no direct BEAM output path | [`diagnostics-and-conformance.md#conformance-gate`](../60-specification/type-system/diagnostics-and-conformance.md#conformance-gate) | resumption_token, co#7 | traced |
+
+Provisional coverage: 26 `traced`, 16 `partial`, 2 `untraced` (TS-OBL-007 type aliases; TS-OBL-038 family-subdivision mapping). TS is foundational: many `partial` obligations are exercised transitively by the data, trait, effect, and kernel suites, which the compiler-side gate scans as well.
 
 ## Open questions
 
