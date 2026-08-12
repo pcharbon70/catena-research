@@ -2,7 +2,7 @@
 title: "How Should Catena Achieve Exhaustive Rule-to-Test Traceability?"
 kind: inquiry
 created: "2026-08-10"
-status: open
+status: resolved
 tags:
   - conformance
   - specification
@@ -93,9 +93,14 @@ status per row) and reports the obligation counts.
 
 ## Outcome
 
-Open. The inquiry resolves to C011 when all eight normative areas' `MUST`/
-`MUST NOT` obligations carry a permanent identifier, a resolved normative
-anchor, and at least one tagged passing test; when
-`validate_archive.py` enforces the registry; and when the compiler coverage
-check is green. `SHOULD`, `MAY`, declarative rules, and normative definitions
-then become a new checklist item rather than part of C011.
+Resolved as C011 on 2026-08-12. All eight normative areas' `MUST`/`MUST NOT`
+obligations carry a permanent identifier, a resolved normative anchor, and, where
+they have a focused executable unit, at least one tagged passing test;
+`validate_archive.py` enforces registry integrity; and the compiler coverage
+gates are green against immutable identity
+[`1070352`](https://github.com/pcharbon70/catena/commit/107035277d5ae8db144df8d7142b7e0e14e66562)
+(171 passing tests). Twenty architectural, future-version, and P117/G095
+diagnostic obligations are explicitly allow-listed and carried by their owner
+items; they are out of C011's executable scope. The [C011 record](../50-journal/2026-08-12-c011-executable-conformance-suite.md)
+captures the promotion. `SHOULD`, `MAY`, declarative rules, and normative
+definitions become a new checklist item rather than part of C011.

@@ -42,10 +42,10 @@ should explain why its links belong together rather than merely list files.
   through canonical requirement words, behavior classes, invalidity,
   variability, limits, explicit traps, validator enforcement, and the
   bootstrap implementation profile.
-- [Conformance Traceability](conformance-traceability.md) — owns the P011
-  obligation-identifier scheme and registry that link every MUST/MUST NOT rule
-  to its normative anchor and tagged compiler evidence across the eight
-  normative areas.
+- [Conformance Traceability](conformance-traceability.md) — owns the
+  obligation-identifier scheme and registry that closed C011, linking every
+  MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
+  the eight normative areas.
 - [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through the
   normative 0.1.8 kernel syntax, static and dynamic semantics, typed actors,
   metatheory, executable reference, and immutable promotion evidence.

@@ -15,24 +15,27 @@ aliases:
 ## Scope
 
 This map owns the scheme that connects every Catena normative rule to the
-executable evidence that exercises it. It is the workbench for checklist item
-P011 and implements the traceability and stable-identifier responsibilities
-that [Specification Authority](../SPECIFICATION-AUTHORITY.md) assigns to it. The
-map and its registry are non-normative: they describe and index the normative
-corpus; they never amend it. Compiler tests remain evidence, never authority.
+executable evidence that exercises it. It is the workbench that closed checklist
+item P011 as C011 and implements the traceability and stable-identifier
+responsibilities that [Specification Authority](../SPECIFICATION-AUTHORITY.md)
+assigns to it. The map and its registry are non-normative: they describe and
+index the normative corpus; they never amend it. Compiler tests remain evidence,
+never authority.
 
 The first completion pass targets `MUST`/`MUST NOT` obligations only. `SHOULD`,
 `MAY`, declarative prose rules, and normative definitions become a separate
-follow-up item once C011 is reached.
+follow-up item now that C011 is reached.
 
 ## Start here
 
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](../40-inquiries/how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
-  — the open inquiry and decision record.
+  — the resolved inquiry and decision record.
 - [Language Specification Completeness Checklist](../00-inbox/language-specification-completeness-checklist.md)
-  — P011 is the partial item this work closes into C011.
+  — C011 (completed) is the item this work closed.
+- [C011 Executable Conformance Suite](../50-journal/2026-08-12-c011-executable-conformance-suite.md)
+  — the promotion record and immutable compiler identity.
 - [Specification Authority](../SPECIFICATION-AUTHORITY.md) — assigns rule-ID and
-  traceability ownership to P011 and defines the heading-anchor citation unit.
+  traceability ownership to this work and defines the heading-anchor citation unit.
 - [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md) — requirement
   force and behavior classes the evidence must respect.
 
@@ -113,6 +116,9 @@ Evidence labels refer to tests in
 - **c003 #5** *rejects tampered nested condition evidence independently of the interface digest*
 - **c003 #6** *receive harness accepts only native conditions over a closed message type*
 - **c003 #7** *rejects unsupported partial and higher-order condition forms*
+- **c003 #8** *condition signatures reject a nonempty effect (CND002)*
+- **c003 #9** *ordinary match expressions must be exhaustive*
+- **c003 #10** *or-pattern alternatives must bind the same names at the same types (M003)*
 
 `traced` = at least one current test exercises it; `partial` = some facets
 covered; `untraced` = no current test (a P6 gap). Process-only and future-type
@@ -144,7 +150,7 @@ outside this executable registry.
 | --- | --- | --- | --- | --- |
 | CC-OBL-014 | Malformed or missing condition signature | [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form) | CND001; c003 #2,#7 | partial |
 | CC-OBL-015 | Non-Boolean condition or predicate result rejected | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/clause-conditions/diagnostics-and-conformance.md#stable-diagnostics) | CND002; c003 #2 | traced |
-| CC-OBL-016 | Nonempty condition effect rejected | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/clause-conditions/diagnostics-and-conformance.md#stable-diagnostics) | CND002 | untraced |
+| CC-OBL-016 | Nonempty condition effect rejected | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/clause-conditions/diagnostics-and-conformance.md#stable-diagnostics) | CND002; c003 #8 | traced |
 | CC-OBL-017 | Ordinary/lambda/partial/local/foreign/effect/trait ops excluded | [`syntax-and-safety.md#excluded-forms`](../60-specification/clause-conditions/syntax-and-safety.md#excluded-forms) | CND003; c003 #2,#7 | traced |
 | CC-OBL-018 | Division/remainder/unchecked partial primitives excluded | [`syntax-and-safety.md#excluded-forms`](../60-specification/clause-conditions/syntax-and-safety.md#excluded-forms) | CND001; c003 #7 | traced |
 | CC-OBL-019 | Recursive predicate dependency rejected | [`condition-predicates-and-interfaces.md#dependency-and-expansion-evidence`](../60-specification/clause-conditions/condition-predicates-and-interfaces.md#dependency-and-expansion-evidence) | CND004; c003 #2 | traced |
@@ -177,13 +183,13 @@ outside this executable registry.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| CC-OBL-034 | Ordinary match expressions must be exhaustive | [`clause-contexts-and-receive.md#ordinary-matches`](../60-specification/clause-conditions/clause-contexts-and-receive.md#ordinary-matches) | — (c002) | untraced in c003 |
+| CC-OBL-034 | Ordinary match expressions must be exhaustive | [`clause-contexts-and-receive.md#ordinary-matches`](../60-specification/clause-conditions/clause-contexts-and-receive.md#ordinary-matches) | c003 #9 | traced |
 | CC-OBL-035 | Multi-clause set exhaustive with uniform result type | [`clause-contexts-and-receive.md#multi-clause-functions`](../60-specification/clause-conditions/clause-contexts-and-receive.md#multi-clause-functions) | c003 #1 | traced |
 | CC-OBL-036 | Elaboration preserves source clause order and bindings | [`clause-contexts-and-receive.md#multi-clause-functions`](../60-specification/clause-conditions/clause-contexts-and-receive.md#multi-clause-functions) | c003 #1 | partial |
 | CC-OBL-037 | Structural match then condition evaluated once, in order | [`guard-tree-semantics.md#ordered-selection`](../60-specification/clause-conditions/guard-tree-semantics.md#ordered-selection) | c003 #1 | traced |
 | CC-OBL-038 | Body failure or divergence does not resume clause selection | [`guard-tree-semantics.md#ordered-selection`](../60-specification/clause-conditions/guard-tree-semantics.md#ordered-selection) | — | untraced |
 | CC-OBL-039 | Verifier rejects duplicated condition evaluation | [`guard-tree-semantics.md#guard-tree-core`](../60-specification/clause-conditions/guard-tree-semantics.md#guard-tree-core) | — | untraced |
-| CC-OBL-040 | Or-pattern alternatives bind the same names | [`guard-tree-semantics.md#or-patterns`](../60-specification/clause-conditions/guard-tree-semantics.md#or-patterns) | — | untraced |
+| CC-OBL-040 | Or-pattern alternatives bind the same names | [`guard-tree-semantics.md#or-patterns`](../60-specification/clause-conditions/guard-tree-semantics.md#or-patterns) | M003; c003 #10 | traced |
 | CC-OBL-041 | Exhaustiveness accepted only under the stated conditions | [`coverage-and-fact-evidence.md#structural-baseline`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#structural-baseline) | c003 #1 | traced |
 | CC-OBL-042 | Unknown never closes an exhaustiveness gap or proves redundancy | [`coverage-and-fact-evidence.md#condition-classification`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#condition-classification) | c003 #3 | traced |
 
@@ -202,16 +208,16 @@ outside this executable registry.
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
 | CC-OBL-048 | Implementation limit reported as limit or unknown, not semantic proof | [`coverage-and-fact-evidence.md#budgets-and-diagnostics`](../60-specification/clause-conditions/coverage-and-fact-evidence.md#budgets-and-diagnostics) | — | untraced |
-| CC-OBL-049 | No truthiness or invalid-operation conversion | [`syntax-and-safety.md#evaluation`](../60-specification/clause-conditions/syntax-and-safety.md#evaluation) | — | untraced |
+| CC-OBL-049 | No truthiness or invalid-operation conversion | [`syntax-and-safety.md#evaluation`](../60-specification/clause-conditions/syntax-and-safety.md#evaluation) | c003 #2 | traced |
 
 ### Pilot gap set (P6)
 
-Eleven obligations currently have no covering test and are the pilot gap-fill
-target: CC-OBL-010, 011, 016, 032, 033, 034, 038, 039, 040, 048, 049. A further
-eight are `partial` and need additional assertions. The compiler-side work
-(P5–P7) tags the seven existing tests with their obligation IDs, adds tests for
-each gap, and makes the coverage check fail until every `CC-OBL-*` has at least
-one tagged passing test.
+The pilot gap set has been filled down to its architectural remainder. Three
+gaps were filled by focused tests (CC-OBL-016, 034, 040 as c003 #8, #9, #10)
+and CC-OBL-049 was recovered by tagging c003 #2. The seven remaining
+allow-listed obligations (CC-OBL-010, 011, 032, 033, 038, 039, 048) are
+architectural or have no focused c003 unit; the compiler coverage gate carries
+them with reasons.
 
 ### Scale-out
 
