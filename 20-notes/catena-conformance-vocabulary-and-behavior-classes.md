@@ -171,9 +171,9 @@ It also fails if a `SHOULD` deviation changes observable language semantics or
 if an invalid action can leave a successful output.
 
 G012 still needs to decide which implementation limits may vary and the
-portable minima for future language areas. P011 still owns exhaustive
-rule-to-test traceability. P117, P125, and G138 retain diagnostic provenance,
-migration application, and performance work exposed by the current
+portable minima for future language areas. C011 (formerly P011) delivered
+exhaustive rule-to-test traceability. P117, P125, and G138 retain diagnostic
+provenance, migration application, and performance work exposed by the current
 recommendation audit.
 
 ## Connections

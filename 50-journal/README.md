@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C011 Executable Conformance Suite](2026-08-12-c011-executable-conformance-suite.md)
+  — records the `AREA-OBL-NNN` traceability scheme, the eight area coverage
+  gates, coordinated compiler PRs #76–#87, the immutable compiler identity, the
+  twenty carried architectural/future/P117 obligations, and the
+  no-language-revision promotion of P011 to C011.
 - [C010 Formal Semantic Kernel Conformance](2026-08-06-c010-formal-semantic-kernel.md)
   — records the normative 0.1.8 syntax, semantics, typed-actor decisions,
   explicitly authorized immutable compiler identity, post-commit gate, and

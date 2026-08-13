@@ -45,10 +45,6 @@ This is the selective entry point to the archive. See the
 - [What should a greenfield Catena type system guarantee?](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md)
   — defines the soundness, completeness, principality, coherence, termination,
   and annotation boundaries for a language designed from a blank slate.
-- [How should Catena achieve exhaustive rule-to-test traceability?](../40-inquiries/how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
-  — owns the P011 scheme giving every MUST/MUST NOT obligation a permanent
-  identifier, a normative anchor, and tagged compiler evidence, piloted on
-  clause-conditions 0.1.3.
 
 ## Topic maps
 
@@ -59,10 +55,10 @@ This is the selective entry point to the archive. See the
   through requirement force, invalidity, profiled choices, bounded
   presentation, implementation limits, explicit traps, validator enforcement,
   and the compiler conformance profile.
-- [Conformance Traceability](conformance-traceability.md) — owns the P011
-  obligation-identifier scheme and registry linking every MUST/MUST NOT rule
-  to its normative anchor and tagged compiler evidence across the eight
-  normative areas.
+- [Conformance Traceability](conformance-traceability.md) — owns the
+  obligation-identifier scheme and registry that closed C011, linking every
+  MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
+  the eight normative areas.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,

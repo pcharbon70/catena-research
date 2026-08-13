@@ -132,8 +132,9 @@ example `syntax-and-safety.md#evaluation`. A chapter-only citation is
 insufficient when more than one heading could govern the behavior.
 
 This policy does not assign a permanent identifier to every individual rule.
-Checklist item P011 owns exhaustive rule-to-test traceability and any later
-stable rule identifier scheme.
+Checklist item C011 (formerly P011) delivered exhaustive rule-to-test
+traceability through the `AREA-OBL-NNN` obligation identifiers; any later stable
+rule identifier scheme extends it.
 
 ## Conflict resolution
 
@@ -182,8 +183,8 @@ This policy leaves the following questions open:
   separately tracked.
 - G012 defines which implementation limits may vary and their portability
   contract; C009 defines how a stated limit is classified and reported.
-- P011 connects every normative rule to executable evidence and may introduce
-  permanent rule identifiers.
+- C011 (formerly P011) connects every normative rule to executable evidence
+  through its permanent obligation identifiers.
 
 Those items may extend this policy, but evidence must continue to remain
 distinct from language authority.

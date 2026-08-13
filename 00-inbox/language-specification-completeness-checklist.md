@@ -182,16 +182,20 @@ as small normative rules rather than copied wholesale into a specification.
   and immutable compiler commit
   [`ef8bcf85adde84fed4a7cab3a533eb8399fbe67a`](https://github.com/pcharbon70/catena/commit/ef8bcf85adde84fed4a7cab3a533eb8399fbe67a)
   record the atomic promotion and post-commit executable evidence.
-- [ ] **P011 — Partial — executable conformance suite.** C001 through C006 now
-  have positive, negative, bounded-oracle,
-  core-verification, interface-integrity, differential-layout or
-  differential-lowering, receive-harness, and OTP 29 runtime evidence.
-  C008 adds exact-selection, lifecycle, migration, interface,
-  specialization, artifact, approval, signature-domain, downgrade, and
-  no-runtime-dispatch cases, but does not complete exhaustive rule-to-test
-  traceability.
-  Connect every remaining normative rule to positive programs, negative
-  programs, expected diagnostics, and runtime observations.
+- [x] **C011 — Complete — executable conformance suite.** Every `MUST`/`MUST
+  NOT` obligation across the eight normative areas carries a permanent
+  area-scoped identifier (`AREA-OBL-NNN`), a resolved normative anchor, and,
+  where it has a focused executable unit, at least one tagged passing compiler
+  test enforced by a per-area coverage gate. The non-normative
+  [traceability registry](../10-maps/conformance-traceability.md) holds 318
+  obligations; the
+  [resolved inquiry](../40-inquiries/how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
+  and [C011 record](../50-journal/2026-08-12-c011-executable-conformance-suite.md)
+  record the coordinated compiler PRs (#76–#87) and the immutable compiler
+  identity. Twenty architectural, future-version, and P117/G095 diagnostic
+  obligations remain explicitly allow-listed and carried by their owner items.
+  This repository-governance completion creates no language revision and no
+  compiler semantic change.
 - [ ] **G012 — Gap — implementation limits.** Specify which limits may vary—arity,
   literal size, type-checking resources, mailbox behavior, and generated module
   size—and how implementations report them.

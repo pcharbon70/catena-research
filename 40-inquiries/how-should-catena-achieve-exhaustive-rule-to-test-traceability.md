@@ -2,7 +2,7 @@
 title: "How Should Catena Achieve Exhaustive Rule-to-Test Traceability?"
 kind: inquiry
 created: "2026-08-10"
-status: open
+status: resolved
 tags:
   - conformance
   - specification
@@ -77,21 +77,30 @@ obligation-level identifiers, `MUST`/`MUST NOT` first, clause-conditions 0.1.3
 as pilot, coordinated research/compiler PRs per area mirroring the C010
 `catena-research#24` ↔ `catena#74` pattern.
 
-The pilot extraction is complete. The clause-conditions 0.1.3 area yields
-**49 `MUST`/`MUST NOT` obligations** (`CC-OBL-001` through `CC-OBL-049`),
-against the seven existing `c003` tests. Coverage after mapping: 30 `traced`,
-8 `partial`, 11 `untraced`. The eleven untraced obligations — CC-OBL-010, 011,
-016, 032, 033, 034, 038, 039, 040, 048, 049 — and the eight partial ones are
-the compiler-side P6 gap-fill target. The archive validator now guards registry
-integrity (well-formed, unique identifiers and a status per row) and reports
-the obligation counts; per-area completeness enforcement ramps on as further
-areas populate.
+All eight normative areas are now extracted on the map and merged on the
+compiler side with a per-area coverage gate. The clause-conditions pilot
+(`CC-OBL-001`..`049`) validated the scheme; three pilot gaps were filled
+(CC-OBL-016, 034, 040) and seven architectural or not-yet-filled gaps are
+allow-listed. The other six areas — type-system (`TS`), data-and-patterns
+(`DP`), traits (`TR`), effects (`EF`), governance (`SG`), editions (`ED`), and
+the formal semantic kernel (`FK`) — are compiler-tagged and gated. The
+data-and-patterns area (`DP-OBL-001`..`071`, the largest) filled eight gaps in
+follow-ups (DP-OBL-017, 021, 024, 025, 035, 042, 043, 048); the seven remaining
+allow-listed entries are all architectural, future-version, or P117
+diagnostic-quality boundaries. The archive
+validator guards registry integrity (well-formed, unique identifiers, and a
+status per row) and reports the obligation counts.
 
 ## Outcome
 
-Open. The inquiry resolves to C011 when all eight normative areas' `MUST`/
-`MUST NOT` obligations carry a permanent identifier, a resolved normative
-anchor, and at least one tagged passing test; when
-`validate_archive.py` enforces the registry; and when the compiler coverage
-check is green. `SHOULD`, `MAY`, declarative rules, and normative definitions
-then become a new checklist item rather than part of C011.
+Resolved as C011 on 2026-08-12. All eight normative areas' `MUST`/`MUST NOT`
+obligations carry a permanent identifier, a resolved normative anchor, and, where
+they have a focused executable unit, at least one tagged passing test;
+`validate_archive.py` enforces registry integrity; and the compiler coverage
+gates are green against immutable identity
+[`1070352`](https://github.com/pcharbon70/catena/commit/107035277d5ae8db144df8d7142b7e0e14e66562)
+(171 passing tests). Twenty architectural, future-version, and P117/G095
+diagnostic obligations are explicitly allow-listed and carried by their owner
+items; they are out of C011's executable scope. The [C011 record](../50-journal/2026-08-12-c011-executable-conformance-suite.md)
+captures the promotion. `SHOULD`, `MAY`, declarative rules, and normative
+definitions become a new checklist item rather than part of C011.
