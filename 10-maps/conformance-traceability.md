@@ -43,6 +43,8 @@ follow-up item now that C011 is reached.
   — the C012 governance policy and `IL-OBL-*` obligation source.
 - [Source Text Specification](../60-specification/source-text/README.md)
   — the normative C013 source for `ST-OBL-*` obligations.
+- [Identifier Specification](../60-specification/identifiers/README.md)
+  — the normative C014 source for `ID-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -64,6 +66,7 @@ convention.
 | `FK` | formal-semantic-kernel | 0.1.8 |
 | `IL` | implementation limits and portability | C012 governance |
 | `ST` | source-text | 0.1.9 |
+| `ID` | identifiers | 0.1.10 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -84,7 +87,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all nine normative areas and the C012 governance policy are now
+extracted; all ten normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -102,6 +105,7 @@ sibling compiler repository.
 | `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | compiler-tagged + gated (merged) |
 | `IL` implementation limits | 12 | `c012_implementation_limits_test.exs` (6) | compiler-tagged + gated (draft PR #88); 1 governance/version obligation allow-listed |
 | `ST` source-text | 10 | `c013_source_text_test.exs` (7) | compiler-tagged + gated (working tree); all obligations traced |
+| `ID` identifiers | 13 | `c014_identifiers_test.exs` (9) | compiler-tagged + gated (working tree); all obligations traced |
 
 ## Trails
 
@@ -839,6 +843,44 @@ gate:
 
 C013 coverage is 10 `traced` and 0 untraced obligations. The dedicated gate
 rejects unknown identifiers and fails if any `ST-OBL-*` identifier lacks a
+focused tag.
+
+## Identifier registry (`ID`, 0.1.10)
+
+Evidence labels refer to focused tests in
+[`c014_identifiers_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c014_identifiers_test.exs)
+and its
+[`c014_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c014_traceability_coverage_test.exs)
+gate:
+
+- **c014 #1** *accepts Unicode 17 XID names with case-sensitive, role-neutral identity*
+- **c014 #2** *rejects non-NFC spelling with an original-byte replacement fix*
+- **c014 #3** *enforces General Security and Highly Restrictive profiles per segment*
+- **c014 #4** *hard-reserves the complete keyword set and validates backtick escapes*
+- **c014 #5** *validates nonempty dot qualification one segment at a time*
+- **c014 #6** *emits deterministic, deny-able confusable warnings*
+- **c014 #7** *keeps 0.1.10 source-only and exposes deterministic CLI discovery*
+- **c014 #8** *runs the packaged executable with its embedded pinned Unicode table*
+- **c014 #9** *checks Catena NFC against the complete Unicode 17 normalization corpus*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| ID-OBL-001 | Pin Unicode 17 data and revision | [`identifier-syntax-and-equivalence.md#unicode-data-and-profile`](../60-specification/identifiers/identifier-syntax-and-equivalence.md#unicode-data-and-profile) | c014 #1, #7, #8, #9 | traced |
+| ID-OBL-002 | Apply the exact XID start and continuation production | [`identifier-syntax-and-equivalence.md#unicode-data-and-profile`](../60-specification/identifiers/identifier-syntax-and-equivalence.md#unicode-data-and-profile) | c014 #1; IDN001 | traced |
+| ID-OBL-003 | Preserve case-sensitive, role-neutral identity | [`identifier-syntax-and-equivalence.md#case-and-canonical-identity`](../60-specification/identifiers/identifier-syntax-and-equivalence.md#case-and-canonical-identity) | c014 #1 | traced |
+| ID-OBL-004 | Require filtered NFC without silent normalization | [`identifier-syntax-and-equivalence.md#nfc-spelling`](../60-specification/identifiers/identifier-syntax-and-equivalence.md#nfc-spelling) | c014 #2, #9; IDN002 | traced |
+| ID-OBL-005 | Apply the General Security Profile | [`qualification-keywords-and-security.md#general-security-profile`](../60-specification/identifiers/qualification-keywords-and-security.md#general-security-profile) | c014 #3; IDN003 | traced |
+| ID-OBL-006 | Apply Highly Restrictive script checks per segment | [`qualification-keywords-and-security.md#highly-restrictive-scripts`](../60-specification/identifiers/qualification-keywords-and-security.md#highly-restrictive-scripts) | c014 #3; IDN004 | traced |
+| ID-OBL-007 | Reserve the complete closed keyword set | [`qualification-keywords-and-security.md#reserved-words-and-escaping`](../60-specification/identifiers/qualification-keywords-and-security.md#reserved-words-and-escaping) | c014 #4; IDN005 | traced |
+| ID-OBL-008 | Preserve identity through valid backtick escapes | [`qualification-keywords-and-security.md#reserved-words-and-escaping`](../60-specification/identifiers/qualification-keywords-and-security.md#reserved-words-and-escaping) | c014 #4; IDN005 | traced |
+| ID-OBL-009 | Validate nonempty dot qualification and every segment | [`qualification-keywords-and-security.md#qualified-names`](../60-specification/identifiers/qualification-keywords-and-security.md#qualified-names) | c014 #5; IDN001, IDN006 | traced |
+| ID-OBL-010 | Emit deterministic confusable warnings and promote on denial | [`qualification-keywords-and-security.md#confusable-comparison`](../60-specification/identifiers/qualification-keywords-and-security.md#confusable-comparison) | c014 #6; IDN007 | traced |
+| ID-OBL-011 | Preserve original-byte spans and exact fixes | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/identifiers/diagnostics-and-conformance.md#stable-diagnostics) | c014 #2; IDN002 | traced |
+| ID-OBL-012 | Expose a deterministic non-artifact command | [`diagnostics-and-conformance.md#command-line-boundary`](../60-specification/identifiers/diagnostics-and-conformance.md#command-line-boundary) | c014 #7, #8 | traced |
+| ID-OBL-013 | Keep 0.1.10 source-only and separated from persisted formats | [`identifier-syntax-and-equivalence.md#source-spans-and-selection`](../60-specification/identifiers/identifier-syntax-and-equivalence.md#source-spans-and-selection) | c014 #7; EDN001 | traced |
+
+C014 coverage is 13 `traced` and 0 untraced obligations. The dedicated gate
+rejects unknown identifiers and fails if any `ID-OBL-*` identifier lacks a
 focused tag.
 
 ## Open questions

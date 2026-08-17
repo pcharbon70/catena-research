@@ -35,7 +35,8 @@ flowchart TD
     P[Package or standalone language selection] --> U[Approachable surface language]
     P --> K[Exact normative 0.1.8 semantic kernel]
     S[Catena source bytes] --> SE[Strict normative 0.1.9 source envelope]
-    SE --> U
+    SE --> ID[Normative 0.1.10 identifier boundary]
+    ID --> U
     U --> DE[Declaration elaboration<br/>nominal identity and module interfaces]
     DE --> ST[Static semantics<br/>types, patterns, rows, traits, effects, coverage]
     ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
@@ -383,9 +384,28 @@ tokens, identifiers, grammar, modules, persisted AST, or executable meaning.
 The [source-text map](10-maps/source-text-encoding-and-normalization.md),
 [normative specification](60-specification/source-text/README.md), and
 [C013 evidence record](50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md)
-separate that envelope from G014–G020's remaining lexical and file-language
-work. Existing JSON revisions and the exact 0.1.8 semantic kernel retain their
-own frontend and artifact identities.
+separate that envelope from later lexical and file-language work. Normative
+C014 now fixes standalone identifier and qualified-name validation on top of
+the envelope; G015–G020 retain the remaining lexical and file-language work.
+Existing JSON revisions and the exact 0.1.8 semantic kernel retain their own
+frontend and artifact identities.
+
+### Normative identifier boundary
+
+Normative C014 defines exact revision 0.1.10 as a source-only identifier
+frontend. It uses pinned Unicode 17 XID properties, requires NFC source
+spelling, preserves case, filters each segment through the Unicode General
+Security Profile and Highly Restrictive script level, reserves a closed hard
+keyword set with backtick escapes, and defines dot-qualified standalone names.
+Confusable skeleton collisions are deterministic warnings that policy may
+promote to errors. It does not yet define a whole-file lexer, parser, module
+namespace, or import resolution.
+
+The [identifier map](10-maps/identifier-and-name-security.md),
+[normative specification](60-specification/identifiers/README.md), and
+[C014 evidence record](50-journal/2026-08-17-c014-identifiers-and-name-security.md)
+connect those rules to the pinned data generator, public validation boundary,
+CLI, and exhaustive normalization evidence.
 
 ### Normative formal semantic kernel
 
@@ -600,6 +620,8 @@ The research currently converges on these decisions:
 - a strict UTF-8 source-text envelope with LF/CRLF logical newlines,
   normalization preservation, and original-byte scalar locations under
   normative C013;
+- Unicode 17 XID identifiers, NFC source spelling, standalone qualification,
+  hard keywords, and name-security checks under normative C014;
 - one conformance vocabulary across every normative chapter, with no undefined
   behavior and explicit invalidity, variability, limit, and trap classes under
   governance milestone C009;
@@ -617,8 +639,8 @@ runtime representation still require validation.
 
 The main unresolved areas are:
 
-- identifiers, tokens, exact surface grammar, and behavior-first vocabulary
-  beyond C013's source-text envelope;
+- whole-source tokenization, exact surface grammar, and behavior-first
+  vocabulary beyond C014's standalone name boundary;
 - integration of the normative type-system, data, and clause-condition slices
   with complete handler and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;

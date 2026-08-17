@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C014 Identifiers and Name Security](2026-08-17-c014-identifiers-and-name-security.md)
+  — records the normative 0.1.10 name contract, pinned Unicode data,
+  standalone compiler APIs and CLI, diagnostics, traceability, and coordinated
+  verification state.
 - [C013 Source-Text Encoding and Normalization](2026-08-17-c013-source-text-encoding-and-normalization.md)
   — records the normative 0.1.9 envelope, Unicode evidence, strict decoder,
   CLI, diagnostics, revision separation, traceability, immutable compiler

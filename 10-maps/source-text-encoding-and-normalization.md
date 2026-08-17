@@ -47,8 +47,10 @@ strict rejection rules in the
 [UAX #15](../30-sources/whistler-2025-unicode-normalization-forms.md) shows that
 normalization can reorder or replace scalar sequences and that compatibility
 forms erase distinctions. C013 therefore preserves the whole source stream.
-G014 can later choose identifier-specific normalization without changing
-future comment and literal contents.
+C014 now requires NFC source spelling for each identifier segment without
+changing future comment and literal contents. The separate
+[Identifier and Name Security map](identifier-and-name-security.md) explains
+that filtered normalization and its exact replacement diagnostic.
 
 ### Newlines and coordinates
 
@@ -77,9 +79,8 @@ new source-text feature.
 
 ## Open questions
 
-C013 is resolved. G014 still owns Unicode identifier repertoires,
-normalization-based name equality, case, confusables, qualification, and
-reserved words. G015–G020 own whitespace/layout, comments, literals, numbers,
+C013 and C014 are resolved. G015–G020 own whitespace/layout, comments,
+literals, numbers,
 operators/punctuation, and file-to-module relations. P117 owns the complete
 cross-language diagnostic model; G118 owns canonical formatting and comment-
 preserving trees. Aggregate source-size and hostile-input performance remain

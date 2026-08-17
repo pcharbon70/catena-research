@@ -239,10 +239,24 @@ as small normative rules rather than copied wholesale into a specification.
   immutable commit
   [`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38)
   on draft compiler PR [#89](https://github.com/pcharbon70/catena/pull/89).
-  G014–G020 retain identifiers, tokens, grammar, literals, and file/module
-  semantics; P117 and G118 retain complete diagnostics and formatting.
-- [ ] **G014 — Gap — identifiers.** Specify permitted characters, case rules,
-  normalization, qualification, reserved words, and visually confusable names.
+  C014 now defines standalone identifiers; G015–G020 retain whole-source
+  tokens, grammar, literals, and file/module semantics; P117 and G118 retain
+  complete diagnostics and formatting.
+- [x] **C014 — Complete — identifiers.** The normative
+  [0.1.10 identifier specification](../60-specification/identifiers/README.md),
+  [synthesis](../20-notes/catena-identifiers-and-name-security.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-define-and-secure-identifiers.md),
+  [topic map](../10-maps/identifier-and-name-security.md), and
+  [C014 record](../50-journal/2026-08-17-c014-identifiers-and-name-security.md)
+  pin Unicode 17 XID, require NFC source spelling, make case significant but
+  role-neutral, apply the General Security and Highly Restrictive profiles,
+  freeze hard keywords with backtick escapes, define ASCII-dot qualification,
+  and emit deny-able confusable warnings over supplied comparison domains. The
+  sibling compiler branch `agent/c014-identifiers` vendors exact Unicode data,
+  implements standalone identifier/qualified-name/audit APIs and
+  `check-identifiers`, and supplies complete `ID-OBL-001`–`ID-OBL-013`
+  executable coverage. G015–G020 retain whole-source token and file grammar;
+  G021–G022 retain namespaces, resolution, imports, and exports.
 - [ ] **G015 — Gap — whitespace and layout.** Decide whether indentation is semantic,
   where separators are required, and how multiline constructs continue.
 - [ ] **G016 — Gap — comments and documentation comments.** Define nesting, attachment

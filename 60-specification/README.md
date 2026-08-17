@@ -58,11 +58,18 @@ preserves the coordinated compiler identity.
 The normative C013 source-text envelope is version `0.1.9`; its strict UTF-8,
 newline, normalization, location, and executable evidence are recorded in the
 [C013 conformance journal](../50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md).
+The normative C014 identifier boundary is version `0.1.10`; its Unicode 17
+repertoire, normalization, case, qualification, security, and executable
+evidence are recorded in the
+[C014 conformance journal](../50-journal/2026-08-17-c014-identifiers-and-name-security.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Identifiers](identifiers/README.md) — the normative version 0.1.10 Unicode
+  XID, filtered NFC, role-neutral case, keyword escape, qualification,
+  security, confusable diagnostic, and conformance contract.
 - [Source Text](source-text/README.md) — the normative version 0.1.9 strict
   UTF-8, BOM, logical-newline, normalization-preservation, original-byte
   location, diagnostics, and conformance contract.

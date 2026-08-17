@@ -72,6 +72,15 @@ mentions can remain as citations in the document that uses them.
 - [Unicode Standard Annex #15: Unicode Normalization Forms](whistler-2025-unicode-normalization-forms.md)
   — explains canonical and compatibility transformations, scalar reordering,
   and stability considerations behind C013's preservation policy.
+- [Unicode Standard Annex #31: Unicode Identifiers and Syntax](davis-leroy-2025-unicode-identifiers-syntax.md)
+  — defines Unicode 17 XID profiles, stable identifier syntax, and normalized
+  or filtered identifier conformance used by C014.
+- [Unicode Technical Standard #39: Unicode Security Mechanisms](davis-suignard-2025-unicode-security-mechanisms.md)
+  — defines identifier status, restriction levels, script resolution, and
+  confusable prototypes used by C014's security profile.
+- [Unicode Technical Standard #55: Unicode Source Code Handling](leroy-davis-2024-unicode-source-code-handling.md)
+  — applies normalization, case, confusable, display, and diagnostic guidance
+  to programming languages and explains C014's layered policy.
 - [WG14 N1570: ISO/IEC 9899:201x Committee Draft](wg14-2011-n1570.md) —
   distinguishes implementation-defined and unspecified values, traps,
   conformance, and translation limits while exposing the undefined-behavior
