@@ -48,6 +48,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Identifier and Name Security](identifier-and-name-security.md) — routes
+  through Unicode 17 XID syntax, NFC spelling, script restrictions,
+  qualification, hard keywords, confusable warnings, and C014 evidence.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOM rejection, LF/CRLF logical newlines,
   normalization preservation, original-byte locations, and C013 evidence.
@@ -104,6 +107,15 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Identifiers and Name Security](../20-notes/catena-identifiers-and-name-security.md)
+  — develops C014's Unicode repertoire, exact equality, escape, qualification,
+  security-profile, diagnostic, and persistence decisions.
+- [Identifier Specification](../60-specification/identifiers/README.md) —
+  holds the normative 0.1.10 syntax, equivalence, security, diagnostic, and
+  conformance chapters.
+- [C014 Identifiers and Name Security](../50-journal/2026-08-17-c014-identifiers-and-name-security.md)
+  — records the pinned Unicode data, compiler prototype, exhaustive
+  normalization check, adversarial cases, and coordinated verification.
 - [Catena Source-Text Encoding and Normalization](../20-notes/catena-source-text-encoding-and-normalization.md)
   — develops C013's source-only Unicode envelope, alternatives, position
   model, revision separation, and remaining lexical boundaries.

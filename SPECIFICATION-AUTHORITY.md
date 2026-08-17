@@ -72,12 +72,14 @@ language line is `0.1`; its registered semantic boundaries are:
 | C008 editions and feature lifecycle | `0.1.7` | normative |
 | C010 formal semantic kernel | `0.1.8` | normative |
 | C013 source text | `0.1.9` | normative |
+| C014 identifiers | `0.1.10` | normative |
 
 Governance milestones C007, C009, and C012 apply across the normative corpus
 and do not occupy language revisions. Normative C010 occupies `0.1.8`, and
-normative C013 occupies `0.1.9`; a later semantic slice begins at `0.1.10`.
-Each later prototype semantic slice uses the next unused `0.1.n` patch until
-an approved policy replaces this convention.
+normative C013 occupies `0.1.9`; normative C014 occupies `0.1.10`; a later
+semantic slice begins at `0.1.11`. Each later prototype semantic slice uses
+the next unused `0.1.n` patch until an approved policy replaces this
+convention.
 This sequence identifies language slices and the Catena protocol boundaries
 that name them. It is independent of compiler-package releases and third-party
 dependency versions. It also does not make a larger patch automatically

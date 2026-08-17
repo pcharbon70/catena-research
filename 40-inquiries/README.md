@@ -33,6 +33,9 @@ to `20-notes`.
 - [How Should Catena Decode and Normalize Source Text?](how-should-catena-decode-and-normalize-source-text.md)
   — resolves C013 with strict UTF-8, BOM rejection, LF/CRLF logical newlines,
   no whole-file normalization, scalar columns, and original-byte spans.
+- [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
+  — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
+  qualification, keywords, security profiles, and confusable warnings.
 - [How Should Catena Integrate Its Formal Semantic Kernel?](how-should-catena-integrate-its-formal-semantic-kernel.md)
   — records the resolved C010 contract, executable correspondence, bounded
   concurrency evidence, immutable compiler identity, and normative promotion.

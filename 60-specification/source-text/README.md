@@ -32,9 +32,10 @@ minimum or implementation limit.
 
 Put only source encoding, BOM handling, logical newlines, normalization
 boundaries, original-byte scalar locations, source-envelope diagnostics, and
-their conformance gate here. Identifiers, whitespace and layout, comments,
-literals, operators, complete grammar, formatter behavior, and file-to-module
-rules remain later checklist work.
+their conformance gate here. Identifier rules now live in the normative
+[0.1.10 identifier area](../identifiers/README.md). Whitespace and layout,
+comments, literals, operators, complete grammar, formatter behavior, and
+file-to-module rules remain later checklist work.
 
 ## Variability register
 
