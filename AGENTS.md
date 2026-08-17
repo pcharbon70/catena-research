@@ -47,12 +47,14 @@ Use these files for different decisions:
    labels, and conflict handling.
 2. `CONFORMANCE-VOCABULARY.md` defines requirement words, behavior classes,
    variability declarations, and implementation-profile obligations.
-3. `frontmatter.schema.json` defines valid metadata fields and values.
-4. `templates/` defines the minimum starting structure for each artifact.
-5. The root `README.md` explains the archive to human readers.
-6. Each directory's `README.md` describes and inventories that directory.
-7. `10-maps/` provides curated thematic navigation.
-8. `validate_archive.py` performs the deterministic structural checks.
+3. `IMPLEMENTATION-LIMITS.md` defines portable minima, finite-resource
+   classifications, reporting, and exhaustion obligations.
+4. `frontmatter.schema.json` defines valid metadata fields and values.
+5. `templates/` defines the minimum starting structure for each artifact.
+6. The root `README.md` explains the archive to human readers.
+7. Each directory's `README.md` describes and inventories that directory.
+8. `10-maps/` provides curated thematic navigation.
+9. `validate_archive.py` performs the deterministic structural checks.
 
 If documentation and the filesystem disagree, inspect the intended change and
 bring them back into sync. Never preserve a stale index merely because it was
@@ -119,7 +121,7 @@ Additional requirements depend on `kind`:
 
 The current Catena prototype language line is `0.1`. C001 through C006 use
 patches `0.1.1` through `0.1.6`, and semantic milestone C008 uses `0.1.7`.
-Repository-governance milestones C007 and C009 add no language revision.
+Repository-governance milestones C007, C009, and C012 add no language revision.
 Normative C010 uses `0.1.8`; the next unused semantic patch is `0.1.9` unless
 an approved versioning policy explicitly replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
@@ -143,9 +145,9 @@ Conventions:
 Exceptions:
 
 - The root `README.md`, `AGENTS.md`, `SPECIFICATION-AUTHORITY.md`,
-  `CONFORMANCE-VOCABULARY.md`, `validate_archive.py`, its tests, and validation
-  requirements are repository documentation or tooling and do not use archive
-  frontmatter.
+  `CONFORMANCE-VOCABULARY.md`, `IMPLEMENTATION-LIMITS.md`,
+  `validate_archive.py`, its tests, and validation requirements are repository
+  documentation or tooling and do not use archive frontmatter.
 - Placeholder files in `templates/` are not valid completed documents until
   copied and filled. `templates/README.md` is completed and must validate.
 - A transient inbox capture may begin incomplete, but it must have valid
@@ -188,6 +190,8 @@ the same work.
 - Follow `CONFORMANCE-VOCABULARY.md` for the five canonical keywords,
   behavior classes, variability callouts, invalidity, limits, explicit traps,
   and the prohibition on undefined behavior.
+- Follow `IMPLEMENTATION-LIMITS.md` for portable minima, measurement units,
+  machine-readable reporting, exhaustion outcomes, and version-axis handling.
 - Treat a `kind: specification` chapter as language authority only when its
   frontmatter says `status: normative`.
 - In a normative chapter, rules are normative by default. Mark rationale,
@@ -350,9 +354,9 @@ The validator checks:
 - at least one conceptual connection for every durable document;
 - duplicate citation keys, DOIs, and canonical source URLs.
 - specification authority and conformance-vocabulary links, variability
-  registers, canonical keywords, prohibited behavior classes, non-normative
-  exemptions, visible callouts, illustrative cues, and fenced-block
-  classifications.
+  and implementation-limit policy links, variability registers, canonical
+  keywords, prohibited behavior classes, non-normative exemptions, visible
+  callouts, illustrative cues, and fenced-block classifications.
 
 If the validator's behavior and these instructions disagree, repair both in
 the same change rather than silently bypassing a check.

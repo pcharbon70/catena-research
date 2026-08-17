@@ -66,6 +66,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [How Hindley–Milner Type Inference Works](hindley-milner-type-inference.md) —
   explains Algorithm W and principal types independently of any existing
   Catena specification or implementation.
+- [Catena Implementation Limits and Portability](catena-implementation-limits-and-portability.md)
+  — derives portable source and artifact floors, separates compiler refusal
+  from inconclusive evidence and runtime capacity, and develops the C012
+  machine-readable reporting model.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, distinct evidence regimes, a
   restricted authority language, append-only governed lifecycle, and an

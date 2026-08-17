@@ -142,9 +142,10 @@ and selection metadata and claim summaries are emitted.
 
 The same profile records all five substantive current recommendations and any
 deviation. This is valuable even with zero implementation-defined choices: it
-separates conformance requirements from implementation quality debt. A
-machine-readable profile is deliberately deferred until the first real
-implementation-defined choice creates a selection that tooling must inspect.
+separates conformance requirements from implementation quality debt. C012
+later added deterministic machine-readable output because portable limits
+created a tooling-discovery need before the first implementation-defined
+choice.
 
 ## Rejected alternatives
 
@@ -170,8 +171,9 @@ or artifact identity under a clause labelled only unspecified presentation.
 It also fails if a `SHOULD` deviation changes observable language semantics or
 if an invalid action can leave a successful output.
 
-G012 still needs to decide which implementation limits may vary and the
-portable minima for future language areas. C011 (formerly P011) delivered
+C012 now decides which implementation limits may vary, establishes the
+portable minima and machine-readable profile, and preserves future owners for
+new dimensions. C011 (formerly P011) delivered
 exhaustive rule-to-test traceability. P117, P125, and G138 retain diagnostic
 provenance, migration application, and performance work exposed by the current
 recommendation audit.
@@ -186,3 +188,5 @@ recommendation audit.
   routes through evidence, policy, audit, and implementation profile.
 - [C009 Conformance Vocabulary](../50-journal/2026-08-05-c009-conformance-vocabulary.md)
   records the corpus and validator results.
+- [Catena Implementation Limits and Portability](catena-implementation-limits-and-portability.md)
+  completes the implementation-limit class left open by C009.

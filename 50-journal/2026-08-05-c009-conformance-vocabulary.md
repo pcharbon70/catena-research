@@ -146,8 +146,8 @@ documentation and remains uncommitted pending separate authorization.
 
 ## Threads
 
-- G012 remains responsible for the general portability policy and configurable
-  implementation-limit contract.
+- C012 now supplies the general portability policy, configurable
+  implementation-limit contract, and machine-readable compiler profile.
 - P117 remains responsible for source locations, secondary spans, and
   diagnostic wording quality.
 - P125 remains responsible for richer migration edits.
@@ -157,6 +157,8 @@ documentation and remains uncommitted pending separate authorization.
 ## Follow-ups
 
 The first real implementation-defined choice must enumerate its bounded domain
-in normative text, appear in the compiler profile, and trigger a
-machine-readable conformance-output design with tests. Until then, format 1
-remains deliberately human-readable.
+in normative text and appear in both compiler profile forms before any
+compiler can claim that choice. C012 introduced deterministic
+`catena conformance-info` earlier because portable limits already create a
+tooling-discovery need; human-readable format 1 remains the explanatory
+profile.

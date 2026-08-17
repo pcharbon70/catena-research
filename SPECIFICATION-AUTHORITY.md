@@ -6,7 +6,10 @@ Catena language edition and does not add source syntax, static semantics, or
 runtime behavior. The companion
 [Catena Conformance Vocabulary](CONFORMANCE-VOCABULARY.md) defines requirement
 words, behavior classes, variability declarations, and implementation-profile
-obligations inside the normative material identified here.
+obligations inside the normative material identified here. The companion
+[Catena Implementation Limits and Portability](IMPLEMENTATION-LIMITS.md)
+policy defines portable minima, finite-resource reporting, and exhaustion
+obligations without adding language semantics.
 
 ## Authority classes
 
@@ -29,9 +32,11 @@ The following are not normative language definitions:
 
 This document is authoritative for document classification and conflict
 handling, while `CONFORMANCE-VOCABULARY.md` is authoritative for conformance
-wording and behavior classification. Both are repository governance rather
-than normative Catena language chapters. `AGENTS.md`, the specification
-template, and the archive validator implement these policies.
+wording and behavior classification, and `IMPLEMENTATION-LIMITS.md` is
+authoritative for the cross-implementation portability floor. All three are
+repository governance rather than normative Catena language chapters.
+`AGENTS.md`, the specification template, and the archive validator implement
+these policies.
 
 ## Status and applicability
 
@@ -67,8 +72,8 @@ language line is `0.1`; its registered semantic boundaries are:
 | C008 editions and feature lifecycle | `0.1.7` | normative |
 | C010 formal semantic kernel | `0.1.8` | normative |
 
-Governance milestones C007 and C009 apply across the normative corpus and do
-not occupy language revisions. Normative C010 occupies `0.1.8`; a later
+Governance milestones C007, C009, and C012 apply across the normative corpus
+and do not occupy language revisions. Normative C010 occupies `0.1.8`; a later
 semantic slice begins at `0.1.9`. Each later prototype semantic slice uses the
 next unused `0.1.n` patch until an approved policy replaces this convention.
 This sequence identifies language slices and the Catena protocol boundaries
@@ -181,8 +186,8 @@ This policy leaves the following questions open:
 - C008 defines editions, compatibility, deprecation, and replacement
   lifecycle; future edition retirement and broader API/ABI policy remain
   separately tracked.
-- G012 defines which implementation limits may vary and their portability
-  contract; C009 defines how a stated limit is classified and reported.
+- C012 defines which implementation limits may vary, their portable minima,
+  and machine-readable reporting; C009 defines their behavior class.
 - C011 (formerly P011) connects every normative rule to executable evidence
   through its permanent obligation identifiers.
 

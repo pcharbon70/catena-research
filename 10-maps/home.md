@@ -48,6 +48,10 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Implementation Limits and Portability](implementation-limits-and-portability.md)
+  — routes through portable source and artifact floors, existing compiler and
+  evidence bounds, deterministic profile disclosure, runtime mailbox
+  capacity, and C012 executable evidence.
 - [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through
   small-step semantics, type soundness, actor and mailbox evidence, the exact
   normative grammar, executable model, and C010 promotion record.
@@ -97,6 +101,12 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Implementation Limits and Portability](../20-notes/catena-implementation-limits-and-portability.md)
+  — develops portable minima, distinct exhaustion meanings, one executable
+  compiler registry, transactional refusal, and the runtime-capacity boundary.
+- [C012 Implementation Limits](../50-journal/2026-08-17-c012-implementation-limits.md)
+  — records the root policy, official OTP evidence, coordinated compiler
+  commit and draft PR, boundary tests, and no-language-revision completion.
 - [Catena's Formal Semantic Kernel](../20-notes/catena-formal-semantic-kernel.md)
   — bounds the normative 0.1.8 conformance language, structural rows, handlers,
   local typed actors, reference exploration, and fixed BEAM correspondence.

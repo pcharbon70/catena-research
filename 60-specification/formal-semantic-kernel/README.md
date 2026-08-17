@@ -25,6 +25,9 @@ The repository-level [Specification Authority](../../SPECIFICATION-AUTHORITY.md)
 controls status and applicability. The [Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md)
 controls requirement force, invalidity, variability, limits, and explicit
 runtime failure.
+[Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md)
+controls portable minima, finite-resource measurement, evidence-bound
+classification, and exhaustion reporting.
 
 ## What belongs here
 

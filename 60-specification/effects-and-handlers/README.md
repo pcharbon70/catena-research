@@ -34,6 +34,8 @@ Document authority and rendered content labels follow the repository
 Requirement words, behavior classes, permitted variation, limits, and profile
 disclosure follow the repository
 [Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
+Portable minima, finite-resource measurement, and exhaustion reporting follow
+[Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md).
 
 Every chapter is `normative`. The immutable sibling-compiler commit and
 reproducible results are recorded in

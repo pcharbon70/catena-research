@@ -37,6 +37,8 @@ and the linked conformance journal.
 Requirement words, behavior classes, permitted variation, limits, and profile
 disclosure follow the repository
 [Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
+Portable minima, finite-resource measurement, and exhaustion reporting follow
+[Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md).
 
 ## Variability register
 

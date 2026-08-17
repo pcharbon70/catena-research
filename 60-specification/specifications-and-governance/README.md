@@ -35,6 +35,8 @@ this directory.
 Requirement words, behavior classes, permitted variation, limits, and profile
 disclosure follow the repository
 [Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
+Portable minima, finite-resource measurement, and exhaustion reporting follow
+[Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md).
 
 Every chapter is `normative`. The authorized immutable compiler commit,
 independent policy-oracle agreement, adversarial and erasure tests, and

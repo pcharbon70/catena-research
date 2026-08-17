@@ -33,6 +33,10 @@ to `20-notes`.
 - [How Should Catena Integrate Its Formal Semantic Kernel?](how-should-catena-integrate-its-formal-semantic-kernel.md)
   — records the resolved C010 contract, executable correspondence, bounded
   concurrency evidence, immutable compiler identity, and normative promotion.
+- [How Should Catena Bound Implementation Limits?](how-should-catena-bound-implementation-limits.md)
+  — resolves C012 with portable minima, finite-resource classifications,
+  common diagnostic details, deterministic profile output, and a
+  deployment-defined mailbox-capacity boundary.
 - [How Should Catena Classify Conformance Behavior?](how-should-catena-classify-conformance-behavior.md)
   — records the resolved C009 distinction among normative force, invalidity,
   profiled choices, bounded presentation, limits, explicit traps, and the

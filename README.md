@@ -56,6 +56,10 @@ when the specification, compiler, reference paths, or tests disagree.
 canonical requirement words, failure and variability classes, the absence of
 undefined behavior, and implementation-profile obligations across those
 normative documents.
+[Catena Implementation Limits and Portability](IMPLEMENTATION-LIMITS.md)
+defines portable minima, finite-resource classifications, deterministic
+machine-readable disclosure, exhaustion behavior, and runtime-capacity
+boundaries across claimed implementations.
 
 ## Structure
 
@@ -125,7 +129,7 @@ specification status: draft | candidate | normative
 
 Catena's current language line is `0.1`. The completed C001 through C006
 semantic slices are `0.1.1` through `0.1.6`, and normative C008 is `0.1.7`.
-C007 and C009 are repository-governance milestones rather than language
+C007, C009, and C012 are repository-governance milestones rather than language
 revisions. Normative C010 uses `0.1.8` for the exact formal semantic kernel;
 the next unused semantic patch is `0.1.9`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
@@ -164,7 +168,8 @@ git diff --check
 The validator checks frontmatter, schema conformance, placeholders, filenames,
 local links, directory README structure and inventories, conceptual
 connections, duplicate source identifiers, specification authority,
-conformance vocabulary, variability registers, and visible content labels.
+conformance vocabulary, implementation-limit policy links, variability
+registers, and visible content labels.
 Run its focused unit tests with:
 
 ```bash
@@ -180,6 +185,9 @@ python3 -m unittest test_validate_archive.py
   implementation profiles
 - [`frontmatter.schema.json`](frontmatter.schema.json) — authoritative metadata
   schema
+- [`IMPLEMENTATION-LIMITS.md`](IMPLEMENTATION-LIMITS.md) — portable minima,
+  implementation and evidence bounds, machine-readable reporting, runtime
+  capacity, and exhaustion obligations
 - [`language-overview.md`](language-overview.md) — consolidated language
   layers, compiler architecture, runtime artifacts, and open design boundaries
 - [`SPECIFICATION-AUTHORITY.md`](SPECIFICATION-AUTHORITY.md) — normative
