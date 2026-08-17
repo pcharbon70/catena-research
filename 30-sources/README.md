@@ -39,6 +39,13 @@ mentions can remain as citations in the document that uses them.
 - [Erlang/OTP 29 Processes](erlang-otp-29-processes.md) — documents the target
   runtime's process isolation, asynchronous send, mailbox order, links, and
   termination behavior.
+- [Erlang/OTP 29 Runtime Resource Controls](erlang-otp-29-runtime-resource-controls.md)
+  — documents process heap limits, on/off-heap message storage, and emulator
+  controls that make mailbox capacity a deployment concern rather than one
+  portable message count.
+- [Erlang/OTP 29 System Limits](erlang-otp-29-system-limits.md) — records the
+  arity-255 target ceiling and distinguishes VM ceilings from Catena portable
+  source floors.
 - [Structural Operational Semantics](plotkin-2004-structural-operational-semantics.md)
   — provides the transition-system method used for Catena's configurations,
   evaluation order, and explicit terminal states.

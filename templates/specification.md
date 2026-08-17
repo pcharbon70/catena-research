@@ -14,7 +14,8 @@ aliases: []
 
 <!-- Identify the covered slice, lifecycle state, applicability, exclusions,
 and relationship to SPECIFICATION-AUTHORITY.md and
-CONFORMANCE-VOCABULARY.md. -->
+CONFORMANCE-VOCABULARY.md. Link IMPLEMENTATION-LIMITS.md when the area owns or
+inherits a finite resource boundary. -->
 
 ## Normative rules
 
@@ -28,7 +29,9 @@ binding. Before a fenced grammar, judgment, schema, or state transition, write:
 <!-- Enumerate any MAY, SHOULD, SHOULD NOT, implementation limit, or permitted
 variation. Use the visible implementation-defined or bounded unspecified-
 presentation callout from CONFORMANCE-VOCABULARY.md when applicable, and keep
-the specification area's README register synchronized. -->
+the specification area's README register synchronized. Follow
+IMPLEMENTATION-LIMITS.md for a finite boundary's measurement, portable floor,
+profile disclosure, and exhaustion contract. -->
 
 ## Static semantics
 

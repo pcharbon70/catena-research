@@ -86,6 +86,7 @@ silence is a defect; invalid input must fail without successful outputs; and
 future foreign or unsafe facilities must specify rejection, failure, or traps.
 
 The [C009 record](../50-journal/2026-08-05-c009-conformance-vocabulary.md)
-captures the audit and verification. G012 implementation-limit policy, P117
+captures the audit and verification. The completed
+[C012 implementation-limit policy](../IMPLEMENTATION-LIMITS.md), P117
 diagnostic completeness, P125 edit application, and G138 performance remain
 separate work and do not reopen this decision.

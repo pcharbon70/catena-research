@@ -62,7 +62,7 @@ research rather than repeatedly redesigned:
 | 0.1.5 / C005 | [Effects and Handlers](../60-specification/effects-and-handlers/README.md): nominal requests, lexical capabilities, identity-aware rows, deep handlers, affine resumptions, and effect-directed CPS | Resource, failure, concurrency, and host-effect research must preserve handler identity, effect visibility, and affine control. |
 | 0.1.6 / C006 | [Specifications and Governance](../60-specification/specifications-and-governance/README.md): typed claims, exact examples, evidence identity, offline authority, append-only lifecycle, artifact binding, and erasure | Stronger checking methods and distributed governance must remain explicit about evidence strength, trust, scope, and runtime cost. |
 | 0.1.7 / C008 | [Editions and Feature Lifecycle](../60-specification/editions-and-feature-lifecycle/README.md): package-local editions, exact retained revisions, previews, compatibility records, migration descriptions, and version-bound artifacts | Every new feature needs an applicability, lifecycle, migration, and historical-retention story. |
-| C007, C009, C011 | [Specification authority](../SPECIFICATION-AUTHORITY.md), [conformance vocabulary](../CONFORMANCE-VOCABULARY.md), and [rule-to-test traceability](../10-maps/conformance-traceability.md) | Future chapters inherit one authority model, no undefined behavior, explicit variability, and permanent obligation identifiers. |
+| C007, C009, C011, C012 | [Specification authority](../SPECIFICATION-AUTHORITY.md), [conformance vocabulary](../CONFORMANCE-VOCABULARY.md), [rule-to-test traceability](../10-maps/conformance-traceability.md), and [implementation limits](../IMPLEMENTATION-LIMITS.md) | Future chapters inherit one authority model, no undefined behavior, explicit variability, permanent obligation identifiers, portable minima, and machine-readable finite-resource disclosure. |
 | 0.1.8 / C010 | [Formal Semantic Kernel](../60-specification/formal-semantic-kernel/README.md): one strict small-step calculus integrating bounded data, rows, traits, handlers, traps, and typed local actors with BEAM evidence | It is the executable integration baseline, not the final surface language, OTP model, or whole-language theorem. |
 
 ## Research-program overview
@@ -618,13 +618,14 @@ offline trust roots, delegation, revocation, recovery, staged output, and
 artifact binding. C009 prohibits undefined behavior and requires explicit
 implementation-defined choices and limits. C008 binds exact revisions and
 historical signature domains. The wider threat, resource, and supply-chain
-model remains open under `G012` and `G126`–`G131`.
+model now has the completed C012 portability baseline, while the wider threat
+and supply-chain model remains open under `G126`–`G131`.
 
 **Remaining research.** The system needs to specify:
 
-- portable minima and implementation limits for arity, literal size, solver
-  resources, generated modules, recursion, schedule exploration, mailboxes,
-  and diagnostics;
+- extensions to the C012 portable-minimum registry for future source forms,
+  aggregate inputs, memory accounting, cancellation, recursion, and concrete
+  mailbox admission or backpressure policy;
 - the complete trusted computing base across parser, static solvers, core
   verifier, proof kernel, optimizer, serializer, signer, OTP runtime, and
   foreign components;

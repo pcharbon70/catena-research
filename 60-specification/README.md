@@ -27,6 +27,10 @@ The companion
 requirement force, behavior and failure classes, visible variability
 declarations, limits, explicit traps, and implementation profiles across every
 normative area.
+The repository-level
+[Catena Implementation Limits and Portability](../IMPLEMENTATION-LIMITS.md)
+defines portable minima, machine-readable reporting, finite-resource
+measurement, and exhaustion obligations without adding language semantics.
 
 ## What belongs here
 
@@ -47,6 +51,10 @@ compiler evidence is recorded in the linked conformance journal. The
 normative C010 formal semantic kernel is version `0.1.8`; its explicitly
 authorized immutable compiler evidence is recorded in the
 [C010 conformance journal](../50-journal/2026-08-06-c010-formal-semantic-kernel.md).
+C012 governs finite implementation resources across these areas without
+changing their normative status or consuming language revision `0.1.9`; its
+[evidence record](../50-journal/2026-08-17-c012-implementation-limits.md)
+preserves the coordinated compiler identity.
 
 ## Index
 
@@ -96,3 +104,5 @@ classified according to the
 [Specification Authority](../SPECIFICATION-AUTHORITY.md). Keep each area's
 variability register and all normative wording aligned with the
 [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md).
+Keep finite resource boundaries and profile disclosures aligned with
+[Catena Implementation Limits and Portability](../IMPLEMENTATION-LIMITS.md).

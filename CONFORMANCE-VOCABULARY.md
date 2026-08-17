@@ -55,7 +55,7 @@ the chapter also follows the declaration and profile rules below.
 | **Invalid** | The affected input or action must fail without publishing successful outputs. Malformed and ill-formed inputs are invalid subcategories. |
 | **Implementation-defined** | The specification enumerates allowed observable choices and each implementation publishes its selection in a conformance profile. Catena currently defines no such choices. |
 | **Unspecified presentation** | A bounded presentation or internal-strategy variation need not be selected in a profile, but it cannot change acceptance, safety, runtime values, order, effects, stable diagnostic identity, governance, or artifact identity. |
-| **Implementation limit** | An otherwise valid input is refused with a distinct limit diagnostic. G012 remains responsible for deciding which limits may vary. |
+| **Implementation limit** | An otherwise valid input is refused with a distinct limit diagnostic under the portable-floor and reporting contract in `IMPLEMENTATION-LIMITS.md`. |
 | **Explicit runtime failure or trap** | A named runtime condition has specified abrupt behavior. It is part of Catena semantics, never a license for arbitrary behavior. |
 
 ### Invalid input and actions
@@ -108,8 +108,10 @@ otherwise satisfy the language rules. The implementation reports a diagnostic
 reserved for limit exhaustion and must not relabel the refusal as a semantic
 error such as non-exhaustiveness, false evidence, or policy denial. Current
 bootstrap limits are disclosed in its conformance profile. Checklist item G012
-still governs the general set, portability contract, and permitted variation
-of future limits.
+is complete as C012 through
+[Catena Implementation Limits and Portability](IMPLEMENTATION-LIMITS.md), which
+governs the general set, portable minima, permitted variation, common
+diagnostic fields, and machine-readable reporting.
 
 ### Explicit runtime failure and traps
 
@@ -159,12 +161,11 @@ editions and revisions, vendor extensions, implementation-defined choices,
 normative `MAY` dispositions, `SHOULD` and `SHOULD NOT` deviations,
 implementation limits, and bounded unspecified presentation.
 
-The bootstrap compiler currently publishes a human-readable format-1 profile
-and has zero implementation-defined choices and zero vendor extensions. No
-machine-readable conformance command is required while those counts remain
-zero. The first normative implementation-defined choice triggers a
-machine-readable profile/output design and its conformance tests before any
-compiler can claim that choice.
+The bootstrap compiler currently publishes a human-readable format-1 profile,
+has zero implementation-defined choices and zero vendor extensions, and emits
+the deterministic machine-readable `catena conformance-info` format required
+by C012. The first normative implementation-defined choice must appear in both
+profile forms with conformance tests before any compiler can claim that choice.
 
 Profiles describe implementations; they never amend language authority. A
 profile cannot excuse a violated `MUST`, weaken safety or observable semantics
@@ -178,4 +179,6 @@ developed in [Catena Conformance Vocabulary and Behavior Classes](20-notes/caten
 The [resolved inquiry](40-inquiries/how-should-catena-classify-conformance-behavior.md),
 [topic map](10-maps/catena-conformance-vocabulary.md), and
 [C009 record](50-journal/2026-08-05-c009-conformance-vocabulary.md) preserve the
-decision and corpus audit.
+decision and corpus audit. The cross-cutting limit model continues through the
+[C012 policy](IMPLEMENTATION-LIMITS.md) and
+[implementation-limits map](10-maps/implementation-limits-and-portability.md).

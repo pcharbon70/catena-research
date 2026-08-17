@@ -14,13 +14,14 @@ aliases:
 
 ## Scope
 
-This map owns the scheme that connects every Catena normative rule to the
-executable evidence that exercises it. It is the workbench that closed checklist
-item P011 as C011 and implements the traceability and stable-identifier
-responsibilities that [Specification Authority](../SPECIFICATION-AUTHORITY.md)
-assigns to it. The map and its registry are non-normative: they describe and
-index the normative corpus; they never amend it. Compiler tests remain evidence,
-never authority.
+This map owns the scheme that connects Catena normative rules and cross-cutting
+governance obligations to the executable evidence that exercises them. It is
+the workbench that closed checklist item P011 as C011 and implements the
+traceability and stable-identifier responsibilities that
+[Specification Authority](../SPECIFICATION-AUTHORITY.md) assigns to it. The map
+and its registry are non-normative: they describe and index controlling
+documents; they never amend them. Compiler tests remain evidence, never
+authority.
 
 The first completion pass targets `MUST`/`MUST NOT` obligations only. `SHOULD`,
 `MAY`, declarative prose rules, and normative definitions become a separate
@@ -38,6 +39,8 @@ follow-up item now that C011 is reached.
   traceability ownership to this work and defines the heading-anchor citation unit.
 - [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md) — requirement
   force and behavior classes the evidence must respect.
+- [Catena Implementation Limits and Portability](../IMPLEMENTATION-LIMITS.md)
+  — the C012 governance policy and `IL-OBL-*` obligation source.
 
 ## Identifier and registry convention
 
@@ -47,7 +50,7 @@ form `AREA-OBL-NNN`. The numeric suffix is never reused; if an obligation is
 retired its identifier is retired with it, mirroring the checklist's own
 convention.
 
-| Area code | Normative area | Slice |
+| Area code | Normative area or governance policy | Slice or milestone |
 | --- | --- | --- |
 | `TS` | type-system | 0.1.1 |
 | `DP` | data-and-patterns | 0.1.2 |
@@ -57,6 +60,7 @@ convention.
 | `SG` | specifications-and-governance | 0.1.6 |
 | `ED` | editions-and-feature-lifecycle | 0.1.7 |
 | `FK` | formal-semantic-kernel | 0.1.8 |
+| `IL` | implementation limits and portability | C012 governance |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -65,7 +69,7 @@ obligation:
 | --- | --- |
 | ID | The permanent `AREA-OBL-NNN` identifier. |
 | Obligation | A short noun phrase for the requirement. |
-| Normative anchor | A relative link to the governing heading, e.g. [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form). |
+| Normative or governance anchor | A relative link to the governing heading, e.g. [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form). |
 | Evidence | The exercising compiler test path and name, plus any stable diagnostic identifier(s). Cross-repo evidence uses a GitHub web link so the archive's local-link check is unaffected. |
 | Status | `traced`, `in-progress`, or `untraced`. |
 
@@ -92,6 +96,7 @@ sibling compiler repository.
 | `SG` specifications-and-governance | 44 | `c006_specification_governance_test.exs` (34) | compiler-tagged + gated (merged) |
 | `ED` editions | 36 | `c008_editions_lifecycle_test.exs` (16) | compiler-tagged + gated (merged) |
 | `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | compiler-tagged + gated (merged) |
+| `IL` implementation limits | 12 | `c012_implementation_limits_test.exs` (6) | compiler-tagged + gated (draft PR #88); 1 governance/version obligation allow-listed |
 
 ## Trails
 
@@ -761,6 +766,41 @@ DP-OBL-026 future refutability context P044; DP-OBL-056 backend reconstruction
 prevention; DP-OBL-057 L001 implementation-failure path; DP-OBL-058
 sole-OTP-boundary architectural; DP-OBL-059 future G095 validation boundary;
 DP-OBL-065 P117 diagnostic quality).
+
+## Governance registry — implementation limits (`IL`, C012)
+
+Evidence labels refer to tests in the immutable compiler
+[`c012_implementation_limits_test.exs`](https://github.com/pcharbon70/catena/blob/841af5ee342a31ff4769749bbdaa18a675b1bb21/test/catena/c012_implementation_limits_test.exs)
+and its
+[`c012_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/841af5ee342a31ff4769749bbdaa18a675b1bb21/test/catena/c012_traceability_coverage_test.exs)
+gate:
+
+- **c012 #1** *conformance-info is deterministic and backed by the executable registry*
+- **c012 #2** *the 253-argument portable floor reaches an effectful OTP worker of arity 255*
+- **c012 #3** *both frontends accept 4096 integer digits and reject 4097 as LIM002*
+- **c012 #4** *literal and generated-module bounds have explicit applicability and diagnostics*
+- **c012 #5** *analysis refusals and inconclusive evidence bounds remain distinct*
+- **c012 #6** *mailbox capacity is a deployment concern without a compiler message-count cap*
+
+| ID | Obligation | Governance anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| IL-OBL-001 | Every claimed compiler release emits a deterministic machine-readable profile | [`IMPLEMENTATION-LIMITS.md#machine-readable-reporting`](../IMPLEMENTATION-LIMITS.md#machine-readable-reporting) | c012 #1 | traced |
+| IL-OBL-002 | Every active finite bound and reserved dimension appears in one executable registry and profile | [`IMPLEMENTATION-LIMITS.md#machine-readable-reporting`](../IMPLEMENTATION-LIMITS.md#machine-readable-reporting) | c012 #1 | traced |
+| IL-OBL-003 | Each profile entry declares classification, unit, floor, configuration, applicability, and exhaustion | [`IMPLEMENTATION-LIMITS.md#machine-readable-reporting`](../IMPLEMENTATION-LIMITS.md#machine-readable-reporting) | c012 #1 | traced |
+| IL-OBL-004 | Source arity 253 is accepted, 254 reports LIM001, and the effect worker may reach OTP arity 255 | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | LIM001; c012 #2 | traced |
+| IL-OBL-005 | Both current frontends accept 4,096 integer digits and report LIM002 at 4,097 | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | LIM002; c012 #3 | traced |
+| IL-OBL-006 | The 65,536-byte decoded-literal floor is reported not applicable until G017 | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | c012 #4 | traced |
+| IL-OBL-007 | Generated BEAM through 1,048,576 bytes crosses no module-size limit and the next byte reports LIM003 | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | LIM003; c012 #4 | traced |
+| IL-OBL-008 | Compiler and governance refusal budgets retain their distinct diagnostics and outcomes | [`IMPLEMENTATION-LIMITS.md#analysis-refusals-and-evidence-bounds`](../IMPLEMENTATION-LIMITS.md#analysis-refusals-and-evidence-bounds) | c012 #5 | traced |
+| IL-OBL-009 | Evidence exhaustion remains inconclusive and cannot become semantic rejection | [`IMPLEMENTATION-LIMITS.md#analysis-refusals-and-evidence-bounds`](../IMPLEMENTATION-LIMITS.md#analysis-refusals-and-evidence-bounds) | c012 #5 | traced |
+| IL-OBL-010 | Mailbox capacity is deployment-defined with ordering, targeting, and live-target delivery constraints | [`IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity`](../IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity) | c012 #6 | traced |
+| IL-OBL-011 | Limit refusals report common structured measurements before successful output publication | [`IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure`](../IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure) | LIM001–LIM003; c012 #2–#4 | traced |
+| IL-OBL-012 | C012 changes governance and compiler conformance behavior without creating revision 0.1.9 | [`IMPLEMENTATION-LIMITS.md#evolution-and-version-axes`](../IMPLEMENTATION-LIMITS.md#evolution-and-version-axes) | Governance/version-axis obligation; compiler coverage gate allow-list | untraced |
+
+C012 coverage is 11 `traced` and 1 governance-only `untraced` obligation. The
+compiler coverage gate explicitly allow-lists IL-OBL-012 because emitting a
+language revision is a repository and release-governance decision, not an
+executable compiler behavior.
 
 ## Open questions
 

@@ -11,6 +11,7 @@ from validate_archive import (
     ROOT,
     PROTOTYPE_SPECIFICATION_VERSIONS,
     conformance_vocabulary_link_errors,
+    implementation_limits_link_errors,
     specification_authority_link_errors,
     specification_structure_errors,
     specification_vocabulary_errors,
@@ -320,6 +321,25 @@ class SpecificationConformanceIndexTests(unittest.TestCase):
             [],
             variability_register_errors(
                 "area/README.md", "# Area\n\n## Variability register\n\nNone.\n"
+            ),
+        )
+
+    def test_requires_implementation_limits_link_from_specification_index(self) -> None:
+        limits = Path("/archive/IMPLEMENTATION-LIMITS.md")
+        self.assertEqual(
+            1,
+            len(
+                implementation_limits_link_errors(
+                    "60-specification/example/README.md", set(), limits
+                )
+            ),
+        )
+        self.assertEqual(
+            [],
+            implementation_limits_link_errors(
+                "60-specification/example/README.md",
+                {limits.resolve()},
+                limits,
             ),
         )
 

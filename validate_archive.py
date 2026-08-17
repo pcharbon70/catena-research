@@ -28,6 +28,7 @@ SCHEMA_PATH = ROOT / "frontmatter.schema.json"
 SPECIFICATION_ROOT = ROOT / "60-specification"
 SPECIFICATION_AUTHORITY_PATH = ROOT / "SPECIFICATION-AUTHORITY.md"
 CONFORMANCE_VOCABULARY_PATH = ROOT / "CONFORMANCE-VOCABULARY.md"
+IMPLEMENTATION_LIMITS_PATH = ROOT / "IMPLEMENTATION-LIMITS.md"
 ARCHIVE_DIRECTORIES = {
     "00-inbox",
     "10-maps",
@@ -501,6 +502,16 @@ def conformance_vocabulary_link_errors(
     return [f"{display_path}: missing link to CONFORMANCE-VOCABULARY.md"]
 
 
+def implementation_limits_link_errors(
+    display_path: str, indexed_targets: set[Path], limits_path: Path
+) -> list[str]:
+    """Require a specification index to expose the implementation-limit policy."""
+
+    if limits_path.resolve() in indexed_targets:
+        return []
+    return [f"{display_path}: missing link to IMPLEMENTATION-LIMITS.md"]
+
+
 def variability_register_errors(display_path: str, markdown: str) -> list[str]:
     """Require an area index to summarize its permitted variability."""
 
@@ -812,6 +823,26 @@ def validate() -> tuple[list[str], dict[str, int]]:
                 errors.extend(
                     variability_register_errors(
                         relative(readme), readme.read_text(encoding="utf-8")
+                    )
+                )
+
+    if not IMPLEMENTATION_LIMITS_PATH.is_file():
+        errors.append("IMPLEMENTATION-LIMITS.md: missing implementation-limit policy")
+    else:
+        limits_target = IMPLEMENTATION_LIMITS_PATH.resolve()
+        specification_readmes = [SPECIFICATION_ROOT / "README.md"]
+        specification_readmes.extend(
+            child / "README.md"
+            for child in sorted(SPECIFICATION_ROOT.iterdir())
+            if child.is_dir() and not is_ignored(child)
+        )
+        for readme in specification_readmes:
+            if readme.is_file():
+                errors.extend(
+                    implementation_limits_link_errors(
+                        relative(readme),
+                        links_by_source.get(readme.resolve(), set()),
+                        limits_target,
                     )
                 )
 

@@ -68,6 +68,10 @@ should explain why its links belong together rather than merely list files.
   through the principal-type foundations, Algorithm W mechanics, and the proof
   obligations introduced by qualified types, rows, effects, and richer
   polymorphism.
+- [Implementation Limits and Portability](implementation-limits-and-portability.md)
+  — routes through portable minima, existing compiler and evidence bounds,
+  OTP target constraints, machine-readable disclosure, mailbox capacity, and
+  C012 executable evidence.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — routes through typed claims, honest evidence kinds, contracts, models,
   proof obligations, authority policy, provenance, lifecycle transitions, and

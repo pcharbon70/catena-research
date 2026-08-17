@@ -196,9 +196,26 @@ as small normative rules rather than copied wholesale into a specification.
   obligations remain explicitly allow-listed and carried by their owner items.
   This repository-governance completion creates no language revision and no
   compiler semantic change.
-- [ ] **G012 — Gap — implementation limits.** Specify which limits may vary—arity,
-  literal size, type-checking resources, mailbox behavior, and generated module
-  size—and how implementations report them.
+- [x] **C012 — Complete — implementation limits.** The repository-level
+  [Catena Implementation Limits and Portability](../IMPLEMENTATION-LIMITS.md),
+  [synthesis](../20-notes/catena-implementation-limits-and-portability.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-bound-implementation-limits.md),
+  [topic map](../10-maps/implementation-limits-and-portability.md), and
+  [C012 record](../50-journal/2026-08-17-c012-implementation-limits.md) define
+  portable floors of 253 explicit callable arguments, 4,096 integer digits,
+  a reserved 65,536-byte decoded literal payload, and a 1,048,576-byte
+  generated BEAM module; centralize the existing 20,000-step and 1,024-depth
+  bounds; separate compiler refusals from inconclusive evidence and runtime
+  capacity; require structured transactional diagnostics; and require
+  deterministic machine-readable reporting. The sibling compiler implements
+  the contract at immutable commit
+  [`841af5ee342a31ff4769749bbdaa18a675b1bb21`](https://github.com/pcharbon70/catena/commit/841af5ee342a31ff4769749bbdaa18a675b1bb21)
+  on draft PR [#88](https://github.com/pcharbon70/catena/pull/88), with 179
+  passing tests and `IL-OBL-001`–`IL-OBL-012` traceability. Mailbox capacity
+  remains deployment-defined under G068/G129 without permitting silent
+  per-sender reordering, retargeting, or live-target message loss. This
+  repository-governance milestone creates no language revision; `0.1.9`
+  remains the next unused semantic patch.
 
 ## 2. Lexical grammar and source files
 

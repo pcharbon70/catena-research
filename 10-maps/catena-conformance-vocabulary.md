@@ -64,8 +64,9 @@ amend the language.
 
 ## Remaining questions
 
-The bounded C009 inquiry is resolved. G012 remains responsible for the
-general implementation-limit contract; the resolved C011 delivered exhaustive
+The bounded C009 inquiry is resolved. The
+[C012 policy](../IMPLEMENTATION-LIMITS.md) now supplies the general
+implementation-limit contract; the resolved C011 delivered exhaustive
 rule-to-test traceability; and P117, P125, and G138 remain responsible for the
 diagnostic, migration-tool, and performance work exposed by the recommendation
 audit.

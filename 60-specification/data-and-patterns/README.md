@@ -37,6 +37,8 @@ Document authority and rendered content labels follow the repository
 Requirement words, behavior classes, permitted variation, limits, and profile
 disclosure follow the repository
 [Catena Conformance Vocabulary](../../CONFORMANCE-VOCABULARY.md).
+Portable minima, finite-resource measurement, and exhaustion reporting follow
+[Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md).
 
 Every chapter is `normative`. The historical C002 commit exercised these
 semantics under retired `0.1` and `0.2` protocol identifiers. It remains

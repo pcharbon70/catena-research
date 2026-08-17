@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C012 Implementation Limits](2026-08-17-c012-implementation-limits.md) —
+  records the portable floors, central executable registry, deterministic
+  profile command, stable limit diagnostics, mailbox-capacity decision,
+  coordinated compiler commit and PR, and no-language-revision result.
 - [C011 Executable Conformance Suite](2026-08-12-c011-executable-conformance-suite.md)
   — records the `AREA-OBL-NNN` traceability scheme, the eight area coverage
   gates, coordinated compiler PRs #76–#87, the immutable compiler identity, the
