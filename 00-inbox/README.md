@@ -33,6 +33,10 @@ review; do not let the inbox become permanent storage.
   — temporary audit of unresolved or unconsolidated language-definition work,
   including list comprehensions, runtime semantics, interoperability, tooling,
   and conformance.
+- [Remaining Catena Research Areas](remaining-catena-research-areas.md) —
+  groups the atomic completeness gaps into connected research programs,
+  relates each program to the current normative and exploratory corpus, and
+  states what completing it would add to the language design.
 
 ## Maintaining this index
 
