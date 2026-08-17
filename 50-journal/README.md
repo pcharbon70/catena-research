@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C013 Source-Text Encoding and Normalization](2026-08-17-c013-source-text-encoding-and-normalization.md)
+  — records the normative 0.1.9 envelope, Unicode evidence, strict decoder,
+  CLI, diagnostics, revision separation, traceability, immutable compiler
+  commit, draft PR, and complete verification.
 - [C012 Implementation Limits](2026-08-17-c012-implementation-limits.md) —
   records the portable floors, central executable registry, deterministic
   profile command, stable limit diagnostics, mailbox-capacity decision,

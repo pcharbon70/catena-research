@@ -34,7 +34,8 @@ the linked notes, maps, and inquiries.
 flowchart TD
     P[Package or standalone language selection] --> U[Approachable surface language]
     P --> K[Exact normative 0.1.8 semantic kernel]
-    S[Catena source] --> U
+    S[Catena source bytes] --> SE[Strict normative 0.1.9 source envelope]
+    SE --> U
     U --> DE[Declaration elaboration<br/>nominal identity and module interfaces]
     DE --> ST[Static semantics<br/>types, patterns, rows, traits, effects, coverage]
     ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
@@ -370,6 +371,22 @@ the [resolved inquiry](40-inquiries/how-should-catena-version-editions-and-langu
 and the
 [C008 conformance record](50-journal/2026-08-05-c008-edition-conformance.md).
 
+### Normative source-text envelope
+
+Normative C013 defines exact revision 0.1.9 as a source-only frontend. It
+accepts strict UTF-8, rejects leading byte-order marks and lone CR, maps LF and
+CRLF to one logical newline, preserves every other Unicode scalar without
+whole-file normalization, and retains original-byte spans with scalar-based
+lines and columns. This boundary establishes decodable positioned text, not
+tokens, identifiers, grammar, modules, persisted AST, or executable meaning.
+
+The [source-text map](10-maps/source-text-encoding-and-normalization.md),
+[normative specification](60-specification/source-text/README.md), and
+[C013 evidence record](50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md)
+separate that envelope from G014–G020's remaining lexical and file-language
+work. Existing JSON revisions and the exact 0.1.8 semantic kernel retain their
+own frontend and artifact identities.
+
 ### Normative formal semantic kernel
 
 Normative C010 defines exact revision 0.1.8 through a separate executable
@@ -580,6 +597,9 @@ The research currently converges on these decisions:
 - deep affine handlers as the initial resumption discipline;
 - package-local edition and exact-revision selection with named previews and
   retained historical pins under normative C008;
+- a strict UTF-8 source-text envelope with LF/CRLF logical newlines,
+  normalization preservation, and original-byte scalar locations under
+  normative C013;
 - one conformance vocabulary across every normative chapter, with no undefined
   behavior and explicit invalidity, variability, limit, and trap classes under
   governance milestone C009;
@@ -597,7 +617,8 @@ runtime representation still require validation.
 
 The main unresolved areas are:
 
-- exact surface syntax and behavior-first vocabulary;
+- identifiers, tokens, exact surface grammar, and behavior-first vocabulary
+  beyond C013's source-text envelope;
 - integration of the normative type-system, data, and clause-condition slices
   with complete handler and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;

@@ -74,6 +74,9 @@ the [C008 conformance journal](../50-journal/2026-08-05-c008-edition-conformance
 Normative C010 uses `0.1.8` for the formal semantic kernel. Its explicitly
 authorized immutable compiler commit and promotion evidence are recorded in
 the [C010 conformance journal](../50-journal/2026-08-06-c010-formal-semantic-kernel.md).
+Normative C013 uses `0.1.9` for the strict source-text envelope. Its decoder,
+diagnostics, location model, and verification are recorded in the
+[C013 conformance journal](../50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md).
 
 ## Existing research that needs normative consolidation
 
@@ -182,13 +185,15 @@ as small normative rules rather than copied wholesale into a specification.
   and immutable compiler commit
   [`ef8bcf85adde84fed4a7cab3a533eb8399fbe67a`](https://github.com/pcharbon70/catena/commit/ef8bcf85adde84fed4a7cab3a533eb8399fbe67a)
   record the atomic promotion and post-commit executable evidence.
-- [x] **C011 — Complete — executable conformance suite.** Every `MUST`/`MUST
-  NOT` obligation across the eight normative areas carries a permanent
+- [x] **C011 — Complete — executable conformance suite.** At C011 completion,
+  every `MUST`/`MUST NOT` obligation across the original eight normative areas
+  carried a permanent
   area-scoped identifier (`AREA-OBL-NNN`), a resolved normative anchor, and,
   where it has a focused executable unit, at least one tagged passing compiler
   test enforced by a per-area coverage gate. The non-normative
-  [traceability registry](../10-maps/conformance-traceability.md) holds 318
-  obligations; the
+  [traceability registry](../10-maps/conformance-traceability.md) held 318
+  obligations at that milestone and now also holds C012's 12 governance
+  obligations and C013's 10 fully traced source-text obligations. The
   [resolved inquiry](../40-inquiries/how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   and [C011 record](../50-journal/2026-08-12-c011-executable-conformance-suite.md)
   record the coordinated compiler PRs (#76–#87) and the immutable compiler
@@ -214,13 +219,28 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests and `IL-OBL-001`–`IL-OBL-012` traceability. Mailbox capacity
   remains deployment-defined under G068/G129 without permitting silent
   per-sender reordering, retargeting, or live-target message loss. This
-  repository-governance milestone creates no language revision; `0.1.9`
-  remains the next unused semantic patch.
+  repository-governance milestone creates no language revision.
 
 ## 2. Lexical grammar and source files
 
-- [ ] **G013 — Gap — source encoding and normalization.** Specify Unicode encoding,
-  byte-order marks, newline handling, normalization policy, and invalid input.
+- [x] **C013 — Complete — source encoding and normalization.** The normative
+  [0.1.9 source-text specification](../60-specification/source-text/README.md),
+  [synthesis](../20-notes/catena-source-text-encoding-and-normalization.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-decode-and-normalize-source-text.md),
+  [topic map](../10-maps/source-text-encoding-and-normalization.md), and
+  [C013 record](../50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md)
+  define strict UTF-8, reject leading BOMs, alternate encoding signatures,
+  malformed sequences, and lone CR, map LF and CRLF to one logical LF,
+  preserve every other scalar without whole-file normalization, and assign
+  original-byte spans with scalar-based lines and columns. The sibling
+  compiler implements `Catena.decode_source_text/2`, source units,
+  `check-source-text`, `SRC001`–`SRC003`, exact frontend/persistence
+  separation, and complete `ST-OBL-001`–`ST-OBL-010` executable coverage at
+  immutable commit
+  [`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38)
+  on draft compiler PR [#89](https://github.com/pcharbon70/catena/pull/89).
+  G014–G020 retain identifiers, tokens, grammar, literals, and file/module
+  semantics; P117 and G118 retain complete diagnostics and formatting.
 - [ ] **G014 — Gap — identifiers.** Specify permitted characters, case rules,
   normalization, qualification, reserved words, and visually confusable names.
 - [ ] **G015 — Gap — whitespace and layout.** Decide whether indentation is semantic,

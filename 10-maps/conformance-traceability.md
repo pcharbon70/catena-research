@@ -41,6 +41,8 @@ follow-up item now that C011 is reached.
   force and behavior classes the evidence must respect.
 - [Catena Implementation Limits and Portability](../IMPLEMENTATION-LIMITS.md)
   — the C012 governance policy and `IL-OBL-*` obligation source.
+- [Source Text Specification](../60-specification/source-text/README.md)
+  — the normative C013 source for `ST-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -61,6 +63,7 @@ convention.
 | `ED` | editions-and-feature-lifecycle | 0.1.7 |
 | `FK` | formal-semantic-kernel | 0.1.8 |
 | `IL` | implementation limits and portability | C012 governance |
+| `ST` | source-text | 0.1.9 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -81,7 +84,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all eight areas are now extracted. "Compiler-tagged + gated" means
+extracted; all nine normative areas and the C012 governance policy are now
+extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
 sibling compiler repository.
@@ -97,6 +101,7 @@ sibling compiler repository.
 | `ED` editions | 36 | `c008_editions_lifecycle_test.exs` (16) | compiler-tagged + gated (merged) |
 | `FK` formal-semantic-kernel | 15 | `c010_formal_semantic_kernel_test.exs` (17) | compiler-tagged + gated (merged) |
 | `IL` implementation limits | 12 | `c012_implementation_limits_test.exs` (6) | compiler-tagged + gated (draft PR #88); 1 governance/version obligation allow-listed |
+| `ST` source-text | 10 | `c013_source_text_test.exs` (7) | compiler-tagged + gated (working tree); all obligations traced |
 
 ## Trails
 
@@ -801,6 +806,40 @@ C012 coverage is 11 `traced` and 1 governance-only `untraced` obligation. The
 compiler coverage gate explicitly allow-lists IL-OBL-012 because emitting a
 language revision is a repository and release-governance decision, not an
 executable compiler behavior.
+
+## Source-text registry (`ST`, 0.1.9)
+
+Evidence labels refer to focused tests in immutable compiler commit
+[`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38):
+[`c013_source_text_test.exs`](https://github.com/pcharbon70/catena/blob/d4e8e5c0ad41f47ebe86d59047cdabe017762f38/test/catena/c013_source_text_test.exs)
+and its
+[`c013_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/d4e8e5c0ad41f47ebe86d59047cdabe017762f38/test/catena/c013_traceability_coverage_test.exs)
+gate:
+
+- **c013 #1** *preserves well-formed Unicode scalars without normalization*
+- **c013 #2** *maps LF and CRLF to logical LF with original-byte scalar spans*
+- **c013 #3** *accepts mixed endings and rejects only C013 lone CR newlines*
+- **c013 #4** *rejects malformed UTF-8 without replacement or fallback*
+- **c013 #5** *distinguishes leading BOMs from alternate encoding signatures*
+- **c013 #6** *keeps 0.1.9 source-only and exposes deterministic discovery*
+- **c013 #7** *handles empty input and deterministic command-line validation*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| ST-OBL-001 | Apply the source envelope only to 0.1.9 and preserve older format boundaries | [`diagnostics-and-conformance.md#revision-and-frontend-separation`](../60-specification/source-text/diagnostics-and-conformance.md#revision-and-frontend-separation) | c013 #6; EDN001 | traced |
+| ST-OBL-002 | Accept well-formed UTF-8 scalar sequences and reject malformed or alternate encodings | [`source-text-envelope.md#utf-8-byte-domain`](../60-specification/source-text/source-text-envelope.md#utf-8-byte-domain) | c013 #1, #4, #5; SRC001 | traced |
+| ST-OBL-003 | Never replace, skip, or reinterpret malformed bytes | [`source-text-envelope.md#utf-8-byte-domain`](../60-specification/source-text/source-text-envelope.md#utf-8-byte-domain) | c013 #1, #4; SRC001 | traced |
+| ST-OBL-004 | Reject a leading UTF-8 BOM while preserving embedded U+FEFF | [`source-text-envelope.md#byte-order-marks-and-signatures`](../60-specification/source-text/source-text-envelope.md#byte-order-marks-and-signatures) | c013 #1, #5; SRC002 | traced |
+| ST-OBL-005 | Map LF and CRLF, reject lone CR, and preserve other Unicode separators as scalars | [`source-text-envelope.md#logical-newlines`](../60-specification/source-text/source-text-envelope.md#logical-newlines) | c013 #2, #3; SRC003 | traced |
+| ST-OBL-006 | Preserve the source scalar sequence without normalization or normalization checks | [`source-text-envelope.md#normalization-boundary`](../60-specification/source-text/source-text-envelope.md#normalization-boundary) | c013 #1, #3 | traced |
+| ST-OBL-007 | Retain original bytes and one original half-open span per logical scalar | [`source-text-envelope.md#source-units-and-locations`](../60-specification/source-text/source-text-envelope.md#source-units-and-locations) | c013 #2, #7 | traced |
+| ST-OBL-008 | Use zero-based bytes, one-based scalar coordinates, and a zero-width EOF span | [`source-text-envelope.md#source-units-and-locations`](../60-specification/source-text/source-text-envelope.md#source-units-and-locations) | c013 #2, #7 | traced |
+| ST-OBL-009 | Emit stable SRC failures and no successful result for invalid input | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/source-text/diagnostics-and-conformance.md#stable-diagnostics) | c013 #4, #5; SRC001–SRC003 | traced |
+| ST-OBL-010 | Keep decoder and validation command deterministic without creating artifacts | [`diagnostics-and-conformance.md#command-line-validation`](../60-specification/source-text/diagnostics-and-conformance.md#command-line-validation) | c013 #6, #7 | traced |
+
+C013 coverage is 10 `traced` and 0 untraced obligations. The dedicated gate
+rejects unknown identifiers and fails if any `ST-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 

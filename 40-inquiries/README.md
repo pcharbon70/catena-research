@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Catena Decode and Normalize Source Text?](how-should-catena-decode-and-normalize-source-text.md)
+  — resolves C013 with strict UTF-8, BOM rejection, LF/CRLF logical newlines,
+  no whole-file normalization, scalar columns, and original-byte spans.
 - [How Should Catena Integrate Its Formal Semantic Kernel?](how-should-catena-integrate-its-formal-semantic-kernel.md)
   — records the resolved C010 contract, executable correspondence, bounded
   concurrency evidence, immutable compiler identity, and normative promotion.
@@ -43,8 +46,8 @@ to `20-notes`.
   prohibition on undefined behavior.
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   — resolved as C011; the scheme gives every MUST/MUST NOT obligation a permanent
-  identifier, a normative heading anchor, and tagged compiler evidence across
-  all eight normative areas.
+  identifier, a normative heading anchor, and tagged compiler evidence. It now
+  covers nine normative areas plus the C012 implementation-limits policy.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.

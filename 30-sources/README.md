@@ -63,6 +63,15 @@ mentions can remain as citations in the document that uses them.
   — gives uppercase requirement words their specialized meaning, leaves
   lowercase words as ordinary English, and confirms that declarative prose can
   remain normative.
+- [RFC 3629: UTF-8, a Transformation Format of ISO 10646](yergeau-2003-utf-8.md)
+  — defines the Internet UTF-8 byte grammar, invalid-sequence security
+  boundary, and leading-BOM protocol considerations used by C013.
+- [The Unicode Standard, Version 17.0: Conformance and Encoding Forms](unicode-consortium-2025-unicode-standard-17.md)
+  — defines Unicode scalars, well- and ill-formed UTF-8, and the strict
+  encoding-form boundary used by Catena source text.
+- [Unicode Standard Annex #15: Unicode Normalization Forms](whistler-2025-unicode-normalization-forms.md)
+  — explains canonical and compatibility transformations, scalar reordering,
+  and stability considerations behind C013's preservation policy.
 - [WG14 N1570: ISO/IEC 9899:201x Committee Draft](wg14-2011-n1570.md) —
   distinguishes implementation-defined and unspecified values, traps,
   conformance, and translation limits while exposing the undefined-behavior

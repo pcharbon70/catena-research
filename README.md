@@ -40,6 +40,9 @@ The normative compatibility model begins with
 The normative C010 route begins at the
 [Formal Semantic Kernel map](10-maps/formal-semantic-kernel.md) and its exact
 [0.1.8 specification](60-specification/formal-semantic-kernel/README.md).
+The normative C013 source boundary begins at the
+[Source Text Encoding and Normalization map](10-maps/source-text-encoding-and-normalization.md)
+and its exact [0.1.9 specification](60-specification/source-text/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -131,7 +134,8 @@ Catena's current language line is `0.1`. The completed C001 through C006
 semantic slices are `0.1.1` through `0.1.6`, and normative C008 is `0.1.7`.
 C007, C009, and C012 are repository-governance milestones rather than language
 revisions. Normative C010 uses `0.1.8` for the exact formal semantic kernel;
-the next unused semantic patch is `0.1.9`. C008 defines package-local editions,
+normative C013 uses `0.1.9` for strict source-text decoding; and the next
+unused semantic patch is `0.1.10`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.
