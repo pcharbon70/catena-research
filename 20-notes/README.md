@@ -70,6 +70,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — derives portable source and artifact floors, separates compiler refusal
   from inconclusive evidence and runtime capacity, and develops the C012
   machine-readable reporting model.
+- [Catena Source-Text Encoding and Normalization](catena-source-text-encoding-and-normalization.md)
+  — derives C013's strict UTF-8, BOM, newline, normalization-preservation,
+  original-byte location, and source-only revision boundary.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, distinct evidence regimes, a
   restricted authority language, append-only governed lifecycle, and an

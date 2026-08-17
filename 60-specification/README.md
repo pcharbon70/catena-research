@@ -52,14 +52,20 @@ normative C010 formal semantic kernel is version `0.1.8`; its explicitly
 authorized immutable compiler evidence is recorded in the
 [C010 conformance journal](../50-journal/2026-08-06-c010-formal-semantic-kernel.md).
 C012 governs finite implementation resources across these areas without
-changing their normative status or consuming language revision `0.1.9`; its
+changing their normative status or consuming a language revision; its
 [evidence record](../50-journal/2026-08-17-c012-implementation-limits.md)
 preserves the coordinated compiler identity.
+The normative C013 source-text envelope is version `0.1.9`; its strict UTF-8,
+newline, normalization, location, and executable evidence are recorded in the
+[C013 conformance journal](../50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Source Text](source-text/README.md) — the normative version 0.1.9 strict
+  UTF-8, BOM, logical-newline, normalization-preservation, original-byte
+  location, diagnostics, and conformance contract.
 - [Formal Semantic Kernel](formal-semantic-kernel/README.md) — the normative
   version 0.1.8 exact S-expression syntax, row and process typing, sequential
   and actor dynamics, metatheory, BEAM correspondence, diagnostics, and

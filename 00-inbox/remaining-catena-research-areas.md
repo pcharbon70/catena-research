@@ -89,8 +89,10 @@ research rather than repeatedly redesigned:
 ## 1. Approachable source language
 
 **Relation to the current corpus.** Catena currently has exact semantic inputs:
-the earlier normative slices use versioned JSON forms and 0.1.8 uses a
-canonical S-expression kernel. Those forms make conformance reproducible, but
+the earlier normative slices use versioned JSON forms, 0.1.8 uses a canonical
+S-expression kernel, and C013 now defines a strict 0.1.9 UTF-8 source-text
+envelope with logical newlines and original-byte scalar spans. Those exact
+forms make conformance reproducible, but
 the [Catena Language Overview](../language-overview.md) explicitly says they do
 not replace a future approachable frontend. The
 [approachable-vocabulary synthesis](../20-notes/approachable-language-vocabulary.md)
@@ -98,13 +100,14 @@ proposes a behavior-first public language, and the associated
 [vocabulary inquiry](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
 remains open. C004 has selected one behavior-first trait ABI, while clause,
 effect, specification, governance, and comprehension punctuation remain partly
-provisional. Checklist items `G013`–`G020`, `P047`, `P107`, and `P109` describe
-the atomic gaps.
+provisional. C013 closes byte decoding without inventing tokens. Checklist
+items `G014`–`G020`, `P047`, `P107`, and `P109` describe the remaining atomic
+gaps.
 
 **Remaining research.** This program must define:
 
-- source encoding, Unicode normalization, invalid byte handling, and newline
-  rules;
+- identifier- and literal-specific Unicode normalization on top of C013's
+  preserving source stream;
 - identifier characters, case, confusables, qualification, and reserved words;
 - whitespace, layout, separators, comments, documentation comments, and
   file-to-module rules;

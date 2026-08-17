@@ -199,9 +199,10 @@ diagnostic family, while this policy records any cross-implementation floor.
 The feature's language revision, its artifact formats, the compiler release,
 and this profile format remain separate version axes.
 
-C012 is therefore a repository-governance milestone. It closes G012 without
-consuming language revision `0.1.9`; normative C010 remains the current
-semantic revision `0.1.8`, and `0.1.9` remains the next unused semantic patch.
+C012 is therefore a repository-governance milestone. It closed G012 without
+consuming a language revision. Normative C013 subsequently uses `0.1.9` for
+the source-text envelope without changing C012's portability classifications;
+`0.1.10` is the next unused semantic patch.
 
 ## Conformance obligations
 

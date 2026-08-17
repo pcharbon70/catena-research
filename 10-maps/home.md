@@ -48,6 +48,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
+  — routes through strict UTF-8, BOM rejection, LF/CRLF logical newlines,
+  normalization preservation, original-byte locations, and C013 evidence.
 - [Implementation Limits and Portability](implementation-limits-and-portability.md)
   — routes through portable source and artifact floors, existing compiler and
   evidence bounds, deterministic profile disclosure, runtime mailbox
@@ -62,7 +65,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  the eight normative areas.
+  nine normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,
@@ -101,6 +104,14 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Source-Text Encoding and Normalization](../20-notes/catena-source-text-encoding-and-normalization.md)
+  — develops C013's source-only Unicode envelope, alternatives, position
+  model, revision separation, and remaining lexical boundaries.
+- [Source Text Specification](../60-specification/source-text/README.md) —
+  holds the normative 0.1.9 envelope and diagnostic/conformance chapters.
+- [C013 Source-Text Encoding and Normalization](../50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md)
+  — records the strict decoder, CLI, adversarial evidence, immutable compiler
+  commit, draft PR, and coordinated verification.
 - [Catena Implementation Limits and Portability](../20-notes/catena-implementation-limits-and-portability.md)
   — develops portable minima, distinct exhaustion meanings, one executable
   compiler registry, transactional refusal, and the runtime-capacity boundary.

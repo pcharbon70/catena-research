@@ -122,8 +122,9 @@ Additional requirements depend on `kind`:
 The current Catena prototype language line is `0.1`. C001 through C006 use
 patches `0.1.1` through `0.1.6`, and semantic milestone C008 uses `0.1.7`.
 Repository-governance milestones C007, C009, and C012 add no language revision.
-Normative C010 uses `0.1.8`; the next unused semantic patch is `0.1.9` unless
-an approved versioning policy explicitly replaces this temporary convention.
+Normative C010 uses `0.1.8`, and normative C013 uses `0.1.9` for source text.
+The next unused semantic patch is `0.1.10` unless an approved versioning policy
+explicitly replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.
 

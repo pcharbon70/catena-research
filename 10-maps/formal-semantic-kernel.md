@@ -58,7 +58,8 @@ and promotion record for Catena's integrated 0.1.8 kernel.
 
 ## Open questions
 
-- Full source syntax remains in G013–G020.
+- Source decoding is now fixed by C013; identifiers through file/module
+  structure remain in G014–G020.
 - Cleanup, exception catching, time, supervision, distribution, foreign
   values, and optimizer validity remain outside C010.
 - Machine-checked metatheory may be considered after the paper model and
