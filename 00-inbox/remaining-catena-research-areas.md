@@ -96,7 +96,9 @@ forms make conformance reproducible. C014 adds pinned Unicode 17
 standalone identifiers, NFC, security profiles, keyword escaping,
 qualification, and confusable warnings. C015 adds non-semantic indentation,
 narrow layout whitespace, newline/semicolon separators, and an abstract
-token-capability continuation engine, but
+token-capability continuation engine. C016 adds nested comments,
+comment-internal layout preservation, forward documentation attachment,
+CommonMark, and explicit doctest metadata, but
 the [Catena Language Overview](../language-overview.md) explicitly says they do
 not replace a future approachable frontend. The
 [approachable-vocabulary synthesis](../20-notes/approachable-language-vocabulary.md)
@@ -104,17 +106,17 @@ proposes a behavior-first public language, and the associated
 [vocabulary inquiry](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
 remains open. C004 has selected one behavior-first trait ABI, while clause,
 effect, specification, governance, and comprehension punctuation remain partly
-provisional. C013 closes byte decoding, C014 closes standalone names, and C015
-closes layout classification without inventing a whole-source lexer. Checklist
-items `G016`–`G020`, `P047`, `P107`,
+provisional. C013 closes byte decoding, C014 closes standalone names, C015
+closes layout classification, and C016 closes comments without inventing a
+whole-source lexer or parser. Checklist items `G017`–`G020`, `P047`, `P107`,
 and `P109` describe the remaining atomic gaps.
 
 **Remaining research.** This program must define:
 
 - literal-specific Unicode handling on top of C013's preserving source stream,
   while integrating C014's fixed identifier rules into real tokenization;
-- comments, documentation comments, integration of their line endings with
-  C015 layout, and file-to-module rules;
+- integration of C016 documentation metadata with the complete declaration
+  grammar, generated documentation, formatting, and file-to-module rules;
 - literal and interpolation grammar, numeric spelling, operators, precedence,
   associativity, pipes, and error recovery;
 - concrete source forms for functions, bindings, data, patterns, conditions,

@@ -48,6 +48,10 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Comments and Documentation Comments](comments-and-documentation-comments.md)
+  — routes through C013/C015 foundations, nested comment evidence,
+  declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
+  and later grammar/tooling owners.
 - [Whitespace, Layout, and Line Continuation](whitespace-layout-and-line-continuation.md)
   — routes through C013/C014 foundations, comparative layout evidence,
   indentation invariance, separators, continuation capabilities, C015, and
@@ -72,7 +76,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  ten normative areas plus the C012 implementation-limits policy.
+  twelve normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,
@@ -111,6 +115,15 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Comments and Documentation Comments](../20-notes/catena-comments-and-documentation-comments.md)
+  — develops C016's slash-comment, nesting, layout, attachment, CommonMark,
+  HTML-safety, and future doctest decisions.
+- [Comments and Documentation Comments Specification](../60-specification/comments-and-documentation-comments/README.md)
+  — holds the normative 0.1.12 lexical, documentation, diagnostic, and
+  conformance chapters.
+- [C016 Comments and Documentation Comments](../50-journal/2026-08-18-c016-comments-and-documentation-comments.md)
+  — records the abstract scanner/resolver, adversarial cases, traceability,
+  and coordinated verification state.
 - [Catena Whitespace, Layout, and Line Continuation](../20-notes/catena-whitespace-layout-and-line-continuation.md)
   — develops C015's narrow whitespace, indentation-invariance, separators,
   token continuation capabilities, and delimiter-frame decisions.

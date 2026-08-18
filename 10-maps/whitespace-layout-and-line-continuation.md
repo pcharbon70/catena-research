@@ -63,7 +63,8 @@ and the later lexical work that will supply concrete tokens.
 
 ## Open questions
 
-G016 must decide which comment-owned newlines reach layout. G017 must protect
-literal-contained whitespace. G019 must assign concrete tokens to the
+C016 now sends every comment-owned logical LF through this layout classifier;
+see the [comments map](comments-and-documentation-comments.md). G017 must
+protect literal-contained whitespace. G019 must assign concrete tokens to the
 continuation and delimiter capabilities and define precedence, associativity,
 and recovery. The complete surface grammar remains P109.

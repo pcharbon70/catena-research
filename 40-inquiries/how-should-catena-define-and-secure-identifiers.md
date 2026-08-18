@@ -82,5 +82,6 @@ The [normative identifier area](../60-specification/identifiers/README.md)
 defines `IDN001`–`IDN007` and `ID-OBL-001` through `ID-OBL-013`. The sibling
 compiler vendors exact Unicode data and implements standalone identifier,
 qualified-name, audit, and CLI boundaries. C015 now supplies whitespace/layout
-events; G016–G022 retain comments, literals, concrete tokenization,
-punctuation integration, namespaces, resolution, imports, and exports.
+events and C016 supplies comments; G017–G022 retain literals, concrete
+tokenization, punctuation integration, namespaces, resolution, imports, and
+exports.
