@@ -59,10 +59,11 @@ and semicolon. Its result classifies logical LF as `soft`, `separator`, or
 `blank` and carries exact selection. These Elixir names and structs are evidence
 API names, not required names for every implementation.
 
-C015 defines no whole-source CLI. A command accepting arbitrary source would
-have to guess G016 comments, G017 literals, and G019 token capabilities. The
-public token-event operation is the executable integration boundary until
-those lexical owners are complete (`LY-OBL-011`).
+C015 defines no whole-source CLI. C016 now supplies comments through a separate
+abstract event resolver; a command accepting arbitrary source would still have
+to guess G017 literals and G019 token capabilities. The public token-event
+operation is the executable integration boundary until those lexical owners
+are complete (`LY-OBL-011`).
 
 ## Conformance obligations
 

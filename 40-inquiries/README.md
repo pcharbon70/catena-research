@@ -33,6 +33,10 @@ to `20-notes`.
 - [How Should Catena Decode and Normalize Source Text?](how-should-catena-decode-and-normalize-source-text.md)
   — resolves C013 with strict UTF-8, BOM rejection, LF/CRLF logical newlines,
   no whole-file normalization, scalar columns, and original-byte spans.
+- [How Should Catena Handle Comments and Documentation Comments?](how-should-catena-handle-comments-and-documentation-comments.md)
+  — resolves C016 with nested slash comments, lossless layout integration,
+  forward declaration documentation, CommonMark/raw-HTML rules, and explicit
+  future doctest opt-in.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

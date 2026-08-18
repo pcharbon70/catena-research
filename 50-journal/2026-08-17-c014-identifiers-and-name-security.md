@@ -98,8 +98,9 @@ comparison domains for the already-defined confusable audit.
 
 ## Threads
 
-- C015 supplies abstract layout events; G016–G020 must integrate standalone
-  names into complete source token and file rules without changing identity.
+- C015 supplies abstract layout events and C016 supplies comments; G017–G020
+  must integrate standalone names into complete source token and file rules
+  without changing identity.
 - G021/G022 must define namespaces, scopes, shadowing, lookup, imports, and
   which declarations share a confusable comparison domain.
 - P117 and G118 must explain and display cross-file collisions safely.

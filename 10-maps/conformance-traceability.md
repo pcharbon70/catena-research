@@ -47,6 +47,8 @@ follow-up item now that C011 is reached.
   — the normative C014 source for `ID-OBL-*` obligations.
 - [Whitespace and Layout Specification](../60-specification/whitespace-and-layout/README.md)
   — the normative C015 source for `LY-OBL-*` obligations.
+- [Comments and Documentation Comments Specification](../60-specification/comments-and-documentation-comments/README.md)
+  — the normative C016 source for `CM-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -70,6 +72,7 @@ convention.
 | `ST` | source-text | 0.1.9 |
 | `ID` | identifiers | 0.1.10 |
 | `LY` | whitespace-and-layout | 0.1.11 |
+| `CM` | comments-and-documentation-comments | 0.1.12 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -90,7 +93,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all ten normative areas and the C012 governance policy are now
+extracted; all twelve normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -109,6 +112,8 @@ sibling compiler repository.
 | `IL` implementation limits | 12 | `c012_implementation_limits_test.exs` (6) | compiler-tagged + gated (draft PR #88); 1 governance/version obligation allow-listed |
 | `ST` source-text | 10 | `c013_source_text_test.exs` (7) | compiler-tagged + gated (working tree); all obligations traced |
 | `ID` identifiers | 13 | `c014_identifiers_test.exs` (9) | compiler-tagged + gated (working tree); all obligations traced |
+| `LY` whitespace-and-layout | 11 | `c015_whitespace_layout_test.exs` (9) | compiler-tagged + gated (merged); all obligations traced |
+| `CM` comments-and-documentation-comments | 12 | `c016_comments_documentation_test.exs` (9) | compiler-tagged + gated (working tree); all obligations traced |
 
 ## Trails
 
@@ -920,6 +925,43 @@ gate:
 
 C015 coverage is 11 `traced` and 0 untraced obligations. The dedicated gate
 rejects unknown identifiers and fails if any `LY-OBL-*` identifier lacks a
+focused tag.
+
+## Comments and documentation registry (`CM`, 0.1.12)
+
+Evidence labels refer to focused tests in
+[`c016_comments_documentation_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c016_comments_documentation_test.exs)
+and its
+[`c016_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c016_traceability_coverage_test.exs)
+gate:
+
+- **c016 #1** *keeps 0.1.12 source-only with exact abstract frontend selections*
+- **c016 #2** *fixes line, block, documentation, and degenerate delimiter edges*
+- **c016 #3** *balances mixed and deep nested blocks and reports EOF depth*
+- **c016 #4** *preserves Unicode spelling and original CRLF byte spans*
+- **c016 #5** *normalizes only defined documentation edges and common margins*
+- **c016 #6** *classifies every internal LF through the C015 layout engine*
+- **c016 #7** *combines outer documentation and attaches it to the next target*
+- **c016 #8** *keeps CommonMark, raw HTML, and doctest selection inert metadata*
+- **c016 #9** *rejects every misplaced or unattached documentation group*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CM-OBL-001 | Apply comment behavior only at exact 0.1.12 | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/comments-and-documentation-comments/diagnostics-and-conformance.md#revision-and-persistence-separation) | c016 #1; EDN001 | traced |
+| CM-OBL-002 | Recognize exact line/block/documentation edges and leave line LF unconsumed | [`comment-lexing-and-layout.md#comment-forms`](../60-specification/comments-and-documentation-comments/comment-lexing-and-layout.md#comment-forms) | c016 #2 | traced |
+| CM-OBL-003 | Balance every nested block opener without a language depth limit | [`comment-lexing-and-layout.md#nested-block-comments`](../60-specification/comments-and-documentation-comments/comment-lexing-and-layout.md#nested-block-comments) | c016 #3; CMT002 | traced |
+| CM-OBL-004 | Preserve C013 scalars, spans, and every internal LF without normalization | [`comment-lexing-and-layout.md#source-units-and-body-preservation`](../60-specification/comments-and-documentation-comments/comment-lexing-and-layout.md#source-units-and-body-preservation) | c016 #4, #6 | traced |
+| CM-OBL-005 | Normalize documentation bodies by the exact algorithm | [`documentation-attachment-and-markdown.md#documentation-body-normalization`](../60-specification/comments-and-documentation-comments/documentation-attachment-and-markdown.md#documentation-body-normalization) | c016 #5 | traced |
+| CM-OBL-006 | Combine adjacent documentation and attach only to the next valid target | [`documentation-attachment-and-markdown.md#grouping-and-declaration-attachment`](../60-specification/comments-and-documentation-comments/documentation-attachment-and-markdown.md#grouping-and-declaration-attachment) | c016 #7, #9; DOC001 | traced |
+| CM-OBL-007 | Classify every comment-internal LF through unchanged C015 rules | [`comment-lexing-and-layout.md#layout-integration`](../60-specification/comments-and-documentation-comments/comment-lexing-and-layout.md#layout-integration) | c016 #6 | traced |
+| CM-OBL-008 | Pin CommonMark, inert raw HTML, and exact explicit doctest metadata | [`documentation-attachment-and-markdown.md#markdown-profile`](../60-specification/comments-and-documentation-comments/documentation-attachment-and-markdown.md#markdown-profile) | c016 #7, #8 | traced |
+| CM-OBL-009 | Emit stable comment and documentation diagnostics with reasons and spans | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/comments-and-documentation-comments/diagnostics-and-conformance.md#stable-diagnostics) | c016 #3, #9; CMT001, CMT002, DOC001 | traced |
+| CM-OBL-010 | Keep scanner and resolver abstract and lossless | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/comments-and-documentation-comments/diagnostics-and-conformance.md#abstract-public-boundaries) | c016 #2, #6, #7 | traced |
+| CM-OBL-011 | Produce deterministic scan and resolve results | [`diagnostics-and-conformance.md#conformance-obligations`](../60-specification/comments-and-documentation-comments/diagnostics-and-conformance.md#conformance-obligations) | c016 #1, #6 | traced |
+| CM-OBL-012 | Preserve source-only and persisted-format separation | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/comments-and-documentation-comments/diagnostics-and-conformance.md#revision-and-persistence-separation) | c016 #1 | traced |
+
+C016 coverage is 12 `traced` and 0 untraced obligations. The dedicated gate
+rejects unknown identifiers and fails if any `CM-OBL-*` identifier lacks a
 focused tag.
 
 ## Open questions

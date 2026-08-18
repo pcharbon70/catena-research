@@ -387,8 +387,9 @@ The [source-text map](10-maps/source-text-encoding-and-normalization.md),
 [C013 evidence record](50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md)
 separate that envelope from later lexical and file-language work. Normative
 C014 now fixes standalone identifier and qualified-name validation on top of
-the envelope; C015 defines whitespace/layout classification; G016–G020 retain
-the remaining lexical and file-language work.
+the envelope; C015 defines whitespace/layout classification; C016 defines
+comments and documentation attachment; G017–G020 retain the remaining lexical
+and file-language work.
 Existing JSON revisions and the exact 0.1.8 semantic kernel retain their own
 frontend and artifact identities.
 
@@ -422,9 +423,25 @@ The
 [whitespace and layout map](10-maps/whitespace-layout-and-line-continuation.md),
 [normative specification](60-specification/whitespace-and-layout/README.md),
 and [C015 evidence record](50-journal/2026-08-17-c015-whitespace-and-layout.md)
-connect those rules to the abstract sibling-compiler layout engine. G016,
-G017, and G019 remain responsible for comments, literals, and concrete token
-capability assignments.
+connect those rules to the abstract sibling-compiler layout engine. G017 and
+G019 remain responsible for literals and concrete token capability
+assignments.
+
+### Normative comments and documentation boundary
+
+Normative C016 defines exact revision 0.1.12 as a source-only abstract comment
+boundary. It recognizes line and nested block comments, preserves every
+comment-owned logical LF through C015 layout, and attaches normalized outer
+documentation only to the next parser-supplied declaration target. Attached
+bodies use CommonMark 0.31.2, raw HTML cannot execute unsanitized, and only the
+exact `catena doctest` info string opts into a future runner.
+
+The [comments map](10-maps/comments-and-documentation-comments.md),
+[normative specification](60-specification/comments-and-documentation-comments/README.md),
+and [C016 evidence record](50-journal/2026-08-18-c016-comments-and-documentation-comments.md)
+connect those rules to the sibling compiler's abstract scanner and resolver.
+G019 and P109 still own complete token/declaration grammar, G020 owns
+file/module attachment, and G119 owns actual doctest execution.
 
 ### Normative formal semantic kernel
 
@@ -660,8 +677,8 @@ runtime representation still require validation.
 
 The main unresolved areas are:
 
-- comments, literals, concrete tokenization, exact surface grammar, and
-  behavior-first vocabulary beyond C015's abstract layout boundary;
+- literals, concrete tokenization, exact surface grammar, and behavior-first
+  vocabulary beyond C016's abstract comment boundary;
 - integration of the normative type-system, data, and clause-condition slices
   with complete handler and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;

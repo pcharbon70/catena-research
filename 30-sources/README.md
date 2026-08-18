@@ -346,6 +346,21 @@ mentions can remain as citations in the document that uses them.
 - [The Update Framework Specification](the-update-framework-specification.md)
   — provides the distinct-key threshold, offline root, scoped delegation, and
   dual-authority root-continuity model adapted by the 0.1.6 candidate.
+- [CommonMark Specification 0.31.2](macfarlane-2024-commonmark-specification.md)
+  — fixes the Markdown grammar used by C016, including fenced info strings and
+  the raw-HTML behavior that requires a separate safe-rendering rule.
+- [ECMAScript 2026 Language Specification: Comments](ecma-international-2026-ecmascript-comments.md)
+  — shows that a line-comment terminator remains separate and multiline
+  comment line breaks remain syntactically observable.
+- [Elixir 1.20 Writing Documentation](elixir-project-2026-writing-documentation.md)
+  — separates API documentation from source comments, uses Markdown, and
+  makes doctest execution an explicit test action.
+- [The Rust Reference: Comments](rust-project-2026-rust-comments.md) — defines
+  nested slash comments, exact outer/inner documentation prefixes, attachment,
+  and awkward delimiter edge cases.
+- [The Swift Programming Language: Lexical Structure](swift-project-2026-lexical-structure.md)
+  — independently specifies balanced nested multiline comments and their
+  whitespace role.
 
 ## Maintaining this index
 

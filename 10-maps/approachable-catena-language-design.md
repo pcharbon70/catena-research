@@ -29,6 +29,9 @@ path should remain usable without them.
 
 ## Start here
 
+- [Catena Comments and Documentation Comments](../20-notes/catena-comments-and-documentation-comments.md)
+  fixes declaration-documentation attachment and a safe, versioned document
+  format without requiring a complete grammar or renderer.
 - [Catena Whitespace, Layout, and Line Continuation](../20-notes/catena-whitespace-layout-and-line-continuation.md)
   fixes the layout structure on which the remaining approachable grammar can
   build without assigning meaning to indentation.

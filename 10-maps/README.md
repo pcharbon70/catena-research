@@ -45,7 +45,7 @@ should explain why its links belong together rather than merely list files.
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  ten normative areas plus the C012 implementation-limits policy.
+  twelve normative areas plus the C012 implementation-limits policy.
 - [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through the
   normative 0.1.8 kernel syntax, static and dynamic semantics, typed actors,
   metatheory, executable reference, and immutable promotion evidence.
@@ -59,6 +59,10 @@ should explain why its links belong together rather than merely list files.
 - [Clause Guards](clause-guards.md) — routes through ordered clause selection,
   guard safety, totality, coverage facts, the normative 0.1.3 specification,
   executable evidence, match compilation, and selective receive.
+- [Comments and Documentation Comments](comments-and-documentation-comments.md)
+  — routes through source/layout foundations, nested slash comments,
+  declaration attachment, CommonMark/raw-HTML safety, doctest opt-in, C016,
+  and remaining grammar/tooling owners.
 - [Combinators for Algebraic Data and Categorical Programming](combinators-for-algebraic-data-and-categorical-programming.md)
   — routes through universal function and data glue, ADT-derived operations,
   the seventeen-class vocabulary, focused domain libraries, operational

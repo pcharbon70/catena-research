@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C016 Comments and Documentation Comments](2026-08-18-c016-comments-and-documentation-comments.md)
+  — records the normative 0.1.12 comment contract, abstract scanner/resolver,
+  documentation policy, diagnostics, traceability, and coordinated
+  verification state.
 - [C015 Whitespace and Layout](2026-08-17-c015-whitespace-and-layout.md) —
   records the normative 0.1.11 layout contract, abstract token-event engine,
   diagnostics, traceability, and coordinated verification state.

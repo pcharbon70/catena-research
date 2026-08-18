@@ -30,10 +30,11 @@ The decision was developed in the
 The [topic map](../10-maps/whitespace-layout-and-line-continuation.md) routes
 through Elixir, Python, Haskell, Rust, C013, and C014.
 
-The result remains deliberately pre-lexer. Comments, literal bodies, concrete
-operators, punctuation, precedence, associativity, and complete surface
-productions remain G016–G019 and P109. The executable engine consumes opaque
-lexer-supplied token events instead of guessing those unresolved forms.
+The result remains deliberately pre-lexer. C016 now supplies comments through
+the abstract event boundary; literal bodies, concrete operators, punctuation,
+precedence, associativity, and complete surface productions remain G017–G019
+and P109. The executable engine consumes opaque lexer-supplied token events
+instead of guessing those unresolved forms.
 
 ## Compiler evidence
 
@@ -52,8 +53,9 @@ The exact 0.1.10 standalone identifier frontend retains its default selection
 even though the source-text decoder now defaults to 0.1.11. The language-info
 and conformance-info registries report 0.1.11 as current.
 
-No whole-source layout CLI was added. Such a command would falsely imply that
-comments, literals, and concrete tokenization were already defined.
+No whole-source layout CLI was added. C016 likewise stays at an abstract
+comment boundary; such a command would still falsely imply that literals and
+concrete tokenization were already defined.
 
 The implementation is immutable at compiler commit
 [`5d08925ce92f57e78018e0ab81c008a7d917dfbc`](https://github.com/pcharbon70/catena/commit/5d08925ce92f57e78018e0ab81c008a7d917dfbc)
@@ -91,8 +93,8 @@ runtime semantics, or BEAM representation.
 
 ## Threads
 
-- G016 must define comment nesting, line termination, documentation
-  attachment, Markdown, and doctests.
+- C016 now defines comment nesting, line termination, documentation
+  attachment, Markdown, and the future doctest opt-in.
 - G017 must define which whitespace and newlines belong inside literals.
 - G019 must assign concrete tokens to continuation and delimiter capabilities
   while defining operators, precedence, associativity, and recovery.
@@ -101,5 +103,6 @@ runtime semantics, or BEAM representation.
 
 ## Follow-ups
 
-Integrate G016 comments, G017 literals, and G019 concrete token capabilities
-through the published event boundary without reinterpreting C015 layout.
+Integrate G017 literals and G019 concrete token capabilities through the
+published event boundary without reinterpreting C015 layout; C016 comments now
+demonstrate that integration pattern.

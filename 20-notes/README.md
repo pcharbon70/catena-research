@@ -47,6 +47,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — separates normative force from behavior class, defines deterministic
   invalidity and bounded variation, rejects undefined behavior, and develops
   the implementation-profile model adopted by C009.
+- [Catena Comments and Documentation Comments](catena-comments-and-documentation-comments.md)
+  — derives C016's nested slash comments, lossless comment layout, outer
+  documentation normalization and attachment, CommonMark profile, raw-HTML
+  safety, and explicit future doctest policy.
 - [Catena's Formal Semantic Kernel](catena-formal-semantic-kernel.md) —
   synthesizes the normative 0.1.8 executable calculus, including exact
   S-expression input, rows, strict dynamics, typed actors, explicit traps,

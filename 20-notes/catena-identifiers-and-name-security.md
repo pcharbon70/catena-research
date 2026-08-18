@@ -195,8 +195,9 @@ confusable signal unusable. Such evidence should name concrete scripts,
 spelling workflows, and collision sets rather than assume all Unicode policy
 has one usability/security point.
 
-C015 now supplies the abstract whitespace/layout event boundary. G016–G020
-must integrate these standalone names into a real lexer and file grammar.
+C015 now supplies the abstract whitespace/layout event boundary, and C016 adds
+comments without changing identifier identity. G017–G020 must integrate these
+standalone names into a real lexer and file grammar.
 G021/G022 must supply comparison domains and resolution. P117 must
 carry secondary spans and cross-file collision explanations; G118 must define
 safe display and formatting. None may weaken the pinned 0.1.10 identity rules

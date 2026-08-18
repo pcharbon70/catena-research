@@ -98,11 +98,12 @@ scalar that is not layout whitespace when its own later specification admits
 that scalar. Such content reaches the layout engine as part of one opaque token
 or comment event, not as layout whitespace (`LY-OBL-011`).
 
-G016 defines whether a comment terminator contributes a logical line break to
-the surrounding layout stream. G017 defines literal-contained newlines and
-spaces. G019 defines concrete punctuation and operators. Until those owners
-are complete, the C015 executable boundary accepts lexer-supplied abstract
-token events rather than claiming a whole-source lexer.
+[Comment Lexing and Layout](../comments-and-documentation-comments/comment-lexing-and-layout.md)
+now requires every comment-owned logical LF to participate in this classifier.
+G017 defines literal-contained newlines and spaces. G019 defines concrete
+punctuation and operators. Until those remaining owners are complete, the C015
+executable boundary accepts lexer-supplied abstract token events rather than
+claiming a whole-source lexer.
 
 ## Rationale and evidence (non-normative)
 

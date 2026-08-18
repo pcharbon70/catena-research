@@ -108,7 +108,7 @@ choosing host-dependent decoding, normalization, or columns.
 - C014 now fixes the identifier repertoire, case, qualification, confusable,
   and identifier-specific normalization rules on top of C013.
 - C015 now classifies whitespace and layout without changing C013 newline
-  formation; G016 still owns comments and documentation attachment.
+  formation; C016 now preserves comment-owned newlines through that classifier.
 - G017–G019 must define literals, numbers, operators, punctuation, and any
   context-specific scalar restrictions.
 - G020 must define file/module relations and any source header carrying exact

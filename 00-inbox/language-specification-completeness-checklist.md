@@ -239,8 +239,8 @@ as small normative rules rather than copied wholesale into a specification.
   immutable commit
   [`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38)
   on draft compiler PR [#89](https://github.com/pcharbon70/catena/pull/89).
-  C014 now defines standalone identifiers and C015 defines layout events;
-  G016–G020 retain whole-source
+  C014 now defines standalone identifiers, C015 defines layout events, and
+  C016 defines comments; G017–G020 retain whole-source
   tokens, grammar, literals, and file/module semantics; P117 and G118 retain
   complete diagnostics and formatting.
 - [x] **C014 — Complete — identifiers.** The normative
@@ -256,7 +256,8 @@ as small normative rules rather than copied wholesale into a specification.
   sibling compiler branch `agent/c014-identifiers` vendors exact Unicode data,
   implements standalone identifier/qualified-name/audit APIs and
   `check-identifiers`, and supplies complete `ID-OBL-001`–`ID-OBL-013`
-  executable coverage. C015 now defines whitespace and layout; G016–G020 retain
+  executable coverage. C015 now defines whitespace/layout and C016 defines
+  comments/documentation; G017–G020 retain
   the remaining whole-source token and file grammar;
   G021–G022 retain namespaces, resolution, imports, and exports.
 - [x] **C015 — Complete — whitespace and layout.** The normative
@@ -275,10 +276,25 @@ as small normative rules rather than copied wholesale into a specification.
   coverage at immutable compiler commit
   [`5d08925ce92f57e78018e0ab81c008a7d917dfbc`](https://github.com/pcharbon70/catena/commit/5d08925ce92f57e78018e0ab81c008a7d917dfbc)
   on draft compiler PR [#91](https://github.com/pcharbon70/catena/pull/91).
-  G016, G017, and G019 retain comments, literals, and concrete token capability
-  assignments; P109 retains the complete surface grammar.
-- [ ] **G016 — Gap — comments and documentation comments.** Define nesting, attachment
-  to declarations, Markdown treatment, and whether doctests are executable.
+  C016 now defines comment integration; G017 and G019 retain literals and
+  concrete token capability assignments; P109 retains the complete surface
+  grammar.
+- [x] **C016 — Complete — comments and documentation comments.** The normative
+  [0.1.12 comments specification](../60-specification/comments-and-documentation-comments/README.md),
+  [synthesis](../20-notes/catena-comments-and-documentation-comments.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-handle-comments-and-documentation-comments.md),
+  [topic map](../10-maps/comments-and-documentation-comments.md), and
+  [C016 record](../50-journal/2026-08-18-c016-comments-and-documentation-comments.md)
+  define `//`, nested `/* ... */`, forward outer documentation comments,
+  lossless C015 classification for every comment-internal LF, exact body
+  normalization and declaration attachment, CommonMark 0.31.2, inert raw HTML,
+  and explicit-only future `catena doctest` fences. The sibling compiler branch
+  `agent/c016-comments-documentation` implements `Catena.scan_comment/2` and
+  `Catena.resolve_comments/2`, exact `CMT001`, `CMT002`, and `DOC001`
+  diagnostics, source-only revision/persistence separation, and complete
+  `CM-OBL-001`–`CM-OBL-012` executable coverage. G019 and P109 retain complete
+  token/declaration grammar; G020 retains file/module ownership; G110/G118
+  retain rendering/formatting; G119 retains actual doctest execution.
 - [ ] **G017 — Gap — literal grammar.** Define integers, floats, strings, characters,
   atoms or symbols, lists, tuples, records, maps, binaries, escapes, and
   interpolation.
