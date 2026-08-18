@@ -29,6 +29,9 @@ path should remain usable without them.
 
 ## Start here
 
+- [Catena Whitespace, Layout, and Line Continuation](../20-notes/catena-whitespace-layout-and-line-continuation.md)
+  fixes the layout structure on which the remaining approachable grammar can
+  build without assigning meaning to indentation.
 - [An Approachable Vocabulary for Catena](../20-notes/approachable-language-vocabulary.md)
   proposes the behavior-first terms, operation families, capability names,
   internal semantic ledger, diagnostic shape, and learning sequence.

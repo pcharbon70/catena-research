@@ -45,6 +45,8 @@ follow-up item now that C011 is reached.
   — the normative C013 source for `ST-OBL-*` obligations.
 - [Identifier Specification](../60-specification/identifiers/README.md)
   — the normative C014 source for `ID-OBL-*` obligations.
+- [Whitespace and Layout Specification](../60-specification/whitespace-and-layout/README.md)
+  — the normative C015 source for `LY-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -67,6 +69,7 @@ convention.
 | `IL` | implementation limits and portability | C012 governance |
 | `ST` | source-text | 0.1.9 |
 | `ID` | identifiers | 0.1.10 |
+| `LY` | whitespace-and-layout | 0.1.11 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -881,6 +884,42 @@ gate:
 
 C014 coverage is 13 `traced` and 0 untraced obligations. The dedicated gate
 rejects unknown identifiers and fails if any `ID-OBL-*` identifier lacks a
+focused tag.
+
+## Whitespace and layout registry (`LY`, 0.1.11)
+
+Evidence labels refer to focused tests in
+[`c015_whitespace_layout_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c015_whitespace_layout_test.exs)
+and its
+[`c015_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/rewrite/test/catena/c015_traceability_coverage_test.exs)
+gate:
+
+- **c015 #1** *keeps 0.1.11 source-only and requires exact layout selection*
+- **c015 #2** *accepts SPACE, TAB, and logical LF while rejecting other whitespace*
+- **c015 #3** *proves indentation and tab width do not create structure*
+- **c015 #4** *preserves hard LF, semicolon, blank lines, and optional final LF*
+- **c015 #5** *continues forms from before/after token capabilities*
+- **c015 #6** *distinguishes nested continued and block delimiter frames*
+- **c015 #7** *reports unexpected, mismatched, and unclosed delimiters*
+- **c015 #8** *rejects separator and EOF interruption of required continuation*
+- **c015 #9** *shields opaque token content and resolves deterministically*
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| LY-OBL-001 | Apply layout only to 0.1.11 and preserve source-only format boundaries | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/whitespace-and-layout/diagnostics-and-conformance.md#revision-and-persistence-separation) | c015 #1; EDN001 | traced |
+| LY-OBL-002 | Accept only SPACE, TAB, and logical LF as layout whitespace | [`whitespace-and-indentation.md#layout-whitespace`](../60-specification/whitespace-and-layout/whitespace-and-indentation.md#layout-whitespace) | c015 #2; LAY001 | traced |
+| LY-OBL-003 | Make indentation and tab width semantically inert | [`whitespace-and-indentation.md#indentation-has-no-semantic-effect`](../60-specification/whitespace-and-layout/whitespace-and-indentation.md#indentation-has-no-semantic-effect) | c015 #3 | traced |
+| LY-OBL-004 | Preserve hard LF and semicolon separators | [`separators-and-line-continuation.md#hard-separators`](../60-specification/whitespace-and-layout/separators-and-line-continuation.md#hard-separators) | c015 #4 | traced |
+| LY-OBL-005 | Classify blank lines and complete or incomplete EOF exactly | [`separators-and-line-continuation.md#eof-and-incomplete-input`](../60-specification/whitespace-and-layout/separators-and-line-continuation.md#eof-and-incomplete-input) | c015 #4, #8; LAY003 | traced |
+| LY-OBL-006 | Resolve before/after token continuation capabilities | [`separators-and-line-continuation.md#token-continuation-capabilities`](../60-specification/whitespace-and-layout/separators-and-line-continuation.md#token-continuation-capabilities) | c015 #5, #8; LAY003 | traced |
+| LY-OBL-007 | Distinguish and validate continued and block delimiter frames | [`separators-and-line-continuation.md#delimiter-frames`](../60-specification/whitespace-and-layout/separators-and-line-continuation.md#delimiter-frames) | c015 #6, #7; LAY002 | traced |
+| LY-OBL-008 | Emit stable layout diagnostic identities and reasons | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/whitespace-and-layout/diagnostics-and-conformance.md#stable-diagnostics) | c015 #2, #7, #8; LAY001–LAY003 | traced |
+| LY-OBL-009 | Preserve original-byte spans including CRLF and multibyte scalars | [`whitespace-and-indentation.md#layout-whitespace`](../60-specification/whitespace-and-layout/whitespace-and-indentation.md#layout-whitespace) | c015 #2 | traced |
+| LY-OBL-010 | Return a lossless deterministic classified event stream | [`separators-and-line-continuation.md#resolution-order`](../60-specification/whitespace-and-layout/separators-and-line-continuation.md#resolution-order) | c015 #1, #3, #4, #9 | traced |
+| LY-OBL-011 | Keep comments, literals, and concrete operator assignment outside C015 | [`diagnostics-and-conformance.md#public-library-boundary`](../60-specification/whitespace-and-layout/diagnostics-and-conformance.md#public-library-boundary) | c015 #9 | traced |
+
+C015 coverage is 11 `traced` and 0 untraced obligations. The dedicated gate
+rejects unknown identifiers and fails if any `LY-OBL-*` identifier lacks a
 focused tag.
 
 ## Open questions

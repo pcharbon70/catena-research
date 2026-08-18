@@ -33,9 +33,10 @@ controls finite-resource refusal; this area adds no implementation limit.
 Put only identifier repertoire, normalization, case equality, qualification,
 reserved-word escaping, Unicode security filtering, confusable comparison,
 stable diagnostics, and C014 conformance obligations here. Whole-source token
-boundaries, whitespace, comments, literals, operators, namespace membership,
-shadowing, name resolution, imports, exports, and file/module relations remain
-later checklist work.
+boundaries remain later work, while whitespace and layout now live in the
+normative [0.1.11 area](../whitespace-and-layout/README.md). Comments, literals,
+concrete operators, namespace membership, shadowing, name resolution, imports,
+exports, and file/module relations remain later checklist work.
 
 ## Variability register
 

@@ -36,7 +36,8 @@ flowchart TD
     P --> K[Exact normative 0.1.8 semantic kernel]
     S[Catena source bytes] --> SE[Strict normative 0.1.9 source envelope]
     SE --> ID[Normative 0.1.10 identifier boundary]
-    ID --> U
+    ID --> LY[Normative 0.1.11 whitespace and layout]
+    LY --> U
     U --> DE[Declaration elaboration<br/>nominal identity and module interfaces]
     DE --> ST[Static semantics<br/>types, patterns, rows, traits, effects, coverage]
     ST --> TC[Typed elaborated core<br/>explicit evidence and capabilities]
@@ -386,7 +387,8 @@ The [source-text map](10-maps/source-text-encoding-and-normalization.md),
 [C013 evidence record](50-journal/2026-08-17-c013-source-text-encoding-and-normalization.md)
 separate that envelope from later lexical and file-language work. Normative
 C014 now fixes standalone identifier and qualified-name validation on top of
-the envelope; G015–G020 retain the remaining lexical and file-language work.
+the envelope; C015 defines whitespace/layout classification; G016–G020 retain
+the remaining lexical and file-language work.
 Existing JSON revisions and the exact 0.1.8 semantic kernel retain their own
 frontend and artifact identities.
 
@@ -406,6 +408,23 @@ The [identifier map](10-maps/identifier-and-name-security.md),
 [C014 evidence record](50-journal/2026-08-17-c014-identifiers-and-name-security.md)
 connect those rules to the pinned data generator, public validation boundary,
 CLI, and exhaustive normalization evidence.
+
+### Normative whitespace and layout boundary
+
+Normative C015 defines exact revision 0.1.11 as a source-only token-event
+layout boundary. Indentation is non-semantic; ASCII space, tab, and C013
+logical LF are the only layout whitespace; hard LF and semicolon separate
+sibling forms; and lexer-supplied token capabilities plus continued or block
+delimiter frames decide line continuation. The lossless result preserves
+original-byte spans and does not claim a complete lexer.
+
+The
+[whitespace and layout map](10-maps/whitespace-layout-and-line-continuation.md),
+[normative specification](60-specification/whitespace-and-layout/README.md),
+and [C015 evidence record](50-journal/2026-08-17-c015-whitespace-and-layout.md)
+connect those rules to the abstract sibling-compiler layout engine. G016,
+G017, and G019 remain responsible for comments, literals, and concrete token
+capability assignments.
 
 ### Normative formal semantic kernel
 
@@ -622,6 +641,8 @@ The research currently converges on these decisions:
   normative C013;
 - Unicode 17 XID identifiers, NFC source spelling, standalone qualification,
   hard keywords, and name-security checks under normative C014;
+- non-semantic indentation, narrow layout whitespace, newline/semicolon
+  separators, and token-directed line continuation under normative C015;
 - one conformance vocabulary across every normative chapter, with no undefined
   behavior and explicit invalidity, variability, limit, and trap classes under
   governance milestone C009;
@@ -639,8 +660,8 @@ runtime representation still require validation.
 
 The main unresolved areas are:
 
-- whole-source tokenization, exact surface grammar, and behavior-first
-  vocabulary beyond C014's standalone name boundary;
+- comments, literals, concrete tokenization, exact surface grammar, and
+  behavior-first vocabulary beyond C015's abstract layout boundary;
 - integration of the normative type-system, data, and clause-condition slices
   with complete handler and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;

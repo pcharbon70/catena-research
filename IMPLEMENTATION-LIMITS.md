@@ -203,8 +203,9 @@ C012 is therefore a repository-governance milestone. It closed G012 without
 consuming a language revision. Normative C013 subsequently uses `0.1.9` for
 the source-text envelope without changing C012's portability classifications;
 normative C014 uses `0.1.10` for identifiers without adding a resource
-dimension or changing those classifications; `0.1.11` is the next unused
-semantic patch.
+dimension or changing those classifications; normative C015 uses `0.1.11` for
+whitespace and layout under the same fixed resource classifications; `0.1.12`
+is the next unused semantic patch.
 
 ## Conformance obligations
 

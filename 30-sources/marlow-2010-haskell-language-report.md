@@ -15,7 +15,10 @@ accessed: "2026-08-01"
 tags:
   - comprehensions
   - language-design
+  - layout
   - pattern-matching
+  - syntax
+  - whitespace
 aliases:
   - "Haskell 2010 Report"
 ---
@@ -29,17 +32,35 @@ Simon Marlow, ed., *Haskell 2010 Language Report* (2010).
 
 ## Research question
 
-How does Haskell give ordered clause guards and list comprehensions a kernel
-translation, and what does that translation imply for binding, filtering, and
-pattern failure?
+How does Haskell give layout, ordered clause guards, and list comprehensions
+precise translations, and what do those translations imply for lexical and
+semantic structure?
 
 ## Method
 
-The report is the language definition. Sections 3.11, 3.13, and 3.17 give
-syntax, informal behavior, and translation rules for list comprehensions, case
-alternatives, and pattern matching.
+The report is the language definition. Sections 2.7 and 10.3 specify layout;
+Sections 3.11, 3.13, and 3.17 give syntax, informal behavior, and translation
+rules for list comprehensions, case alternatives, and pattern matching.
 
 ## Findings
+
+### Layout
+
+- Layout-sensitive contexts begin after selected keywords when an explicit
+  opening brace is absent. The next lexeme's indentation establishes the
+  context column.
+- Equal indentation inserts a semicolon, lesser indentation closes one or more
+  implicit contexts, and greater indentation continues the current item.
+- Explicit braces push a distinct zero context in which the surrounding
+  implicit layout rule is suspended.
+- The specification fixes one-based columns, eight-column tab stops, and a
+  one-column width for every Unicode character. It warns against programs whose
+  meaning depends on non-space display width.
+- A parser-prefix test can trigger an implicit closing brace when the next
+  token would otherwise make the prefix invalid. Layout therefore is not a
+  purely local whitespace rewrite.
+- EOF closes remaining implicit contexts but is an error in an unclosed
+  explicit context.
 
 ### Clause guards
 
@@ -77,10 +98,15 @@ alternatives, and pattern matching.
 
 ## Relevance
 
-The report demonstrates a compositional path from rich guard and comprehension
-surfaces to a small core. It makes clear that clause guards, comprehension
-filters, generator patterns, and local declarations have related syntax but
-different failure and binding roles.
+The report demonstrates compositional paths from layout and rich expression
+surfaces to explicit structure. Its offside translation is evidence that
+semantic indentation requires column, tab, delimiter-stack, EOF, and parser
+interaction rules; Catena avoids those costs by making indentation
+non-semantic.
+
+It also makes clear that clause guards, comprehension filters, generator
+patterns, and local declarations have related syntax but different failure and
+binding roles.
 
 The list translation supplies an extensional model for Catena's pure
 comprehensions. Catena should not inherit silent pattern filtering without an
@@ -104,3 +130,6 @@ precision.
 - [List Comprehensions](../20-notes/list-comprehensions.md)
 - [How Should Catena Specify List Comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
 - [List Comprehensions map](../10-maps/list-comprehensions.md)
+- [Catena Whitespace, Layout, and Line Continuation](../20-notes/catena-whitespace-layout-and-line-continuation.md)
+- [Resolved layout inquiry](../40-inquiries/how-should-catena-treat-whitespace-and-line-breaks.md)
+- [Whitespace, Layout, and Line Continuation map](../10-maps/whitespace-layout-and-line-continuation.md)

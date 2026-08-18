@@ -30,6 +30,9 @@ source notes.
 
 ### Documents
 
+- [C015 Whitespace and Layout](2026-08-17-c015-whitespace-and-layout.md) —
+  records the normative 0.1.11 layout contract, abstract token-event engine,
+  diagnostics, traceability, and coordinated verification state.
 - [C014 Identifiers and Name Security](2026-08-17-c014-identifiers-and-name-security.md)
   — records the normative 0.1.10 name contract, pinned Unicode data,
   standalone compiler APIs and CLI, diagnostics, traceability, and coordinated

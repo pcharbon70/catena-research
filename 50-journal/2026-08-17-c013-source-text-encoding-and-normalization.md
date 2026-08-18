@@ -105,10 +105,10 @@ choosing host-dependent decoding, normalization, or columns.
 
 ## Threads
 
-- G014 must choose the identifier repertoire, case and qualification rules,
-  confusable policy, and any identifier-specific normalization.
-- G015 and G016 must classify whitespace, layout, comments, and documentation
-  attachment without changing C013 newline formation.
+- C014 now fixes the identifier repertoire, case, qualification, confusable,
+  and identifier-specific normalization rules on top of C013.
+- C015 now classifies whitespace and layout without changing C013 newline
+  formation; G016 still owns comments and documentation attachment.
 - G017–G019 must define literals, numbers, operators, punctuation, and any
   context-specific scalar restrictions.
 - G020 must define file/module relations and any source header carrying exact

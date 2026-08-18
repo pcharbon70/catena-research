@@ -92,14 +92,14 @@ exact 0.1.8 kernel, interfaces, signature domains, typed core, runtime
 semantics, or BEAM representation.
 
 The compiler and specification now share a reproducible Unicode boundary
-instead of relying on ambient OTP property tables. G015 can define lexical
-separation against a fixed name production, and G021 can later supply real
+instead of relying on ambient OTP property tables. C015 now defines lexical
+layout separation against a fixed name production, and G021 can later supply real
 comparison domains for the already-defined confusable audit.
 
 ## Threads
 
-- G015–G020 must integrate standalone names into complete source token and
-  file rules without changing their identity.
+- C015 supplies abstract layout events; G016–G020 must integrate standalone
+  names into complete source token and file rules without changing identity.
 - G021/G022 must define namespaces, scopes, shadowing, lookup, imports, and
   which declarations share a confusable comparison domain.
 - P117 and G118 must explain and display cross-file collisions safely.
