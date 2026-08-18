@@ -239,7 +239,8 @@ as small normative rules rather than copied wholesale into a specification.
   immutable commit
   [`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38)
   on draft compiler PR [#89](https://github.com/pcharbon70/catena/pull/89).
-  C014 now defines standalone identifiers; G015–G020 retain whole-source
+  C014 now defines standalone identifiers and C015 defines layout events;
+  G016–G020 retain whole-source
   tokens, grammar, literals, and file/module semantics; P117 and G118 retain
   complete diagnostics and formatting.
 - [x] **C014 — Complete — identifiers.** The normative
@@ -255,10 +256,27 @@ as small normative rules rather than copied wholesale into a specification.
   sibling compiler branch `agent/c014-identifiers` vendors exact Unicode data,
   implements standalone identifier/qualified-name/audit APIs and
   `check-identifiers`, and supplies complete `ID-OBL-001`–`ID-OBL-013`
-  executable coverage. G015–G020 retain whole-source token and file grammar;
+  executable coverage. C015 now defines whitespace and layout; G016–G020 retain
+  the remaining whole-source token and file grammar;
   G021–G022 retain namespaces, resolution, imports, and exports.
-- [ ] **G015 — Gap — whitespace and layout.** Decide whether indentation is semantic,
-  where separators are required, and how multiline constructs continue.
+- [x] **C015 — Complete — whitespace and layout.** The normative
+  [0.1.11 whitespace and layout specification](../60-specification/whitespace-and-layout/README.md),
+  [synthesis](../20-notes/catena-whitespace-layout-and-line-continuation.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-treat-whitespace-and-line-breaks.md),
+  [topic map](../10-maps/whitespace-layout-and-line-continuation.md), and
+  [C015 record](../50-journal/2026-08-17-c015-whitespace-and-layout.md)
+  make indentation non-semantic, admit only ASCII space, tab, and C013 logical
+  LF as layout whitespace, use hard LF and semicolon separators, and classify
+  continuation from lexer-supplied before/after token capabilities plus
+  continued or block delimiter frames. The sibling compiler branch
+  `agent/c015-whitespace-layout` implements a lossless
+  `Catena.resolve_layout/2` token-event engine, `LAY001`–`LAY003`, exact spans,
+  revision/persistence separation, and complete `LY-OBL-001`–`LY-OBL-011`
+  coverage at immutable compiler commit
+  [`5d08925ce92f57e78018e0ab81c008a7d917dfbc`](https://github.com/pcharbon70/catena/commit/5d08925ce92f57e78018e0ab81c008a7d917dfbc)
+  on draft compiler PR [#91](https://github.com/pcharbon70/catena/pull/91).
+  G016, G017, and G019 retain comments, literals, and concrete token capability
+  assignments; P109 retains the complete surface grammar.
 - [ ] **G016 — Gap — comments and documentation comments.** Define nesting, attachment
   to declarations, Markdown treatment, and whether doctests are executable.
 - [ ] **G017 — Gap — literal grammar.** Define integers, floats, strings, characters,

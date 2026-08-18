@@ -75,8 +75,9 @@ formats.
 
 ## Open questions
 
-C014 is resolved. G015–G020 must integrate identifiers with whitespace,
-comments, literals, punctuation, and files. G021/G022 own namespaces,
+C014 is resolved, and C015 now supplies the abstract whitespace/layout event
+boundary. G016–G020 must integrate identifiers with comments, literals,
+concrete punctuation, and files. G021/G022 own namespaces,
 shadowing, comparison domains, resolution, imports, and exports. P117 and G118
 own cross-file explanations, display-safe diagnostics, and formatting. A later
 Unicode revision requires an explicit compatibility and security-data review.

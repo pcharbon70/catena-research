@@ -62,11 +62,18 @@ The normative C014 identifier boundary is version `0.1.10`; its Unicode 17
 repertoire, normalization, case, qualification, security, and executable
 evidence are recorded in the
 [C014 conformance journal](../50-journal/2026-08-17-c014-identifiers-and-name-security.md).
+The normative C015 whitespace and layout boundary is version `0.1.11`; its
+indentation-invariance, separator, continuation, delimiter-frame, and
+executable evidence are recorded in the
+[C015 conformance journal](../50-journal/2026-08-17-c015-whitespace-and-layout.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Whitespace and Layout](whitespace-and-layout/README.md) — the normative
+  version 0.1.11 whitespace repertoire, indentation-invariance, separator,
+  continuation, delimiter-frame, diagnostic, and conformance contract.
 - [Identifiers](identifiers/README.md) — the normative version 0.1.10 Unicode
   XID, filtered NFC, role-neutral case, keyword escape, qualification,
   security, confusable diagnostic, and conformance contract.

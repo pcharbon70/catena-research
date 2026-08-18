@@ -79,9 +79,10 @@ new source-text feature.
 
 ## Open questions
 
-C013 and C014 are resolved. G015–G020 own whitespace/layout, comments,
-literals, numbers,
-operators/punctuation, and file-to-module relations. P117 owns the complete
+C013, C014, and C015 are resolved. Follow the
+[Whitespace, Layout, and Line Continuation map](whitespace-layout-and-line-continuation.md)
+for C015's classification of the logical stream. G016–G020 own comments,
+literals, numbers, operators/punctuation, and file-to-module relations. P117 owns the complete
 cross-language diagnostic model; G118 owns canonical formatting and comment-
 preserving trees. Aggregate source-size and hostile-input performance remain
 outside the current portable-floor set.

@@ -92,9 +92,11 @@ research rather than repeatedly redesigned:
 the earlier normative slices use versioned JSON forms, 0.1.8 uses a canonical
 S-expression kernel, and C013 now defines a strict 0.1.9 UTF-8 source-text
 envelope with logical newlines and original-byte scalar spans. Those exact
-forms make conformance reproducible. C014 now adds pinned Unicode 17
+forms make conformance reproducible. C014 adds pinned Unicode 17
 standalone identifiers, NFC, security profiles, keyword escaping,
-qualification, and confusable warnings, but
+qualification, and confusable warnings. C015 adds non-semantic indentation,
+narrow layout whitespace, newline/semicolon separators, and an abstract
+token-capability continuation engine, but
 the [Catena Language Overview](../language-overview.md) explicitly says they do
 not replace a future approachable frontend. The
 [approachable-vocabulary synthesis](../20-notes/approachable-language-vocabulary.md)
@@ -102,16 +104,17 @@ proposes a behavior-first public language, and the associated
 [vocabulary inquiry](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
 remains open. C004 has selected one behavior-first trait ABI, while clause,
 effect, specification, governance, and comprehension punctuation remain partly
-provisional. C013 closes byte decoding and C014 closes standalone names without
-inventing a whole-source lexer. Checklist items `G015`–`G020`, `P047`, `P107`,
+provisional. C013 closes byte decoding, C014 closes standalone names, and C015
+closes layout classification without inventing a whole-source lexer. Checklist
+items `G016`–`G020`, `P047`, `P107`,
 and `P109` describe the remaining atomic gaps.
 
 **Remaining research.** This program must define:
 
 - literal-specific Unicode handling on top of C013's preserving source stream,
   while integrating C014's fixed identifier rules into real tokenization;
-- whitespace, layout, separators, comments, documentation comments, and
-  file-to-module rules;
+- comments, documentation comments, integration of their line endings with
+  C015 layout, and file-to-module rules;
 - literal and interpolation grammar, numeric spelling, operators, precedence,
   associativity, pipes, and error recovery;
 - concrete source forms for functions, bindings, data, patterns, conditions,

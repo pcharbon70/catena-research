@@ -76,6 +76,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [Catena Source-Text Encoding and Normalization](catena-source-text-encoding-and-normalization.md)
   — derives C013's strict UTF-8, BOM, newline, normalization-preservation,
   original-byte location, and source-only revision boundary.
+- [Catena Whitespace, Layout, and Line Continuation](catena-whitespace-layout-and-line-continuation.md)
+  — derives C015's narrow whitespace repertoire, non-semantic indentation,
+  newline/semicolon separation, token capabilities, and delimiter-frame model.
 - [Language-Integrated Specifications and Governance](language-integrated-specifications-and-governance.md)
   — proposes a typed specification graph, distinct evidence regimes, a
   restricted authority language, append-only governed lifecycle, and an

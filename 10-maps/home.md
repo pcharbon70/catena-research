@@ -48,6 +48,10 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Whitespace, Layout, and Line Continuation](whitespace-layout-and-line-continuation.md)
+  — routes through C013/C014 foundations, comparative layout evidence,
+  indentation invariance, separators, continuation capabilities, C015, and
+  later token owners.
 - [Identifier and Name Security](identifier-and-name-security.md) — routes
   through Unicode 17 XID syntax, NFC spelling, script restrictions,
   qualification, hard keywords, confusable warnings, and C014 evidence.
@@ -68,7 +72,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  nine normative areas plus the C012 implementation-limits policy.
+  ten normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,
@@ -107,6 +111,15 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Whitespace, Layout, and Line Continuation](../20-notes/catena-whitespace-layout-and-line-continuation.md)
+  — develops C015's narrow whitespace, indentation-invariance, separators,
+  token continuation capabilities, and delimiter-frame decisions.
+- [Whitespace and Layout Specification](../60-specification/whitespace-and-layout/README.md)
+  — holds the normative 0.1.11 whitespace, separator, continuation,
+  diagnostic, and conformance chapters.
+- [C015 Whitespace and Layout](../50-journal/2026-08-17-c015-whitespace-and-layout.md)
+  — records the abstract layout engine, adversarial cases, traceability, and
+  coordinated verification.
 - [Catena Identifiers and Name Security](../20-notes/catena-identifiers-and-name-security.md)
   — develops C014's Unicode repertoire, exact equality, escape, qualification,
   security-profile, diagnostic, and persistence decisions.

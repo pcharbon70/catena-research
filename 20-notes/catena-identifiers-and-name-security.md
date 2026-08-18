@@ -183,8 +183,8 @@ affects ambiguity.
   complicates exact diagnostics and generated symbols.
 - **Confusable collisions as errors** overstates a heuristic; warnings with
   policy promotion preserve review control.
-- **Whole-source scanning now** would guess the unresolved whitespace,
-  comment, literal, and operator boundaries in G015–G019.
+- **Whole-source scanning in C014** would have guessed the then-unresolved
+  whitespace, comment, literal, and operator boundaries in G015–G019.
 
 ## Falsification and follow-up
 
@@ -195,8 +195,9 @@ confusable signal unusable. Such evidence should name concrete scripts,
 spelling workflows, and collision sets rather than assume all Unicode policy
 has one usability/security point.
 
-G015–G020 must integrate these standalone names into a real lexer and file
-grammar. G021/G022 must supply comparison domains and resolution. P117 must
+C015 now supplies the abstract whitespace/layout event boundary. G016–G020
+must integrate these standalone names into a real lexer and file grammar.
+G021/G022 must supply comparison domains and resolution. P117 must
 carry secondary spans and cross-file collision explanations; G118 must define
 safe display and formatting. None may weaken the pinned 0.1.10 identity rules
 silently.

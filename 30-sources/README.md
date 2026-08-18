@@ -318,6 +318,15 @@ mentions can remain as citations in the document that uses them.
 - [Elixir 1.20 Comprehensions](elixir-1-20-comprehensions.md) — demonstrates
   arbitrary enumerable sources, filtering patterns, truthy filters, effectful
   qualifiers, bit strings, and generic result collectors on the BEAM.
+- [Elixir 1.19 Syntax and Unicode](elixir-project-2026-elixir-syntax-and-unicode.md)
+  — defines explicit expression blocks, newline/semicolon separators,
+  grammar-aware multiline forms, and Elixir's narrow whitespace repertoire.
+- [Python 3.14 Lexical Analysis](python-software-foundation-2026-python-lexical-analysis.md)
+  — defines physical and logical lines, continuation, semantic indentation,
+  tab expansion, INDENT/DEDENT, blank lines, and token separation.
+- [The Rust Reference: Whitespace](rust-project-2026-rust-whitespace.md) —
+  defines Rust's free-form indentation principle and exact Unicode
+  `Pattern_White_Space` repertoire.
 - [Scala 3.4 For Comprehensions](scala-3-4-for-comprehensions.md) — separates
   exhaustive generators from explicit `case` filtering and translates the
   surface through carrier-provided mapping and filtering methods.
