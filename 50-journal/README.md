@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C017 Literal Grammar](2026-08-18-c017-literal-grammar.md) — records the
+  normative 0.1.13 atomic literal contract, source-only scanner, exact
+  decoding/provenance, diagnostics, active limits, exclusions, traceability,
+  and coordinated verification state.
 - [C016 Comments and Documentation Comments](2026-08-18-c016-comments-and-documentation-comments.md)
   — records the normative 0.1.12 comment contract, abstract scanner/resolver,
   documentation policy, diagnostics, traceability, and coordinated

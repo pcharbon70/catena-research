@@ -95,8 +95,8 @@ details, and the `IL-OBL-001`–`IL-OBL-012`
 [traceability registry](../10-maps/conformance-traceability.md).
 
 The [C012 record](../50-journal/2026-08-17-c012-implementation-limits.md)
-preserves the immutable compiler identity and validation. G017 still owns the
-future literal grammar; G068 and G129 own concrete concurrency capacity,
+preserves the immutable compiler identity and validation. C017 now activates
+the decoded literal floor as `LIM004`; G068 and G129 own concrete concurrency capacity,
 backpressure, and failure semantics; and G126–G131 retain the wider security,
 reproducibility, TCB, and operational-resource program. Those exclusions do
 not reopen the bounded C012 decision.

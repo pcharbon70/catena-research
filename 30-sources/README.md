@@ -323,7 +323,8 @@ mentions can remain as citations in the document that uses them.
   grammar-aware multiline forms, and Elixir's narrow whitespace repertoire.
 - [Python 3.14 Lexical Analysis](python-software-foundation-2026-python-lexical-analysis.md)
   — defines physical and logical lines, continuation, semantic indentation,
-  tab expansion, INDENT/DEDENT, blank lines, and token separation.
+  tab expansion, INDENT/DEDENT, blank lines, token separation, and the
+  numeric/string/byte/interpolation feature cross product.
 - [The Rust Reference: Whitespace](rust-project-2026-rust-whitespace.md) —
   defines Rust's free-form indentation principle and exact Unicode
   `Pattern_White_Space` repertoire.
@@ -358,9 +359,12 @@ mentions can remain as citations in the document that uses them.
 - [The Rust Reference: Comments](rust-project-2026-rust-comments.md) — defines
   nested slash comments, exact outer/inner documentation prefixes, attachment,
   and awkward delimiter edge cases.
+- [The Rust Reference: Literal Tokens and Expressions](rust-project-2026-literal-tokens.md)
+  — documents exact raw hash delimiters, text/byte/character separation,
+  escapes, numeric tokens, suffix boundaries, and semantic conversion.
 - [The Swift Programming Language: Lexical Structure](swift-project-2026-lexical-structure.md)
-  — independently specifies balanced nested multiline comments and their
-  whitespace role.
+  — independently specifies balanced nested multiline comments, exact
+  extended string delimiters, and delimiter-sensitive interpolation.
 
 ## Maintaining this index
 

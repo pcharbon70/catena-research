@@ -240,8 +240,9 @@ as small normative rules rather than copied wholesale into a specification.
   [`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38)
   on draft compiler PR [#89](https://github.com/pcharbon70/catena/pull/89).
   C014 now defines standalone identifiers, C015 defines layout events, and
-  C016 defines comments; G017–G020 retain whole-source
-  tokens, grammar, literals, and file/module semantics; P117 and G118 retain
+  C016 defines comments and C017 defines atomic literals; G018–G020 retain
+  numeric semantics, whole-source tokens/grammar, and file/module semantics;
+  P117 and G118 retain
   complete diagnostics and formatting.
 - [x] **C014 — Complete — identifiers.** The normative
   [0.1.10 identifier specification](../60-specification/identifiers/README.md),
@@ -257,8 +258,8 @@ as small normative rules rather than copied wholesale into a specification.
   implements standalone identifier/qualified-name/audit APIs and
   `check-identifiers`, and supplies complete `ID-OBL-001`–`ID-OBL-013`
   executable coverage. C015 now defines whitespace/layout and C016 defines
-  comments/documentation; G017–G020 retain
-  the remaining whole-source token and file grammar;
+  comments/documentation and C017 defines atomic literals; G018–G020 retain
+  numeric semantics and the remaining whole-source token and file grammar;
   G021–G022 retain namespaces, resolution, imports, and exports.
 - [x] **C015 — Complete — whitespace and layout.** The normative
   [0.1.11 whitespace and layout specification](../60-specification/whitespace-and-layout/README.md),
@@ -276,9 +277,9 @@ as small normative rules rather than copied wholesale into a specification.
   coverage at immutable compiler commit
   [`5d08925ce92f57e78018e0ab81c008a7d917dfbc`](https://github.com/pcharbon70/catena/commit/5d08925ce92f57e78018e0ab81c008a7d917dfbc)
   on draft compiler PR [#91](https://github.com/pcharbon70/catena/pull/91).
-  C016 now defines comment integration; G017 and G019 retain literals and
-  concrete token capability assignments; P109 retains the complete surface
-  grammar.
+  C016 now defines comment integration and C017 defines literal-contained line
+  ownership; G019 retains concrete token capability assignments and P109
+  retains the complete surface grammar.
 - [x] **C016 — Complete — comments and documentation comments.** The normative
   [0.1.12 comments specification](../60-specification/comments-and-documentation-comments/README.md),
   [synthesis](../20-notes/catena-comments-and-documentation-comments.md),
@@ -295,12 +296,33 @@ as small normative rules rather than copied wholesale into a specification.
   `CM-OBL-001`–`CM-OBL-012` executable coverage. G019 and P109 retain complete
   token/declaration grammar; G020 retains file/module ownership; G110/G118
   retain rendering/formatting; G119 retains actual doctest execution.
-- [ ] **G017 — Gap — literal grammar.** Define integers, floats, strings, characters,
-  atoms or symbols, lists, tuples, records, maps, binaries, escapes, and
-  interpolation.
-- [ ] **G018 — Gap — numeric literal semantics.** Define default types, bases,
-  separators, overflow, rounding, exceptional floating-point values, and
-  negative-literal parsing.
+- [x] **C017 — Complete — atomic literal grammar.** The normative
+  [0.1.13 literal specification](../60-specification/literal-grammar/README.md),
+  [synthesis](../20-notes/catena-literal-grammar.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-spell-and-decode-literals.md),
+  [topic map](../10-maps/literal-grammar.md), and
+  [C017 record](../50-journal/2026-08-18-c017-literal-grammar.md) define exact
+  Boolean keywords; unsigned binary/octal/decimal/hexadecimal integers;
+  decimal dotted or exponent floats; strict separators and leading zeros;
+  cooked text, one-scalar characters, and bytes; exact arbitrary-hash raw text
+  and bytes; a closed escape set; no normalization; literal-owned raw LF;
+  lossless source pieces; `LIT001`–`LIT003`; and active `LIM002`/`LIM004`
+  boundaries. Sibling compiler commit
+  [`d51b3079c87f84b560e009ac9fc00e0077d11b05`](https://github.com/pcharbon70/catena/commit/d51b3079c87f84b560e009ac9fc00e0077d11b05)
+  on compiler PR [#93](https://github.com/pcharbon70/catena/pull/93)
+  implements `Catena.scan_literal/2`, exact numeric metadata, provenance,
+  source-only lifecycle/persistence separation, and complete
+  `LT-OBL-001`–`LT-OBL-012` coverage with 233 passing tests. Compound lists,
+  tuples, records, maps, and binary construction remain G040/G042/P093/G097;
+  atoms/symbols remain G040/P093/G097; unit punctuation remains G019/P109;
+  and any future interpolation requires a new opt-in prefix.
+- [ ] **G018 — Gap — numeric literal semantics.** With bases, separators,
+  leading-zero rules, decimal components, and token boundaries fixed by C017,
+  define default integer and float types, constraint/defaulting behavior,
+  coercions, rounding and precision, overflow, exceptional floating-point
+  values, and parsing/elaboration of negative numeric expressions. Any future
+  numeric spelling extension requires an explicit later revision rather than
+  changing C017 tokens.
 - [ ] **G019 — Gap — operators and punctuation.** Define precedence, associativity,
   fixity declarations or their absence, pipes, qualification, and parse-error
   recovery.

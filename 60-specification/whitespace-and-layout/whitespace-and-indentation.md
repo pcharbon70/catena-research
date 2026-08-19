@@ -100,7 +100,7 @@ or comment event, not as layout whitespace (`LY-OBL-011`).
 
 [Comment Lexing and Layout](../comments-and-documentation-comments/comment-lexing-and-layout.md)
 now requires every comment-owned logical LF to participate in this classifier.
-G017 defines literal-contained newlines and spaces. G019 defines concrete
+C017 defines literal-contained newlines and spaces. G019 defines concrete
 punctuation and operators. Until those remaining owners are complete, the C015
 executable boundary accepts lexer-supplied abstract token events rather than
 claiming a whole-source lexer.

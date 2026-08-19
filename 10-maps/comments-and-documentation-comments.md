@@ -65,6 +65,8 @@ the later grammar and tooling work that will consume documentation metadata.
 
 ## Open questions
 
+The [C017 literal map](literal-grammar.md) now fixes the parallel atomic
+literal boundary and ensures comment markers inside literals remain content.
 G019 must assign comment recognition among concrete token alternatives and
 P109 must enumerate documentable declarations. G020 still owns file/module
 attachment and generated-file behavior. G118 owns formatting preservation,

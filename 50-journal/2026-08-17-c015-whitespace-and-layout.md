@@ -32,7 +32,7 @@ through Elixir, Python, Haskell, Rust, C013, and C014.
 
 The result remains deliberately pre-lexer. C016 now supplies comments through
 the abstract event boundary; literal bodies, concrete operators, punctuation,
-precedence, associativity, and complete surface productions remain G017–G019
+numeric meaning, precedence, associativity, and complete surface productions remain G018–G019
 and P109. The executable engine consumes opaque lexer-supplied token events
 instead of guessing those unresolved forms.
 
@@ -95,7 +95,7 @@ runtime semantics, or BEAM representation.
 
 - C016 now defines comment nesting, line termination, documentation
   attachment, Markdown, and the future doctest opt-in.
-- G017 must define which whitespace and newlines belong inside literals.
+- C017 now defines which whitespace and newlines belong inside atomic literals.
 - G019 must assign concrete tokens to continuation and delimiter capabilities
   while defining operators, precedence, associativity, and recovery.
 - P109 must integrate the layout event stream into the complete grammar and
@@ -103,6 +103,6 @@ runtime semantics, or BEAM representation.
 
 ## Follow-ups
 
-Integrate G017 literals and G019 concrete token capabilities through the
-published event boundary without reinterpreting C015 layout; C016 comments now
-demonstrate that integration pattern.
+Integrate C017 literals and G019 concrete token capabilities through the
+published event boundary without reinterpreting C015 layout; C016 comments and
+C017 token-owned raw LFs now demonstrate both ownership patterns.

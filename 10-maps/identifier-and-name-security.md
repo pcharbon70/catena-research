@@ -75,8 +75,9 @@ formats.
 
 ## Open questions
 
-C014 is resolved, C015 supplies abstract layout events, and C016 supplies
-comment events. G017–G020 must integrate identifiers with literals, concrete
+C014 is resolved, C015 supplies abstract layout events, C016 supplies
+comment events, and C017 supplies atomic literal boundaries. G019–G020 must
+integrate identifiers and literals with concrete
 punctuation, declarations, and files. G021/G022 own namespaces,
 shadowing, comparison domains, resolution, imports, and exports. P117 and G118
 own cross-file explanations, display-safe diagnostics, and formatting. A later

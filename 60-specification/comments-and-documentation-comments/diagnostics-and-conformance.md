@@ -121,11 +121,12 @@ kernel S-expression version, interface version, artifact version, signature
 domain, typed-core form, runtime behavior, or BEAM representation
 (`CM-OBL-001`, `CM-OBL-012`).
 
-The source-text decoder accepts cumulative revisions `0.1.9` through `0.1.12`.
+At the C016 boundary, source-text applicability is cumulative from `0.1.9`
+through `0.1.12`; C017 subsequently adds source-only revision `0.1.13`.
 The standalone C014 identifier APIs retain exact 0.1.10. The public C015 layout
 resolver retains exact 0.1.11, including its default selection. Comment scanning
 and resolution require exact 0.1.12. The next unused semantic patch is
-`0.1.13`.
+`0.1.14` after C017's exact 0.1.13 atomic literal boundary.
 
 ## Rationale and evidence (non-normative)
 

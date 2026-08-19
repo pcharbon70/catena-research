@@ -66,7 +66,7 @@ arbitrary zero.
 | --- | ---: | --- | --- |
 | Explicit callable arity | 253 arguments | Maximum explicit source arguments after the implementation's source callable representation is normalized. The floor reserves two hidden arguments for the current effect-directed CPS worker under OTP's arity-255 boundary. | `LIM001` |
 | Integer literal magnitude | 4,096 decimal digits | Digits in the mathematical integer literal value, excluding a leading minus sign, in every accepted compiler input form. | `LIM002` |
-| Decoded text or binary literal payload | 65,536 bytes | Decoded payload bytes for each future string, binary, or equivalent literal. The current language has no such term literal, so the bootstrap reports this dimension not applicable under G017. | Future G017 diagnostic |
+| Decoded text or byte literal payload | 65,536 bytes | Bytes in each decoded C017 text UTF-8 scalar sequence or byte-literal octet sequence, after escape processing. | `LIM004` |
 | Generated BEAM module | 1,048,576 bytes | Bytes in each generated `.beam` module before successful publication. | `LIM003` |
 | Pattern usefulness and coverage | 20,000 analysis steps | Existing data-and-pattern coverage boundary. | `M004` |
 | Condition normalization | 20,000 nodes or steps | Existing clause-condition normalization and transitive-inlining boundary. | `CND007` |
@@ -83,9 +83,9 @@ therefore covers the least favorable current lowering without treating a pure
 source function and its generated worker as separate portability promises.
 
 The integer floor concerns input magnitude, not fixed-width runtime overflow:
-Catena integers in the implemented kernels are mathematical integers. The
-decoded-payload floor is reserved now so G017 cannot introduce a literal form
-whose basic portability begins from an undocumented implementation accident.
+Catena integers in the implemented kernels and C017 atomic scanner are
+mathematical integers. C017 activates the decoded-payload floor after escape
+processing without changing text normalization or interpreting interpolation.
 
 ## Machine-readable reporting
 
@@ -206,7 +206,9 @@ normative C014 uses `0.1.10` for identifiers without adding a resource
 dimension or changing those classifications; normative C015 uses `0.1.11` for
 whitespace and layout under the same fixed resource classifications; normative
 C016 uses `0.1.12` for comments and documentation comments without adding a
-resource dimension; `0.1.13` is the next unused semantic patch.
+resource dimension; normative C017 uses `0.1.13` for atomic literals and
+activates the reserved decoded-payload dimension as `LIM004`; `0.1.14` is the
+next unused semantic patch.
 
 ## Conformance obligations
 
@@ -221,10 +223,11 @@ The following permanent obligations connect this policy to the
   unit, floor, configuration, applicability, and exhaustion outcome.
 - **IL-OBL-004 — Callable floor.** Source callable arity 253 is accepted and
   254 is refused as `LIM001`; generated effect workers may reach arity 255.
-- **IL-OBL-005 — Integer floor.** Both current frontends accept 4,096 decimal
-  digits and refuse 4,097 as `LIM002`.
-- **IL-OBL-006 — Literal-payload reservation.** The 65,536-byte decoded literal
-  floor is reported not applicable until G017 introduces such literals.
+- **IL-OBL-005 — Integer floor.** Every applicable integer input accepts a
+  mathematical value through 4,096 decimal digits and refuses 4,097 as
+  `LIM002`, including C017 based spellings.
+- **IL-OBL-006 — Literal-payload floor.** C017 text and byte literals accept
+  decoded payloads through 65,536 bytes and refuse the next byte as `LIM004`.
 - **IL-OBL-007 — Module floor.** A generated BEAM module up to 1,048,576 bytes
   crosses no module-size limit; the next byte is refused as `LIM003`.
 - **IL-OBL-008 — Refusal-bound distinction.** Existing compiler and governance

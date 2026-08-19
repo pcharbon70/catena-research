@@ -70,11 +70,18 @@ The normative C016 comment boundary is version `0.1.12`; its delimiter,
 nesting, layout, documentation-attachment, Markdown, and executable evidence
 are recorded in the
 [C016 conformance journal](../50-journal/2026-08-18-c016-comments-and-documentation-comments.md).
+The normative C017 literal boundary is version `0.1.13`; its atomic forms,
+decoding, preservation, token ownership, diagnostics, active limits, and
+executable evidence are recorded in the
+[C017 conformance journal](../50-journal/2026-08-18-c017-literal-grammar.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Literal Grammar](literal-grammar/README.md) — the normative version 0.1.13
+  atomic Boolean, numeric, text, character, and byte spelling, decoding,
+  provenance, line ownership, limit, diagnostic, and conformance contract.
 - [Comments and Documentation Comments](comments-and-documentation-comments/README.md)
   — the normative version 0.1.12 slash-comment, nested block, layout,
   documentation attachment, CommonMark, doctest-policy, diagnostic, and

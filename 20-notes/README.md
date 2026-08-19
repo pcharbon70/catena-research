@@ -74,6 +74,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — derives portable source and artifact floors, separates compiler refusal
   from inconclusive evidence and runtime capacity, and develops the C012
   machine-readable reporting model.
+- [Catena Literal Grammar](catena-literal-grammar.md) — derives C017's atomic
+  Boolean, numeric, text, character, and byte spellings; exact decoding and
+  provenance; raw line ownership; limits; exclusions; and static-text
+  compatibility promise.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

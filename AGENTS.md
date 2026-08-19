@@ -125,8 +125,9 @@ Repository-governance milestones C007, C009, and C012 add no language revision.
 Normative C010 uses `0.1.8`, normative C013 uses `0.1.9` for source text,
 normative C014 uses `0.1.10` for identifiers and standalone qualified names,
 normative C015 uses `0.1.11` for whitespace and layout, and normative C016 uses
-`0.1.12` for comments and documentation comments. The next unused semantic
-patch is `0.1.13` unless an approved versioning policy explicitly
+`0.1.12` for comments and documentation comments. Normative C017 uses
+`0.1.13` for atomic literal grammar and decoding. The next unused semantic
+patch is `0.1.14` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.
