@@ -145,23 +145,21 @@ contradict the implemented mathematical-integer model. Four thousand
 ninety-six decimal digits is a generous portable baseline and a crisp decoded
 value boundary.
 
-The measurement excludes a leading minus sign. It does not prescribe future
-surface punctuation, bases, separators, floating-point rules, or fixed-width
-arithmetic; those remain G017 and G018. Both current frontends must accept
-4,096 digits and report `LIM002` at 4,097.
+The measurement excludes a leading minus sign. C017 now defines bases and
+separators and measures every based spelling by the decimal digits in its
+mathematical value. Floating-point rules and fixed-width arithmetic remain
+G018. The retained frontends and C017 scanner accept 4,096 digits and report
+`LIM002` at 4,097.
 
 ### Decoded literal payload: 65,536 bytes
 
-Catena has no current string or binary term literal, so enforcing this bound
-today would invent a form. Reporting a reserved 64-KiB floor as not applicable
-does useful work: it prevents G017 from accidentally standardizing a tiny
-implementation default and demonstrates how the profile represents future
-dimensions without pretending they exist.
-
-When G017 introduces a decoded payload, it must define whether measurement
-occurs after escapes, normalization, and interpolation and must reserve a
-stable diagnostic. The portable floor can then become applicable without
-changing the profile's conceptual schema.
+C012 originally reserved this floor while no string or binary term literal
+existed. C017 now activates it as `LIM004`: text is measured in decoded UTF-8
+payload bytes and byte literals in decoded octets, after escape processing.
+Text remains unnormalized and non-interpolating, so neither transformation is
+part of the measurement. This activation demonstrates why reserving the
+dimension prevented a later feature from inheriting an undocumented compiler
+default.
 
 ### Generated module: 1 MiB
 
@@ -264,12 +262,11 @@ preserves transactional artifact guarantees under resource refusal, and makes
 deployment capacity visible without prematurely standardizing an operations
 policy.
 
-It also clarifies future design work. G017 knows the minimum payload contract
-it inherits; G068 and G129 own explicit capacity and failure semantics rather
+It also clarifies future design work. C017 activates the inherited payload
+contract as `LIM004`; G068 and G129 own explicit capacity and failure semantics rather
 than a silent mailbox cap; G126–G131 can build threat, TCB, reproducibility,
 unsafe, and supply-chain policy on top of stable resource classifications; and
-the next semantic slice remains free to use `0.1.9` for an actual language
-change.
+later semantic slices remain separate from this governance milestone.
 
 ## Falsification criteria and remaining work
 

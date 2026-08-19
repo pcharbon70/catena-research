@@ -91,8 +91,8 @@ representation.
 
 ## Threads
 
-- G017 must define literal bodies, escapes, interpolation, and their newline
-  ownership.
+- C017 now defines atomic literal bodies, escapes, static text, and raw newline
+  ownership; any future interpolation requires a new opt-in prefix.
 - G019 must integrate comment recognition with concrete punctuation and
   maximal tokenization.
 - G020 and P109 must define file/module and complete declaration-target rules.

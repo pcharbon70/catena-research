@@ -106,7 +106,8 @@ domains, or BEAM representation. It therefore consumes no language revision;
 
 ## Threads
 
-- G017 activates and refines the reserved decoded-literal dimension.
+- C017 now activates and refines the reserved decoded-literal dimension as
+  `LIM004`.
 - G068 and G129 define concrete mailbox quotas, process failure,
   backpressure, supervision, and deployment behavior.
 - G126–G131 retain threat models, TCB scope, unsafe boundaries,

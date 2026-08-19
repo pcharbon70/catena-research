@@ -98,7 +98,9 @@ qualification, and confusable warnings. C015 adds non-semantic indentation,
 narrow layout whitespace, newline/semicolon separators, and an abstract
 token-capability continuation engine. C016 adds nested comments,
 comment-internal layout preservation, forward documentation attachment,
-CommonMark, and explicit doctest metadata, but
+CommonMark, and explicit doctest metadata. C017 adds exact atomic Boolean,
+numeric, text, character, and byte spelling, decoding, provenance, raw-line
+ownership, and active literal limits, but
 the [Catena Language Overview](../language-overview.md) explicitly says they do
 not replace a future approachable frontend. The
 [approachable-vocabulary synthesis](../20-notes/approachable-language-vocabulary.md)
@@ -107,18 +109,20 @@ proposes a behavior-first public language, and the associated
 remains open. C004 has selected one behavior-first trait ABI, while clause,
 effect, specification, governance, and comprehension punctuation remain partly
 provisional. C013 closes byte decoding, C014 closes standalone names, C015
-closes layout classification, and C016 closes comments without inventing a
-whole-source lexer or parser. Checklist items `G017`–`G020`, `P047`, `P107`,
+closes layout classification, C016 closes comments, and C017 closes atomic
+literals without inventing a whole-source lexer or parser. Checklist items
+`G018`–`G020`, `P047`, `P107`,
 and `P109` describe the remaining atomic gaps.
 
 **Remaining research.** This program must define:
 
-- literal-specific Unicode handling on top of C013's preserving source stream,
-  while integrating C014's fixed identifier rules into real tokenization;
+- integration of C014's fixed identifier rules and C017's literal boundaries
+  into real maximal whole-file tokenization;
 - integration of C016 documentation metadata with the complete declaration
   grammar, generated documentation, formatting, and file-to-module rules;
-- literal and interpolation grammar, numeric spelling, operators, precedence,
-  associativity, pipes, and error recovery;
+- numeric runtime types/defaulting/rounding, a new explicitly prefixed future
+  interpolation form if justified, operators, precedence, associativity,
+  pipes, and error recovery;
 - concrete source forms for functions, bindings, data, patterns, conditions,
   traits, effects, handlers, specifications, governance, and packages;
 - a lossless concrete syntax tree, source-to-core mapping, and version-aware
@@ -268,9 +272,9 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
 
 **Remaining research.** Catena needs to decide:
 
-- which primitive and built-in types exist: unit, Booleans, integers, floats,
-  characters, strings, binaries, tuples, lists, maps, sets, process handles,
-  references, and functions;
+- which primitive and built-in types exist beyond C017's fixed atomic spelling:
+  unit, numeric runtime types, text/character/byte semantics, tuples, lists,
+  maps, sets, process handles, references, and functions;
 - structural record and variant source operations, uniqueness, row-polymorphic
   behavior, effect order, and public representation guarantees;
 - persistent collection construction and update, duplicate keys, ordering,

@@ -48,6 +48,9 @@ This is the selective entry point to the archive. See the
 
 ## Topic maps
 
+- [Literal Grammar](literal-grammar.md) — routes through C013–C016
+  foundations, comparative literal systems, exact atomic forms and decoding,
+  active limits, C017 conformance, and remaining numeric/data/token owners.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
@@ -76,7 +79,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  twelve normative areas plus the C012 implementation-limits policy.
+  thirteen normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,
@@ -115,6 +118,16 @@ This is the selective entry point to the archive. See the
 
 ## Recently developed
 
+- [Catena Literal Grammar](../20-notes/catena-literal-grammar.md) — develops
+  C017's atomic literal set, exact numeric components, cooked/raw decoding,
+  scalar/byte separation, provenance, limits, exclusions, and static-text
+  compatibility promise.
+- [Literal Grammar Specification](../60-specification/literal-grammar/README.md)
+  — holds the normative 0.1.13 literal spelling, decoding, ownership,
+  diagnostic, limit, and conformance chapters.
+- [C017 Literal Grammar](../50-journal/2026-08-18-c017-literal-grammar.md)
+  — records the atomic scanner, adversarial cases, traceability, and
+  coordinated verification state.
 - [Catena Comments and Documentation Comments](../20-notes/catena-comments-and-documentation-comments.md)
   — develops C016's slash-comment, nesting, layout, attachment, CommonMark,
   HTML-safety, and future doctest decisions.

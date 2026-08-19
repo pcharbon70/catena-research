@@ -29,6 +29,9 @@ path should remain usable without them.
 
 ## Start here
 
+- [Catena Literal Grammar](../20-notes/catena-literal-grammar.md) fixes the
+  first programmer-visible value spellings, exact decoding, and source
+  provenance while keeping numeric meaning and complete parsing separate.
 - [Catena Comments and Documentation Comments](../20-notes/catena-comments-and-documentation-comments.md)
   fixes declaration-documentation attachment and a safe, versioned document
   format without requiring a complete grammar or renderer.

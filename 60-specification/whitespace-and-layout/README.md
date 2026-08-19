@@ -35,7 +35,7 @@ breaks, semicolon separation, token continuation capabilities, delimiter-frame
 line policy, stable layout diagnostics, and C015 conformance obligations here.
 Comment syntax and attachment are now defined by the adjacent
 [C016 specification](../comments-and-documentation-comments/README.md).
-Literal-contained whitespace remains G017; concrete operators, punctuation,
+Literal-contained whitespace is defined by C017; concrete operators, punctuation,
 precedence, associativity, and recovery remain G019; complete surface
 productions remain P109.
 

@@ -39,7 +39,8 @@ Choose a model in which two independent implementations agree on:
 
 The answer had to compose with C013 and C014 without choosing the then-open
 G016 comments, G017 literals, or G019 concrete operator table. C016 now applies
-the resulting classifier to every comment-owned logical LF.
+the resulting classifier to every comment-owned logical LF, and C017 keeps
+every raw-literal LF inside its token.
 
 ## Paths explored
 

@@ -388,8 +388,9 @@ The [source-text map](10-maps/source-text-encoding-and-normalization.md),
 separate that envelope from later lexical and file-language work. Normative
 C014 now fixes standalone identifier and qualified-name validation on top of
 the envelope; C015 defines whitespace/layout classification; C016 defines
-comments and documentation attachment; G017–G020 retain the remaining lexical
-and file-language work.
+comments and documentation attachment; C017 defines atomic literal spelling,
+decoding, and source provenance; G018–G020 retain numeric meaning, the
+remaining lexical grammar, and file-language work.
 Existing JSON revisions and the exact 0.1.8 semantic kernel retain their own
 frontend and artifact identities.
 
@@ -423,9 +424,9 @@ The
 [whitespace and layout map](10-maps/whitespace-layout-and-line-continuation.md),
 [normative specification](60-specification/whitespace-and-layout/README.md),
 and [C015 evidence record](50-journal/2026-08-17-c015-whitespace-and-layout.md)
-connect those rules to the abstract sibling-compiler layout engine. G017 and
-G019 remain responsible for literals and concrete token capability
-assignments.
+connect those rules to the abstract sibling-compiler layout engine. C017 now
+defines literal-contained line ownership; G019 remains responsible for
+concrete token capability assignments.
 
 ### Normative comments and documentation boundary
 
@@ -442,6 +443,25 @@ and [C016 evidence record](50-journal/2026-08-18-c016-comments-and-documentation
 connect those rules to the sibling compiler's abstract scanner and resolver.
 G019 and P109 still own complete token/declaration grammar, G020 owns
 file/module attachment, and G119 owns actual doctest execution.
+
+### Normative literal boundary
+
+Normative C017 defines exact revision 0.1.13 as a source-only atomic literal
+boundary. It recognizes exact Boolean keywords; unsigned binary, octal,
+decimal, and hexadecimal integers; decimal floats; cooked and exact-hash raw
+text; one-scalar characters; and cooked/raw bytes. It decodes a closed escape
+set without text normalization, keeps every raw LF inside the token, and
+retains the logical lexeme, original units/spans, decoded payload, and ordered
+verbatim/escape provenance pieces.
+
+The [literal map](10-maps/literal-grammar.md),
+[normative specification](60-specification/literal-grammar/README.md), and
+[C017 evidence record](50-journal/2026-08-18-c017-literal-grammar.md) connect
+those rules to the sibling compiler's atomic scanner and active `LIM002` and
+`LIM004` boundaries. G018 owns runtime numeric types and rounding; G019/P109
+own complete token/grammar composition; and compound/BEAM-native data remains
+under G040/G042/P093/G097. Existing cooked and raw text is static; a future
+interpolation feature needs a new prefix.
 
 ### Normative formal semantic kernel
 
@@ -678,7 +698,7 @@ runtime representation still require validation.
 The main unresolved areas are:
 
 - literals, concrete tokenization, exact surface grammar, and behavior-first
-  vocabulary beyond C016's abstract comment boundary;
+  vocabulary beyond C017's abstract literal boundary;
 - integration of the normative type-system, data, and clause-condition slices
   with complete handler and source-language calculi;
 - the evidence model for trait laws and optimizer rewrites;

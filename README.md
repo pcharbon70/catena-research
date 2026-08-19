@@ -54,6 +54,9 @@ The normative C016 comment boundary begins at the
 [Comments and Documentation Comments map](10-maps/comments-and-documentation-comments.md)
 and its exact
 [0.1.12 specification](60-specification/comments-and-documentation-comments/README.md).
+The normative C017 atomic literal boundary begins at the
+[Literal Grammar map](10-maps/literal-grammar.md) and its exact
+[0.1.13 specification](60-specification/literal-grammar/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -148,8 +151,9 @@ revisions. Normative C010 uses `0.1.8` for the exact formal semantic kernel;
 normative C013 uses `0.1.9` for strict source-text decoding; normative C014
 uses `0.1.10` for identifiers and standalone qualified names; normative C015
 uses `0.1.11` for whitespace, separators, and line continuation; normative
-C016 uses `0.1.12` for comments and documentation comments; and the next
-unused semantic patch is `0.1.13`. C008 defines package-local editions,
+C016 uses `0.1.12` for comments and documentation comments; normative C017
+uses `0.1.13` for atomic literal grammar and decoding; and the next
+unused semantic patch is `0.1.14`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

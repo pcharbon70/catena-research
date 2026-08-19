@@ -83,8 +83,9 @@ registry.
 
 ## Open questions
 
-The bounded C012 inquiry is resolved. G017 must activate and precisely measure
-decoded literal payloads when it defines literal grammar. G068 and G129 must
+The bounded C012 inquiry is resolved, and C017 now activates the decoded
+literal payload floor as `LIM004`; see the [literal map](literal-grammar.md).
+G068 and G129 must
 define concrete capacity and failure protocols. G126–G131 remain responsible
 for threat models, the trusted computing base, unsafe boundaries,
 reproducibility, denial of service, and supply-chain operations. Aggregate

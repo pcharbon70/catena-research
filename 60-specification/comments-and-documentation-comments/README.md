@@ -34,8 +34,8 @@ policy applies generally; this area creates no numeric implementation limit.
 Put slash-comment delimiters and balancing, their C013 source-unit and C015
 layout behavior, outer documentation classification, body normalization,
 forward declaration attachment, CommonMark/raw-HTML/doctest policy, stable
-diagnostics, and C016 conformance obligations here. Literal bodies remain
-G017; concrete operator/punctuation tokenization remains G019; complete
+diagnostics, and C016 conformance obligations here. Atomic literal bodies are
+defined by C017; concrete operator/punctuation tokenization remains G019; complete
 documentable declarations remain P109; file/module ownership remains G020;
 rendering and formatting remain G110/G118; executable doctest semantics remain
 G119.

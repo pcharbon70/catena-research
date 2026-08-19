@@ -79,12 +79,14 @@ new source-text feature.
 
 ## Open questions
 
-C013 through C016 are resolved. Follow the
+C013 through C017 are resolved. Follow the
 [Whitespace, Layout, and Line Continuation map](whitespace-layout-and-line-continuation.md)
 for C015's classification and the
 [Comments and Documentation Comments map](comments-and-documentation-comments.md)
-for C016's preserving use of the logical stream. G017–G020 own literals,
-numbers, operators/punctuation, and file-to-module relations. P117 owns the complete
+for C016's preserving use of the logical stream and the
+[Literal Grammar map](literal-grammar.md) for C017's preserving decoding and
+raw line ownership. G018–G020 own numeric meaning, operators/punctuation, and
+file-to-module relations. P117 owns the complete
 cross-language diagnostic model; G118 owns canonical formatting and comment-
 preserving trees. Aggregate source-size and hostile-input performance remain
 outside the current portable-floor set.
