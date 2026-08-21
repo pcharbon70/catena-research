@@ -79,6 +79,11 @@ executable evidence are recorded in the
 
 ### Subdirectories
 
+- [Numeric Literal Semantics](numeric-literal-semantics/README.md) — the
+  candidate version 0.1.14 `Int` and finite binary64 `Float` domains,
+  monomorphic literal typing, correctly rounded decimal conversion, static
+  overflow invalidity, negation elaboration, limit, diagnostic, and
+  conformance contract.
 - [Literal Grammar](literal-grammar/README.md) — the normative version 0.1.13
   atomic Boolean, numeric, text, character, and byte spelling, decoding,
   provenance, line ownership, limit, diagnostic, and conformance contract.
