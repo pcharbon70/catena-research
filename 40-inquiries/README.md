@@ -46,6 +46,10 @@ to `20-notes`.
   rounding, static overflow refusal, negation elaboration, and the
   decimal-component digit limit measured against IEEE, BEAM, Haskell, and
   Rust evidence.
+- [How Should Catena Fix Operators and Punctuation?](how-should-catena-fix-operators-and-punctuation.md)
+  — tests a closed semantic-mapped token set, a fixed precedence ladder with
+  rejected comparison chains, concrete C015 capabilities and frames, and
+  reserved-spelling rejection against Rust, OCaml, and Haskell evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

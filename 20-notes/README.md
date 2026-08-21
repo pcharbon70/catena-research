@@ -83,6 +83,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   monomorphic literal typing without defaulting or coercion, correctly
   rounded decimal conversion with static overflow refusal, and negation
   elaboration.
+- [Catena Operators and Punctuation](catena-operators-and-punctuation.md) —
+  proposes C019's closed semantic-mapped operator set, fixed precedence
+  ladder with non-associative comparisons, concrete C015 capability and
+  frame assignments, and transactional reserved-spelling rejection.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

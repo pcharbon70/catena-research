@@ -309,7 +309,9 @@ mentions can remain as citations in the document that uses them.
   refinement, witness, and accessibility analysis.
 - [OCaml 5.4 Expressions and Pattern-Matching Guards](ocaml-5-4-expressions-and-pattern-guards.md)
   — supplies the ordered arbitrary-Boolean guard baseline: pattern bindings,
-  true selection, and false fallthrough.
+  true selection, and false fallthrough; it also fixes OCaml's precedence
+  table with left-associative comparisons, right-associative `&&`/`||`, and
+  unspecified operand order.
 - [The Rust Reference: Match Expressions](rust-reference-match-expressions.md)
   — specifies Boolean and conditional-let guards while exposing side effects,
   binding scope, ownership, and multiple evaluation under or-patterns.
@@ -370,6 +372,10 @@ mentions can remain as citations in the document that uses them.
   — documents exact raw hash delimiters, text/byte/character separation,
   escapes, numeric tokens, suffix boundaries, semantic conversion, and the
   `i32`/`f64` typed-literal resolution with static out-of-range rejection.
+- [The Rust Reference: Operator Expressions and Precedence](rust-project-2026-operator-expressions.md)
+  — documents the fixed precedence ladder, per-level associativity,
+  non-associative comparison chains, prefix minus over positive literals,
+  and left-to-right operand evaluation.
 - [The Swift Programming Language: Lexical Structure](swift-project-2026-lexical-structure.md)
   — independently specifies balanced nested multiline comments, exact
   extended string delimiters, and delimiter-sensitive interpolation.
