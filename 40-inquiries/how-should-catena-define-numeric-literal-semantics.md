@@ -2,7 +2,7 @@
 title: "How Should Catena Define Numeric Literal Semantics?"
 kind: inquiry
 created: "2026-08-21"
-status: open
+status: resolved
 tags:
   - catena
   - floats
@@ -123,8 +123,22 @@ libraries, P035 primitive equality, or G036 runtime failure taxonomy.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters covering domains,
-typing, conversion, negation, diagnostics, and limits; a sibling compiler
-implementation with exact decimal-to-binary64 conversion independent of host
-float parsing; and tagged executable evidence, following the C013–C017
-promotion workflow.
+Resolved as C018 and source-only language revision `0.1.14`. Catena fixes
+`Int` as the unbounded mathematical integers and `Float` as finite IEEE 754
+binary64 with signed zero and no infinities or NaN; types integer and
+decimal literals monomorphically without defaulting, constraints, or
+implicit coercions; converts decimal components through one exact, correctly
+rounded `roundTiesToEven` step with valid subnormal and underflow-to-zero
+results; refuses magnitudes at or above 2¹⁰²⁴ − 2⁹⁷⁰ statically as `NUM001`;
+elaborates numeric negation totally; and bounds decimal component digits
+with the `LIM005` 4,096-digit portable floor. The rules are defined in the
+[normative numeric literal specification](../60-specification/numeric-literal-semantics/README.md).
+
+G018 is complete through the
+[numeric literal synthesis](../20-notes/catena-numeric-literal-semantics.md),
+[topic map](../10-maps/numeric-literal-semantics.md), and
+[C018 evidence record](../50-journal/2026-08-21-c018-numeric-literal-semantics.md).
+G019/P109 retain negation spelling, operators, and grammar composition; G040
+retains the wider built-in data model; G061 retains numeric traits; G105
+retains explicit conversions and the numeric library; P035 retains primitive
+equality and ordering; G036 retains the arithmetic failure taxonomy.

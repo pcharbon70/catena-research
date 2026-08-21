@@ -148,7 +148,9 @@ or BEAM representation (`LT-OBL-001`, `LT-OBL-012`).
 The source-text decoder accepts cumulative revisions `0.1.9` through
 `0.1.13`. Standalone identifier, layout, and comment operations retain their
 exact 0.1.10, 0.1.11, and 0.1.12 selections and defaults. Literal scanning
-requires exact 0.1.13. The next unused semantic patch is `0.1.14`.
+requires exact 0.1.13. Numeric elaboration requires exact 0.1.14 under the
+[Numeric Literal Semantics](../numeric-literal-semantics/README.md) area.
+The next unused semantic patch is `0.1.15`.
 
 Unprefixed cooked text and `r`-prefixed raw text remain static under future
 same-edition revisions. Interpolation can be added only through a new opt-in

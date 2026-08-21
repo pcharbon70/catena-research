@@ -2,7 +2,7 @@
 title: "Numeric Types and Literal Typing"
 kind: specification
 created: "2026-08-21"
-status: candidate
+status: normative
 spec_version: "0.1.14"
 tags:
   - floats
@@ -125,6 +125,6 @@ arithmetic that cannot produce a value in the 0.1.14 domains.
 The [numeric literal synthesis](../../20-notes/catena-numeric-literal-semantics.md)
 compares IEEE, Erlang, Haskell, and Rust designs and explains the
 monomorphic, finite-domain choice. The
-[open inquiry](../../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
 and [topic map](../../10-maps/numeric-literal-semantics.md) preserve the
 decision route.

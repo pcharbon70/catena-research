@@ -2,7 +2,7 @@
 title: "Decimal Conversion and Overflow"
 kind: specification
 created: "2026-08-21"
-status: candidate
+status: normative
 spec_version: "0.1.14"
 tags:
   - floats
@@ -126,4 +126,5 @@ remain the exact 0.1.13 literal-grammar contract.
 The [numeric literal synthesis](../../20-notes/catena-numeric-literal-semantics.md)
 records the IEEE 754 basis, the BEAM `badarith` and host-parser evidence,
 and the rejected overflow alternatives. Local OTP 29 verification of the
-boundary constants is preserved in the C018 evidence record.
+boundary constants is preserved in the
+[C018 evidence record](../../50-journal/2026-08-21-c018-numeric-literal-semantics.md).

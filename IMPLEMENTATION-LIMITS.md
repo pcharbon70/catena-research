@@ -67,6 +67,7 @@ arbitrary zero.
 | Explicit callable arity | 253 arguments | Maximum explicit source arguments after the implementation's source callable representation is normalized. The floor reserves two hidden arguments for the current effect-directed CPS worker under OTP's arity-255 boundary. | `LIM001` |
 | Integer literal magnitude | 4,096 decimal digits | Digits in the mathematical integer literal value, excluding a leading minus sign, in every accepted compiler input form. | `LIM002` |
 | Decoded text or byte literal payload | 65,536 bytes | Bytes in each decoded C017 text UTF-8 scalar sequence or byte-literal octet sequence, after escape processing. | `LIM004` |
+| Decimal literal component digits | 4,096 digits | Total decimal digits across the integral, fractional, and exponent components of each C017 decimal literal. | `LIM005` |
 | Generated BEAM module | 1,048,576 bytes | Bytes in each generated `.beam` module before successful publication. | `LIM003` |
 | Pattern usefulness and coverage | 20,000 analysis steps | Existing data-and-pattern coverage boundary. | `M004` |
 | Condition normalization | 20,000 nodes or steps | Existing clause-condition normalization and transitive-inlining boundary. | `CND007` |
@@ -207,8 +208,10 @@ dimension or changing those classifications; normative C015 uses `0.1.11` for
 whitespace and layout under the same fixed resource classifications; normative
 C016 uses `0.1.12` for comments and documentation comments without adding a
 resource dimension; normative C017 uses `0.1.13` for atomic literals and
-activates the reserved decoded-payload dimension as `LIM004`; `0.1.14` is the
-next unused semantic patch.
+activates the reserved decoded-payload dimension as `LIM004`; normative C018
+uses `0.1.14` for numeric literal semantics and activates the new
+decimal-component dimension as `LIM005`; `0.1.15` is the next unused semantic
+patch.
 
 ## Conformance obligations
 
@@ -240,6 +243,9 @@ The following permanent obligations connect this policy to the
   common measurement fields before any successful final output is published.
 - **IL-OBL-012 — Version separation.** C012 changes governance and compiler
   conformance behavior without creating language revision `0.1.9`.
+- **IL-OBL-013 — Decimal-component floor.** C018 decimal literals accept
+  exact components through 4,096 total digits and refuse the next digit as
+  `LIM005`, without turning representable decimals into refusals.
 
 ## Research route
 

@@ -2,7 +2,7 @@
 title: "Numeric Diagnostics, Limits, and Conformance"
 kind: specification
 created: "2026-08-21"
-status: candidate
+status: normative
 spec_version: "0.1.14"
 tags:
   - conformance
@@ -70,8 +70,10 @@ A conforming implementation exposes an equivalent numeric elaboration
 operation. It accepts the exact numeric components of one C017-scanned
 numeric token and an exact language selection. It returns one complete typed
 literal meaning — the kind `integer` or `decimal`, the type `Int` or
-`Float`, the exact integer value or the correctly rounded float value, and
-the negation disposition — or exactly one diagnostic (`NM-OBL-001`).
+`Float`, and the exact integer value or the correctly rounded float value —
+or exactly one diagnostic (`NM-OBL-001`). A separate total negation
+operation yields the additive inverse on `Int` and the sign-flipped value on
+`Float`.
 
 The operation elaborates one token. It does not lex, parse, type-check a
 program, resolve operators, evaluate arithmetic, or select a numeric library
@@ -79,9 +81,10 @@ operation. C018 defines no whole-source lexer, parser, type checker,
 reference evaluator, or numeric CLI; implementations MUST NOT use this
 boundary to claim those later phases (`NM-OBL-014`).
 
-The bootstrap evidence names this operation `Catena.elaborate_numeric_literal/2`
-and its records `Catena.Numeric.Meaning`. These Elixir names are evidence
-API names, not required names for every implementation.
+The bootstrap evidence names this operation `Catena.elaborate_numeric_literal/2`,
+its records `Catena.Numeric.Meaning`, and the negation operation
+`Catena.Numeric.negate/1`. These Elixir names are evidence API names, not
+required names for every implementation.
 
 ## BEAM representation
 
@@ -165,7 +168,8 @@ requires exact `0.1.14`. The next unused semantic patch is `0.1.15`.
 
 The design route is preserved in the
 [numeric literal synthesis](../../20-notes/catena-numeric-literal-semantics.md),
-the [open inquiry](../../40-inquiries/how-should-catena-define-numeric-literal-semantics.md),
-and the [topic map](../../10-maps/numeric-literal-semantics.md). The C018
-evidence record will preserve the sibling-compiler commands, boundary-value
-derivations, and archive validation.
+the [resolved inquiry](../../40-inquiries/how-should-catena-define-numeric-literal-semantics.md),
+and the [topic map](../../10-maps/numeric-literal-semantics.md). The
+[C018 record](../../50-journal/2026-08-21-c018-numeric-literal-semantics.md)
+preserves the sibling-compiler commands, boundary-value derivations, and
+archive validation.

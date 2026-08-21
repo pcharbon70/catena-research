@@ -110,7 +110,8 @@ choosing host-dependent decoding, normalization, or columns.
 - C015 now classifies whitespace and layout without changing C013 newline
   formation; C016 now preserves comment-owned newlines through that classifier.
 - C017 now defines atomic literals and their context-specific scalar
-  restrictions; G018/G019 retain numeric meaning, operators, and punctuation.
+  restrictions; G019 retains operators and punctuation, and C018 has since
+  fixed numeric meaning.
 - G020 must define file/module relations and any source header carrying exact
   selection.
 - P117 and G118 must project original scalar spans into complete diagnostics,

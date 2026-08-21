@@ -50,7 +50,11 @@ This is the selective entry point to the archive. See the
 
 - [Literal Grammar](literal-grammar.md) — routes through C013–C016
   foundations, comparative literal systems, exact atomic forms and decoding,
-  active limits, C017 conformance, and remaining numeric/data/token owners.
+  active limits, C017 conformance, and remaining data/token owners.
+- [Numeric Literal Semantics](numeric-literal-semantics.md) — routes through
+  C017 numeric components, IEEE/BEAM/Haskell/Rust evidence, the normative
+  0.1.14 monomorphic `Int`/finite-`Float` model, and the owners of operators,
+  traits, equality, and libraries.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
@@ -79,7 +83,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  thirteen normative areas plus the C012 implementation-limits policy.
+  fourteen normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,

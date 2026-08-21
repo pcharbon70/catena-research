@@ -52,7 +52,7 @@ follow-up item now that C011 is reached.
 - [Literal Grammar Specification](../60-specification/literal-grammar/README.md)
   — the normative C017 source for `LT-OBL-*` obligations.
 - [Numeric Literal Semantics Specification](../60-specification/numeric-literal-semantics/README.md)
-  — the C018 source for `NM-OBL-*` obligations, candidate until promotion.
+  — the normative C018 source for `NM-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -99,7 +99,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirteen normative areas and the C012 governance policy are now
+extracted; all fourteen normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -121,7 +121,7 @@ sibling compiler repository.
 | `LY` whitespace-and-layout | 11 | `c015_whitespace_layout_test.exs` (9) | compiler-tagged + gated (merged); all obligations traced |
 | `CM` comments-and-documentation-comments | 12 | `c016_comments_documentation_test.exs` (9) | compiler-tagged + gated (working tree); all obligations traced |
 | `LT` literal-grammar | 12 | `c017_literal_grammar_test.exs` (10) | compiler-tagged + gated (`d51b307`); all obligations traced |
-| `NM` numeric-literal-semantics | 14 | `c018_numeric_literal_semantics_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `NM` numeric-literal-semantics | 14 | `c018_numeric_literal_semantics_test.exs` (10) | compiler-tagged + gated (`6fb2ad8`); all obligations traced |
 
 ## Trails
 
@@ -821,11 +821,13 @@ gate:
 | IL-OBL-010 | Mailbox capacity is deployment-defined with ordering, targeting, and live-target delivery constraints | [`IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity`](../IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity) | c012 #6 | traced |
 | IL-OBL-011 | Limit refusals report common structured measurements before successful output publication | [`IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure`](../IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure) | LIM001–LIM004; c012 #2–#4; c017 #9 | traced |
 | IL-OBL-012 | C012 changes governance and compiler conformance behavior without creating revision 0.1.9 | [`IMPLEMENTATION-LIMITS.md#evolution-and-version-axes`](../IMPLEMENTATION-LIMITS.md#evolution-and-version-axes) | Governance/version-axis obligation; compiler coverage gate allow-list | untraced |
+| IL-OBL-013 | C018 decimal literals accept exact components through 4,096 total digits and refuse the next digit as LIM005 | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | LIM005; c018 #9 in the `NM` registry above | traced |
 
-C012 coverage is 11 `traced` and 1 governance-only `untraced` obligation. The
-compiler coverage gate explicitly allow-lists IL-OBL-012 because emitting a
-language revision is a repository and release-governance decision, not an
-executable compiler behavior.
+C012 coverage is 12 `traced` and 1 governance-only `untraced` obligation.
+`IL-OBL-013` is exercised by the C018 decimal-component boundary test and
+gated with the `NM` set. The compiler coverage gate explicitly allow-lists
+IL-OBL-012 because emitting a language revision is a repository and
+release-governance decision, not an executable compiler behavior.
 
 ## Source-text registry (`ST`, 0.1.9)
 
@@ -1012,10 +1014,11 @@ focused tag.
 
 ## Numeric literal semantics registry (`NM`, 0.1.14)
 
-Evidence labels will refer to focused tests in
-`test/catena/c018_numeric_literal_semantics_test.exs` and its
-`test/catena/c018_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c018_numeric_literal_semantics_test.exs`](https://github.com/pcharbon70/catena/blob/6fb2ad89a5cc5518528106f73d60b5adc9387d74/test/catena/c018_numeric_literal_semantics_test.exs)
+and its
+[`c018_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/6fb2ad89a5cc5518528106f73d60b5adc9387d74/test/catena/c018_traceability_coverage_test.exs)
+gate:
 
 - **c018 #1** *keeps 0.1.14 exact selection with 0.1.13 scanning pinned and the lifecycle registered*
 - **c018 #2** *fixes `Int` and finite binary64 `Float` domains with exact based-integer values*
@@ -1028,30 +1031,26 @@ compiler repository. The planned focused set is:
 - **c018 #9** *accepts the `LIM005` floor and refuses the next decimal digit*
 - **c018 #10** *keeps elaboration deterministic and outside later phases*
 
-Anchors currently point at the candidate 0.1.14 chapters and become
-normative anchors at C018 promotion. Status is `untraced` until the
-compiler evidence lands.
-
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| NM-OBL-001 | Apply numeric meaning only at exact 0.1.14 and register the stable lifecycle addition | [`diagnostics-limits-and-conformance.md#revision-and-persistence-separation`](../60-specification/numeric-literal-semantics/diagnostics-limits-and-conformance.md#revision-and-persistence-separation) | c018 #1; EDN001 | untraced |
-| NM-OBL-002 | Fix `Int` as the unbounded mathematical integers with no value overflow | [`numeric-types-and-literal-typing.md#numeric-value-domains`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#numeric-value-domains) | c018 #2 | untraced |
-| NM-OBL-003 | Fix `Float` as finite binary64 with signed zero and no infinities or NaN | [`numeric-types-and-literal-typing.md#numeric-value-domains`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#numeric-value-domains) | c018 #2, #8 | untraced |
-| NM-OBL-004 | Type integer literals `Int` and decimal literals `Float`, monomorphically and context-independently | [`numeric-types-and-literal-typing.md#literal-typing`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#literal-typing) | c018 #3 | untraced |
-| NM-OBL-005 | Introduce no numeric defaulting, constraint generation, or expected-type adaptation | [`numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion) | c018 #3 | untraced |
-| NM-OBL-006 | Introduce no implicit numeric coercion; mixed numeric operands are ill-typed | [`numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion) | c018 #3 | untraced |
-| NM-OBL-007 | Elaborate numeric negation total on `Int` and sign-flipping on `Float`, including `-0.0` | [`numeric-types-and-literal-typing.md#numeric-negation`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#numeric-negation) | c018 #4 | untraced |
-| NM-OBL-008 | Keep the pattern grammar unsigned; negative and float pattern forms stay excluded | [`numeric-types-and-literal-typing.md#pattern-boundary`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#pattern-boundary) | c018 #8 | untraced |
-| NM-OBL-009 | Denote an integer literal by its exact C017 mathematical value | [`decimal-conversion-and-overflow.md#integer-literal-values`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#integer-literal-values) | c018 #2 | untraced |
-| NM-OBL-010 | Construct the exact rational meaning from the C017 components | [`decimal-conversion-and-overflow.md#exact-decimal-meaning`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#exact-decimal-meaning) | c018 #5 | untraced |
-| NM-OBL-011 | Round once to nearest binary64 with ties to even, admitting subnormals and underflow to zero | [`decimal-conversion-and-overflow.md#correct-rounding`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#correct-rounding) | c018 #5, #6 | untraced |
-| NM-OBL-012 | Refuse a decimal whose rounded result is not finite as `NUM001` static invalidity | [`decimal-conversion-and-overflow.md#overflow-and-static-invalidity`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#overflow-and-static-invalidity) | c018 #7; NUM001 | untraced |
-| NM-OBL-013 | Accept the `LIM005` 4,096-digit floor and refuse the next digit with structured measurements | [`diagnostics-limits-and-conformance.md#numeric-literal-implementation-limits`](../60-specification/numeric-literal-semantics/diagnostics-limits-and-conformance.md#numeric-literal-implementation-limits) | c018 #9; LIM005 | untraced |
-| NM-OBL-014 | Map `Int` to the Erlang integer and `Float` to the Erlang float and preserve persistence separation | [`diagnostics-limits-and-conformance.md#beam-representation`](../60-specification/numeric-literal-semantics/diagnostics-limits-and-conformance.md#beam-representation) | c018 #1, #2 | untraced |
+| NM-OBL-001 | Apply numeric meaning only at exact 0.1.14 and register the stable lifecycle addition | [`diagnostics-limits-and-conformance.md#revision-and-persistence-separation`](../60-specification/numeric-literal-semantics/diagnostics-limits-and-conformance.md#revision-and-persistence-separation) | c018 #1; EDN001 | traced |
+| NM-OBL-002 | Fix `Int` as the unbounded mathematical integers with no value overflow | [`numeric-types-and-literal-typing.md#numeric-value-domains`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#numeric-value-domains) | c018 #2 | traced |
+| NM-OBL-003 | Fix `Float` as finite binary64 with signed zero and no infinities or NaN | [`numeric-types-and-literal-typing.md#numeric-value-domains`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#numeric-value-domains) | c018 #2, #8 | traced |
+| NM-OBL-004 | Type integer literals `Int` and decimal literals `Float`, monomorphically and context-independently | [`numeric-types-and-literal-typing.md#literal-typing`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#literal-typing) | c018 #3 | traced |
+| NM-OBL-005 | Introduce no numeric defaulting, constraint generation, or expected-type adaptation | [`numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion) | c018 #3 | traced |
+| NM-OBL-006 | Introduce no implicit numeric coercion; mixed numeric operands are ill-typed | [`numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#no-defaulting-and-no-implicit-coercion) | c018 #3 | traced |
+| NM-OBL-007 | Elaborate numeric negation total on `Int` and sign-flipping on `Float`, including `-0.0` | [`numeric-types-and-literal-typing.md#numeric-negation`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#numeric-negation) | c018 #4 | traced |
+| NM-OBL-008 | Keep the pattern grammar unsigned; negative and float pattern forms stay excluded | [`numeric-types-and-literal-typing.md#pattern-boundary`](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md#pattern-boundary) | c018 #8 | traced |
+| NM-OBL-009 | Denote an integer literal by its exact C017 mathematical value | [`decimal-conversion-and-overflow.md#integer-literal-values`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#integer-literal-values) | c018 #2 | traced |
+| NM-OBL-010 | Construct the exact rational meaning from the C017 components | [`decimal-conversion-and-overflow.md#exact-decimal-meaning`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#exact-decimal-meaning) | c018 #5 | traced |
+| NM-OBL-011 | Round once to nearest binary64 with ties to even, admitting subnormals and underflow to zero | [`decimal-conversion-and-overflow.md#correct-rounding`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#correct-rounding) | c018 #5, #6 | traced |
+| NM-OBL-012 | Refuse a decimal whose rounded result is not finite as `NUM001` static invalidity | [`decimal-conversion-and-overflow.md#overflow-and-static-invalidity`](../60-specification/numeric-literal-semantics/decimal-conversion-and-overflow.md#overflow-and-static-invalidity) | c018 #7; NUM001 | traced |
+| NM-OBL-013 | Accept the `LIM005` 4,096-digit floor and refuse the next digit with structured measurements | [`diagnostics-limits-and-conformance.md#numeric-literal-implementation-limits`](../60-specification/numeric-literal-semantics/diagnostics-limits-and-conformance.md#numeric-literal-implementation-limits) | c018 #9; LIM005 | traced |
+| NM-OBL-014 | Map `Int` to the Erlang integer and `Float` to the Erlang float and preserve persistence separation | [`diagnostics-limits-and-conformance.md#beam-representation`](../60-specification/numeric-literal-semantics/diagnostics-limits-and-conformance.md#beam-representation) | c018 #1, #2 | traced |
 
-C018 coverage is 0 `traced` and 14 untraced obligations pending the sibling
-compiler implementation. The planned dedicated gate rejects unknown
-identifiers and fails if any `NM-OBL-*` identifier lacks a focused tag.
+C018 coverage is 14 `traced` and 0 untraced obligations. The dedicated gate
+rejects unknown identifiers and fails if any `NM-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 

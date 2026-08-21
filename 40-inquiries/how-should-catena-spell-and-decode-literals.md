@@ -103,6 +103,7 @@ G017 is complete through the
 [literal synthesis](../20-notes/catena-literal-grammar.md),
 [topic map](../10-maps/literal-grammar.md), and
 [C017 evidence record](../50-journal/2026-08-18-c017-literal-grammar.md).
-G018 now owns numeric types/defaulting/rounding/overflow/exceptions and
-negative-expression elaboration. G019/P109 own complete token and grammar
+Numeric types, defaulting, rounding, overflow, exceptional values, and
+negative-expression elaboration are complete as C018 at revision `0.1.14`.
+G019/P109 own complete token and grammar
 composition; compound and BEAM-native data remain separately owned.

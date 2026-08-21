@@ -389,8 +389,9 @@ separate that envelope from later lexical and file-language work. Normative
 C014 now fixes standalone identifier and qualified-name validation on top of
 the envelope; C015 defines whitespace/layout classification; C016 defines
 comments and documentation attachment; C017 defines atomic literal spelling,
-decoding, and source provenance; G018–G020 retain numeric meaning, the
-remaining lexical grammar, and file-language work.
+decoding, and source provenance; C018 defines numeric literal meaning;
+G019–G020 retain the
+remaining lexical grammar and file-language work.
 Existing JSON revisions and the exact 0.1.8 semantic kernel retain their own
 frontend and artifact identities.
 
@@ -458,7 +459,9 @@ The [literal map](10-maps/literal-grammar.md),
 [normative specification](60-specification/literal-grammar/README.md), and
 [C017 evidence record](50-journal/2026-08-18-c017-literal-grammar.md) connect
 those rules to the sibling compiler's atomic scanner and active `LIM002` and
-`LIM004` boundaries. G018 owns runtime numeric types and rounding; G019/P109
+`LIM004` boundaries. Runtime numeric types and rounding are fixed by the
+normative [0.1.14 numeric specification](60-specification/numeric-literal-semantics/README.md)
+and its [map](10-maps/numeric-literal-semantics.md); G019/P109
 own complete token/grammar composition; and compound/BEAM-native data remains
 under G040/G042/P093/G097. Existing cooked and raw text is static; a future
 interpolation feature needs a new prefix.

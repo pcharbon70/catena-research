@@ -147,8 +147,9 @@ value boundary.
 
 The measurement excludes a leading minus sign. C017 now defines bases and
 separators and measures every based spelling by the decimal digits in its
-mathematical value. Floating-point rules and fixed-width arithmetic remain
-G018. The retained frontends and C017 scanner accept 4,096 digits and report
+mathematical value. C018 bounds decimal component digits with the parallel
+`LIM005` floor, while fixed-width arithmetic remains G061/G105 library
+policy. The retained frontends and C017 scanner accept 4,096 digits and report
 `LIM002` at 4,097.
 
 ### Decoded literal payload: 65,536 bytes

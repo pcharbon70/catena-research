@@ -17,7 +17,7 @@ aliases:
 ## Scope
 
 This map connects the C017 token components and C001/C003/C010 semantic
-constraints that any numeric meaning must preserve, the primary evidence
+constraints that the adopted numeric meaning preserves, the primary evidence
 about binary64 and typed literals, the C018 decision artifacts, and the
 questions deliberately left to other owners.
 
@@ -26,9 +26,12 @@ questions deliberately left to other owners.
 - [Catena Numeric Literal Semantics](../20-notes/catena-numeric-literal-semantics.md)
   develops the monomorphic `Int`/finite-`Float` model, correct rounding,
   static overflow refusal, negation semantics, and rejected alternatives.
-- [Open numeric literal inquiry](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved numeric literal inquiry](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
+  records the operational question, hypotheses, and resolution.
+- [Numeric Literal Semantics Specification](../60-specification/numeric-literal-semantics/README.md)
+  is the normative version 0.1.14 contract.
+- [C018 evidence record](../50-journal/2026-08-21-c018-numeric-literal-semantics.md)
+  records the executable elaborator and verification.
 - [Literal Grammar map](literal-grammar.md) fixes the spelling and exact
   components this route gives meaning to.
 
@@ -68,14 +71,14 @@ questions deliberately left to other owners.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the `LIM002` integer floor that the proposed decimal-component
   bound extends.
-- [Conformance Traceability](conformance-traceability.md) will register the
-  numeric-semantics obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `NM-OBL-001` through `NM-OBL-014` against normative anchors and sibling
+  compiler tests.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler
-implementation with exact decimal-to-binary64 conversion, and tagged
-executable evidence. G019 retains negation spelling and all operator tokens;
+C018 is complete at revision `0.1.14`. G019 retains negation spelling and all
+operator tokens;
 G040 retains the wider built-in data model; G061 retains numeric trait
 relationships; G105 retains explicit conversions and the numeric library;
 P035 retains primitive equality and ordering including signed zero; G036

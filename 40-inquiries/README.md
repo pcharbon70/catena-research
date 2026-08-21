@@ -42,9 +42,10 @@ to `20-notes`.
   and raw decoding, scalar/byte separation, provenance, active limits, and
   explicit exclusions.
 - [How Should Catena Define Numeric Literal Semantics?](how-should-catena-define-numeric-literal-semantics.md)
-  — tests monomorphic `Int`/finite-`Float` domains, correct rounding, static
-  overflow refusal, negation elaboration, and a new decimal-component digit
-  limit against IEEE, BEAM, Haskell, and Rust evidence.
+  — resolves C018 with monomorphic `Int`/finite-`Float` domains, correct
+  rounding, static overflow refusal, negation elaboration, and the
+  decimal-component digit limit measured against IEEE, BEAM, Haskell, and
+  Rust evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
@@ -65,7 +66,7 @@ to `20-notes`.
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   — resolved as C011; the scheme gives every MUST/MUST NOT obligation a permanent
   identifier, a normative heading anchor, and tagged compiler evidence. It now
-  covers thirteen normative areas plus the C012 implementation-limits policy.
+  covers fourteen normative areas plus the C012 implementation-limits policy.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.

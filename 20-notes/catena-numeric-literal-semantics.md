@@ -243,10 +243,14 @@ implementations. Convenience arguments alone do not reopen C001.
 
 ## Connections
 
-- The [open numeric literal inquiry](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
+- The [resolved numeric literal inquiry](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
   records the operational question and evidence trail.
 - The [Numeric Literal Semantics map](../10-maps/numeric-literal-semantics.md)
   routes through evidence, constraints, and remaining owners.
+- The [Numeric Literal Semantics Specification](../60-specification/numeric-literal-semantics/README.md)
+  defines the normative 0.1.14 contract.
+- The [C018 evidence record](../50-journal/2026-08-21-c018-numeric-literal-semantics.md)
+  records the sibling implementation and verification.
 - [Catena Literal Grammar](catena-literal-grammar.md) fixes the spelling this
   synthesis gives meaning to.
 - [Catena Implementation Limits and Portability](catena-implementation-limits-and-portability.md)

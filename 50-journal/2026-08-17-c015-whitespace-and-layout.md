@@ -31,9 +31,9 @@ The [topic map](../10-maps/whitespace-layout-and-line-continuation.md) routes
 through Elixir, Python, Haskell, Rust, C013, and C014.
 
 The result remains deliberately pre-lexer. C016 now supplies comments through
-the abstract event boundary; literal bodies, concrete operators, punctuation,
-numeric meaning, precedence, associativity, and complete surface productions remain G018–G019
-and P109. The executable engine consumes opaque lexer-supplied token events
+the abstract event boundary, C017 fixes literal bodies, and C018 fixes numeric
+meaning; concrete operators, punctuation, precedence, associativity, and
+complete surface productions remain G019 and P109. The executable engine consumes opaque lexer-supplied token events
 instead of guessing those unresolved forms.
 
 ## Compiler evidence

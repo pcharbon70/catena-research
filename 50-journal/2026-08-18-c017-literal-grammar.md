@@ -105,9 +105,9 @@ change. The next unused semantic patch is `0.1.14`.
 
 ## Threads
 
-- G018 now owns numeric default types, coercions, rounding, overflow,
-  exceptional values, and negative-expression elaboration; bases and
-  separators are complete in C017.
+- Numeric default types, coercions, rounding, overflow, exceptional values,
+  and negative-expression elaboration are complete as C018 at `0.1.14`;
+  bases and separators are complete in C017.
 - G019/P109 must compose identifiers, literals, comments, layout, operators,
   punctuation, and recovery into one maximal whole-file token and grammar
   model.
@@ -118,5 +118,5 @@ change. The next unused semantic patch is `0.1.14`.
 
 ## Follow-ups
 
-Plan G018 from the now-fixed numeric token components, without reopening C017
-spelling or folding unary negation into the literal token.
+Plan G019 from the now-fixed numeric token components and C018 meaning,
+without reopening C017 spelling or C018 typing and conversion.

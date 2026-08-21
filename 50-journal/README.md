@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C018 Numeric Literal Semantics](2026-08-21-c018-numeric-literal-semantics.md)
+  — records the normative 0.1.14 numeric meaning contract, source-only
+  elaborator, exact conversion, boundary constants, diagnostics, limits,
+  traceability, and immutable compiler identity.
 - [C017 Literal Grammar](2026-08-18-c017-literal-grammar.md) — records the
   normative 0.1.13 atomic literal contract, source-only scanner, exact
   decoding/provenance, diagnostics, active limits, exclusions, traceability,

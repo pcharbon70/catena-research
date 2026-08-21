@@ -58,8 +58,9 @@ and promotion record for Catena's integrated 0.1.8 kernel.
 
 ## Open questions
 
-- Source decoding is now fixed by C013; identifiers through file/module
-  structure remain in G014–G020.
+- Source decoding is now fixed by C013, and identifiers, layout, comments,
+  literals, and numeric literal meaning are fixed by C014–C018; token through
+  file/module structure remain in G019–G020.
 - Cleanup, exception catching, time, supervision, distribution, foreign
   values, and optimizer validity remain outside C010.
 - Machine-checked metatheory may be considered after the paper model and
