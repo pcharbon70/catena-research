@@ -31,9 +31,13 @@ data model all remain with their existing owners, so completing G018 required
 no amendment to C001's no-defaulting contract or C017's spelling.
 
 The sibling compiler implementation is commit
-[`6fb2ad89a5cc5518528106f73d60b5adc9387d74`](https://github.com/pcharbon70/catena/commit/6fb2ad89a5cc5518528106f73d60b5adc9387d74)
-on branch `agent/c018-numeric-literal-semantics`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`6fb2ad89a5cc5518528106f73d60b5adc9387d74`](https://github.com/pcharbon70/catena/commit/6fb2ad89a5cc5518528106f73d60b5adc9387d74),
+merged into the `rewrite` integration line by compiler PR
+[#94](https://github.com/pcharbon70/catena/pull/94) at merge commit
+[`8e25635`](https://github.com/pcharbon70/catena/commit/8e2563554a1e08b9f7db4eaebbd5a34b9d6f5b53).
+The merge retained the tested tree exactly (tree `049bc02`), and the compiler
+PR was merged before this research promotion, following the C013 publication
+order.
 
 ## Evidence
 
