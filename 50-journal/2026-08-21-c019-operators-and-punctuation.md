@@ -36,9 +36,13 @@ and `=` fail at tokenization — the `OPR001`/`OPR002` split follows the
 layer boundary exactly.
 
 The sibling compiler implementation is commit
-[`6e13bdf72547c4b363d794461c3f875fd0a16119`](https://github.com/pcharbon70/catena/commit/6e13bdf72547c4b363d794461c3f875fd0a16119)
-on branch `agent/c019-operators-punctuation`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`6e13bdf72547c4b363d794461c3f875fd0a16119`](https://github.com/pcharbon70/catena/commit/6e13bdf72547c4b363d794461c3f875fd0a16119),
+merged into the `rewrite` integration line by compiler PR
+[#95](https://github.com/pcharbon70/catena/pull/95) at merge commit
+[`3f2ef5b`](https://github.com/pcharbon70/catena/commit/3f2ef5b6680a4984dc30c01847cd7dc9a71f56ea).
+The merge retained the tested tree exactly (tree `bcb78c4`), and the compiler
+PR was merged before this research promotion, following the established
+publication order.
 
 ## Evidence
 
