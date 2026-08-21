@@ -54,7 +54,7 @@ follow-up item now that C011 is reached.
 - [Numeric Literal Semantics Specification](../60-specification/numeric-literal-semantics/README.md)
   — the normative C018 source for `NM-OBL-*` obligations.
 - [Operators and Punctuation Specification](../60-specification/operators-and-punctuation/README.md)
-  — the C019 source for `OP-OBL-*` obligations, candidate until promotion.
+  — the normative C019 source for `OP-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -102,7 +102,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all fourteen normative areas and the C012 governance policy are now
+extracted; all fifteen normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -125,7 +125,7 @@ sibling compiler repository.
 | `CM` comments-and-documentation-comments | 12 | `c016_comments_documentation_test.exs` (9) | compiler-tagged + gated (working tree); all obligations traced |
 | `LT` literal-grammar | 12 | `c017_literal_grammar_test.exs` (10) | compiler-tagged + gated (`d51b307`); all obligations traced |
 | `NM` numeric-literal-semantics | 14 | `c018_numeric_literal_semantics_test.exs` (10) | compiler-tagged + gated (`6fb2ad8`); all obligations traced |
-| `OP` operators-and-punctuation | 16 | `c019_operators_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `OP` operators-and-punctuation | 16 | `c019_operators_test.exs` (12) | compiler-tagged + gated (`6e13bdf`); all obligations traced |
 
 ## Trails
 
@@ -1058,10 +1058,11 @@ focused tag.
 
 ## Operators and punctuation registry (`OP`, 0.1.15)
 
-Evidence labels will refer to focused tests in
-`test/catena/c019_operators_test.exs` and its
-`test/catena/c019_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c019_operators_test.exs`](https://github.com/pcharbon70/catena/blob/6e13bdf72547c4b363d794461c3f875fd0a16119/test/catena/c019_operators_test.exs)
+and its
+[`c019_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/6e13bdf72547c4b363d794461c3f875fd0a16119/test/catena/c019_traceability_coverage_test.exs)
+gate:
 
 - **c019 #1** *keeps 0.1.15 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c019 #2** *recognizes the closed inventory and rejects reserved spellings as `OPR001`*
@@ -1076,32 +1077,28 @@ compiler repository. The planned focused set is:
 - **c019 #11** *exposes the lossless stream and tree-or-diagnostic boundary with no recovery*
 - **c019 #12** *keeps tokenization and parsing deterministic and outside later phases*
 
-Anchors currently point at the candidate 0.1.15 chapters and become
-normative anchors at C019 promotion. Status is `untraced` until the
-compiler evidence lands.
-
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| OP-OBL-001 | Apply operator behavior only at exact 0.1.15 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c019 #1; EDN001 | untraced |
-| OP-OBL-002 | Recognize exactly the closed inventory and no other operator or punctuation spelling | [`token-inventory-and-maximal-munch.md#closed-inventory`](../60-specification/operators-and-punctuation/token-inventory-and-maximal-munch.md#closed-inventory) | c019 #2 | untraced |
-| OP-OBL-003 | Enforce maximal munch and spacing-invariant tokenization against every atom | [`token-inventory-and-maximal-munch.md#maximal-munch`](../60-specification/operators-and-punctuation/token-inventory-and-maximal-munch.md#maximal-munch) | c019 #3 | untraced |
-| OP-OBL-004 | Reject reserved and invalid symbol spellings as `OPR001` without re-tokenization | [`token-inventory-and-maximal-munch.md#reserved-and-invalid-spellings`](../60-specification/operators-and-punctuation/token-inventory-and-maximal-munch.md#reserved-and-invalid-spellings) | c019 #2; OPR001 | untraced |
-| OP-OBL-005 | Assign the exact `join_before`/`join_after` capability pair to every token | [`capabilities-and-delimiter-frames.md#token-continuation-capabilities`](../60-specification/operators-and-punctuation/capabilities-and-delimiter-frames.md#token-continuation-capabilities) | c019 #4 | untraced |
-| OP-OBL-006 | Push `paren`/`bracket` continued and `brace` block frames and close innermost matching | [`capabilities-and-delimiter-frames.md#delimiter-families-and-frame-modes`](../60-specification/operators-and-punctuation/capabilities-and-delimiter-frames.md#delimiter-families-and-frame-modes) | c019 #5; LAY002 | untraced |
-| OP-OBL-007 | Fix the precedence ladder and per-level associativity exactly, with no fixity declarations | [`precedence-and-associativity.md#the-fixed-ladder`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-fixed-ladder) | c019 #6 | untraced |
-| OP-OBL-008 | Reject comparison and equality chains as `OPR002`, accepting parenthesized regrouping | [`precedence-and-associativity.md#comparison-and-equality-chaining`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#comparison-and-equality-chaining) | c019 #7; OPR002 | untraced |
-| OP-OBL-009 | Fix prefix `-`/`!` above the binary ladder, right-recursively, never inside a literal | [`precedence-and-associativity.md#prefix-operators`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#prefix-operators) | c019 #8 | untraced |
-| OP-OBL-010 | Fix `\|>` left-associative at the loosest level denoting application of right to left | [`precedence-and-associativity.md#the-pipe`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-pipe) | c019 #9 | untraced |
-| OP-OBL-011 | Tokenize `->` while excluding it from 0.1.15 expression rules | [`precedence-and-associativity.md#the-reserved-arrow`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-reserved-arrow) | c019 #10 | untraced |
-| OP-OBL-012 | Fix `.` as qualification-only, never field access | [`capabilities-and-delimiter-frames.md#the-dot-interaction`](../60-specification/operators-and-punctuation/capabilities-and-delimiter-frames.md#the-dot-interaction) | c019 #10 | untraced |
-| OP-OBL-013 | Expose the lossless whole-source stream and the tree-or-diagnostic parse boundary | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#abstract-public-boundaries) | c019 #11 | untraced |
-| OP-OBL-014 | Reject transactionally with `OPR001`/`OPR002`/C015 events and no recovery | [`diagnostics-and-conformance.md#recovery`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#recovery) | c019 #11; OPR001, OPR002, LAY002, LAY003 | untraced |
-| OP-OBL-015 | Produce deterministic streams and trees | [`diagnostics-and-conformance.md#determinism`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#determinism) | c019 #12 | untraced |
-| OP-OBL-016 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c019 #1, #12 | untraced |
+| OP-OBL-001 | Apply operator behavior only at exact 0.1.15 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c019 #1; EDN001 | traced |
+| OP-OBL-002 | Recognize exactly the closed inventory and no other operator or punctuation spelling | [`token-inventory-and-maximal-munch.md#closed-inventory`](../60-specification/operators-and-punctuation/token-inventory-and-maximal-munch.md#closed-inventory) | c019 #2 | traced |
+| OP-OBL-003 | Enforce maximal munch and spacing-invariant tokenization against every atom | [`token-inventory-and-maximal-munch.md#maximal-munch`](../60-specification/operators-and-punctuation/token-inventory-and-maximal-munch.md#maximal-munch) | c019 #3 | traced |
+| OP-OBL-004 | Reject reserved and invalid symbol spellings as `OPR001` without re-tokenization | [`token-inventory-and-maximal-munch.md#reserved-and-invalid-spellings`](../60-specification/operators-and-punctuation/token-inventory-and-maximal-munch.md#reserved-and-invalid-spellings) | c019 #2; OPR001 | traced |
+| OP-OBL-005 | Assign the exact `join_before`/`join_after` capability pair to every token | [`capabilities-and-delimiter-frames.md#token-continuation-capabilities`](../60-specification/operators-and-punctuation/capabilities-and-delimiter-frames.md#token-continuation-capabilities) | c019 #4 | traced |
+| OP-OBL-006 | Push `paren`/`bracket` continued and `brace` block frames and close innermost matching | [`capabilities-and-delimiter-frames.md#delimiter-families-and-frame-modes`](../60-specification/operators-and-punctuation/capabilities-and-delimiter-frames.md#delimiter-families-and-frame-modes) | c019 #5; LAY002 | traced |
+| OP-OBL-007 | Fix the precedence ladder and per-level associativity exactly, with no fixity declarations | [`precedence-and-associativity.md#the-fixed-ladder`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-fixed-ladder) | c019 #6 | traced |
+| OP-OBL-008 | Reject comparison and equality chains as `OPR002`, accepting parenthesized regrouping | [`precedence-and-associativity.md#comparison-and-equality-chaining`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#comparison-and-equality-chaining) | c019 #7; OPR002 | traced |
+| OP-OBL-009 | Fix prefix `-`/`!` above the binary ladder, right-recursively, never inside a literal | [`precedence-and-associativity.md#prefix-operators`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#prefix-operators) | c019 #8 | traced |
+| OP-OBL-010 | Fix `\|>` left-associative at the loosest level denoting application of right to left | [`precedence-and-associativity.md#the-pipe`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-pipe) | c019 #9 | traced |
+| OP-OBL-011 | Tokenize `->` while excluding it from 0.1.15 expression rules | [`precedence-and-associativity.md#the-reserved-arrow`](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-reserved-arrow) | c019 #10 | traced |
+| OP-OBL-012 | Fix `.` as qualification-only, never field access | [`capabilities-and-delimiter-frames.md#the-dot-interaction`](../60-specification/operators-and-punctuation/capabilities-and-delimiter-frames.md#the-dot-interaction) | c019 #10 | traced |
+| OP-OBL-013 | Expose the lossless whole-source stream and the tree-or-diagnostic parse boundary | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#abstract-public-boundaries) | c019 #11 | traced |
+| OP-OBL-014 | Reject transactionally with `OPR001`/`OPR002`/C015 events and no recovery | [`diagnostics-and-conformance.md#recovery`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#recovery) | c019 #11; OPR001, OPR002, LAY002, LAY003 | traced |
+| OP-OBL-015 | Produce deterministic streams and trees | [`diagnostics-and-conformance.md#determinism`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#determinism) | c019 #12 | traced |
+| OP-OBL-016 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/operators-and-punctuation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c019 #1, #12 | traced |
 
-C019 coverage is 0 `traced` and 16 untraced obligations pending the sibling
-compiler implementation. The planned dedicated gate rejects unknown
-identifiers and fails if any `OP-OBL-*` identifier lacks a focused tag.
+C019 coverage is 16 `traced` and 0 untraced obligations. The dedicated gate
+rejects unknown identifiers and fails if any `OP-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 

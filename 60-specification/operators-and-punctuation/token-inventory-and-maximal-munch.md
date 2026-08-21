@@ -2,7 +2,7 @@
 title: "Token Inventory and Maximal Munch"
 kind: specification
 created: "2026-08-21"
-status: candidate
+status: normative
 spec_version: "0.1.15"
 tags:
   - operators
@@ -120,6 +120,6 @@ dispatch and overloaded operators remain G061.
 The [operators synthesis](../../20-notes/catena-operators-and-punctuation.md)
 compares the Rust, OCaml, Haskell, and Erlang designs and explains the
 closed semantic-mapped set. The
-[open inquiry](../../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
 and [topic map](../../10-maps/operators-and-punctuation.md) preserve the
 decision route.

@@ -17,7 +17,7 @@ aliases:
 ## Scope
 
 This map connects the C013–C018 atom contracts and the C015 capability/frame
-debt that the operator boundary must pay, the primary fixed-ladder and
+debt that the adopted operator boundary paid, the primary fixed-ladder and
 extensible-fixity evidence, the C019 decision artifacts, and the owners of
 everything the token grammar deliberately does not decide.
 
@@ -27,9 +27,12 @@ everything the token grammar deliberately does not decide.
   develops the closed semantic-mapped token set, the fixed precedence
   ladder with non-associative comparisons, capability and frame assignments,
   and the rejected alternatives.
-- [Open operator inquiry](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved operator inquiry](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
+  records the operational question, hypotheses, and resolution.
+- [Operators and Punctuation Specification](../60-specification/operators-and-punctuation/README.md)
+  is the normative version 0.1.15 contract.
+- [C019 evidence record](../50-journal/2026-08-21-c019-operators-and-punctuation.md)
+  records the executable tokenizer, expression layer, and verification.
 - [Numeric Literal Semantics map](numeric-literal-semantics.md) fixes the
   negation meaning the prefix `-` spelling is to carry.
 
@@ -70,14 +73,13 @@ everything the token grammar deliberately does not decide.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy that a whole-file token stream defers
   to under G129.
-- [Conformance Traceability](conformance-traceability.md) will register the
-  operator obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `OP-OBL-001` through `OP-OBL-016` against normative anchors and sibling
+  compiler tests.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler
-whole-source tokenizer and operator-expression parser, and tagged executable
-evidence. P109 retains application and declaration grammar and the `->`
+C019 is complete at revision `0.1.15`. P109 retains application and declaration grammar and the `->`
 structure; G020 retains file-to-module relations; G021/G022 retain qualified
 name resolution; G040 retains field-like access; G061 retains operator trait
 dispatch; G066 retains type-directed resolution questions; G123 retains

@@ -127,8 +127,9 @@ normative C014 uses `0.1.10` for identifiers and standalone qualified names,
 normative C015 uses `0.1.11` for whitespace and layout, and normative C016 uses
 `0.1.12` for comments and documentation comments. Normative C017 uses
 `0.1.13` for atomic literal grammar and decoding. Normative C018 uses
-`0.1.14` for numeric literal semantics. The next unused semantic
-patch is `0.1.15` unless an approved versioning policy explicitly
+`0.1.14` for numeric literal semantics. Normative C019 uses `0.1.15` for
+operators and punctuation. The next unused semantic
+patch is `0.1.16` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

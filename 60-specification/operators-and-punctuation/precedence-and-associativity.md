@@ -2,7 +2,7 @@
 title: "Precedence and Associativity"
 kind: specification
 created: "2026-08-21"
-status: candidate
+status: normative
 spec_version: "0.1.15"
 tags:
   - operators

@@ -175,6 +175,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "comments-and-documentation-comments": "0.1.12",
                 "literal-grammar": "0.1.13",
                 "numeric-literal-semantics": "0.1.14",
+                "operators-and-punctuation": "0.1.15",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

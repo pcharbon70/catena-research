@@ -2,7 +2,7 @@
 title: "Operator Diagnostics and Conformance"
 kind: specification
 created: "2026-08-21"
-status: candidate
+status: normative
 spec_version: "0.1.15"
 tags:
   - conformance
@@ -146,7 +146,7 @@ and defaults. Tokenization and operator-expression parsing require exact
 
 The design route is preserved in the
 [operators synthesis](../../20-notes/catena-operators-and-punctuation.md),
-the [open inquiry](../../40-inquiries/how-should-catena-fix-operators-and-punctuation.md),
+the [resolved inquiry](../../40-inquiries/how-should-catena-fix-operators-and-punctuation.md),
 and the [topic map](../../10-maps/operators-and-punctuation.md). The C019
 evidence record will preserve the sibling-compiler commands and archive
 validation.

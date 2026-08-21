@@ -2,7 +2,7 @@
 title: "How Should Catena Fix Operators and Punctuation?"
 kind: inquiry
 created: "2026-08-21"
-status: open
+status: resolved
 tags:
   - catena
   - language-design
@@ -112,7 +112,24 @@ G040 built-in data, or G061 operator trait dispatch.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters covering the token
-inventory, capability assignments, the precedence ladder, and diagnostics; a
-sibling compiler whole-source tokenizer and operator-expression parser with
-tagged executable evidence; and the C013–C018 promotion workflow.
+Resolved as C019 and source-only language revision `0.1.15`. Catena fixes
+the closed semantic-mapped operator and punctuation inventory with maximal
+munch and `OPR001` reserved-spelling rejection; assigns every token its
+C015 continuation capabilities with `paren`/`bracket` continued frames and a
+`brace` block frame; fixes one precedence ladder — prefix `-` and `!`
+tightest, `*`, then `+` `-`, then non-associative comparisons and
+equalities whose chains are rejected as `OPR002`, then `&&`, `||`, and the
+loosest left-associative `|>` — with no fixity declarations; tokenizes `->`
+while excluding it from expression rules; keeps `.` qualification-only; and
+rejects every failure transactionally without recovery. The rules are
+defined in the
+[normative operators specification](../60-specification/operators-and-punctuation/README.md).
+
+G019 is complete through the
+[operators synthesis](../20-notes/catena-operators-and-punctuation.md),
+[topic map](../10-maps/operators-and-punctuation.md), and
+[C019 evidence record](../50-journal/2026-08-21-c019-operators-and-punctuation.md).
+P109 retains application, declaration, and clause grammar; G020 retains
+file-to-module relations; G021/G022 retain qualification resolution; G040
+retains field-like access; G061 retains operator dispatch; G123 retains
+editor recovery.

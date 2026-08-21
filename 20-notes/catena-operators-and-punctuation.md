@@ -259,10 +259,14 @@ code. Convenience alone does not add an operator to a closed table.
 
 ## Connections
 
-- The [open operator inquiry](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
+- The [resolved operator inquiry](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
   records the operational question and evidence trail.
 - The [Operators and Punctuation map](../10-maps/operators-and-punctuation.md)
   routes through evidence, constraints, and remaining owners.
+- The [Operators and Punctuation Specification](../60-specification/operators-and-punctuation/README.md)
+  defines the normative 0.1.15 contract.
+- The [C019 evidence record](../50-journal/2026-08-21-c019-operators-and-punctuation.md)
+  records the sibling implementation and verification.
 - [Catena Whitespace, Layout, and Line Continuation](catena-whitespace-layout-and-line-continuation.md)
   defines the capability and frame contracts this slice populates.
 - [Catena Numeric Literal Semantics](catena-numeric-literal-semantics.md)

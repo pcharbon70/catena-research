@@ -80,6 +80,10 @@ diagnostics, location model, and verification are recorded in the
 Normative C018 uses `0.1.14` for numeric literal semantics. Its domains,
 conversion, diagnostics, limits, and verification are recorded in the
 [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-semantics.md).
+Normative C019 uses `0.1.15` for operators and punctuation. Its inventory,
+capabilities and frames, ladder, diagnostics, and verification are recorded
+in the
+[C019 conformance journal](../50-journal/2026-08-21-c019-operators-and-punctuation.md).
 
 ## Existing research that needs normative consolidation
 
@@ -243,9 +247,10 @@ as small normative rules rather than copied wholesale into a specification.
   [`d4e8e5c0ad41f47ebe86d59047cdabe017762f38`](https://github.com/pcharbon70/catena/commit/d4e8e5c0ad41f47ebe86d59047cdabe017762f38)
   on draft compiler PR [#89](https://github.com/pcharbon70/catena/pull/89).
   C014 now defines standalone identifiers, C015 defines layout events, C016
-  defines comments, C017 defines atomic literals, and C018 defines numeric
-  literal meaning; G019–G020 retain whole-source tokens/grammar and
-  file/module semantics; P117 and G118 retain complete diagnostics and
+  defines comments, C017 defines atomic literals, C018 defines numeric
+  literal meaning, and C019 defines operators and the whole-source token
+  stream; G020 retains file/module semantics and P109 retains the
+  declaration grammar; P117 and G118 retain complete diagnostics and
   formatting.
 - [x] **C014 — Complete — identifiers.** The normative
   [0.1.10 identifier specification](../60-specification/identifiers/README.md),
@@ -261,10 +266,10 @@ as small normative rules rather than copied wholesale into a specification.
   implements standalone identifier/qualified-name/audit APIs and
   `check-identifiers`, and supplies complete `ID-OBL-001`–`ID-OBL-013`
   executable coverage. C015 now defines whitespace/layout, C016 defines
-  comments/documentation, C017 defines atomic literals, and C018 defines
-  numeric literal meaning; G019–G020 retain the remaining whole-source token
-  and file grammar; G021–G022 retain namespaces, resolution, imports, and
-  exports.
+  comments/documentation, C017 defines atomic literals, C018 defines numeric
+  literal meaning, and C019 defines the whole-source token stream; G020
+  retains the file grammar; G021–G022 retain namespaces, resolution,
+  imports, and exports.
 - [x] **C015 — Complete — whitespace and layout.** The normative
   [0.1.11 whitespace and layout specification](../60-specification/whitespace-and-layout/README.md),
   [synthesis](../20-notes/catena-whitespace-layout-and-line-continuation.md),
@@ -282,9 +287,8 @@ as small normative rules rather than copied wholesale into a specification.
   [`5d08925ce92f57e78018e0ab81c008a7d917dfbc`](https://github.com/pcharbon70/catena/commit/5d08925ce92f57e78018e0ab81c008a7d917dfbc)
   on draft compiler PR [#91](https://github.com/pcharbon70/catena/pull/91).
   C016 now defines comment integration, C017 defines literal-contained line
-  ownership, and C018 defines numeric literal meaning; G019 retains concrete
-  token capability assignments and P109 retains the complete surface
-  grammar.
+  ownership, and C019 assigns the concrete token capabilities and delimiter
+  frames; P109 retains the complete surface grammar.
 - [x] **C016 — Complete — comments and documentation comments.** The normative
   [0.1.12 comments specification](../60-specification/comments-and-documentation-comments/README.md),
   [synthesis](../20-notes/catena-comments-and-documentation-comments.md),
@@ -298,8 +302,8 @@ as small normative rules rather than copied wholesale into a specification.
   `agent/c016-comments-documentation` implements `Catena.scan_comment/2` and
   `Catena.resolve_comments/2`, exact `CMT001`, `CMT002`, and `DOC001`
   diagnostics, source-only revision/persistence separation, and complete
-  `CM-OBL-001`–`CM-OBL-012` executable coverage. G019 and P109 retain complete
-  token/declaration grammar; G020 retains file/module ownership; G110/G118
+  `CM-OBL-001`–`CM-OBL-012` executable coverage. C019 now supplies the complete token stream; P109
+  retains declaration grammar; G020 retains file/module ownership; G110/G118
   retain rendering/formatting; G119 retains actual doctest execution.
 - [x] **C017 — Complete — atomic literal grammar.** The normative
   [0.1.13 literal specification](../60-specification/literal-grammar/README.md),
@@ -319,9 +323,10 @@ as small normative rules rather than copied wholesale into a specification.
   source-only lifecycle/persistence separation, and complete
   `LT-OBL-001`–`LT-OBL-012` coverage with 233 passing tests. Compound lists,
   tuples, records, maps, and binary construction remain G040/G042/P093/G097;
-  atoms/symbols remain G040/P093/G097; unit punctuation and negation spelling
-  remain G019/P109; numeric meaning is complete as C018; and any future
-  interpolation requires a new opt-in prefix.
+  atoms/symbols remain G040/P093/G097; negation spelling and the token
+  inventory are complete as C019 while P109 retains declaration grammar;
+  numeric meaning is complete as C018; and any future interpolation requires
+  a new opt-in prefix.
 - [x] **C018 — Complete — numeric literal semantics.** The normative
   [0.1.14 numeric specification](../60-specification/numeric-literal-semantics/README.md),
   [synthesis](../20-notes/catena-numeric-literal-semantics.md),
@@ -334,8 +339,8 @@ as small normative rules rather than copied wholesale into a specification.
   implicit coercions; convert decimal components through one exact correctly
   rounded `roundTiesToEven` step with valid subnormal and underflow-to-zero
   results; refuse magnitudes at or above 2¹⁰²⁴ − 2⁹⁷⁰ statically as
-  `NUM001`; elaborate numeric negation totally including `-0.0` while G019
-  retains spelling and precedence; keep patterns unsigned; and bound decimal
+  `NUM001`; elaborate numeric negation totally including `-0.0` with its
+  spelling and precedence fixed by C019; keep patterns unsigned; and bound decimal
   component digits with the 4,096-digit `LIM005` floor. Sibling compiler
   commit
   [`6fb2ad89a5cc5518528106f73d60b5adc9387d74`](https://github.com/pcharbon70/catena/commit/6fb2ad89a5cc5518528106f73d60b5adc9387d74)
@@ -343,9 +348,30 @@ as small normative rules rather than copied wholesale into a specification.
   tests. Numeric traits remain G061, explicit conversions and the numeric
   library remain G105, primitive equality remains P035, and arithmetic
   failures remain G036.
-- [ ] **G019 — Gap — operators and punctuation.** Define precedence, associativity,
-  fixity declarations or their absence, pipes, qualification, and parse-error
-  recovery.
+- [x] **C019 — Complete — operators and punctuation.** The normative
+  [0.1.15 operators specification](../60-specification/operators-and-punctuation/README.md),
+  [synthesis](../20-notes/catena-operators-and-punctuation.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md),
+  [topic map](../10-maps/operators-and-punctuation.md), and
+  [C019 record](../50-journal/2026-08-21-c019-operators-and-punctuation.md)
+  fix the closed semantic-mapped operator and punctuation inventory
+  (`+ - *`, comparisons, equalities, `! && ||`, `-> |> . , ; ( ) [ ] { }`)
+  with ASCII-only maximal munch against every C014–C018 atom and `OPR001`
+  reserved-spelling rejection; assign every token its C015
+  `join_before`/`join_after` capabilities with `paren`/`bracket` continued
+  frames and a `brace` block frame; fix one precedence ladder with
+  per-level associativity, no fixity declarations, non-associative
+  comparisons whose chains are rejected as `OPR002`, prefix `-` and `!`
+  tightest, and the loosest left-associative `|>` pipe; tokenize `->` while
+  excluding it from expression rules; keep `.` qualification-only; and
+  deliver the whole-source token stream and operator-expression layer with
+  transactional rejection and no recovery. Sibling compiler commit
+  [`6e13bdf72547c4b363d794461c3f875fd0a16119`](https://github.com/pcharbon70/catena/commit/6e13bdf72547c4b363d794461c3f875fd0a16119)
+  supplies complete `OP-OBL-001`–`OP-OBL-016` coverage with 260 passing
+  tests. Application and declaration grammar remain P109; file-to-module
+  relations remain G020; qualification resolution remains G021/G022;
+  field-like access remains G040; operator dispatch remains G061; editor
+  recovery remains G123.
 - [ ] **G020 — Gap — file-to-module relationship.** Define whether filenames determine
   module names, how many modules a file may contain, and how generated files
   are identified.
