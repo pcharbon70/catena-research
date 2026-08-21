@@ -14,8 +14,10 @@ url: "https://www.haskell.org/definition/haskell2010.pdf"
 accessed: "2026-08-01"
 tags:
   - comprehensions
+  - floats
   - language-design
   - layout
+  - literals
   - pattern-matching
   - syntax
   - whitespace
@@ -40,7 +42,9 @@ semantic structure?
 
 The report is the language definition. Sections 2.7 and 10.3 specify layout;
 Sections 3.11, 3.13, and 3.17 give syntax, informal behavior, and translation
-rules for list comprehensions, case alternatives, and pattern matching.
+rules for list comprehensions, case alternatives, and pattern matching. The
+numeric-literal findings below come from Sections 6.4 and 6.4.1, re-read
+2026-08-21 for Catena's numeric literal work.
 
 ## Findings
 
@@ -96,6 +100,28 @@ rules for list comprehensions, case alternatives, and pattern matching.
   declarations can be generalized. Surface similarity therefore does not make
   the two binders statically interchangeable.
 
+### Numeric literals and numeric classes
+
+- An integer literal denotes the application of `fromInteger` to the
+  corresponding `Integer` value, and a floating literal denotes the
+  application of `fromRational` to an exact `Rational` value. Unsuffixed
+  literals therefore have the overloaded typings `(Num a) => a` and
+  `(Fractional a) => a`.
+- The report introduces this indirection expressly so one spelling can denote
+  values of any suitable numeric type, and refers overloading ambiguity to
+  the default-declaration mechanism of Section 4.3.4. Overloaded literals
+  and defaulting are one coupled design.
+- The Prelude fixes `Integer` as arbitrary precision and `Int` as a bounded
+  implementation-defined integer type. `Double` should cover IEEE double
+  precision and `Float` is implementation-defined.
+- For fixed-precision numeric types, the results of exceptional conditions
+  such as overflow or underflow are undefined in the report: an
+  implementation may error, truncate, or return a special value.
+- `toRational` converts with full precision, and the `RealFloat` class
+  exposes radix, digits, range, decoding, and IEEE predicates
+  (`isNaN`, `isInfinite`, `isNegativeZero`, `isIEEE`) for implementations
+  that support such numbers.
+
 ## Relevance
 
 The report demonstrates compositional paths from layout and rich expression
@@ -112,6 +138,15 @@ The list translation supplies an extensional model for Catena's pure
 comprehensions. Catena should not inherit silent pattern filtering without an
 explicit marker, and its strict effectful semantics require a more direct
 operational account than Haskell's non-strict `concatMap` equation.
+
+The numeric sections are Catena's primary comparative evidence for a
+different literal policy: overloaded `fromInteger`/`fromRational` literals
+require defaulting to stay usable, while Catena's C001 inference contract has
+no numeric defaulting and C004 rejects ambiguous constraints. The report's
+admission that fixed-precision overflow and underflow are undefined is also
+the precise behavior class Catena's conformance vocabulary prohibits, making
+Haskell the contrast case for C018's monomorphic typing, explicit conversion
+boundary, and statically decided overflow.
 
 ## Limits
 
@@ -133,3 +168,6 @@ precision.
 - [Catena Whitespace, Layout, and Line Continuation](../20-notes/catena-whitespace-layout-and-line-continuation.md)
 - [Resolved layout inquiry](../40-inquiries/how-should-catena-treat-whitespace-and-line-breaks.md)
 - [Whitespace, Layout, and Line Continuation map](../10-maps/whitespace-layout-and-line-continuation.md)
+- [Catena Numeric Literal Semantics](../20-notes/catena-numeric-literal-semantics.md)
+- [How Should Catena Define Numeric Literal Semantics?](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
+- [Numeric Literal Semantics map](../10-maps/numeric-literal-semantics.md)

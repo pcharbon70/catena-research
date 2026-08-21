@@ -90,6 +90,10 @@ should explain why its links belong together rather than merely list files.
 - [Literal Grammar](literal-grammar.md) — routes through source and layout
   foundations, comparative literal systems, atomic numeric/text/character/byte
   forms, active limits, C017 conformance, and remaining numeric/data owners.
+- [Numeric Literal Semantics](numeric-literal-semantics.md) — routes through
+  C017 numeric components, binary64 and typed-literal evidence, the proposed
+  monomorphic `Int`/finite-`Float` model, correct rounding, static overflow
+  refusal, and the owners of everything numeric literals do not decide.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

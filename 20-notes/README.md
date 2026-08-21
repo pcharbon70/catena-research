@@ -78,6 +78,11 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   Boolean, numeric, text, character, and byte spellings; exact decoding and
   provenance; raw line ownership; limits; exclusions; and static-text
   compatibility promise.
+- [Catena Numeric Literal Semantics](catena-numeric-literal-semantics.md) —
+  proposes C018's monomorphic `Int` and finite binary64 `Float` domains,
+  monomorphic literal typing without defaulting or coercion, correctly
+  rounded decimal conversion with static overflow refusal, and negation
+  elaboration.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

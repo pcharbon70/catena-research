@@ -41,6 +41,10 @@ to `20-notes`.
   — resolves C017 with a bounded atomic set, exact numeric components, cooked
   and raw decoding, scalar/byte separation, provenance, active limits, and
   explicit exclusions.
+- [How Should Catena Define Numeric Literal Semantics?](how-should-catena-define-numeric-literal-semantics.md)
+  — tests monomorphic `Int`/finite-`Float` domains, correct rounding, static
+  overflow refusal, negation elaboration, and a new decimal-component digit
+  limit against IEEE, BEAM, Haskell, and Rust evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
