@@ -389,9 +389,10 @@ separate that envelope from later lexical and file-language work. Normative
 C014 now fixes standalone identifier and qualified-name validation on top of
 the envelope; C015 defines whitespace/layout classification; C016 defines
 comments and documentation attachment; C017 defines atomic literal spelling,
-decoding, and source provenance; C018 defines numeric literal meaning;
-G019–G020 retain the
-remaining lexical grammar and file-language work.
+decoding, and source provenance; C018 defines numeric literal meaning; C019
+defines operators, punctuation, and the whole-source token stream; G020
+retains the remaining file-language work and P109 retains declaration
+grammar.
 Existing JSON revisions and the exact 0.1.8 semantic kernel retain their own
 frontend and artifact identities.
 
@@ -426,7 +427,8 @@ The
 [normative specification](60-specification/whitespace-and-layout/README.md),
 and [C015 evidence record](50-journal/2026-08-17-c015-whitespace-and-layout.md)
 connect those rules to the abstract sibling-compiler layout engine. C017 now
-defines literal-contained line ownership; G019 remains responsible for
+defines literal-contained line ownership; C019 assigns the concrete
+operator and punctuation capabilities and is responsible for
 concrete token capability assignments.
 
 ### Normative comments and documentation boundary
@@ -442,8 +444,9 @@ The [comments map](10-maps/comments-and-documentation-comments.md),
 [normative specification](60-specification/comments-and-documentation-comments/README.md),
 and [C016 evidence record](50-journal/2026-08-18-c016-comments-and-documentation-comments.md)
 connect those rules to the sibling compiler's abstract scanner and resolver.
-G019 and P109 still own complete token/declaration grammar, G020 owns
-file/module attachment, and G119 owns actual doctest execution.
+C019 now owns the complete token stream, P109 still owns declaration
+grammar, G020 owns file/module attachment, and G119 owns actual doctest
+execution.
 
 ### Normative literal boundary
 
@@ -461,8 +464,10 @@ The [literal map](10-maps/literal-grammar.md),
 those rules to the sibling compiler's atomic scanner and active `LIM002` and
 `LIM004` boundaries. Runtime numeric types and rounding are fixed by the
 normative [0.1.14 numeric specification](60-specification/numeric-literal-semantics/README.md)
-and its [map](10-maps/numeric-literal-semantics.md); G019/P109
-own complete token/grammar composition; and compound/BEAM-native data remains
+and its [map](10-maps/numeric-literal-semantics.md); token/grammar
+composition is fixed by the normative
+[0.1.15 operators specification](60-specification/operators-and-punctuation/README.md)
+while P109 owns declaration grammar; and compound/BEAM-native data remains
 under G040/G042/P093/G097. Existing cooked and raw text is static; a future
 interpolation feature needs a new prefix.
 

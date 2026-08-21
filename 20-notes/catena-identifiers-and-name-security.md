@@ -164,8 +164,8 @@ checked; escapes apply per segment.
 
 The dot is not part of identifier identity. The sequence of segment identities
 is the qualified identity, and the confusable key joins their individual
-skeletons with the same separator. G019 still decides how dot interacts with
-other punctuation in a complete token stream. G021 and G022 decide which
+skeletons with the same separator. C019 now fixes how dot interacts with
+other punctuation in the complete token stream as qualification-only. G021 and G022 decide which
 prefixes name modules, which namespaces are searched, and how qualification
 affects ambiguity.
 

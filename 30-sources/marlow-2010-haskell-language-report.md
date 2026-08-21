@@ -18,6 +18,7 @@ tags:
   - language-design
   - layout
   - literals
+  - operators
   - pattern-matching
   - syntax
   - whitespace
@@ -44,7 +45,8 @@ The report is the language definition. Sections 2.7 and 10.3 specify layout;
 Sections 3.11, 3.13, and 3.17 give syntax, informal behavior, and translation
 rules for list comprehensions, case alternatives, and pattern matching. The
 numeric-literal findings below come from Sections 6.4 and 6.4.1, re-read
-2026-08-21 for Catena's numeric literal work.
+2026-08-21 for Catena's numeric literal work. The fixity findings come from
+Section 4.4.2, read 2026-08-21 for Catena's operator work.
 
 ## Findings
 
@@ -122,6 +124,23 @@ numeric-literal findings below come from Sections 6.4 and 6.4.1, re-read
   (`isNaN`, `isInfinite`, `isNegativeZero`, `isIEEE`) for implementations
   that support such numbers.
 
+### Fixity declarations
+
+- A fixity declaration has the form `fixity [integer] ops` where `fixity` is
+  one of `infixl`, `infixr`, or `infix`. It may appear anywhere a type
+  signature appears, including top level and class bodies, at most once per
+  operator, and only in the same declaration sequence as the operator's
+  definition.
+- The integer level ranges from 0 to 9; level 0 binds least tightly and
+  level 9 most tightly. If the digit is omitted, level 9 is assumed.
+- Any operator lacking a fixity declaration defaults to `infixl 9`.
+- The Prelude's own operators are given their precedences by a fixity table
+  (Table 4.1) covering levels 9 down to 0 — for example `!!` and `.` at 9,
+  exponentiation at 8 right-associative, multiplication and addition at 7
+  and 6, cons at 5 right-associative, comparisons at 4 non-associative,
+  Boolean conjunction at 3 right-associative, and application helpers `$`
+  at 0.
+
 ## Relevance
 
 The report demonstrates compositional paths from layout and rich expression
@@ -148,6 +167,15 @@ the precise behavior class Catena's conformance vocabulary prohibits, making
 Haskell the contrast case for C018's monomorphic typing, explicit conversion
 boundary, and statically decided overflow.
 
+The fixity sections supply the rejected alternative for operator design:
+user-declared `infixl`/`infixr`/`infix` levels with a silent `infixl 9`
+default for undeclared operators. That extensibility couples the grammar to
+declaration processing, makes every operator's precedence a resolved name
+rather than a token fact, and motivated Catena's fixed ladder with no user
+fixity in 0.1.15. The report's own Prelude table also shows comparisons
+declared non-associative at level 4, agreeing with Rust's rejection of
+comparison chains and supporting Catena's non-associative comparison level.
+
 ## Limits
 
 Haskell is non-strict and pure, while Catena is proposed to be strict with
@@ -171,3 +199,6 @@ precision.
 - [Catena Numeric Literal Semantics](../20-notes/catena-numeric-literal-semantics.md)
 - [How Should Catena Define Numeric Literal Semantics?](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
 - [Numeric Literal Semantics map](../10-maps/numeric-literal-semantics.md)
+- [Catena Operators and Punctuation](../20-notes/catena-operators-and-punctuation.md)
+- [How Should Catena Fix Operators and Punctuation?](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
+- [Operators and Punctuation map](../10-maps/operators-and-punctuation.md)

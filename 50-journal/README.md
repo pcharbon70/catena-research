@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C019 Operators and Punctuation](2026-08-21-c019-operators-and-punctuation.md)
+  — records the normative 0.1.15 operator contract, whole-source tokenizer,
+  expression layer, capability/frame assignments, ladder evidence,
+  diagnostics, traceability, and immutable compiler identity.
 - [C018 Numeric Literal Semantics](2026-08-21-c018-numeric-literal-semantics.md)
   — records the normative 0.1.14 numeric meaning contract, source-only
   elaborator, exact conversion, boundary constants, diagnostics, limits,
