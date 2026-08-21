@@ -83,8 +83,13 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Operators and Punctuation](operators-and-punctuation/README.md) — the
+  candidate version 0.1.15 closed operator and punctuation inventory,
+  maximal munch, capability and frame assignments, fixed precedence ladder,
+  token-stream and operator-expression boundaries, diagnostics, and
+  conformance contract.
 - [Numeric Literal Semantics](numeric-literal-semantics/README.md) — the
-  candidate version 0.1.14 `Int` and finite binary64 `Float` domains,
+  normative version 0.1.14 `Int` and finite binary64 `Float` domains,
   monomorphic literal typing, correctly rounded decimal conversion, static
   overflow invalidity, negation elaboration, limit, diagnostic, and
   conformance contract.
