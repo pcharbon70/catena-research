@@ -72,9 +72,9 @@ left open.
 
 ## Open questions
 
-G018 must define numeric runtime types, defaulting, coercions, rounding,
-overflow, exceptional values, and negative-expression elaboration. G019 and
-P109 must combine C014–C017 into a complete token stream and grammar. G040,
+Numeric meaning is complete as C018 at revision `0.1.14`; see the
+[Numeric Literal Semantics map](numeric-literal-semantics.md). G019 and
+P109 must combine C014–C018 into a complete token stream and grammar. G040,
 G042, P093, and G097 retain atoms/symbols, collection forms, and BEAM-native
 data. A future interpolation form requires a new prefix and explicit semantic
 revision; 0.1.13 text remains static.

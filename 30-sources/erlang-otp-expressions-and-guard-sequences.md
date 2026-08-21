@@ -9,10 +9,12 @@ edition: null
 isbn: null
 doi: null
 url: "https://www.erlang.org/doc/system/expressions.html"
-accessed: "2026-08-01"
+accessed: "2026-08-21"
 tags:
   - comprehensions
   - compilers
+  - erlang
+  - floats
   - pattern-matching
 aliases:
   - "Erlang guard expressions"
@@ -23,11 +25,13 @@ aliases:
 ## Reference
 
 Erlang/OTP, “Expressions,” *Erlang/OTP System Documentation*, current online
-edition accessed 2026-08-01.
+edition; first consulted 2026-08-01 and re-read 2026-08-21 for the arithmetic,
+term-comparison, and bit-syntax sections.
 [Canonical documentation](https://www.erlang.org/doc/system/expressions.html).
 
 The page is living documentation. It identified itself as Erlang/OTP 29.0.4
-when consulted; the canonical URL may later describe a newer release.
+when first consulted and 29.0.5 when re-read; the canonical URL may later
+describe a newer release.
 
 ## Research question
 
@@ -81,6 +85,32 @@ does the BEAM's source language attach to clause guards and comprehensions?
   patterns and filters succeed. Empty results have the identity value of the
   target container.
 
+### Arithmetic, numeric terms, and float boundaries
+
+- All subexpressions are evaluated before an operator is applied, but the
+  page states operand evaluation order within one operator expression is “in
+  any order”. A language that fixes left-to-right order, as Catena's C010
+  kernel does, is deliberately strengthening this behavior.
+- Arithmetic operators accept only numbers. Operand type errors and failing
+  arithmetic raise exceptions of class `error`; division by zero raises
+  `badarith`. `/` is always floating-point division (`4/2` yields `2.0`),
+  while `div` and `rem` are integer operations.
+- Local verification on OTP 29 confirms the target's finite-float posture:
+  `1.0e308 * 1.0e308` raises `badarith` rather than producing an infinity,
+  `1.0/0.0` raises `badarith`, and `list_to_float("1.0e400")` raises
+  `badarg` rather than saturating. The arithmetic operations observable from
+  Catena's target do not manufacture infinities or NaNs.
+- Term comparisons mix numeric types: `1 == 1.0` is `true`, with a documented
+  precision-dependent conversion strategy around ±9007199254740992.0 chosen
+  to keep mixed integer/float ordering transitive.
+- Term equivalence `=:=` distinguishes `0` from `0.0` and, since OTP 27,
+  `0.0` from `-0.0`; the compiler warns when `0.0` is matched and offers
+  `+0.0` as the deliberate form. Erlang therefore carries at least three
+  numeric equality notions, chosen by operator rather than by type.
+- Bit-syntax float segments require finite representations: matching fails
+  if the segment bits do not encode a finite float, and construction raises
+  when a segment is too small for the value.
+
 ## Relevance
 
 This is the nearest runtime precedent for Catena. It demonstrates that
@@ -99,6 +129,16 @@ construction, strict and filtering patterns, and zip traversal. They do not
 require Catena to copy Erlang's symbolic operators or its split filter-failure
 rules.
 
+For numeric literal semantics, the page supplies the target-behavior
+precedent: a finite-float domain with raising arithmetic aligns a Catena
+`Float` domain that excludes infinities and NaN with what the BEAM actually
+does, and the host parser's refusal of out-of-range decimals is evidence that
+static invalidity is implementable rather than exotic. Conversely, Erlang's
+mixed-type numeric comparison and its operator-selected equality notions are
+exactly the implicit coercions and silent ambiguity a statically typed Catena
+must not inherit, informing the no-implicit-coercion boundary of C018 and the
+open primitive-equality owner P035.
+
 ## Limits
 
 Erlang is dynamically typed and treats some guard and generator failures as
@@ -116,3 +156,6 @@ cannot be Catena's stable semantic definition.
 - [List Comprehensions](../20-notes/list-comprehensions.md)
 - [How Should Catena Specify List Comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
 - [List Comprehensions map](../10-maps/list-comprehensions.md)
+- [Catena Numeric Literal Semantics](../20-notes/catena-numeric-literal-semantics.md)
+- [How Should Catena Define Numeric Literal Semantics?](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
+- [Numeric Literal Semantics map](../10-maps/numeric-literal-semantics.md)

@@ -34,7 +34,9 @@ magnitude and decoded literal payload size.
 Put atomic literal token spelling, delimiter and escape decoding, scalar and
 octet restrictions, raw-token line ownership, source pieces, stable literal
 diagnostics, and C017 conformance obligations here. Numeric runtime types,
-defaulting, rounding, overflow, exceptional values, and negation remain G018.
+defaulting, rounding, overflow, exceptional values, and negation are fixed by
+the normative 0.1.14
+[Numeric Literal Semantics](../numeric-literal-semantics/README.md) area.
 Atoms/symbols and compound list, tuple, record, map, and binary construction
 remain G040/G042/P093/G097. Concrete token composition, operators, and
 punctuation remain G019/P109.

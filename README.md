@@ -57,6 +57,9 @@ and its exact
 The normative C017 atomic literal boundary begins at the
 [Literal Grammar map](10-maps/literal-grammar.md) and its exact
 [0.1.13 specification](60-specification/literal-grammar/README.md).
+The normative C018 numeric meaning boundary begins at the
+[Numeric Literal Semantics map](10-maps/numeric-literal-semantics.md) and its
+exact [0.1.14 specification](60-specification/numeric-literal-semantics/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -152,8 +155,9 @@ normative C013 uses `0.1.9` for strict source-text decoding; normative C014
 uses `0.1.10` for identifiers and standalone qualified names; normative C015
 uses `0.1.11` for whitespace, separators, and line continuation; normative
 C016 uses `0.1.12` for comments and documentation comments; normative C017
-uses `0.1.13` for atomic literal grammar and decoding; and the next
-unused semantic patch is `0.1.14`. C008 defines package-local editions,
+uses `0.1.13` for atomic literal grammar and decoding; normative C018 uses
+`0.1.14` for numeric literal semantics; and the next
+unused semantic patch is `0.1.15`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

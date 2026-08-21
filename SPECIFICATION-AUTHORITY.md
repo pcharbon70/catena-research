@@ -76,12 +76,14 @@ language line is `0.1`; its registered semantic boundaries are:
 | C015 whitespace and layout | `0.1.11` | normative |
 | C016 comments and documentation comments | `0.1.12` | normative |
 | C017 literal grammar | `0.1.13` | normative |
+| C018 numeric literal semantics | `0.1.14` | normative |
 
 Governance milestones C007, C009, and C012 apply across the normative corpus
 and do not occupy language revisions. Normative C010 occupies `0.1.8`, and
 normative C013 occupies `0.1.9`; normative C014 occupies `0.1.10`; normative
 C015 occupies `0.1.11`; normative C016 occupies `0.1.12`; normative C017
-occupies `0.1.13`; a later semantic slice begins at `0.1.14`. Each later
+occupies `0.1.13`; normative C018 occupies `0.1.14`; a later semantic slice
+begins at `0.1.15`. Each later
 prototype semantic slice uses
 the next unused `0.1.n` patch until an approved policy replaces this
 convention.

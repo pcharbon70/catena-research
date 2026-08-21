@@ -74,11 +74,20 @@ The normative C017 literal boundary is version `0.1.13`; its atomic forms,
 decoding, preservation, token ownership, diagnostics, active limits, and
 executable evidence are recorded in the
 [C017 conformance journal](../50-journal/2026-08-18-c017-literal-grammar.md).
+The normative C018 numeric meaning boundary is version `0.1.14`; its
+domains, monomorphic typing, correctly rounded conversion, static overflow
+invalidity, negation, active limits, and executable evidence are recorded in
+the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-semantics.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Numeric Literal Semantics](numeric-literal-semantics/README.md) — the
+  candidate version 0.1.14 `Int` and finite binary64 `Float` domains,
+  monomorphic literal typing, correctly rounded decimal conversion, static
+  overflow invalidity, negation elaboration, limit, diagnostic, and
+  conformance contract.
 - [Literal Grammar](literal-grammar/README.md) — the normative version 0.1.13
   atomic Boolean, numeric, text, character, and byte spelling, decoding,
   provenance, line ownership, limit, diagnostic, and conformance contract.

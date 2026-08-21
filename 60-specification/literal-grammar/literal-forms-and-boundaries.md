@@ -132,9 +132,11 @@ or select a runtime numeric type (`LT-OBL-003`, `LT-OBL-010`).
 
 ## Deliberately separate work
 
-G018 owns integer and float runtime types, defaulting, coercion, rounding,
-overflow, exceptional floating-point values, and the parsing or elaboration of
-negative expressions. G019/P109 own composition with operators and
+Integer and float runtime types, defaulting, coercion, rounding, overflow,
+exceptional floating-point values, and the elaboration of negative numeric
+expressions are fixed by the normative 0.1.14
+[Numeric Literal Semantics](../numeric-literal-semantics/README.md) area.
+G019/P109 own composition with operators and
 punctuation. Compound and BEAM-native data forms remain under their existing
 G040/G042/P093/G097 owners. Future numeric forms require an explicit later
 revision rather than recovery under this grammar.

@@ -235,8 +235,10 @@ created each executable core node.
 ## Relationship to future source syntax
 
 This syntax is a versioned conformance and semantic-kernel input. It does not
-settle the full-file ergonomic grammar tracked separately by G014 through
-G020. C013 now governs only the pre-lexical source-text envelope. A future
+settle the full-file ergonomic grammar tracked separately by G019 through
+G020. C013 through C018 now govern the pre-lexical source-text envelope,
+identifiers, layout, comments, literal spelling, and numeric literal
+meaning. A future
 frontend may elaborate to the same typed core only after its own versioned
 rules and migration record exist.
 

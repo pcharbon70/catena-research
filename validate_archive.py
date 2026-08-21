@@ -105,6 +105,12 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "specifications-and-governance": "0.1.6",
     "editions-and-feature-lifecycle": "0.1.7",
     "formal-semantic-kernel": "0.1.8",
+    "source-text": "0.1.9",
+    "identifiers": "0.1.10",
+    "whitespace-and-layout": "0.1.11",
+    "comments-and-documentation-comments": "0.1.12",
+    "literal-grammar": "0.1.13",
+    "numeric-literal-semantics": "0.1.14",
 }
 
 

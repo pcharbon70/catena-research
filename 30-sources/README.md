@@ -85,6 +85,10 @@ mentions can remain as citations in the document that uses them.
   distinguishes implementation-defined and unspecified values, traps,
   conformance, and translation limits while exposing the undefined-behavior
   model Catena rejects.
+- [IEEE Std 754-2019: Floating-Point Arithmetic](ieee-2019-754-floating-point.md)
+  — fixes the binary64 finite domain, signed zero, subnormals,
+  `roundTiesToEven`, and correctly rounded decimal conversion used by the
+  numeric literal model.
 - [WebAssembly Core Specification 3.0](rossberg-2026-webassembly-core-specification.md)
   — separates representation well-formedness, declarative validation,
   execution, explicit traps, bounded nondeterminism, and implementation
@@ -286,7 +290,9 @@ mentions can remain as citations in the document that uses them.
 - [Erlang/OTP Expressions and Guard Sequences](erlang-otp-expressions-and-guard-sequences.md)
   — specifies ordered guarded clauses, the restricted side-effect-free guard
   subset, guard-operation failure, selective-receive mailbox scanning, and
-  nested list, binary, and map comprehensions.
+  nested list, binary, and map comprehensions; it also records `badarith`
+  exceptional float arithmetic, host-parser refusal of out-of-range decimals,
+  and mixed-type numeric comparison on the target.
 - [Erlang/OTP 29 Compiler Recommendations for Language Implementors](erlang-otp-29-compiler-recommendations-language-implementors.md)
   — establishes Erlang source or Abstract Format as the supported route for a
   BEAM language and warns against Core Erlang and BEAM assembly interfaces.
@@ -296,7 +302,8 @@ mentions can remain as citations in the document that uses them.
 - [Haskell 2010 Language Report](marlow-2010-haskell-language-report.md) —
   defines Boolean, pattern, and binding guards and translates them into nested
   matching and conditionals; it also gives list-comprehension typing, scope,
-  evaluation order, and kernel translation.
+  evaluation order, and kernel translation, plus overloaded numeric literals
+  with defaulting and undefined fixed-precision exceptional conditions.
 - [Lower Your Guards: A Compositional Pattern-Match Coverage Checker](graf-et-al-2020-lower-your-guards.md)
   — elaborates rich patterns into a small guard-tree IR for modular coverage,
   refinement, witness, and accessibility analysis.
@@ -361,7 +368,8 @@ mentions can remain as citations in the document that uses them.
   and awkward delimiter edge cases.
 - [The Rust Reference: Literal Tokens and Expressions](rust-project-2026-literal-tokens.md)
   — documents exact raw hash delimiters, text/byte/character separation,
-  escapes, numeric tokens, suffix boundaries, and semantic conversion.
+  escapes, numeric tokens, suffix boundaries, semantic conversion, and the
+  `i32`/`f64` typed-literal resolution with static out-of-range rejection.
 - [The Swift Programming Language: Lexical Structure](swift-project-2026-lexical-structure.md)
   — independently specifies balanced nested multiline comments, exact
   extended string delimiters, and delimiter-sensitive interpolation.

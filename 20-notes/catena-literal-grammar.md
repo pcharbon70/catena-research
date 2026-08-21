@@ -43,7 +43,7 @@ The operational target was independent agreement on one token's boundary,
 decoded payload, exact components, source provenance, and failure. The design
 was tested against C013's preserving source units, C014 identifier boundaries,
 C015 layout ownership, C016 comment isolation, C012 portable limits, and the
-still-open G018/G019/P109 boundaries.
+then-open G018/G019/P109 boundaries; C018 has since closed numeric meaning.
 
 Primary comparative evidence came from the official [Rust literal-token
 reference](../30-sources/rust-project-2026-literal-tokens.md), the expanded
@@ -152,9 +152,9 @@ choosing runtime representation.
 The scanner returns exact components rather than host floating-point values.
 An integer includes its base, separator-free digits, and exact mathematical
 value. A float includes separator-free integral, optional fractional, and
-optional exponent digits plus an explicit exponent-sign class. G018 can then
-select types and rounding without reconstructing spelling from a rounded host
-number.
+optional exponent digits plus an explicit exponent-sign class. C018 then
+selects types and rounding without reconstructing spelling from a rounded
+host number.
 
 ### Cooked text
 
@@ -232,13 +232,16 @@ C017 gives every later lexer and parser one exact literal contract. It
 provides deterministic decoded data for diagnostics and future elaboration,
 closes the newline-ownership hole in C015, activates the reserved C012 payload
 limit, and protects static text from future interpolation drift. It also
-narrows G018 to numeric meaning rather than spelling and G019 to token
-composition rather than literal internals.
+narrowed G018 to numeric meaning rather than spelling and G019 to token
+composition rather than literal internals; C018 has since completed that
+numeric meaning.
 
 ## Remaining questions and falsification criteria
 
-G018 must still decide integer and float types, defaulting, coercion, rounding,
-overflow, exceptional values, and negative-expression elaboration. G019 must
+Integer and float types, defaulting, coercion, rounding, overflow,
+exceptional values, and negative-expression elaboration are complete as C018
+at revision `0.1.14` (see [Catena Numeric Literal
+Semantics](catena-numeric-literal-semantics.md)). G019 must
 decide concrete operator and punctuation tokens and compose all atomic
 scanners. G040/G042/P093/G097 own compound and BEAM-native values.
 
