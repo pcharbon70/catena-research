@@ -2,7 +2,7 @@
 title: "File Diagnostics and Conformance"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.16"
 tags:
   - conformance
@@ -129,6 +129,6 @@ requires exact `0.1.16`. The next unused semantic patch is `0.1.17`.
 
 The design route is preserved in the
 [files synthesis](../../20-notes/catena-files-and-modules.md), the
-[open inquiry](../../40-inquiries/how-should-catena-relate-files-to-modules.md),
+[resolved inquiry](../../40-inquiries/how-should-catena-relate-files-to-modules.md),
 and the [topic map](../../10-maps/files-and-modules.md). The C020 evidence
 record will preserve the sibling-compiler commands and archive validation.

@@ -2,7 +2,7 @@
 title: "File Units and Module Binding"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.16"
 tags:
   - files
@@ -99,6 +99,6 @@ The [files synthesis](../../20-notes/catena-files-and-modules.md) compares
 the Erlang declared-name-plus-basename precedent, the Rust filename-derived
 contrast, and the Haskell header model with `Main` defaulting, and records
 why declared-name verification was selected. The
-[open inquiry](../../40-inquiries/how-should-catena-relate-files-to-modules.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-relate-files-to-modules.md)
 and [topic map](../../10-maps/files-and-modules.md) preserve the decision
 route.

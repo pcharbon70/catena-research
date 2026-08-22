@@ -2,7 +2,7 @@
 title: "Generated File Markers"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.16"
 tags:
   - files

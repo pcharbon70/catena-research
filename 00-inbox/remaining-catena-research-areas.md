@@ -110,8 +110,9 @@ remains open. C004 has selected one behavior-first trait ABI, while clause,
 effect, specification, governance, and comprehension punctuation remain partly
 provisional. C013 closes byte decoding, C014 closes standalone names, C015
 closes layout classification, C016 closes comments, C017 closes atomic
-literals, C018 closes numeric literal meaning, and C019 closes operators,
-punctuation, and the whole-source token stream. Checklist item `G020` plus
+literals, C018 closes numeric literal meaning, C019 closes operators,
+punctuation, and the whole-source token stream, and C020 closes the
+file-to-module relationship. Checklist items
 `P047`, `P107`, and `P109` describe the remaining atomic gaps.
 
 **Remaining research.** This program must define:
@@ -121,8 +122,8 @@ punctuation, and the whole-source token stream. Checklist item `G020` plus
 - integration of C016 documentation metadata with the complete declaration
   grammar, generated documentation, formatting, and file-to-module rules;
 - declaration and application grammar over the fixed C019 token stream and
-  ladder, a new explicitly prefixed future interpolation form if justified,
-  and file-to-module structure, building on the fixed C018 numeric types;
+  ladder and the fixed C020 file frame, plus a new explicitly prefixed
+  future interpolation form if justified;
 - concrete source forms for functions, bindings, data, patterns, conditions,
   traits, effects, handlers, specifications, governance, and packages;
 - a lossless concrete syntax tree, source-to-core mapping, and version-aware

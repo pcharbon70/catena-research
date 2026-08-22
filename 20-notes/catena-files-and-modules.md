@@ -193,10 +193,14 @@ catalogs; that cost was accepted explicitly).
 
 ## Connections
 
-- The [open file-unit inquiry](../40-inquiries/how-should-catena-relate-files-to-modules.md)
+- The [resolved file-unit inquiry](../40-inquiries/how-should-catena-relate-files-to-modules.md)
   records the operational question and evidence trail.
 - The [Files and Modules map](../10-maps/files-and-modules.md) routes
   through evidence, constraints, and remaining owners.
+- The [Files and Modules Specification](../60-specification/files-and-modules/README.md)
+  defines the normative 0.1.16 contract.
+- The [C020 evidence record](../50-journal/2026-08-22-c020-files-and-modules.md)
+  records the sibling implementation and verification.
 - [Catena Operators and Punctuation](catena-operators-and-punctuation.md)
   supplies the token stream above which the file layer sits.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

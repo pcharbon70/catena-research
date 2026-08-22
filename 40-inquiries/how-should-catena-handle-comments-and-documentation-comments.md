@@ -38,7 +38,7 @@ Choose a model in which independent implementations agree on:
 - the stable failure when documentation has no valid target.
 
 The answer must compose with C013 and C015 without claiming G019's complete
-tokenizer, P109's declaration grammar, G020's file/module rule, or G119's
+tokenizer, P109's declaration grammar, C020's file/module rule, or G119's
 doctest runner.
 
 ## Paths explored

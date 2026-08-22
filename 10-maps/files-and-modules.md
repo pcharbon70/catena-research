@@ -16,7 +16,7 @@ aliases:
 ## Scope
 
 This map connects the C013–C019 source stack and the one-module semantic
-units that constrain any file binding, the primary declared-name and
+units that constrain the adopted file binding, the primary declared-name and
 filename-derived evidence, the C020 decision artifacts, and the owners of
 everything the file layer deliberately does not decide.
 
@@ -25,9 +25,12 @@ everything the file layer deliberately does not decide.
 - [Catena Files and Modules](../20-notes/catena-files-and-modules.md)
   develops the at-most-one module rule, basename verification, the `.cat`
   extension, ASCII module words, and the generated-file marker.
-- [Open file-unit inquiry](../40-inquiries/how-should-catena-relate-files-to-modules.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved file-unit inquiry](../40-inquiries/how-should-catena-relate-files-to-modules.md)
+  records the operational question, hypotheses, and resolution.
+- [Files and Modules Specification](../60-specification/files-and-modules/README.md)
+  is the normative version 0.1.16 contract.
+- [C020 evidence record](../50-journal/2026-08-22-c020-files-and-modules.md)
+  records the executable file-unit resolver and verification.
 - [Operators and Punctuation map](operators-and-punctuation.md) fixes the
   token stream over which the file layer sits.
 
@@ -59,13 +62,13 @@ everything the file layer deliberately does not decide.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy that file-size limits defer to under
   G129.
-- [Conformance Traceability](conformance-traceability.md) will register the
-  file-unit obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `FU-OBL-001` through `FU-OBL-012` against normative anchors and sibling
+  compiler tests.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler abstract
-file-unit resolver, and tagged executable evidence. P109 retains the
+C020 is complete at revision `0.1.16`. P109 retains the
 concrete module-header syntax; G021/G022 retain module-name resolution;
 G025 retains package assembly and cross-file duplicate handling; G027
 retains entry modules; G121/G128 retain build and reproducibility policy
