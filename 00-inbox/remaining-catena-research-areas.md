@@ -112,9 +112,9 @@ provisional. C013 closes byte decoding, C014 closes standalone names, C015
 closes layout classification, C016 closes comments, C017 closes atomic
 literals, C018 closes numeric literal meaning, C019 closes operators,
 punctuation, and the whole-source token stream, C020 closes the
-file-to-module relationship, and C021 closes namespaces and shadowing.
-Checklist items
-`G022` and `P109` describe the remaining atomic gaps of this program.
+file-to-module relationship, C021 closes namespaces and shadowing, and
+C022 closes imports and exports. Checklist item
+`P109` describes the remaining atomic gap of this program.
 
 **Remaining research.** This program must define:
 
@@ -122,9 +122,9 @@ Checklist items
   into real maximal whole-file tokenization;
 - integration of C016 documentation metadata with the complete declaration
   grammar, generated documentation, formatting, and file-to-module rules;
-- declaration and application grammar over the fixed C019 token stream and
-  ladder and the fixed C020 file frame, plus a new explicitly prefixed
-  future interpolation form if justified;
+- declaration and application grammar over the fixed C019 token stream,
+  C020 file frame, and C022 import/export events, plus a new explicitly
+  prefixed future interpolation form if justified;
 - concrete source forms for functions, bindings, data, patterns, conditions,
   traits, effects, handlers, specifications, governance, and packages;
 - a lossless concrete syntax tree, source-to-core mapping, and version-aware

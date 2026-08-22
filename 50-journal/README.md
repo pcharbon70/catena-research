@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C022 Imports and Exports](2026-08-22-c022-imports-and-exports.md) —
+  records the normative 0.1.18 import/export contract, the extended
+  resolver, exclusion strictness and unused-admission semantics,
+  diagnostics, traceability, and immutable compiler identity.
 - [C021 Namespaces and Shadowing](2026-08-22-c021-namespaces-and-shadowing.md)
   — records the normative 0.1.17 namespace contract, scope-event resolver,
   precedence and ambiguity evidence, diagnostics, traceability, and

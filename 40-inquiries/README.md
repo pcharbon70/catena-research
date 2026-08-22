@@ -58,6 +58,11 @@ to `20-notes`.
   — tests per-category namespaces with spelling classes, flat constructor
   uniqueness, deterministic shadowing, type-variable scoping, and
   local-over-imported precedence against Haskell and SML evidence.
+- [How Should Catena Handle Imports and Exports?](how-should-catena-handle-imports-and-exports.md)
+  — tests private-by-default exports, qualification-plus-list admission,
+  the exclusion of wildcards, renaming, and re-exports, and deny-able
+  unused-import warnings against Haskell, SML, Erlang, and Rust
+  evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
@@ -78,7 +83,7 @@ to `20-notes`.
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   — resolved as C011; the scheme gives every MUST/MUST NOT obligation a permanent
   identifier, a normative heading anchor, and tagged compiler evidence. It now
-  covers seventeen normative areas plus the C012 implementation-limits policy.
+  covers eighteen normative areas plus the C012 implementation-limits policy.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.
