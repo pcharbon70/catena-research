@@ -37,9 +37,13 @@ report; the module itself still counts as used through its qualified
 reference.
 
 The sibling compiler implementation is commit
-[`02da5c178ad5d797e55bdb3290cd950fbf7f4f31`](https://github.com/pcharbon70/catena/commit/02da5c178ad5d797e55bdb3290cd950fbf7f4f31)
-on branch `agent/c022-imports-exports`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`02da5c178ad5d797e55bdb3290cd950fbf7f4f31`](https://github.com/pcharbon70/catena/commit/02da5c178ad5d797e55bdb3290cd950fbf7f4f31),
+merged into the `rewrite` integration line by compiler PR
+[#98](https://github.com/pcharbon70/catena/pull/98) at merge commit
+[`10487cb`](https://github.com/pcharbon70/catena/commit/10487cb09be1b0cd00f80d820aa87cf25ca75a3ab).
+The merge retained the tested tree exactly (tree `90572b3`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
