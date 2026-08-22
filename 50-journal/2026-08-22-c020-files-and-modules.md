@@ -40,9 +40,13 @@ change: the CONFORMANCE header rows had stopped at `0.1.14` when C019's
 header edit script failed mid-run; they now read through `0.1.16`.
 
 The sibling compiler implementation is commit
-[`677a8f4a91f047d3ee97f197992b24401cff9a41`](https://github.com/pcharbon70/catena/commit/677a8f4a91f047d3ee97f197992b24401cff9a41)
-on branch `agent/c020-files-and-modules`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`677a8f4a91f047d3ee97f197992b24401cff9a41`](https://github.com/pcharbon70/catena/commit/677a8f4a91f047d3ee97f197992b24401cff9a41),
+merged into the `rewrite` integration line by compiler PR
+[#96](https://github.com/pcharbon70/catena/pull/96) at merge commit
+[`3d51e7d`](https://github.com/pcharbon70/catena/commit/3d51e7dccfd41c92955488c7f2b7963f246d4b6d).
+The merge retained the tested tree exactly (tree `0c7e3d3`), and the compiler
+PR was merged before this research promotion, following the established
+publication order.
 
 ## Evidence
 
