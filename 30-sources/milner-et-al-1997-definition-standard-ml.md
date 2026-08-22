@@ -17,6 +17,7 @@ url: "https://mitpress.mit.edu/9780262631815/the-definition-of-standard-ml/"
 accessed: "2026-07-31"
 tags:
   - algebraic-data-types
+  - namespaces
   - pattern-matching
   - program-semantics
   - type-inference
@@ -73,6 +74,27 @@ matches, modules, and opaque signature matching.
   equality properties of its components; equality is a checked attribute, not
   an automatic consequence of having constructors.
 
+### Namespaces, structures, and shadowing
+
+- The Definition partitions names into a fixed set of namespaces — value
+  variables, value constructors, exception constructors, type constructors,
+  type variables, structure names, and signature/functor names — and the
+  elaboration context carries a separate environment for each. The same
+  spelling can coexist across namespaces; within one namespace a binding
+  replaces or is rejected according to scope rules rather than spelling.
+- Identifier status (variable, value constructor, exception constructor) is
+  recorded per binding, so resolution never depends on spelling alone.
+- Structures are themselves named entities with members accessed by long
+  identifiers (`Structure.member`); a datatype declaration's constructors
+  enter the value-constructor namespace of the enclosing scope, not a
+  type-local namespace.
+- Inner `let` and local declarations shadow outer bindings of the same
+  namespace; the outer binding remains reachable only through structure
+  qualification, not through the shadowed short name.
+- The dynamic semantics of modules relies on this static separation: no
+  value-namespace result ever depends on resolving a type or structure name,
+  and vice versa.
+
 ## Relevance
 
 This source demonstrates that ordinary ADTs can be specified rigorously inside
@@ -81,6 +103,15 @@ generativity, typed constructor namespaces, recursive-group elaboration, and a
 separation between pattern typing, coverage diagnostics, and runtime matching.
 Catena need not copy Standard ML syntax, but it should match this level of
 semantic precision.
+
+For namespaces, the Definition is the principal deep precedent: per-category
+environments with identifier status, constructors entering the enclosing
+scope's constructor namespace rather than a type-local one, deterministic
+inner-shadowing with structure qualification as the escape, and the guarantee
+that program meaning never hinges on cross-namespace lookup. Every one of
+those properties maps onto Catena's chosen model; what Catena declines is
+SML's structure-generativity machinery, which belongs to a module system no
+slice has designed.
 
 ## Limits
 
@@ -97,3 +128,6 @@ optimization.
 - [A Greenfield Type System for Catena](../20-notes/catena-greenfield-type-system.md)
 - [How Should Catena Specify Algebraic Data Types?](../40-inquiries/how-should-catena-specify-algebraic-data-types.md)
 - [Algebraic Data Types map](../10-maps/algebraic-data-types.md)
+- [Catena Namespaces and Shadowing](../20-notes/catena-namespaces-and-shadowing.md)
+- [How Should Catena Organize Namespaces and Shadowing?](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
+- [Namespaces and Shadowing map](../10-maps/namespaces-and-shadowing.md)

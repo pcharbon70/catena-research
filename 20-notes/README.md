@@ -90,6 +90,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [Catena Files and Modules](catena-files-and-modules.md) — proposes
   C020's at-most-one module per `.cat` file, declared-name basename
   verification, ASCII module words, and first-line generated markers.
+- [Catena Namespaces and Shadowing](catena-namespaces-and-shadowing.md) —
+  proposes C021's per-category namespaces with spelling classes, flat
+  constructor namespace, deterministic silent shadowing, type-variable
+  scoping, and local-over-imported precedence with collision rejection.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

@@ -43,14 +43,14 @@ on:
 - the C015 `join_before`/`join_after` capabilities and delimiter-frame
   families and modes assigned to each concrete token;
 - how `.` interacts with C014 qualified names, C017 numeric spellings, and
-  future field access without deciding G021 name resolution;
+  future field access without deciding name resolution;
 - the failure classes and stable diagnostics of token- and expression-level
   rejection, with no partial or recovered output; and
 - a whole-source token stream and a bounded operator-expression layer that
   make the ladder executable rather than merely introspectable.
 
 The answer must compose with C013–C018 without deciding P109 declarations
-and application syntax, G020 file structure, G021/G022 name resolution,
+and application syntax, G020 file structure, G022 import/export syntax,
 G040 built-in data, or G061 operator trait dispatch.
 
 ## Working hypotheses
@@ -130,6 +130,6 @@ G019 is complete through the
 [topic map](../10-maps/operators-and-punctuation.md), and
 [C019 evidence record](../50-journal/2026-08-21-c019-operators-and-punctuation.md).
 P109 retains application, declaration, and clause grammar; G020 retains
-file-to-module relations; G021/G022 retain qualification resolution; G040
+file-to-module and namespace relations; G022 retains import/export syntax; G040
 retains field-like access; G061 retains operator dispatch; G123 retains
 editor recovery.

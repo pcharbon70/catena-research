@@ -88,6 +88,10 @@ Normative C020 uses `0.1.16` for the file-to-module relationship. Its file
 units, module binding, generated markers, diagnostics, and verification
 are recorded in the
 [C020 conformance journal](../50-journal/2026-08-22-c020-files-and-modules.md).
+Normative C021 uses `0.1.17` for namespaces and shadowing. Its inventory,
+shadowing and ambiguity rules, diagnostics, and verification are recorded
+in the
+[C021 conformance journal](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md).
 
 ## Existing research that needs normative consolidation
 
@@ -272,8 +276,8 @@ as small normative rules rather than copied wholesale into a specification.
   executable coverage. C015 now defines whitespace/layout, C016 defines
   comments/documentation, C017 defines atomic literals, C018 defines numeric
   literal meaning, and C019 defines the whole-source token stream; C020
-  fixes the file-to-module relationship; G021–G022 retain namespaces,
-  resolution, imports, and exports.
+  fixes the file-to-module relationship; and C021 fixes namespaces and
+  shadowing, while G022 retains imports and exports.
 - [x] **C015 — Complete — whitespace and layout.** The normative
   [0.1.11 whitespace and layout specification](../60-specification/whitespace-and-layout/README.md),
   [synthesis](../20-notes/catena-whitespace-layout-and-line-continuation.md),
@@ -374,9 +378,9 @@ as small normative rules rather than copied wholesale into a specification.
   [`6e13bdf72547c4b363d794461c3f875fd0a16119`](https://github.com/pcharbon70/catena/commit/6e13bdf72547c4b363d794461c3f875fd0a16119)
   supplies complete `OP-OBL-001`–`OP-OBL-016` coverage with 260 passing
   tests. Application and declaration grammar remain P109; file-to-module
-  file-to-module relations are complete as C020; qualification resolution
-  remains G021/G022; field-like access remains G040; operator dispatch
-  remains G061; editor recovery remains G123.
+  relations are complete as C020 and namespace resolution as C021;
+  import/export syntax remains G022; field-like access remains G040;
+  operator dispatch remains G061; editor recovery remains G123.
 - [x] **C020 — Complete — file-to-module relationship.** The normative
   [0.1.16 files specification](../60-specification/files-and-modules/README.md),
   [synthesis](../20-notes/catena-files-and-modules.md),
@@ -393,14 +397,32 @@ as small normative rules rather than copied wholesale into a specification.
   [`677a8f4a91f047d3ee97f197992b24401cff9a41`](https://github.com/pcharbon70/catena/commit/677a8f4a91f047d3ee97f197992b24401cff9a41)
   supplies complete `FU-OBL-001`–`FU-OBL-012` coverage with 271 passing
   tests through the abstract file-unit resolver. The concrete module-header
-  syntax remains P109; module-name resolution remains G021/G022; package
+  syntax remains P109; module-name resolution is fixed by C021 while
+  import/export syntax remains G022; package
   assembly remains G025; entry modules remain G027.
 
 ## 3. Names, modules, packages, and separate compilation
 
-- [ ] **G021 — Gap — namespaces and shadowing.** Define namespaces for values, types,
-  constructors, traits, effects, specifications, and modules, plus ambiguity
-  and shadowing rules.
+- [x] **C021 — Complete — namespaces and shadowing.** The normative
+  [0.1.17 namespaces specification](../60-specification/namespaces-and-shadowing/README.md),
+  [synthesis](../20-notes/catena-namespaces-and-shadowing.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md),
+  [topic map](../10-maps/namespaces-and-shadowing.md), and
+  [C021 record](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md) fix
+  per-category namespaces under the hard spelling-class partition with
+  per-category uniqueness domains and flat constructor uniqueness; silent
+  innermost-wins shadowing that never crosses categories; quantifier-scoped
+  type variables that may shadow type and trait names; local-over-imported
+  precedence with order-independent `NSP004` ambiguity rejection naming
+  every origin; governed-identity separation keeping C006 identities out of
+  program resolution; and exactly-two-segment qualification with deeper
+  chains reserved. Sibling compiler commit
+  [`b482b4cacc4017b8e479173fb3bd3c0ceac4f675`](https://github.com/pcharbon70/catena/commit/b482b4cacc4017b8e479173fb3bd3c0ceac4f675)
+  supplies complete `NS-OBL-001`–`NS-OBL-014` coverage with 285 passing
+  tests through the abstract scope-event resolver. Import/export syntax
+  remains G022; module recursion remains G024; package-level module
+  uniqueness remains G025; prelude contents remain G026; type-directed
+  resolution remains G066.
 - [ ] **G022 — Gap — imports and exports.** Define qualification, renaming, wildcard
   imports or their exclusion, re-exports, unused-import diagnostics, and
   visibility defaults.

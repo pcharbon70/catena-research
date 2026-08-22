@@ -25,7 +25,7 @@ confusable skeleton collisions as deny-able warnings.
 
 Qualification is lexical only: nonempty identifier segments join with ASCII
 `.` and no whitespace. Name resolution, namespaces, shadowing, imports, and
-exports remain G021/G022. The sibling compiler can therefore provide useful
+exports remain G022 over the C021 namespace law. The sibling compiler can therefore provide useful
 executable evidence without inventing the missing whole-source lexer.
 
 ## Scope and operational standard
@@ -133,7 +133,7 @@ similarity make unconditional rejection too strong. Conversely, silently
 ignoring a collision defeats review. A stable warning that existing project
 policy can promote gives closed default behavior and a strict deployment path.
 
-The compiler cannot infer lexical scopes before G021. Its audit API therefore
+The compiler could not infer lexical scopes before C021. Its audit API therefore
 accepts an explicit comparison domain and returns warnings in input order.
 Later name resolution supplies actual domains without changing the skeleton
 algorithm or diagnostic identity.
@@ -165,7 +165,8 @@ checked; escapes apply per segment.
 The dot is not part of identifier identity. The sequence of segment identities
 is the qualified identity, and the confusable key joins their individual
 skeletons with the same separator. C019 now fixes how dot interacts with
-other punctuation in the complete token stream as qualification-only. G021 and G022 decide which
+other punctuation in the complete token stream as qualification-only. C021 fixes two-segment
+resolution while G022 decides which
 prefixes name modules, which namespaces are searched, and how qualification
 affects ambiguity.
 
@@ -199,7 +200,7 @@ C015 now supplies the abstract whitespace/layout event boundary, C016 adds
 comments, and C017 adds atomic literals without changing identifier identity.
 C019 now integrates these standalone names into the real whole-source lexer
 and C020 fixes the file grammar's module binding.
-G021/G022 must supply comparison domains and resolution. P117 must
+G022 must supply import forms over the C021 resolution rules. P117 must
 carry secondary spans and cross-file collision explanations; G118 must define
 safe display and formatting. None may weaken the pinned 0.1.10 identity rules
 silently.
