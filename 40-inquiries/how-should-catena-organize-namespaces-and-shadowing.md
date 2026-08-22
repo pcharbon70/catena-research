@@ -2,7 +2,7 @@
 title: "How Should Catena Organize Namespaces and Shadowing?"
 kind: inquiry
 created: "2026-08-22"
-status: open
+status: resolved
 tags:
   - catena
   - language-design
@@ -112,7 +112,21 @@ grammar.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters covering the
-inventory, shadowing and ambiguity, and diagnostics; a sibling compiler
-abstract scope-event resolver with tagged executable evidence; and the
-C013–C020 promotion workflow.
+Resolved as C021 and source-only language revision `0.1.17`. Catena fixes
+per-category namespaces under the hard spelling-class partition with
+per-category uniqueness domains and flat constructor uniqueness; silent
+innermost-wins shadowing that never crosses categories; quantifier-scoped
+type variables that may shadow type and trait names; local-over-imported
+precedence with order-independent `NSP004` ambiguity rejection naming
+every origin; governed-identity separation; and exactly-two-segment
+qualification with deeper chains reserved. The rules are defined in the
+[normative namespaces specification](../60-specification/namespaces-and-shadowing/README.md).
+
+G021 is complete through the
+[namespaces synthesis](../20-notes/catena-namespaces-and-shadowing.md),
+[topic map](../10-maps/namespaces-and-shadowing.md), and
+[C021 evidence record](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md).
+G022 retains import/export syntax and visibility defaults; G024 retains
+module recursion; G025 retains package-level module uniqueness; G026
+retains prelude contents; G066 retains type-directed resolution; P109
+retains the declaration grammar that emits scope events.

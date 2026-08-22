@@ -58,7 +58,7 @@ follow-up item now that C011 is reached.
 - [Files and Modules Specification](../60-specification/files-and-modules/README.md)
   — the normative C020 source for `FU-OBL-*` obligations.
 - [Namespaces and Shadowing Specification](../60-specification/namespaces-and-shadowing/README.md)
-  — the C021 source for `NS-OBL-*` obligations, candidate until promotion.
+  — the normative C021 source for `NS-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -108,7 +108,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all sixteen normative areas and the C012 governance policy are now
+extracted; all seventeen normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -133,7 +133,7 @@ sibling compiler repository.
 | `NM` numeric-literal-semantics | 14 | `c018_numeric_literal_semantics_test.exs` (10) | compiler-tagged + gated (`6fb2ad8`); all obligations traced |
 | `OP` operators-and-punctuation | 16 | `c019_operators_test.exs` (12) | compiler-tagged + gated (`6e13bdf`); all obligations traced |
 | `FU` files-and-modules | 12 | `c020_file_unit_test.exs` (9) | compiler-tagged + gated (`677a8f4`); all obligations traced |
-| `NS` namespaces-and-shadowing | 14 | `c021_namespaces_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `NS` namespaces-and-shadowing | 14 | `c021_namespaces_test.exs` (12) | compiler-tagged + gated (`b482b4c`); all obligations traced |
 
 ## Trails
 
@@ -1148,10 +1148,11 @@ lacks a focused tag.
 
 ## Namespaces and shadowing registry (`NS`, 0.1.17)
 
-Evidence labels will refer to focused tests in
-`test/catena/c021_namespaces_test.exs` and its
-`test/catena/c021_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c021_namespaces_test.exs`](https://github.com/pcharbon70/catena/blob/b482b4cacc4017b8e479173fb3bd3c0ceac4f675/test/catena/c021_namespaces_test.exs)
+and its
+[`c021_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/b482b4cacc4017b8e479173fb3bd3c0ceac4f675/test/catena/c021_traceability_coverage_test.exs)
+gate:
 
 - **c021 #1** *keeps 0.1.17 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c021 #2** *keeps categories disjoint so one spelling coexists across them*
@@ -1166,30 +1167,26 @@ compiler repository. The planned focused set is:
 - **c021 #11** *emits stable diagnostics with spelling, category, and all colliding origins*
 - **c021 #12** *keeps the resolver deterministic, source-only, and outside later phases*
 
-Anchors currently point at the candidate 0.1.17 chapters and become
-normative anchors at C021 promotion. Status is `untraced` until the
-compiler evidence lands.
-
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| NS-OBL-001 | Apply namespace behavior only at exact 0.1.17 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#revision-and-persistence-separation) | c021 #1; EDN001 | untraced |
-| NS-OBL-002 | Enforce disjoint categories where one spelling resolves in at most its requested category | [`namespace-inventory-and-spelling.md#namespace-categories`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#namespace-categories) | c021 #2 | untraced |
-| NS-OBL-003 | Enforce the hard spelling-class partition with `NSP002` | [`namespace-inventory-and-spelling.md#spelling-class-partition`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#spelling-class-partition) | c021 #3; NSP002 | untraced |
-| NS-OBL-004 | Reject same-scope duplicates per uniqueness domain as `NSP001` | [`namespace-inventory-and-spelling.md#uniqueness-domains`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#uniqueness-domains) | c021 #4; NSP001 | untraced |
-| NS-OBL-005 | Keep governed identities out of program resolution and vice versa | [`namespace-inventory-and-spelling.md#governed-identity-separation`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#governed-identity-separation) | c021 #5 | untraced |
-| NS-OBL-006 | Resolve exactly two-segment qualification and reject deeper chains as `NSP005` | [`namespace-inventory-and-spelling.md#qualification-depth`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#qualification-depth) | c021 #6; NSP005 | untraced |
-| NS-OBL-007 | Resolve innermost-visible bindings with silent deterministic shadowing | [`shadowing-and-ambiguity.md#shadowing`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#shadowing) | c021 #7 | untraced |
-| NS-OBL-008 | Scope type variables per quantifier with type shadowing and value separation | [`shadowing-and-ambiguity.md#type-variables`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#type-variables) | c021 #8 | untraced |
-| NS-OBL-009 | Enforce local-over-imported precedence and order-independent `NSP004` ambiguity rejection | [`shadowing-and-ambiguity.md#cross-origin-precedence`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#cross-origin-precedence) | c021 #9; NSP004 | untraced |
-| NS-OBL-010 | Reject unbound references as `NSP003` | [`shadowing-and-ambiguity.md#cross-origin-precedence`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#cross-origin-precedence) | c021 #10; NSP003 | untraced |
-| NS-OBL-011 | Emit stable diagnostics with spelling, category, and all colliding origins | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#stable-diagnostics) | c021 #11; NSP001–NSP005 | untraced |
-| NS-OBL-012 | Expose the environment-building and reference-resolution boundaries as tree-or-diagnostic operations | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#abstract-public-boundaries) | c021 #12 | untraced |
-| NS-OBL-013 | Produce deterministic environments and resolutions | [`diagnostics-and-conformance.md#determinism`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#determinism) | c021 #12 | untraced |
-| NS-OBL-014 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#revision-and-persistence-separation) | c021 #1, #12 | untraced |
+| NS-OBL-001 | Apply namespace behavior only at exact 0.1.17 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#revision-and-persistence-separation) | c021 #1; EDN001 | traced |
+| NS-OBL-002 | Enforce disjoint categories where one spelling resolves in at most its requested category | [`namespace-inventory-and-spelling.md#namespace-categories`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#namespace-categories) | c021 #2 | traced |
+| NS-OBL-003 | Enforce the hard spelling-class partition with `NSP002` | [`namespace-inventory-and-spelling.md#spelling-class-partition`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#spelling-class-partition) | c021 #3; NSP002 | traced |
+| NS-OBL-004 | Reject same-scope duplicates per uniqueness domain as `NSP001` | [`namespace-inventory-and-spelling.md#uniqueness-domains`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#uniqueness-domains) | c021 #4; NSP001 | traced |
+| NS-OBL-005 | Keep governed identities out of program resolution and vice versa | [`namespace-inventory-and-spelling.md#governed-identity-separation`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#governed-identity-separation) | c021 #5 | traced |
+| NS-OBL-006 | Resolve exactly two-segment qualification and reject deeper chains as `NSP005` | [`namespace-inventory-and-spelling.md#qualification-depth`](../60-specification/namespaces-and-shadowing/namespace-inventory-and-spelling.md#qualification-depth) | c021 #6; NSP005 | traced |
+| NS-OBL-007 | Resolve innermost-visible bindings with silent deterministic shadowing | [`shadowing-and-ambiguity.md#shadowing`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#shadowing) | c021 #7 | traced |
+| NS-OBL-008 | Scope type variables per quantifier with type shadowing and value separation | [`shadowing-and-ambiguity.md#type-variables`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#type-variables) | c021 #8 | traced |
+| NS-OBL-009 | Enforce local-over-imported precedence and order-independent `NSP004` ambiguity rejection | [`shadowing-and-ambiguity.md#cross-origin-precedence`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#cross-origin-precedence) | c021 #9; NSP004 | traced |
+| NS-OBL-010 | Reject unbound references as `NSP003` | [`shadowing-and-ambiguity.md#cross-origin-precedence`](../60-specification/namespaces-and-shadowing/shadowing-and-ambiguity.md#cross-origin-precedence) | c021 #10; NSP003 | traced |
+| NS-OBL-011 | Emit stable diagnostics with spelling, category, and all colliding origins | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#stable-diagnostics) | c021 #11; NSP001–NSP005 | traced |
+| NS-OBL-012 | Expose the environment-building and reference-resolution boundaries as tree-or-diagnostic operations | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#abstract-public-boundaries) | c021 #12 | traced |
+| NS-OBL-013 | Produce deterministic environments and resolutions | [`diagnostics-and-conformance.md#determinism`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#determinism) | c021 #12 | traced |
+| NS-OBL-014 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/namespaces-and-shadowing/diagnostics-and-conformance.md#revision-and-persistence-separation) | c021 #1, #12 | traced |
 
-C021 coverage is 0 `traced` and 14 untraced obligations pending the sibling
-compiler implementation. The planned dedicated gate rejects unknown
-identifiers and fails if any `NS-OBL-*` identifier lacks a focused tag.
+C021 coverage is 14 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `NS-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

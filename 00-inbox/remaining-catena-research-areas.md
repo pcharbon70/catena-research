@@ -111,9 +111,10 @@ effect, specification, governance, and comprehension punctuation remain partly
 provisional. C013 closes byte decoding, C014 closes standalone names, C015
 closes layout classification, C016 closes comments, C017 closes atomic
 literals, C018 closes numeric literal meaning, C019 closes operators,
-punctuation, and the whole-source token stream, and C020 closes the
-file-to-module relationship. Checklist items
-`P047`, `P107`, and `P109` describe the remaining atomic gaps.
+punctuation, and the whole-source token stream, C020 closes the
+file-to-module relationship, and C021 closes namespaces and shadowing.
+Checklist items
+`G022` and `P109` describe the remaining atomic gaps of this program.
 
 **Remaining research.** This program must define:
 

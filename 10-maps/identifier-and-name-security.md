@@ -78,7 +78,7 @@ formats.
 C014 is resolved, C015 supplies abstract layout events, C016 supplies
 comment events, and C017 supplies atomic literal boundaries. G019–G020 must
 integrate identifiers and literals with concrete
-punctuation, declarations, and files. G021/G022 own namespaces,
+punctuation, declarations, and files. C021 owns namespaces and G022 owns import syntax,
 shadowing, comparison domains, resolution, imports, and exports. P117 and G118
 own cross-file explanations, display-safe diagnostics, and formatting. A later
 Unicode revision requires an explicit compatibility and security-data review.

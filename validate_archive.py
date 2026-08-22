@@ -113,6 +113,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "numeric-literal-semantics": "0.1.14",
     "operators-and-punctuation": "0.1.15",
     "files-and-modules": "0.1.16",
+    "namespaces-and-shadowing": "0.1.17",
 }
 
 

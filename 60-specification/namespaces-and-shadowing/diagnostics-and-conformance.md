@@ -2,7 +2,7 @@
 title: "Namespace Diagnostics and Conformance"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.17"
 tags:
   - conformance
@@ -139,7 +139,7 @@ construction requires exact `0.1.17`. The next unused semantic patch is
 
 The design route is preserved in the
 [namespaces synthesis](../../20-notes/catena-namespaces-and-shadowing.md),
-the [open inquiry](../../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md),
+the [resolved inquiry](../../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md),
 and the [topic map](../../10-maps/namespaces-and-shadowing.md). The C021
 evidence record will preserve the sibling-compiler commands and archive
 validation.

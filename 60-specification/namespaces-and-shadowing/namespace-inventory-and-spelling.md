@@ -2,7 +2,7 @@
 title: "Namespace Inventory and Spelling"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.17"
 tags:
   - namespaces
@@ -132,6 +132,6 @@ that emits these events remains P109.
 The [namespaces synthesis](../../20-notes/catena-namespaces-and-shadowing.md)
 compares Haskell's six-name-kind model, SML's per-category environments,
 and the Erlang flat-atom and OCaml open-shadowing contrasts. The
-[open inquiry](../../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
 and [topic map](../../10-maps/namespaces-and-shadowing.md) preserve the
 decision route.

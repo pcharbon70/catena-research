@@ -16,7 +16,7 @@ aliases:
 ## Scope
 
 This map connects the kernel's fixed namespace law and the C014/C019/C020
-spelling, qualification, and module constraints that bound any answer, the
+spelling, qualification, and module constraints that bound the adopted answer, the
 primary Haskell/SML namespace evidence, the C021 decision artifacts, and
 the owners of everything the namespace layer deliberately does not decide.
 
@@ -27,9 +27,12 @@ the owners of everything the namespace layer deliberately does not decide.
   deterministic silent-shadowing model, type-variable scoping,
   local-over-imported precedence with collision rejection, and governance
   separation.
-- [Open namespace inquiry](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved namespace inquiry](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
+  records the operational question, hypotheses, and resolution.
+- [Namespaces and Shadowing Specification](../60-specification/namespaces-and-shadowing/README.md)
+  is the normative version 0.1.17 contract.
+- [C021 evidence record](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md)
+  records the executable scope-event resolver and verification.
 - [Files and Modules map](files-and-modules.md) fixes the flat module
   names two-segment qualification rides on.
 
@@ -61,16 +64,16 @@ the owners of everything the namespace layer deliberately does not decide.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will register
-  the namespace obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `NS-OBL-001` through `NS-OBL-014` against normative anchors and sibling
+  compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to scope-event streams under
   G129.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler abstract
-scope-event resolver, and tagged executable evidence. G022 retains
+C021 is complete at revision `0.1.17`. G022 retains
 import/export syntax and visibility defaults; G024 retains module
 recursion; G025 retains package-level module uniqueness; G026 retains
 prelude contents; G066 retains type-directed resolution questions; P109

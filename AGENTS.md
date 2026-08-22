@@ -129,8 +129,9 @@ normative C015 uses `0.1.11` for whitespace and layout, and normative C016 uses
 `0.1.13` for atomic literal grammar and decoding. Normative C018 uses
 `0.1.14` for numeric literal semantics. Normative C019 uses `0.1.15` for
 operators and punctuation. Normative C020 uses `0.1.16` for the
-file-to-module relationship. The next unused semantic
-patch is `0.1.17` unless an approved versioning policy explicitly
+file-to-module relationship. Normative C021 uses `0.1.17` for namespaces
+and shadowing. The next unused semantic
+patch is `0.1.18` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

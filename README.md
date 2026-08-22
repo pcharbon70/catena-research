@@ -67,6 +67,10 @@ its exact
 The normative C020 file-to-module boundary begins at the
 [Files and Modules map](10-maps/files-and-modules.md) and its exact
 [0.1.16 specification](60-specification/files-and-modules/README.md).
+The normative C021 namespace boundary begins at the
+[Namespaces and Shadowing map](10-maps/namespaces-and-shadowing.md) and
+its exact
+[0.1.17 specification](60-specification/namespaces-and-shadowing/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -165,8 +169,9 @@ C016 uses `0.1.12` for comments and documentation comments; normative C017
 uses `0.1.13` for atomic literal grammar and decoding; normative C018 uses
 `0.1.14` for numeric literal semantics; normative C019 uses `0.1.15` for
 operators and punctuation; normative C020 uses `0.1.16` for the
-file-to-module relationship; and the next
-unused semantic patch is `0.1.17`. C008 defines package-local editions,
+file-to-module relationship; normative C021 uses `0.1.17` for namespaces
+and shadowing; and the next
+unused semantic patch is `0.1.18`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

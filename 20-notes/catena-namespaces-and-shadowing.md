@@ -237,10 +237,14 @@ harms real code — the last would add P117 warnings, not semantic change.
 
 ## Connections
 
-- The [open namespace inquiry](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
+- The [resolved namespace inquiry](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
   records the operational question and evidence trail.
 - The [Namespaces and Shadowing map](../10-maps/namespaces-and-shadowing.md)
   routes through evidence, constraints, and remaining owners.
+- The [Namespaces and Shadowing Specification](../60-specification/namespaces-and-shadowing/README.md)
+  defines the normative 0.1.17 contract.
+- The [C021 evidence record](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md)
+  records the sibling implementation and verification.
 - [Catena Files and Modules](catena-files-and-modules.md) fixes the flat
   module names two-segment qualification rides on.
 - [Algebraic Data Types](algebraic-data-types.md) fixes the

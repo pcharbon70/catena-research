@@ -86,16 +86,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   units, module binding, generated markers, diagnostics, and executable
   evidence are recorded in the
   [C020 conformance journal](../50-journal/2026-08-22-c020-files-and-modules.md).
-  The candidate C021 namespace boundary is version `0.1.17`; its
-  inventory, shadowing and ambiguity rules, diagnostics, and pending
-  evidence are recorded in the linked area index and inquiry.
+  The normative C021 namespace boundary is version `0.1.17`; its
+  inventory, shadowing and ambiguity rules, diagnostics, and executable
+  evidence are recorded in the
+  [C021 conformance journal](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Namespaces and Shadowing](namespaces-and-shadowing/README.md) — the
-  candidate version 0.1.17 namespace inventory with spelling classes,
+  normative version 0.1.17 namespace inventory with spelling classes,
   shadowing and ambiguity resolution, diagnostics, and conformance
   contract.
 - [Files and Modules](files-and-modules/README.md) — the normative version
