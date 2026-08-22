@@ -207,10 +207,14 @@ revision adding one form, not reopening admission semantics.
 
 ## Connections
 
-- The [open import inquiry](../40-inquiries/how-should-catena-handle-imports-and-exports.md)
+- The [resolved import inquiry](../40-inquiries/how-should-catena-handle-imports-and-exports.md)
   records the operational question and evidence trail.
 - The [Imports and Exports map](../10-maps/imports-and-exports.md) routes
   through evidence, constraints, and remaining owners.
+- The [Imports and Exports Specification](../60-specification/imports-and-exports/README.md)
+  defines the normative 0.1.18 contract.
+- The [C022 evidence record](../50-journal/2026-08-22-c022-imports-and-exports.md)
+  records the sibling implementation and verification.
 - [Catena Namespaces and Shadowing](catena-namespaces-and-shadowing.md)
   fixes the precedence and collision rules imports feed.
 - [Catena Files and Modules](catena-files-and-modules.md) fixes the flat

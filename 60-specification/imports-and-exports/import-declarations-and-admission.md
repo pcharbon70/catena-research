@@ -2,7 +2,7 @@
 title: "Import Declarations and Admission"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.18"
 tags:
   - imports

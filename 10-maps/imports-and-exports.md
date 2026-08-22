@@ -17,7 +17,7 @@ aliases:
 ## Scope
 
 This map connects the kernel's explicit export and digest-backed import
-precedent and the C002/C021 contracts that bound any answer, the primary
+precedent and the C002/C021 contracts that bound the adopted answer, the primary
 Haskell/SML/Erlang/Rust boundary evidence, the C022 decision artifacts,
 and the owners of everything the import layer deliberately does not
 decide.
@@ -28,9 +28,12 @@ decide.
   develops explicit private-by-default exports, qualification-plus-list
   import admission, the declared exclusions, and the deny-able
   unused-import warning.
-- [Open import inquiry](../40-inquiries/how-should-catena-handle-imports-and-exports.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved import inquiry](../40-inquiries/how-should-catena-handle-imports-and-exports.md)
+  records the operational question, hypotheses, and resolution.
+- [Imports and Exports Specification](../60-specification/imports-and-exports/README.md)
+  is the normative version 0.1.18 contract.
+- [C022 evidence record](../50-journal/2026-08-22-c022-imports-and-exports.md)
+  records the executable validation and analysis and verification.
 - [Namespaces and Shadowing map](namespaces-and-shadowing.md) fixes the
   precedence and collision rules imports feed.
 
@@ -62,17 +65,16 @@ decide.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will register
-  the import obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `IM-OBL-001` through `IM-OBL-013` against normative anchors and sibling
+  compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to export-set validation
   under G129.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler resolver
-extension with unused-import analysis, and tagged executable evidence.
-G024 retains module recursion; G025 retains package identity, re-export
+C022 is complete at revision `0.1.18`. G024 retains module recursion; G025 retains package identity, re-export
 assembly, and duplicate-module rejection; G026 retains prelude contents;
 G027 retains entry modules; P109 retains the concrete `use`/`export`
 punctuation; P117 retains warning prose quality.

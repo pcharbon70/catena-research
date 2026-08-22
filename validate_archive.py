@@ -114,6 +114,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "operators-and-punctuation": "0.1.15",
     "files-and-modules": "0.1.16",
     "namespaces-and-shadowing": "0.1.17",
+    "imports-and-exports": "0.1.18",
 }
 
 

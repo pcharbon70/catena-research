@@ -68,6 +68,11 @@ This is the selective entry point to the archive. See the
   per-category model with deterministic shadowing and
   local-over-imported precedence, and the owners of import syntax and the
   prelude.
+- [Imports and Exports](imports-and-exports.md) — routes through the
+  kernel's explicit export precedent, Haskell/SML/Erlang/Rust evidence,
+  the normative 0.1.18 private-by-default exports and list-admission
+  imports with declared exclusions, and the owners of cycles, packages,
+  and the prelude.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
@@ -96,7 +101,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  seventeen normative areas plus the C012 implementation-limits policy.
+  eighteen normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,

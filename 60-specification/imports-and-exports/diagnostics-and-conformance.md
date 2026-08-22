@@ -2,7 +2,7 @@
 title: "Import Diagnostics and Conformance"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.18"
 tags:
   - conformance
@@ -136,7 +136,7 @@ semantic patch is `0.1.19`.
 
 The design route is preserved in the
 [imports synthesis](../../20-notes/catena-imports-and-exports.md), the
-[open inquiry](../../40-inquiries/how-should-catena-handle-imports-and-exports.md),
+[resolved inquiry](../../40-inquiries/how-should-catena-handle-imports-and-exports.md),
 and the [topic map](../../10-maps/imports-and-exports.md). The C022
 evidence record will preserve the sibling-compiler commands and archive
 validation.

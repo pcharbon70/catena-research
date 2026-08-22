@@ -60,7 +60,7 @@ follow-up item now that C011 is reached.
 - [Namespaces and Shadowing Specification](../60-specification/namespaces-and-shadowing/README.md)
   — the normative C021 source for `NS-OBL-*` obligations.
 - [Imports and Exports Specification](../60-specification/imports-and-exports/README.md)
-  — the C022 source for `IM-OBL-*` obligations, candidate until promotion.
+  — the normative C022 source for `IM-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -111,7 +111,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all seventeen normative areas and the C012 governance policy are now
+extracted; all eighteen normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -137,7 +137,7 @@ sibling compiler repository.
 | `OP` operators-and-punctuation | 16 | `c019_operators_test.exs` (12) | compiler-tagged + gated (`6e13bdf`); all obligations traced |
 | `FU` files-and-modules | 12 | `c020_file_unit_test.exs` (9) | compiler-tagged + gated (`677a8f4`); all obligations traced |
 | `NS` namespaces-and-shadowing | 14 | `c021_namespaces_test.exs` (12) | compiler-tagged + gated (`b482b4c`); all obligations traced |
-| `IM` imports-and-exports | 13 | `c022_import_exports_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `IM` imports-and-exports | 13 | `c022_import_exports_test.exs` (9) | compiler-tagged + gated (`02da5c1`); all obligations traced |
 
 ## Trails
 
@@ -1194,10 +1194,11 @@ lacks a focused tag.
 
 ## Imports and exports registry (`IM`, 0.1.18)
 
-Evidence labels will refer to focused tests in
-`test/catena/c022_import_exports_test.exs` and its
-`test/catena/c022_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c022_import_exports_test.exs`](https://github.com/pcharbon70/catena/blob/02da5c178ad5d797e55bdb3290cd950fbf7f4f31/test/catena/c022_import_exports_test.exs)
+and its
+[`c022_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/02da5c178ad5d797e55bdb3290cd950fbf7f4f31/test/catena/c022_traceability_coverage_test.exs)
+gate:
 
 - **c022 #1** *keeps 0.1.18 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c022 #2** *exports nothing by default and private names never resolve elsewhere*
@@ -1211,29 +1212,25 @@ compiler repository. The planned focused set is:
 - **c022 #10** *emits stable diagnostics with spelling, category, and module*
 - **c022 #11** *keeps the resolver and analysis deterministic, source-only, and outside later phases*
 
-Anchors currently point at the candidate 0.1.18 chapters and become
-normative anchors at C022 promotion. Status is `untraced` until the
-compiler evidence lands.
-
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| IM-OBL-001 | Apply import/export behavior only at exact 0.1.18 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#revision-and-persistence-separation) | c022 #1; EDN001 | untraced |
-| IM-OBL-002 | Export nothing without an explicit export declaration; private names never resolve elsewhere | [`export-declarations-and-visibility.md#private-by-default`](../60-specification/imports-and-exports/export-declarations-and-visibility.md#private-by-default) | c022 #2 | untraced |
-| IM-OBL-003 | Enforce export events with categories, spelling classes, and type transparency modes | [`export-declarations-and-visibility.md#export-declaration-events`](../60-specification/imports-and-exports/export-declarations-and-visibility.md#export-declaration-events) | c022 #3 | untraced |
-| IM-OBL-004 | Reject exports of undeclared names as `EXP001` | [`export-declarations-and-visibility.md#validation`](../60-specification/imports-and-exports/export-declarations-and-visibility.md#validation) | c022 #4; EXP001 | untraced |
-| IM-OBL-005 | Enforce two-effect admission: qualification against the export set plus listed unqualified admission with the empty qualified-only form | [`import-declarations-and-admission.md#admission`](../60-specification/imports-and-exports/import-declarations-and-admission.md#admission) | c022 #5 | untraced |
-| IM-OBL-006 | Reject unexported listed names as `IMP002` and unknown modules as `IMP003` | [`import-declarations-and-admission.md#validation`](../60-specification/imports-and-exports/import-declarations-and-admission.md#validation) | c022 #6; IMP002, IMP003 | untraced |
-| IM-OBL-007 | Admit no wildcard, hiding, renaming, alias, or re-export form | [`import-declarations-and-admission.md#declared-exclusions`](../60-specification/imports-and-exports/import-declarations-and-admission.md#declared-exclusions) | c022 #7 | untraced |
-| IM-OBL-008 | Feed imported names into C021 precedence and reference-time `NSP004` unchanged | [`import-declarations-and-admission.md#precedence-interaction`](../60-specification/imports-and-exports/import-declarations-and-admission.md#precedence-interaction) | c022 #8 | untraced |
-| IM-OBL-009 | Emit stable import/export diagnostics with spelling, category, and module | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#stable-diagnostics) | c022 #10 | untraced |
-| IM-OBL-010 | Keep `IMP001` a deny-able warning that never affects acceptance | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#stable-diagnostics) | c022 #9; IMP001 | untraced |
-| IM-OBL-011 | Expose the unused-import analysis returning warnings only | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#abstract-public-boundaries) | c022 #9 | untraced |
-| IM-OBL-012 | Produce deterministic environments, diagnostics, and warning order | [`diagnostics-and-conformance.md#determinism`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#determinism) | c022 #11 | untraced |
-| IM-OBL-013 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#revision-and-persistence-separation) | c022 #1, #11 | untraced |
+| IM-OBL-001 | Apply import/export behavior only at exact 0.1.18 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#revision-and-persistence-separation) | c022 #1; EDN001 | traced |
+| IM-OBL-002 | Export nothing without an explicit export declaration; private names never resolve elsewhere | [`export-declarations-and-visibility.md#private-by-default`](../60-specification/imports-and-exports/export-declarations-and-visibility.md#private-by-default) | c022 #2 | traced |
+| IM-OBL-003 | Enforce export events with categories, spelling classes, and type transparency modes | [`export-declarations-and-visibility.md#export-declaration-events`](../60-specification/imports-and-exports/export-declarations-and-visibility.md#export-declaration-events) | c022 #3 | traced |
+| IM-OBL-004 | Reject exports of undeclared names as `EXP001` | [`export-declarations-and-visibility.md#validation`](../60-specification/imports-and-exports/export-declarations-and-visibility.md#validation) | c022 #4; EXP001 | traced |
+| IM-OBL-005 | Enforce two-effect admission: qualification against the export set plus listed unqualified admission with the empty qualified-only form | [`import-declarations-and-admission.md#admission`](../60-specification/imports-and-exports/import-declarations-and-admission.md#admission) | c022 #5 | traced |
+| IM-OBL-006 | Reject unexported listed names as `IMP002` and unknown modules as `IMP003` | [`import-declarations-and-admission.md#validation`](../60-specification/imports-and-exports/import-declarations-and-admission.md#validation) | c022 #6; IMP002, IMP003 | traced |
+| IM-OBL-007 | Admit no wildcard, hiding, renaming, alias, or re-export form | [`import-declarations-and-admission.md#declared-exclusions`](../60-specification/imports-and-exports/import-declarations-and-admission.md#declared-exclusions) | c022 #7 | traced |
+| IM-OBL-008 | Feed imported names into C021 precedence and reference-time `NSP004` unchanged | [`import-declarations-and-admission.md#precedence-interaction`](../60-specification/imports-and-exports/import-declarations-and-admission.md#precedence-interaction) | c022 #8 | traced |
+| IM-OBL-009 | Emit stable import/export diagnostics with spelling, category, and module | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#stable-diagnostics) | c022 #10 | traced |
+| IM-OBL-010 | Keep `IMP001` a deny-able warning that never affects acceptance | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#stable-diagnostics) | c022 #9; IMP001 | traced |
+| IM-OBL-011 | Expose the unused-import analysis returning warnings only | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#abstract-public-boundaries) | c022 #9 | traced |
+| IM-OBL-012 | Produce deterministic environments, diagnostics, and warning order | [`diagnostics-and-conformance.md#determinism`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#determinism) | c022 #11 | traced |
+| IM-OBL-013 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/imports-and-exports/diagnostics-and-conformance.md#revision-and-persistence-separation) | c022 #1, #11 | traced |
 
-C022 coverage is 0 `traced` and 13 untraced obligations pending the sibling
-compiler implementation. The planned dedicated gate rejects unknown
-identifiers and fails if any `IM-OBL-*` identifier lacks a focused tag.
+C022 coverage is 13 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `IM-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

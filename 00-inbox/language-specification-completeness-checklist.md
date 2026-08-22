@@ -92,6 +92,10 @@ Normative C021 uses `0.1.17` for namespaces and shadowing. Its inventory,
 shadowing and ambiguity rules, diagnostics, and verification are recorded
 in the
 [C021 conformance journal](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md).
+Normative C022 uses `0.1.18` for imports and exports. Its export and
+admission rules, exclusions, diagnostics, and verification are recorded in
+the
+[C022 conformance journal](../50-journal/2026-08-22-c022-imports-and-exports.md).
 
 ## Existing research that needs normative consolidation
 
@@ -276,8 +280,8 @@ as small normative rules rather than copied wholesale into a specification.
   executable coverage. C015 now defines whitespace/layout, C016 defines
   comments/documentation, C017 defines atomic literals, C018 defines numeric
   literal meaning, and C019 defines the whole-source token stream; C020
-  fixes the file-to-module relationship; and C021 fixes namespaces and
-  shadowing, while G022 retains imports and exports.
+  fixes the file-to-module relationship; C021 fixes namespaces and
+  shadowing; and C022 fixes imports and exports.
 - [x] **C015 — Complete — whitespace and layout.** The normative
   [0.1.11 whitespace and layout specification](../60-specification/whitespace-and-layout/README.md),
   [synthesis](../20-notes/catena-whitespace-layout-and-line-continuation.md),
@@ -378,8 +382,8 @@ as small normative rules rather than copied wholesale into a specification.
   [`6e13bdf72547c4b363d794461c3f875fd0a16119`](https://github.com/pcharbon70/catena/commit/6e13bdf72547c4b363d794461c3f875fd0a16119)
   supplies complete `OP-OBL-001`–`OP-OBL-016` coverage with 260 passing
   tests. Application and declaration grammar remain P109; file-to-module
-  relations are complete as C020 and namespace resolution as C021;
-  import/export syntax remains G022; field-like access remains G040;
+  relations are complete as C020, namespace resolution as C021, and
+  imports and exports as C022; field-like access remains G040;
   operator dispatch remains G061; editor recovery remains G123.
 - [x] **C020 — Complete — file-to-module relationship.** The normative
   [0.1.16 files specification](../60-specification/files-and-modules/README.md),
@@ -397,8 +401,8 @@ as small normative rules rather than copied wholesale into a specification.
   [`677a8f4a91f047d3ee97f197992b24401cff9a41`](https://github.com/pcharbon70/catena/commit/677a8f4a91f047d3ee97f197992b24401cff9a41)
   supplies complete `FU-OBL-001`–`FU-OBL-012` coverage with 271 passing
   tests through the abstract file-unit resolver. The concrete module-header
-  syntax remains P109; module-name resolution is fixed by C021 while
-  import/export syntax remains G022; package
+  syntax remains P109; module-name resolution is fixed by C021 and
+  import/export admission by C022; package
   assembly remains G025; entry modules remain G027.
 
 ## 3. Names, modules, packages, and separate compilation
@@ -419,13 +423,30 @@ as small normative rules rather than copied wholesale into a specification.
   chains reserved. Sibling compiler commit
   [`b482b4cacc4017b8e479173fb3bd3c0ceac4f675`](https://github.com/pcharbon70/catena/commit/b482b4cacc4017b8e479173fb3bd3c0ceac4f675)
   supplies complete `NS-OBL-001`–`NS-OBL-014` coverage with 285 passing
-  tests through the abstract scope-event resolver. Import/export syntax
-  remains G022; module recursion remains G024; package-level module
+  tests through the abstract scope-event resolver, extended by C022.
+  Module recursion remains G024; package-level module
   uniqueness remains G025; prelude contents remain G026; type-directed
   resolution remains G066.
-- [ ] **G022 — Gap — imports and exports.** Define qualification, renaming, wildcard
-  imports or their exclusion, re-exports, unused-import diagnostics, and
-  visibility defaults.
+- [x] **C022 — Complete — imports and exports.** The normative
+  [0.1.18 imports specification](../60-specification/imports-and-exports/README.md),
+  [synthesis](../20-notes/catena-imports-and-exports.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-handle-imports-and-exports.md),
+  [topic map](../10-maps/imports-and-exports.md), and
+  [C022 record](../50-journal/2026-08-22-c022-imports-and-exports.md) fix
+  private-by-default explicit exports carrying C002 transparency modes
+  with `EXP001` undeclared rejection; import admission through
+  two-segment qualification against digest-bound export sets plus explicit
+  possibly-empty unqualified name lists with `IMP002`/`IMP003` validation;
+  the declared exclusion of wildcards, hiding, renaming, aliases, and
+  re-exports; and the deny-able `IMP001` unused-import warning whose
+  qualified references never satisfy unqualified admissions. Sibling
+  compiler commit
+  [`02da5c178ad5d797e55bdb3290cd950fbf7f4f31`](https://github.com/pcharbon70/catena/commit/02da5c178ad5d797e55bdb3290cd950fbf7f4f31)
+  supplies complete `IM-OBL-001`–`IM-OBL-013` coverage with 295 passing
+  tests through the extended scope-event resolver. Module recursion
+  remains G024; package identity and re-export assembly remain G025; the
+  prelude remains G026; entry modules remain G027; concrete `use`/`export`
+  punctuation remains P109.
 - [ ] **P023 — Partial — abstraction boundaries.** C002 completes transparent
   constructor export versus fully abstract type export and layout-free module
   interfaces. Stable layout opt-in and any separate construction versus

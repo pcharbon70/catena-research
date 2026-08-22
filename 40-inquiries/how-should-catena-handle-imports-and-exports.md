@@ -2,7 +2,7 @@
 title: "How Should Catena Handle Imports and Exports?"
 kind: inquiry
 created: "2026-08-22"
-status: open
+status: resolved
 tags:
   - catena
   - imports
@@ -108,8 +108,22 @@ contents, G027 entry modules, or P109 surface punctuation.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters covering exports
-and visibility, imports and admission, and diagnostics; a sibling compiler
-extension of the C021 resolver with import/export events and an
-unused-import analysis, with tagged executable evidence; and the
-C013–C021 promotion workflow.
+Resolved as C022 and source-only language revision `0.1.18`. Catena fixes
+private-by-default explicit exports carrying C002 transparency modes with
+`EXP001` undeclared rejection; import admission through two-segment
+qualification against digest-bound export sets plus explicit
+possibly-empty unqualified name lists with `IMP002`/`IMP003` validation;
+the declared exclusion of wildcards, hiding, renaming, aliases, and
+re-exports; and the deny-able `IMP001` unused-import warning whose
+qualified references never satisfy unqualified admissions. The rules are
+defined in the
+[normative imports specification](../60-specification/imports-and-exports/README.md).
+
+G022 is complete through the
+[imports synthesis](../20-notes/catena-imports-and-exports.md),
+[topic map](../10-maps/imports-and-exports.md), and
+[C022 evidence record](../50-journal/2026-08-22-c022-imports-and-exports.md).
+G024 retains module recursion; G025 retains package identity and
+re-export assembly; G026 retains prelude contents; G027 retains entry
+modules; P109 retains the concrete `use`/`export` punctuation; P117
+retains warning prose quality.

@@ -2,7 +2,7 @@
 title: "Export Declarations and Visibility"
 kind: specification
 created: "2026-08-22"
-status: candidate
+status: normative
 spec_version: "0.1.18"
 tags:
   - exports
@@ -100,6 +100,6 @@ digest computation remain C006/C008.
 The [imports synthesis](../../20-notes/catena-imports-and-exports.md)
 compares Haskell's public-by-default exports, SML's signature surfaces,
 and the kernel's explicit forms. The
-[open inquiry](../../40-inquiries/how-should-catena-handle-imports-and-exports.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-handle-imports-and-exports.md)
 and [topic map](../../10-maps/imports-and-exports.md) preserve the
 decision route.
