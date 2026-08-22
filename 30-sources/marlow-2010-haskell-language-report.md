@@ -14,10 +14,12 @@ url: "https://www.haskell.org/definition/haskell2010.pdf"
 accessed: "2026-08-01"
 tags:
   - comprehensions
+  - files
   - floats
   - language-design
   - layout
   - literals
+  - modules
   - operators
   - pattern-matching
   - syntax
@@ -176,6 +178,26 @@ fixity in 0.1.15. The report's own Prelude table also shows comparisons
 declared non-associative at level 4, agreeing with Rust's rejection of
 comparison chains and supporting Catena's non-associative comparison level.
 
+### Modules and file binding
+
+- A Haskell program is a collection of modules; each module has a `module
+  ModuleName [exports] where ...` header followed by declarations.
+- The module's name is declared by the header. The report's module chapter
+  states that module names are used to locate the module's interface and
+  object files, and the toolchain convention pairs `module M` with the file
+  `M.hs`.
+- A module header may be omitted, in which case the module is named `Main`
+  — a defaulting of module identity for scripts.
+- Modules may be hierarchically named (`A.B.C`), and the hierarchy maps to
+  directory structure in tooling conventions.
+
+For Catena's file work, Haskell shows the declared-header model where the
+name lives in the file content, paired with a tooling-level filename
+convention — the same pairing Catena adopts, except Catena makes the
+basename match a language rule with static invalidity rather than a loader
+expectation, and rejects implicit `Main`-style defaulting in favor of
+explicit no-module files.
+
 ## Limits
 
 Haskell is non-strict and pure, while Catena is proposed to be strict with
@@ -202,3 +224,6 @@ precision.
 - [Catena Operators and Punctuation](../20-notes/catena-operators-and-punctuation.md)
 - [How Should Catena Fix Operators and Punctuation?](../40-inquiries/how-should-catena-fix-operators-and-punctuation.md)
 - [Operators and Punctuation map](../10-maps/operators-and-punctuation.md)
+- [Catena Files and Modules](../20-notes/catena-files-and-modules.md)
+- [How Should Catena Relate Files to Modules?](../40-inquiries/how-should-catena-relate-files-to-modules.md)
+- [Files and Modules map](../10-maps/files-and-modules.md)

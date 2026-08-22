@@ -87,6 +87,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C019's closed semantic-mapped operator set, fixed precedence
   ladder with non-associative comparisons, concrete C015 capability and
   frame assignments, and transactional reserved-spelling rejection.
+- [Catena Files and Modules](catena-files-and-modules.md) — proposes
+  C020's at-most-one module per `.cat` file, declared-name basename
+  verification, ASCII module words, and first-line generated markers.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

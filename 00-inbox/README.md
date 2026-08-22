@@ -37,6 +37,10 @@ review; do not let the inbox become permanent storage.
   groups the atomic completeness gaps into connected research programs,
   relates each program to the current normative and exploratory corpus, and
   states what completing it would add to the language design.
+- [Package Publishing Hypothesis: Hex Registry](package-publishing-hypothesis-hex.md)
+  — working assumption that Catena publishes through hex.pm Gleam-style,
+  with governance and assurance kept Catena-side; owned by the future
+  G025/G121/G130 package program.
 
 ## Maintaining this index
 

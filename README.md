@@ -64,6 +64,9 @@ The normative C019 operator and punctuation boundary begins at the
 [Operators and Punctuation map](10-maps/operators-and-punctuation.md) and
 its exact
 [0.1.15 specification](60-specification/operators-and-punctuation/README.md).
+The normative C020 file-to-module boundary begins at the
+[Files and Modules map](10-maps/files-and-modules.md) and its exact
+[0.1.16 specification](60-specification/files-and-modules/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -161,8 +164,9 @@ uses `0.1.11` for whitespace, separators, and line continuation; normative
 C016 uses `0.1.12` for comments and documentation comments; normative C017
 uses `0.1.13` for atomic literal grammar and decoding; normative C018 uses
 `0.1.14` for numeric literal semantics; normative C019 uses `0.1.15` for
-operators and punctuation; and the next
-unused semantic patch is `0.1.16`. C008 defines package-local editions,
+operators and punctuation; normative C020 uses `0.1.16` for the
+file-to-module relationship; and the next
+unused semantic patch is `0.1.17`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

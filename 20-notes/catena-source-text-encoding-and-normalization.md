@@ -216,9 +216,9 @@ artifact.
 C013 does not settle Unicode identifier security, normalization-based name
 equality, whitespace, comments, literals, layout, formatter round trips,
 source-size denial of service, or source spans through typed-core elaboration.
-Those remain explicit G019–G020, P117, G118, and wider operational work now
-that C014–C018 have fixed identifiers, layout, comments, literals, and
-numeric literal meaning.
+Those remain explicit P117, G118, and wider operational work now
+that C014–C020 have fixed identifiers, layout, comments, literals, numeric
+literal meaning, operators, and the file-to-module relationship.
 
 ## Connections
 

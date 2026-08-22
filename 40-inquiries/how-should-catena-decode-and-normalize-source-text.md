@@ -80,8 +80,8 @@ one-based scalar lines and columns.
 The [normative source-text area](../60-specification/source-text/README.md)
 defines `SRC001`–`SRC003` and `ST-OBL-001` through `ST-OBL-010`. The sibling
 compiler supplies a reusable decoder, source units, exact revision separation,
-the `check-source-text` command, and focused adversarial coverage. G019–G020
-remain responsible for the actual lexical and file grammar now that
-C014–C018 have fixed identifiers, layout, comments, literals, and numeric
+the `check-source-text` command, and focused adversarial coverage. C019–C020
+now fix the actual lexical and file grammar after
+C014–C018 fixed identifiers, layout, comments, literals, and numeric
 literal meaning; P117 and G118
 retain cross-language diagnostics and formatter behavior.

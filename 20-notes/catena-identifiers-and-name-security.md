@@ -197,8 +197,8 @@ has one usability/security point.
 
 C015 now supplies the abstract whitespace/layout event boundary, C016 adds
 comments, and C017 adds atomic literals without changing identifier identity.
-G019–G020 must integrate these standalone names into a real lexer and file
-grammar.
+C019 now integrates these standalone names into the real whole-source lexer
+and C020 fixes the file grammar's module binding.
 G021/G022 must supply comparison domains and resolution. P117 must
 carry secondary spans and cross-file collision explanations; G118 must define
 safe display and formatting. None may weaken the pinned 0.1.10 identity rules

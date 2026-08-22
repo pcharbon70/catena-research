@@ -82,11 +82,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   its closed inventory, maximal munch, capabilities and frames, fixed ladder,
   diagnostics, and executable evidence are recorded in the
   [C019 conformance journal](../50-journal/2026-08-21-c019-operators-and-punctuation.md).
+  The normative C020 file-to-module boundary is version `0.1.16`; its file
+  units, module binding, generated markers, diagnostics, and executable
+  evidence are recorded in the
+  [C020 conformance journal](../50-journal/2026-08-22-c020-files-and-modules.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Files and Modules](files-and-modules/README.md) — the normative version
+  0.1.16 file-unit contract: `.cat` extension, at-most-one module with
+  basename verification, ASCII module words, generated-file markers,
+  diagnostics, and conformance obligations.
 - [Operators and Punctuation](operators-and-punctuation/README.md) — the
   normative version 0.1.15 closed operator and punctuation inventory,
   maximal munch, capability and frame assignments, fixed precedence ladder,

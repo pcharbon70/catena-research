@@ -85,7 +85,7 @@ for C015's classification and the
 [Comments and Documentation Comments map](comments-and-documentation-comments.md)
 for C016's preserving use of the logical stream and the
 [Literal Grammar map](literal-grammar.md) for C017's preserving decoding and
-raw line ownership. G020 owns file-to-module relations and P109 owns the
+raw line ownership. C020 fixes file-to-module relations and P109 owns the
 declaration grammar over the C019 token stream. P117 owns the complete
 cross-language diagnostic model; G118 owns canonical formatting and comment-
 preserving trees. Aggregate source-size and hostile-input performance remain

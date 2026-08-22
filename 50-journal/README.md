@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C020 Files and Modules](2026-08-22-c020-files-and-modules.md) — records
+  the normative 0.1.16 file-unit contract, abstract resolver, marker
+  boundary decisions, diagnostics, traceability, and immutable compiler
+  identity.
 - [C019 Operators and Punctuation](2026-08-21-c019-operators-and-punctuation.md)
   — records the normative 0.1.15 operator contract, whole-source tokenizer,
   expression layer, capability/frame assignments, ladder evidence,
