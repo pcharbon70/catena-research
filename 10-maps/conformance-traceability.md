@@ -55,6 +55,8 @@ follow-up item now that C011 is reached.
   — the normative C018 source for `NM-OBL-*` obligations.
 - [Operators and Punctuation Specification](../60-specification/operators-and-punctuation/README.md)
   — the normative C019 source for `OP-OBL-*` obligations.
+- [Files and Modules Specification](../60-specification/files-and-modules/README.md)
+  — the C020 source for `FU-OBL-*` obligations, candidate until promotion.
 
 ## Identifier and registry convention
 
@@ -82,6 +84,7 @@ convention.
 | `LT` | literal-grammar | 0.1.13 |
 | `NM` | numeric-literal-semantics | 0.1.14 |
 | `OP` | operators-and-punctuation | 0.1.15 |
+| `FU` | files-and-modules | 0.1.16 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -126,6 +129,7 @@ sibling compiler repository.
 | `LT` literal-grammar | 12 | `c017_literal_grammar_test.exs` (10) | compiler-tagged + gated (`d51b307`); all obligations traced |
 | `NM` numeric-literal-semantics | 14 | `c018_numeric_literal_semantics_test.exs` (10) | compiler-tagged + gated (`6fb2ad8`); all obligations traced |
 | `OP` operators-and-punctuation | 16 | `c019_operators_test.exs` (12) | compiler-tagged + gated (`6e13bdf`); all obligations traced |
+| `FU` files-and-modules | 12 | `c020_file_unit_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1099,6 +1103,47 @@ gate:
 C019 coverage is 16 `traced` and 0 untraced obligations. The dedicated gate
 rejects unknown identifiers and fails if any `OP-OBL-*` identifier lacks a
 focused tag.
+
+## Files and modules registry (`FU`, 0.1.16)
+
+Evidence labels will refer to focused tests in
+`test/catena/c020_file_unit_test.exs` and its
+`test/catena/c020_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c020 #1** *keeps 0.1.16 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c020 #2** *requires the `.cat` extension and reports `FIL001` otherwise*
+- **c020 #3** *classifies module and no-module files with valid empty and comment-only units*
+- **c020 #4** *rejects multiple module declarations as `FIL002` and bad spellings as `FIL003`*
+- **c020 #5** *verifies declared names against basenames with `FIL004` and no name for no-module files*
+- **c020 #6** *recognizes the exact marker grammar with varied tool identifiers*
+- **c020 #7** *enforces first-unit placement and keeps marker text inert elsewhere*
+- **c020 #8** *rejects malformed first-unit markers as `FIL005`*
+- **c020 #9** *emits stable diagnostics with spans and both names on mismatch*
+- **c020 #10** *keeps the resolver deterministic, source-only, and outside later phases*
+
+Anchors currently point at the candidate 0.1.16 chapters and become
+normative anchors at C020 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| FU-OBL-001 | Apply file-unit behavior only at exact 0.1.16 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/files-and-modules/diagnostics-and-conformance.md#revision-and-persistence-separation) | c020 #1; EDN001 | untraced |
+| FU-OBL-002 | Require the `.cat` extension and report `FIL001` otherwise | [`file-units-and-module-binding.md#source-file-extension`](../60-specification/files-and-modules/file-units-and-module-binding.md#source-file-extension) | c020 #2; FIL001 | untraced |
+| FU-OBL-003 | Classify module and no-module files with valid empty and comment-only units | [`file-units-and-module-binding.md#file-units`](../60-specification/files-and-modules/file-units-and-module-binding.md#file-units) | c020 #3 | untraced |
+| FU-OBL-004 | Reject more than one module declaration as `FIL002` | [`file-units-and-module-binding.md#module-multiplicity`](../60-specification/files-and-modules/file-units-and-module-binding.md#module-multiplicity) | c020 #4; FIL002 | untraced |
+| FU-OBL-005 | Enforce the ASCII uppercase-initial module-name spelling with `FIL003` | [`file-units-and-module-binding.md#file-level-module-name-spelling`](../60-specification/files-and-modules/file-units-and-module-binding.md#file-level-module-name-spelling) | c020 #4; FIL003 | untraced |
+| FU-OBL-006 | Verify the declared name against the basename with `FIL004`, matching no name for no-module files | [`file-units-and-module-binding.md#declared-name-basename-verification`](../60-specification/files-and-modules/file-units-and-module-binding.md#declared-name-basename-verification) | c020 #5; FIL004 | untraced |
+| FU-OBL-007 | Recognize the exact marker grammar with its tool identifier | [`generated-file-markers.md#marker-spelling`](../60-specification/files-and-modules/generated-file-markers.md#marker-spelling) | c020 #6 | untraced |
+| FU-OBL-008 | Enforce first-unit placement and single recognition | [`generated-file-markers.md#first-unit-placement`](../60-specification/files-and-modules/generated-file-markers.md#first-unit-placement) | c020 #7 | untraced |
+| FU-OBL-009 | Reject malformed first-unit markers as `FIL005` and keep the text inert elsewhere | [`generated-file-markers.md#inert-elsewhere`](../60-specification/files-and-modules/generated-file-markers.md#inert-elsewhere) | c020 #7, #8; FIL005 | untraced |
+| FU-OBL-010 | Emit stable file diagnostics with spans and both names on mismatch | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/files-and-modules/diagnostics-and-conformance.md#stable-diagnostics) | c020 #9; FIL001–FIL005 | untraced |
+| FU-OBL-011 | Expose the lossless resolver boundary deterministically | [`diagnostics-and-conformance.md#abstract-public-boundary`](../60-specification/files-and-modules/diagnostics-and-conformance.md#abstract-public-boundary) | c020 #10 | untraced |
+| FU-OBL-012 | Preserve source-only and persisted-format separation and claim no later phase | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/files-and-modules/diagnostics-and-conformance.md#revision-and-persistence-separation) | c020 #1, #10 | untraced |
+
+C020 coverage is 0 `traced` and 12 untraced obligations pending the sibling
+compiler implementation. The planned dedicated gate rejects unknown
+identifiers and fails if any `FU-OBL-*` identifier lacks a focused tag.
 
 ## Open questions
 
