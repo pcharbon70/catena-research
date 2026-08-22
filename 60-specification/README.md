@@ -87,6 +87,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Files and Modules](files-and-modules/README.md) — the candidate version
+  0.1.16 file-unit contract: `.cat` extension, at-most-one module with
+  basename verification, ASCII module words, generated-file markers,
+  diagnostics, and conformance obligations.
 - [Operators and Punctuation](operators-and-punctuation/README.md) — the
   normative version 0.1.15 closed operator and punctuation inventory,
   maximal munch, capability and frame assignments, fixed precedence ladder,
