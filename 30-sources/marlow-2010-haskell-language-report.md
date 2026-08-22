@@ -16,6 +16,7 @@ tags:
   - comprehensions
   - files
   - floats
+  - namespaces
   - language-design
   - layout
   - literals
@@ -178,6 +179,34 @@ fixity in 0.1.15. The report's own Prelude table also shows comparisons
 declared non-associative at level 4, agreeing with Rust's rejection of
 comparison chains and supporting Catena's non-associative comparison level.
 
+### Namespaces and shadowing
+
+- Section 1.4 fixes exactly six name kinds: variables and constructors
+  denoting values; type variables, type constructors, and type classes in
+  the type system; and module names. Variables and type variables begin
+  lowercase or underscore; the other four kinds begin uppercase.
+- The only same-scope collision constraint is that an identifier must not
+  name both a type constructor and a class in the same scope; otherwise one
+  spelling may simultaneously name a module, a class, and a constructor.
+- Chapter 5 locates name control in modules: a module has a name space
+  consisting of a top-level declaration set, imports bring entities from
+  other modules' export lists, and unqualified use of an imported name is
+  subject to the module's import form.
+- Haskell 2010 rejects unqualified names only when they are ambiguous under
+  the active imports; qualified names (`Module.name`) always resolve.
+- `let`-bound and lambda-bound variables shadow outer bindings of the same
+  name; innermost binding wins, and no warning is defined by the report.
+- The report leaves error-message quality for undefined programs explicitly
+  implementation-dependent, including name-resolution failures.
+
+For Catena, Haskell's namespace section is the closest published model of
+the chosen design: fixed name kinds, two spelling classes, per-kind
+environments, silent deterministic shadowing, and qualification as the
+ambiguity escape. The differences Catena adopts are deliberate: Haskell's
+class/type-constructor collision ban generalizes into Catena's per-category
+duplicate invalidity; and Haskell's import-form machinery (qualified-only,
+hiding, renaming) belongs to Catena's G022 rather than to resolution itself.
+
 ### Modules and file binding
 
 - A Haskell program is a collection of modules; each module has a `module
@@ -227,3 +256,6 @@ precision.
 - [Catena Files and Modules](../20-notes/catena-files-and-modules.md)
 - [How Should Catena Relate Files to Modules?](../40-inquiries/how-should-catena-relate-files-to-modules.md)
 - [Files and Modules map](../10-maps/files-and-modules.md)
+- [Catena Namespaces and Shadowing](../20-notes/catena-namespaces-and-shadowing.md)
+- [How Should Catena Organize Namespaces and Shadowing?](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
+- [Namespaces and Shadowing map](../10-maps/namespaces-and-shadowing.md)

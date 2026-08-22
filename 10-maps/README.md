@@ -103,6 +103,10 @@ should explain why its links belong together rather than merely list files.
   semantic units, Erlang/Rust/Haskell file-binding evidence, the proposed
   at-most-one module rule with basename verification and generated markers,
   and the owners of declaration grammar and package assembly.
+- [Namespaces and Shadowing](namespaces-and-shadowing.md) — routes through
+  the kernel's namespace law, Haskell/SML evidence, the proposed
+  per-category inventory with spelling classes, deterministic shadowing,
+  and local-over-imported precedence with collision rejection.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

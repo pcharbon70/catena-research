@@ -310,7 +310,7 @@ mentions can remain as citations in the document that uses them.
   defines Boolean, pattern, and binding guards and translates them into nested
   matching and conditionals; it also gives list-comprehension typing, scope,
   evaluation order, and kernel translation, plus overloaded numeric literals
-  with defaulting and undefined fixed-precision exceptional conditions, and module headers paired with filename conventions that default missing headers to `Main`.
+  with defaulting and undefined fixed-precision exceptional conditions, and module headers paired with filename conventions that default missing headers to `Main`. Its section 1.4 fixes six name kinds in two spelling classes with qualification as the ambiguity escape, and its fixity and module sections anchor the operator and file-binding comparisons.
 - [Lower Your Guards: A Compositional Pattern-Match Coverage Checker](graf-et-al-2020-lower-your-guards.md)
   — elaborates rich patterns into a small guard-tree IR for modular coverage,
   refinement, witness, and accessibility analysis.
