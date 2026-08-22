@@ -90,11 +90,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   inventory, shadowing and ambiguity rules, diagnostics, and executable
   evidence are recorded in the
   [C021 conformance journal](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md).
+  The candidate C022 import/export boundary is version `0.1.18`; its
+  export and admission rules, exclusions, diagnostics, and pending
+  evidence are recorded in the linked area index and inquiry.
 
 ## Index
 
 ### Subdirectories
 
+- [Imports and Exports](imports-and-exports/README.md) — the candidate
+  version 0.1.18 private-by-default export, import admission, exclusion,
+  and unused-import warning contract.
 - [Namespaces and Shadowing](namespaces-and-shadowing/README.md) — the
   normative version 0.1.17 namespace inventory with spelling classes,
   shadowing and ambiguity resolution, diagnostics, and conformance
