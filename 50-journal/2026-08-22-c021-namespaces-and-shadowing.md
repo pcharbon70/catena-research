@@ -36,9 +36,13 @@ so identities carry a stable, comparable nesting measure rather than an
 implementation-internal index.
 
 The sibling compiler implementation is commit
-[`b482b4cacc4017b8e479173fb3bd3c0ceac4f675`](https://github.com/pcharbon70/catena/commit/b482b4cacc4017b8e479173fb3bd3c0ceac4f675)
-on branch `agent/c021-namespaces-shadowing`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`b482b4cacc4017b8e479173fb3bd3c0ceac4f675`](https://github.com/pcharbon70/catena/commit/b482b4cacc4017b8e479173fb3bd3c0ceac4f675),
+merged into the `rewrite` integration line by compiler PR
+[#97](https://github.com/pcharbon70/catena/pull/97) at merge commit
+[`ab1651f`](https://github.com/pcharbon70/catena/commit/ab1651f5c09692763f5f906177144c2b7a94d507).
+The merge retained the tested tree exactly (tree `0c28990`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
