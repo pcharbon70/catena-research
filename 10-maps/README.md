@@ -107,6 +107,11 @@ should explain why its links belong together rather than merely list files.
   the kernel's namespace law, Haskell/SML evidence, the proposed
   per-category inventory with spelling classes, deterministic shadowing,
   and local-over-imported precedence with collision rejection.
+- [Imports and Exports](imports-and-exports.md) — routes through the
+  kernel's explicit export precedent, Haskell/SML/Erlang/Rust boundary
+  evidence, the proposed private-by-default exports and
+  qualification-plus-list imports with declared exclusions, and the
+  owners of cycles, packages, and the prelude.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

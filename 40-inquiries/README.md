@@ -58,6 +58,11 @@ to `20-notes`.
   — tests per-category namespaces with spelling classes, flat constructor
   uniqueness, deterministic shadowing, type-variable scoping, and
   local-over-imported precedence against Haskell and SML evidence.
+- [How Should Catena Handle Imports and Exports?](how-should-catena-handle-imports-and-exports.md)
+  — tests private-by-default exports, qualification-plus-list admission,
+  the exclusion of wildcards, renaming, and re-exports, and deny-able
+  unused-import warnings against Haskell, SML, Erlang, and Rust
+  evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

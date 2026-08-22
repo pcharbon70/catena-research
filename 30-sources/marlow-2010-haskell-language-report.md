@@ -211,6 +211,43 @@ hiding, renaming) belongs to Catena's G022 rather than to resolution itself.
 
 - A Haskell program is a collection of modules; each module has a `module
   ModuleName [exports] where ...` header followed by declarations.
+
+### Import and export declarations
+
+- Chapter 5 gives imports four shapes: an omitted import specification
+  imports every exported entity; an explicit parenthesized list imports
+  only the named entities and must name only entities the imported module
+  exports; `hiding(...)` imports everything except the named entities; and
+  an empty list `()` imports nothing unqualified.
+- The `qualified` keyword brings only qualified names into scope; without
+  it both the qualified and unqualified names arrive, so any import always
+  enables `M.name` qualification.
+- An `as` clause gives the import a local qualifier; several modules may
+  share one qualifier provided no name becomes ambiguous.
+- Import lists are cumulative across declarations and their order is
+  irrelevant.
+- Export lists name exported entities; a datatype may be exported without
+  its constructors (abstract), with an explicit constructor sublist, or
+  with `T(..)` for all in-scope constructors; the `module M` export form
+  re-exports everything imported from M. If the export list is omitted,
+  all locally defined values, types, and classes are exported, but never
+  imported ones.
+- Name clashes between imports are errors only when the clashing name is
+  actually mentioned unqualified; unmentioned collisions are legal, and
+  qualification resolves any mentioned one. Multiple import routes for one
+  entity resolve to that single entity.
+- The Prelude is imported automatically into every module unless imported
+  explicitly, and may be shadowed only through explicit imports.
+
+For Catena's import work, Haskell supplies the exact machinery being
+adopted and the exact machinery being declined: adopted are explicit
+import lists (whose empty form matches Catena's qualified-only admission
+precisely), always-available qualification, order-independent cumulative
+imports, and mention-time ambiguity errors — which C021's `NSP004`
+already legislates; declined are `hiding`, `as` aliases, the `module M`
+re-export form (deferred to package assembly), public-by-default exports
+(Catena requires explicit export declarations), and the implicit Prelude
+(G026).
 - The module's name is declared by the header. The report's module chapter
   states that module names are used to locate the module's interface and
   object files, and the toolchain convention pairs `module M` with the file
@@ -259,3 +296,6 @@ precision.
 - [Catena Namespaces and Shadowing](../20-notes/catena-namespaces-and-shadowing.md)
 - [How Should Catena Organize Namespaces and Shadowing?](../40-inquiries/how-should-catena-organize-namespaces-and-shadowing.md)
 - [Namespaces and Shadowing map](../10-maps/namespaces-and-shadowing.md)
+- [Catena Imports and Exports](../20-notes/catena-imports-and-exports.md)
+- [How Should Catena Handle Imports and Exports?](../40-inquiries/how-should-catena-handle-imports-and-exports.md)
+- [Imports and Exports map](../10-maps/imports-and-exports.md)

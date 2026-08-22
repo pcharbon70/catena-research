@@ -94,6 +94,11 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C021's per-category namespaces with spelling classes, flat
   constructor namespace, deterministic silent shadowing, type-variable
   scoping, and local-over-imported precedence with collision rejection.
+- [Catena Imports and Exports](catena-imports-and-exports.md) — proposes
+  C022's private-by-default explicit exports with transparency modes,
+  qualification-plus-explicit-list import admission, declared exclusions
+  of wildcards, renaming, and re-exports, and the deny-able `IMP001`
+  unused-import warning.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.
