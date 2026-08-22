@@ -1,0 +1,100 @@
+---
+title: "How Should Catena Relate Files to Modules?"
+kind: inquiry
+created: "2026-08-21"
+status: open
+tags:
+  - catena
+  - files
+  - language-design
+  - modules
+aliases:
+  - "Catena file-unit inquiry"
+---
+
+# How Should Catena Relate Files to Modules?
+
+## Why this matters
+
+C013 through C019 closed the lexical layer, but a Catena file still has no
+defined relationship to a module: nothing says how many modules a file may
+contain, whether its name must match the module's, what extension a source
+file carries, or how generated files are recognized. Every later tool —
+formatter, build, editor, package manager — and the P109 declaration
+grammar need those answers to be fixed, or they will each invent local
+conventions. The semantic frontends already treat one named module per
+compilation unit, so the file layer must either align with or contradict
+that decision.
+
+## Operational question
+
+Choose a bounded 0.1.16 boundary in which independent implementations agree
+on:
+
+- how many modules a Catena source file may contain and what a file without
+  a module is;
+- whether the file basename relates to the declared module name, and what
+  happens on mismatch;
+- the source-file extension;
+- the spelling rule for file-level module names; and
+- how generated files are recognized, without deciding P109's concrete
+  header syntax, G021/G022 name resolution, G025 package layout, or G121
+  build policy.
+
+The answer must compose with the C013–C019 source stack, the one-module
+semantic units of the retained JSON and kernel frontends, and the C008
+edition/revision model.
+
+## Working hypotheses
+
+- A file contains at most one module, named by a module declaration whose
+  concrete syntax is P109's; empty and comment-only files are valid
+  no-module files that builds ignore.
+- The module name comes from the declaration, never the filesystem; when
+  declared, the file basename minus extension must equal the module name,
+  and mismatch is static invalidity with a stable diagnostic.
+- Catena source files carry exactly the `.cat` extension.
+- File-level module names are ASCII uppercase-initial words, matching the
+  retained JSON frontend's module field.
+- Generated files carry one exact first-line marker comment riding on C016
+  comment forms, with an ASCII tool identifier; the same text elsewhere is
+  inert comment content.
+
+## Paths to explore
+
+- [Erlang/OTP Modules and Code Loading](../30-sources/erlang-otp-modules-and-code-loading.md)
+  supplies the declared-name-plus-basename-match precedent and the
+  generated-source mechanism on the target.
+- [The Rust Reference: Crates and Modules](../30-sources/rust-project-2026-crates-and-modules.md)
+  supplies the filename-derived contrast model.
+- [Haskell 2010 module findings](../30-sources/marlow-2010-haskell-language-report.md)
+  supply the declared-header model with tooling-level filename pairing.
+- The [kernel module forms](../60-specification/formal-semantic-kernel/canonical-kernel-syntax.md)
+  and the retained JSON AST's module field fix the one-module semantic unit
+  this question must align with.
+
+## Findings
+
+- Erlang makes the module declaration mandatory and first, states that the
+  declared name is to equal the file name minus extension for code loading
+  to work, names artifacts after the module, and adds a separate mechanism
+  for generated-source provenance — the closest precedent for every
+  hypothesis, except that its rule is loader guidance rather than a
+  compile-time rejection.
+- Rust shows the filename-derived alternative is workable at scale but
+  leaves a file's identity as build-held positional knowledge, requiring
+  tools to reproduce the module-path algebra.
+- Haskell pairs a declared module header with a tooling filename
+  convention and defaults missing headers to `Main` — evidence that
+  declared names pair naturally with file matching, and that implicit
+  module defaulting is a real design Catena can decline.
+- The synthesis [Catena Files and Modules](../20-notes/catena-files-and-modules.md)
+  develops the full model and falsification criteria; the
+  [topic map](../10-maps/files-and-modules.md) routes the evidence.
+
+## Outcome
+
+Open. Resolution requires candidate normative chapters covering file units,
+generated markers, and diagnostics; a sibling compiler abstract
+file-unit resolver with tagged executable evidence; and the C013–C019
+promotion workflow.

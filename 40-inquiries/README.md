@@ -50,6 +50,10 @@ to `20-notes`.
   — tests a closed semantic-mapped token set, a fixed precedence ladder with
   rejected comparison chains, concrete C015 capabilities and frames, and
   reserved-spelling rejection against Rust, OCaml, and Haskell evidence.
+- [How Should Catena Relate Files to Modules?](how-should-catena-relate-files-to-modules.md)
+  — tests at-most-one module per `.cat` file, declared-name basename
+  verification, ASCII module words, and first-line generated markers
+  against Erlang, Rust, and Haskell evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

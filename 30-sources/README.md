@@ -287,6 +287,13 @@ mentions can remain as citations in the document that uses them.
 - [QuickCheck: A Lightweight Tool for Random Testing of Haskell Programs](claessen-hughes-2000-quickcheck.md)
   — makes properties executable through generated data while exposing sample,
   distribution, and finite-testing limits.
+- [Erlang/OTP Modules and Code Loading](erlang-otp-modules-and-code-loading.md)
+  — records the mandatory first module declaration, the declared-name
+  basename rule, module-named artifacts, and generated-source provenance on
+  the target.
+- [The Rust Reference: Crates and Modules](rust-project-2026-crates-and-modules.md)
+  — documents the filename-derived module model whose build-held identity
+  Catena declines.
 - [Erlang/OTP Expressions and Guard Sequences](erlang-otp-expressions-and-guard-sequences.md)
   — specifies ordered guarded clauses, the restricted side-effect-free guard
   subset, guard-operation failure, selective-receive mailbox scanning, and
@@ -303,7 +310,7 @@ mentions can remain as citations in the document that uses them.
   defines Boolean, pattern, and binding guards and translates them into nested
   matching and conditionals; it also gives list-comprehension typing, scope,
   evaluation order, and kernel translation, plus overloaded numeric literals
-  with defaulting and undefined fixed-precision exceptional conditions.
+  with defaulting and undefined fixed-precision exceptional conditions, and module headers paired with filename conventions that default missing headers to `Main`.
 - [Lower Your Guards: A Compositional Pattern-Match Coverage Checker](graf-et-al-2020-lower-your-guards.md)
   — elaborates rich patterns into a small guard-tree IR for modular coverage,
   refinement, witness, and accessibility analysis.

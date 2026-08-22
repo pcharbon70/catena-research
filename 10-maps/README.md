@@ -99,6 +99,10 @@ should explain why its links belong together rather than merely list files.
   evidence, the proposed closed semantic-mapped token set and precedence
   ladder, and the owners of application, declaration, and name-resolution
   grammar.
+- [Files and Modules](files-and-modules.md) — routes through the one-module
+  semantic units, Erlang/Rust/Haskell file-binding evidence, the proposed
+  at-most-one module rule with basename verification and generated markers,
+  and the owners of declaration grammar and package assembly.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
