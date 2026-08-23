@@ -74,6 +74,10 @@ its exact
 The normative C022 import/export boundary begins at the
 [Imports and Exports map](10-maps/imports-and-exports.md) and its exact
 [0.1.18 specification](60-specification/imports-and-exports/README.md).
+The normative C023 abstraction boundary begins at the
+[Abstraction Boundaries map](10-maps/abstraction-boundaries.md) and its
+exact
+[0.1.19 specification](60-specification/abstraction-boundaries/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -173,9 +177,10 @@ uses `0.1.13` for atomic literal grammar and decoding; normative C018 uses
 `0.1.14` for numeric literal semantics; normative C019 uses `0.1.15` for
 operators and punctuation; normative C020 uses `0.1.16` for the
 file-to-module relationship; normative C021 uses `0.1.17` for namespaces
-and shadowing; normative C022 uses `0.1.18` for imports and exports; and
+and shadowing; normative C022 uses `0.1.18` for imports and exports; normative C023
+uses `0.1.19` for abstraction boundaries; and
 the next
-unused semantic patch is `0.1.19`. C008 defines package-local editions,
+unused semantic patch is `0.1.20`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

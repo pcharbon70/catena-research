@@ -96,6 +96,10 @@ Normative C022 uses `0.1.18` for imports and exports. Its export and
 admission rules, exclusions, diagnostics, and verification are recorded in
 the
 [C022 conformance journal](../50-journal/2026-08-22-c022-imports-and-exports.md).
+Normative C023 uses `0.1.19` for abstraction boundaries. Its authority
+and representation exclusions, sanctioned idiom, and verification are
+recorded in the
+[C023 conformance journal](../50-journal/2026-08-23-c023-abstraction-boundaries.md).
 
 ## Existing research that needs normative consolidation
 
@@ -443,14 +447,31 @@ as small normative rules rather than copied wholesale into a specification.
   compiler commit
   [`02da5c178ad5d797e55bdb3290cd950fbf7f4f31`](https://github.com/pcharbon70/catena/commit/02da5c178ad5d797e55bdb3290cd950fbf7f4f31)
   supplies complete `IM-OBL-001`–`IM-OBL-013` coverage with 295 passing
-  tests through the extended scope-event resolver. Module recursion
+  tests through the extended scope-event resolver, with C023 confirming
+  the transparency vocabulary complete. Module recursion
   remains G024; package identity and re-export assembly remain G025; the
   prelude remains G026; entry modules remain G027; concrete `use`/`export`
   punctuation remains P109.
-- [ ] **P023 — Partial — abstraction boundaries.** C002 completes transparent
-  constructor export versus fully abstract type export and layout-free module
-  interfaces. Stable layout opt-in and any separate construction versus
-  matching authority remain open.
+- [x] **C023 — Complete — abstraction boundaries.** The normative
+  [0.1.19 abstraction specification](../60-specification/abstraction-boundaries/README.md),
+  [synthesis](../20-notes/catena-abstraction-boundaries.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-draw-its-abstraction-boundaries.md),
+  [topic map](../10-maps/abstraction-boundaries.md), and
+  [C023 record](../50-journal/2026-08-23-c023-abstraction-boundaries.md)
+  confirm the transparent/abstract pair as the complete
+  constructor-authority vocabulary on every frontend; declare that no
+  stable-layout opt-in exists in edition 0.1 with both-layout conformance
+  mandatory, `L001` unchanged, and G028 owning any future
+  layout-stability contract together with P093/G094/G095; exclude
+  selective construction/matching authority and views as future work
+  owned by D046/G040; and sanction the abstract-type-plus
+  validating-constructor-plus-observer invariant idiom with typed failure
+  and wildcard-plus-observers coverage for abstract scrutinees. Sibling
+  compiler commit
+  [`bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f`](https://github.com/pcharbon70/catena/commit/bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f)
+  supplies complete `AB-OBL-001`–`AB-OBL-007` exclusion-proof and idiom
+  coverage with 303 passing tests, including key-whitelisted export
+  events that reject layout attributes as invalid.
 - [ ] **G024 — Gap — dependency cycles.** Define whether module recursion exists and
   how initialization, inference, and separate compilation behave across cycles.
 - [ ] **G025 — Gap — package identity and dependency resolution.** Define manifests,

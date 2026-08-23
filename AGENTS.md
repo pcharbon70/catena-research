@@ -130,9 +130,10 @@ normative C015 uses `0.1.11` for whitespace and layout, and normative C016 uses
 `0.1.14` for numeric literal semantics. Normative C019 uses `0.1.15` for
 operators and punctuation. Normative C020 uses `0.1.16` for the
 file-to-module relationship. Normative C021 uses `0.1.17` for namespaces
-and shadowing. Normative C022 uses `0.1.18` for imports and exports. The
+and shadowing. Normative C022 uses `0.1.18` for imports and exports. Normative C023
+uses `0.1.19` for abstraction boundaries. The
 next unused semantic
-patch is `0.1.19` unless an approved versioning policy explicitly
+patch is `0.1.20` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

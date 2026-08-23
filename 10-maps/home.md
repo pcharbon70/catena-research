@@ -73,6 +73,11 @@ This is the selective entry point to the archive. See the
   the normative 0.1.18 private-by-default exports and list-admission
   imports with declared exclusions, and the owners of cycles, packages,
   and the prelude.
+- [Abstraction Boundaries](abstraction-boundaries.md) — routes through
+  the C002/C022 contracts that imply the boundary, the normative 0.1.19
+  no-stable-layout and binary-authority exclusions with the sanctioned
+  smart-constructor idiom, and the G028/D046 owners of what stays
+  outside.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
@@ -101,7 +106,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  eighteen normative areas plus the C012 implementation-limits policy.
+  nineteen normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,

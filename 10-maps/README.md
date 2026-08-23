@@ -45,7 +45,7 @@ should explain why its links belong together rather than merely list files.
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  eighteen normative areas plus the C012 implementation-limits policy.
+  nineteen normative areas plus the C012 implementation-limits policy.
 - [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through the
   normative 0.1.8 kernel syntax, static and dynamic semantics, typed actors,
   metatheory, executable reference, and immutable promotion evidence.
@@ -112,6 +112,11 @@ should explain why its links belong together rather than merely list files.
   evidence, the proposed private-by-default exports and
   qualification-plus-list imports with declared exclusions, and the
   owners of cycles, packages, and the prelude.
+- [Abstraction Boundaries](abstraction-boundaries.md) — routes through
+  the C002 representation contract and C022 transparency vocabulary, the
+  proposed no-stable-layout and no-authority-split exclusions, the
+  smart-constructor invariant idiom, and the G028/D046 owners of what
+  stays outside edition 0.1.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
