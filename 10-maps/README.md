@@ -112,6 +112,11 @@ should explain why its links belong together rather than merely list files.
   evidence, the proposed private-by-default exports and
   qualification-plus-list imports with declared exclusions, and the
   owners of cycles, packages, and the prelude.
+- [Abstraction Boundaries](abstraction-boundaries.md) — routes through
+  the C002 representation contract and C022 transparency vocabulary, the
+  proposed no-stable-layout and no-authority-split exclusions, the
+  smart-constructor invariant idiom, and the G028/D046 owners of what
+  stays outside edition 0.1.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

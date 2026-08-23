@@ -99,6 +99,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   qualification-plus-explicit-list import admission, declared exclusions
   of wildcards, renaming, and re-exports, and the deny-able `IMP001`
   unused-import warning.
+- [Catena Abstraction Boundaries](catena-abstraction-boundaries.md) —
+  proposes C023's declared exclusions of stable layout and split
+  constructor authority, and the sanctioned
+  smart-constructor-over-abstract-type invariant idiom.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

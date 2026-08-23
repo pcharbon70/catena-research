@@ -63,6 +63,10 @@ to `20-notes`.
   the exclusion of wildcards, renaming, and re-exports, and deny-able
   unused-import warnings against Haskell, SML, Erlang, and Rust
   evidence.
+- [How Should Catena Draw Its Abstraction Boundaries?](how-should-catena-draw-its-abstraction-boundaries.md)
+  — tests the declared absence of stable-layout opt-in and split
+  constructor authority, and the smart-constructor invariant idiom,
+  against the shipped C002/C022 contracts and Leroy/SML evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
