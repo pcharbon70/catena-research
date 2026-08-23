@@ -61,6 +61,8 @@ follow-up item now that C011 is reached.
   — the normative C021 source for `NS-OBL-*` obligations.
 - [Imports and Exports Specification](../60-specification/imports-and-exports/README.md)
   — the normative C022 source for `IM-OBL-*` obligations.
+- [Abstraction Boundaries Specification](../60-specification/abstraction-boundaries/README.md)
+  — the C023 source for `AB-OBL-*` obligations, candidate until promotion.
 
 ## Identifier and registry convention
 
@@ -91,6 +93,7 @@ convention.
 | `FU` | files-and-modules | 0.1.16 |
 | `NS` | namespaces-and-shadowing | 0.1.17 |
 | `IM` | imports-and-exports | 0.1.18 |
+| `AB` | abstraction-boundaries | 0.1.19 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -138,6 +141,7 @@ sibling compiler repository.
 | `FU` files-and-modules | 12 | `c020_file_unit_test.exs` (9) | compiler-tagged + gated (`677a8f4`); all obligations traced |
 | `NS` namespaces-and-shadowing | 14 | `c021_namespaces_test.exs` (12) | compiler-tagged + gated (`b482b4c`); all obligations traced |
 | `IM` imports-and-exports | 13 | `c022_import_exports_test.exs` (9) | compiler-tagged + gated (`02da5c1`); all obligations traced |
+| `AB` abstraction-boundaries | 7 | `c023_abstraction_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1231,6 +1235,39 @@ gate:
 C022 coverage is 13 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `IM-OBL-*` identifier
 lacks a focused tag.
+
+## Abstraction boundaries registry (`AB`, 0.1.19)
+
+Evidence labels will refer to focused tests in
+`test/catena/c023_abstraction_test.exs` and its
+`test/catena/c023_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c023 #1** *keeps 0.1.19 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c023 #2** *keeps the transparent/abstract pair the complete authority vocabulary on export events and persisted interfaces*
+- **c023 #3** *admits no stable-layout spelling on any frontend and keeps both-layout conformance mandatory*
+- **c023 #4** *sanctions the smart-constructor idiom with typed-failure validation and rejects public-constructor wrappers*
+- **c023 #5** *enforces wildcard-plus-observers coverage for abstract scrutinees*
+- **c023 #6** *keeps abstract constructors unconstructible and unmatchable through digest-bound interfaces*
+- **c023 #7** *adds no frontend surface and claims no later phase*
+
+Anchors currently point at the candidate 0.1.19 chapters and become
+normative anchors at C023 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| AB-OBL-001 | Apply abstraction-boundary behavior only at exact 0.1.19 and register the stable lifecycle addition | [`smart-constructor-idiom-and-conformance.md#revision-and-persistence-separation`](../60-specification/abstraction-boundaries/smart-constructor-idiom-and-conformance.md#revision-and-persistence-separation) | c023 #1; EDN001 | untraced |
+| AB-OBL-002 | Keep the transparent/abstract pair the complete authority vocabulary on every frontend | [`authority-and-representation-exclusions.md#the-authority-vocabulary-is-complete`](../60-specification/abstraction-boundaries/authority-and-representation-exclusions.md#the-authority-vocabulary-is-complete) | c023 #2; EXP001 | untraced |
+| AB-OBL-003 | Admit no stable-layout form on any frontend; keep both-layout conformance mandatory | [`authority-and-representation-exclusions.md#representation-is-never-observable`](../60-specification/abstraction-boundaries/authority-and-representation-exclusions.md#representation-is-never-observable) | c023 #3; L001 | untraced |
+| AB-OBL-004 | Sanction the abstract-plus-validating-constructor-plus-observer idiom and reject wrappers as invariants | [`smart-constructor-idiom-and-conformance.md#the-sanctioned-invariant-idiom`](../60-specification/abstraction-boundaries/smart-constructor-idiom-and-conformance.md#the-sanctioned-invariant-idiom) | c023 #4 | untraced |
+| AB-OBL-005 | Enforce the wildcard-plus-observers coverage consequence for abstract scrutinees outside the defining module | [`smart-constructor-idiom-and-conformance.md#coverage-consequence`](../60-specification/abstraction-boundaries/smart-constructor-idiom-and-conformance.md#coverage-consequence) | c023 #5 | untraced |
+| AB-OBL-006 | Keep abstract constructors unconstructible and unmatchable through digest-bound interfaces | [`smart-constructor-idiom-and-conformance.md#the-sanctioned-invariant-idiom`](../60-specification/abstraction-boundaries/smart-constructor-idiom-and-conformance.md#the-sanctioned-invariant-idiom) | c023 #6 | untraced |
+| AB-OBL-007 | Preserve source-only and persisted-format separation and claim no later phase | [`smart-constructor-idiom-and-conformance.md#revision-and-persistence-separation`](../60-specification/abstraction-boundaries/smart-constructor-idiom-and-conformance.md#revision-and-persistence-separation) | c023 #1, #7 | untraced |
+
+C023 coverage is 0 `traced` and 7 untraced obligations pending the sibling
+compiler implementation. The planned dedicated gate rejects unknown
+identifiers and fails if any `AB-OBL-*` identifier lacks a focused tag.
 
 ## Open questions
 
