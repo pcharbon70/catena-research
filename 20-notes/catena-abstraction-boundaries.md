@@ -192,10 +192,14 @@ this slice.
 
 ## Connections
 
-- The [open abstraction inquiry](../40-inquiries/how-should-catena-draw-its-abstraction-boundaries.md)
+- The [resolved abstraction inquiry](../40-inquiries/how-should-catena-draw-its-abstraction-boundaries.md)
   records the operational question and evidence trail.
 - The [Abstraction Boundaries map](../10-maps/abstraction-boundaries.md)
   routes through the shipped contracts and remaining owners.
+- The [Abstraction Boundaries Specification](../60-specification/abstraction-boundaries/README.md)
+  defines the normative 0.1.19 contract.
+- The [C023 evidence record](../50-journal/2026-08-23-c023-abstraction-boundaries.md)
+  records the sibling implementation and verification.
 - [Algebraic Data Types](algebraic-data-types.md) supplies the
   smart-constructor and views framing this slice canonizes.
 - [Catena Imports and Exports](catena-imports-and-exports.md) fixes the

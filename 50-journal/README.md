@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C023 Abstraction Boundaries](2026-08-23-c023-abstraction-boundaries.md)
+  — records the normative 0.1.19 exclusion and idiom contract, the
+  exclusion-proof corpus, key-whitelisting decision, JSON-AST usage
+  facts, diagnostics-free boundary, traceability, and immutable compiler
+  identity.
 - [C022 Imports and Exports](2026-08-22-c022-imports-and-exports.md) —
   records the normative 0.1.18 import/export contract, the extended
   resolver, exclusion strictness and unused-admission semantics,

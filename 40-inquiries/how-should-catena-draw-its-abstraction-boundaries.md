@@ -2,7 +2,7 @@
 title: "How Should Catena Draw Its Abstraction Boundaries?"
 kind: inquiry
 created: "2026-08-23"
-status: open
+status: resolved
 tags:
   - catena
   - abstraction
@@ -91,7 +91,21 @@ enum, both-layout conformance, and `L001`'s classification unchanged.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters recording the two
-exclusions and the sanctioned idiom; a sibling compiler exclusion-proof
-and idiom corpus with tagged executable evidence; and the C013–C022
-promotion workflow.
+Resolved as C023 and source-only language revision `0.1.19`. Catena
+confirms the transparent/abstract pair as the complete
+constructor-authority vocabulary with no stable-layout form on any
+frontend (both-layout conformance mandatory, `L001` unchanged, G028
+owning any future layout-stability contract); excludes selective
+construction/matching authority and views as declared future work owned
+by D046/G040; and sanctions the abstract-type-plus
+validating-constructor-plus-observer invariant idiom with typed failure
+and wildcard-plus-observers coverage. The rules are defined in the
+[normative abstraction specification](../60-specification/abstraction-boundaries/README.md).
+
+P023 is complete through the
+[abstraction synthesis](../20-notes/catena-abstraction-boundaries.md),
+[topic map](../10-maps/abstraction-boundaries.md), and
+[C023 evidence record](../50-journal/2026-08-23-c023-abstraction-boundaries.md).
+G028 retains any ABI or layout-stability contract; D046/G040 retain views
+and selective exposure; P093 retains BEAM representation mapping under
+non-observability; G095 retains foreign-term validation.

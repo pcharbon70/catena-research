@@ -94,16 +94,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   export and admission rules, exclusions, diagnostics, and executable
   evidence are recorded in the
   [C022 conformance journal](../50-journal/2026-08-22-c022-imports-and-exports.md).
-  The candidate C023 abstraction boundary is version `0.1.19`; its two
-  exclusions, sanctioned idiom, and pending evidence are recorded in the
-  linked area index and inquiry.
+  The normative C023 abstraction boundary is version `0.1.19`; its two
+  exclusions, sanctioned idiom, and executable evidence are recorded in
+  the
+  [C023 conformance journal](../50-journal/2026-08-23-c023-abstraction-boundaries.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Abstraction Boundaries](abstraction-boundaries/README.md) — the
-  candidate version 0.1.19 authority and representation exclusions with
+  normative version 0.1.19 authority and representation exclusions with
   the sanctioned smart-constructor invariant idiom.
 - [Imports and Exports](imports-and-exports/README.md) — the normative
   version 0.1.18 private-by-default export, import admission, exclusion,

@@ -2,7 +2,7 @@
 title: "Authority and Representation Exclusions"
 kind: specification
 created: "2026-08-23"
-status: candidate
+status: normative
 spec_version: "0.1.19"
 tags:
   - abstraction
@@ -90,6 +90,6 @@ BEAM representation mapping (P093).
 The [abstraction synthesis](../../20-notes/catena-abstraction-boundaries.md)
 derives both exclusions from the shipped corpus and Leroy's
 representation-independence analysis. The
-[open inquiry](../../40-inquiries/how-should-catena-draw-its-abstraction-boundaries.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-draw-its-abstraction-boundaries.md)
 and [topic map](../../10-maps/abstraction-boundaries.md) preserve the
 decision route.

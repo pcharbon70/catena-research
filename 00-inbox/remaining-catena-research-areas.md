@@ -202,8 +202,10 @@ obligations are `G021`–`G028`.
   imports, and visibility defaults;
 - module cycles, recursive modules, initialization, inference across strongly
   connected components, and separate-compilation cache boundaries;
-- opaque types, construction versus matching authority, and any stable-layout
-  opt-in;
+- ~~opaque types, construction versus matching authority, and any
+  stable-layout opt-in~~ — closed by C023: the binary vocabulary is
+  complete, no stable layout exists, and future ABI contracts belong to
+  the compatibility program;
 - package identity, manifests, dependency resolution, lockfiles, integrity,
   conflicting versions, and offline operation;
 - prelude contents and opt-out or shadowing policy;

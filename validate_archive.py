@@ -115,6 +115,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "files-and-modules": "0.1.16",
     "namespaces-and-shadowing": "0.1.17",
     "imports-and-exports": "0.1.18",
+    "abstraction-boundaries": "0.1.19",
 }
 
 
