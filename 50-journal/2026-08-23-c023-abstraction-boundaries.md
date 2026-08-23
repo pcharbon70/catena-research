@@ -43,9 +43,13 @@ change: the CONFORMANCE header rows had stalled at `0.1.17` when C022's
 header edit script failed mid-run; they now read through `0.1.19`.
 
 The sibling compiler implementation is commit
-[`bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f`](https://github.com/pcharbon70/catena/commit/bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f)
-on branch `agent/c023-abstraction-boundaries`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f`](https://github.com/pcharbon70/catena/commit/bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f),
+merged into the `rewrite` integration line by compiler PR
+[#99](https://github.com/pcharbon70/catena/pull/99) at merge commit
+[`4bc2629`](https://github.com/pcharbon70/catena/commit/4bc26290d0476438478e3d67ab4f4b0e0dd72730).
+The merge retained the tested tree exactly (tree `7abbfbf`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
