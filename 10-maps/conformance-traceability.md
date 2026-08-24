@@ -63,6 +63,8 @@ follow-up item now that C011 is reached.
   — the normative C022 source for `IM-OBL-*` obligations.
 - [Abstraction Boundaries Specification](../60-specification/abstraction-boundaries/README.md)
   — the normative C023 source for `AB-OBL-*` obligations.
+- [Module Dependency Cycles Specification](../60-specification/module-dependency-cycles/README.md)
+  — the C024 source for `CY-OBL-*` obligations, candidate until promotion.
 
 ## Identifier and registry convention
 
@@ -94,6 +96,7 @@ convention.
 | `NS` | namespaces-and-shadowing | 0.1.17 |
 | `IM` | imports-and-exports | 0.1.18 |
 | `AB` | abstraction-boundaries | 0.1.19 |
+| `CY` | module-dependency-cycles | 0.1.20 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -142,6 +145,7 @@ sibling compiler repository.
 | `NS` namespaces-and-shadowing | 14 | `c021_namespaces_test.exs` (12) | compiler-tagged + gated (`b482b4c`); all obligations traced |
 | `IM` imports-and-exports | 13 | `c022_import_exports_test.exs` (9) | compiler-tagged + gated (`02da5c1`); all obligations traced |
 | `AB` abstraction-boundaries | 7 | `c023_abstraction_test.exs` (6) | compiler-tagged + gated (`bbce0ee`); all obligations traced |
+| `CY` module-dependency-cycles | 10 | `c024_module_cycles_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1265,6 +1269,46 @@ gate:
 C023 coverage is 7 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `AB-OBL-*` identifier
 lacks a focused tag.
+
+## Module dependency cycles registry (`CY`, 0.1.20)
+
+Evidence labels will refer to focused tests in
+`test/catena/c024_module_cycles_test.exs` and its
+`test/catena/c024_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c024 #1** *keeps 0.1.20 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c024 #2** *admits cycles: SCC grouping of pairs, self-loops, and rings; no shape is an error*
+- **c024 #3** *enforces the two regimes with backward-compatible optional fields*
+- **c024 #4** *keeps acyclic behavior byte-identical to C022 including degenerate components*
+- **c024 #5** *rejects regime mixing and signature gaps as `CYC001` at the closing event*
+- **c024 #6** *computes deterministic joint digests invariant to member order*
+- **c024 #7** *records dependency inversion as the sanctioned non-cyclic restructuring*
+- **c024 #8** *confirms definition-only initialization and per-member inference*
+- **c024 #9** *makes the component the atomic cache unit*
+- **c024 #10** *compiles genuine two- and three-module components end-to-end deterministically*
+
+Anchors currently point at the candidate 0.1.20 chapters and become
+normative anchors at C024 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CY-OBL-001 | Apply cycle behavior only at exact 0.1.20 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/module-dependency-cycles/diagnostics-and-conformance.md#revision-and-persistence-separation) | c024 #1; EDN001 | untraced |
+| CY-OBL-002 | Admit cycles: multi-module components group and resolve; no cycle shape is an error | [`scc-admission-and-resolution.md#cycle-admission`](../60-specification/module-dependency-cycles/scc-admission-and-resolution.md#cycle-admission) | c024 #2 | untraced |
+| CY-OBL-003 | Enforce the two regimes: signature resolution inside components, digest admission across, with backward-compatible optional fields | [`scc-admission-and-resolution.md#the-two-resolution-regimes`](../60-specification/module-dependency-cycles/scc-admission-and-resolution.md#the-two-resolution-regimes) | c024 #3 | untraced |
+| CY-OBL-004 | Keep acyclic behavior byte-identical to C022, including degenerate single-member components | [`scc-admission-and-resolution.md#the-degenerate-acyclic-case`](../60-specification/module-dependency-cycles/scc-admission-and-resolution.md#the-degenerate-acyclic-case) | c024 #4 | untraced |
+| CY-OBL-005 | Reject regime mixing and signature gaps as `CYC001` at the closing event, transactionally | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/module-dependency-cycles/diagnostics-and-conformance.md#stable-diagnostics) | c024 #5; CYC001 | untraced |
+| CY-OBL-006 | Compute deterministic joint component digests over sorted members and member interfaces | [`scc-admission-and-resolution.md#joint-component-digest`](../60-specification/module-dependency-cycles/scc-admission-and-resolution.md#joint-component-digest) | c024 #6 | untraced |
+| CY-OBL-007 | Record the dependency-inversion alternative as the sanctioned non-cyclic restructuring | [`scc-admission-and-resolution.md#the-inversion-alternative`](../60-specification/module-dependency-cycles/scc-admission-and-resolution.md#the-inversion-alternative) | c024 #7 | untraced |
+| CY-OBL-008 | Confirm definition-only initialization with per-component loading and per-member inference | [`checking-initialization-and-caching.md#initialization`](../60-specification/module-dependency-cycles/checking-initialization-and-caching.md#initialization) | c024 #8 | untraced |
+| CY-OBL-009 | Make the component the atomic cache unit: rebuilding any member re-digests the component | [`checking-initialization-and-caching.md#separate-compilation-and-caching`](../60-specification/module-dependency-cycles/checking-initialization-and-caching.md#separate-compilation-and-caching) | c024 #9 | untraced |
+| CY-OBL-010 | Compile genuine multi-module components end-to-end deterministically | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/module-dependency-cycles/diagnostics-and-conformance.md#abstract-public-boundaries) | c024 #10 | untraced |
+
+C024 coverage is 0 `traced` and 10 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `CY-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
