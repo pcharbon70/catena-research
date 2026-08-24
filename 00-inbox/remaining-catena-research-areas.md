@@ -217,8 +217,11 @@ obligations are `G021`–`G028`.
 - ~~prelude contents and opt-out or shadowing policy~~ — closed by
   C026: opt-in manifest selection at ordinary precedence with
   zero-implicit-names guarantee; contents remain G101;
-- executable and library roots, entry points, startup, shutdown, and permitted
-  top-level effects; and
+- ~~executable and library roots, entry points, startup, shutdown, and
+  permitted top-level effects~~ — closed by C027: named zero-argument
+  effect-closed entries with derived libraries and invocation-only,
+  return-is-shutdown launch; supervision and tooling remain
+  G084/G089/G121; and
 - source, type, behavior, artifact, BEAM ABI, and hot-upgrade compatibility.
 
 **What it would bring.** This program would make Catena a language for

@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C027 Entry Points](2026-08-24-c027-entry-points.md) — records the
+  normative 0.1.23 entry-points contract, the typed-core validation and
+  result-rendering decisions, the C026 checklist-flip repair,
+  diagnostics, traceability, and immutable compiler identity.
 - [C026 Prelude Policy](2026-08-24-c026-prelude-policy.md) — records
   the normative 0.1.22 prelude contract, the base-case injection
   decision, the pure-wiring property, diagnostics, traceability, and

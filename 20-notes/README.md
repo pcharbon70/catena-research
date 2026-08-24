@@ -116,8 +116,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   opt-in manifest `prelude` selection, ordinary import-origin
   precedence, absent-means-out opt-out, and the zero-implicit-names
   edition guarantee.
+- [Catena Entry Points](catena-entry-points.md) — proposes C027's
+  manifest `entries` field, effect-closed entries, invocation-only
+  startup, return-is-shutdown results, and the derived library
+  distinction.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C026
+  consolidated record of every developer fork decision across C018–C027
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

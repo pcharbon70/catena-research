@@ -110,11 +110,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   selection, precedence, opt-out, guarantee, and executable evidence are
   recorded in the
   [C026 conformance journal](../50-journal/2026-08-24-c026-prelude-policy.md).
+  The normative C027 entry-points boundary is version `0.1.23`; its
+  entry declarations, derived libraries, launch semantics, shutdown
+  reports, and executable evidence are recorded in the
+  [C027 conformance journal](../50-journal/2026-08-24-c027-entry-points.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Entry Points](entry-points/README.md) — the normative version 0.1.23
+  manifest `entries` field, effect-closed entry validity, derived
+  libraries, invocation-only launch, and return-is-shutdown contract.
 - [Prelude Policy](prelude-policy/README.md) — the normative version
   0.1.22 opt-in manifest selection, ordinary-origin precedence,
   zero-implicit-names edition guarantee, and lockfile treatment.
