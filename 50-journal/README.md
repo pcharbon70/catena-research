@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C026 Prelude Policy](2026-08-24-c026-prelude-policy.md) — records
+  the normative 0.1.22 prelude contract, the base-case injection
+  decision, the pure-wiring property, diagnostics, traceability, and
+  immutable compiler identity.
 - [C025 Package Identity and Dependencies](2026-08-24-c025-package-identity.md)
   — records the normative 0.1.21 dependency contract, the
   `Catena.Package.Deps` engine, the precedence-comparator repair, the

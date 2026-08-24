@@ -177,9 +177,9 @@ Fixed in: [specification](../60-specification/package-identity-and-dependencies/
 
 ## C026 — prelude policy (`0.1.22`, 2026-08-24)
 
-Fixed in: [synthesis](catena-prelude-policy.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/prelude-policy/README.md)
+· [synthesis](catena-prelude-policy.md)
+· [journal](../50-journal/2026-08-24-c026-prelude-policy.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

@@ -2,7 +2,7 @@
 title: "Prelude Diagnostics and Conformance"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.22"
 tags:
   - conformance
@@ -125,7 +125,7 @@ next unused semantic patch is `0.1.23`.
 
 The design route is preserved in the
 [prelude synthesis](../../20-notes/catena-prelude-policy.md), the
-[open inquiry](../../40-inquiries/how-should-catena-define-its-prelude-policy.md),
+[resolved inquiry](../../40-inquiries/how-should-catena-define-its-prelude-policy.md),
 and the [topic map](../../10-maps/prelude-policy.md). The C026
 evidence record will preserve the sibling-compiler commands and archive
 validation.

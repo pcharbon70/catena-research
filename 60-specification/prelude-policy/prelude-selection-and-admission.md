@@ -2,7 +2,7 @@
 title: "Prelude Selection and Admission"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.22"
 tags:
   - prelude
@@ -99,6 +99,6 @@ The [prelude synthesis](../../20-notes/catena-prelude-policy.md)
 compares the Haskell implicit-unless-explicit model and the Rust
 shadowing tier with the corpus's shipped commitments and records why
 opt-in selection on ordinary C025 machinery was selected. The
-[open inquiry](../../40-inquiries/how-should-catena-define-its-prelude-policy.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-define-its-prelude-policy.md)
 and [topic map](../../10-maps/prelude-policy.md) preserve the decision
 route.

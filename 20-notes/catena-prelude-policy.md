@@ -208,10 +208,14 @@ representation of prelude requirers proves ambiguous for tooling.
 
 ## Connections
 
-- The [open prelude inquiry](../40-inquiries/how-should-catena-define-its-prelude-policy.md)
+- The [resolved prelude inquiry](../40-inquiries/how-should-catena-define-its-prelude-policy.md)
   records the operational question and evidence trail.
 - The [Prelude Policy map](../10-maps/prelude-policy.md) routes through
   the Haskell model, the shipped contracts, and remaining owners.
+- The [Prelude Policy Specification](../60-specification/prelude-policy/README.md)
+  defines the normative 0.1.22 contract.
+- The [C026 evidence record](../50-journal/2026-08-24-c026-prelude-policy.md)
+  records the sibling implementation and verification.
 - [Catena Namespaces and Shadowing](catena-namespaces-and-shadowing.md)
   fixes the precedence the prelude rides.
 - [Catena Package Identity and Dependencies](catena-package-identity-and-dependencies.md)

@@ -2,7 +2,7 @@
 title: "How Should Catena Define Its Prelude Policy?"
 kind: inquiry
 created: "2026-08-24"
-status: open
+status: resolved
 tags:
   - catena
   - language-design
@@ -101,8 +101,21 @@ defaults, or G027's entry points.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters covering
-selection and admission, precedence/opt-out/edition guarantee, and
-diagnostics; a sibling compiler wiring the manifest field, the
-environment builder's prelude origin, and dependency resolution with
-tagged executable evidence; and the C013–C025 promotion workflow.
+Resolved as C026 and source-only language revision `0.1.22`. Catena
+fixes the optional manifest `prelude` field (one package, one
+requirement, absent/`null` = no origin); admission as an ordinary
+import-class origin under unchanged C021 precedence with `NSP004`
+collisions naming both origins; absent/`null` as the complete opt-out;
+the zero-implicit-names edition guarantee with a lifecycle-record path
+for any future default; `PRE001` for malformed selections; and prelude
+selections resolving and locking as ordinary C025 dependencies,
+including zero-export packages, with contents remaining G101's. The
+rules are defined in the
+[normative prelude specification](../60-specification/prelude-policy/README.md).
+
+G026 is complete through the
+[prelude synthesis](../20-notes/catena-prelude-policy.md),
+[topic map](../10-maps/prelude-policy.md), and
+[C026 evidence record](../50-journal/2026-08-24-c026-prelude-policy.md).
+G101 retains contents; P102 retains protocols; G121 retains
+scaffolding; G028/G136 retain compatibility meanings.

@@ -86,6 +86,9 @@ The normative C025 package boundary begins at the
 [Package Identity and Dependencies map](10-maps/package-identity-and-dependencies.md)
 and its exact
 [0.1.21 specification](60-specification/package-identity-and-dependencies/README.md).
+The normative C026 prelude boundary begins at the
+[Prelude Policy map](10-maps/prelude-policy.md) and its exact
+[0.1.22 specification](60-specification/prelude-policy/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -188,9 +191,10 @@ file-to-module relationship; normative C021 uses `0.1.17` for namespaces
 and shadowing; normative C022 uses `0.1.18` for imports and exports; normative C023
 uses `0.1.19` for abstraction boundaries; normative C024 uses `0.1.20`
 for module dependency cycles; normative C025 uses `0.1.21` for package
-identity and dependency resolution; and
+identity and dependency resolution; normative C026 uses `0.1.22` for the
+prelude; and
 the next
-unused semantic patch is `0.1.22`. C008 defines package-local editions,
+unused semantic patch is `0.1.23`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

@@ -26,9 +26,12 @@ owners of contents, protocols, and tooling.
 - [Catena Prelude Policy](../20-notes/catena-prelude-policy.md) develops
   the manifest `prelude` field, ordinary import-class precedence,
   absent/`null` opt-out, the edition guarantee, and lockfile treatment.
-- [Open prelude inquiry](../40-inquiries/how-should-catena-define-its-prelude-policy.md)
-  records the operational question, hypotheses, and evidence required
-  for resolution.
+- [Resolved prelude inquiry](../40-inquiries/how-should-catena-define-its-prelude-policy.md)
+  records the operational question, hypotheses, and resolution.
+- [Prelude Policy Specification](../60-specification/prelude-policy/README.md)
+  is the normative version 0.1.22 contract.
+- [C026 evidence record](../50-journal/2026-08-24-c026-prelude-policy.md)
+  records the executable prelude wiring and verification.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   fixes the machinery a prelude selection reuses.
 
@@ -54,14 +57,12 @@ owners of contents, protocols, and tooling.
 ### Limits and traceability
 
 - [Conformance Traceability](conformance-traceability.md) will register
-  the prelude obligations once candidate chapters exist.
+  `PL-OBL-001` through `PL-OBL-010` against normative anchors and sibling compiler tests.
 - [Approachable Catena Language Design](approachable-catena-language-design.md)
   holds the vocabulary context a future prelude serves.
 
 ## Open questions
 
-The proposed model awaits normative chapters, sibling compiler wiring
-across manifest, builder, and dependency resolution, and tagged
-executable evidence. G101 retains contents and the name freeze; P102
+C026 is complete at revision `0.1.22`. G101 retains contents and the name freeze; P102
 retains collection protocols; G121 retains scaffolding defaults; G028
 and G136 retain compatibility meanings of prelude version bumps.
