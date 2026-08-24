@@ -2,7 +2,7 @@
 title: "Cycle Diagnostics and Conformance"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.20"
 tags:
   - conformance
@@ -137,7 +137,7 @@ next unused semantic patch is `0.1.21`.
 
 The design route is preserved in the
 [cycles synthesis](../../20-notes/catena-dependency-cycles.md), the
-[open inquiry](../../40-inquiries/how-should-catena-handle-module-dependency-cycles.md),
+[resolved inquiry](../../40-inquiries/how-should-catena-handle-module-dependency-cycles.md),
 and the [topic map](../../10-maps/module-dependency-cycles.md). The C024
 evidence record will preserve the sibling-compiler commands and archive
 validation.

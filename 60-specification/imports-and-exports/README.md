@@ -37,7 +37,8 @@ dimension.
 Put export declaration semantics and visibility defaults, import
 admission and export-set validation, the declared exclusions, unused
 import analysis, import/export diagnostics, and C022 conformance
-obligations here. Module recursion and initialization order remain G024.
+obligations here. Module recursion and initialization order are admitted by the normative 0.1.20
+[Module Dependency Cycles](../module-dependency-cycles/README.md) area.
 Package identity, re-export assembly, lockfiles, and duplicate-module
 rejection remain G025. Prelude contents and opt-out remain G026. Entry
 modules remain G027. Interface digest verification remains C006/C008 —

@@ -2,7 +2,7 @@
 title: "Checking, Initialization, and Caching"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.20"
 tags:
   - modules

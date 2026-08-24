@@ -91,7 +91,7 @@ to `20-notes`.
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   — resolved as C011; the scheme gives every MUST/MUST NOT obligation a permanent
   identifier, a normative heading anchor, and tagged compiler evidence. It now
-  covers nineteen normative areas plus the C012 implementation-limits policy.
+  covers twenty normative areas plus the C012 implementation-limits policy.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.

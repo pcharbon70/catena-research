@@ -2,7 +2,7 @@
 title: "How Should Catena Handle Module Dependency Cycles?"
 kind: inquiry
 created: "2026-08-24"
-status: open
+status: resolved
 tags:
   - catena
   - language-design
@@ -99,8 +99,24 @@ C008's digest-addressed caches without amending them outside cycles.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters admitting SCCs
-with their resolution regimes and consequences; a sibling compiler with
-abstract-event SCC grouping and a real cross-module SCC compilation path
-with joint digest, tagged executable evidence; and the C013–C023
-promotion workflow.
+Resolved as C024 and source-only language revision `0.1.20`. Catena
+admits module dependency cycles: maximal strongly-connected components
+are the units of checking, resolution, and caching; intra-component
+references resolve against companions' declared signatures with
+digest-free imports, and regime mixing or signature gaps are `CYC001` at
+the closing transaction; cross-component imports stay digest-bound as
+C022 fixed them; components receive one deterministic member-order- and
+layout-invariant joint digest; initialization is definition-only with
+per-component loading and no top-level evaluation; inference checks each
+member independently against signatures and digests; and
+dependency inversion is the sanctioned non-cyclic alternative. The rules
+are defined in the
+[normative cycles specification](../60-specification/module-dependency-cycles/README.md).
+
+G024 is complete through the
+[cycles synthesis](../20-notes/catena-dependency-cycles.md),
+[topic map](../10-maps/module-dependency-cycles.md), and
+[C024 evidence record](../50-journal/2026-08-24-c024-dependency-cycles.md).
+G025 retains package assembly and lockfile representation; P109 retains
+the concrete recursive surface; G028 retains joint-digest compatibility
+treatment; pre-declared interface files remain the declined alternative.

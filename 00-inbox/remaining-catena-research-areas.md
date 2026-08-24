@@ -200,8 +200,11 @@ obligations are `G021`–`G028`.
   effects, specifications, capabilities, and modules;
 - shadowing, qualification, renaming, re-export, wildcard imports, unused
   imports, and visibility defaults;
-- module cycles, recursive modules, initialization, inference across strongly
-  connected components, and separate-compilation cache boundaries;
+- ~~module cycles, recursive modules, initialization, inference across
+  strongly connected components, and separate-compilation cache
+  boundaries~~ — closed by C024: SCC admission with signature regimes,
+  joint digests, definition-only initialization, and component cache
+  units;
 - ~~opaque types, construction versus matching authority, and any
   stable-layout opt-in~~ — closed by C023: the binary vocabulary is
   complete, no stable layout exists, and future ABI contracts belong to

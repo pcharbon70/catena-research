@@ -53,7 +53,7 @@ on:
 
 The answer must compose with the kernel's fixed rules, C014 identifier
 spelling, C019's `.`-separated qualified-name tokens, and C020's flat
-module names without deciding G022 import/export syntax, G024 cycles,
+module names without deciding G022 import/export syntax or module cycles,
 G026 prelude contents, G066 type-directed resolution, or P109 surface
 grammar.
 
@@ -126,7 +126,7 @@ G021 is complete through the
 [namespaces synthesis](../20-notes/catena-namespaces-and-shadowing.md),
 [topic map](../10-maps/namespaces-and-shadowing.md), and
 [C021 evidence record](../50-journal/2026-08-22-c021-namespaces-and-shadowing.md).
-C022 has since fixed import/export admission while the concrete use/export punctuation remains P109; G024 retains
+C022 has since fixed import/export admission and C024 admitted module cycles, while the concrete use/export punctuation remains P109; G024's successor leaves
 module recursion; G025 retains package-level module uniqueness; G026
 retains prelude contents; G066 retains type-directed resolution; P109
 retains the declaration grammar that emits scope events.

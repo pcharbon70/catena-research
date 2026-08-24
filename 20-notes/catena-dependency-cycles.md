@@ -215,10 +215,14 @@ stability inside an SCC — none of which the corpus currently evidences.
 
 ## Connections
 
-- The [open cycles inquiry](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
+- The [resolved cycles inquiry](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
   records the operational question and evidence trail.
 - The [Module Dependency Cycles map](../10-maps/module-dependency-cycles.md)
   routes through evidence, regimes, and remaining owners.
+- The [Module Dependency Cycles Specification](../60-specification/module-dependency-cycles/README.md)
+  defines the normative 0.1.20 contract.
+- The [C024 evidence record](../50-journal/2026-08-24-c024-dependency-cycles.md)
+  records the sibling implementation and verification.
 - [Catena Imports and Exports](catena-imports-and-exports.md) fixes the
   cross-SCC regime cycles leave unchanged.
 - [Catena Files and Modules](catena-files-and-modules.md) fixes the flat

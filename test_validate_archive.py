@@ -180,6 +180,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "namespaces-and-shadowing": "0.1.17",
                 "imports-and-exports": "0.1.18",
                 "abstraction-boundaries": "0.1.19",
+                "module-dependency-cycles": "0.1.20",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

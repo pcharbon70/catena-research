@@ -74,7 +74,7 @@ the owners of everything the namespace layer deliberately does not decide.
 ## Open questions
 
 C021 is complete at revision `0.1.17`. G022 retains
-import/export syntax and visibility defaults; G024 retains module
+import/export syntax and visibility defaults; C024 has admitted module
 recursion; G025 retains package-level module uniqueness; G026 retains
 prelude contents; G066 retains type-directed resolution questions; P109
 retains the declaration grammar that emits scope events.

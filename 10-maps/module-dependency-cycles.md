@@ -16,10 +16,10 @@ aliases:
 ## Scope
 
 This map connects the digest-bound import model whose circularity
-motivates the design, the Haskell recursion evidence with its named
-price, the SML/Erlang DAG contrasts, the C024 decision artifacts
-admitting strongly-connected components with their two resolution regimes
-and consequence confirmations, and the owners of what stays outside this
+motivated the design, the Haskell recursion evidence with its named
+price, the SML/Erlang DAG contrasts, the C024 decision artifacts that
+admitted strongly-connected components with their two resolution regimes
+and consequence confirmations, and the owners of what stays outside the
 slice.
 
 ## Start here
@@ -28,9 +28,13 @@ slice.
   develops SCC admission, signature-based intra-component resolution,
   joint digests, the three consequence clauses, and the inversion
   alternative.
-- [Open cycles inquiry](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved cycles inquiry](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
+  records the operational question, hypotheses, and resolution.
+- [Module Dependency Cycles Specification](../60-specification/module-dependency-cycles/README.md)
+  is the normative version 0.1.20 contract.
+- [C024 evidence record](../50-journal/2026-08-24-c024-dependency-cycles.md)
+  records the executable SCC grouping, component compilation, and
+  verification.
 - [Imports and Exports map](imports-and-exports.md) fixes the cross-SCC
   regime the design leaves unchanged.
 
@@ -59,17 +63,16 @@ slice.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will register
-  the cycle obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `CY-OBL-001` through `CY-OBL-010` against normative anchors and
+  sibling compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to multi-module SCC
   checking under G129.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler with
-abstract SCC grouping and a real cross-module compilation path with
-joint digest, and tagged executable evidence. G025 retains package
+C024 is complete at revision `0.1.20`. G025 retains package
 assembly and lockfile representation of joint digests; P109 retains the
 concrete recursive `use` surface; G028 retains joint-digest compatibility
 treatment; the pre-declared-interface alternative stays available to a

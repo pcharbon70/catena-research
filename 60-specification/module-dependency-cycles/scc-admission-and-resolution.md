@@ -2,7 +2,7 @@
 title: "SCC Admission and Resolution"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.20"
 tags:
   - modules
@@ -106,6 +106,6 @@ components remains G027.
 The [cycles synthesis](../../20-notes/catena-dependency-cycles.md)
 derives the design from the digest circularity, the Haskell recursion
 evidence with its named price, and the SML/Erlang contrasts. The
-[open inquiry](../../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
 and [topic map](../../10-maps/module-dependency-cycles.md) preserve the
 decision route.
