@@ -67,6 +67,8 @@ follow-up item now that C011 is reached.
   — the normative C024 source for `CY-OBL-*` obligations.
 - [Package Identity and Dependencies Specification](../60-specification/package-identity-and-dependencies/README.md)
   — the normative C025 source for `PK-OBL-*` obligations.
+- [Prelude Policy Specification](../60-specification/prelude-policy/README.md)
+  — the C026 source for `PL-OBL-*` obligations, candidate until promotion.
 
 ## Identifier and registry convention
 
@@ -100,6 +102,7 @@ convention.
 | `AB` | abstraction-boundaries | 0.1.19 |
 | `CY` | module-dependency-cycles | 0.1.20 |
 | `PK` | package-identity-and-dependencies | 0.1.21 |
+| `PL` | prelude-policy | 0.1.22 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -150,6 +153,7 @@ sibling compiler repository.
 | `AB` abstraction-boundaries | 7 | `c023_abstraction_test.exs` (6) | compiler-tagged + gated (`bbce0ee`); all obligations traced |
 | `CY` module-dependency-cycles | 10 | `c024_module_cycles_test.exs` (7) | compiler-tagged + gated (`ca2be79`); all obligations traced |
 | `PK` package-identity-and-dependencies | 12 | `c025_package_deps_test.exs` (9) | compiler-tagged + gated (`dcd7da0`); all obligations traced |
+| `PL` prelude-policy | 10 | `c026_prelude_policy_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1349,6 +1353,46 @@ gate:
 C025 coverage is 12 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `PK-OBL-*` identifier
 lacks a focused tag.
+
+## Prelude policy registry (`PL`, 0.1.22)
+
+Evidence labels will refer to focused tests in
+`test/catena/c026_prelude_policy_test.exs` and its
+`test/catena/c026_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c026 #1** *keeps 0.1.22 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c026 #2** *enforces the one-selection rule with absent/null equivalence and zero-export preludes*
+- **c026 #3** *rejects malformed selections as `PRE001` with the offending shape*
+- **c026 #4** *admits the resolved prelude as an ordinary import origin, reusing `PKG004`/`PKG003`*
+- **c026 #5** *resolves, locks, and replays the prelude as an ordinary dependency with marked requirers and bundle digest*
+- **c026 #6** *executes unchanged C021 precedence with `NSP004` collisions naming both origins*
+- **c026 #7** *makes absent/null the complete opt-out*
+- **c026 #8** *guarantees zero implicit names for edition 0.1*
+- **c026 #9** *emits stable diagnostics with unchanged reused identities*
+- **c026 #10** *keeps the wiring deterministic, source-only, and outside G101/G121*
+
+Anchors currently point at the candidate 0.1.22 chapters and become
+normative anchors at C026 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| PL-OBL-001 | Apply prelude behavior only at exact 0.1.22 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/prelude-policy/diagnostics-and-conformance.md#revision-and-persistence-separation) | c026 #1; EDN001 | untraced |
+| PL-OBL-002 | Enforce the one-selection rule with absent/`null` equivalence and zero-export packages admitted | [`prelude-selection-and-admission.md#the-prelude-field`](../60-specification/prelude-policy/prelude-selection-and-admission.md#the-prelude-field) | c026 #2 | untraced |
+| PL-OBL-003 | Reject malformed selections as `PRE001` with the offending shape | [`prelude-selection-and-admission.md#the-prelude-field`](../60-specification/prelude-policy/prelude-selection-and-admission.md#the-prelude-field) | c026 #3; PRE001 | untraced |
+| PL-OBL-004 | Admit the resolved prelude as an ordinary import-class origin under C022 validation, reusing `PKG004`/`PKG003` | [`prelude-selection-and-admission.md#admission-as-an-origin`](../60-specification/prelude-policy/prelude-selection-and-admission.md#admission-as-an-origin) | c026 #4 | untraced |
+| PL-OBL-005 | Resolve, lock, and replay the prelude selection as an ordinary dependency with marked requirers and bundle digest | [`prelude-selection-and-admission.md#admission-as-an-origin`](../60-specification/prelude-policy/prelude-selection-and-admission.md#admission-as-an-origin) | c026 #5 | untraced |
+| PL-OBL-006 | Execute unchanged C021 precedence: locals win; prelude-import collisions reject as `NSP004` naming both origins; no tier exists | [`shadowing-optout-and-edition-guarantee.md#precedence`](../60-specification/prelude-policy/shadowing-optout-and-edition-guarantee.md#precedence) | c026 #6; NSP004 | untraced |
+| PL-OBL-007 | Make absent/`null` the complete opt-out: no origin, no qualification, no suggestion | [`shadowing-optout-and-edition-guarantee.md#opt-out`](../60-specification/prelude-policy/shadowing-optout-and-edition-guarantee.md#opt-out) | c026 #7 | untraced |
+| PL-OBL-008 | Guarantee zero implicit names for edition 0.1 and require a lifecycle record for any future default | [`shadowing-optout-and-edition-guarantee.md#the-edition-guarantee`](../60-specification/prelude-policy/shadowing-optout-and-edition-guarantee.md#the-edition-guarantee) | c026 #8 | untraced |
+| PL-OBL-009 | Emit stable diagnostics: `PRE001` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/prelude-policy/diagnostics-and-conformance.md#stable-diagnostics) | c026 #9 | untraced |
+| PL-OBL-010 | Keep the wiring deterministic, source-only, and outside G101/G121 phases | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/prelude-policy/diagnostics-and-conformance.md#abstract-public-boundaries) | c026 #1, #10 | untraced |
+
+C026 coverage is 0 `traced` and 10 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `PL-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
