@@ -95,7 +95,8 @@ C008 classifies a revision change as `breaking`, `compatible-addition`, or
 MUST identify which of source acceptance, static meaning, dynamic behavior,
 diagnostics, interfaces, or artifacts is affected.
 
-This classification does not finish G028's detailed public API/ABI rules. It
+This classification does not finish the detailed public API/ABI rules; those are
+subsequently fixed by C028. It
 also does not make implementation performance, undocumented JSON ordering, or
 temporary source punctuation part of the stable contract.
 

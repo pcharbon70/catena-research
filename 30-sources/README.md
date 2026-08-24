@@ -50,6 +50,10 @@ mentions can remain as citations in the document that uses them.
   target runtime's application callback contract, derived
   library/executable distinction, and supervision-first startup that
   C027 declines for 0.1.
+- [Erlang/OTP Support, Compatibility, Deprecations, and Removal](erlang-otp-compatibility-and-upgrading.md)
+  — documents the target runtime's tiered compatibility promises,
+  explicit refusals (no bug-compatibility), and deprecation-then-removal
+  process that ground C028's layered stances.
 - [Structural Operational Semantics](plotkin-2004-structural-operational-semantics.md)
   — provides the transition-system method used for Catena's configurations,
   evaluation order, and explicit terminal states.

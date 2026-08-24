@@ -78,7 +78,7 @@ alternative is declined here.
 ## Deliberately separate work
 
 Lockfiles and package-level rebuild policy remain G025/G121. Joint-digest
-ABI evolution remains G028. Build-tool cache formats remain G121.
+ABI evolution is subsequently fixed by C028's declared absence. Build-tool cache formats remain G121.
 
 ## Rationale and evidence (non-normative)
 

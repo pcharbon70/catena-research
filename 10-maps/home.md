@@ -76,7 +76,7 @@ This is the selective entry point to the archive. See the
 - [Abstraction Boundaries](abstraction-boundaries.md) — routes through
   the C002/C022 contracts that imply the boundary, the normative 0.1.19
   no-stable-layout and binary-authority exclusions with the sanctioned
-  smart-constructor idiom, and the G028/D046 owners of what stays
+  smart-constructor idiom, and the C028/D046 owners of what stays
   outside.
 - [Module Dependency Cycles](module-dependency-cycles.md) — routes
   through the digest-import circularity and Haskell recursion evidence,
@@ -97,6 +97,10 @@ This is the selective entry point to the archive. See the
   precedent, the normative 0.1.23 named entry exports with
   effect-closure, invocation-only startup, return-is-shutdown results,
   and derived libraries, and the owners of supervision and tooling.
+- [API and ABI Compatibility](api-and-abi-compatibility.md) — routes
+  through the C002/C008 foundations and C023–C027 deferrals, the OTP
+  tiered-compat precedent, and the normative 0.1.24 strict interface
+  diff matrix with minor-as-breaking under 0.x and the claim validator.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

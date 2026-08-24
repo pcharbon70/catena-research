@@ -105,7 +105,7 @@ default.
 
 Fetch, cache, and lock tooling remain G121; registry behavior, retirement,
 and signing remain G130's transport layer; compatibility meanings of
-version increments remain G028; build reproducibility consumption of the
+version increments are subsequently fixed by C028; build reproducibility consumption of the
 lockfile remains G128.
 
 ## Rationale and evidence (non-normative)

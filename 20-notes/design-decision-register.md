@@ -21,7 +21,6 @@ option the developer chose, which option carried the recommendation, and
 where the choice became normative. The plan conversations themselves are
 the only other place the options-as-posed survive; this register removes
 that single point of loss.
-
 It records **plan-fork decisions only**. Two neighbors hold related
 material and are not duplicated here: decisions that *emerged during
 implementation* (for example C022's qualified-references-don't-count
@@ -205,6 +204,23 @@ Fixed in: [specification](../60-specification/entry-points/README.md)
 | Shutdown results | return-is-shutdown (rec) / exit-code mapping / defer shutdown clause | return-is-shutdown |
 | Library distinction | derived from zero entries (rec) / explicit `kind` field | derived |
 | Deliverable | manifest entries + launch op (rec) / normative-only / entries + CLI | entries + launch op |
+
+
+## C028 — API and ABI compatibility (`0.1.24`, 2026-08-24)
+
+Fixed in: [specification](../60-specification/api-and-abi-compatibility/README.md)
+· [synthesis](catena-api-and-abi-compatibility.md)
+· [journal](../50-journal/2026-08-24-c028-api-compat.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Layer coverage | source+type rules, principled absence (rec) / full four-layer rules / type-only | source+type, absences |
+| Major version | SemVer major + Cargo 0.x (rec) / new Catena scheme / defer to 1.0 | SemVer major + Cargo 0.x |
+| Breaking matrix | strict diff matrix (rec) / removals-only / over-strict | strict diff matrix |
+| BEAM ABI stance | declared absence (rec) / minimal ABI contract | declared absence |
+| Re-export facades | formal exclusion (rec) / minimal facade mechanism / defer again | formal exclusion |
+| Deliverable | compat diff + claim validator (rec) / normative-only / classifier + tooling | diff + validator |
+| Source evidence | Erlang compatibility chapter (rec) / existing notes only / ecosystem-tooling note too | Erlang chapter |
 
 
 ## Cross-cutting decisions

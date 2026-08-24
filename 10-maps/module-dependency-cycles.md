@@ -74,6 +74,6 @@ slice.
 
 C024 is complete at revision `0.1.20`. C025 has since fixed package
 assembly and lockfile representation of joint digests; P109 retains the
-concrete recursive `use` surface; G028 retains joint-digest compatibility
+concrete recursive `use` surface; C028 subsequently fixed joint-digest compatibility
 treatment; the pre-declared-interface alternative stays available to a
 future revision.

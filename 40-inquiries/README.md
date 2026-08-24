@@ -85,6 +85,11 @@ to `20-notes`.
   — tests named entry exports, effect-closure, invocation-only startup,
   return-is-shutdown, and derived libraries against the C010 completion
   rule, the C026 guarantee, and the OTP application precedent.
+- [How Should Catena Define API and ABI Compatibility?](how-should-catena-define-api-and-abi-compatibility.md)
+  — tests layered compat stances, the strict diff matrix,
+  minor-as-breaking under 0.x, and the re-export exclusion against the
+  shipped interface, lifecycle, and package contracts and the OTP
+  strategy precedent.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

@@ -41,7 +41,7 @@ obligations here. Module recursion and initialization order are admitted by the 
 [Module Dependency Cycles](../module-dependency-cycles/README.md) area.
 Package identity, re-export assembly, lockfiles, and duplicate-module
 rejection remain G025. Prelude contents and opt-out remain G026. Entry
-modules remain G027. Interface digest verification remains C006/C008 —
+modules are subsequently fixed by C027. Interface digest verification remains C006/C008 —
 this layer consumes digests as opaque identity. The concrete
 `use`/`export` surface punctuation remains P109.
 

@@ -120,8 +120,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   manifest `entries` field, effect-closed entries, invocation-only
   startup, return-is-shutdown results, and the derived library
   distinction.
+- [Catena API and ABI Compatibility](catena-api-and-abi-compatibility.md)
+  — proposes C028's layered compat stances, strict interface diff
+  matrix, minor-as-breaking under 0.x, re-export exclusion, and the
+  executable claim validator.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C027
+  consolidated record of every developer fork decision across C018–C028
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

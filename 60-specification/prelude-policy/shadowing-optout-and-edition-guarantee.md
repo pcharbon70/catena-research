@@ -78,7 +78,7 @@ contents (G101) adds to this guarantee without weakening it.
 
 Prelude contents and the edition-record decision remain G101 and future
 edition work; scaffolding defaults remain G121; the compatibility
-meaning of a prelude version bump remains G028/G136.
+meaning of a prelude version bump is subsequently fixed by C028/G136.
 
 ## Rationale and evidence (non-normative)
 

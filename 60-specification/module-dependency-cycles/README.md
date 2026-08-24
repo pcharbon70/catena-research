@@ -36,7 +36,7 @@ Put cycle admission, the SCC unit, intra-SCC and cross-SCC resolution,
 joint digests, the consequence clauses, the inversion alternative, and
 C024 conformance obligations here. Digest-bound import admission remains
 C022's. Package assembly, lockfiles, and joint-digest compatibility
-treatment remain G025/G028's. The concrete recursive `use` surface
+treatment is subsequently fixed by C025/C028. The concrete recursive `use` surface
 remains P109's. Intra-module recursive groups remain C002's. The
 pre-declared-interface-files alternative is declined and unowned.
 

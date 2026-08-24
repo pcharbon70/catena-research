@@ -120,6 +120,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "package-identity-and-dependencies": "0.1.21",
     "prelude-policy": "0.1.22",
     "entry-points": "0.1.23",
+    "api-and-abi-compatibility": "0.1.24",
 }
 
 

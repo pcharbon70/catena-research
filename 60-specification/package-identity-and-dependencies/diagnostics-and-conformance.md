@@ -122,7 +122,7 @@ defaults.
 
 C022 deferred re-exports to "G025 package assembly." This area completes
 without them, and the deferral is re-owned: facade-style forwarding now
-awaits the G028 compatibility era, where a package's public surface
+awaits the C028 compatibility era, where a package's public surface
 evolution and digest chains are designed. No spelling is reserved.
 
 ## Revision and persistence separation

@@ -37,8 +37,8 @@ Name resolution and precedence remain C021's. Import admission and its
 diagnostics remain C022's. Package identity, requirement resolution,
 and lockfile semantics remain C025's. Prelude contents and the name
 freeze remain G101's. Collection protocols remain P102's. Tooling
-scaffolding remains G121's. Entry points remain G027's. Compatibility
-meanings of prelude version bumps remain G028/G136's.
+scaffolding remains G121's. Entry points are subsequently fixed by C027. Compatibility
+meanings of prelude version bumps are subsequently fixed by C028/G136's.
 
 ## Variability register
 

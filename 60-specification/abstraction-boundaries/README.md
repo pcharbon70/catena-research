@@ -34,7 +34,8 @@ Put the boundary-level exclusions, the sanctioned invariant idiom, and
 C023 conformance obligations here. The layout-free interface contract,
 both-layout conformance, and `L001` remain C002's. The transparent and
 abstract export modes and their validation remain C022's. Any
-layout-stability or ABI contract remains G028's. Views, pattern synonyms,
+layout-stability or ABI contract is subsequently fixed by C028's
+declared absence. Views, pattern synonyms,
 and selective construction/matching exposure remain D046/G040's. BEAM
 representation mapping remains P093's. Foreign-term validation remains
 G095's.
@@ -56,7 +57,7 @@ C002 coverage diagnostics, and invalid-event rejection.
 
 - [Authority and Representation Exclusions](authority-and-representation-exclusions.md)
   — the complete binary authority vocabulary, the stable-layout exclusion
-  with its G028 owner, and the selective-exposure and views exclusions
+  with its C028 resolution, and the selective-exposure and views exclusions
   with their D046/G040 owners.
 - [Smart-Constructor Idiom and Conformance](smart-constructor-idiom-and-conformance.md)
   — the sanctioned invariant pattern over abstract types, its coverage

@@ -115,7 +115,7 @@ should explain why its links belong together rather than merely list files.
 - [Abstraction Boundaries](abstraction-boundaries.md) — routes through
   the C002 representation contract and C022 transparency vocabulary, the
   proposed no-stable-layout and no-authority-split exclusions, the
-  smart-constructor invariant idiom, and the G028/D046 owners of what
+  smart-constructor invariant idiom, and the C028/D046 owners of what
   stays outside edition 0.1.
 - [Module Dependency Cycles](module-dependency-cycles.md) — routes through
   the digest-import circularity, Haskell's recursion evidence and its
@@ -136,6 +136,10 @@ should explain why its links belong together rather than merely list files.
   precedent with its derived libraries and declined supervision-first
   startup, and the normative 0.1.23 manifest `entries` with
   invocation-only launch and return-is-shutdown results.
+- [API and ABI Compatibility](api-and-abi-compatibility.md) — routes
+  through the C002/C008 foundations and C023–C027 deferrals, the OTP
+  tiered-compat precedent, and the normative 0.1.24 strict interface
+  diff matrix with minor-as-breaking under 0.x and the claim validator.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
