@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C024 Module Dependency Cycles](2026-08-24-c024-dependency-cycles.md)
+  — records the normative 0.1.20 cycle contract, the abstract SCC
+  grouping and `compile_scc/2` boundary, the inhabitation-seeding and
+  layout-invariance decisions, the pre-existing recursive-matching
+  boundary, diagnostics, traceability, and immutable compiler identity.
 - [C023 Abstraction Boundaries](2026-08-23-c023-abstraction-boundaries.md)
   — records the normative 0.1.19 exclusion and idiom contract, the
   exclusion-proof corpus, key-whitelisting decision, JSON-AST usage

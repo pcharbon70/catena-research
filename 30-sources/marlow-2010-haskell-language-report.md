@@ -239,6 +239,31 @@ hiding, renaming) belongs to Catena's G022 rather than to resolution itself.
 - The Prelude is imported automatically into every module unless imported
   explicitly, and may be shadowed only through explicit imports.
 
+### Mutually recursive modules and separate compilation
+
+- Chapter 5 states that modules may reference other modules via explicit
+  import declarations and that "modules may be mutually recursive"; the
+  introduction to the module chapter adds that, because of this, "modules
+  allow a program to be partitioned freely without regard to
+  dependencies," and shows a three-module `Main`/`A`/`B` example whose
+  concatenation into one uniquely-named module is the stated semantics.
+- Section 5.7 concedes the cost: "Depending on the Haskell
+  implementation used, separate compilation of mutually recursive modules
+  may require that imported modules contain additional information so
+  that they may be referenced before they are compiled. Explicit type
+  signatures for all exported values may be necessary to deal with mutual
+  recursion. The precise details of separate compilation are not defined
+  by this report."
+
+For Catena's cycle work, these two passages are the primary
+adopted-alternative evidence: recursion across modules is a real,
+specified language feature (not an implementation accident), and the
+report itself identifies the exact price — exported values need explicit
+signatures and the compilation unit must grow to the recursive group. The
+contrast cases are Standard ML, whose structures are not recursively
+bindable, and Erlang, whose compile-time dependencies are acyclic with
+module-level code replacement at runtime.
+
 For Catena's import work, Haskell supplies the exact machinery being
 adopted and the exact machinery being declined: adopted are explicit
 import lists (whose empty form matches Catena's qualified-only admission
@@ -299,3 +324,6 @@ precision.
 - [Catena Imports and Exports](../20-notes/catena-imports-and-exports.md)
 - [How Should Catena Handle Imports and Exports?](../40-inquiries/how-should-catena-handle-imports-and-exports.md)
 - [Imports and Exports map](../10-maps/imports-and-exports.md)
+- [Catena Dependency Cycles](../20-notes/catena-dependency-cycles.md)
+- [How Should Catena Handle Module Dependency Cycles?](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
+- [Module Dependency Cycles map](../10-maps/module-dependency-cycles.md)

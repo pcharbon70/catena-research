@@ -100,6 +100,10 @@ Normative C023 uses `0.1.19` for abstraction boundaries. Its authority
 and representation exclusions, sanctioned idiom, and verification are
 recorded in the
 [C023 conformance journal](../50-journal/2026-08-23-c023-abstraction-boundaries.md).
+Normative C024 uses `0.1.20` for module dependency cycles. Its SCC
+admission, resolution regimes, joint digests, and verification are
+recorded in the
+[C024 conformance journal](../50-journal/2026-08-24-c024-dependency-cycles.md).
 
 ## Existing research that needs normative consolidation
 
@@ -448,8 +452,9 @@ as small normative rules rather than copied wholesale into a specification.
   [`02da5c178ad5d797e55bdb3290cd950fbf7f4f31`](https://github.com/pcharbon70/catena/commit/02da5c178ad5d797e55bdb3290cd950fbf7f4f31)
   supplies complete `IM-OBL-001`–`IM-OBL-013` coverage with 295 passing
   tests through the extended scope-event resolver, with C023 confirming
-  the transparency vocabulary complete. Module recursion
-  remains G024; package identity and re-export assembly remain G025; the
+  the transparency vocabulary complete and C024 admitting cyclic event
+  graphs over the same resolver. Package identity and re-export assembly
+  remain G025; the
   prelude remains G026; entry modules remain G027; concrete `use`/`export`
   punctuation remains P109.
 - [x] **C023 — Complete — abstraction boundaries.** The normative
@@ -471,9 +476,30 @@ as small normative rules rather than copied wholesale into a specification.
   [`bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f`](https://github.com/pcharbon70/catena/commit/bbce0ee25fe6f8b64204a4ec757dc6d281d63f9f)
   supplies complete `AB-OBL-001`–`AB-OBL-007` exclusion-proof and idiom
   coverage with 303 passing tests, including key-whitelisted export
-  events that reject layout attributes as invalid.
-- [ ] **G024 — Gap — dependency cycles.** Define whether module recursion exists and
-  how initialization, inference, and separate compilation behave across cycles.
+  events that reject layout attributes as invalid. Module recursion is
+  subsequently admitted by C024.
+- [x] **C024 — Complete — dependency cycles.** The normative
+  [0.1.20 cycles specification](../60-specification/module-dependency-cycles/README.md),
+  [synthesis](../20-notes/catena-dependency-cycles.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md),
+  [topic map](../10-maps/module-dependency-cycles.md), and
+  [C024 record](../50-journal/2026-08-24-c024-dependency-cycles.md) admit
+  module dependency cycles: maximal strongly-connected components are the
+  units of checking, resolution, and caching; intra-component references
+  resolve against companions' declared signatures with digest-free
+  imports while regime mixing and signature gaps are `CYC001` at the
+  closing transaction; cross-component imports stay digest-bound as C022
+  fixed them; components receive one deterministic member-order- and
+  layout-invariant joint digest; initialization is definition-only with
+  per-component loading and no top-level evaluation; inference checks
+  each member independently; and dependency inversion is the sanctioned
+  non-cyclic alternative. Sibling compiler commit
+  [`ca2be792e3f5fe081c67ec7ca9e845d40a5087c0`](https://github.com/pcharbon70/catena/commit/ca2be792e3f5fe081c67ec7ca9e845d40a5087c0)
+  supplies complete `CY-OBL-001`–`CY-OBL-010` coverage with 312 passing
+  tests through the abstract SCC grouping and `Catena.compile_scc/2`.
+  Package assembly and lockfile representation remain G025; the concrete
+  recursive surface remains P109; joint-digest compatibility remains
+  G028.
 - [ ] **G025 — Gap — package identity and dependency resolution.** Define manifests,
   semantic versioning expectations, lockfiles, source identity, integrity, and
   conflicting transitive versions.

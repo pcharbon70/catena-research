@@ -78,6 +78,10 @@ This is the selective entry point to the archive. See the
   no-stable-layout and binary-authority exclusions with the sanctioned
   smart-constructor idiom, and the G028/D046 owners of what stays
   outside.
+- [Module Dependency Cycles](module-dependency-cycles.md) — routes
+  through the digest-import circularity and Haskell recursion evidence,
+  the normative 0.1.20 SCC admission with signature regimes and joint
+  digests, and the owners of packages, surfaces, and compatibility.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
@@ -106,7 +110,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  nineteen normative areas plus the C012 implementation-limits policy.
+  twenty normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,

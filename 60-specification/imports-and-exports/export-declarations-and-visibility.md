@@ -89,7 +89,7 @@ in another module validates against exactly this exported set under
 
 ## Deliberately separate work
 
-Module recursion and initialization order remain G024. Package-level
+Module recursion and initialization order are admitted by C024. Package-level
 re-export assembly and cross-module duplicate rejection remain G025.
 Prelude contents remain G026. Entry-module selection remains G027. The
 concrete `export` surface punctuation remains P109. Interface format and

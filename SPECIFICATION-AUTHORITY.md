@@ -82,6 +82,7 @@ language line is `0.1`; its registered semantic boundaries are:
 | C021 namespaces and shadowing | `0.1.17` | normative |
 | C022 imports and exports | `0.1.18` | normative |
 | C023 abstraction boundaries | `0.1.19` | normative |
+| C024 module dependency cycles | `0.1.20` | normative |
 
 Governance milestones C007, C009, and C012 apply across the normative corpus
 and do not occupy language revisions. Normative C010 occupies `0.1.8`, and
@@ -89,8 +90,8 @@ normative C013 occupies `0.1.9`; normative C014 occupies `0.1.10`; normative
 C015 occupies `0.1.11`; normative C016 occupies `0.1.12`; normative C017
 occupies `0.1.13`; normative C018 occupies `0.1.14`; normative C019
 occupies `0.1.15`; normative C020 occupies `0.1.16`; normative C021
-occupies `0.1.17`; normative C022 occupies `0.1.18`; normative C023 occupies `0.1.19`; a
-later semantic slice begins at `0.1.20`. Each later
+occupies `0.1.17`; normative C022 occupies `0.1.18`; normative C023 occupies `0.1.19`; normative C024 occupies `0.1.20`; a
+later semantic slice begins at `0.1.21`. Each later
 prototype semantic slice uses
 the next unused `0.1.n` patch until an approved policy replaces this
 convention.

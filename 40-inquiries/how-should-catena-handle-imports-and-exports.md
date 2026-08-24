@@ -48,7 +48,7 @@ on:
 
 The answer must compose with C021's precedence and `NSP004` collision
 rules, C002's transparent/abstract type export, C008's exact-revision
-interfaces, and C020's flat module names without deciding G024 module
+interfaces, and C020's flat module names without deciding module
 cycles, G025 package identity and re-export assembly, G026 prelude
 contents, G027 entry modules, or P109 surface punctuation.
 
@@ -123,7 +123,7 @@ G022 is complete through the
 [imports synthesis](../20-notes/catena-imports-and-exports.md),
 [topic map](../10-maps/imports-and-exports.md), and
 [C022 evidence record](../50-journal/2026-08-22-c022-imports-and-exports.md).
-G024 retains module recursion; G025 retains package identity and
+C024 has since admitted module recursion; G025 retains package identity and
 re-export assembly; G026 retains prelude contents; G027 retains entry
 modules; P109 retains the concrete `use`/`export` punctuation; P117
 retains warning prose quality.

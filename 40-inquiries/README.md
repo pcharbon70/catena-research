@@ -67,6 +67,10 @@ to `20-notes`.
   — tests the declared absence of stable-layout opt-in and split
   constructor authority, and the smart-constructor invariant idiom,
   against the shipped C002/C022 contracts and Leroy/SML evidence.
+- [How Should Catena Handle Module Dependency Cycles?](how-should-catena-handle-module-dependency-cycles.md)
+  — tests SCC admission with declared-signature resolution, joint
+  digests, and definition-only initialization against Haskell's recursive
+  modules and the digest-import circularity.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
@@ -87,7 +91,7 @@ to `20-notes`.
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   — resolved as C011; the scheme gives every MUST/MUST NOT obligation a permanent
   identifier, a normative heading anchor, and tagged compiler evidence. It now
-  covers nineteen normative areas plus the C012 implementation-limits policy.
+  covers twenty normative areas plus the C012 implementation-limits policy.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.
