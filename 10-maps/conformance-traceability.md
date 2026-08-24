@@ -65,6 +65,8 @@ follow-up item now that C011 is reached.
   — the normative C023 source for `AB-OBL-*` obligations.
 - [Module Dependency Cycles Specification](../60-specification/module-dependency-cycles/README.md)
   — the normative C024 source for `CY-OBL-*` obligations.
+- [Package Identity and Dependencies Specification](../60-specification/package-identity-and-dependencies/README.md)
+  — the C025 source for `PK-OBL-*` obligations, candidate until promotion.
 
 ## Identifier and registry convention
 
@@ -97,6 +99,7 @@ convention.
 | `IM` | imports-and-exports | 0.1.18 |
 | `AB` | abstraction-boundaries | 0.1.19 |
 | `CY` | module-dependency-cycles | 0.1.20 |
+| `PK` | package-identity-and-dependencies | 0.1.21 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -146,6 +149,7 @@ sibling compiler repository.
 | `IM` imports-and-exports | 13 | `c022_import_exports_test.exs` (9) | compiler-tagged + gated (`02da5c1`); all obligations traced |
 | `AB` abstraction-boundaries | 7 | `c023_abstraction_test.exs` (6) | compiler-tagged + gated (`bbce0ee`); all obligations traced |
 | `CY` module-dependency-cycles | 10 | `c024_module_cycles_test.exs` (7) | compiler-tagged + gated (`ca2be79`); all obligations traced |
+| `PK` package-identity-and-dependencies | 12 | `c025_package_deps_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1305,6 +1309,50 @@ gate:
 C024 coverage is 10 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `CY-OBL-*` identifier
 lacks a focused tag.
+
+## Package identity and dependencies registry (`PK`, 0.1.21)
+
+Evidence labels will refer to focused tests in
+`test/catena/c025_package_deps_test.exs` and its
+`test/catena/c025_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c025 #1** *keeps 0.1.21 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c025 #2** *validates the `dependencies` field and rejects malformed names and requirements as `PKG001`*
+- **c025 #3** *enforces the SemVer grammar and precedence including pre-release ordering and build exclusion*
+- **c025 #4** *enforces the three-form requirement grammar rejecting other operators and operand build metadata*
+- **c025 #5** *enforces exact/caret/tilde satisfaction with the Cargo 0.x rule and pre-release operand restriction*
+- **c025 #6** *computes registry-neutral bundle digests stable under reordering*
+- **c025 #7** *rejects cyclic package graphs as `PKG002` with the cycle path*
+- **c025 #8** *resolves single-version highest-satisfying per name, order-independently*
+- **c025 #9** *rejects unsatisfiable sets as `PKG003` with every requirer and unknown names as `PKG004`*
+- **c025 #10** *generates byte-deterministic `catena.lock` records and replays them as exact pins*
+- **c025 #11** *rejects stale and tampered lockfiles as `PKG005`*
+- **c025 #12** *keeps the engine deterministic, source-only, and outside G121/G130 phases*
+
+Anchors currently point at the candidate 0.1.21 chapters and become
+normative anchors at C025 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| PK-OBL-001 | Apply package behavior only at exact 0.1.21 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/package-identity-and-dependencies/diagnostics-and-conformance.md#revision-and-persistence-separation) | c025 #1; EDN001 | untraced |
+| PK-OBL-002 | Validate the `dependencies` field: names, single requirement strings, absence means free | [`manifest-dependencies-and-versions.md#the-dependencies-field`](../60-specification/package-identity-and-dependencies/manifest-dependencies-and-versions.md#the-dependencies-field) | c025 #2; PKG001 | untraced |
+| PK-OBL-003 | Enforce the SemVer grammar and precedence including pre-release ordering and build exclusion | [`manifest-dependencies-and-versions.md#version-grammar`](../60-specification/package-identity-and-dependencies/manifest-dependencies-and-versions.md#version-grammar) | c025 #3 | untraced |
+| PK-OBL-004 | Enforce the three-form requirement grammar, rejecting other operators, compounds, and operand build metadata | [`manifest-dependencies-and-versions.md#requirement-grammar`](../60-specification/package-identity-and-dependencies/manifest-dependencies-and-versions.md#requirement-grammar) | c025 #4; PKG001 | untraced |
+| PK-OBL-005 | Enforce exact/caret/tilde satisfaction with the Cargo 0.x rule and the pre-release operand restriction | [`manifest-dependencies-and-versions.md#satisfaction`](../60-specification/package-identity-and-dependencies/manifest-dependencies-and-versions.md#satisfaction) | c025 #5 | untraced |
+| PK-OBL-006 | Compute registry-neutral bundle digests as SHA-256 over canonical JCS of semantic fields plus member and component digests | [`resolution-and-lockfile.md#bundle-digest-identity`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#bundle-digest-identity) | c025 #6 | untraced |
+| PK-OBL-007 | Reject cyclic package graphs as `PKG002` with the cycle path | [`resolution-and-lockfile.md#the-dependency-graph-is-a-dag`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#the-dependency-graph-is-a-dag) | c025 #7; PKG002 | untraced |
+| PK-OBL-008 | Resolve single-version highest-satisfying per name, order-independently | [`resolution-and-lockfile.md#single-version-resolution`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#single-version-resolution) | c025 #8 | untraced |
+| PK-OBL-009 | Reject unsatisfiable sets as `PKG003` with every requirer and absent names as `PKG004` | [`resolution-and-lockfile.md#single-version-resolution`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#single-version-resolution) | c025 #9; PKG003, PKG004 | untraced |
+| PK-OBL-010 | Generate canonical byte-deterministic `catena.lock` records | [`resolution-and-lockfile.md#the-lockfile`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#the-lockfile) | c025 #10 | untraced |
+| PK-OBL-011 | Replay a matching lockfile as exact pins and reject stale or tampered locks as `PKG005` | [`resolution-and-lockfile.md#the-lockfile`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#the-lockfile) | c025 #10, #11; PKG005 | untraced |
+| PK-OBL-012 | Keep the engine deterministic, source-only, and outside G121/G130 phases | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/package-identity-and-dependencies/diagnostics-and-conformance.md#revision-and-persistence-separation) | c025 #1, #12 | untraced |
+
+C025 coverage is 0 `traced` and 12 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `PK-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
