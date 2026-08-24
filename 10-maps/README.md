@@ -121,6 +121,11 @@ should explain why its links belong together rather than merely list files.
   the digest-import circularity, Haskell's recursion evidence and its
   price, the proposed SCC admission with signature-based intra-component
   resolution and joint digests, and the owners of packages and surfaces.
+- [Package Identity and Dependencies](package-identity-and-dependencies.md)
+  — routes through the C008 manifest and C024 digests, SemVer and Hex
+  evidence, the proposed dependencies field, single-version resolution,
+  `catena.lock`, and registry-neutral identity with the Hex transport
+  profile.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

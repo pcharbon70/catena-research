@@ -71,6 +71,11 @@ to `20-notes`.
   — tests SCC admission with declared-signature resolution, joint
   digests, and definition-only initialization against Haskell's recursive
   modules and the digest-import circularity.
+- [How Should Catena Define Package Identity and Dependency Resolution?](how-should-catena-define-package-identity-and-dependency-resolution.md)
+  — tests the manifest dependencies field, SemVer with exact/caret/tilde
+  operators, single-version resolution, `catena.lock` replay, and
+  registry-neutral bundle-digest identity against SemVer and Hex
+  evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
