@@ -38,7 +38,7 @@ file-level diagnostics, and C020 conformance obligations here. The concrete
 module-header syntax and declaration grammar remain P109. Module-name
 resolution, namespaces, and imports remain G021/G022. Package assembly,
 cross-file duplicate modules, and directory layout remain G025. Entry
-modules remain G027. Build, cache, and reproducibility policy remain
+modules are subsequently fixed by C027. Build, cache, and reproducibility policy remain
 G121/G128. Module content semantics remain with their existing slices.
 
 ## Variability register

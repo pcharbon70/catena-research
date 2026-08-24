@@ -117,7 +117,8 @@ this area unchanged (`EN-OBL-010`).
 Supervision, restart, and process lifetime remain G084/G089.
 Cancellation and deadlines remain G088. The CLI, `run` tooling, and
 host-process boundary remain G121. Distribution and upgrades remain
-G091/G092. Compatibility meanings of entry-set changes remain G028.
+G091/G092. Compatibility meanings of entry-set changes are subsequently fixed
+by C028.
 Exit-code and signal profiles remain G121 over the report defined here.
 
 ## Rationale and evidence (non-normative)

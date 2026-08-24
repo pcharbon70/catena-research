@@ -92,6 +92,10 @@ The normative C026 prelude boundary begins at the
 The normative C027 entry-points boundary begins at the
 [Entry Points map](10-maps/entry-points.md) and its exact
 [0.1.23 specification](60-specification/entry-points/README.md).
+The normative C028 compatibility boundary begins at the
+[API and ABI Compatibility map](10-maps/api-and-abi-compatibility.md)
+and its exact
+[0.1.24 specification](60-specification/api-and-abi-compatibility/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -196,9 +200,9 @@ uses `0.1.19` for abstraction boundaries; normative C024 uses `0.1.20`
 for module dependency cycles; normative C025 uses `0.1.21` for package
 identity and dependency resolution; normative C026 uses `0.1.22` for the
 prelude; normative C027 uses `0.1.23` for entry points and application
-structure; and
+structure; normative C028 uses `0.1.24` for API and ABI compatibility; and
 the next
-unused semantic patch is `0.1.24`. C008 defines package-local editions,
+unused semantic patch is `0.1.25`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

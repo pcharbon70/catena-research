@@ -129,8 +129,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-three normative areas, the C012 governance policy, and the
-candidate `CP` compatibility area are now
+extracted; all twenty-four normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -162,7 +161,7 @@ sibling compiler repository.
 | `PK` package-identity-and-dependencies | 12 | `c025_package_deps_test.exs` (9) | compiler-tagged + gated (`dcd7da0`); all obligations traced |
 | `PL` prelude-policy | 10 | `c026_prelude_policy_test.exs` (7) | compiler-tagged + gated (`484d797`); all obligations traced |
 | `EN` entry-points | 10 | `c027_entry_points_test.exs` (9) | compiler-tagged + gated (`cd0e5c5`); all obligations traced |
-| `CP` api-and-abi-compatibility | 10 | `c028_api_compat_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `CP` api-and-abi-compatibility | 10 | `c028_api_compat_test.exs` (11) | compiler-tagged + gated (`0d96f96`); all obligations traced |
 
 ## Trails
 
@@ -1440,10 +1439,11 @@ lacks a focused tag.
 
 ## API and ABI compatibility registry (`CP`, 0.1.24)
 
-Evidence labels will refer to focused tests in
-`test/catena/c028_api_compat_test.exs` and its
-`test/catena/c028_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c028_api_compat_test.exs`](https://github.com/pcharbon70/catena/blob/0d96f96792aa161ed2711edb304d75e4cee54af2/test/catena/c028_api_compat_test.exs)
+and its
+[`c028_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/0d96f96792aa161ed2711edb304d75e4cee54af2/test/catena/c028_traceability_coverage_test.exs)
+gate:
 
 - **c028 #1** *keeps 0.1.24 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c028 #2** *fixes one stance per layer with the two declared absences*
@@ -1456,27 +1456,25 @@ compiler repository. The planned focused set is:
 - **c028 #9** *emits stable diagnostics with unchanged reused identities*
 - **c028 #10** *keeps the classifier deterministic, interface-only, and outside behavior/ABI/migration claims*
 
-Anchors currently point at the candidate 0.1.24 chapters and become
-normative anchors at C028 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.24 chapters; `CP-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| CP-OBL-001 | Apply compatibility behavior only at exact 0.1.24 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/api-and-abi-compatibility/diagnostics-and-conformance.md#revision-and-persistence-separation) | c028 #1; EDN001 | untraced |
-| CP-OBL-002 | Fix one stance per layer: source rules, interface matrix, behavior absence, ABI absence | [`compatibility-layers-and-versions.md#the-four-layers`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#the-four-layers) | c028 #2 | untraced |
-| CP-OBL-003 | Keep retained revisions immutable with cumulative-forward acceptance | [`compatibility-layers-and-versions.md#the-four-layers`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#the-four-layers) | c028 #1, #3 | untraced |
-| CP-OBL-004 | Classify every matrix row correctly from decoded interfaces with itemized reasons | [`breaking-change-matrix.md#the-matrix`](../60-specification/api-and-abi-compatibility/breaking-change-matrix.md#the-matrix) | c028 #4 | untraced |
-| CP-OBL-005 | Enforce version-meaning claims: major-as-breaking at 1.0+, minor-as-breaking under 0.x, with `CMP001` under-claims | [`compatibility-layers-and-versions.md#version-increment-meanings`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#version-increment-meanings) | c028 #5; CMP001 | untraced |
-| CP-OBL-006 | Report unclassifiable drift as `CMP003` and malformed input as `CMP002`, never guessing | [`breaking-change-matrix.md#the-matrix`](../60-specification/api-and-abi-compatibility/breaking-change-matrix.md#the-matrix) | c028 #6; CMP002, CMP003 | untraced |
-| CP-OBL-007 | Resolve the C022–C027 deferrals: facade exclusion, digest identity-only, lock-replay skew, prelude-bump classification, entry-set rows | [`breaking-change-matrix.md#deferral-resolutions`](../60-specification/api-and-abi-compatibility/breaking-change-matrix.md#deferral-resolutions) | c028 #7 | untraced |
-| CP-OBL-008 | Keep representation changes, digest recomputation, and warning additions never breaking alone | [`compatibility-layers-and-versions.md#what-versions-do-not-carry`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#what-versions-do-not-carry) | c028 #8 | untraced |
-| CP-OBL-009 | Emit stable diagnostics: `CMP001`–`CMP003` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/api-and-abi-compatibility/diagnostics-and-conformance.md#stable-diagnostics) | c028 #9 | untraced |
-| CP-OBL-010 | Keep the classifier deterministic, interface-only, and outside behavior/ABI/migration/tooling claims | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/api-and-abi-compatibility/diagnostics-and-conformance.md#abstract-public-boundaries) | c028 #10 | untraced |
+| CP-OBL-001 | Apply compatibility behavior only at exact 0.1.24 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/api-and-abi-compatibility/diagnostics-and-conformance.md#revision-and-persistence-separation) | c028 #1; EDN001 | traced |
+| CP-OBL-002 | Fix one stance per layer: source rules, interface matrix, behavior absence, ABI absence | [`compatibility-layers-and-versions.md#the-four-layers`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#the-four-layers) | c028 #2 | traced |
+| CP-OBL-003 | Keep retained revisions immutable with cumulative-forward acceptance | [`compatibility-layers-and-versions.md#the-four-layers`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#the-four-layers) | c028 #1, #3 | traced |
+| CP-OBL-004 | Classify every matrix row correctly from decoded interfaces with itemized reasons | [`breaking-change-matrix.md#the-matrix`](../60-specification/api-and-abi-compatibility/breaking-change-matrix.md#the-matrix) | c028 #4 | traced |
+| CP-OBL-005 | Enforce version-meaning claims: major-as-breaking at 1.0+, minor-as-breaking under 0.x, with `CMP001` under-claims | [`compatibility-layers-and-versions.md#version-increment-meanings`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#version-increment-meanings) | c028 #5; CMP001 | traced |
+| CP-OBL-006 | Report unclassifiable drift as `CMP003` and malformed input as `CMP002`, never guessing | [`breaking-change-matrix.md#the-matrix`](../60-specification/api-and-abi-compatibility/breaking-change-matrix.md#the-matrix) | c028 #6; CMP002, CMP003 | traced |
+| CP-OBL-007 | Resolve the C022–C027 deferrals: facade exclusion, digest identity-only, lock-replay skew, prelude-bump classification, entry-set rows | [`breaking-change-matrix.md#deferral-resolutions`](../60-specification/api-and-abi-compatibility/breaking-change-matrix.md#deferral-resolutions) | c028 #7 | traced |
+| CP-OBL-008 | Keep representation changes, digest recomputation, and warning additions never breaking alone | [`compatibility-layers-and-versions.md#what-versions-do-not-carry`](../60-specification/api-and-abi-compatibility/compatibility-layers-and-versions.md#what-versions-do-not-carry) | c028 #8 | traced |
+| CP-OBL-009 | Emit stable diagnostics: `CMP001`–`CMP003` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/api-and-abi-compatibility/diagnostics-and-conformance.md#stable-diagnostics) | c028 #9 | traced |
+| CP-OBL-010 | Keep the classifier deterministic, interface-only, and outside behavior/ABI/migration/tooling claims | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/api-and-abi-compatibility/diagnostics-and-conformance.md#abstract-public-boundaries) | c028 #10 | traced |
 
-C028 coverage is 0 `traced` and 10 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `CP-OBL-*` identifier lacks a
-focused tag.
+C028 coverage is 10 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `CP-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

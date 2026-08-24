@@ -91,7 +91,8 @@ Prelude contents and the standard-library name freeze remain G101.
 Collection protocols remain P102. Tooling scaffolding that pre-fills
 the field remains G121 — a tool may write the field but MUST NOT imply
 selection that the manifest does not record. Entry-point defaults remain
-G027. Compatibility meanings of prelude version bumps remain G028/G136.
+C027. Compatibility meanings of prelude version bumps are subsequently fixed
+by C028/G136.
 
 ## Rationale and evidence (non-normative)
 

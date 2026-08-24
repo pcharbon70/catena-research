@@ -208,9 +208,9 @@ Fixed in: [specification](../60-specification/entry-points/README.md)
 
 ## C028 — API and ABI compatibility (`0.1.24`, 2026-08-24)
 
-Fixed in: [synthesis](catena-api-and-abi-compatibility.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/api-and-abi-compatibility/README.md)
+· [synthesis](catena-api-and-abi-compatibility.md)
+· [journal](../50-journal/2026-08-24-c028-api-compat.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

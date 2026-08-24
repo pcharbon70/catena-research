@@ -33,7 +33,9 @@ contracts.
 - [Resolved compatibility inquiry](../40-inquiries/how-should-catena-define-api-and-abi-compatibility.md)
   records the operational question, hypotheses, and resolution.
 - [API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md)
-  is the candidate version 0.1.24 contract.
+  is the normative version 0.1.24 contract.
+- [C028 evidence record](../50-journal/2026-08-24-c028-api-compat.md)
+  records the executable classifier and verification.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   fixes the SemVer grammar and lock machinery whose meaning side
   completes here.
@@ -71,9 +73,9 @@ contracts.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `CP-OBL-001` through `CP-OBL-010` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `CP-OBL-001` through `CP-OBL-010` against normative anchors and
+  immutable sibling compiler evidence.
 - Migration engines (G116/P125), registry retirement and yanks
   (G130), hot upgrade (G092), representation/calling-convention/
   foreign-term contracts (P093/G094/G095), and tooling (G121) remain
@@ -81,7 +83,7 @@ contracts.
 
 ## Open questions
 
-C028 is complete at revision `0.1.24`. Whether 1.0 keeps the Cargo 0.x
-rule's switch semantics belongs to the G136 edition-policy era; any
-future layout-stability contract belongs to P093/G094/G095 over this
-absence.
+C028 is complete at revision `0.1.24`. Whether the 1.0 era keeps or
+switches the Cargo 0.x rule belongs to the G136 edition-policy era;
+any future layout-stability contract belongs to P093/G094/G095 over
+this absence.

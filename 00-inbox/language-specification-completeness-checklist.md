@@ -115,6 +115,10 @@ Normative C027 uses `0.1.23` for entry points. Its entry declarations,
 derived libraries, launch semantics, shutdown reports, and verification
 are recorded in the
 [C027 conformance journal](../50-journal/2026-08-24-c027-entry-points.md).
+Normative C028 uses `0.1.24` for API and ABI compatibility. Its layer
+stances, breaking matrix, claim validation, and verification are
+recorded in the
+[C028 conformance journal](../50-journal/2026-08-24-c028-api-compat.md).
 
 ## Existing research that needs normative consolidation
 
@@ -581,8 +585,33 @@ as small normative rules rather than copied wholesale into a specification.
   G084/G089; cancellation remains G088; CLI and host-process boundaries
   remain G121; distribution and upgrades remain G091/G092; entry-set
   compatibility remains G028.
-- [ ] **G028 — Gap — API and ABI compatibility.** Define source, type, behavior, and
-  BEAM-level compatibility, including what changes require a major version.
+- [x] **C028 — Complete — API and ABI compatibility.**
+  The normative
+  [0.1.24 compatibility specification](../60-specification/api-and-abi-compatibility/README.md),
+  [synthesis](../20-notes/catena-api-and-abi-compatibility.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-define-api-and-abi-compatibility.md),
+  [topic map](../10-maps/api-and-abi-compatibility.md), and
+  [C028 record](../50-journal/2026-08-24-c028-api-compat.md) fix
+  the four compatibility layers — real source and interface rules with
+  declared behavior (the kernel is the contract, no bug-compatibility)
+  and BEAM ABI (representation is not a surface) absences; version
+  meanings — breaking requires SemVer major at 1.0.0+ and minor below
+  it under the Cargo 0.x rule C025 already fixed for operators, with
+  edition bumps as the language-level instrument; the strict breaking
+  matrix over decoded interfaces — removals, renames, scheme changes,
+  and effect-row widening breaking, additions minor, representation
+  never breaking alone, entry additions minor and removals or result
+  changes breaking; the formal re-export facade exclusion closing the
+  C022/C025 deferral; joint and bundle digests as identity-only; and
+  claim validation with `CMP001`–`CMP003` stable diagnostics.
+  Sibling compiler commit
+  [`0d96f96792aa161ed2711edb304d75e4cee54af2`](https://github.com/pcharbon70/catena/commit/0d96f96792aa161ed2711edb304d75e4cee54af2)
+  supplies complete `CP-OBL-001`–`CP-OBL-010` coverage with 355 passing
+  tests through the `Catena.Package.Compat` classifier. Migration
+  engines remain G116/P125; registry retirement and yanks remain G130;
+  hot upgrade remains G092; representation, calling-convention, and
+  foreign-term contracts remain P093/G094/G095; tooling automation
+  remains G121; the 1.0-era convention switch remains G136's.
 
 ## 4. Core expressions and evaluation
 

@@ -191,8 +191,9 @@ programs including failure and tail-call cases.
 defines transparent versus abstract datatype exposure; C004 and C005 carry
 trait and capability identity through module interfaces; C008 defines
 package-local edition and revision selection. These are semantic interface
-pieces, not yet a complete source module and package system. The outstanding
-obligations are `G021`–`G028`.
+pieces, not yet a complete source module and package system. The former
+obligations `G021`–`G028` are now closed: C021 through C028 complete the
+names, modules, packages, and separate-compilation program.
 
 **Remaining research.** The archive needs decisions for:
 
@@ -222,7 +223,11 @@ obligations are `G021`–`G028`.
   effect-closed entries with derived libraries and invocation-only,
   return-is-shutdown launch; supervision and tooling remain
   G084/G089/G121; and
-- source, type, behavior, artifact, BEAM ABI, and hot-upgrade compatibility.
+- ~~source, type, behavior, artifact, BEAM ABI, and hot-upgrade
+  compatibility~~ — closed by C028 for API/ABI: strict interface diff
+  matrix with minor-as-breaking under 0.x, declared behavior and ABI
+  absences; migration, registry, and hot-upgrade work remains
+  G116/G130/G092.
 
 **What it would bring.** This program would make Catena a language for
 multi-file applications and libraries rather than isolated semantic modules.
@@ -727,7 +732,8 @@ revisions, package-local editions, preview lifecycles, migration records, and
 selection-bound interfaces and artifacts. It intentionally does not define
 the complete source/API/ABI policy, package ecosystem, all migration tooling,
 OTP support horizon, or compiler bootstrap. These needs are spread across
-`G028`, `G099`, `G116`, `P125`, `P136`, `G139`, and `G141`.
+`G099`, `G116`, `P125`, `P136`, `G139`, and `G141`; the API/ABI policy
+itself is subsequently fixed by C028.
 
 **Remaining research.** Long-term evolution requires:
 

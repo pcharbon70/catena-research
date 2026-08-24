@@ -73,6 +73,6 @@ slice.
 
 C025 is complete at revision `0.1.21`. G121 retains build and fetch tooling; G128 retains
 reproducible-build consumption; G130 retains supply-chain signing and
-threat modeling; G028 retains compatibility policy and the re-export
-facades re-owned by its era; G026 and G027 retain prelude and entry-point
+threat modeling; C028 subsequently fixed compatibility policy and formally
+excluded the re-export facades; C026 and C027 fixed prelude and entry-point
 decisions.

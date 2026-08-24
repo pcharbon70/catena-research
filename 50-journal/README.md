@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C028 API and ABI Compatibility](2026-08-24-c028-api-compat.md) —
+  records the normative 0.1.24 compatibility contract, the decoded-
+  interface classification and CMP003 identity decisions, the G027/G028
+  deferral repairs, diagnostics, traceability, and immutable compiler
+  identity.
 - [C027 Entry Points](2026-08-24-c027-entry-points.md) — records the
   normative 0.1.23 entry-points contract, the typed-core validation and
   result-rendering decisions, the C026 checklist-flip repair,

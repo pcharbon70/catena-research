@@ -104,7 +104,7 @@ never changes resolution order, scope structure, or spelling classes.
 
 Module recursion across imports remains G024. Module discovery,
 package identity, and re-exports remain G025/G121. Prelude contents and
-opt-out remain G026. Entry modules remain G027. The concrete `use`
+opt-out remain G026. Entry modules are subsequently fixed by C027. The concrete `use`
 surface punctuation remains P109.
 
 ## Rationale and evidence (non-normative)

@@ -117,8 +117,8 @@ registry-neutral so a second transport changes nothing.
 
 Build and fetch tools (G121), reproducible-build consumption (G128),
 signing and threat modeling (G130), compatibility meanings of versions
-(G028), and re-export facades — re-owned from C022's deferral to the
-G028 compatibility era by this area — stay outside.
+(C028), and re-export facades — re-owned from C022's deferral and
+formally excluded by C028 — stay outside.
 
 ## Rationale and evidence (non-normative)
 

@@ -75,6 +75,6 @@ decide.
 ## Open questions
 
 C022 is complete at revision `0.1.18`. G024 retains module recursion; G025 retains package identity, re-export
-assembly, and duplicate-module rejection; G026 retains prelude contents;
-G027 retains entry modules; P109 retains the concrete `use`/`export`
+assembly, and duplicate-module rejection; C026 has since fixed prelude policy; C027 has since fixed entry
+modules; P109 retains the concrete `use`/`export`
 punctuation; P117 retains warning prose quality.

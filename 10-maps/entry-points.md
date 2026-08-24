@@ -70,5 +70,5 @@ compatibility.
 
 C027 is complete at revision `0.1.23`. G084 and G089 retain
 supervision and process lifetime; G088 retains cancellation; G121
-retains the CLI and host-process boundary; G028 retains the
+retains the CLI and host-process boundary; C028 subsequently fixed the
 compatibility meaning of entry-set changes.

@@ -71,7 +71,7 @@ deliberately left outside edition 0.1.
 
 ## Open questions
 
-C023 is complete at revision `0.1.19`. G028 retains any layout-stability or ABI contract; D046/G040 retain views and
+C023 is complete at revision `0.1.19`. C028 subsequently fixed any layout-stability or ABI contract as declared absence; D046/G040 retain views and
 selective exposure; P093 retains BEAM representation mapping under
 non-observability; G095 retains foreign-term validation; G101+ consumes
 the sanctioned idiom in the standard library.

@@ -231,8 +231,7 @@ the absence).
   routes through the OTP precedent, the shipped contracts, and the
   future owners.
 - The [API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md)
-  defines the candidate — then normative at promotion — `0.1.24`
-  contract this note argues for.
+  defines the normative `0.1.24` contract this note argued for.
 - [Catena Package Identity and Dependencies](catena-package-identity-and-dependencies.md)
   fixes the SemVer machinery whose meaning side this slice completes.
 - [Catena Abstraction Boundaries](catena-abstraction-boundaries.md)

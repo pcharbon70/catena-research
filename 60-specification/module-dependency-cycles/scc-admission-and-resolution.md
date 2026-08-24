@@ -96,10 +96,10 @@ not diagnosable.
 
 Package assembly over components, lockfile representation of joint
 digests, and package identity remain G025. Joint-digest ABI and
-compatibility treatment remains G028. The concrete recursive `use`
+compatibility treatment is subsequently fixed by C028. The concrete recursive `use`
 surface remains P109. Pre-declared standalone interface files are the
 declined alternative and remain undesigned. Entry-point selection across
-components remains G027.
+components is subsequently fixed by C027.
 
 ## Rationale and evidence (non-normative)
 

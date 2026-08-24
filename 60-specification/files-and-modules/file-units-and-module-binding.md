@@ -89,8 +89,8 @@ is never reported as mismatched (`FU-OBL-006`).
 The concrete module-header syntax and declaration grammar remain P109.
 Module-name resolution, namespaces, imports, and qualification remain
 G021/G022. Package assembly, cross-file duplicate module names, directory
-layout, and package identity remain G025. Entry-point selection remains
-G027. Build caching, code loading, and hot replacement remain later
+layout, and package identity remain G025. Entry-point selection is subsequently
+fixed by C027. Build caching, code loading, and hot replacement remain later
 runtime and tooling work.
 
 ## Rationale and evidence (non-normative)

@@ -40,7 +40,7 @@ Evaluation order, completion, and trap semantics remain C010's.
 Supervision, restart, and process lifetime remain G084/G089's.
 Cancellation and deadlines remain G088's. The CLI and host-process
 boundary remain G121's. Compatibility meanings of entry-set changes
-remain G028's.
+are subsequently fixed by C028's.
 
 ## Variability register
 
