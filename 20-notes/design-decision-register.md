@@ -169,9 +169,9 @@ while the other answers had assumed the exclusion route:
 
 ## C025 — package identity and dependency resolution (`0.1.21`, 2026-08-24)
 
-Fixed in: [synthesis](catena-package-identity-and-dependencies.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/package-identity-and-dependencies/README.md)
+· [synthesis](catena-package-identity-and-dependencies.md)
+· [journal](../50-journal/2026-08-24-c025-package-identity.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

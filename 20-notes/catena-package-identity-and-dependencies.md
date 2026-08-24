@@ -233,10 +233,14 @@ in practice, or if G028's compatibility work requires identity beyond
 
 ## Connections
 
-- The [open package inquiry](../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md)
+- The [resolved package inquiry](../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md)
   records the operational question and evidence trail.
 - The [Package Identity and Dependencies map](../10-maps/package-identity-and-dependencies.md)
   routes through grammar, resolution, lockfile, and identity evidence.
+- The [Package Identity and Dependencies Specification](../60-specification/package-identity-and-dependencies/README.md)
+  defines the normative 0.1.21 contract.
+- The [C025 evidence record](../50-journal/2026-08-24-c025-package-identity.md)
+  records the sibling implementation and verification.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   fixes the manifest the dependencies field extends.
 - [Catena Dependency Cycles](catena-dependency-cycles.md) fixes the

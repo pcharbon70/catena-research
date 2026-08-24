@@ -104,6 +104,10 @@ Normative C024 uses `0.1.20` for module dependency cycles. Its SCC
 admission, resolution regimes, joint digests, and verification are
 recorded in the
 [C024 conformance journal](../50-journal/2026-08-24-c024-dependency-cycles.md).
+Normative C025 uses `0.1.21` for package identity and dependency
+resolution. Its dependency grammar, resolution, lockfile, identity, and
+verification are recorded in the
+[C025 conformance journal](../50-journal/2026-08-24-c025-package-identity.md).
 
 ## Existing research that needs normative consolidation
 
@@ -445,8 +449,9 @@ as small normative rules rather than copied wholesale into a specification.
   with `EXP001` undeclared rejection; import admission through
   two-segment qualification against digest-bound export sets plus explicit
   possibly-empty unqualified name lists with `IMP002`/`IMP003` validation;
-  the declared exclusion of wildcards, hiding, renaming, aliases, and
-  re-exports; and the deny-able `IMP001` unused-import warning whose
+  the declared exclusion of wildcards, hiding, renaming, and aliases; the
+  re-export exclusion since re-owned by C025 to the G028 compatibility
+  era; and the deny-able `IMP001` unused-import warning whose
   qualified references never satisfy unqualified admissions. Sibling
   compiler commit
   [`02da5c178ad5d797e55bdb3290cd950fbf7f4f31`](https://github.com/pcharbon70/catena/commit/02da5c178ad5d797e55bdb3290cd950fbf7f4f31)
@@ -497,12 +502,32 @@ as small normative rules rather than copied wholesale into a specification.
   [`ca2be792e3f5fe081c67ec7ca9e845d40a5087c0`](https://github.com/pcharbon70/catena/commit/ca2be792e3f5fe081c67ec7ca9e845d40a5087c0)
   supplies complete `CY-OBL-001`–`CY-OBL-010` coverage with 312 passing
   tests through the abstract SCC grouping and `Catena.compile_scc/2`.
-  Package assembly and lockfile representation remain G025; the concrete
+  Package assembly and lockfile representation are subsequently fixed by
+  C025; the concrete
   recursive surface remains P109; joint-digest compatibility remains
   G028.
-- [ ] **G025 — Gap — package identity and dependency resolution.** Define manifests,
-  semantic versioning expectations, lockfiles, source identity, integrity, and
-  conflicting transitive versions.
+- [x] **C025 — Complete — package identity and dependency resolution.**
+  The normative
+  [0.1.21 package specification](../60-specification/package-identity-and-dependencies/README.md),
+  [synthesis](../20-notes/catena-package-identity-and-dependencies.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md),
+  [topic map](../10-maps/package-identity-and-dependencies.md), and
+  [C025 record](../50-journal/2026-08-24-c025-package-identity.md) fix
+  the optional manifest `dependencies` field; the SemVer 2.0.0 grammar
+  and precedence; exact/caret/tilde requirements with the Cargo 0.x rule
+  and pre-release operand restriction; single-version
+  highest-satisfying order-independent resolution with `PKG002`/`PKG003`/
+  `PKG004` rejection; the generated `catena.lock` with exact-pin replay
+  and `PKG005` stale/tamper separation; and registry-neutral (name,
+  version, SHA-256 bundle digest) identity over manifest semantics plus
+  member interface and C024 component digests, with hex.pm as the
+  bootstrap transport profile. Sibling compiler commit
+  [`dcd7da056ba1317fcd7df1df8716981ff8363e1d`](https://github.com/pcharbon70/catena/commit/dcd7da056ba1317fcd7df1df8716981ff8363e1d)
+  supplies complete `PK-OBL-001`–`PK-OBL-012` coverage with 323 passing
+  tests through the `Catena.Package.Deps` engine. Build and fetch
+  tooling remain G121; reproducible-build consumption remains G128;
+  signing and threat modeling remain G130; compatibility and re-export
+  facades remain G028.
 - [ ] **G026 — Gap — prelude policy.** Define automatic imports, opt-out behavior,
   shadowing, and what is guaranteed by every language edition.
 - [ ] **G027 — Gap — entry points and application structure.** Define executable and

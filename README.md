@@ -82,6 +82,10 @@ The normative C024 dependency-cycles boundary begins at the
 [Module Dependency Cycles map](10-maps/module-dependency-cycles.md) and
 its exact
 [0.1.20 specification](60-specification/module-dependency-cycles/README.md).
+The normative C025 package boundary begins at the
+[Package Identity and Dependencies map](10-maps/package-identity-and-dependencies.md)
+and its exact
+[0.1.21 specification](60-specification/package-identity-and-dependencies/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -183,9 +187,10 @@ operators and punctuation; normative C020 uses `0.1.16` for the
 file-to-module relationship; normative C021 uses `0.1.17` for namespaces
 and shadowing; normative C022 uses `0.1.18` for imports and exports; normative C023
 uses `0.1.19` for abstraction boundaries; normative C024 uses `0.1.20`
-for module dependency cycles; and
+for module dependency cycles; normative C025 uses `0.1.21` for package
+identity and dependency resolution; and
 the next
-unused semantic patch is `0.1.21`. C008 defines package-local editions,
+unused semantic patch is `0.1.22`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

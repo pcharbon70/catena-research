@@ -2,7 +2,7 @@
 title: "Resolution and Lockfile"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.21"
 tags:
   - packages

@@ -209,8 +209,11 @@ obligations are `G021`–`G028`.
   stable-layout opt-in~~ — closed by C023: the binary vocabulary is
   complete, no stable layout exists, and future ABI contracts belong to
   the compatibility program;
-- package identity, manifests, dependency resolution, lockfiles, integrity,
-  conflicting versions, and offline operation;
+- ~~package identity, manifests, dependency resolution, lockfiles,
+  integrity, conflicting versions, and offline operation~~ — closed by
+  C025: manifest dependencies, SemVer operators, single-version
+  resolution, `catena.lock`, and registry-neutral bundle digests with
+  the Hex transport profile; fetch tooling and signing remain G121/G130;
 - prelude contents and opt-out or shadowing policy;
 - executable and library roots, entry points, startup, shutdown, and permitted
   top-level effects; and

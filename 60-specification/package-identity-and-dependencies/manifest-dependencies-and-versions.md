@@ -2,7 +2,7 @@
 title: "Manifest Dependencies and Versions"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.21"
 tags:
   - packages
@@ -114,6 +114,6 @@ The [package synthesis](../../20-notes/catena-package-identity-and-dependencies.
 compares SemVer's given grammar with the ecosystem's divergent operator
 conventions and records why exact/caret/tilde with the Cargo 0.x rule was
 selected. The
-[open inquiry](../../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md)
+[resolved inquiry](../../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md)
 and [topic map](../../10-maps/package-identity-and-dependencies.md)
 preserve the decision route.

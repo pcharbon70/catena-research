@@ -2,7 +2,7 @@
 title: "Package Diagnostics and Conformance"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.21"
 tags:
   - conformance
@@ -142,7 +142,7 @@ unused semantic patch is `0.1.22`.
 
 The design route is preserved in the
 [package synthesis](../../20-notes/catena-package-identity-and-dependencies.md),
-the [open inquiry](../../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md),
+the [resolved inquiry](../../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md),
 and the [topic map](../../10-maps/package-identity-and-dependencies.md).
 The C025 evidence record will preserve the sibling-compiler commands and
 archive validation.

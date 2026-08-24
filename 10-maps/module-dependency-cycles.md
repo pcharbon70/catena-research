@@ -46,7 +46,7 @@ slice.
   fixes the digest-bound import form and definition-only modules.
 - [Import Declarations and Admission](../60-specification/imports-and-exports/import-declarations-and-admission.md)
   fixes digest-bound admission and defers context acquisition to
-  G025/G121 — the grouping this design supplies.
+  C025/G121 — the grouping this design now supplies through the dependency engine.
 - [Declarations and Nominal Identity](../60-specification/data-and-patterns/declarations-and-nominal-identity.md)
   fixes intra-module recursive groups cycles must not touch.
 - [Editions and Feature Lifecycle](../60-specification/editions-and-feature-lifecycle/README.md)
@@ -72,7 +72,7 @@ slice.
 
 ## Open questions
 
-C024 is complete at revision `0.1.20`. G025 retains package
+C024 is complete at revision `0.1.20`. C025 has since fixed package
 assembly and lockfile representation of joint digests; P109 retains the
 concrete recursive `use` surface; G028 retains joint-digest compatibility
 treatment; the pre-declared-interface alternative stays available to a

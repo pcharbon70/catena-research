@@ -2,7 +2,7 @@
 title: "How Should Catena Define Package Identity and Dependency Resolution?"
 kind: inquiry
 created: "2026-08-24"
-status: open
+status: resolved
 tags:
   - catena
   - language-design
@@ -104,8 +104,22 @@ compatibility policy, G026 prelude contents, or G027 entry points.
 
 ## Outcome
 
-Open. Resolution requires candidate normative chapters covering
-dependencies and versions, resolution and the lockfile, and diagnostics; a
-sibling compiler dependency engine with requirement parsing, deterministic
-resolution, lockfile generation and replay, and bundle digests, with
-tagged executable evidence; and the C013–C024 promotion workflow.
+Resolved as C025 and source-only language revision `0.1.21`. Catena fixes
+the manifest `dependencies` field; the SemVer 2.0.0 grammar and
+precedence; exact/caret/tilde requirements with the Cargo 0.x rule and
+pre-release operand restriction; single-version highest-satisfying
+order-independent resolution with `PKG002`/`PKG003`/`PKG004` rejection;
+the generated `catena.lock` with exact-pin replay and `PKG005`
+stale/tamper separation; registry-neutral (name, version, SHA-256 bundle
+digest) identity over manifest semantics plus member and component
+digests with hex.pm as the transport profile; and re-exports re-owned by
+the G028 compatibility era. The rules are defined in the
+[normative package specification](../60-specification/package-identity-and-dependencies/README.md).
+
+G025 is complete through the
+[package synthesis](../20-notes/catena-package-identity-and-dependencies.md),
+[topic map](../10-maps/package-identity-and-dependencies.md), and
+[C025 evidence record](../50-journal/2026-08-24-c025-package-identity.md).
+G121 retains build and fetch tooling; G128 reproducible-build
+consumption; G130 signing and threat modeling; G028 compatibility and
+re-export facades; G026 and G027 the prelude and entry points.

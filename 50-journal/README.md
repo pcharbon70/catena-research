@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C025 Package Identity and Dependencies](2026-08-24-c025-package-identity.md)
+  — records the normative 0.1.21 dependency contract, the
+  `Catena.Package.Deps` engine, the precedence-comparator repair, the
+  no-grammar-extension property, diagnostics, traceability, and immutable
+  compiler identity.
 - [C024 Module Dependency Cycles](2026-08-24-c024-dependency-cycles.md)
   — records the normative 0.1.20 cycle contract, the abstract SCC
   grouping and `compile_scc/2` boundary, the inhabitation-seeding and

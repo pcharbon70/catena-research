@@ -15,7 +15,7 @@ aliases:
 
 ## Scope
 
-This map connects the C008 manifest and C024 component digests that bound
+This map connects the C008 manifest and C024 component digests that bounded
 any package model, the SemVer grammar and Hex requirement evidence, the
 C025 decision artifacts — dependencies field, version operators,
 single-version resolution, `catena.lock`, registry-neutral identity with
@@ -28,9 +28,12 @@ slice.
   develops the declaration form, SemVer grammar, exact/caret/tilde
   semantics with the Cargo-style 0.x rule, single-version resolution, the
   generated lockfile, and (name, version, bundle digest) identity.
-- [Open package inquiry](../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md)
-  records the operational question, hypotheses, and evidence required for
-  resolution.
+- [Resolved package inquiry](../40-inquiries/how-should-catena-define-package-identity-and-dependency-resolution.md)
+  records the operational question, hypotheses, and resolution.
+- [Package Identity and Dependencies Specification](../60-specification/package-identity-and-dependencies/README.md)
+  is the normative version 0.1.21 contract.
+- [C025 evidence record](../50-journal/2026-08-24-c025-package-identity.md)
+  records the executable dependency engine and verification.
 - [Module Dependency Cycles map](module-dependency-cycles.md) fixes the
   component joint digests the lockfile records.
 
@@ -60,16 +63,15 @@ slice.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will register
-  the package obligations once candidate chapters exist.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `PK-OBL-001` through `PK-OBL-012` against normative anchors and
+  sibling compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the specialization bound package linking already uses.
 
 ## Open questions
 
-The proposed model awaits normative chapters, a sibling compiler
-dependency engine with tagged executable evidence, and the standard
-promotion workflow. G121 retains build and fetch tooling; G128 retains
+C025 is complete at revision `0.1.21`. G121 retains build and fetch tooling; G128 retains
 reproducible-build consumption; G130 retains supply-chain signing and
 threat modeling; G028 retains compatibility policy and the re-export
 facades re-owned by its era; G026 and G027 retain prelude and entry-point
