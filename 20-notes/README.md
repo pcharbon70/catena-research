@@ -103,6 +103,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C023's declared exclusions of stable layout and split
   constructor authority, and the sanctioned
   smart-constructor-over-abstract-type invariant idiom.
+- [Catena Dependency Cycles](catena-dependency-cycles.md) — proposes
+  C024's SCC admission with signature-based intra-component resolution,
+  joint digests, definition-only initialization, SCC cache units, and the
+  dependency-inversion alternative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
   — derives C014's pinned Unicode 17 XID, filtered NFC, role-neutral case,
   security profile, keywords, qualification, and confusable-warning model.

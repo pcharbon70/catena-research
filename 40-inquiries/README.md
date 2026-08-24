@@ -67,6 +67,10 @@ to `20-notes`.
   — tests the declared absence of stable-layout opt-in and split
   constructor authority, and the smart-constructor invariant idiom,
   against the shipped C002/C022 contracts and Leroy/SML evidence.
+- [How Should Catena Handle Module Dependency Cycles?](how-should-catena-handle-module-dependency-cycles.md)
+  — tests SCC admission with declared-signature resolution, joint
+  digests, and definition-only initialization against Haskell's recursive
+  modules and the digest-import circularity.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

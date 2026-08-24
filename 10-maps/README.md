@@ -117,6 +117,10 @@ should explain why its links belong together rather than merely list files.
   proposed no-stable-layout and no-authority-split exclusions, the
   smart-constructor invariant idiom, and the G028/D046 owners of what
   stays outside edition 0.1.
+- [Module Dependency Cycles](module-dependency-cycles.md) — routes through
+  the digest-import circularity, Haskell's recursion evidence and its
+  price, the proposed SCC admission with signature-based intra-component
+  resolution and joint digests, and the owners of packages and surfaces.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
