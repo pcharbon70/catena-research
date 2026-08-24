@@ -76,6 +76,11 @@ to `20-notes`.
   operators, single-version resolution, `catena.lock` replay, and
   registry-neutral bundle-digest identity against SemVer and Hex
   evidence.
+- [How Should Catena Define Its Prelude Policy?](how-should-catena-define-its-prelude-policy.md)
+  — tests opt-in manifest selection, ordinary-origin precedence,
+  absent-means-out opt-out, and the zero-implicit-names edition
+  guarantee against the shipped C021/C022/C025 contracts and the
+  declined Haskell model.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

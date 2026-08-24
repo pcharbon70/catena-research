@@ -112,8 +112,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   exact/caret/tilde operators, single-version highest-satisfying
   resolution, the generated `catena.lock`, and registry-neutral
   name+version+digest identity with the Hex transport profile.
+- [Catena Prelude Policy](catena-prelude-policy.md) — proposes C026's
+  opt-in manifest `prelude` selection, ordinary import-origin
+  precedence, absent-means-out opt-out, and the zero-implicit-names
+  edition guarantee.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C025
+  consolidated record of every developer fork decision across C018–C026
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

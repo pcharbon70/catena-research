@@ -158,14 +158,6 @@ while the other answers had assumed the exclusion route:
 | Consequence clauses | SCC-adapted confirmations (rec) / literal as-is | SCC-adapted |
 | Slice size | full admission slice (rec) / abstract-only / revert to exclusion | full slice |
 
-## Cross-cutting decisions
-
-- **Package publishing substrate (2026-08-22):** adopt the Hex registry
-  Gleam-style as the working hypothesis for G025/G121/G130, with Catena
-  governance kept inner-package. Not a plan fork — an out-of-band
-  developer decision recorded in
-  [the inbox capture](../00-inbox/package-publishing-hypothesis-hex.md)
-  awaiting the G025 program. Subsequently profiled normatively by C025.
 
 ## C025 — package identity and dependency resolution (`0.1.21`, 2026-08-24)
 
@@ -182,6 +174,31 @@ Fixed in: [specification](../60-specification/package-identity-and-dependencies/
 | Identity + integrity | neutral name+version+SHA-256 bundle digest, Hex as profile (rec) / tarball-checksum identity / signed lockfile now | neutral digest |
 | Re-exports | stay excluded, re-owned by G028 era (rec) / minimal forwarding now / silent | excluded, re-owned |
 | Deliverable | `Catena.Package.Deps` engine library (rec) / engine + CLI / normative-only | engine library |
+
+## C026 — prelude policy (`0.1.22`, 2026-08-24)
+
+Fixed in: [synthesis](catena-prelude-policy.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Automatic imports | opt-in via manifest (rec) / always-on with opt-out / declared full absence | opt-in via manifest |
+| Precedence | ordinary import origin (rec) / weaker-than-imports tier / prelude-priority tier | ordinary origin |
+| Opt-out shape | absent/null = out (rec) / explicit none-sentinel / per-name hiding | absent/null = out |
+| Edition guarantee | 0.1 guarantees zero implicit names (rec) / names empty seed prelude / defer the clause | zero implicit names |
+| G101 boundary | mechanism now, contents G101 (rec) / mechanism + minimal contents / normative-only | mechanism now |
+| Deliverable | event grammar + manifest + locks (rec) / events only / mechanism + tooling default | full wiring |
+
+
+## Cross-cutting decisions
+
+- **Package publishing substrate (2026-08-22):** adopt the Hex registry
+  Gleam-style as the working hypothesis for G025/G121/G130, with Catena
+  governance kept inner-package. Not a plan fork — an out-of-band
+  developer decision recorded in
+  [the inbox capture](../00-inbox/package-publishing-hypothesis-hex.md).
+  Subsequently profiled normatively by C025.
 
 ## Connections
 
