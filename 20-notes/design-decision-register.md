@@ -191,6 +191,22 @@ Fixed in: [specification](../60-specification/prelude-policy/README.md)
 | Deliverable | event grammar + manifest + locks (rec) / events only / mechanism + tooling default | full wiring |
 
 
+## C027 — entry points and application structure (`0.1.23`, 2026-08-24)
+
+Fixed in: [synthesis](catena-entry-points.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Root shape | named entry exports in manifest (rec) / reserved `main` name / declared full absence | named entry exports |
+| Top-level effects | effect-closed entries (rec) / implicit host handler / manifest-named handlers | effect-closed |
+| Startup model | invocation-only (rec) / OTP application start / spawn-per-entry | invocation-only |
+| Shutdown results | return-is-shutdown (rec) / exit-code mapping / defer shutdown clause | return-is-shutdown |
+| Library distinction | derived from zero entries (rec) / explicit `kind` field | derived |
+| Deliverable | manifest entries + launch op (rec) / normative-only / entries + CLI | entries + launch op |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

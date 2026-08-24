@@ -46,6 +46,10 @@ mentions can remain as citations in the document that uses them.
 - [Erlang/OTP 29 System Limits](erlang-otp-29-system-limits.md) — records the
   arity-255 target ceiling and distinguishes VM ceilings from Catena portable
   source floors.
+- [Erlang/OTP Applications](erlang-otp-applications.md) — documents the
+  target runtime's application callback contract, derived
+  library/executable distinction, and supervision-first startup that
+  C027 declines for 0.1.
 - [Structural Operational Semantics](plotkin-2004-structural-operational-semantics.md)
   — provides the transition-system method used for Catena's configurations,
   evaluation order, and explicit terminal states.
