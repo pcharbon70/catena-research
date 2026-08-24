@@ -98,11 +98,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   exclusions, sanctioned idiom, and executable evidence are recorded in
   the
   [C023 conformance journal](../50-journal/2026-08-23-c023-abstraction-boundaries.md).
+  The candidate C024 dependency-cycles boundary is version `0.1.20`; its
+  SCC admission, resolution regimes, and pending evidence are recorded in
+  the linked area index and inquiry.
 
 ## Index
 
 ### Subdirectories
 
+- [Module Dependency Cycles](module-dependency-cycles/README.md) — the
+  candidate version 0.1.20 SCC admission, resolution regimes, joint
+  digests, consequence clauses, and conformance contract.
 - [Abstraction Boundaries](abstraction-boundaries/README.md) — the
   normative version 0.1.19 authority and representation exclusions with
   the sanctioned smart-constructor invariant idiom.
