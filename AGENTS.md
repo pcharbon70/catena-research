@@ -262,7 +262,21 @@ bundle:
 4. a topic map in `10-maps/` that explains the route through the work;
 5. the home map when the topic belongs at the archive entry point;
 6. journal evidence for material local experiments;
-7. every affected directory README.
+7. every affected directory README; and
+8. the [design decision register](20-notes/design-decision-register.md) when
+   the work began from a reviewed plan that posed enumerated forks.
+
+### Decision register rule
+
+When a plan asks the developer to choose among enumerated options, record
+every fork in `20-notes/design-decision-register.md` in the same change
+that first executes the plan: a per-plan table listing the options as
+posed, which option carried the recommendation, which option the
+developer chose, any override of the recommendation, and links to the
+documents where the choice became durable. Decisions that emerge during
+implementation belong in that slice's journal, not the register. This
+applies to any future conversation, not only the one that produced the
+plan.
 
 ### Research method
 
