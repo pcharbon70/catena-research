@@ -527,7 +527,7 @@ as small normative rules rather than copied wholesale into a specification.
   tests through the `Catena.Package.Deps` engine. Build and fetch
   tooling remain G121; reproducible-build consumption remains G128;
   signing and threat modeling remain G130; compatibility and re-export
-  facades remain G028.
+  facades remain G028; the prelude is subsequently fixed by C026.
 - [ ] **G026 — Gap — prelude policy.** Define automatic imports, opt-out behavior,
   shadowing, and what is guaranteed by every language edition.
 - [ ] **G027 — Gap — entry points and application structure.** Define executable and

@@ -239,6 +239,35 @@ hiding, renaming) belongs to Catena's G022 rather than to resolution itself.
 - The Prelude is imported automatically into every module unless imported
   explicitly, and may be shadowed only through explicit imports.
 
+### The standard Prelude (sections 5.6–5.6.2)
+
+- Section 5.6 fixes the mechanism: the Prelude module "is imported
+  automatically into all modules as if by the statement `import
+  Prelude`, if and only if it is not imported with an explicit import
+  declaration." An explicit `import Prelude()` (empty list) prevents the
+  automatic import entirely; an explicit form such as
+  `import Prelude hiding(null)` replaces it and thereby resolves
+  otherwise-ambiguous shadowing.
+- Section 5.6.2 makes the disambiguation duty transfer: a module that
+  redefines `null` with `hiding(null)` passes that resolution burden to
+  every importer that references `null` unqualified.
+- Prelude semantics are a fixed part of the language definition — a
+  compiler may optimize Prelude calls without consulting its source —
+  while its structure is explained through implementation modules that
+  cannot be imported separately.
+- Special syntax (tuples, lists) always refers to the standard Prelude's
+  types regardless of imports; overloaded syntax such as `++` follows the
+  import rules.
+
+For Catena's prelude policy this is the fully-specified *declined*
+model: automatic-if-unmentioned admission, exclusion by empty import,
+per-name `hiding`, and a semantics-frozen core that special syntax
+bypasses. Catena's C022 already rejected implicit admission and hiding
+for ordinary imports, and C021 fixed prelude-origin collisions as
+reference-time rejections; the useful residue is Haskell's evidence that
+an opt-out must resolve, not merely remove, ambiguity — which Catena
+achieves through ordinary qualification instead of burden transfer.
+
 ### Mutually recursive modules and separate compilation
 
 - Chapter 5 states that modules may reference other modules via explicit
@@ -327,3 +356,6 @@ precision.
 - [Catena Dependency Cycles](../20-notes/catena-dependency-cycles.md)
 - [How Should Catena Handle Module Dependency Cycles?](../40-inquiries/how-should-catena-handle-module-dependency-cycles.md)
 - [Module Dependency Cycles map](../10-maps/module-dependency-cycles.md)
+- [Catena Prelude Policy](../20-notes/catena-prelude-policy.md)
+- [How Should Catena Define Its Prelude Policy?](../40-inquiries/how-should-catena-define-its-prelude-policy.md)
+- [Prelude Policy map](../10-maps/prelude-policy.md)

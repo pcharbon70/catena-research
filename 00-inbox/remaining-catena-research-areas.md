@@ -214,7 +214,9 @@ obligations are `G021`–`G028`.
   C025: manifest dependencies, SemVer operators, single-version
   resolution, `catena.lock`, and registry-neutral bundle digests with
   the Hex transport profile; fetch tooling and signing remain G121/G130;
-- prelude contents and opt-out or shadowing policy;
+- ~~prelude contents and opt-out or shadowing policy~~ — closed by
+  C026: opt-in manifest selection at ordinary precedence with
+  zero-implicit-names guarantee; contents remain G101;
 - executable and library roots, entry points, startup, shutdown, and permitted
   top-level effects; and
 - source, type, behavior, artifact, BEAM ABI, and hot-upgrade compatibility.

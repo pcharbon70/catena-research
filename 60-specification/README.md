@@ -106,11 +106,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   dependency grammar, resolution, lockfile, and identity rules with
   executable evidence are recorded in the
   [C025 conformance journal](../50-journal/2026-08-24-c025-package-identity.md).
+  The normative C026 prelude boundary is version `0.1.22`; its
+  selection, precedence, opt-out, guarantee, and executable evidence are
+  recorded in the
+  [C026 conformance journal](../50-journal/2026-08-24-c026-prelude-policy.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Prelude Policy](prelude-policy/README.md) — the normative version
+  0.1.22 opt-in manifest selection, ordinary-origin precedence,
+  zero-implicit-names edition guarantee, and lockfile treatment.
 - [Package Identity and Dependencies](package-identity-and-dependencies/README.md)
   — the normative version 0.1.21 dependencies field, SemVer operators,
   single-version resolution, `catena.lock`, and bundle-digest identity

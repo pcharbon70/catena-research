@@ -76,6 +76,11 @@ to `20-notes`.
   operators, single-version resolution, `catena.lock` replay, and
   registry-neutral bundle-digest identity against SemVer and Hex
   evidence.
+- [How Should Catena Define Its Prelude Policy?](how-should-catena-define-its-prelude-policy.md)
+  — tests opt-in manifest selection, ordinary-origin precedence,
+  absent-means-out opt-out, and the zero-implicit-names edition
+  guarantee against the shipped C021/C022/C025 contracts and the
+  declined Haskell model.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
@@ -96,7 +101,7 @@ to `20-notes`.
 - [How Should Catena Achieve Exhaustive Rule-to-Test Traceability?](how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   — resolved as C011; the scheme gives every MUST/MUST NOT obligation a permanent
   identifier, a normative heading anchor, and tagged compiler evidence. It now
-  covers twenty-one normative areas plus the C012 implementation-limits policy.
+  covers twenty-two normative areas plus the C012 implementation-limits policy.
 - [How Should Catena Design Clause Guards?](how-should-catena-design-clause-guards.md)
   — records the normative implemented 0.1.3 semantic core while retaining open
   usability, performance, trait, recursion, and public receive questions.

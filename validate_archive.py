@@ -118,6 +118,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "abstraction-boundaries": "0.1.19",
     "module-dependency-cycles": "0.1.20",
     "package-identity-and-dependencies": "0.1.21",
+    "prelude-policy": "0.1.22",
 }
 
 

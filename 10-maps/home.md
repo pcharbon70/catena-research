@@ -87,6 +87,11 @@ This is the selective entry point to the archive. See the
   Hex evidence, the normative 0.1.21 dependency grammar, resolution,
   lockfile, and bundle-digest identity, and the owners of tooling,
   signing, and compatibility.
+- [Prelude Policy](prelude-policy.md) — routes through the C021
+  precedence promise and C025 machinery, the declined Haskell
+  implicit-Prelude model, the normative 0.1.22 opt-in selection with
+  the zero-implicit-names guarantee, and the owners of contents and
+  tooling.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
@@ -115,7 +120,7 @@ This is the selective entry point to the archive. See the
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  twenty-one normative areas plus the C012 implementation-limits policy.
+  twenty-two normative areas plus the C012 implementation-limits policy.
 - [Language Editions and Feature Lifecycle](language-editions-and-feature-lifecycle.md)
   — routes through package-local selection, exact revisions, previews,
   compatibility classifications, migration data, artifact identity,

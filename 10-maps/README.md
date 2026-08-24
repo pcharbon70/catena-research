@@ -45,7 +45,7 @@ should explain why its links belong together rather than merely list files.
 - [Conformance Traceability](conformance-traceability.md) — owns the
   obligation-identifier scheme and registry that closed C011, linking every
   MUST/MUST NOT rule to its normative anchor and tagged compiler evidence across
-  twenty-one normative areas plus the C012 implementation-limits policy.
+  twenty-two normative areas plus the C012 implementation-limits policy.
 - [Formal Semantic Kernel](formal-semantic-kernel.md) — routes through the
   normative 0.1.8 kernel syntax, static and dynamic semantics, typed actors,
   metatheory, executable reference, and immutable promotion evidence.
@@ -126,6 +126,11 @@ should explain why its links belong together rather than merely list files.
   evidence, the proposed dependencies field, single-version resolution,
   `catena.lock`, and registry-neutral identity with the Hex transport
   profile.
+- [Prelude Policy](prelude-policy.md) — routes through the C021
+  precedence promise and C025 package machinery, the declined Haskell
+  implicit-Prelude model, and the proposed opt-in manifest selection
+  with ordinary-origin precedence and the zero-implicit-names edition
+  guarantee.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
