@@ -65,14 +65,15 @@ hosting machinery rather than building a bespoke registry.
 
 ## Promotion path
 
-When the names/modules/packages program (checklist section 3) is planned,
-this hypothesis becomes the starting assumption for G025/G121/G130 design:
-default registry hex.pm, Catena governance and assurance as inner-package
-authority, Gleam-style cross-language consumption. Primary sources to read
-at that point: the Gleam publishing documentation, the Hex package
-specification, and `mix hex` behavior for the tarball/interopt format.
-Archive or absorb this note once the package-program inquiry owns the
-question.
+**Executed.** C025 (`0.1.21`) adopted this hypothesis as the normative
+transport profile: bundle digests must equal the registry tarball
+checksum at install, and identity itself stays registry-neutral. See the
+[package specification](../60-specification/package-identity-and-dependencies/README.md)
+and the
+[C025 evidence record](../50-journal/2026-08-24-c025-package-identity.md).
+Remaining owners: G121 (fetch/publish tooling), G130 (signing and
+threat model), G094–G096 (cross-language calls). This note may be
+archived once those slices land.
 
 ## Connections
 

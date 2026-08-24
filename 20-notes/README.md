@@ -107,8 +107,13 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   C024's SCC admission with signature-based intra-component resolution,
   joint digests, definition-only initialization, SCC cache units, and the
   dependency-inversion alternative.
+- [Catena Package Identity and Dependencies](catena-package-identity-and-dependencies.md)
+  — proposes C025's manifest dependencies field, SemVer grammar with
+  exact/caret/tilde operators, single-version highest-satisfying
+  resolution, the generated `catena.lock`, and registry-neutral
+  name+version+digest identity with the Hex transport profile.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C024
+  consolidated record of every developer fork decision across C018–C025
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

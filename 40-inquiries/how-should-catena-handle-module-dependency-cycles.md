@@ -117,6 +117,6 @@ G024 is complete through the
 [cycles synthesis](../20-notes/catena-dependency-cycles.md),
 [topic map](../10-maps/module-dependency-cycles.md), and
 [C024 evidence record](../50-journal/2026-08-24-c024-dependency-cycles.md).
-G025 retains package assembly and lockfile representation; P109 retains
+C025 has since fixed package assembly and lockfile representation; P109 retains
 the concrete recursive surface; G028 retains joint-digest compatibility
 treatment; pre-declared interface files remain the declined alternative.

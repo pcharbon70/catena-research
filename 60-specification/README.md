@@ -102,11 +102,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   SCC admission, resolution regimes, and executable evidence are recorded
   in the
   [C024 conformance journal](../50-journal/2026-08-24-c024-dependency-cycles.md).
+  The normative C025 package boundary is version `0.1.21`; its
+  dependency grammar, resolution, lockfile, and identity rules with
+  executable evidence are recorded in the
+  [C025 conformance journal](../50-journal/2026-08-24-c025-package-identity.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Package Identity and Dependencies](package-identity-and-dependencies/README.md)
+  — the normative version 0.1.21 dependencies field, SemVer operators,
+  single-version resolution, `catena.lock`, and bundle-digest identity
+  contract.
 - [Module Dependency Cycles](module-dependency-cycles/README.md) — the
   normative version 0.1.20 SCC admission, resolution regimes, joint
   digests, consequence clauses, and conformance contract.

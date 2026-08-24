@@ -165,7 +165,23 @@ while the other answers had assumed the exclusion route:
   governance kept inner-package. Not a plan fork — an out-of-band
   developer decision recorded in
   [the inbox capture](../00-inbox/package-publishing-hypothesis-hex.md)
-  awaiting the G025 program.
+  awaiting the G025 program. Subsequently profiled normatively by C025.
+
+## C025 — package identity and dependency resolution (`0.1.21`, 2026-08-24)
+
+Fixed in: [specification](../60-specification/package-identity-and-dependencies/README.md)
+· [synthesis](catena-package-identity-and-dependencies.md)
+· [journal](../50-journal/2026-08-24-c025-package-identity.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Dependency declaration | manifest `dependencies` field (rec) / separate deps file / path-only deps | manifest field |
+| Version grammar | SemVer + `^`/`~`/exact, Cargo-style 0.x caret (rec) / exact pins only / full Hex operators | SemVer + three forms |
+| Conflict policy | single version, highest-satisfying (rec) / side-by-side versions / first-found wins | single version |
+| Lockfile | generated `catena.lock` with replay (rec) / no lockfile / normative-only | generated lockfile |
+| Identity + integrity | neutral name+version+SHA-256 bundle digest, Hex as profile (rec) / tarball-checksum identity / signed lockfile now | neutral digest |
+| Re-exports | stay excluded, re-owned by G028 era (rec) / minimal forwarding now / silent | excluded, re-owned |
+| Deliverable | `Catena.Package.Deps` engine library (rec) / engine + CLI / normative-only | engine library |
 
 ## Connections
 

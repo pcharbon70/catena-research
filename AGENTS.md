@@ -132,9 +132,10 @@ operators and punctuation. Normative C020 uses `0.1.16` for the
 file-to-module relationship. Normative C021 uses `0.1.17` for namespaces
 and shadowing. Normative C022 uses `0.1.18` for imports and exports. Normative C023
 uses `0.1.19` for abstraction boundaries. Normative C024 uses `0.1.20`
-for module dependency cycles. The
+for module dependency cycles. Normative C025 uses `0.1.21` for package
+identity and dependency resolution. The
 next unused semantic
-patch is `0.1.21` unless an approved versioning policy explicitly
+patch is `0.1.22` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

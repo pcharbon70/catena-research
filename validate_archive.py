@@ -117,6 +117,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "imports-and-exports": "0.1.18",
     "abstraction-boundaries": "0.1.19",
     "module-dependency-cycles": "0.1.20",
+    "package-identity-and-dependencies": "0.1.21",
 }
 
 

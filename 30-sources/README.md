@@ -98,7 +98,7 @@ mentions can remain as citations in the document that uses them.
   artifact marking, diagnostics, and stabilization or removal outcomes.
 - [Semantic Versioning 2.0.0](preston-werner-2013-semantic-versioning.md) —
   relates major, minor, and patch components to a declared public contract and
-  explicitly treats the pre-1.0 line as unstable.
+  explicitly treats the pre-1.0 line as unstable. Its sections 9–11 fix the version grammar and precedence, including pre-release ordering and build-metadata exclusion, vendored by the package model.
 - [The Rust Edition Guide](rust-project-edition-guide.md) — documents
   package-local compatibility selection, retained earlier editions,
   interoperable dependencies, and conservative migration edits.
@@ -386,6 +386,10 @@ mentions can remain as citations in the document that uses them.
 - [The Swift Programming Language: Lexical Structure](swift-project-2026-lexical-structure.md)
   — independently specifies balanced nested multiline comments, exact
   extended string delimiters, and delimiter-sensitive interpolation.
+- [Hex Package Manager: Packages and Requirements](hex-project-2026-packages.md)
+  — records the BEAM ecosystem's version schema, requirement operators,
+  `~>` pessimistic bounds, and its pre-release matching default, adopted
+  by the package transport profile.
 
 ## Maintaining this index
 
