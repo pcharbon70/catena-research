@@ -49,9 +49,13 @@ functions, and wider recursive matching is bounded by the same existing
 limit rather than by this slice.
 
 The sibling compiler implementation is commit
-[`ca2be792e3f5fe081c67ec7ca9e845d40a5087c0`](https://github.com/pcharbon70/catena/commit/ca2be792e3f5fe081c67ec7ca9e845d40a5087c0)
-on branch `agent/c024-dependency-cycles`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`ca2be792e3f5fe081c67ec7ca9e845d40a5087c0`](https://github.com/pcharbon70/catena/commit/ca2be792e3f5fe081c67ec7ca9e845d40a5087c0),
+merged into the `rewrite` integration line by compiler PR
+[#100](https://github.com/pcharbon70/catena/pull/100) at merge commit
+[`336a271`](https://github.com/pcharbon70/catena/commit/336a2710385992fdd5a4f3f0de470511b2c33f4c).
+The merge retained the tested tree exactly (tree `6db5169`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
