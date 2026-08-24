@@ -39,9 +39,13 @@ been processed. This also means an unknown prelude package is `PKG004`
 environment-miss fact.
 
 The sibling compiler implementation is commit
-[`484d797a33eaf580f2c43ddd0776c6675078c4f9`](https://github.com/pcharbon70/catena/commit/484d797a33eaf580f2c43ddd0776c6675078c4f9)
-on branch `agent/c026-prelude-policy`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`484d797a33eaf580f2c43ddd0776c6675078c4f9`](https://github.com/pcharbon70/catena/commit/484d797a33eaf580f2c43ddd0776c6675078c4f9),
+merged into the `rewrite` integration line by compiler PR
+[#102](https://github.com/pcharbon70/catena/pull/102) at merge commit
+[`e7fea0b`](https://github.com/pcharbon70/catena/commit/e7fea0bda483f377e90ec911b1a54020766e13c8).
+The merge retained the tested tree exactly (tree `c3cd077`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
