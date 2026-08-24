@@ -104,8 +104,9 @@ rule) as context rather than promising either.
 
 ## Outcome
 
-Resolved as C028 at revision `0.1.24`: the contract lives in
-`60-specification/api-and-abi-compatibility/`, the reasoning in
+Resolved as C028 at revision `0.1.24`: the contract lives in the
+[API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md),
+the reasoning in
 [Catena API and ABI Compatibility](../20-notes/catena-api-and-abi-compatibility.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). Migration engines

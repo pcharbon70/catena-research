@@ -32,6 +32,8 @@ contracts.
   re-export closure, and the executable classifier.
 - [Resolved compatibility inquiry](../40-inquiries/how-should-catena-define-api-and-abi-compatibility.md)
   records the operational question, hypotheses, and resolution.
+- [API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md)
+  is the candidate version 0.1.24 contract.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   fixes the SemVer grammar and lock machinery whose meaning side
   completes here.

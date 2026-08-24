@@ -230,9 +230,9 @@ the absence).
 - The [API and ABI Compatibility map](../10-maps/api-and-abi-compatibility.md)
   routes through the OTP precedent, the shipped contracts, and the
   future owners.
-- The API and ABI Compatibility Specification (candidate, then
-  normative at promotion, in `60-specification/api-and-abi-compatibility/`)
-  will define the contract this note argues for.
+- The [API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md)
+  defines the candidate — then normative at promotion — `0.1.24`
+  contract this note argues for.
 - [Catena Package Identity and Dependencies](catena-package-identity-and-dependencies.md)
   fixes the SemVer machinery whose meaning side this slice completes.
 - [Catena Abstraction Boundaries](catena-abstraction-boundaries.md)

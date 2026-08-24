@@ -119,6 +119,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [API and ABI Compatibility](api-and-abi-compatibility/README.md) —
+  the candidate version 0.1.24 layered compat stances, strict
+  interface diff matrix, version-increment meanings, and claim
+  validation contract.
 - [Entry Points](entry-points/README.md) — the normative version 0.1.23
   manifest `entries` field, effect-closed entry validity, derived
   libraries, invocation-only launch, and return-is-shutdown contract.
