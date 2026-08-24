@@ -29,6 +29,8 @@ compatibility.
   startup, return-is-shutdown, and the derived library distinction.
 - [Resolved entry-points inquiry](../40-inquiries/how-should-catena-define-entry-points-and-application-structure.md)
   records the operational question, hypotheses, and resolution.
+- [Entry Points Specification](../60-specification/entry-points/README.md)
+  is the candidate version 0.1.23 contract.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   fixes the manifest machinery entries extend.
 

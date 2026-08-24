@@ -115,6 +115,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Entry Points](entry-points/README.md) — the candidate version 0.1.23
+  manifest `entries` field, effect-closed entry validity, derived
+  libraries, invocation-only launch, and return-is-shutdown contract.
 - [Prelude Policy](prelude-policy/README.md) — the normative version
   0.1.22 opt-in manifest selection, ordinary-origin precedence,
   zero-implicit-names edition guarantee, and lockfile treatment.

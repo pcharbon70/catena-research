@@ -87,8 +87,9 @@ kind flag on the target runtime too.
 
 ## Outcome
 
-Resolved as C027 at revision `0.1.23`: the normative contract will live in
-`60-specification/entry-points/`, the reasoning
+Resolved as C027 at revision `0.1.23`: the contract lives in the
+[Entry Points Specification](../60-specification/entry-points/README.md),
+the reasoning
 in [Catena Entry Points](../20-notes/catena-entry-points.md), and the
 forks in the [design decision register](../20-notes/design-decision-register.md).
 Supervision/restart (G084), cancellation (G088), the CLI/host boundary
