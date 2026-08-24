@@ -30,7 +30,9 @@ compatibility.
 - [Resolved entry-points inquiry](../40-inquiries/how-should-catena-define-entry-points-and-application-structure.md)
   records the operational question, hypotheses, and resolution.
 - [Entry Points Specification](../60-specification/entry-points/README.md)
-  is the candidate version 0.1.23 contract.
+  is the normative version 0.1.23 contract.
+- [C027 evidence record](../50-journal/2026-08-24-c027-entry-points.md)
+  records the executable entry wiring and verification.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   fixes the manifest machinery entries extend.
 
@@ -58,9 +60,9 @@ compatibility.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will register
+- [Conformance Traceability](conformance-traceability.md) registers
   `EN-OBL-001` through `EN-OBL-010` against normative anchors and
-  sibling compiler tests.
+  immutable sibling compiler evidence.
 - [Approachable Catena Language Design](approachable-catena-language-design.md)
   holds the application-shape context a future `catena run` serves.
 

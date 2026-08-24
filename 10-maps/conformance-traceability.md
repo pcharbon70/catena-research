@@ -126,8 +126,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-two normative areas, the C012 governance policy, and the
-candidate `EN` entry-points area are now
+extracted; all twenty-three normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -158,7 +157,7 @@ sibling compiler repository.
 | `CY` module-dependency-cycles | 10 | `c024_module_cycles_test.exs` (7) | compiler-tagged + gated (`ca2be79`); all obligations traced |
 | `PK` package-identity-and-dependencies | 12 | `c025_package_deps_test.exs` (9) | compiler-tagged + gated (`dcd7da0`); all obligations traced |
 | `PL` prelude-policy | 10 | `c026_prelude_policy_test.exs` (7) | compiler-tagged + gated (`484d797`); all obligations traced |
-| `EN` entry-points | 10 | `c027_entry_points_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `EN` entry-points | 10 | `c027_entry_points_test.exs` (9) | compiler-tagged + gated (`cd0e5c5`); all obligations traced |
 
 ## Trails
 
@@ -1397,10 +1396,11 @@ lacks a focused tag.
 
 ## Entry points registry (`EN`, 0.1.23)
 
-Evidence labels will refer to focused tests in
-`test/catena/c027_entry_points_test.exs` and its
-`test/catena/c027_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c027_entry_points_test.exs`](https://github.com/pcharbon70/catena/blob/cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5/test/catena/c027_entry_points_test.exs)
+and its
+[`c027_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5/test/catena/c027_traceability_coverage_test.exs)
+gate:
 
 - **c027 #1** *keeps 0.1.23 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c027 #2** *accepts the optional `entries` array with the entry object grammar and optional `launch: true`*
@@ -1413,27 +1413,25 @@ compiler repository. The planned focused set is:
 - **c027 #9** *emits stable diagnostics with unchanged reused identities*
 - **c027 #10** *keeps the wiring deterministic, source-only, and outside G084/G121 machinery*
 
-Anchors currently point at the candidate 0.1.23 chapters and become
-normative anchors at C027 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.23 chapters; `EN-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| EN-OBL-001 | Apply entry behavior only at exact 0.1.23 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/entry-points/diagnostics-and-conformance.md#revision-and-persistence-separation) | c027 #1; EDN001 | untraced |
-| EN-OBL-002 | Accept the optional `entries` array with the entry object grammar and optional `launch: true` | [`entry-declarations.md#the-entries-field`](../60-specification/entry-points/entry-declarations.md#the-entries-field) | c027 #2 | untraced |
-| EN-OBL-003 | Reject every malformed entry declaration as `ENT001` with the offending shape | [`entry-declarations.md#entry-validity`](../60-specification/entry-points/entry-declarations.md#entry-validity) | c027 #3; ENT001 | untraced |
-| EN-OBL-004 | Derive libraries from zero declared entries with absent/`null`/`[]` equivalence and no kind flag | [`entry-declarations.md#libraries-and-executables`](../60-specification/entry-points/entry-declarations.md#libraries-and-executables) | c027 #4 | untraced |
-| EN-OBL-005 | Enforce at most one launch marker and allow launching any declared entry by name | [`entry-declarations.md#libraries-and-executables`](../60-specification/entry-points/entry-declarations.md#libraries-and-executables) | c027 #5 | untraced |
-| EN-OBL-006 | Launch by invoking the entry's function to completion under unchanged strict kernel semantics, introducing no scope or process | [`startup-and-shutdown.md#launch`](../60-specification/entry-points/startup-and-shutdown.md#launch) | c027 #6 | untraced |
-| EN-OBL-007 | Report completed-with-value or failed-with-trap: return-is-shutdown with the trap identity | [`startup-and-shutdown.md#return-is-shutdown`](../60-specification/entry-points/startup-and-shutdown.md#return-is-shutdown) | c027 #7; ENT003 | untraced |
-| EN-OBL-008 | Reject a launch naming an undeclared entry as `ENT002` | [`startup-and-shutdown.md#launch`](../60-specification/entry-points/startup-and-shutdown.md#launch) | c027 #8; ENT002 | untraced |
-| EN-OBL-009 | Emit stable diagnostics: `ENT001`–`ENT003` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/entry-points/diagnostics-and-conformance.md#stable-diagnostics) | c027 #9 | untraced |
-| EN-OBL-010 | Keep the wiring deterministic, source-only, and outside G084/G088/G121 machinery, with compilation roots unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/entry-points/diagnostics-and-conformance.md#abstract-public-boundaries) | c027 #1, #10 | untraced |
+| EN-OBL-001 | Apply entry behavior only at exact 0.1.23 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/entry-points/diagnostics-and-conformance.md#revision-and-persistence-separation) | c027 #1; EDN001 | traced |
+| EN-OBL-002 | Accept the optional `entries` array with the entry object grammar and optional `launch: true` | [`entry-declarations.md#the-entries-field`](../60-specification/entry-points/entry-declarations.md#the-entries-field) | c027 #2 | traced |
+| EN-OBL-003 | Reject every malformed entry declaration as `ENT001` with the offending shape | [`entry-declarations.md#entry-validity`](../60-specification/entry-points/entry-declarations.md#entry-validity) | c027 #3; ENT001 | traced |
+| EN-OBL-004 | Derive libraries from zero declared entries with absent/`null`/`[]` equivalence and no kind flag | [`entry-declarations.md#libraries-and-executables`](../60-specification/entry-points/entry-declarations.md#libraries-and-executables) | c027 #4 | traced |
+| EN-OBL-005 | Enforce at most one launch marker and allow launching any declared entry by name | [`entry-declarations.md#libraries-and-executables`](../60-specification/entry-points/entry-declarations.md#libraries-and-executables) | c027 #5 | traced |
+| EN-OBL-006 | Launch by invoking the entry's function to completion under unchanged strict kernel semantics, introducing no scope or process | [`startup-and-shutdown.md#launch`](../60-specification/entry-points/startup-and-shutdown.md#launch) | c027 #6 | traced |
+| EN-OBL-007 | Report completed-with-value or failed-with-trap: return-is-shutdown with the trap identity | [`startup-and-shutdown.md#return-is-shutdown`](../60-specification/entry-points/startup-and-shutdown.md#return-is-shutdown) | c027 #7; ENT003 | traced |
+| EN-OBL-008 | Reject a launch naming an undeclared entry as `ENT002` | [`startup-and-shutdown.md#launch`](../60-specification/entry-points/startup-and-shutdown.md#launch) | c027 #8; ENT002 | traced |
+| EN-OBL-009 | Emit stable diagnostics: `ENT001`–`ENT003` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/entry-points/diagnostics-and-conformance.md#stable-diagnostics) | c027 #9 | traced |
+| EN-OBL-010 | Keep the wiring deterministic, source-only, and outside G084/G088/G121 machinery, with compilation roots unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/entry-points/diagnostics-and-conformance.md#abstract-public-boundaries) | c027 #1, #10 | traced |
 
-C027 coverage is 0 `traced` and 10 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `EN-OBL-*` identifier lacks a
-focused tag.
+C027 coverage is 10 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `EN-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

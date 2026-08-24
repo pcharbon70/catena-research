@@ -134,9 +134,10 @@ and shadowing. Normative C022 uses `0.1.18` for imports and exports. Normative C
 uses `0.1.19` for abstraction boundaries. Normative C024 uses `0.1.20`
 for module dependency cycles. Normative C025 uses `0.1.21` for package
 identity and dependency resolution. Normative C026 uses `0.1.22` for the
-prelude. The
+prelude. Normative C027 uses `0.1.23` for entry points and application
+structure. The
 next unused semantic
-patch is `0.1.23` unless an approved versioning policy explicitly
+patch is `0.1.24` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

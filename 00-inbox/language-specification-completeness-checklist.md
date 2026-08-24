@@ -108,6 +108,13 @@ Normative C025 uses `0.1.21` for package identity and dependency
 resolution. Its dependency grammar, resolution, lockfile, identity, and
 verification are recorded in the
 [C025 conformance journal](../50-journal/2026-08-24-c025-package-identity.md).
+Normative C026 uses `0.1.22` for the prelude. Its selection, precedence,
+opt-out, edition guarantee, and verification are recorded in the
+[C026 conformance journal](../50-journal/2026-08-24-c026-prelude-policy.md).
+Normative C027 uses `0.1.23` for entry points. Its entry declarations,
+derived libraries, launch semantics, shutdown reports, and verification
+are recorded in the
+[C027 conformance journal](../50-journal/2026-08-24-c027-entry-points.md).
 
 ## Existing research that needs normative consolidation
 
@@ -528,10 +535,52 @@ as small normative rules rather than copied wholesale into a specification.
   tooling remain G121; reproducible-build consumption remains G128;
   signing and threat modeling remain G130; compatibility and re-export
   facades remain G028; the prelude is subsequently fixed by C026.
-- [ ] **G026 — Gap — prelude policy.** Define automatic imports, opt-out behavior,
-  shadowing, and what is guaranteed by every language edition.
-- [ ] **G027 — Gap — entry points and application structure.** Define executable and
-  library roots, top-level effects, application startup, and shutdown results.
+- [x] **C026 — Complete — prelude policy.**
+  The normative
+  [0.1.22 prelude specification](../60-specification/prelude-policy/README.md),
+  [synthesis](../20-notes/catena-prelude-policy.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-define-its-prelude-policy.md),
+  [topic map](../10-maps/prelude-policy.md), and
+  [C026 record](../50-journal/2026-08-24-c026-prelude-policy.md) fix
+  the opt-in manifest `prelude` selection of one package and
+  requirement; admission of the resolved package's exports as an
+  ordinary import-class origin under unchanged C021 precedence with
+  `NSP004` collisions naming both origins; absent/`null` as the complete
+  opt-out with no sentinel or per-name hiding; the zero-implicit-names
+  edition guarantee with lifecycle-record path for any future default;
+  and prelude resolution, locking, and replay as ordinary C025
+  dependencies with marked requirers and bundle digests. Sibling
+  compiler commit
+  [`484d7971d4f3ba6dcdbe12dd08c6b6ff37ec7834`](https://github.com/pcharbon70/catena/commit/484d7971d4f3ba6dcdbe12dd08c6b6ff37ec7834)
+  supplies complete `PL-OBL-001`–`PL-OBL-010` coverage with 332 passing
+  tests through the manifest decoder, namespace builder, and
+  `Catena.Package.Deps` wiring. Prelude contents and the name freeze
+  remain G101; collection protocols remain P102; tooling scaffolding
+  remains G121; compatibility meanings of prelude version bumps remain
+  G028/G136.
+- [x] **C027 — Complete — entry points and application structure.**
+  The normative
+  [0.1.23 entry points specification](../60-specification/entry-points/README.md),
+  [synthesis](../20-notes/catena-entry-points.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-define-entry-points-and-application-structure.md),
+  [topic map](../10-maps/entry-points.md), and
+  [C027 record](../50-journal/2026-08-24-c027-entry-points.md) fix
+  the optional manifest `entries` array naming existing zero-argument,
+  total, effect-closed exports with recorded result spellings and at
+  most one launch marker; libraries derived from zero declared entries
+  with absent/`null`/`[]` equivalence and no kind flag; invocation-only
+  launch under unchanged strict kernel semantics that introduces no
+  scope and spawns no process; return-is-shutdown reports carrying the
+  entry's value or the trap identity; and `ENT001`–`ENT003` stable
+  diagnostics with `PKG001`/`EDN001` reused unchanged. Sibling compiler
+  commit
+  [`cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5`](https://github.com/pcharbon70/catena/commit/cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5)
+  supplies complete `EN-OBL-001`–`EN-OBL-010` coverage with 342 passing
+  tests through the manifest decoder, package linker validation, and
+  `Catena.Entry.launch/2`. Supervision and process lifetime remain
+  G084/G089; cancellation remains G088; CLI and host-process boundaries
+  remain G121; distribution and upgrades remain G091/G092; entry-set
+  compatibility remains G028.
 - [ ] **G028 — Gap — API and ABI compatibility.** Define source, type, behavior, and
   BEAM-level compatibility, including what changes require a major version.
 

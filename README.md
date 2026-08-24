@@ -89,6 +89,9 @@ and its exact
 The normative C026 prelude boundary begins at the
 [Prelude Policy map](10-maps/prelude-policy.md) and its exact
 [0.1.22 specification](60-specification/prelude-policy/README.md).
+The normative C027 entry-points boundary begins at the
+[Entry Points map](10-maps/entry-points.md) and its exact
+[0.1.23 specification](60-specification/entry-points/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -192,9 +195,10 @@ and shadowing; normative C022 uses `0.1.18` for imports and exports; normative C
 uses `0.1.19` for abstraction boundaries; normative C024 uses `0.1.20`
 for module dependency cycles; normative C025 uses `0.1.21` for package
 identity and dependency resolution; normative C026 uses `0.1.22` for the
-prelude; and
+prelude; normative C027 uses `0.1.23` for entry points and application
+structure; and
 the next
-unused semantic patch is `0.1.23`. C008 defines package-local editions,
+unused semantic patch is `0.1.24`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

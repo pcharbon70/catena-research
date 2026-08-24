@@ -92,6 +92,11 @@ This is the selective entry point to the archive. See the
   implicit-Prelude model, the normative 0.1.22 opt-in selection with
   the zero-implicit-names guarantee, and the owners of contents and
   tooling.
+- [Entry Points](entry-points.md) — routes through the C010 completion
+  rule and C026 zero-implicit-names guarantee, the OTP application
+  precedent, the normative 0.1.23 named entry exports with
+  effect-closure, invocation-only startup, return-is-shutdown results,
+  and derived libraries, and the owners of supervision and tooling.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

@@ -2,7 +2,7 @@
 title: "Entry Points Diagnostics and Conformance"
 kind: specification
 created: "2026-08-24"
-status: candidate
+status: normative
 spec_version: "0.1.23"
 tags:
   - conformance

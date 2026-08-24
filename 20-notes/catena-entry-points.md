@@ -196,8 +196,7 @@ change).
 - The [Entry Points map](../10-maps/entry-points.md) routes through the
   OTP precedent, the shipped contracts, and remaining owners.
 - The [Entry Points Specification](../60-specification/entry-points/README.md)
-  defines the candidate — then normative at promotion — `0.1.23`
-  contract this note argues for.
+  defines the normative `0.1.23` contract this note argued for.
 - [Catena Package Identity and Dependencies](catena-package-identity-and-dependencies.md)
   fixes the manifest and identity machinery entries ride.
 - [Catena Prelude Policy](catena-prelude-policy.md) fixes the

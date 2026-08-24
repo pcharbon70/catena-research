@@ -193,9 +193,9 @@ Fixed in: [specification](../60-specification/prelude-policy/README.md)
 
 ## C027 — entry points and application structure (`0.1.23`, 2026-08-24)
 
-Fixed in: [synthesis](catena-entry-points.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/entry-points/README.md)
+· [synthesis](catena-entry-points.md)
+· [journal](../50-journal/2026-08-24-c027-entry-points.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
