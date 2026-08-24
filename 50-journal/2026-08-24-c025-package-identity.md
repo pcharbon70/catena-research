@@ -45,9 +45,13 @@ extends no existing grammar in place, the first slice since C019 with
 that property.
 
 The sibling compiler implementation is commit
-[`dcd7da056ba1317fcd7df1df8716981ff8363e1d`](https://github.com/pcharbon70/catena/commit/dcd7da056ba1317fcd7df1df8716981ff8363e1d)
-on branch `agent/c025-package-identity`, prepared from the `rewrite`
-integration line for coordinated publication.
+[`dcd7da056ba1317fcd7df1df8716981ff8363e1d`](https://github.com/pcharbon70/catena/commit/dcd7da056ba1317fcd7df1df8716981ff8363e1d),
+merged into the `rewrite` integration line by compiler PR
+[#101](https://github.com/pcharbon70/catena/pull/101) at merge commit
+[`45b6641`](https://github.com/pcharbon70/catena/commit/45b66414071276097a7571bbf1f8661a635cb4d0).
+The merge retained the tested tree exactly (tree `6bf6dc5`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
