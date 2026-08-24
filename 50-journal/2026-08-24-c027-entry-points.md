@@ -50,10 +50,13 @@ The C026 header-evidence paragraph and the full completed entry are
 restored in this slice's promotion, alongside C027's own flip.
 
 The sibling compiler implementation is commit
-[`cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5`](https://github.com/pcharbon70/catena/commit/cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5)
-on branch `agent/c027-entry-points`, pending compiler PR and research
-promotion following the established publication order (the PR links are
-backfilled at publication).
+[`cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5`](https://github.com/pcharbon70/catena/commit/cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5),
+merged into the `rewrite` integration line by compiler PR
+[#103](https://github.com/pcharbon70/catena/pull/103) at merge commit
+[`aeceae7`](https://github.com/pcharbon70/catena/commit/aeceae784aa0ad4b9e4f5c224bb404c5611c9b52).
+The merge retained the tested tree exactly (tree `794735a`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
