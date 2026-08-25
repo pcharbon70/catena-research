@@ -906,10 +906,39 @@ validation.
 
 ## 13. Specifications, governance, and erasure
 
-- [ ] **P109 — Partial — surface grammar.** Freeze syntax for claims, evidence,
-  assumptions, governed scopes, policy, authorization, decisions, and
+- [ ] **P109 — Partial — surface grammar (the capstone).** Freeze syntax for claims,
+  evidence, assumptions, governed scopes, policy, authorization, decisions, and
   transitions. Normative 0.1.6 freezes semantic JSON forms but intentionally
   leaves public parser punctuation open.
+
+  **Scope note (2026-08-24):** P109 is the *capstone* of the language line
+  and must be **widened beyond its original declaration-language scope**
+  before it can close. The original item owns only the specification and
+  governance surface; the concrete *programming* grammar — declaration
+  syntax for modules, imports/exports (the `use`/`export` punctuation
+  C022 and ~20 shipped chapters defer here), values, functions and calls
+  (G031/G032), conditionals and match expressions (G033), patterns,
+  traits, effects and handlers, specifications, and entry declarations —
+  has no other owner. Widening P109 makes it four deliverables at once:
+  (1) the general declaration and expression grammar over the completed
+  C013–C020 scanner stack, parser included; (2) the original governance
+  surface syntax; (3) the grammar's diagnostics, completing P117's
+  parse-error half; and (4) the input contract for Section 14 tooling
+  (G118 formatter, G119 doc tool, G120 REPL, G123 editor protocol) and
+  the surface halves of P047/D059/G096, all of which are blocked on it.
+
+  Sequencing stays as the corpus already executes it: semantics first
+  over the retained inputs (Sections 4–5, 9–11, stdlib contracts),
+  grammar last. The widening exercise itself — deciding what an
+  *original* Catena grammar should be rather than borrowing another
+  language's shape — is joint developer-and-agent design work; the
+  [approachable-language-design research](../10-maps/approachable-catena-language-design.md)
+  accumulates the criteria it will consume, and every widened decision
+  must land through the normal slice process (fork questions with
+  options and recommendations, recorded in the
+  [decision register](../20-notes/design-decision-register.md)).
+  Deferral pointers in shipped chapters that name P109 for declaration
+  grammar resolve to this widened scope; none need re-pointing.
 - [x] **C110 — Complete — checking language.** Normative 0.1.6 fixes an explicitly
   typed pure fragment, exact integer, Boolean, and nested-tuple examples,
   deterministic left-to-right evaluation, distinct failure outcomes, and a
