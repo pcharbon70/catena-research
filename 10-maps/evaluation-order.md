@@ -29,6 +29,8 @@ bindings, future forms, and syntax.
   entry rule, and trace observability.
 - [Resolved order inquiry](../40-inquiries/when-does-each-subexpression-evaluate.md)
   records the operational question, hypotheses, and resolution.
+- [Evaluation Order Specification](../60-specification/evaluation-order/README.md)
+  is the candidate version 0.1.26 contract.
 - [Values and Evaluation map](values-and-evaluation.md) — the
   trilogy's first stop: the invariant this table schedules.
 

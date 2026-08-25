@@ -127,6 +127,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Evaluation Order](evaluation-order/README.md) — the candidate
+  version 0.1.26 closed ordered-forms table with typed-core
+  completions, the future-form entry rule, and trace observability
+  with dual-target agreement.
 - [Values and Evaluation](values-and-evaluation/README.md) — the
   normative version 0.1.25 closed value grammar with Float, uniform
   first-classness, strictness invariant with edition-record gate, and

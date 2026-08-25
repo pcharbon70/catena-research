@@ -96,8 +96,9 @@ trace-agreement tests are the proven evidence template.
 
 ## Outcome
 
-Resolved as C030 at revision `0.1.26`: the contract will live in
-`60-specification/evaluation-order/`, the reasoning in
+Resolved as C030 at revision `0.1.26`: the contract lives in the
+[Evaluation Order Specification](../60-specification/evaluation-order/README.md),
+the reasoning in
 [Catena Evaluation Order](../20-notes/catena-evaluation-order.md), and
 the forks in the [design decision
 register](../20-notes/design-decision-register.md). G031 bindings,

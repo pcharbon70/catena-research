@@ -189,8 +189,8 @@ same gate C029 fixed).
 - The [Evaluation Order map](../10-maps/evaluation-order.md) routes
   through the kernel backbone, the shipped fragments, and the future
   owners.
-- The Evaluation Order Specification (candidate, then normative at
-  promotion, in `60-specification/evaluation-order/`) will define the
+- The [Evaluation Order Specification](../60-specification/evaluation-order/README.md)
+  defines the candidate — then normative at promotion — `0.1.26`
   contract this note argues for.
 - [Catena Values and Evaluation](catena-values-and-evaluation.md)
   fixes the invariant above this table.
