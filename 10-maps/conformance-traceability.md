@@ -75,6 +75,8 @@ follow-up item now that C011 is reached.
   — the C028 source for `CP-OBL-*` obligations.
 - [Values and Evaluation Specification](../60-specification/values-and-evaluation/README.md)
   — the C029 source for `VA-OBL-*` obligations.
+- [Evaluation Order Specification](../60-specification/evaluation-order/README.md)
+  — the C030 source for `EO-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -112,6 +114,7 @@ convention.
 | `EN` | entry-points | 0.1.23 |
 | `CP` | api-and-abi-compatibility | 0.1.24 |
 | `VA` | values-and-evaluation | 0.1.25 |
+| `EO` | evaluation-order | 0.1.26 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -132,7 +135,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-five normative areas and the C012 governance policy are now
+extracted; all twenty-five normative areas, the C012 governance policy, and the
+candidate `EO` evaluation-order area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -166,6 +170,7 @@ sibling compiler repository.
 | `EN` entry-points | 10 | `c027_entry_points_test.exs` (9) | compiler-tagged + gated (`cd0e5c5`); all obligations traced |
 | `CP` api-and-abi-compatibility | 10 | `c028_api_compat_test.exs` (11) | compiler-tagged + gated (`0d96f96`); all obligations traced |
 | `VA` values-and-evaluation | 8 | `c029_values_test.exs` (9) | compiler-tagged + gated (`f8d8fa9`); all obligations traced |
+| `EO` evaluation-order | 8 | `c030_evaluation_order_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1514,6 +1519,42 @@ are fully traced against the immutable compiler commit.
 C029 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `VA-OBL-*` identifier
 lacks a focused tag.
+
+## Evaluation order registry (`EO`, 0.1.26)
+
+Evidence labels will refer to focused tests in
+`test/catena/c030_evaluation_order_test.exs` and its
+`test/catena/c030_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c030 #1** *keeps 0.1.26 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c030 #2** *fixes one declared order for every kernel-listed form, unchanged from the kernel's rules*
+- **c030 #3** *fixes the typed-core completions: curried application, trait-call order, handler installation, annotate transparency*
+- **c030 #4** *keeps the C002/C003/C004/C005 fragment rules exactly as their areas fixed them*
+- **c030 #5** *keeps the table closed: no outside form has a declared order*
+- **c030 #6** *makes declared order observable: equal traces on the stepper and compiled BEAM*
+- **c030 #7** *keeps the `and`/`or` skips as the only exceptions under the C029 gate*
+- **c030 #8** *keeps the contract deterministic and definitional with zero new diagnostic families*
+
+Anchors currently point at the candidate 0.1.26 chapters and become
+normative anchors at C030 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| EO-OBL-001 | Apply order behavior only at exact 0.1.26 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/evaluation-order/diagnostics-and-conformance.md#revision-and-persistence-separation) | c030 #1; EDN001 | untraced |
+| EO-OBL-002 | Fix one declared order for every kernel-listed form, unchanged from the kernel's rules | [`ordered-forms-and-entry-rule.md#the-ordered-forms-table`](../60-specification/evaluation-order/ordered-forms-and-entry-rule.md#the-ordered-forms-table) | c030 #2 | untraced |
+| EO-OBL-003 | Fix the typed-core completions: curried application, trait-call subject-then-arguments, handler installation, annotate transparency | [`ordered-forms-and-entry-rule.md#typed-core-completions`](../60-specification/evaluation-order/ordered-forms-and-entry-rule.md#typed-core-completions) | c030 #3 | untraced |
+| EO-OBL-004 | Keep the C002/C003/C004/C005 fragment rules exactly as their areas fixed them | [`ordered-forms-and-entry-rule.md#the-ordered-forms-table`](../60-specification/evaluation-order/ordered-forms-and-entry-rule.md#the-ordered-forms-table) | c030 #4 | untraced |
+| EO-OBL-005 | Keep the table closed: no form outside it has a declared order; future forms enter with their own entry | [`ordered-forms-and-entry-rule.md#the-entry-rule`](../60-specification/evaluation-order/ordered-forms-and-entry-rule.md#the-entry-rule) | c030 #5 | untraced |
+| EO-OBL-006 | Make declared order observable: equal effect-request traces on the stepper and compiled BEAM for the same program | [`observability-and-trace-agreement.md#order-is-observable-semantics`](../60-specification/evaluation-order/observability-and-trace-agreement.md#order-is-observable-semantics) | c030 #6 | untraced |
+| EO-OBL-007 | Keep the `and`/`or` skips as the only exceptions, under the C029 edition-record gate | [`ordered-forms-and-entry-rule.md#the-ordered-forms-table`](../60-specification/evaluation-order/ordered-forms-and-entry-rule.md#the-ordered-forms-table) | c030 #7 | untraced |
+| EO-OBL-008 | Keep the contract deterministic, definitional, and outside G031–G033/G040/G088/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/evaluation-order/diagnostics-and-conformance.md#abstract-public-boundaries) | c030 #8 | untraced |
+
+C030 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `EO-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
