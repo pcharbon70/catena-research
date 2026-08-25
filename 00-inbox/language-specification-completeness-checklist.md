@@ -123,6 +123,10 @@ Normative C029 uses `0.1.25` for values and evaluation. Its value
 grammar, strictness invariant, terminal contract, and verification are
 recorded in the
 [C029 conformance journal](../50-journal/2026-08-24-c029-values.md).
+Normative C030 uses `0.1.26` for evaluation order. Its ordered-forms
+table, entry rule, trace observability, and verification are recorded
+in the
+[C030 conformance journal](../50-journal/2026-08-25-c030-evaluation-order.md).
 
 ## Existing research that needs normative consolidation
 
@@ -647,13 +651,30 @@ as small normative rules rather than copied wholesale into a specification.
   G031–G033; equality remains P035; failure taxonomy beyond traps
   remains G036; observability remains G037; future types' value status
   remains G040.
-- [ ] **P030 — Partial — evaluation order.** C002 defines single scrutinee
-  evaluation and source-order constructor fields. C003 adds
-  pattern-before-condition order, exactly one condition evaluation, lazy
-  left-to-right Boolean composition, false fallthrough, irreversible body
-  commitment, and shared or-pattern continuations. General function and
-  operator arguments, collections, traits, interpolation, and other forms
-  remain open.
+- [x] **C030 — Complete — evaluation order.**
+  The normative
+  [0.1.26 order specification](../60-specification/evaluation-order/README.md),
+  [synthesis](../20-notes/catena-evaluation-order.md),
+  [resolved inquiry](../40-inquiries/when-does-each-subexpression-evaluate.md),
+  [topic map](../10-maps/evaluation-order.md), and
+  [C030 record](../50-journal/2026-08-25-c030-evaluation-order.md) fix
+  the closed ordered-forms table — the kernel's list elevated verbatim
+  plus the typed-core completions: curried multi-argument application
+  as repeated unary left-to-right, trait-call subject then arguments,
+  handler installation before body, annotate transparency — with the
+  future-form entry rule (collections, interpolation, and G040
+  compounds declare their order in their own slices), the
+  order-versus-structure boundary against G031/G032, and trace
+  observability: a conforming implementation's effect-request trace
+  equals the declared order's trace, generalizing C004's traversal and
+  C005's handler-order rules, with reference-evaluator and
+  compiled-BEAM traces agreeing per program. Sibling compiler commit
+  [`5e1e8948249701a45029379e604b7aa0e8376e92`](https://github.com/pcharbon70/catena/commit/5e1e8948249701a45029379e604b7aa0e8376e92)
+  supplies complete `EO-OBL-001`–`EO-OBL-008` coverage with 377 passing
+  tests through dual-target trace agreement. The slice is definitional:
+  no new public API and zero new diagnostic families. Binding structure
+  remains G031; arity and currying remain G032; branch forms remain
+  G033; future compounds' entries remain G040.
 - [ ] **G031 — Gap — bindings and sequencing.** Define `let`-like syntax, scope,
   recursive bindings, mutual recursion, unused values, and sequencing of
   effectful expressions.

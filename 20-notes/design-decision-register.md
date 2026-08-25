@@ -238,6 +238,21 @@ Fixed in: [specification](../60-specification/values-and-evaluation/README.md)
 | Deliverable | classifier + property tests (rec) / normative-only / classifier + eval entry | classifier + tests |
 
 
+## C030 — evaluation order (`0.1.26`, 2026-08-25)
+
+Fixed in: [specification](../60-specification/evaluation-order/README.md)
+· [synthesis](catena-evaluation-order.md)
+· [journal](../50-journal/2026-08-25-c030-evaluation-order.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area EO 0.1.26 (rec) / extend values area / defer into G031 | new area EO |
+| Account shape | closed table + entry rule (rec) / general rule only / table without entry rule | closed table + entry rule |
+| G031/G032 line | order vs structure split (rec) / leave bindings to G031 / fold G031 in | order vs structure |
+| Observability | observable via traces (rec) / advisory for pure forms | observable via traces |
+| Deliverable | dual-target trace tests (rec) / order table module / normative-only | dual-target trace tests |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

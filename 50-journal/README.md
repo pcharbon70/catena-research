@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C030 Evaluation Order](2026-08-25-c030-evaluation-order.md) —
+  records the normative 0.1.26 order contract, the operation-name
+  oracle and evaluator-target decisions, dual-target trace evidence,
+  and immutable compiler identity.
 - [C029 Values and Evaluation](2026-08-24-c029-values.md) — records
   the normative 0.1.25 values contract, the two-carrier classifier and
   trap-ordering decisions, the property-shaped evidence, the

@@ -106,6 +106,10 @@ This is the selective entry point to the archive. See the
   Float, and the normative 0.1.25 closed value grammar with uniform
   first-classness, the strictness invariant with its edition-record
   gate, and value-or-trap terminals.
+- [Evaluation Order](evaluation-order.md) — routes through the C010
+  kernel backbone and the C002/C003/C004/C005 order fragments, and the
+  normative 0.1.26 closed ordered-forms table with typed-core
+  completions, the future-form entry rule, and trace observability.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

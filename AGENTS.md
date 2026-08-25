@@ -136,9 +136,10 @@ for module dependency cycles. Normative C025 uses `0.1.21` for package
 identity and dependency resolution. Normative C026 uses `0.1.22` for the
 prelude. Normative C027 uses `0.1.23` for entry points and application
 structure. Normative C028 uses `0.1.24` for API and ABI compatibility.
-Normative C029 uses `0.1.25` for values and evaluation. The
+Normative C029 uses `0.1.25` for values and evaluation. Normative C030
+uses `0.1.26` for evaluation order. The
 next unused semantic
-patch is `0.1.26` unless an approved versioning policy explicitly
+patch is `0.1.27` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

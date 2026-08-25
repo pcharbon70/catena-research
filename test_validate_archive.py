@@ -186,6 +186,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "entry-points": "0.1.23",
                 "api-and-abi-compatibility": "0.1.24",
                 "values-and-evaluation": "0.1.25",
+                "evaluation-order": "0.1.26",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )
