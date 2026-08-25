@@ -122,12 +122,16 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   grammar, strictness invariant, terminal contract, and executable
   evidence are recorded in the
   [C029 conformance journal](../50-journal/2026-08-24-c029-values.md).
+  The normative C030 order boundary is version `0.1.26`; its
+  ordered-forms table, entry rule, trace observability, and executable
+  evidence are recorded in the
+  [C030 conformance journal](../50-journal/2026-08-25-c030-evaluation-order.md).
 
 ## Index
 
 ### Subdirectories
 
-- [Evaluation Order](evaluation-order/README.md) — the candidate
+- [Evaluation Order](evaluation-order/README.md) — the normative
   version 0.1.26 closed ordered-forms table with typed-core
   completions, the future-form entry rule, and trace observability
   with dual-target agreement.

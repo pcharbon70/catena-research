@@ -162,6 +162,10 @@ evaluation as `P029`–`G038`.
   grammar with Float, uniform first-classness, and the strictness
   invariant with its edition-record gate; when each subexpression is
   evaluated remains P030;
+- ~~when each subexpression is evaluated~~ — closed by C030: the closed
+  ordered-forms table with typed-core completions, the future-form
+  entry rule, and trace-observable order with reference/BEAM
+  agreement;
 - nonrecursive and recursive bindings, mutual recursion, unused effectful
   values, and sequencing;
 - currying or fixed arity, partial application, closure capture, named and

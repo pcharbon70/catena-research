@@ -190,8 +190,7 @@ same gate C029 fixed).
   through the kernel backbone, the shipped fragments, and the future
   owners.
 - The [Evaluation Order Specification](../60-specification/evaluation-order/README.md)
-  defines the candidate — then normative at promotion — `0.1.26`
-  contract this note argues for.
+  defines the normative `0.1.26` contract this note argued for.
 - [Catena Values and Evaluation](catena-values-and-evaluation.md)
   fixes the invariant above this table.
 - The [Values and Evaluation map](../10-maps/values-and-evaluation.md)

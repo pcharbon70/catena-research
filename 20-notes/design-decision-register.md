@@ -240,9 +240,9 @@ Fixed in: [specification](../60-specification/values-and-evaluation/README.md)
 
 ## C030 — evaluation order (`0.1.26`, 2026-08-25)
 
-Fixed in: [synthesis](catena-evaluation-order.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/evaluation-order/README.md)
+· [synthesis](catena-evaluation-order.md)
+· [journal](../50-journal/2026-08-25-c030-evaluation-order.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

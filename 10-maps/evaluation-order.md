@@ -30,7 +30,9 @@ bindings, future forms, and syntax.
 - [Resolved order inquiry](../40-inquiries/when-does-each-subexpression-evaluate.md)
   records the operational question, hypotheses, and resolution.
 - [Evaluation Order Specification](../60-specification/evaluation-order/README.md)
-  is the candidate version 0.1.26 contract.
+  is the normative version 0.1.26 contract.
+- [C030 evidence record](../50-journal/2026-08-25-c030-evaluation-order.md)
+  records the dual-target trace evidence and verification.
 - [Values and Evaluation map](values-and-evaluation.md) — the
   trilogy's first stop: the invariant this table schedules.
 
@@ -57,9 +59,9 @@ bindings, future forms, and syntax.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `EO-OBL-001` through `EO-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `EO-OBL-001` through `EO-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - G031–G033 bindings, calls, and branching; P035 equality; G036
   failure; G040 collections and interpolation entry; G088
   cancellation; and P109 syntax remain the future owners.

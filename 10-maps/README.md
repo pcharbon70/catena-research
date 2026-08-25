@@ -147,8 +147,8 @@ should explain why its links belong together rather than merely list files.
   gate, and value-or-trap terminals.
 - [Evaluation Order](evaluation-order.md) — routes through the C010
   kernel backbone and the C002/C003/C004/C005 order fragments, and the
-  proposed closed ordered-forms table with typed-core completions, the
-  future-form entry rule, and trace observability.
+  normative 0.1.26 closed ordered-forms table with typed-core
+  completions, the future-form entry rule, and trace observability.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
