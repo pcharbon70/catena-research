@@ -73,6 +73,8 @@ follow-up item now that C011 is reached.
   — the C027 source for `EN-OBL-*` obligations.
 - [API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md)
   — the C028 source for `CP-OBL-*` obligations.
+- [Values and Evaluation Specification](../60-specification/values-and-evaluation/README.md)
+  — the C029 source for `VA-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -109,6 +111,7 @@ convention.
 | `PL` | prelude-policy | 0.1.22 |
 | `EN` | entry-points | 0.1.23 |
 | `CP` | api-and-abi-compatibility | 0.1.24 |
+| `VA` | values-and-evaluation | 0.1.25 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -129,7 +132,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-four normative areas and the C012 governance policy are now
+extracted; all twenty-four normative areas, the C012 governance policy, and the
+candidate `VA` values area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -162,6 +166,7 @@ sibling compiler repository.
 | `PL` prelude-policy | 10 | `c026_prelude_policy_test.exs` (7) | compiler-tagged + gated (`484d797`); all obligations traced |
 | `EN` entry-points | 10 | `c027_entry_points_test.exs` (9) | compiler-tagged + gated (`cd0e5c5`); all obligations traced |
 | `CP` api-and-abi-compatibility | 10 | `c028_api_compat_test.exs` (11) | compiler-tagged + gated (`0d96f96`); all obligations traced |
+| `VA` values-and-evaluation | 8 | `c029_values_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1475,6 +1480,42 @@ are fully traced against the immutable compiler commit.
 C028 coverage is 10 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `CP-OBL-*` identifier
 lacks a focused tag.
+
+## Values and evaluation registry (`VA`, 0.1.25)
+
+Evidence labels will refer to focused tests in
+`test/catena/c029_values_test.exs` and its
+`test/catena/c029_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c029 #1** *keeps 0.1.25 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c029 #2** *fixes the closed value grammar and closed non-value list with kernel rules unchanged*
+- **c029 #3** *admits Float as the tenth value form with C018 semantics unchanged*
+- **c029 #4** *guarantees uniform first-classness with exclusions named, not tiered*
+- **c029 #5** *keeps value membership closed: no outside form classifies as a value*
+- **c029 #6** *enforces the strictness invariant with the two named exceptions and value-or-trap terminals*
+- **c029 #7** *gates every future lazy form behind an edition record*
+- **c029 #8** *keeps classification deterministic with zero new diagnostic families*
+
+Anchors currently point at the candidate 0.1.25 chapters and become
+normative anchors at C029 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| VA-OBL-001 | Apply values behavior only at exact 0.1.25 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/values-and-evaluation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c029 #1; EDN001 | untraced |
+| VA-OBL-002 | Fix the closed value grammar and the closed non-value list with kernel rules unchanged | [`value-forms-and-first-classness.md#the-value-grammar`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-value-grammar) | c029 #2 | untraced |
+| VA-OBL-003 | Admit Float as the tenth value form with C018 semantics unchanged | [`value-forms-and-first-classness.md#the-value-grammar`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-value-grammar) | c029 #3 | untraced |
+| VA-OBL-004 | Guarantee uniform first-classness: bindable, passable, returnable, storable, with exclusions named not tiered | [`value-forms-and-first-classness.md#first-classness`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#first-classness) | c029 #4 | untraced |
+| VA-OBL-005 | Keep value membership closed: no form outside the grammar classifies as a value | [`value-forms-and-first-classness.md#the-non-value-list`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-non-value-list) | c029 #5 | untraced |
+| VA-OBL-006 | Enforce the strictness invariant with the two named exceptions and the value-or-trap terminal contract | [`strictness-and-terminal-outcomes.md#the-strictness-invariant`](../60-specification/values-and-evaluation/strictness-and-terminal-outcomes.md#the-strictness-invariant) | c029 #6 | untraced |
+| VA-OBL-007 | Gate every future lazy or multi-evaluation form behind an edition record | [`strictness-and-terminal-outcomes.md#the-edition-record-gate`](../60-specification/values-and-evaluation/strictness-and-terminal-outcomes.md#the-edition-record-gate) | c029 #7 | untraced |
+| VA-OBL-008 | Keep classification deterministic and outside P035/G036/G037/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/values-and-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c029 #8 | untraced |
+
+C029 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `VA-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
