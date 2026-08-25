@@ -56,10 +56,13 @@ precede its consumer; and module names arrive as strings while
 `compile_json` returns atoms, so `dual_trace` normalizes once.
 
 The sibling compiler implementation is commit
-[`5e1e8948249701a45029379e604b7aa0e8376e92`](https://github.com/pcharbon70/catena/commit/5e1e8948249701a45029379e604b7aa0e8376e92)
-on branch `agent/c030-order`, pending compiler PR and research
-promotion following the established publication order (the PR links
-are backfilled at publication).
+[`5e1e8948249701a45029379e604b7aa0e8376e92`](https://github.com/pcharbon70/catena/commit/5e1e8948249701a45029379e604b7aa0e8376e92),
+merged into the `rewrite` integration line by compiler PR
+[#106](https://github.com/pcharbon70/catena/pull/106) at merge commit
+[`55f58a7`](https://github.com/pcharbon70/catena/commit/55f58a790669593beef5a7dcc6c95158243a969a).
+The merge retained the tested tree exactly (tree `ef2dbef`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
