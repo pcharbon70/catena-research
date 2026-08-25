@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C029 Values and Evaluation](2026-08-24-c029-values.md) — records
+  the normative 0.1.25 values contract, the two-carrier classifier and
+  trap-ordering decisions, the property-shaped evidence, the
+  zero-diagnostics stance, and immutable compiler identity.
 - [C028 API and ABI Compatibility](2026-08-24-c028-api-compat.md) —
   records the normative 0.1.24 compatibility contract, the decoded-
   interface classification and CMP003 identity decisions, the G027/G028

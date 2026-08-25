@@ -119,6 +119,10 @@ Normative C028 uses `0.1.24` for API and ABI compatibility. Its layer
 stances, breaking matrix, claim validation, and verification are
 recorded in the
 [C028 conformance journal](../50-journal/2026-08-24-c028-api-compat.md).
+Normative C029 uses `0.1.25` for values and evaluation. Its value
+grammar, strictness invariant, terminal contract, and verification are
+recorded in the
+[C029 conformance journal](../50-journal/2026-08-24-c029-values.md).
 
 ## Existing research that needs normative consolidation
 
@@ -615,8 +619,34 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 4. Core expressions and evaluation
 
-- [ ] **P029 — Partial — value and evaluation definition.** State precisely that the
-  language is strict and define which forms are values.
+- [x] **C029 — Complete — value and evaluation definition.**
+  The normative
+  [0.1.25 values specification](../60-specification/values-and-evaluation/README.md),
+  [synthesis](../20-notes/catena-values-and-evaluation.md),
+  [resolved inquiry](../40-inquiries/what-are-catenas-values-and-strictness.md),
+  [topic map](../10-maps/values-and-evaluation.md), and
+  [C029 record](../50-journal/2026-08-24-c029-values.md) fix
+  the closed ten-form value grammar — the kernel's integer, Boolean,
+  Unit, tuple, closure, constructor-value, record, injection, and
+  opaque process-handle forms plus Float with C018 semantics
+  unchanged — with the closed non-value list (evidence, handler
+  declarations, capability names, resumptions, traps, effect rows,
+  signatures); uniform first-classness with G037/G085 observability
+  named as exclusions; the G040 entry rule for future types; the
+  strictness invariant — every subexpression evaluates at most once,
+  to a value or a terminal trap, before use — with the kernel's
+  `and`/`or` skips as the only named exceptions and an edition-record
+  gate for any future lazy form; and value-or-trap terminal outcomes
+  with suspended requests as pending continuations. Sibling compiler
+  commit
+  [`f8d8fa96e536df9b7ff00db246d8817f39b1c381`](https://github.com/pcharbon70/catena/commit/f8d8fa96e536df9b7ff00db246d8817f39b1c381)
+  supplies complete `VA-OBL-001`–`VA-OBL-008` coverage with 366 passing
+  tests through the `Catena.Values` classifier and stepper terminal
+  witnesses. The slice is definitional: zero new diagnostic families.
+  Per-form order remains P030; bindings/calls/branching remain
+  G031–G033; equality remains P035; failure taxonomy beyond traps
+  remains G036; observability remains G037; future types' value status
+  remains G040.
 - [ ] **P030 — Partial — evaluation order.** C002 defines single scrutinee
   evaluation and source-order constructor fields. C003 adds
   pattern-before-condition order, exactly one condition evaluation, lazy

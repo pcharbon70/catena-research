@@ -132,8 +132,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-four normative areas, the C012 governance policy, and the
-candidate `VA` values area are now
+extracted; all twenty-five normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -166,7 +165,7 @@ sibling compiler repository.
 | `PL` prelude-policy | 10 | `c026_prelude_policy_test.exs` (7) | compiler-tagged + gated (`484d797`); all obligations traced |
 | `EN` entry-points | 10 | `c027_entry_points_test.exs` (9) | compiler-tagged + gated (`cd0e5c5`); all obligations traced |
 | `CP` api-and-abi-compatibility | 10 | `c028_api_compat_test.exs` (11) | compiler-tagged + gated (`0d96f96`); all obligations traced |
-| `VA` values-and-evaluation | 8 | `c029_values_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `VA` values-and-evaluation | 8 | `c029_values_test.exs` (9) | compiler-tagged + gated (`f8d8fa9`); all obligations traced |
 
 ## Trails
 
@@ -1483,10 +1482,11 @@ lacks a focused tag.
 
 ## Values and evaluation registry (`VA`, 0.1.25)
 
-Evidence labels will refer to focused tests in
-`test/catena/c029_values_test.exs` and its
-`test/catena/c029_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c029_values_test.exs`](https://github.com/pcharbon70/catena/blob/f8d8fa96e536df9b7ff00db246d8817f39b1c381/test/catena/c029_values_test.exs)
+and its
+[`c029_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/f8d8fa96e536df9b7ff00db246d8817f39b1c381/test/catena/c029_traceability_coverage_test.exs)
+gate:
 
 - **c029 #1** *keeps 0.1.25 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c029 #2** *fixes the closed value grammar and closed non-value list with kernel rules unchanged*
@@ -1497,25 +1497,23 @@ compiler repository. The planned focused set is:
 - **c029 #7** *gates every future lazy form behind an edition record*
 - **c029 #8** *keeps classification deterministic with zero new diagnostic families*
 
-Anchors currently point at the candidate 0.1.25 chapters and become
-normative anchors at C029 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.25 chapters; `VA-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| VA-OBL-001 | Apply values behavior only at exact 0.1.25 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/values-and-evaluation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c029 #1; EDN001 | untraced |
-| VA-OBL-002 | Fix the closed value grammar and the closed non-value list with kernel rules unchanged | [`value-forms-and-first-classness.md#the-value-grammar`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-value-grammar) | c029 #2 | untraced |
-| VA-OBL-003 | Admit Float as the tenth value form with C018 semantics unchanged | [`value-forms-and-first-classness.md#the-value-grammar`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-value-grammar) | c029 #3 | untraced |
-| VA-OBL-004 | Guarantee uniform first-classness: bindable, passable, returnable, storable, with exclusions named not tiered | [`value-forms-and-first-classness.md#first-classness`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#first-classness) | c029 #4 | untraced |
-| VA-OBL-005 | Keep value membership closed: no form outside the grammar classifies as a value | [`value-forms-and-first-classness.md#the-non-value-list`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-non-value-list) | c029 #5 | untraced |
-| VA-OBL-006 | Enforce the strictness invariant with the two named exceptions and the value-or-trap terminal contract | [`strictness-and-terminal-outcomes.md#the-strictness-invariant`](../60-specification/values-and-evaluation/strictness-and-terminal-outcomes.md#the-strictness-invariant) | c029 #6 | untraced |
-| VA-OBL-007 | Gate every future lazy or multi-evaluation form behind an edition record | [`strictness-and-terminal-outcomes.md#the-edition-record-gate`](../60-specification/values-and-evaluation/strictness-and-terminal-outcomes.md#the-edition-record-gate) | c029 #7 | untraced |
-| VA-OBL-008 | Keep classification deterministic and outside P035/G036/G037/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/values-and-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c029 #8 | untraced |
+| VA-OBL-001 | Apply values behavior only at exact 0.1.25 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/values-and-evaluation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c029 #1; EDN001 | traced |
+| VA-OBL-002 | Fix the closed value grammar and the closed non-value list with kernel rules unchanged | [`value-forms-and-first-classness.md#the-value-grammar`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-value-grammar) | c029 #2 | traced |
+| VA-OBL-003 | Admit Float as the tenth value form with C018 semantics unchanged | [`value-forms-and-first-classness.md#the-value-grammar`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-value-grammar) | c029 #3 | traced |
+| VA-OBL-004 | Guarantee uniform first-classness: bindable, passable, returnable, storable, with exclusions named not tiered | [`value-forms-and-first-classness.md#first-classness`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#first-classness) | c029 #4 | traced |
+| VA-OBL-005 | Keep value membership closed: no form outside the grammar classifies as a value | [`value-forms-and-first-classness.md#the-non-value-list`](../60-specification/values-and-evaluation/value-forms-and-first-classness.md#the-non-value-list) | c029 #5 | traced |
+| VA-OBL-006 | Enforce the strictness invariant with the two named exceptions and the value-or-trap terminal contract | [`strictness-and-terminal-outcomes.md#the-strictness-invariant`](../60-specification/values-and-evaluation/strictness-and-terminal-outcomes.md#the-strictness-invariant) | c029 #6 | traced |
+| VA-OBL-007 | Gate every future lazy or multi-evaluation form behind an edition record | [`strictness-and-terminal-outcomes.md#the-edition-record-gate`](../60-specification/values-and-evaluation/strictness-and-terminal-outcomes.md#the-edition-record-gate) | c029 #7 | traced |
+| VA-OBL-008 | Keep classification deterministic and outside P035/G036/G037/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/values-and-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c029 #8 | traced |
 
-C029 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `VA-OBL-*` identifier lacks a
-focused tag.
+C029 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `VA-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

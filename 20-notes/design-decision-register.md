@@ -225,9 +225,9 @@ Fixed in: [specification](../60-specification/api-and-abi-compatibility/README.m
 
 ## C029 — values and evaluation (`0.1.25`, 2026-08-24)
 
-Fixed in: [synthesis](catena-values-and-evaluation.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/values-and-evaluation/README.md)
+· [synthesis](catena-values-and-evaluation.md)
+· [journal](../50-journal/2026-08-24-c029-values.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

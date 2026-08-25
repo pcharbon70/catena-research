@@ -142,7 +142,7 @@ should explain why its links belong together rather than merely list files.
   diff matrix with minor-as-breaking under 0.x and the claim validator.
 - [Values and Evaluation](values-and-evaluation.md) — routes through
   the C010 kernel calculus, C005's affine resumptions, and C018's
-  Float, and the proposed closed value grammar with uniform
+  Float, and the normative 0.1.25 closed value grammar with uniform
   first-classness, the strictness invariant with its edition-record
   gate, and value-or-trap terminals.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)

@@ -118,13 +118,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   layer stances, breaking matrix, claim validation, and executable
   evidence are recorded in the
   [C028 conformance journal](../50-journal/2026-08-24-c028-api-compat.md).
+  The normative C029 values boundary is version `0.1.25`; its value
+  grammar, strictness invariant, terminal contract, and executable
+  evidence are recorded in the
+  [C029 conformance journal](../50-journal/2026-08-24-c029-values.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Values and Evaluation](values-and-evaluation/README.md) — the
-  candidate version 0.1.25 closed value grammar with Float, uniform
+  normative version 0.1.25 closed value grammar with Float, uniform
   first-classness, strictness invariant with edition-record gate, and
   value-or-trap terminal contract.
 - [API and ABI Compatibility](api-and-abi-compatibility/README.md) —

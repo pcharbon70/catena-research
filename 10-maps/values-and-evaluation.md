@@ -32,7 +32,9 @@ equality, failure, observability, and future types.
 - [Resolved values inquiry](../40-inquiries/what-are-catenas-values-and-strictness.md)
   records the operational question, hypotheses, and resolution.
 - [Values and Evaluation Specification](../60-specification/values-and-evaluation/README.md)
-  is the candidate version 0.1.25 contract.
+  is the normative version 0.1.25 contract.
+- [C029 evidence record](../50-journal/2026-08-24-c029-values.md)
+  records the executable classifier and verification.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   and the Formal Semantic Kernel area fix the machinery this slice
   elevates.
@@ -61,9 +63,9 @@ equality, failure, observability, and future types.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `VA-OBL-001` through `VA-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `VA-OBL-001` through `VA-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - P030 per-form order, G031–G033 bindings and branching, P035
   equality, G036 failure taxonomy, G037 observability, G038
   compile-time evaluation, G040 future types, and P109 syntax remain

@@ -158,7 +158,10 @@ evaluation as `P029`–`G038`.
 
 **Remaining research.** Catena still needs a whole-source-language account of:
 
-- which forms are values and when each subexpression is evaluated;
+- ~~which forms are values~~ — closed by C029: the closed ten-form value
+  grammar with Float, uniform first-classness, and the strictness
+  invariant with its edition-record gate; when each subexpression is
+  evaluated remains P030;
 - nonrecursive and recursive bindings, mutual recursion, unused effectful
   values, and sequencing;
 - currying or fixed arity, partial application, closure capture, named and

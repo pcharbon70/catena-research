@@ -101,6 +101,11 @@ This is the selective entry point to the archive. See the
   through the C002/C008 foundations and C023–C027 deferrals, the OTP
   tiered-compat precedent, and the normative 0.1.24 strict interface
   diff matrix with minor-as-breaking under 0.x and the claim validator.
+- [Values and Evaluation](values-and-evaluation.md) — routes through
+  the C010 kernel calculus, C005's affine resumptions, and C018's
+  Float, and the normative 0.1.25 closed value grammar with uniform
+  first-classness, the strictness invariant with its edition-record
+  gate, and value-or-trap terminals.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
