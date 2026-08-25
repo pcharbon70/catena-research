@@ -130,8 +130,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C029's closed ten-form value grammar with Float, uniform
   first-classness, the strictness invariant with an edition-record
   gate, and value-or-trap terminal outcomes.
+- [Catena Evaluation Order](catena-evaluation-order.md) — proposes
+  C030's closed ordered-forms table with typed-core completions, the
+  future-form entry rule, trace observability, and dual-target
+  evidence.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C029
+  consolidated record of every developer fork decision across C018–C030
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

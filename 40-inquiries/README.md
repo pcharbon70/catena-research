@@ -94,6 +94,10 @@ to `20-notes`.
   — tests the closed value grammar with Float, uniform
   first-classness, and the strictness invariant against the C010
   kernel calculus, C005's affine resumptions, and C018's Float.
+- [When Does Each Subexpression Evaluate?](when-does-each-subexpression-evaluate.md)
+  — tests the closed ordered-forms table with typed-core completions,
+  the entry rule, and trace observability against the C010 kernel
+  backbone and the C002/C003/C004/C005 fragments.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
