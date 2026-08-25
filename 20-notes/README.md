@@ -26,7 +26,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Subdirectories
 
-- None yet.
+- [Synthesis Snapshots](synthesis/README.md) — dated whole-corpus
+  status reports; the current live snapshot is
+  [Catena Language Status: August 2026](synthesis/catena-language-status-2026-08.md).
 
 ### Documents
 
