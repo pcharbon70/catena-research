@@ -123,6 +123,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Values and Evaluation](values-and-evaluation/README.md) — the
+  candidate version 0.1.25 closed value grammar with Float, uniform
+  first-classness, strictness invariant with edition-record gate, and
+  value-or-trap terminal contract.
 - [API and ABI Compatibility](api-and-abi-compatibility/README.md) —
   the normative version 0.1.24 layered compat stances, strict
   interface diff matrix, version-increment meanings, and claim

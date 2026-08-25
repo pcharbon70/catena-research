@@ -31,6 +31,8 @@ equality, failure, observability, and future types.
   strictness invariant, and the terminal-outcome contract.
 - [Resolved values inquiry](../40-inquiries/what-are-catenas-values-and-strictness.md)
   records the operational question, hypotheses, and resolution.
+- [Values and Evaluation Specification](../60-specification/values-and-evaluation/README.md)
+  is the candidate version 0.1.25 contract.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
   and the Formal Semantic Kernel area fix the machinery this slice
   elevates.

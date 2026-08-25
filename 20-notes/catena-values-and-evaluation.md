@@ -199,9 +199,9 @@ contract, not value tiers), or if the 1.0 era considers lazy forms
 - The [Values and Evaluation map](../10-maps/values-and-evaluation.md)
   routes through the kernel calculus, the shipped contracts, and the
   future owners.
-- The Values and Evaluation Specification (candidate, then normative
-  at promotion, in `60-specification/values-and-evaluation/`) will
-  define the contract this note argues for.
+- The [Values and Evaluation Specification](../60-specification/values-and-evaluation/README.md)
+  defines the candidate — then normative at promotion — `0.1.25`
+  contract this note argues for.
 - [Catena Numeric Literal Semantics](catena-numeric-literal-semantics.md)
   fixes the Float this slice admits as a value.
 - [Catena API and ABI Compatibility](catena-api-and-abi-compatibility.md)

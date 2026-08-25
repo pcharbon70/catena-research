@@ -89,8 +89,9 @@ canonical form tags exactly as C027's result rendering does.
 
 ## Outcome
 
-Resolved as C029 at revision `0.1.25`: the contract will live in
-`60-specification/values-and-evaluation/`, the reasoning in
+Resolved as C029 at revision `0.1.25`: the contract lives in the
+[Values and Evaluation Specification](../60-specification/values-and-evaluation/README.md),
+the reasoning in
 [Catena Values and Evaluation](../20-notes/catena-values-and-evaluation.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G031–G033 bindings
