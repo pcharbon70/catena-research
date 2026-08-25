@@ -119,6 +119,10 @@ Normative C028 uses `0.1.24` for API and ABI compatibility. Its layer
 stances, breaking matrix, claim validation, and verification are
 recorded in the
 [C028 conformance journal](../50-journal/2026-08-24-c028-api-compat.md).
+Normative C029 uses `0.1.25` for values and evaluation. Its value
+grammar, strictness invariant, terminal contract, and verification are
+recorded in the
+[C029 conformance journal](../50-journal/2026-08-24-c029-values.md).
 
 ## Existing research that needs normative consolidation
 
@@ -615,8 +619,34 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 4. Core expressions and evaluation
 
-- [ ] **P029 — Partial — value and evaluation definition.** State precisely that the
-  language is strict and define which forms are values.
+- [x] **C029 — Complete — value and evaluation definition.**
+  The normative
+  [0.1.25 values specification](../60-specification/values-and-evaluation/README.md),
+  [synthesis](../20-notes/catena-values-and-evaluation.md),
+  [resolved inquiry](../40-inquiries/what-are-catenas-values-and-strictness.md),
+  [topic map](../10-maps/values-and-evaluation.md), and
+  [C029 record](../50-journal/2026-08-24-c029-values.md) fix
+  the closed ten-form value grammar — the kernel's integer, Boolean,
+  Unit, tuple, closure, constructor-value, record, injection, and
+  opaque process-handle forms plus Float with C018 semantics
+  unchanged — with the closed non-value list (evidence, handler
+  declarations, capability names, resumptions, traps, effect rows,
+  signatures); uniform first-classness with G037/G085 observability
+  named as exclusions; the G040 entry rule for future types; the
+  strictness invariant — every subexpression evaluates at most once,
+  to a value or a terminal trap, before use — with the kernel's
+  `and`/`or` skips as the only named exceptions and an edition-record
+  gate for any future lazy form; and value-or-trap terminal outcomes
+  with suspended requests as pending continuations. Sibling compiler
+  commit
+  [`f8d8fa96e536df9b7ff00db246d8817f39b1c381`](https://github.com/pcharbon70/catena/commit/f8d8fa96e536df9b7ff00db246d8817f39b1c381)
+  supplies complete `VA-OBL-001`–`VA-OBL-008` coverage with 366 passing
+  tests through the `Catena.Values` classifier and stepper terminal
+  witnesses. The slice is definitional: zero new diagnostic families.
+  Per-form order remains P030; bindings/calls/branching remain
+  G031–G033; equality remains P035; failure taxonomy beyond traps
+  remains G036; observability remains G037; future types' value status
+  remains G040.
 - [ ] **P030 — Partial — evaluation order.** C002 defines single scrutinee
   evaluation and source-order constructor fields. C003 adds
   pattern-before-condition order, exactly one condition evaluation, lazy
@@ -906,10 +936,39 @@ validation.
 
 ## 13. Specifications, governance, and erasure
 
-- [ ] **P109 — Partial — surface grammar.** Freeze syntax for claims, evidence,
-  assumptions, governed scopes, policy, authorization, decisions, and
+- [ ] **P109 — Partial — surface grammar (the capstone).** Freeze syntax for claims,
+  evidence, assumptions, governed scopes, policy, authorization, decisions, and
   transitions. Normative 0.1.6 freezes semantic JSON forms but intentionally
   leaves public parser punctuation open.
+
+  **Scope note (2026-08-24):** P109 is the *capstone* of the language line
+  and must be **widened beyond its original declaration-language scope**
+  before it can close. The original item owns only the specification and
+  governance surface; the concrete *programming* grammar — declaration
+  syntax for modules, imports/exports (the `use`/`export` punctuation
+  C022 and ~20 shipped chapters defer here), values, functions and calls
+  (G031/G032), conditionals and match expressions (G033), patterns,
+  traits, effects and handlers, specifications, and entry declarations —
+  has no other owner. Widening P109 makes it four deliverables at once:
+  (1) the general declaration and expression grammar over the completed
+  C013–C020 scanner stack, parser included; (2) the original governance
+  surface syntax; (3) the grammar's diagnostics, completing P117's
+  parse-error half; and (4) the input contract for Section 14 tooling
+  (G118 formatter, G119 doc tool, G120 REPL, G123 editor protocol) and
+  the surface halves of P047/D059/G096, all of which are blocked on it.
+
+  Sequencing stays as the corpus already executes it: semantics first
+  over the retained inputs (Sections 4–5, 9–11, stdlib contracts),
+  grammar last. The widening exercise itself — deciding what an
+  *original* Catena grammar should be rather than borrowing another
+  language's shape — is joint developer-and-agent design work; the
+  [approachable-language-design research](../10-maps/approachable-catena-language-design.md)
+  accumulates the criteria it will consume, and every widened decision
+  must land through the normal slice process (fork questions with
+  options and recommendations, recorded in the
+  [decision register](../20-notes/design-decision-register.md)).
+  Deferral pointers in shipped chapters that name P109 for declaration
+  grammar resolve to this widened scope; none need re-pointing.
 - [x] **C110 — Complete — checking language.** Normative 0.1.6 fixes an explicitly
   typed pure fragment, exact integer, Boolean, and nested-tuple examples,
   deterministic left-to-right evaluation, distinct failure outcomes, and a

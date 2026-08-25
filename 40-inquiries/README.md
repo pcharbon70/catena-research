@@ -90,6 +90,10 @@ to `20-notes`.
   minor-as-breaking under 0.x, and the re-export exclusion against the
   shipped interface, lifecycle, and package contracts and the OTP
   strategy precedent.
+- [What Are Catena's Values and Strictness?](what-are-catenas-values-and-strictness.md)
+  — tests the closed value grammar with Float, uniform
+  first-classness, and the strictness invariant against the C010
+  kernel calculus, C005's affine resumptions, and C018's Float.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

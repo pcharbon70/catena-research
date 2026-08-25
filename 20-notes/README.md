@@ -126,8 +126,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes C028's layered compat stances, strict interface diff
   matrix, minor-as-breaking under 0.x, re-export exclusion, and the
   executable claim validator.
+- [Catena Values and Evaluation](catena-values-and-evaluation.md) —
+  proposes C029's closed ten-form value grammar with Float, uniform
+  first-classness, the strictness invariant with an edition-record
+  gate, and value-or-trap terminal outcomes.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C028
+  consolidated record of every developer fork decision across C018–C029
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

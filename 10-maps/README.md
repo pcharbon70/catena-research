@@ -140,6 +140,11 @@ should explain why its links belong together rather than merely list files.
   through the C002/C008 foundations and C023–C027 deferrals, the OTP
   tiered-compat precedent, and the normative 0.1.24 strict interface
   diff matrix with minor-as-breaking under 0.x and the claim validator.
+- [Values and Evaluation](values-and-evaluation.md) — routes through
+  the C010 kernel calculus, C005's affine resumptions, and C018's
+  Float, and the normative 0.1.25 closed value grammar with uniform
+  first-classness, the strictness invariant with its edition-record
+  gate, and value-or-trap terminals.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

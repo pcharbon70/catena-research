@@ -223,6 +223,21 @@ Fixed in: [specification](../60-specification/api-and-abi-compatibility/README.m
 | Source evidence | Erlang compatibility chapter (rec) / existing notes only / ecosystem-tooling note too | Erlang chapter |
 
 
+## C029 — values and evaluation (`0.1.25`, 2026-08-24)
+
+Fixed in: [specification](../60-specification/values-and-evaluation/README.md)
+· [synthesis](catena-values-and-evaluation.md)
+· [journal](../50-journal/2026-08-24-c029-values.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area VA 0.1.25 (rec) / amend the kernel area / defer into a neighbor | new area VA |
+| Value grammar | closed: kernel + Float (rec) / open canonical-forms / kernel list verbatim | closed, +Float |
+| First-classness | uniform first-class (rec) / tiered passable-storable / per-type restrictions | uniform |
+| Strictness stance | invariant + exceptions + gate (rec) / kernel restatement / merge with P030 | invariant + gate |
+| Deliverable | classifier + property tests (rec) / normative-only / classifier + eval entry | classifier + tests |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry
