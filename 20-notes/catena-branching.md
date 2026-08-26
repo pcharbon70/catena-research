@@ -181,9 +181,9 @@ traps, not a statement tier).
   records the question, hypotheses, and outcome.
 - The [Branching map](../10-maps/branching.md) routes through the
   shipped fragments and the future owners.
-- The Branching Specification (candidate, then normative at promotion,
-  in `60-specification/branching/`) will define the contract this note
-  argues for.
+- The [Branching Specification](../60-specification/branching/README.md)
+  defines the candidate — then normative at promotion — `0.1.29`
+  contract this note argues for.
 - The sibling syntheses — [values](catena-values-and-evaluation.md),
   [order](catena-evaluation-order.md),
   [bindings](catena-bindings-and-sequencing.md),
