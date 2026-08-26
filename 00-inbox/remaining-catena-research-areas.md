@@ -170,8 +170,11 @@ evaluation as `P029`–`G038`.
   values, and sequencing~~ — closed by C031: non-recursive local lets,
   definitions-only recursion with SCC mutual recursion, the sequencing
   idiom, and deny-able `BS001`;
-- currying or fixed arity, partial application, closure capture, named and
-  anonymous functions, callbacks, and proper tail calls;
+- ~~currying or fixed arity, partial application, closure capture, named and
+  anonymous functions, callbacks, and proper tail calls~~ — closed by
+  C032: semantic-unary currying, free partial application, lexical
+  immutable capture, let-bound local functions, and the elevated
+  proper-tail-call guarantee; calling conventions remain G094;
 - conditionals and other branch forms in relation to exhaustive matches;
 - primitive equality and ordering, including floats, strings, binaries,
   process values, and mixed numeric types;

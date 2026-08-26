@@ -131,6 +131,10 @@ Normative C031 uses `0.1.27` for bindings and sequencing. Its binding
 structure, sequencing idiom, `BS001` warning, and verification are
 recorded in the
 [C031 conformance journal](../50-journal/2026-08-25-c031-bindings.md).
+Normative C032 uses `0.1.28` for functions and calls. Its arity model,
+capture discipline, local functions, tail guarantee, and verification
+are recorded in the
+[C032 conformance journal](../50-journal/2026-08-25-c032-functions.md).
 
 ## Existing research that needs normative consolidation
 
@@ -703,9 +707,30 @@ as small normative rules rather than copied wholesale into a specification.
   evaluator/BEAM traces, and kernel recursion witnesses. Functions and
   calls remain G032; branching remains G033; termination remains P034;
   pattern-binding surface forms remain C002/P109.
-- [ ] **G032 — Gap — functions and calls.** Define currying or fixed arity, partial
-  application, closure capture, named functions, anonymous functions, local
-  functions, and tail-call guarantees.
+- [x] **C032 — Complete — functions and calls.**
+  The normative
+  [0.1.28 functions specification](../60-specification/functions-and-calls/README.md),
+  [synthesis](../20-notes/catena-functions-and-calls.md),
+  [resolved inquiry](../40-inquiries/what-is-catenas-function-and-call-model.md),
+  [topic map](../10-maps/functions-and-calls.md), and
+  [C032 record](../50-journal/2026-08-25-c032-functions.md) fix
+  the function model: every function is semantically unary with
+  multi-parameter definitions as nested-unary sugar and multi-argument
+  calls as repeated unary application under C030's order — no arity
+  mismatch exists to diagnose; any prefix application is a
+  first-class closure value (free partial application); capture is
+  lexical and immutable with allocation identity G037's exclusion;
+  the let-bound closure is the local-function form under all of
+  C031's rules; named functions are definitions with C022's export
+  rules; and the kernel's proper-tail-call guarantee is elevated
+  verbatim. Sibling compiler commit
+  [`0af785cf32de1893c9638ebd145944bdc37f52b3`](https://github.com/pcharbon70/catena/commit/0af785cf32de1893c9638ebd145944bdc37f52b3)
+  supplies complete `FC-OBL-001`–`FC-OBL-008` coverage with 397
+  passing tests, including curried and partial-application agreement
+  on evaluator and BEAM and a five-million-iteration match-dispatched
+  tail recursion completing on compiled BEAM. Zero new diagnostic
+  families. Branching remains G033; termination beyond tails remains
+  P034; calling conventions remain G094.
 - [ ] **G033 — Gap — conditionals and general branching.** Specify Boolean conditions,
   match expressions, branch typing, missing alternatives, and whether any
   statement-like control forms exist.
