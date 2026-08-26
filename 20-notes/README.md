@@ -138,8 +138,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes C031's non-recursive binding structure, definitions-only
   recursion, the sequencing idiom, deny-able `BS001` with `_`-prefix
   exemption, and C021 shadowing restated at the binding level.
+- [Catena Functions and Calls](catena-functions-and-calls.md) —
+  proposes C032's semantic-unary curried arity model, free partial
+  application, lexical immutable capture, let-bound local functions,
+  and the elevated proper-tail-call guarantee.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C031
+  consolidated record of every developer fork decision across C018–C032
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

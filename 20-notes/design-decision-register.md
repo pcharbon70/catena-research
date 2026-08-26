@@ -269,6 +269,22 @@ Fixed in: [specification](../60-specification/bindings-and-sequencing/README.md)
 | Deliverable | witnesses + BS001 wiring (rec) / descriptive module / normative-only | witnesses + BS001 |
 
 
+## C032 — functions and calls (`0.1.28`, 2026-08-25)
+
+Fixed in: [synthesis](catena-functions-and-calls.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Arity model | semantic-unary curried (rec) / fixed arity / hybrid | semantic-unary curried |
+| Partial application | free prefix application (rec) / excluded / explicit-only | free prefix |
+| Closure capture | lexical, immutable (rec) / by-reference / explicit captures | lexical, immutable |
+| Local functions | let-bound closures (rec) / local recursion now / new sugar form | let-bound closures |
+| Tail calls | elevate + deep witness (rec) / state only / defer | elevate + deep witness |
+| Deliverable | witnesses, zero families (rec) / arity diagnostics / normative-only | witnesses, zero families |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

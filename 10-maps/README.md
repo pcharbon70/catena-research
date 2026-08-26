@@ -154,6 +154,11 @@ should explain why its links belong together rather than merely list files.
   C022's IMP001 precedent, and the normative 0.1.27 non-recursive
   bindings, sequencing idiom, and deny-able `BS001` with `_`-prefix
   exemption.
+- [Functions and Calls](functions-and-calls.md) — routes through the
+  kernel's closure and tail rules, the backend's tail preservation,
+  C030's application order, and C031's discipline, and the proposed
+  semantic-unary curried model with free partial application and
+  let-bound local functions.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

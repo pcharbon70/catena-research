@@ -102,6 +102,11 @@ to `20-notes`.
   — tests non-recursive binding structure, definitions-only recursion,
   the sequencing idiom, and deny-able `BS001` against the kernel's let
   rules, C021 shadowing, C024's SCC, and C022's IMP001 precedent.
+- [What Is Catena's Function and Call Model?](what-is-catenas-function-and-call-model.md)
+  — tests semantic-unary currying, free partial application, lexical
+  immutable capture, let-bound local functions, and the elevated tail
+  guarantee against the kernel rules and shipped curried-value
+  evidence.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
