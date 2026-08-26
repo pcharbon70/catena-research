@@ -141,8 +141,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-seven normative areas, the C012 governance policy, and the
-candidate `FC` functions area are now
+extracted; all twenty-eight normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -178,7 +177,7 @@ sibling compiler repository.
 | `VA` values-and-evaluation | 8 | `c029_values_test.exs` (9) | compiler-tagged + gated (`f8d8fa9`); all obligations traced |
 | `EO` evaluation-order | 8 | `c030_evaluation_order_test.exs` (9) | compiler-tagged + gated (`5e1e894`); all obligations traced |
 | `BS` bindings-and-sequencing | 8 | `c031_bindings_test.exs` (8) | compiler-tagged + gated (`17b5be7`); all obligations traced |
-| `FC` functions-and-calls | 8 | `c032_functions_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `FC` functions-and-calls | 8 | `c032_functions_test.exs` (9) | compiler-tagged + gated (`0af785c`); all obligations traced |
 
 ## Trails
 
@@ -1600,10 +1599,11 @@ lacks a focused tag.
 
 ## Functions and calls registry (`FC`, 0.1.28)
 
-Evidence labels will refer to focused tests in
-`test/catena/c032_functions_test.exs` and its
-`test/catena/c032_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c032_functions_test.exs`](https://github.com/pcharbon70/catena/blob/0af785cf32de1893c9638ebd145944bdc37f52b3/test/catena/c032_functions_test.exs)
+and its
+[`c032_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/0af785cf32de1893c9638ebd145944bdc37f52b3/test/catena/c032_traceability_coverage_test.exs)
+gate:
 
 - **c032 #1** *keeps 0.1.28 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c032 #2** *fixes the semantic-unary model with multi-parameter desugaring and no arity diagnostics*
@@ -1614,25 +1614,23 @@ compiler repository. The planned focused set is:
 - **c032 #7** *keeps named functions as definitions with C031's recursion environment and C022's exports*
 - **c032 #8** *keeps the model deterministic and outside G033/P034/G037/G094/P109 claims with zero new families*
 
-Anchors currently point at the candidate 0.1.28 chapters and become
-normative anchors at C032 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.28 chapters; `FC-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| FC-OBL-001 | Apply function-model behavior only at exact 0.1.28 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/functions-and-calls/diagnostics-and-conformance.md#revision-and-persistence-separation) | c032 #1; EDN001 | untraced |
-| FC-OBL-002 | Fix the semantic-unary model: multi-parameter desugaring and repeated unary application with no arity diagnostics | [`arity-and-application.md#the-semantic-unary-model`](../60-specification/functions-and-calls/arity-and-application.md#the-semantic-unary-model) | c032 #2 | untraced |
-| FC-OBL-003 | Make any prefix application a value: free partial application, first-class and callable | [`arity-and-application.md#partial-application`](../60-specification/functions-and-calls/arity-and-application.md#partial-application) | c032 #3 | untraced |
-| FC-OBL-004 | Enforce lexical immutable capture: two applications observe the same captured values | [`closures-and-tail-calls.md#closure-capture`](../60-specification/functions-and-calls/closures-and-tail-calls.md#closure-capture) | c032 #4 | untraced |
-| FC-OBL-005 | Make the let-bound closure the local-function form under all of C031's rules | [`closures-and-tail-calls.md#the-local-function-form`](../60-specification/functions-and-calls/closures-and-tail-calls.md#the-local-function-form) | c032 #5 | untraced |
-| FC-OBL-006 | Keep the proper-tail-call guarantee: deep tail recursion completes without unbounded stack growth | [`closures-and-tail-calls.md#proper-tail-calls`](../60-specification/functions-and-calls/closures-and-tail-calls.md#proper-tail-calls) | c032 #6 | untraced |
-| FC-OBL-007 | Keep named functions as definitions with C031's recursion environment and C022's export rules | [`arity-and-application.md#named-and-anonymous-functions`](../60-specification/functions-and-calls/arity-and-application.md#named-and-anonymous-functions) | c032 #7 | untraced |
-| FC-OBL-008 | Keep the model deterministic and outside G033/P034/G037/G094/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/functions-and-calls/diagnostics-and-conformance.md#abstract-public-boundaries) | c032 #8 | untraced |
+| FC-OBL-001 | Apply function-model behavior only at exact 0.1.28 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/functions-and-calls/diagnostics-and-conformance.md#revision-and-persistence-separation) | c032 #1; EDN001 | traced |
+| FC-OBL-002 | Fix the semantic-unary model: multi-parameter desugaring and repeated unary application with no arity diagnostics | [`arity-and-application.md#the-semantic-unary-model`](../60-specification/functions-and-calls/arity-and-application.md#the-semantic-unary-model) | c032 #2 | traced |
+| FC-OBL-003 | Make any prefix application a value: free partial application, first-class and callable | [`arity-and-application.md#partial-application`](../60-specification/functions-and-calls/arity-and-application.md#partial-application) | c032 #3 | traced |
+| FC-OBL-004 | Enforce lexical immutable capture: two applications observe the same captured values | [`closures-and-tail-calls.md#closure-capture`](../60-specification/functions-and-calls/closures-and-tail-calls.md#closure-capture) | c032 #4 | traced |
+| FC-OBL-005 | Make the let-bound closure the local-function form under all of C031's rules | [`closures-and-tail-calls.md#the-local-function-form`](../60-specification/functions-and-calls/closures-and-tail-calls.md#the-local-function-form) | c032 #5 | traced |
+| FC-OBL-006 | Keep the proper-tail-call guarantee: deep tail recursion completes without unbounded stack growth | [`closures-and-tail-calls.md#proper-tail-calls`](../60-specification/functions-and-calls/closures-and-tail-calls.md#proper-tail-calls) | c032 #6 | traced |
+| FC-OBL-007 | Keep named functions as definitions with C031's recursion environment and C022's export rules | [`arity-and-application.md#named-and-anonymous-functions`](../60-specification/functions-and-calls/arity-and-application.md#named-and-anonymous-functions) | c032 #7 | traced |
+| FC-OBL-008 | Keep the model deterministic and outside G033/P034/G037/G094/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/functions-and-calls/diagnostics-and-conformance.md#abstract-public-boundaries) | c032 #8 | traced |
 
-C032 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `FC-OBL-*` identifier lacks a
-focused tag.
+C032 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `FC-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

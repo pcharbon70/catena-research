@@ -2,7 +2,7 @@
 title: "Functions and Calls Diagnostics and Conformance"
 kind: specification
 created: "2026-08-25"
-status: candidate
+status: normative
 spec_version: "0.1.28"
 tags:
   - conformance

@@ -271,9 +271,9 @@ Fixed in: [specification](../60-specification/bindings-and-sequencing/README.md)
 
 ## C032 — functions and calls (`0.1.28`, 2026-08-25)
 
-Fixed in: [synthesis](catena-functions-and-calls.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/functions-and-calls/README.md)
+· [synthesis](catena-functions-and-calls.md)
+· [journal](../50-journal/2026-08-25-c032-functions.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

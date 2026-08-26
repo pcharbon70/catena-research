@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C032 Functions and Calls](2026-08-25-c032-functions.md) — records
+  the normative 0.1.28 function model, the kernel-path deep tail
+  witness, the encoded-interface reading, and immutable compiler
+  identity.
 - [C031 Bindings and Sequencing](2026-08-25-c031-bindings.md) —
   records the normative 0.1.27 bindings contract, the build-keyed
   warning and underscore-spelling decisions, the sequential-AST

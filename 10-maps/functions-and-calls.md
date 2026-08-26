@@ -33,7 +33,9 @@ owners of branching, termination, allocation, and syntax.
 - [Resolved function-model inquiry](../40-inquiries/what-is-catenas-function-and-call-model.md)
   records the operational question, hypotheses, and resolution.
 - [Functions and Calls Specification](../60-specification/functions-and-calls/README.md)
-  is the candidate version 0.1.28 contract.
+  is the normative version 0.1.28 contract.
+- [C032 evidence record](../50-journal/2026-08-25-c032-functions.md)
+  records the witness evidence and verification.
 - [Values and Evaluation map](values-and-evaluation.md),
   [Evaluation Order map](evaluation-order.md), and
   [Bindings and Sequencing map](bindings-and-sequencing.md) — the
