@@ -29,6 +29,8 @@ failure, future scrutinee types, and spellings.
   the statement-form absence.
 - [Resolved branching inquiry](../40-inquiries/what-is-catenas-branching-model.md)
   records the operational question, hypotheses, and resolution.
+- [Branching Specification](../60-specification/branching/README.md)
+  is the candidate version 0.1.29 contract.
 - The sibling maps — [Values and Evaluation](values-and-evaluation.md),
   [Evaluation Order](evaluation-order.md),
   [Bindings and Sequencing](bindings-and-sequencing.md),

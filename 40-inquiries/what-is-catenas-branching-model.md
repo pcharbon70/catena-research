@@ -97,8 +97,9 @@ the shipped answer and is consolidated, not changed.
 
 ## Outcome
 
-Resolved as C033 at revision `0.1.29`: the contract will live in
-`60-specification/branching/`, the reasoning in
+Resolved as C033 at revision `0.1.29`: the contract lives in the
+[Branching Specification](../60-specification/branching/README.md),
+the reasoning in
 [Catena Branching](../20-notes/catena-branching.md), and the forks in
 the [design decision
 register](../20-notes/design-decision-register.md). P034 termination,

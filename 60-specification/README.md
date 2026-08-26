@@ -139,6 +139,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Branching](branching/README.md) — the candidate version 0.1.29
+  match-only branch form with the conditional sugar promise, the
+  consolidated rule table, and the statement-form declared absence.
 - [Functions and Calls](functions-and-calls/README.md) — the normative
   version 0.1.28 semantic-unary curried model with free partial
   application, lexical immutable capture, let-bound local functions,
