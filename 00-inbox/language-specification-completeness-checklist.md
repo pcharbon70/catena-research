@@ -135,6 +135,10 @@ Normative C032 uses `0.1.28` for functions and calls. Its arity model,
 capture discipline, local functions, tail guarantee, and verification
 are recorded in the
 [C032 conformance journal](../50-journal/2026-08-25-c032-functions.md).
+Normative C033 uses `0.1.29` for conditionals and branching. Its
+branch form, sugar promise, consolidated rules, statement absence, and
+verification are recorded in the
+[C033 conformance journal](../50-journal/2026-08-25-c033-branching.md).
 
 ## Existing research that needs normative consolidation
 
@@ -731,9 +735,32 @@ as small normative rules rather than copied wholesale into a specification.
   tail recursion completing on compiled BEAM. Zero new diagnostic
   families. Branching remains G033; termination beyond tails remains
   P034; calling conventions remain G094.
-- [ ] **G033 — Gap — conditionals and general branching.** Specify Boolean conditions,
-  match expressions, branch typing, missing alternatives, and whether any
-  statement-like control forms exist.
+- [x] **C033 — Complete — conditionals and general branching.**
+  The normative
+  [0.1.29 branching specification](../60-specification/branching/README.md),
+  [synthesis](../20-notes/catena-branching.md),
+  [resolved inquiry](../40-inquiries/what-is-catenas-branching-model.md),
+  [topic map](../10-maps/branching.md), and
+  [C033 record](../50-journal/2026-08-25-c033-branching.md) fix
+  the branching model: match is the single branch form (scrutinee
+  once, source-order clauses, pattern-before-condition, exactly-once
+  `Bool` conditions, false fallthrough, irreversible commitment,
+  clause bodies unifying with the match's type, `M001` missing
+  witnesses and redundancy rejection unchanged from C002); the
+  conditional sugar promise fixes that any future `if` spelling
+  desugars to a Bool-pattern match with shipped semantics; and
+  statement-like control forms are declared absent — everything is an
+  expression, effects sequence through the let idiom, and any
+  exception enters through the edition-record gate. Sibling compiler
+  commit
+  [`221338face094ad9c9306dcf8805a75910b1d1d7`](https://github.com/pcharbon70/catena/commit/221338face094ad9c9306dcf8805a75910b1d1d7)
+  supplies complete `BR-OBL-001`–`BR-OBL-008` coverage with 406
+  passing tests through Bool-pattern dispatch, guarded fallthrough,
+  commitment traces, and `M001` regression witnesses. Zero new
+  diagnostic families. Termination remains P034; scrutinee traps
+  remain G036; future coverage entries remain G040; spellings remain
+  P109. Section 4's gaps are now complete; the P029–P038 partials
+  remain.
 - [ ] **P034 — Partial — recursion and termination.** C003 excludes
   recursive condition predicates and verifies an acyclic first-order fragment.
   Separate unrestricted program recursion from future recursive total

@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C033 Branching](2026-08-25-c033-branching.md) — records the
+  normative 0.1.29 branching contract, the flag-scrutinee and
+  bound-variable-guard witness decisions, Section 4's completion, and
+  immutable compiler identity.
 - [C032 Functions and Calls](2026-08-25-c032-functions.md) — records
   the normative 0.1.28 function model, the kernel-path deep tail
   witness, the encoded-interface reading, and immutable compiler

@@ -107,6 +107,10 @@ to `20-notes`.
   immutable capture, let-bound local functions, and the elevated tail
   guarantee against the kernel rules and shipped curried-value
   evidence.
+- [What Is Catena's Branching Model?](what-is-catenas-branching-model.md)
+  — tests match as the only branch form, the conditional sugar
+  promise, the consolidated rule table, and the statement-form absence
+  against C002, C003, C010, and the C029–C032 siblings.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

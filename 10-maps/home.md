@@ -120,6 +120,10 @@ This is the selective entry point to the archive. See the
   C030's application order, and C031's discipline, and the normative
   0.1.28 semantic-unary curried model with free partial application
   and let-bound local functions.
+- [Branching](branching.md) — routes through C002's match and
+  coverage, C003's conditions, C010's commitment, and the C029–C032
+  siblings, and the normative 0.1.29 match-only branch form with the
+  sugar promise and the no-statement absence.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

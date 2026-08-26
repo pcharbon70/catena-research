@@ -159,6 +159,10 @@ should explain why its links belong together rather than merely list files.
   C030's application order, and C031's discipline, and the normative
   0.1.28 semantic-unary curried model with free partial application
   and let-bound local functions.
+- [Branching](branching.md) — routes through C002's match and
+  coverage, C003's conditions, C010's commitment, and the C029–C032
+  siblings, and the normative 0.1.29 match-only branch form with the
+  sugar promise and the no-statement absence.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

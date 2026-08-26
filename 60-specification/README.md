@@ -134,11 +134,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   arity model, capture discipline, local functions, tail guarantee,
   and executable evidence are recorded in the
   [C032 conformance journal](../50-journal/2026-08-25-c032-functions.md).
+  The normative C033 branching boundary is version `0.1.29`; its
+  branch form, sugar promise, consolidated rules, statement absence,
+  and executable evidence are recorded in the
+  [C033 conformance journal](../50-journal/2026-08-25-c033-branching.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Branching](branching/README.md) — the normative version 0.1.29
+  match-only branch form with the conditional sugar promise, the
+  consolidated rule table, and the statement-form declared absence.
 - [Functions and Calls](functions-and-calls/README.md) — the normative
   version 0.1.28 semantic-unary curried model with free partial
   application, lexical immutable capture, let-bound local functions,
