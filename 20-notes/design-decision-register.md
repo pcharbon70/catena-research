@@ -285,6 +285,21 @@ Fixed in: [specification](../60-specification/functions-and-calls/README.md)
 | Deliverable | witnesses, zero families (rec) / arity diagnostics / normative-only | witnesses, zero families |
 
 
+## C033 — branching (`0.1.29`, 2026-08-25)
+
+Fixed in: [synthesis](catena-branching.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area BR 0.1.29 (rec) / extend clause-conditions / defer to G040 | new area BR |
+| General conditional | match-only + sugar promise (rec) / match-only, no promise / new if form now | match-only + promise |
+| Statement forms | declared absence (rec) / defer to P109 / reserve statement tier | declared absence |
+| Consolidation scope | full consolidation (rec) / minimal residuals only | full consolidation |
+| Deliverable | witnesses, zero families (rec) / new branch warnings / normative-only | witnesses, zero families |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

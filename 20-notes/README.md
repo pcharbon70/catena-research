@@ -142,8 +142,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C032's semantic-unary curried arity model, free partial
   application, lexical immutable capture, let-bound local functions,
   and the elevated proper-tail-call guarantee.
+- [Catena Branching](catena-branching.md) — proposes C033's
+  match-only branch form with the conditional sugar promise, the
+  consolidated rule table, and the declared absence of statement-like
+  control forms.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C032
+  consolidated record of every developer fork decision across C018–C033
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
