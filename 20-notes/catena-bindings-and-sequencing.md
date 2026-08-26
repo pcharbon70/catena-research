@@ -193,8 +193,7 @@ exemption rule in a later patch, not removing the warning).
   future owners.
 - The Bindings and Sequencing Specification (candidate, then normative
   at promotion, in `60-specification/bindings-and-sequencing/`) will
-  define the contract this note argues for.
-- [Catena Values and Evaluation](catena-values-and-evaluation.md) and
+  define the contract this note argues for.- [Catena Values and Evaluation](catena-values-and-evaluation.md) and
   [Catena Evaluation Order](catena-evaluation-order.md) are the
   trilogy's first two members.
 

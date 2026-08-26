@@ -131,6 +131,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Bindings and Sequencing](bindings-and-sequencing/README.md) — the
+  candidate version 0.1.27 non-recursive binding structure,
+  definitions-only recursion, sequencing idiom, and deny-able `BS001`
+  with `_`-prefix exemption.
 - [Evaluation Order](evaluation-order/README.md) — the normative
   version 0.1.26 closed ordered-forms table with typed-core
   completions, the future-form entry rule, and trace observability

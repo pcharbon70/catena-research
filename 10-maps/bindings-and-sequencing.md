@@ -30,6 +30,8 @@ branching, termination, and syntax.
   fate, the sequencing idiom, and shadowing.
 - [Resolved bindings inquiry](../40-inquiries/how-should-catena-define-bindings-and-sequencing.md)
   records the operational question, hypotheses, and resolution.
+- [Bindings and Sequencing Specification](../60-specification/bindings-and-sequencing/README.md)
+  is the candidate version 0.1.27 contract.
 - [Values and Evaluation map](values-and-evaluation.md) and
   [Evaluation Order map](evaluation-order.md) — the trilogy's first
   two stops.
