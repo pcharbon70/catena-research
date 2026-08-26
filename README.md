@@ -111,6 +111,9 @@ The normative C032 functions boundary begins at the
 [Functions and Calls map](10-maps/functions-and-calls.md) and its
 exact
 [0.1.28 specification](60-specification/functions-and-calls/README.md).
+The normative C033 branching boundary begins at the
+[Branching map](10-maps/branching.md) and its exact
+[0.1.29 specification](60-specification/branching/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -219,9 +222,10 @@ structure; normative C028 uses `0.1.24` for API and ABI compatibility;
 normative C029 uses `0.1.25` for values and evaluation;
 normative C030 uses `0.1.26` for evaluation order;
 normative C031 uses `0.1.27` for bindings and sequencing;
-normative C032 uses `0.1.28` for functions and calls; and
+normative C032 uses `0.1.28` for functions and calls;
+normative C033 uses `0.1.29` for conditionals and branching; and
 the next
-unused semantic patch is `0.1.29`. C008 defines package-local editions,
+unused semantic patch is `0.1.30`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

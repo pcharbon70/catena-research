@@ -175,7 +175,10 @@ evaluation as `P029`–`G038`.
   C032: semantic-unary currying, free partial application, lexical
   immutable capture, let-bound local functions, and the elevated
   proper-tail-call guarantee; calling conventions remain G094;
-- conditionals and other branch forms in relation to exhaustive matches;
+- ~~conditionals and other branch forms in relation to exhaustive matches~~ —
+  closed by C033: match is the single branch form, the conditional
+  sugar promise fixes `if` desugaring, and statement forms are
+  declared absent;
 - primitive equality and ordering, including floats, strings, binaries,
   process values, and mixed numeric types;
 - typed domain failure, `Option`/`Result`, explicit trap or panic, arithmetic

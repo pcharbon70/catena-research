@@ -144,8 +144,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-eight normative areas, the C012 governance policy, and the
-candidate `BR` branching area are now
+extracted; all twenty-nine normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -182,7 +181,7 @@ sibling compiler repository.
 | `EO` evaluation-order | 8 | `c030_evaluation_order_test.exs` (9) | compiler-tagged + gated (`5e1e894`); all obligations traced |
 | `BS` bindings-and-sequencing | 8 | `c031_bindings_test.exs` (8) | compiler-tagged + gated (`17b5be7`); all obligations traced |
 | `FC` functions-and-calls | 8 | `c032_functions_test.exs` (9) | compiler-tagged + gated (`0af785c`); all obligations traced |
-| `BR` branching | 8 | `c033_branching_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `BR` branching | 8 | `c033_branching_test.exs` (7) | compiler-tagged + gated (`221338f`); all obligations traced |
 
 ## Trails
 
@@ -1639,10 +1638,11 @@ lacks a focused tag.
 
 ## Branching registry (`BR`, 0.1.29)
 
-Evidence labels will refer to focused tests in
-`test/catena/c033_branching_test.exs` and its
-`test/catena/c033_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c033_branching_test.exs`](https://github.com/pcharbon70/catena/blob/221338face094ad9c9306dcf8805a75910b1d1d7/test/catena/c033_branching_test.exs)
+and its
+[`c033_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/221338face094ad9c9306dcf8805a75910b1d1d7/test/catena/c033_traceability_coverage_test.exs)
+gate:
 
 - **c033 #1** *keeps 0.1.29 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c033 #2** *keeps match the single branch form with no other form on any retained input*
@@ -1653,25 +1653,23 @@ compiler repository. The planned focused set is:
 - **c033 #7** *preserves condition fallthrough: a false condition continues with later clauses*
 - **c033 #8** *keeps the contract deterministic and outside P034/G036/G040/P109/G088 claims with zero new families*
 
-Anchors currently point at the candidate 0.1.29 chapters and become
-normative anchors at C033 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.29 chapters; `BR-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| BR-OBL-001 | Apply branching behavior only at exact 0.1.29 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/branching/diagnostics-and-conformance.md#revision-and-persistence-separation) | c033 #1; EDN001 | untraced |
-| BR-OBL-002 | Keep match the single branch form with no other form existing on any retained input | [`the-branch-form-and-its-desugaring.md#match-is-the-only-branch-form`](../60-specification/branching/the-branch-form-and-its-desugaring.md#match-is-the-only-branch-form) | c033 #2 | untraced |
-| BR-OBL-003 | Fix the conditional sugar promise: Bool-pattern match desugaring, `true`/`false` exhaustive dispatch | [`the-branch-form-and-its-desugaring.md#the-conditional-sugar-promise`](../60-specification/branching/the-branch-form-and-its-desugaring.md#the-conditional-sugar-promise) | c033 #3 | untraced |
-| BR-OBL-004 | Keep every consolidated rule exactly as its citing area fixed it | [`branch-rules-consolidated.md#the-consolidated-rules`](../60-specification/branching/branch-rules-consolidated.md#the-consolidated-rules) | c033 #4 | untraced |
-| BR-OBL-005 | Keep statement-like control forms absent, sequenced through the let idiom, gated behind edition records | [`branch-rules-consolidated.md#statement-like-control-forms`](../60-specification/branching/branch-rules-consolidated.md#statement-like-control-forms) | c033 #5 | untraced |
-| BR-OBL-006 | Preserve commitment irreversibility: only the selected body's effects are observable | [`branch-rules-consolidated.md#the-consolidated-rules`](../60-specification/branching/branch-rules-consolidated.md#the-consolidated-rules) | c033 #6 | untraced |
-| BR-OBL-007 | Preserve condition fallthrough: a false condition continues with later clauses | [`branch-rules-consolidated.md#the-consolidated-rules`](../60-specification/branching/branch-rules-consolidated.md#the-consolidated-rules) | c033 #7 | untraced |
-| BR-OBL-008 | Keep the contract deterministic and outside P034/G036/G040/P109/G088 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/branching/diagnostics-and-conformance.md#abstract-public-boundaries) | c033 #8 | untraced |
+| BR-OBL-001 | Apply branching behavior only at exact 0.1.29 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/branching/diagnostics-and-conformance.md#revision-and-persistence-separation) | c033 #1; EDN001 | traced |
+| BR-OBL-002 | Keep match the single branch form with no other form existing on any retained input | [`the-branch-form-and-its-desugaring.md#match-is-the-only-branch-form`](../60-specification/branching/the-branch-form-and-its-desugaring.md#match-is-the-only-branch-form) | c033 #2 | traced |
+| BR-OBL-003 | Fix the conditional sugar promise: Bool-pattern match desugaring, `true`/`false` exhaustive dispatch | [`the-branch-form-and-its-desugaring.md#the-conditional-sugar-promise`](../60-specification/branching/the-branch-form-and-its-desugaring.md#the-conditional-sugar-promise) | c033 #3 | traced |
+| BR-OBL-004 | Keep every consolidated rule exactly as its citing area fixed it | [`branch-rules-consolidated.md#the-consolidated-rules`](../60-specification/branching/branch-rules-consolidated.md#the-consolidated-rules) | c033 #4 | traced |
+| BR-OBL-005 | Keep statement-like control forms absent, sequenced through the let idiom, gated behind edition records | [`branch-rules-consolidated.md#statement-like-control-forms`](../60-specification/branching/branch-rules-consolidated.md#statement-like-control-forms) | c033 #5 | traced |
+| BR-OBL-006 | Preserve commitment irreversibility: only the selected body's effects are observable | [`branch-rules-consolidated.md#the-consolidated-rules`](../60-specification/branching/branch-rules-consolidated.md#the-consolidated-rules) | c033 #6 | traced |
+| BR-OBL-007 | Preserve condition fallthrough: a false condition continues with later clauses | [`branch-rules-consolidated.md#the-consolidated-rules`](../60-specification/branching/branch-rules-consolidated.md#the-consolidated-rules) | c033 #7 | traced |
+| BR-OBL-008 | Keep the contract deterministic and outside P034/G036/G040/P109/G088 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/branching/diagnostics-and-conformance.md#abstract-public-boundaries) | c033 #8 | traced |
 
-C033 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `BR-OBL-*` identifier lacks a
-focused tag.
+C033 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `BR-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

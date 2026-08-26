@@ -30,7 +30,9 @@ failure, future scrutinee types, and spellings.
 - [Resolved branching inquiry](../40-inquiries/what-is-catenas-branching-model.md)
   records the operational question, hypotheses, and resolution.
 - [Branching Specification](../60-specification/branching/README.md)
-  is the candidate version 0.1.29 contract.
+  is the normative version 0.1.29 contract.
+- [C033 evidence record](../50-journal/2026-08-25-c033-branching.md)
+  records the witness evidence and verification.
 - The sibling maps — [Values and Evaluation](values-and-evaluation.md),
   [Evaluation Order](evaluation-order.md),
   [Bindings and Sequencing](bindings-and-sequencing.md),
@@ -57,9 +59,9 @@ failure, future scrutinee types, and spellings.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `BR-OBL-001` through `BR-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `BR-OBL-001` through `BR-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - P034 termination; G036 failure taxonomy; G040 future scrutinee
   types' coverage entries; P109 spellings consuming the sugar promise;
   G088 cancellation mid-branch remain the future owners.

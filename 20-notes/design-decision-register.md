@@ -287,9 +287,9 @@ Fixed in: [specification](../60-specification/functions-and-calls/README.md)
 
 ## C033 — branching (`0.1.29`, 2026-08-25)
 
-Fixed in: [synthesis](catena-branching.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/branching/README.md)
+· [synthesis](catena-branching.md)
+· [journal](../50-journal/2026-08-25-c033-branching.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

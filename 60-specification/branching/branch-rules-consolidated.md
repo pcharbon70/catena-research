@@ -2,7 +2,7 @@
 title: "Branch Rules Consolidated"
 kind: specification
 created: "2026-08-25"
-status: candidate
+status: normative
 spec_version: "0.1.29"
 tags:
   - branching

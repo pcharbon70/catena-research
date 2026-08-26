@@ -182,8 +182,7 @@ traps, not a statement tier).
 - The [Branching map](../10-maps/branching.md) routes through the
   shipped fragments and the future owners.
 - The [Branching Specification](../60-specification/branching/README.md)
-  defines the candidate — then normative at promotion — `0.1.29`
-  contract this note argues for.
+  defines the normative `0.1.29` contract this note argued for.
 - The sibling syntheses — [values](catena-values-and-evaluation.md),
   [order](catena-evaluation-order.md),
   [bindings](catena-bindings-and-sequencing.md),
