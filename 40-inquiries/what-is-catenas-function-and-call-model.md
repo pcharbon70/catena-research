@@ -90,8 +90,9 @@ witness proves the compiled path keeps what the kernel promises.
 
 ## Outcome
 
-Resolved as C032 at revision `0.1.28`: the contract will live in
-`60-specification/functions-and-calls/`, the reasoning in
+Resolved as C032 at revision `0.1.28`: the contract lives in the
+[Functions and Calls Specification](../60-specification/functions-and-calls/README.md),
+the reasoning in
 [Catena Functions and Calls](../20-notes/catena-functions-and-calls.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G033 branching,

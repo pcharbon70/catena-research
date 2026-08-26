@@ -186,9 +186,9 @@ G094's calling-convention slice under this model's semantics).
 - The [Functions and Calls map](../10-maps/functions-and-calls.md)
   routes through the kernel rules, the shipped contracts, and the
   future owners.
-- The Functions and Calls Specification (candidate, then normative at
-  promotion, in `60-specification/functions-and-calls/`) will define
-  the contract this note argues for.
+- The [Functions and Calls Specification](../60-specification/functions-and-calls/README.md)
+  defines the candidate — then normative at promotion — `0.1.28`
+  contract this note argues for.
 - [Catena Bindings and Sequencing](catena-bindings-and-sequencing.md)
   fixes the discipline local functions inherit.
 - [Catena Evaluation Order](catena-evaluation-order.md) fixes the
