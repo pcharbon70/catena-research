@@ -39,11 +39,14 @@ in [maps](../../10-maps/README.md).
 
 ### Documents
 
+- [Catena Language Status: 26 August 2026](catena-language-status-2026-08-26.md)
+  — the live snapshot at `0.1.29`: 58/141 items, 29 normative areas,
+  Sections 1–4 gap-free after the C029–C033 sibling run, cross-cutting
+  guarantees, declared absences, quality gates, and recommended next
+  moves.
 - [Catena Language Status: August 2026](catena-language-status-2026-08.md)
-  — the snapshot synthesis of the corpus at `0.1.24`: 53/141 checklist
-  items, 24 normative areas, 517 obligations with 419 traced,
-  cross-cutting guarantees, declared absences, quality gates, and
-  recommended next moves.
+  — the superseded `0.1.24` snapshot (Section 3's completion);
+  retained as history.
 
 ## Maintaining this index
 
@@ -51,4 +54,5 @@ Add a new snapshot rather than editing an old one; index it here and
 update the parent `20-notes/` README if the directory's role changes.
 When a snapshot's numbers are superseded, the newer snapshot's
 Evidence route becomes the live entry point and the old snapshot stays
-as history.
+as history. The current live snapshot is the
+[26 August 2026 report](catena-language-status-2026-08-26.md).
