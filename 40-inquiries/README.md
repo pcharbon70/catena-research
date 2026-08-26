@@ -98,6 +98,10 @@ to `20-notes`.
   — tests the closed ordered-forms table with typed-core completions,
   the entry rule, and trace observability against the C010 kernel
   backbone and the C002/C003/C004/C005 fragments.
+- [How Should Catena Define Bindings and Sequencing?](how-should-catena-define-bindings-and-sequencing.md)
+  — tests non-recursive binding structure, definitions-only recursion,
+  the sequencing idiom, and deny-able `BS001` against the kernel's let
+  rules, C021 shadowing, C024's SCC, and C022's IMP001 precedent.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

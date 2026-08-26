@@ -253,6 +253,22 @@ Fixed in: [specification](../60-specification/evaluation-order/README.md)
 | Deliverable | dual-target trace tests (rec) / order table module / normative-only | dual-target trace tests |
 
 
+## C031 — bindings and sequencing (`0.1.27`, 2026-08-25)
+
+Fixed in: [synthesis](catena-bindings-and-sequencing.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area BS 0.1.27 (rec) / extend evaluation-order / merge with G032 | new area BS |
+| Recursion line | definitions-only recursion (rec) / local recursive let / local letrec-and | definitions-only |
+| Unused bindings | valid + deny-able BS001 (rec) / valid, silent only / hard error | valid + BS001 |
+| Sequencing form | let-idiom is the form (rec) / distinct sequence form | let-idiom |
+| Shadowing line | C021 verbatim (rec) / restrict import shadowing | C021 verbatim |
+| Deliverable | witnesses + BS001 wiring (rec) / descriptive module / normative-only | witnesses + BS001 |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

@@ -149,6 +149,10 @@ should explain why its links belong together rather than merely list files.
   kernel backbone and the C002/C003/C004/C005 order fragments, and the
   normative 0.1.26 closed ordered-forms table with typed-core
   completions, the future-form entry rule, and trace observability.
+- [Bindings and Sequencing](bindings-and-sequencing.md) — routes
+  through the kernel's let rules, C021 shadowing, C024's SCC, and
+  C022's IMP001 precedent, and the proposed non-recursive bindings,
+  sequencing idiom, and deny-able `BS001` with `_`-prefix exemption.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
