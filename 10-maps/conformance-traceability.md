@@ -77,6 +77,8 @@ follow-up item now that C011 is reached.
   — the C029 source for `VA-OBL-*` obligations.
 - [Evaluation Order Specification](../60-specification/evaluation-order/README.md)
   — the C030 source for `EO-OBL-*` obligations.
+- [Bindings and Sequencing Specification](../60-specification/bindings-and-sequencing/README.md)
+  — the C031 source for `BS-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -115,6 +117,7 @@ convention.
 | `CP` | api-and-abi-compatibility | 0.1.24 |
 | `VA` | values-and-evaluation | 0.1.25 |
 | `EO` | evaluation-order | 0.1.26 |
+| `BS` | bindings-and-sequencing | 0.1.27 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -135,7 +138,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-six normative areas and the C012 governance policy are now
+extracted; all twenty-seven normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -170,6 +173,7 @@ sibling compiler repository.
 | `CP` api-and-abi-compatibility | 10 | `c028_api_compat_test.exs` (11) | compiler-tagged + gated (`0d96f96`); all obligations traced |
 | `VA` values-and-evaluation | 8 | `c029_values_test.exs` (9) | compiler-tagged + gated (`f8d8fa9`); all obligations traced |
 | `EO` evaluation-order | 8 | `c030_evaluation_order_test.exs` (9) | compiler-tagged + gated (`5e1e894`); all obligations traced |
+| `BS` bindings-and-sequencing | 8 | `c031_bindings_test.exs` (8) | compiler-tagged + gated (`17b5be7`); all obligations traced |
 
 ## Trails
 
@@ -1552,6 +1556,41 @@ are fully traced against the immutable compiler commit.
 
 C030 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `EO-OBL-*` identifier
+lacks a focused tag.
+
+## Bindings and sequencing registry (`BS`, 0.1.27)
+
+Evidence labels refer to focused tests in the immutable compiler
+[`c031_bindings_test.exs`](https://github.com/pcharbon70/catena/blob/17b5be7b1bce9cd6a4603b9d6b6f5f5d8060951b/test/catena/c031_bindings_test.exs)
+and its
+[`c031_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/17b5be7b1bce9cd6a4603b9d6b6f5f5d8060951b/test/catena/c031_traceability_coverage_test.exs)
+gate:
+
+- **c031 #1** *keeps 0.1.27 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c031 #2** *keeps local bindings strictly non-recursive: a self-referential RHS is `T001`*
+- **c031 #3** *enforces sequential-lexical scope with silent innermost-wins shadowing*
+- **c031 #4** *keeps recursion definitions-only with C024's SCC as mutual recursion's home*
+- **c031 #5** *keeps unused bindings valid with RHS effects preserved on every target*
+- **c031 #6** *emits `BS001` exactly on non-`_`-prefixed unused binders with deny promotion*
+- **c031 #7** *fixes the let idiom as sequencing: first to a value with effects, discard, then second*
+- **c031 #8** *keeps the contract deterministic and outside G032/G033/P034/P109 claims*
+
+Anchors point at the normative 0.1.27 chapters; `BS-OBL-*` obligations
+are fully traced against the immutable compiler commit.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| BS-OBL-001 | Apply bindings behavior only at exact 0.1.27 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/bindings-and-sequencing/diagnostics-and-conformance.md#revision-and-persistence-separation) | c031 #1; EDN001 | traced |
+| BS-OBL-002 | Keep local bindings strictly non-recursive: an RHS referencing its own binder is `T001` unbound | [`binding-structure-and-scope.md#local-binding-structure`](../60-specification/bindings-and-sequencing/binding-structure-and-scope.md#local-binding-structure) | c031 #2; T001 | traced |
+| BS-OBL-003 | Enforce sequential-lexical scope with silent innermost-wins shadowing of any in-scope name | [`binding-structure-and-scope.md#scope-and-shadowing`](../60-specification/bindings-and-sequencing/binding-structure-and-scope.md#scope-and-shadowing) | c031 #3 | traced |
+| BS-OBL-004 | Keep recursion definitions-only with C024's SCC as mutual recursion's home | [`binding-structure-and-scope.md#the-recursion-boundary`](../60-specification/bindings-and-sequencing/binding-structure-and-scope.md#the-recursion-boundary) | c031 #4 | traced |
+| BS-OBL-005 | Keep unused bindings valid with RHS effects preserved on every target | [`unused-bindings-and-sequencing.md#unused-bindings-are-valid`](../60-specification/bindings-and-sequencing/unused-bindings-and-sequencing.md#unused-bindings-are-valid) | c031 #5 | traced |
+| BS-OBL-006 | Emit `BS001` exactly on non-`_`-prefixed unused binders with deny promotion | [`unused-bindings-and-sequencing.md#the-bs001-warning`](../60-specification/bindings-and-sequencing/unused-bindings-and-sequencing.md#the-bs001-warning) | c031 #6; BS001 | traced |
+| BS-OBL-007 | Fix the let idiom as sequencing: first to a value with effects, discard, then second | [`unused-bindings-and-sequencing.md#the-sequencing-idiom`](../60-specification/bindings-and-sequencing/unused-bindings-and-sequencing.md#the-sequencing-idiom) | c031 #7 | traced |
+| BS-OBL-008 | Keep the contract deterministic and outside G032/G033/P034/P109 claims | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/bindings-and-sequencing/diagnostics-and-conformance.md#abstract-public-boundaries) | c031 #8 | traced |
+
+C031 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `BS-OBL-*` identifier
 lacks a focused tag.
 
 ## Open questions

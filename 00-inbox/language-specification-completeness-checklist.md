@@ -127,6 +127,10 @@ Normative C030 uses `0.1.26` for evaluation order. Its ordered-forms
 table, entry rule, trace observability, and verification are recorded
 in the
 [C030 conformance journal](../50-journal/2026-08-25-c030-evaluation-order.md).
+Normative C031 uses `0.1.27` for bindings and sequencing. Its binding
+structure, sequencing idiom, `BS001` warning, and verification are
+recorded in the
+[C031 conformance journal](../50-journal/2026-08-25-c031-bindings.md).
 
 ## Existing research that needs normative consolidation
 
@@ -675,9 +679,30 @@ as small normative rules rather than copied wholesale into a specification.
   no new public API and zero new diagnostic families. Binding structure
   remains G031; arity and currying remain G032; branch forms remain
   G033; future compounds' entries remain G040.
-- [ ] **G031 — Gap — bindings and sequencing.** Define `let`-like syntax, scope,
-  recursive bindings, mutual recursion, unused values, and sequencing of
-  effectful expressions.
+- [x] **C031 — Complete — bindings and sequencing.**
+  The normative
+  [0.1.27 bindings specification](../60-specification/bindings-and-sequencing/README.md),
+  [synthesis](../20-notes/catena-bindings-and-sequencing.md),
+  [resolved inquiry](../40-inquiries/how-should-catena-define-bindings-and-sequencing.md),
+  [topic map](../10-maps/bindings-and-sequencing.md), and
+  [C031 record](../50-journal/2026-08-25-c031-bindings.md) fix
+  the binding account: local `let` is strictly non-recursive (a
+  self-referential RHS is `T001` unbound) with plain value-name
+  binders and substitute-after-value timing; scope is
+  sequential-lexical with silent innermost-wins shadowing of any
+  in-scope name (C021 restated); recursion is definitions-only — the
+  kernel's signed environment with C024's SCC as mutual recursion's
+  home; an unused binding stays valid with its RHS effects preserved;
+  the deny-able `BS001` warning fires exactly on non-`_`-prefixed
+  binders never occurring in their body, with manifest deny promotion;
+  and `let _ = e1; e2` is the normative sequencing form. Sibling
+  compiler commit
+  [`17b5be7b1bce9cd6a4603b9d6b6f5f5d8060951b`](https://github.com/pcharbon70/catena/commit/17b5be7b1bce9cd6a4603b9d6b6f5f5d8060951b)
+  supplies complete `BS-OBL-001`–`BS-OBL-008` coverage with 387
+  passing tests through the `Catena.Bindings` warning walk, dual
+  evaluator/BEAM traces, and kernel recursion witnesses. Functions and
+  calls remain G032; branching remains G033; termination remains P034;
+  pattern-binding surface forms remain C002/P109.
 - [ ] **G032 — Gap — functions and calls.** Define currying or fixed arity, partial
   application, closure capture, named functions, anonymous functions, local
   functions, and tail-call guarantees.

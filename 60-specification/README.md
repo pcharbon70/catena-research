@@ -126,11 +126,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   ordered-forms table, entry rule, trace observability, and executable
   evidence are recorded in the
   [C030 conformance journal](../50-journal/2026-08-25-c030-evaluation-order.md).
+  The normative C031 bindings boundary is version `0.1.27`; its
+  binding structure, sequencing idiom, `BS001` warning, and executable
+  evidence are recorded in the
+  [C031 conformance journal](../50-journal/2026-08-25-c031-bindings.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Bindings and Sequencing](bindings-and-sequencing/README.md) — the
+  normative version 0.1.27 non-recursive binding structure,
+  definitions-only recursion, sequencing idiom, and deny-able `BS001`
+  with `_`-prefix exemption.
 - [Evaluation Order](evaluation-order/README.md) — the normative
   version 0.1.26 closed ordered-forms table with typed-core
   completions, the future-form entry rule, and trace observability

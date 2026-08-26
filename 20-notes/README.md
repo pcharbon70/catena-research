@@ -134,8 +134,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   C030's closed ordered-forms table with typed-core completions, the
   future-form entry rule, trace observability, and dual-target
   evidence.
+- [Catena Bindings and Sequencing](catena-bindings-and-sequencing.md)
+  — proposes C031's non-recursive binding structure, definitions-only
+  recursion, the sequencing idiom, deny-able `BS001` with `_`-prefix
+  exemption, and C021 shadowing restated at the binding level.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C030
+  consolidated record of every developer fork decision across C018–C031
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)
