@@ -95,8 +95,9 @@ compiler already enforces — the witness demonstrates it).
 
 ## Outcome
 
-Resolved as C031 at revision `0.1.27`: the contract will live in
-`60-specification/bindings-and-sequencing/`, the reasoning in
+Resolved as C031 at revision `0.1.27`: the contract lives in the
+[Bindings and Sequencing Specification](../60-specification/bindings-and-sequencing/README.md),
+the reasoning in
 [Catena Bindings and Sequencing](../20-notes/catena-bindings-and-sequencing.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G032 functions and

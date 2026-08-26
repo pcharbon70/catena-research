@@ -103,6 +103,10 @@ exact
 The normative C030 order boundary begins at the
 [Evaluation Order map](10-maps/evaluation-order.md) and its exact
 [0.1.26 specification](60-specification/evaluation-order/README.md).
+The normative C031 bindings boundary begins at the
+[Bindings and Sequencing map](10-maps/bindings-and-sequencing.md) and
+its exact
+[0.1.27 specification](60-specification/bindings-and-sequencing/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -209,9 +213,10 @@ identity and dependency resolution; normative C026 uses `0.1.22` for the
 prelude; normative C027 uses `0.1.23` for entry points and application
 structure; normative C028 uses `0.1.24` for API and ABI compatibility;
 normative C029 uses `0.1.25` for values and evaluation;
-normative C030 uses `0.1.26` for evaluation order; and
+normative C030 uses `0.1.26` for evaluation order;
+normative C031 uses `0.1.27` for bindings and sequencing; and
 the next
-unused semantic patch is `0.1.27`. C008 defines package-local editions,
+unused semantic patch is `0.1.28`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

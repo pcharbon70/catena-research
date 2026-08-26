@@ -57,9 +57,9 @@ branching, termination, and syntax.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `BS-OBL-001` through `BS-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `BS-OBL-001` through `BS-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - G032 functions and calls; G033 branching; P034 termination; P035
   equality; P109 syntax; and G088 cancellation remain the future
   owners.

@@ -166,8 +166,10 @@ evaluation as `P029`–`G038`.
   ordered-forms table with typed-core completions, the future-form
   entry rule, and trace-observable order with reference/BEAM
   agreement;
-- nonrecursive and recursive bindings, mutual recursion, unused effectful
-  values, and sequencing;
+- ~~nonrecursive and recursive bindings, mutual recursion, unused effectful
+  values, and sequencing~~ — closed by C031: non-recursive local lets,
+  definitions-only recursion with SCC mutual recursion, the sequencing
+  idiom, and deny-able `BS001`;
 - currying or fixed arity, partial application, closure capture, named and
   anonymous functions, callbacks, and proper tail calls;
 - conditionals and other branch forms in relation to exhaustive matches;

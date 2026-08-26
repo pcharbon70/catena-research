@@ -151,8 +151,9 @@ should explain why its links belong together rather than merely list files.
   completions, the future-form entry rule, and trace observability.
 - [Bindings and Sequencing](bindings-and-sequencing.md) — routes
   through the kernel's let rules, C021 shadowing, C024's SCC, and
-  C022's IMP001 precedent, and the proposed non-recursive bindings,
-  sequencing idiom, and deny-able `BS001` with `_`-prefix exemption.
+  C022's IMP001 precedent, and the normative 0.1.27 non-recursive
+  bindings, sequencing idiom, and deny-able `BS001` with `_`-prefix
+  exemption.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

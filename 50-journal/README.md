@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C031 Bindings and Sequencing](2026-08-25-c031-bindings.md) —
+  records the normative 0.1.27 bindings contract, the build-keyed
+  warning and underscore-spelling decisions, the sequential-AST
+  non-recursion witness, and immutable compiler identity.
 - [C030 Evaluation Order](2026-08-25-c030-evaluation-order.md) —
   records the normative 0.1.26 order contract, the operation-name
   oracle and evaluator-target decisions, dual-target trace evidence,

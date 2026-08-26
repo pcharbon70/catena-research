@@ -191,9 +191,9 @@ exemption rule in a later patch, not removing the warning).
 - The [Bindings and Sequencing map](../10-maps/bindings-and-sequencing.md)
   routes through the kernel rules, the shipped contracts, and the
   future owners.
-- The Bindings and Sequencing Specification (candidate, then normative
-  at promotion, in `60-specification/bindings-and-sequencing/`) will
-  define the contract this note argues for.- [Catena Values and Evaluation](catena-values-and-evaluation.md) and
+- The [Bindings and Sequencing Specification](../60-specification/bindings-and-sequencing/README.md)
+  defines the normative `0.1.27` contract this note argued for.
+- [Catena Values and Evaluation](catena-values-and-evaluation.md) and
   [Catena Evaluation Order](catena-evaluation-order.md) are the
   trilogy's first two members.
 

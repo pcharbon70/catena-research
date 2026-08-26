@@ -2,7 +2,7 @@
 title: "Binding Structure and Scope"
 kind: specification
 created: "2026-08-25"
-status: candidate
+status: normative
 spec_version: "0.1.27"
 tags:
   - bindings

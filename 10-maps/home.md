@@ -110,6 +110,11 @@ This is the selective entry point to the archive. See the
   kernel backbone and the C002/C003/C004/C005 order fragments, and the
   normative 0.1.26 closed ordered-forms table with typed-core
   completions, the future-form entry rule, and trace observability.
+- [Bindings and Sequencing](bindings-and-sequencing.md) — routes
+  through the kernel's let rules, C021 shadowing, C024's SCC, and
+  C022's IMP001 precedent, and the normative 0.1.27 non-recursive
+  bindings, sequencing idiom, and deny-able `BS001` with `_`-prefix
+  exemption.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

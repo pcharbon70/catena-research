@@ -255,9 +255,9 @@ Fixed in: [specification](../60-specification/evaluation-order/README.md)
 
 ## C031 — bindings and sequencing (`0.1.27`, 2026-08-25)
 
-Fixed in: [synthesis](catena-bindings-and-sequencing.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/bindings-and-sequencing/README.md)
+· [synthesis](catena-bindings-and-sequencing.md)
+· [journal](../50-journal/2026-08-25-c031-bindings.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
