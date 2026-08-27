@@ -28,6 +28,8 @@ owners of identity observability, future types, and trait layers.
   develops the comparable set, float semantics, and the guard split.
 - [Resolved equality inquiry](../40-inquiries/which-values-compare-and-how.md)
   records the operational question, hypotheses, and resolution.
+- [Equality and Ordering Specification](../60-specification/equality-and-ordering/README.md)
+  is the candidate version 0.1.30 contract.
 - [Values and Evaluation map](values-and-evaluation.md) — the grammar
   whose first operation this is.
 

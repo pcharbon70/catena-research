@@ -143,6 +143,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Equality and Ordering](equality-and-ordering/README.md) — the
+  candidate version 0.1.30 closed comparable set with bit-exact float
+  equality, structural recursion, monomorphic comparison, and the
+  `EQN001` exclusion.
 - [Branching](branching/README.md) — the normative version 0.1.29
   match-only branch form with the conditional sugar promise, the
   consolidated rule table, and the statement-form declared absence.

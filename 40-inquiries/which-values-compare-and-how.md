@@ -101,8 +101,9 @@ compare floats bit-wise (Elixir `==` equates the signed zeros).
 
 ## Outcome
 
-Resolved as C035 at revision `0.1.30`: the contract will live in
-`60-specification/equality-and-ordering/`, the reasoning in
+Resolved as C035 at revision `0.1.30`: the contract lives in the
+[Equality and Ordering Specification](../60-specification/equality-and-ordering/README.md),
+the reasoning in
 [Catena Equality and Ordering](../20-notes/catena-equality-and-ordering.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G037 identity
