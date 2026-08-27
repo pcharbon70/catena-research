@@ -165,9 +165,9 @@ should explain why its links belong together rather than merely list files.
   sugar promise and the no-statement absence.
 - [Equality and Ordering](equality-and-ordering.md) — routes through
   C003's fragment, C018's finite floats, C029's grammar, the kernel's
-  record equality, and the OTP signed-zero precedent, and the proposed
-  closed comparable set with bit-exact floats and structural
-  recursion.
+  record equality, and the OTP signed-zero precedent, and the
+  normative 0.1.30 comparable set with bit-exact floats and
+  structural recursion.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

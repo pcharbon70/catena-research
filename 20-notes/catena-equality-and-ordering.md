@@ -172,8 +172,7 @@ from equality, entering with its own slice).
 - The [Equality and Ordering map](../10-maps/equality-and-ordering.md)
   routes through the shipped contracts and the future owners.
 - The [Equality and Ordering Specification](../60-specification/equality-and-ordering/README.md)
-  defines the candidate — then normative at promotion — `0.1.30`
-  contract this note argues for.
+  defines the normative `0.1.30` contract this note argued for.
 - [Catena Values and Evaluation](catena-values-and-evaluation.md)
   fixes the grammar whose first operation this is.
 

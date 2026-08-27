@@ -29,7 +29,9 @@ owners of identity observability, future types, and trait layers.
 - [Resolved equality inquiry](../40-inquiries/which-values-compare-and-how.md)
   records the operational question, hypotheses, and resolution.
 - [Equality and Ordering Specification](../60-specification/equality-and-ordering/README.md)
-  is the candidate version 0.1.30 contract.
+  is the normative version 0.1.30 contract.
+- [C035 evidence record](../50-journal/2026-08-26-c035-equality.md)
+  records the classifier, wiring, and witness evidence.
 - [Values and Evaluation map](values-and-evaluation.md) — the grammar
   whose first operation this is.
 
@@ -54,9 +56,9 @@ owners of identity observability, future types, and trait layers.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `EQ-OBL-001` through `EQ-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `EQ-OBL-001` through `EQ-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - G037 identity observability; G040 future types' comparability
   entries; G061/G101 Eq/Ord trait layers; P109 spellings remain the
   future owners.

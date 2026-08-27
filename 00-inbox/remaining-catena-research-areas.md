@@ -179,8 +179,11 @@ evaluation as `P029`–`G038`.
   closed by C033: match is the single branch form, the conditional
   sugar promise fixes `if` desugaring, and statement forms are
   declared absent;
-- primitive equality and ordering, including floats, strings, binaries,
-  process values, and mixed numeric types;
+- ~~primitive equality and ordering, including floats, strings, binaries,
+  process values, and mixed numeric types~~ — closed by C035: the
+  closed comparable set with bit-exact floats, structural composites,
+  and monomorphic comparison; strings/binaries enter with G040,
+  process handles never compare;
 - typed domain failure, `Option`/`Result`, explicit trap or panic, arithmetic
   faults, failed assertions, foreign exceptions, process exit, and VM
   termination as distinct outcomes;

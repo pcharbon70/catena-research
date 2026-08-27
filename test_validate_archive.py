@@ -190,6 +190,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "bindings-and-sequencing": "0.1.27",
                 "functions-and-calls": "0.1.28",
                 "branching": "0.1.29",
+                "equality-and-ordering": "0.1.30",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

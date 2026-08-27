@@ -302,9 +302,9 @@ Fixed in: [specification](../60-specification/branching/README.md)
 
 ## C035 — equality and ordering (`0.1.30`, 2026-08-26)
 
-Fixed in: [synthesis](catena-equality-and-ordering.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/equality-and-ordering/README.md)
+· [synthesis](catena-equality-and-ordering.md)
+· [journal](../50-journal/2026-08-26-c035-equality.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

@@ -124,6 +124,11 @@ This is the selective entry point to the archive. See the
   coverage, C003's conditions, C010's commitment, and the C029–C032
   siblings, and the normative 0.1.29 match-only branch form with the
   sugar promise and the no-statement absence.
+- [Equality and Ordering](equality-and-ordering.md) — routes through
+  C003's fragment, C018's finite floats, C029's grammar, the kernel's
+  record equality, and the OTP signed-zero precedent, and the
+  normative 0.1.30 comparable set with bit-exact floats and
+  structural recursion.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
