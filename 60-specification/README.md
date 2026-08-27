@@ -138,11 +138,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   branch form, sugar promise, consolidated rules, statement absence,
   and executable evidence are recorded in the
   [C033 conformance journal](../50-journal/2026-08-25-c033-branching.md).
+  The normative C035 equality boundary is version `0.1.30`; its
+  comparable set, float semantics, guard split, and executable
+  evidence are recorded in the
+  [C035 conformance journal](../50-journal/2026-08-26-c035-equality.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Equality and Ordering](equality-and-ordering/README.md) — the
+  normative version 0.1.30 closed comparable set with bit-exact float
+  equality, structural recursion, monomorphic comparison, and the
+  `EQN001` exclusion.
 - [Branching](branching/README.md) — the normative version 0.1.29
   match-only branch form with the conditional sugar promise, the
   consolidated rule table, and the statement-form declared absence.

@@ -111,6 +111,11 @@ to `20-notes`.
   — tests match as the only branch form, the conditional sugar
   promise, the consolidated rule table, and the statement-form absence
   against C002, C003, C010, and the C029–C032 siblings.
+- [Which Values Compare, and How?](which-values-compare-and-how.md)
+  — tests the comparable set with structural recursion, bit-exact
+  float equality, monomorphic comparison, and the guard split against
+  C003's fragment, C018's finite floats, C029's grammar, and the OTP
+  signed-zero precedent.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

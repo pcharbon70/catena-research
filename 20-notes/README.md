@@ -146,8 +146,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   match-only branch form with the conditional sugar promise, the
   consolidated rule table, and the declared absence of statement-like
   control forms.
+- [Catena Equality and Ordering](catena-equality-and-ordering.md) —
+  proposes C035's closed comparable set with structural recursion,
+  bit-exact float equality (`−0.0 ≠ 0.0`), monomorphic comparison,
+  and the built-ins-before-traits boundary.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C033
+  consolidated record of every developer fork decision across C018–C035
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

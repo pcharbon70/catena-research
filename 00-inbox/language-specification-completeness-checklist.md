@@ -139,6 +139,10 @@ Normative C033 uses `0.1.29` for conditionals and branching. Its
 branch form, sugar promise, consolidated rules, statement absence, and
 verification are recorded in the
 [C033 conformance journal](../50-journal/2026-08-25-c033-branching.md).
+Normative C035 uses `0.1.30` for equality and ordering. Its comparable
+set, float semantics, guard split, and verification are recorded in
+the
+[C035 conformance journal](../50-journal/2026-08-26-c035-equality.md).
 
 ## Existing research that needs normative consolidation
 
@@ -766,11 +770,34 @@ as small normative rules rather than copied wholesale into a specification.
   Separate unrestricted program recursion from future recursive total
   fragments used by conditions, specifications, laws, and compile-time
   evaluation.
-- [ ] **P035 — Partial — equality and ordering of primitive values.** C003
-  defines exact equality for `Bool` and mathematical `Int`, plus integer
-  order, only inside the closed condition fragment. Define their general
-  expression forms and floats including NaN, strings, binaries, functions,
-  references, processes, mixed numeric types, traits, and coercions.
+- [x] **C035 — Complete — equality and ordering of primitive values.**
+  The normative
+  [0.1.30 equality specification](../60-specification/equality-and-ordering/README.md),
+  [synthesis](../20-notes/catena-equality-and-ordering.md),
+  [resolved inquiry](../40-inquiries/which-values-compare-and-how.md),
+  [topic map](../10-maps/equality-and-ordering.md), and
+  [C035 record](../50-journal/2026-08-26-c035-equality.md) fix
+  the comparison model: the closed comparable set — Int, Bool, and
+  Float primitives plus structural recursion over tuples, records
+  (semantic, field order irrelevant), variant injections, and
+  constructor values — with ordering over Int and Float only; Float
+  equality is bit-exact with `-0.0 != 0.0` and total ordering with
+  `-0.0 < 0.0`, and no NaN exists under C018's finite-only contract;
+  comparison is monomorphic (mixed Int/Float is the existing type
+  error, no coercion); closures and process handles never compare
+  (`EQN001`); guards keep C003's frozen Int/Bool fragment, enforced
+  by the independent condition checker; the operators are
+  non-overloadable built-ins with an Eq/Ord trait layer left to
+  G101+/G061; and strings/binaries enter with their comparability in
+  G040 slices. Sibling compiler commit
+  [`91c4d4929ea2fef316e44d3b1500a8854715b9be`](https://github.com/pcharbon70/catena/commit/91c4d4929ea2fef316e44d3b1500a8854715b9be)
+  supplies complete `EQ-OBL-001`–`EQ-OBL-008` coverage with 417
+  passing tests through the `Catena.Values` classifier
+  (`comparable?/1`, `orderable?/1`, `compare/2`), tuple and
+  constructor-value equality agreement on evaluator and BEAM, `EQN001`
+  exclusions, monomorphism rejections, and the guard split. Identity
+  observability remains G037; handle semantics remain G084; future
+  types' entries remain G040.
 - [ ] **G036 — Gap — runtime failure taxonomy.** Distinguish typed failure, explicit
   panic or crash, arithmetic faults, failed assertions, foreign exceptions,
   and VM termination.

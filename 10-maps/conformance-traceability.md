@@ -83,6 +83,8 @@ follow-up item now that C011 is reached.
   — the C032 source for `FC-OBL-*` obligations.
 - [Branching Specification](../60-specification/branching/README.md)
   — the C033 source for `BR-OBL-*` obligations.
+- [Equality and Ordering Specification](../60-specification/equality-and-ordering/README.md)
+  — the C035 source for `EQ-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -124,6 +126,7 @@ convention.
 | `BS` | bindings-and-sequencing | 0.1.27 |
 | `FC` | functions-and-calls | 0.1.28 |
 | `BR` | branching | 0.1.29 |
+| `EQ` | equality-and-ordering | 0.1.30 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -144,7 +147,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all twenty-nine normative areas and the C012 governance policy are now
+extracted; all thirty normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -182,6 +185,7 @@ sibling compiler repository.
 | `BS` bindings-and-sequencing | 8 | `c031_bindings_test.exs` (8) | compiler-tagged + gated (`17b5be7`); all obligations traced |
 | `FC` functions-and-calls | 8 | `c032_functions_test.exs` (9) | compiler-tagged + gated (`0af785c`); all obligations traced |
 | `BR` branching | 8 | `c033_branching_test.exs` (7) | compiler-tagged + gated (`221338f`); all obligations traced |
+| `EQ` equality-and-ordering | 8 | `c035_equality_test.exs` (9) | compiler-tagged + gated (`91c4d49`); all obligations traced |
 
 ## Trails
 
@@ -1669,6 +1673,41 @@ are fully traced against the immutable compiler commit.
 
 C033 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `BR-OBL-*` identifier
+lacks a focused tag.
+
+## Equality and ordering registry (`EQ`, 0.1.30)
+
+Evidence labels refer to focused tests in the immutable compiler
+[`c035_equality_test.exs`](https://github.com/pcharbon70/catena/blob/91c4d4929ea2fef316e44d3b1500a8854715b9be/test/catena/c035_equality_test.exs)
+and its
+[`c035_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/91c4d4929ea2fef316e44d3b1500a8854715b9be/test/catena/c035_traceability_coverage_test.exs)
+gate:
+
+- **c035 #1** *keeps 0.1.30 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c035 #2** *fixes the comparable set with structural recursion and bit-exact float equality (`−0.0 ≠ 0.0`)*
+- **c035 #3** *fixes the orderable set (Int, Float) with total float ordering (`−0.0 < 0.0`)*
+- **c035 #4** *rejects closure, handle, and containing-composite comparisons as `EQN001`*
+- **c035 #5** *keeps comparison monomorphic: mixed Int/Float is the existing type error*
+- **c035 #6** *keeps the sets closed: no outside type compares*
+- **c035 #7** *keeps the guard fragment frozen: guards reject Float comparisons via C003's families*
+- **c035 #8** *keeps comparison deterministic and outside G036/G037/G040/G061/P109 claims, reusing existing families*
+
+Anchors point at the normative 0.1.30 chapters; `EQ-OBL-*` obligations
+are fully traced against the immutable compiler commit.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| EQ-OBL-001 | Apply equality behavior only at exact 0.1.30 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/equality-and-ordering/diagnostics-and-conformance.md#revision-and-persistence-separation) | c035 #1; EDN001 | traced |
+| EQ-OBL-002 | Fix the comparable set with structural recursion and bit-exact float equality (`−0.0 ≠ 0.0`) | [`the-comparable-set.md#the-comparable-and-orderable-domains`](../60-specification/equality-and-ordering/the-comparable-set.md#the-comparable-and-orderable-domains) | c035 #2 | traced |
+| EQ-OBL-003 | Fix the orderable set (Int, Float) with total float ordering (`−0.0 < 0.0`) | [`float-equality-and-semantics.md#total-ordering`](../60-specification/equality-and-ordering/float-equality-and-semantics.md#total-ordering) | c035 #3 | traced |
+| EQ-OBL-004 | Reject closure, handle, and containing-composite comparisons as `EQN001` | [`the-comparable-set.md#the-exclusion-list`](../60-specification/equality-and-ordering/the-comparable-set.md#the-exclusion-list) | c035 #4; EQN001 | traced |
+| EQ-OBL-005 | Keep comparison monomorphic: mixed Int/Float is the existing type error | [`the-comparable-set.md#monomorphism`](../60-specification/equality-and-ordering/the-comparable-set.md#monomorphism) | c035 #5 | traced |
+| EQ-OBL-006 | Keep the sets closed: no outside type compares; future types enter with their own entry | [`the-comparable-set.md#the-entry-rule`](../60-specification/equality-and-ordering/the-comparable-set.md#the-entry-rule) | c035 #6 | traced |
+| EQ-OBL-007 | Keep the guard fragment frozen: guards reject Float comparisons via C003's families; general expressions admit them | [`the-comparable-set.md#the-guard-split`](../60-specification/equality-and-ordering/the-comparable-set.md#the-guard-split) | c035 #7 | traced |
+| EQ-OBL-008 | Keep comparison deterministic and outside G036/G037/G040/G061/P109 claims, reusing existing families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/equality-and-ordering/diagnostics-and-conformance.md#abstract-public-boundaries) | c035 #8 | traced |
+
+C035 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `EQ-OBL-*` identifier
 lacks a focused tag.
 
 ## Open questions

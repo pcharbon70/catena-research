@@ -300,6 +300,22 @@ Fixed in: [specification](../60-specification/branching/README.md)
 | Deliverable | witnesses, zero families (rec) / new branch warnings / normative-only | witnesses, zero families |
 
 
+## C035 — equality and ordering (`0.1.30`, 2026-08-26)
+
+Fixed in: [specification](../60-specification/equality-and-ordering/README.md)
+· [synthesis](catena-equality-and-ordering.md)
+· [journal](../50-journal/2026-08-26-c035-equality.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area EQ 0.1.30 (rec) / extend clause-conditions / extend values area | new area EQ |
+| Float equality | bit-exact, −0.0 ≠ 0.0 (rec) / IEEE −0.0 = 0.0 / defer to G061 | bit-exact |
+| Comparable domain | primitives + structural (rec) / primitives only / everything with identity | primitives + structural |
+| Mixed numerics | monomorphic (rec) / exact mixed comparison | monomorphic |
+| Trait layer | built-ins now, traits later (rec) / overloading via traits now / built-ins forever | built-ins now |
+| Deliverable | classifier + wiring + EQN001 (rec) / wiring only, reuse CND003 / normative-only | classifier + EQN001 |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C035 Equality and Ordering](2026-08-26-c035-equality.md) — records
+  the normative 0.1.30 comparison model, the witness-honesty
+  adjustment for float-free frontends, the runtime signed-zero
+  verification, and immutable compiler identity.
 - [C033 Branching](2026-08-25-c033-branching.md) — records the
   normative 0.1.29 branching contract, the flag-scrutinee and
   bound-variable-guard witness decisions, Section 4's completion, and
