@@ -125,6 +125,11 @@ to `20-notes`.
   mapping, kernel-verbatim observability, and the per-producer gate
   against C010's trap rules, C029's terminal contract, and C034's
   divergence exclusion.
+- [What May Programs Observe of Resources?](what-may-programs-observe-of-resources.md)
+  — tests the six-way non-observability classification, semantic
+  identity, the two-clause identity rule, and the finalization gate
+  against the kernel's resource-observability paragraph and the
+  C029/C032/C035 deferrals.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

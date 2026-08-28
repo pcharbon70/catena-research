@@ -158,6 +158,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes C036's single trap outcome with kinded reasons, the
   six-way category mapping, kernel-verbatim trap observability, and
   the per-producer entry rule.
+- [Catena Resource Observability](catena-resource-observability.md) —
+  proposes C037's six-way non-observability classification, semantic
+  identity, the two-clause identity rule, the finalization declared
+  absence, and the debugging-channel distinction.
 - [Catena Design Decision Register](design-decision-register.md) — the
   consolidated record of every developer fork decision across C018–C035
   plan reviews: options offered, recommendation, choice, overrides, and

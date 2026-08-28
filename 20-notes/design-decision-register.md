@@ -347,6 +347,21 @@ Fixed in: [specification](../60-specification/runtime-failure-taxonomy/README.md
 | Deliverable | witnesses, zero families (rec) / classification module / normative-only | witnesses, zero families |
 
 
+## C037 — resource observability (`0.1.33`, 2026-08-26)
+
+Fixed in: [specification](../60-specification/resource-observability/README.md)
+· [synthesis](catena-resource-observability.md)
+· [journal](../50-journal/2026-08-26-c037-observability.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area RO 0.1.33 (rec) / extend values area / defer to G084 | new area RO |
+| Model shape | kernel verbatim, six-way (rec) / list only / admit observables | kernel verbatim, six-way |
+| Finalization | declared absence + gate (rec) / design cleanup now / reserve spellings | declared absence + gate |
+| Identity rule | two-clause identity (rec) / defer closure identity / handle identity equality | two-clause |
+| Deliverable | witnesses, zero families (rec) / identity helpers / normative-only | witnesses, zero families |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

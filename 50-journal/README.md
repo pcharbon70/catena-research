@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C037 Resource Observability](2026-08-26-c037-observability.md) —
+  records the normative 0.1.33 observability contract, the
+  rationale-first conversation, the classifier correction, and
+  immutable compiler identity.
 - [C036 Runtime Failure Taxonomy](2026-08-26-c036-failure.md) —
   records the normative 0.1.32 failure contract, the stepper+BEAM
   witness-target decision, the process-context witness, and immutable
