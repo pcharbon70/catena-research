@@ -29,7 +29,9 @@ of library types, foreign calls, runtime death, and spellings.
 - [Resolved failure inquiry](../40-inquiries/what-counts-as-runtime-failure.md)
   records the operational question, hypotheses, and resolution.
 - [Runtime Failure Taxonomy Specification](../60-specification/runtime-failure-taxonomy/README.md)
-  is the candidate version 0.1.32 contract.
+  is the normative version 0.1.32 contract.
+- [C036 evidence record](../50-journal/2026-08-26-c036-failure.md)
+  records the witness evidence and verification.
 - [Values and Evaluation map](values-and-evaluation.md) fixes the
   terminal contract this elevates.
 
@@ -48,9 +50,9 @@ of library types, foreign calls, runtime death, and spellings.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `FT-OBL-001` through `FT-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `FT-OBL-001` through `FT-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - G105 library types; G095/G096 foreign calls; G084 process death and
   signals; G092 VM termination; G088 cancellation; G037 failure-path
   observability; P109 assert/panic spellings remain the future

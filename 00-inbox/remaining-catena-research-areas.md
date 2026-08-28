@@ -184,9 +184,12 @@ evaluation as `P029`–`G038`.
   closed comparable set with bit-exact floats, structural composites,
   and monomorphic comparison; strings/binaries enter with G040,
   process handles never compare;
-- typed domain failure, `Option`/`Result`, explicit trap or panic, arithmetic
+- ~~typed domain failure, `Option`/`Result`, explicit trap or panic, arithmetic
   faults, failed assertions, foreign exceptions, process exit, and VM
-  termination as distinct outcomes;
+  termination as distinct outcomes~~ — closed by C036: the single
+  `trap(reason)` outcome with kinded reasons and the per-producer
+  gate; library contents remain G105, foreign calls G095/G096,
+  process death G084;
 - allocation, sharing, object identity, garbage collection, stack use, and
   finalization to the extent programs can observe them; and
 - whether constants, derivations, macros, or other compile-time computations

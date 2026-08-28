@@ -146,13 +146,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   unrestricted stance, separation table, entry rule, and executable
   evidence are recorded in the
   [C034 conformance journal](../50-journal/2026-08-26-c034-recursion.md).
+  The normative C036 failure boundary is version `0.1.32`; its single
+  outcome, category mapping, entry rule, and executable evidence are
+  recorded in the
+  [C036 conformance journal](../50-journal/2026-08-26-c036-failure.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Runtime Failure Taxonomy](runtime-failure-taxonomy/README.md) —
-  the candidate version 0.1.32 single trap outcome with kinded
+  the normative version 0.1.32 single trap outcome with kinded
   reasons, the six-category mapping, and the per-producer entry rule.
 - [Recursion and Termination](recursion-and-termination/README.md) —
   the normative version 0.1.31 unrestricted recursion stance with the

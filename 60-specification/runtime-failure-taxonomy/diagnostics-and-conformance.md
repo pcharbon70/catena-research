@@ -2,7 +2,7 @@
 title: "Runtime Failure Taxonomy Diagnostics and Conformance"
 kind: specification
 created: "2026-08-26"
-status: candidate
+status: normative
 spec_version: "0.1.32"
 tags:
   - conformance
@@ -43,9 +43,10 @@ new public API (`FT-OBL-001`):
 - **Kernel stepper** — the process-context witness: a trapping
   process discards its mailbox and affects no spawner, with the trap
   label in the outcome record.
-- **Reference evaluator and compiled BEAM** — trap agreement: the
-  same trapping program reports the same reason value on both
-  targets.
+- **Kernel stepper and compiled BEAM** — trap agreement: the same
+  kernel program traps with the same reason value on the definitional
+  machine and on the compiled target (the retained JSON AST carries
+  no trap expression, so traps are witnessed on the kernel path).
 - **Value classification** — `Catena.Values` classifies trap shapes
   as non-values and typed-failure-shaped values (constructor values)
   as values — the typed-failure-is-not-failure witness.

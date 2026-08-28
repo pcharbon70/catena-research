@@ -333,9 +333,9 @@ Fixed in: [specification](../60-specification/recursion-and-termination/README.m
 
 ## C036 — runtime failure taxonomy (`0.1.32`, 2026-08-26)
 
-Fixed in: [synthesis](catena-runtime-failure-taxonomy.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/runtime-failure-taxonomy/README.md)
+· [synthesis](catena-runtime-failure-taxonomy.md)
+· [journal](../50-journal/2026-08-26-c036-failure.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
