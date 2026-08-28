@@ -154,6 +154,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes C034's unrestricted program recursion with divergence as
   non-termination, the cited separation table for meta-level
   evaluators, and the G038 entry rule.
+- [Catena Runtime Failure Taxonomy](catena-runtime-failure-taxonomy.md)
+  — proposes C036's single trap outcome with kinded reasons, the
+  six-way category mapping, kernel-verbatim trap observability, and
+  the per-producer entry rule.
 - [Catena Design Decision Register](design-decision-register.md) — the
   consolidated record of every developer fork decision across C018–C035
   plan reviews: options offered, recommendation, choice, overrides, and
