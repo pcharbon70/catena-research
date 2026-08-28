@@ -116,6 +116,10 @@ to `20-notes`.
   float equality, monomorphic comparison, and the guard split against
   C003's fragment, C018's finite floats, C029's grammar, and the OTP
   signed-zero precedent.
+- [How Does Catena Separate Recursion from Termination?](how-does-catena-separate-recursion-from-termination.md)
+  — tests the unrestricted program stance, the cited separation
+  table, and the G038 entry rule against the kernel's permission,
+  C029's divergence clause, and the three shipped meta-level regimes.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
