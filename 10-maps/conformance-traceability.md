@@ -87,6 +87,8 @@ follow-up item now that C011 is reached.
   — the C035 source for `EQ-OBL-*` obligations.
 - [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
   — the C034 source for `RT-OBL-*` obligations.
+- [Runtime Failure Taxonomy Specification](../60-specification/runtime-failure-taxonomy/README.md)
+  — the C036 source for `FT-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -130,6 +132,7 @@ convention.
 | `BR` | branching | 0.1.29 |
 | `EQ` | equality-and-ordering | 0.1.30 |
 | `RT` | recursion-and-termination | 0.1.31 |
+| `FT` | runtime-failure-taxonomy | 0.1.32 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -150,7 +153,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-one normative areas and the C012 governance policy are now
+extracted; all thirty-two normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -190,6 +193,7 @@ sibling compiler repository.
 | `BR` branching | 8 | `c033_branching_test.exs` (7) | compiler-tagged + gated (`221338f`); all obligations traced |
 | `EQ` equality-and-ordering | 8 | `c035_equality_test.exs` (9) | compiler-tagged + gated (`91c4d49`); all obligations traced |
 | `RT` recursion-and-termination | 8 | `c034_recursion_test.exs` (7) | compiler-tagged + gated (`252da7b`); all obligations traced |
+| `FT` runtime-failure-taxonomy | 8 | `c036_failure_test.exs` (7) | compiler-tagged + gated (`22c6a43`); all obligations traced |
 
 ## Trails
 
@@ -1747,6 +1751,41 @@ are fully traced against the immutable compiler commit.
 
 C034 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `RT-OBL-*` identifier
+lacks a focused tag.
+
+## Runtime failure taxonomy registry (`FT`, 0.1.32)
+
+Evidence labels refer to focused tests in the immutable compiler
+[`c036_failure_test.exs`](https://github.com/pcharbon70/catena/blob/22c6a437f483f5a2bb94627d3481fb51e2ce04ba/test/catena/c036_failure_test.exs)
+and its
+[`c036_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/22c6a437f483f5a2bb94627d3481fb51e2ce04ba/test/catena/c036_traceability_coverage_test.exs)
+gate:
+
+- **c036 #1** *keeps 0.1.32 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c036 #2** *keeps `trap(reason)` the single runtime failure outcome with the three-way partition*
+- **c036 #3** *keeps trap observability kernel-verbatim: mailbox discarded, no exit signal, no spawner effect*
+- **c036 #4** *keeps trap reason identity stable and agreeing across evaluator and BEAM*
+- **c036 #5** *keeps the six-category mapping exactly as classified*
+- **c036 #6** *enforces the entry rule: no unclassified failure kind, no second outcome class*
+- **c036 #7** *keeps typed failure classified as values, not failures*
+- **c036 #8** *keeps the taxonomy deterministic and outside G084/G088/G092/G095/G105/P109 claims with zero new families*
+
+Anchors point at the normative 0.1.32 chapters; `FT-OBL-*` obligations
+are fully traced against the immutable compiler commit.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| FT-OBL-001 | Apply failure behavior only at exact 0.1.32 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/runtime-failure-taxonomy/diagnostics-and-conformance.md#revision-and-persistence-separation) | c036 #1; EDN001 | traced |
+| FT-OBL-002 | Keep `trap(reason)` the single runtime failure outcome with the three-way partition stated | [`the-single-outcome.md#the-one-outcome`](../60-specification/runtime-failure-taxonomy/the-single-outcome.md#the-one-outcome) | c036 #2 | traced |
+| FT-OBL-003 | Keep trap observability kernel-verbatim: mailbox discarded, no exit signal, no spawner effect, uninterceptable | [`the-single-outcome.md#trap-observability`](../60-specification/runtime-failure-taxonomy/the-single-outcome.md#trap-observability) | c036 #3 | traced |
+| FT-OBL-004 | Keep trap reason identity stable and agreeing across evaluator and BEAM | [`the-single-outcome.md#reason-identity`](../60-specification/runtime-failure-taxonomy/the-single-outcome.md#reason-identity) | c036 #4 | traced |
+| FT-OBL-005 | Keep the six-category mapping exactly as classified | [`the-six-categories.md#the-mapping`](../60-specification/runtime-failure-taxonomy/the-six-categories.md#the-mapping) | c036 #5 | traced |
+| FT-OBL-006 | Enforce the entry rule: no unclassified failure kind, no second outcome class | [`the-six-categories.md#the-entry-rule`](../60-specification/runtime-failure-taxonomy/the-six-categories.md#the-entry-rule) | c036 #6 | traced |
+| FT-OBL-007 | Keep typed failure classified as values, not failures | [`the-six-categories.md#typed-failure-is-not-failure`](../60-specification/runtime-failure-taxonomy/the-six-categories.md#typed-failure-is-not-failure) | c036 #7 | traced |
+| FT-OBL-008 | Keep the taxonomy deterministic and outside G084/G088/G092/G095/G105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/runtime-failure-taxonomy/diagnostics-and-conformance.md#abstract-public-boundaries) | c036 #8 | traced |
+
+C036 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `FT-OBL-*` identifier
 lacks a focused tag.
 
 ## Open questions

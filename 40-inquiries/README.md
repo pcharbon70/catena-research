@@ -120,6 +120,11 @@ to `20-notes`.
   — tests the unrestricted program stance, the cited separation
   table, and the G038 entry rule against the kernel's permission,
   C029's divergence clause, and the three shipped meta-level regimes.
+- [What Counts as Runtime Failure?](what-counts-as-runtime-failure.md)
+  — tests the single trap outcome with kinded reasons, the six-way
+  mapping, kernel-verbatim observability, and the per-producer gate
+  against C010's trap rules, C029's terminal contract, and C034's
+  divergence exclusion.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

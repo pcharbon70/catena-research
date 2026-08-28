@@ -147,6 +147,10 @@ Normative C034 uses `0.1.31` for recursion and termination. Its
 unrestricted stance, separation table, entry rule, and verification
 are recorded in the
 [C034 conformance journal](../50-journal/2026-08-26-c034-recursion.md).
+Normative C036 uses `0.1.32` for the runtime failure taxonomy. Its
+single outcome, category mapping, entry rule, and verification are
+recorded in the
+[C036 conformance journal](../50-journal/2026-08-26-c036-failure.md).
 
 ## Existing research that needs normative consolidation
 
@@ -822,9 +826,33 @@ as small normative rules rather than copied wholesale into a specification.
   exclusions, monomorphism rejections, and the guard split. Identity
   observability remains G037; handle semantics remain G084; future
   types' entries remain G040.
-- [ ] **G036 — Gap — runtime failure taxonomy.** Distinguish typed failure, explicit
-  panic or crash, arithmetic faults, failed assertions, foreign exceptions,
-  and VM termination.
+- [x] **C036 — Complete — runtime failure taxonomy.**
+  The normative
+  [0.1.32 failure specification](../60-specification/runtime-failure-taxonomy/README.md),
+  [synthesis](../20-notes/catena-runtime-failure-taxonomy.md),
+  [resolved inquiry](../40-inquiries/what-counts-as-runtime-failure.md),
+  [topic map](../10-maps/runtime-failure-taxonomy.md), and
+  [C036 record](../50-journal/2026-08-26-c036-failure.md) fix
+  the taxonomy: `trap(reason)` is the single runtime failure outcome
+  with kinded reasons (the three-way partition — values, traps,
+  running — stated once); trap observability stays kernel-verbatim
+  (mailbox discarded, no exit signal, no spawner effect,
+  unobservable through handles, uninterceptable); the six categories
+  map — explicit panic is the kernel `trap` expression, typed failure
+  is an ordinary value (G105 returns rather than traps), VM
+  termination is operational (G084/G092/G121), and arithmetic
+  faults, assertions, and foreign exceptions are reserved kinds
+  entering with their producers classified as `trap(reason)`; and the
+  per-producer entry rule forbids any second outcome class. Sibling
+  compiler commit
+  [`22c6a437f483f5a2bb94627d3481fb51e2ce04ba`](https://github.com/pcharbon70/catena/commit/22c6a437f483f5a2bb94627d3481fb51e2ce04ba)
+  supplies complete `FT-OBL-001`–`FT-OBL-008` coverage with 435
+  passing tests through trap reason agreement across stepper and
+  BEAM, the process-context witness (trapping child, spared spawner,
+  discarded mailbox), the classifier partition, and the reserved-kind
+  absences. Zero new diagnostic families. Library contents remain
+  G105's; foreign calls G095/G096's; process death G084's;
+  cancellation G088's.
 - [ ] **G037 — Gap — resource and allocation observability.** State which allocation,
   sharing, object identity, garbage collection, stack use, and finalization
   behaviors programs may observe.

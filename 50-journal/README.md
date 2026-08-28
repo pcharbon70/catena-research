@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C036 Runtime Failure Taxonomy](2026-08-26-c036-failure.md) —
+  records the normative 0.1.32 failure contract, the stepper+BEAM
+  witness-target decision, the process-context witness, and immutable
+  compiler identity.
 - [C034 Recursion and Termination](2026-08-26-c034-recursion.md) —
   records the normative 0.1.31 recursion stance, the
   budget-exhaustion divergence witness, the two-target depth

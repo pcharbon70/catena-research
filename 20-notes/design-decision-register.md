@@ -331,6 +331,22 @@ Fixed in: [specification](../60-specification/recursion-and-termination/README.m
 | Deliverable | witnesses, zero families (rec) / analysis module / normative-only | witnesses, zero families |
 
 
+## C036 — runtime failure taxonomy (`0.1.32`, 2026-08-26)
+
+Fixed in: [specification](../60-specification/runtime-failure-taxonomy/README.md)
+· [synthesis](catena-runtime-failure-taxonomy.md)
+· [journal](../50-journal/2026-08-26-c036-failure.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area FT 0.1.32 (rec) / extend values area / defer to G084 | new area FT |
+| Taxonomy shape | one outcome, kinded reasons (rec) / multi-class outcomes | one outcome, kinded |
+| Category mapping | six-way mapping (rec) / all six defined now / trap only | six-way mapping |
+| Trap observability | kernel verbatim + witnesses (rec) / classification only / link-monitor exits | kernel verbatim |
+| Entry rule | per producer (rec) / pre-defined spellings / no gate | per producer |
+| Deliverable | witnesses, zero families (rec) / classification module / normative-only | witnesses, zero families |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

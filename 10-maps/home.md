@@ -134,6 +134,10 @@ This is the selective entry point to the archive. See the
   C029's divergence clause, and the three shipped meta-level regimes,
   and the normative 0.1.31 unrestricted stance with the cited
   separation table and the G038 entry rule.
+- [Runtime Failure Taxonomy](runtime-failure-taxonomy.md) — routes
+  through C010's trap rules, C029's terminal contract, and C034's
+  divergence exclusion, and the normative 0.1.32 single trap outcome
+  with kinded reasons and the per-producer gate.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
