@@ -58,10 +58,13 @@ record of integers compares, which is exactly the semantic-identity
 claim (contents observable, allocation never).
 
 The sibling compiler implementation is commit
-[`734aafeb3d1739af7d85b021a8fc7b1569b39c20`](https://github.com/pcharbon70/catena/commit/734aafeb3d1739af7d85b021a8fc7b1569b39c20)
-on branch `agent/c037-observability`, pending compiler PR and research
-promotion following the established publication order (the PR links
-are backfilled at publication).
+[`734aafeb3d1739af7d85b021a8fc7b1569b39c20`](https://github.com/pcharbon70/catena/commit/734aafeb3d1739af7d85b021a8fc7b1569b39c20),
+merged into the `rewrite` integration line by compiler PR
+[#113](https://github.com/pcharbon70/catena/pull/113) at merge commit
+[`ddce74f`](https://github.com/pcharbon70/catena/commit/ddce74fa2f9a3e5c84373d09e33e03c779db10aa).
+The merge retained the tested tree exactly (tree `7976adb`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
