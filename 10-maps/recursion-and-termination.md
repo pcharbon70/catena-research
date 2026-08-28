@@ -29,6 +29,8 @@ cancellation.
   develops the stance, the table, and the gate.
 - [Resolved recursion inquiry](../40-inquiries/how-does-catena-separate-recursion-from-termination.md)
   records the operational question, hypotheses, and resolution.
+- [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
+  is the candidate version 0.1.31 contract.
 - [Functions and Calls map](functions-and-calls.md) fixes the tail
   guarantee this stance complements.
 

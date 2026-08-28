@@ -147,6 +147,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Recursion and Termination](recursion-and-termination/README.md) —
+  the candidate version 0.1.31 unrestricted recursion stance with the
+  cited separation table and the G038 entry rule.
 - [Equality and Ordering](equality-and-ordering/README.md) — the
   normative version 0.1.30 closed comparable set with bit-exact float
   equality, structural recursion, monomorphic comparison, and the

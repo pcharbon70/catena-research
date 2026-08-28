@@ -91,8 +91,9 @@ distinct from a trap — rather than timing out the test itself.
 
 ## Outcome
 
-Resolved as C034 at revision `0.1.31`: the contract will live in
-`60-specification/recursion-and-termination/`, the reasoning in
+Resolved as C034 at revision `0.1.31`: the contract lives in the
+[Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md),
+the reasoning in
 [Catena Recursion and Termination](../20-notes/catena-recursion-and-termination.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G038 compile-time
