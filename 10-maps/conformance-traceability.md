@@ -89,6 +89,8 @@ follow-up item now that C011 is reached.
   — the C034 source for `RT-OBL-*` obligations.
 - [Runtime Failure Taxonomy Specification](../60-specification/runtime-failure-taxonomy/README.md)
   — the C036 source for `FT-OBL-*` obligations.
+- [Resource Observability Specification](../60-specification/resource-observability/README.md)
+  — the C037 source for `RO-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -133,6 +135,7 @@ convention.
 | `EQ` | equality-and-ordering | 0.1.30 |
 | `RT` | recursion-and-termination | 0.1.31 |
 | `FT` | runtime-failure-taxonomy | 0.1.32 |
+| `RO` | resource-observability | 0.1.33 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -153,7 +156,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-two normative areas and the C012 governance policy are now
+extracted; all thirty-two normative areas, the C012 governance policy, and the
+candidate `RO` observability area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -194,6 +198,7 @@ sibling compiler repository.
 | `EQ` equality-and-ordering | 8 | `c035_equality_test.exs` (9) | compiler-tagged + gated (`91c4d49`); all obligations traced |
 | `RT` recursion-and-termination | 8 | `c034_recursion_test.exs` (7) | compiler-tagged + gated (`252da7b`); all obligations traced |
 | `FT` runtime-failure-taxonomy | 8 | `c036_failure_test.exs` (7) | compiler-tagged + gated (`22c6a43`); all obligations traced |
+| `RO` resource-observability | 8 | `c037_observability_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1787,6 +1792,42 @@ are fully traced against the immutable compiler commit.
 C036 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `FT-OBL-*` identifier
 lacks a focused tag.
+
+## Resource observability registry (`RO`, 0.1.33)
+
+Evidence labels will refer to focused tests in
+`test/catena/c037_observability_test.exs` and its
+`test/catena/c037_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c037 #1** *keeps 0.1.33 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c037 #2** *fixes the six-way classification with stack use bounded by the tail guarantee*
+- **c037 #3** *keeps semantic identity: equal values interchangeable, representation never changing meaning*
+- **c037 #4** *keeps process identity the only identity-bearing value: fresh per spawn, never comparable*
+- **c037 #5** *keeps every other value semantically identical only: closures, records, and messages carry no identity*
+- **c037 #6** *keeps finalization declared absent with its gate*
+- **c037 #7** *keeps stack use observable only through completion versus the tail guarantee*
+- **c037 #8** *keeps the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families*
+
+Anchors currently point at the candidate 0.1.33 chapters and become
+normative anchors at C037 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| RO-OBL-001 | Apply observability behavior only at exact 0.1.33 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/resource-observability/diagnostics-and-conformance.md#revision-and-persistence-separation) | c037 #1; EDN001 | untraced |
+| RO-OBL-002 | Fix the six-way classification: addresses, sharing, GC, and identity (except process) unobservable; stack only via the tail guarantee; finalization absent | [`the-observability-model.md#the-six-way-classification`](../60-specification/resource-observability/the-observability-model.md#the-six-way-classification) | c037 #2 | untraced |
+| RO-OBL-003 | Keep semantic identity: equal values interchangeable, representation never changing meaning, storage observing nothing | [`the-observability-model.md#semantic-identity`](../60-specification/resource-observability/the-observability-model.md#semantic-identity) | c037 #3 | untraced |
+| RO-OBL-004 | Keep process identity the only identity-bearing value: fresh per spawn, kernel operations only, never comparable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #4 | untraced |
+| RO-OBL-005 | Keep every other value semantically identical only: closure allocation, record sharing, message copying unobservable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #5 | untraced |
+| RO-OBL-006 | Keep finalization declared absent with its gate: no cleanup form exists or arrives ungated | [`identity-and-finalization.md#finalization`](../60-specification/resource-observability/identity-and-finalization.md#finalization) | c037 #6 | untraced |
+| RO-OBL-007 | Keep stack use observable only through completion versus the tail guarantee | [`the-observability-model.md#stack-use`](../60-specification/resource-observability/the-observability-model.md#stack-use) | c037 #7 | untraced |
+| RO-OBL-008 | Keep the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/resource-observability/diagnostics-and-conformance.md#abstract-public-boundaries) | c037 #8 | untraced |
+
+C037 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `RO-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
