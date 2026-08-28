@@ -2,7 +2,7 @@
 title: "Identity and Finalization"
 kind: specification
 created: "2026-08-26"
-status: candidate
+status: normative
 spec_version: "0.1.33"
 tags:
   - observability
@@ -37,8 +37,10 @@ The rules apply only to source-language revision `0.1.33`.
 1. **Process identity is the only identity-bearing value.** Each
    spawn allocates one fresh identity; a handle observes it through
    exactly the operations the kernel fixes (`send`, and `self`
-   returning the current handle), its spelling is bounded
-   unspecified presentation, and it is **never comparable**
+   returning the current handle), its spelling follows the kernel's
+   opaque-presentation rule
+   ([Actors, Messages, and Failures](../formal-semantic-kernel/actors-messages-and-failures.md#opaque-process-identity)),
+   and it is **never comparable**
    (`RO-OBL-004`) — C035's exclusion is permanent contract.
 2. **Every other value has semantic identity only.** Equal values are
    interchangeable; closure allocation identity, record sharing, and

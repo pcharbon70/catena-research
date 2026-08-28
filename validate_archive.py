@@ -129,6 +129,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "equality-and-ordering": "0.1.30",
     "recursion-and-termination": "0.1.31",
     "runtime-failure-taxonomy": "0.1.32",
+    "resource-observability": "0.1.33",
 }
 
 

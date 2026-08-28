@@ -2,7 +2,7 @@
 title: "Resource Observability Diagnostics and Conformance"
 kind: specification
 created: "2026-08-26"
-status: candidate
+status: normative
 spec_version: "0.1.33"
 tags:
   - conformance

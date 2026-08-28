@@ -190,8 +190,11 @@ evaluation as `P029`–`G038`.
   `trap(reason)` outcome with kinded reasons and the per-producer
   gate; library contents remain G105, foreign calls G095/G096,
   process death G084;
-- allocation, sharing, object identity, garbage collection, stack use, and
-  finalization to the extent programs can observe them; and
+- ~~allocation, sharing, object identity, garbage collection, stack use, and
+  finalization to the extent programs can observe them~~ — closed by
+  C037: the six-way non-observability classification with semantic
+  identity and the gated finalization absence; cleanup remains the
+  G080s/G084/G095 eras; and
 - whether constants, derivations, macros, or other compile-time computations
   execute code, and under which purity, totality, and resource limits.
 

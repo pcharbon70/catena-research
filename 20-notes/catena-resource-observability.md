@@ -183,8 +183,7 @@ model already permits).
   routes through the kernel rules, the deferrals, and the future
   owners.
 - The [Resource Observability Specification](../60-specification/resource-observability/README.md)
-  defines the candidate — then normative at promotion — `0.1.33`
-  contract this note argues for.
+  defines the normative `0.1.33` contract this note argued for.
 - [Catena Equality and Ordering](catena-equality-and-ordering.md)
   fixed the comparison exclusions this contract makes permanent.
 - [Catena Functions and Calls](catena-functions-and-calls.md) fixed

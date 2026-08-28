@@ -126,6 +126,10 @@ The normative C036 failure boundary begins at the
 [Runtime Failure Taxonomy map](10-maps/runtime-failure-taxonomy.md)
 and its exact
 [0.1.32 specification](60-specification/runtime-failure-taxonomy/README.md).
+The normative C037 observability boundary begins at the
+[Resource Observability map](10-maps/resource-observability.md) and
+its exact
+[0.1.33 specification](60-specification/resource-observability/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -238,9 +242,10 @@ normative C032 uses `0.1.28` for functions and calls;
 normative C033 uses `0.1.29` for conditionals and branching;
 normative C035 uses `0.1.30` for equality and ordering;
 normative C034 uses `0.1.31` for recursion and termination;
-normative C036 uses `0.1.32` for the runtime failure taxonomy; and
+normative C036 uses `0.1.32` for the runtime failure taxonomy;
+normative C037 uses `0.1.33` for resource observability; and
 the next
-unused semantic patch is `0.1.33`. C008 defines package-local editions,
+unused semantic patch is `0.1.34`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

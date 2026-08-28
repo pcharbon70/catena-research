@@ -151,6 +151,10 @@ Normative C036 uses `0.1.32` for the runtime failure taxonomy. Its
 single outcome, category mapping, entry rule, and verification are
 recorded in the
 [C036 conformance journal](../50-journal/2026-08-26-c036-failure.md).
+Normative C037 uses `0.1.33` for resource observability. Its six-way
+classification, identity rule, finalization gate, and verification
+are recorded in the
+[C037 conformance journal](../50-journal/2026-08-26-c037-observability.md).
 
 ## Existing research that needs normative consolidation
 
@@ -853,9 +857,34 @@ as small normative rules rather than copied wholesale into a specification.
   absences. Zero new diagnostic families. Library contents remain
   G105's; foreign calls G095/G096's; process death G084's;
   cancellation G088's.
-- [ ] **G037 — Gap — resource and allocation observability.** State which allocation,
-  sharing, object identity, garbage collection, stack use, and finalization
-  behaviors programs may observe.
+- [x] **C037 — Complete — resource and allocation observability.**
+  The normative
+  [0.1.33 observability specification](../60-specification/resource-observability/README.md),
+  [synthesis](../20-notes/catena-resource-observability.md),
+  [resolved inquiry](../40-inquiries/what-may-programs-observe-of-resources.md),
+  [topic map](../10-maps/resource-observability.md), and
+  [C037 record](../50-journal/2026-08-26-c037-observability.md) fix
+  the six-way classification: allocation addresses, sharing, garbage
+  collection, and object identity (except process identity) are not
+  observable; stack use is observable only through completion versus
+  the proper-tail-call guarantee; finalization is declared absent
+  with its gate (resource-scope and foreign eras). Values carry
+  semantic identity — equal values are interchangeable, physical
+  representation never changes meaning, storage observes nothing —
+  and the two-clause identity rule makes process identity the only
+  identity-bearing value (fresh per spawn, kernel operations only,
+  never comparable), closing C032's and C035's deferrals. Debugging
+  observes the implementation from outside program semantics (G124's
+  channel). Sibling compiler commit
+  [`734aafeb3d1739af7d85b021a8fc7b1569b39c20`](https://github.com/pcharbon70/catena/commit/734aafeb3d1739af7d85b021a8fc7b1569b39c20)
+  supplies complete `RO-OBL-001`–`RO-OBL-008` coverage with 444
+  passing tests through distinct-site record equality on evaluator
+  and BEAM, closure-allocation irrelevance, fresh process identity
+  per spawn, handle non-comparability, the finalization absence, and
+  the stack boundary. Zero new diagnostic families. Handle operations
+  beyond the kernel's remain G084's; message-copy details G085's;
+  resource scopes the G080s era's; foreign finalization G095's;
+  debugging tools G124's.
 - [ ] **G038 — Gap — compile-time evaluation.** Decide whether constants, attributes,
   generated derivations, or macros execute code during compilation and under
   which totality and determinism restrictions.

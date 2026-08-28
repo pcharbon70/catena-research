@@ -156,8 +156,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-two normative areas, the C012 governance policy, and the
-candidate `RO` observability area are now
+extracted; all thirty-three normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -198,7 +197,7 @@ sibling compiler repository.
 | `EQ` equality-and-ordering | 8 | `c035_equality_test.exs` (9) | compiler-tagged + gated (`91c4d49`); all obligations traced |
 | `RT` recursion-and-termination | 8 | `c034_recursion_test.exs` (7) | compiler-tagged + gated (`252da7b`); all obligations traced |
 | `FT` runtime-failure-taxonomy | 8 | `c036_failure_test.exs` (7) | compiler-tagged + gated (`22c6a43`); all obligations traced |
-| `RO` resource-observability | 8 | `c037_observability_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `RO` resource-observability | 8 | `c037_observability_test.exs` (7) | compiler-tagged + gated (`734aafe`); all obligations traced |
 
 ## Trails
 
@@ -1795,10 +1794,11 @@ lacks a focused tag.
 
 ## Resource observability registry (`RO`, 0.1.33)
 
-Evidence labels will refer to focused tests in
-`test/catena/c037_observability_test.exs` and its
-`test/catena/c037_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c037_observability_test.exs`](https://github.com/pcharbon70/catena/blob/734aafeb3d1739af7d85b021a8fc7b1569b39c20/test/catena/c037_observability_test.exs)
+and its
+[`c037_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/734aafeb3d1739af7d85b021a8fc7b1569b39c20/test/catena/c037_traceability_coverage_test.exs)
+gate:
 
 - **c037 #1** *keeps 0.1.33 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c037 #2** *fixes the six-way classification with stack use bounded by the tail guarantee*
@@ -1809,25 +1809,23 @@ compiler repository. The planned focused set is:
 - **c037 #7** *keeps stack use observable only through completion versus the tail guarantee*
 - **c037 #8** *keeps the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families*
 
-Anchors currently point at the candidate 0.1.33 chapters and become
-normative anchors at C037 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.33 chapters; `RO-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| RO-OBL-001 | Apply observability behavior only at exact 0.1.33 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/resource-observability/diagnostics-and-conformance.md#revision-and-persistence-separation) | c037 #1; EDN001 | untraced |
-| RO-OBL-002 | Fix the six-way classification: addresses, sharing, GC, and identity (except process) unobservable; stack only via the tail guarantee; finalization absent | [`the-observability-model.md#the-six-way-classification`](../60-specification/resource-observability/the-observability-model.md#the-six-way-classification) | c037 #2 | untraced |
-| RO-OBL-003 | Keep semantic identity: equal values interchangeable, representation never changing meaning, storage observing nothing | [`the-observability-model.md#semantic-identity`](../60-specification/resource-observability/the-observability-model.md#semantic-identity) | c037 #3 | untraced |
-| RO-OBL-004 | Keep process identity the only identity-bearing value: fresh per spawn, kernel operations only, never comparable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #4 | untraced |
-| RO-OBL-005 | Keep every other value semantically identical only: closure allocation, record sharing, message copying unobservable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #5 | untraced |
-| RO-OBL-006 | Keep finalization declared absent with its gate: no cleanup form exists or arrives ungated | [`identity-and-finalization.md#finalization`](../60-specification/resource-observability/identity-and-finalization.md#finalization) | c037 #6 | untraced |
-| RO-OBL-007 | Keep stack use observable only through completion versus the tail guarantee | [`the-observability-model.md#stack-use`](../60-specification/resource-observability/the-observability-model.md#stack-use) | c037 #7 | untraced |
-| RO-OBL-008 | Keep the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/resource-observability/diagnostics-and-conformance.md#abstract-public-boundaries) | c037 #8 | untraced |
+| RO-OBL-001 | Apply observability behavior only at exact 0.1.33 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/resource-observability/diagnostics-and-conformance.md#revision-and-persistence-separation) | c037 #1; EDN001 | traced |
+| RO-OBL-002 | Fix the six-way classification: addresses, sharing, GC, and identity (except process) unobservable; stack only via the tail guarantee; finalization absent | [`the-observability-model.md#the-six-way-classification`](../60-specification/resource-observability/the-observability-model.md#the-six-way-classification) | c037 #2 | traced |
+| RO-OBL-003 | Keep semantic identity: equal values interchangeable, representation never changing meaning, storage observing nothing | [`the-observability-model.md#semantic-identity`](../60-specification/resource-observability/the-observability-model.md#semantic-identity) | c037 #3 | traced |
+| RO-OBL-004 | Keep process identity the only identity-bearing value: fresh per spawn, kernel operations only, never comparable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #4 | traced |
+| RO-OBL-005 | Keep every other value semantically identical only: closure allocation, record sharing, message copying unobservable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #5 | traced |
+| RO-OBL-006 | Keep finalization declared absent with its gate: no cleanup form exists or arrives ungated | [`identity-and-finalization.md#finalization`](../60-specification/resource-observability/identity-and-finalization.md#finalization) | c037 #6 | traced |
+| RO-OBL-007 | Keep stack use observable only through completion versus the tail guarantee | [`the-observability-model.md#stack-use`](../60-specification/resource-observability/the-observability-model.md#stack-use) | c037 #7 | traced |
+| RO-OBL-008 | Keep the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/resource-observability/diagnostics-and-conformance.md#abstract-public-boundaries) | c037 #8 | traced |
 
-C037 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `RO-OBL-*` identifier lacks a
-focused tag.
+C037 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `RO-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

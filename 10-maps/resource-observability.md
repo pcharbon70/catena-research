@@ -29,7 +29,9 @@ tools.
 - [Resolved observability inquiry](../40-inquiries/what-may-programs-observe-of-resources.md)
   records the operational question, hypotheses, and resolution.
 - [Resource Observability Specification](../60-specification/resource-observability/README.md)
-  is the candidate version 0.1.33 contract.
+  is the normative version 0.1.33 contract.
+- [C037 evidence record](../50-journal/2026-08-26-c037-observability.md)
+  records the witness evidence and verification.
 - [Equality and Ordering map](equality-and-ordering.md) fixed the
   comparison exclusions this contract makes permanent.
 
@@ -48,9 +50,9 @@ tools.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `RO-OBL-001` through `RO-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `RO-OBL-001` through `RO-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - G080s resource scopes and cleanup; G084 handle operations; G085
   message-copy details; G095 foreign finalization; G124 debugging
   tools remain the future owners.

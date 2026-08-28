@@ -349,9 +349,9 @@ Fixed in: [specification](../60-specification/runtime-failure-taxonomy/README.md
 
 ## C037 — resource observability (`0.1.33`, 2026-08-26)
 
-Fixed in: [synthesis](catena-resource-observability.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/resource-observability/README.md)
+· [synthesis](catena-resource-observability.md)
+· [journal](../50-journal/2026-08-26-c037-observability.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
