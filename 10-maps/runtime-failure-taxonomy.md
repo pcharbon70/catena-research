@@ -28,6 +28,8 @@ of library types, foreign calls, runtime death, and spellings.
   develops the single-outcome stance, the mapping, and the gate.
 - [Resolved failure inquiry](../40-inquiries/what-counts-as-runtime-failure.md)
   records the operational question, hypotheses, and resolution.
+- [Runtime Failure Taxonomy Specification](../60-specification/runtime-failure-taxonomy/README.md)
+  is the candidate version 0.1.32 contract.
 - [Values and Evaluation map](values-and-evaluation.md) fixes the
   terminal contract this elevates.
 

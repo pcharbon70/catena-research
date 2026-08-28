@@ -151,6 +151,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Runtime Failure Taxonomy](runtime-failure-taxonomy/README.md) —
+  the candidate version 0.1.32 single trap outcome with kinded
+  reasons, the six-category mapping, and the per-producer entry rule.
 - [Recursion and Termination](recursion-and-termination/README.md) —
   the normative version 0.1.31 unrestricted recursion stance with the
   cited separation table and the G038 entry rule.

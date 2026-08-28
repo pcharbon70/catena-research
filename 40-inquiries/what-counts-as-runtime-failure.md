@@ -91,8 +91,9 @@ both targets trap.
 
 ## Outcome
 
-Resolved as C036 at revision `0.1.32`: the contract will live in
-`60-specification/runtime-failure-taxonomy/`, the reasoning in
+Resolved as C036 at revision `0.1.32`: the contract lives in the
+[Runtime Failure Taxonomy Specification](../60-specification/runtime-failure-taxonomy/README.md),
+the reasoning in
 [Catena Runtime Failure Taxonomy](../20-notes/catena-runtime-failure-taxonomy.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G105 library

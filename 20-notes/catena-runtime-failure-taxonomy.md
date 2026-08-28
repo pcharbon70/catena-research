@@ -167,9 +167,8 @@ the foreign reason, not a new outcome class).
 - The [Runtime Failure Taxonomy map](../10-maps/runtime-failure-taxonomy.md)
   routes through the kernel rules, the terminal contract, and the
   future owners.
-- The Runtime Failure Taxonomy Specification (candidate, then
-  normative at promotion, in
-  `60-specification/runtime-failure-taxonomy/`) will define the
+- The [Runtime Failure Taxonomy Specification](../60-specification/runtime-failure-taxonomy/README.md)
+  defines the candidate — then normative at promotion — `0.1.32`
   contract this note argues for.
 - [Catena Values and Evaluation](catena-values-and-evaluation.md)
   fixes the terminal contract this elevates.
