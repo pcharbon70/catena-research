@@ -143,6 +143,10 @@ Normative C035 uses `0.1.30` for equality and ordering. Its comparable
 set, float semantics, guard split, and verification are recorded in
 the
 [C035 conformance journal](../50-journal/2026-08-26-c035-equality.md).
+Normative C034 uses `0.1.31` for recursion and termination. Its
+unrestricted stance, separation table, entry rule, and verification
+are recorded in the
+[C034 conformance journal](../50-journal/2026-08-26-c034-recursion.md).
 
 ## Existing research that needs normative consolidation
 
@@ -765,11 +769,31 @@ as small normative rules rather than copied wholesale into a specification.
   remain G036; future coverage entries remain G040; spellings remain
   P109. Section 4's gaps are now complete; the P029–P038 partials
   remain.
-- [ ] **P034 — Partial — recursion and termination.** C003 excludes
-  recursive condition predicates and verifies an acyclic first-order fragment.
-  Separate unrestricted program recursion from future recursive total
-  fragments used by conditions, specifications, laws, and compile-time
-  evaluation.
+- [x] **C034 — Complete — recursion and termination.**
+  The normative
+  [0.1.31 recursion specification](../60-specification/recursion-and-termination/README.md),
+  [synthesis](../20-notes/catena-recursion-and-termination.md),
+  [resolved inquiry](../40-inquiries/how-does-catena-separate-recursion-from-termination.md),
+  [topic map](../10-maps/recursion-and-termination.md), and
+  [C034 record](../50-journal/2026-08-26-c034-recursion.md) fix
+  the separation: program recursion is unrestricted — divergence is
+  non-termination (never a trap, never undefined behavior), the tail
+  guarantee is the only stack promise, and no expression-level
+  totality checking exists, with any future checker gated as an
+  opt-in analysis; every meta-level evaluator is total-or-bounded by
+  its own shipped mechanism (conditions acyclic with `CND004`,
+  specification examples under the fixed 20,000-step checker, laws
+  with bounded samples); and any recursive-total fragment — G038
+  compile-time evaluation foremost — must ship with its totality-or-
+  boundedness regime in its admitting slice. Sibling compiler commit
+  [`252da7b287dfbfae95056fa778e0b7ce0979599f`](https://github.com/pcharbon70/catena/commit/252da7b287dfbfae95056fa778e0b7ce0979599f)
+  supplies complete `RT-OBL-001`–`RT-OBL-008` coverage with 426
+  passing tests through non-tail recursion at 10,000 depth on BEAM,
+  the stepper's budget-exhaustion divergence witness, tail
+  termination, the `CND004` regression, and the bounded-regime
+  matrix. Zero new diagnostic families. Compile-time evaluation
+  design remains G038's under the gate; the failure taxonomy remains
+  G036's with divergence outside it.
 - [x] **C035 — Complete — equality and ordering of primitive values.**
   The normative
   [0.1.30 equality specification](../60-specification/equality-and-ordering/README.md),

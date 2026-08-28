@@ -140,9 +140,10 @@ Normative C029 uses `0.1.25` for values and evaluation. Normative C030
 uses `0.1.26` for evaluation order. Normative C031 uses `0.1.27` for
 bindings and sequencing. Normative C032 uses `0.1.28` for functions
 and calls. Normative C033 uses `0.1.29` for conditionals and
-branching. Normative C035 uses `0.1.30` for equality and ordering. The
+branching. Normative C035 uses `0.1.30` for equality and ordering. Normative
+C034 uses `0.1.31` for recursion and termination. The
 next unused semantic
-patch is `0.1.31` unless an approved versioning policy explicitly
+patch is `0.1.32` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

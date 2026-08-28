@@ -150,6 +150,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C035's closed comparable set with structural recursion,
   bit-exact float equality (`−0.0 ≠ 0.0`), monomorphic comparison,
   and the built-ins-before-traits boundary.
+- [Catena Recursion and Termination](catena-recursion-and-termination.md)
+  — proposes C034's unrestricted program recursion with divergence as
+  non-termination, the cited separation table for meta-level
+  evaluators, and the G038 entry rule.
 - [Catena Design Decision Register](design-decision-register.md) — the
   consolidated record of every developer fork decision across C018–C035
   plan reviews: options offered, recommendation, choice, overrides, and

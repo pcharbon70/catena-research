@@ -316,6 +316,21 @@ Fixed in: [specification](../60-specification/equality-and-ordering/README.md)
 | Deliverable | classifier + wiring + EQN001 (rec) / wiring only, reuse CND003 / normative-only | classifier + EQN001 |
 
 
+## C034 — recursion and termination (`0.1.31`, 2026-08-26)
+
+Fixed in: [specification](../60-specification/recursion-and-termination/README.md)
+· [synthesis](catena-recursion-and-termination.md)
+· [journal](../50-journal/2026-08-26-c034-recursion.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area RT 0.1.31 (rec) / extend functions area / defer into G038 | new area RT |
+| Program stance | unrestricted + elevated (rec) / reserve a checker / check termination now | unrestricted + elevated |
+| Separation table | cited classification table (rec) / minimal prose only | cited table |
+| Future-fragment gate | entry-rule gate (rec) / design the fragment now / no gate | entry-rule gate |
+| Deliverable | witnesses, zero families (rec) / analysis module / normative-only | witnesses, zero families |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

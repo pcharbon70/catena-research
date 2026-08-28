@@ -85,6 +85,8 @@ follow-up item now that C011 is reached.
   — the C033 source for `BR-OBL-*` obligations.
 - [Equality and Ordering Specification](../60-specification/equality-and-ordering/README.md)
   — the C035 source for `EQ-OBL-*` obligations.
+- [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
+  — the C034 source for `RT-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -127,6 +129,7 @@ convention.
 | `FC` | functions-and-calls | 0.1.28 |
 | `BR` | branching | 0.1.29 |
 | `EQ` | equality-and-ordering | 0.1.30 |
+| `RT` | recursion-and-termination | 0.1.31 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -147,7 +150,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty normative areas and the C012 governance policy are now
+extracted; all thirty-one normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -186,6 +189,7 @@ sibling compiler repository.
 | `FC` functions-and-calls | 8 | `c032_functions_test.exs` (9) | compiler-tagged + gated (`0af785c`); all obligations traced |
 | `BR` branching | 8 | `c033_branching_test.exs` (7) | compiler-tagged + gated (`221338f`); all obligations traced |
 | `EQ` equality-and-ordering | 8 | `c035_equality_test.exs` (9) | compiler-tagged + gated (`91c4d49`); all obligations traced |
+| `RT` recursion-and-termination | 8 | `c034_recursion_test.exs` (7) | compiler-tagged + gated (`252da7b`); all obligations traced |
 
 ## Trails
 
@@ -1708,6 +1712,41 @@ are fully traced against the immutable compiler commit.
 
 C035 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `EQ-OBL-*` identifier
+lacks a focused tag.
+
+## Recursion and termination registry (`RT`, 0.1.31)
+
+Evidence labels refer to focused tests in the immutable compiler
+[`c034_recursion_test.exs`](https://github.com/pcharbon70/catena/blob/252da7b287dfbfae95056fa778e0b7ce0979599f/test/catena/c034_recursion_test.exs)
+and its
+[`c034_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/252da7b287dfbfae95056fa778e0b7ce0979599f/test/catena/c034_traceability_coverage_test.exs)
+gate:
+
+- **c034 #1** *keeps 0.1.31 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c034 #2** *keeps program recursion unrestricted: non-tail recursion runs and completes alongside tail recursion*
+- **c034 #3** *keeps divergence non-termination: budget exhaustion on the stepper, never a trap diagnostic*
+- **c034 #4** *keeps totality checking absent: no validity gate on recursion*
+- **c034 #5** *keeps every meta-level evaluator total-or-bounded per its cited regime*
+- **c034 #6** *enforces the entry rule: no unbounded meta-level evaluator may be claimed*
+- **c034 #7** *keeps recursive conditions rejecting as `CND004` unchanged*
+- **c034 #8** *keeps the classification deterministic and outside G036/G038/G084/G088/P109 claims with zero new families*
+
+Anchors point at the normative 0.1.31 chapters; `RT-OBL-*` obligations
+are fully traced against the immutable compiler commit.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| RT-OBL-001 | Apply recursion behavior only at exact 0.1.31 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/recursion-and-termination/diagnostics-and-conformance.md#revision-and-persistence-separation) | c034 #1; EDN001 | traced |
+| RT-OBL-002 | Keep program recursion unrestricted: non-tail recursion runs and completes alongside tail recursion | [`program-recursion-is-unrestricted.md#the-stance`](../60-specification/recursion-and-termination/program-recursion-is-unrestricted.md#the-stance) | c034 #2 | traced |
+| RT-OBL-003 | Keep divergence non-termination: budget exhaustion on the stepper, never a trap diagnostic | [`program-recursion-is-unrestricted.md#the-stance`](../60-specification/recursion-and-termination/program-recursion-is-unrestricted.md#the-stance) | c034 #3 | traced |
+| RT-OBL-004 | Keep totality checking absent: no validity gate on recursion, analysis-only through the edition gate | [`program-recursion-is-unrestricted.md#the-stance`](../60-specification/recursion-and-termination/program-recursion-is-unrestricted.md#the-stance) | c034 #4 | traced |
+| RT-OBL-005 | Keep every meta-level evaluator total-or-bounded per its cited regime | [`the-separation-table.md#the-separation`](../60-specification/recursion-and-termination/the-separation-table.md#the-separation) | c034 #5 | traced |
+| RT-OBL-006 | Enforce the entry rule: no unbounded meta-level evaluator may be claimed | [`the-separation-table.md#the-entry-rule`](../60-specification/recursion-and-termination/the-separation-table.md#the-entry-rule) | c034 #6 | traced |
+| RT-OBL-007 | Keep recursive conditions rejecting as `CND004` unchanged | [`the-separation-table.md#the-separation`](../60-specification/recursion-and-termination/the-separation-table.md#the-separation) | c034 #7; CND004 | traced |
+| RT-OBL-008 | Keep the classification deterministic and outside G036/G038/G084/G088/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/recursion-and-termination/diagnostics-and-conformance.md#abstract-public-boundaries) | c034 #8 | traced |
+
+C034 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `RT-OBL-*` identifier
 lacks a focused tag.
 
 ## Open questions
