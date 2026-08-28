@@ -142,13 +142,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   comparable set, float semantics, guard split, and executable
   evidence are recorded in the
   [C035 conformance journal](../50-journal/2026-08-26-c035-equality.md).
+  The normative C034 recursion boundary is version `0.1.31`; its
+  unrestricted stance, separation table, entry rule, and executable
+  evidence are recorded in the
+  [C034 conformance journal](../50-journal/2026-08-26-c034-recursion.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Recursion and Termination](recursion-and-termination/README.md) —
-  the candidate version 0.1.31 unrestricted recursion stance with the
+  the normative version 0.1.31 unrestricted recursion stance with the
   cited separation table and the G038 entry rule.
 - [Equality and Ordering](equality-and-ordering/README.md) — the
   normative version 0.1.30 closed comparable set with bit-exact float

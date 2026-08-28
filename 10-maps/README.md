@@ -171,8 +171,8 @@ should explain why its links belong together rather than merely list files.
 - [Recursion and Termination](recursion-and-termination.md) — routes
   through the kernel's recursion permission, C032's tail guarantee,
   C029's divergence clause, and the three shipped meta-level regimes,
-  and the proposed unrestricted stance with the cited separation
-  table and the G038 entry rule.
+  and the normative 0.1.31 unrestricted stance with the cited
+  separation table and the G038 entry rule.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

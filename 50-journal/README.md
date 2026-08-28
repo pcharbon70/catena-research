@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C034 Recursion and Termination](2026-08-26-c034-recursion.md) —
+  records the normative 0.1.31 recursion stance, the
+  budget-exhaustion divergence witness, the two-target depth
+  calibration, and immutable compiler identity.
 - [C035 Equality and Ordering](2026-08-26-c035-equality.md) — records
   the normative 0.1.30 comparison model, the witness-honesty
   adjustment for float-free frontends, the runtime signed-zero

@@ -2,7 +2,7 @@
 title: "Recursion and Termination Diagnostics and Conformance"
 kind: specification
 created: "2026-08-26"
-status: candidate
+status: normative
 spec_version: "0.1.31"
 tags:
   - conformance

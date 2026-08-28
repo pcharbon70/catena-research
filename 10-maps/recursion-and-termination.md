@@ -30,7 +30,9 @@ cancellation.
 - [Resolved recursion inquiry](../40-inquiries/how-does-catena-separate-recursion-from-termination.md)
   records the operational question, hypotheses, and resolution.
 - [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
-  is the candidate version 0.1.31 contract.
+  is the normative version 0.1.31 contract.
+- [C034 evidence record](../50-journal/2026-08-26-c034-recursion.md)
+  records the witness evidence and verification.
 - [Functions and Calls map](functions-and-calls.md) fixes the tail
   guarantee this stance complements.
 
@@ -57,9 +59,9 @@ cancellation.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `RT-OBL-001` through `RT-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `RT-OBL-001` through `RT-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - G038 compile-time evaluation under the gate; P109 syntax; G036
   failure taxonomy (divergence outside it); G084 process loops; G088
   cancellation remain the future owners.

@@ -2,7 +2,7 @@
 title: "Program Recursion Is Unrestricted"
 kind: specification
 created: "2026-08-26"
-status: candidate
+status: normative
 spec_version: "0.1.31"
 tags:
   - recursion
@@ -39,8 +39,8 @@ reinterpret retained manifests, interfaces, artifacts, or signed formats.
 
 ```text
 Any named definition may recurse. General recursion may reduce
-forever. Divergence is non-termination — never a trap, never
-undefined behavior.
+forever. Divergence is non-termination — never a trap and never
+an undefined outcome.
 ```
 
 - **Recursion is free at the program layer** (`RT-OBL-002`): tail
@@ -53,9 +53,9 @@ undefined behavior.
   reduces forever is a running computation. It is not a failure under
   the
   [trap taxonomy](../formal-semantic-kernel/actors-messages-and-failures.md),
-  not undefined behavior, and never a conformance defect. Reference
-  machines report it as budget exhaustion; production runtimes simply
-  keep running.
+  never an undefined outcome, and never a conformance defect.
+  Reference machines report it as budget exhaustion; production
+  runtimes simply keep running.
 - **No totality checking exists** (`RT-OBL-004`): no expression-level
   termination analysis gates validity at 0.1.31, and none is planned.
   Any future termination checker enters as an **edition-record-gated

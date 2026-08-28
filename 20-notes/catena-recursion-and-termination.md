@@ -176,8 +176,7 @@ slice, under the gate).
 - The [Recursion and Termination map](../10-maps/recursion-and-termination.md)
   routes through the shipped regimes and the gated future.
 - The [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
-  defines the candidate — then normative at promotion — `0.1.31`
-  contract this note argues for.
+  defines the normative `0.1.31` contract this note argued for.
 - [Catena Functions and Calls](catena-functions-and-calls.md) fixes
   the tail guarantee this stance complements.
 - [Catena Bindings and Sequencing](catena-bindings-and-sequencing.md)

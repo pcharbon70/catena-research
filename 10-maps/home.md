@@ -129,6 +129,11 @@ This is the selective entry point to the archive. See the
   record equality, and the OTP signed-zero precedent, and the
   normative 0.1.30 comparable set with bit-exact floats and
   structural recursion.
+- [Recursion and Termination](recursion-and-termination.md) — routes
+  through the kernel's recursion permission, C032's tail guarantee,
+  C029's divergence clause, and the three shipped meta-level regimes,
+  and the normative 0.1.31 unrestricted stance with the cited
+  separation table and the G038 entry rule.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,
