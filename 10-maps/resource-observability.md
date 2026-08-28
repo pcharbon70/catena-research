@@ -28,6 +28,8 @@ tools.
   develops the model, the identity rule, and the debugging channel.
 - [Resolved observability inquiry](../40-inquiries/what-may-programs-observe-of-resources.md)
   records the operational question, hypotheses, and resolution.
+- [Resource Observability Specification](../60-specification/resource-observability/README.md)
+  is the candidate version 0.1.33 contract.
 - [Equality and Ordering map](equality-and-ordering.md) fixed the
   comparison exclusions this contract makes permanent.
 

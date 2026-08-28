@@ -155,6 +155,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Resource Observability](resource-observability/README.md) — the
+  candidate version 0.1.33 six-way observability classification with
+  semantic identity, the two-clause identity rule, and the
+  finalization gate.
 - [Runtime Failure Taxonomy](runtime-failure-taxonomy/README.md) —
   the normative version 0.1.32 single trap outcome with kinded
   reasons, the six-category mapping, and the per-producer entry rule.

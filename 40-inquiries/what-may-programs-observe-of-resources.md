@@ -91,8 +91,9 @@ tools observe the implementation; programs observe semantics.
 
 ## Outcome
 
-Resolved as C037 at revision `0.1.33`: the contract will live in
-`60-specification/resource-observability/`, the reasoning in
+Resolved as C037 at revision `0.1.33`: the contract lives in the
+[Resource Observability Specification](../60-specification/resource-observability/README.md),
+the reasoning in
 [Catena Resource Observability](../20-notes/catena-resource-observability.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G080s resource
