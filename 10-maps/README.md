@@ -177,6 +177,11 @@ should explain why its links belong together rather than merely list files.
   through C010's trap rules, C029's terminal contract, and C034's
   divergence exclusion, and the normative 0.1.32 single trap outcome
   with kinded reasons and the per-producer gate.
+- [Resource Observability](resource-observability.md) — routes
+  through the kernel's resource-observability paragraph, the actors
+  chapter's identity mechanics, and the C029/C032/C035 deferrals, and
+  the proposed six-way classification with semantic identity and the
+  finalization gate.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
