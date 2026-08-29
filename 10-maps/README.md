@@ -187,6 +187,11 @@ should explain why its links belong together rather than merely list files.
   and the normative 0.1.34 absence-plus-gate stance with the
   derivations-as-generation classification and the cited restriction
   table.
+- [Built-In Data Model](built-in-data-model.md) — routes through
+  C017's scanner kinds, C018's elaboration precedent, and the
+  C029/C033/C035 entry rules, and the proposed twelve-way
+  classification with Text, Character, and Bytes elaborated and
+  content-based comparability entries.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
