@@ -144,9 +144,10 @@ branching. Normative C035 uses `0.1.30` for equality and ordering. Normative
 C034 uses `0.1.31` for recursion and termination. Normative C036 uses
 `0.1.32` for the runtime failure taxonomy. Normative C037 uses
 `0.1.33` for resource observability. Normative C038 uses `0.1.34` for
-compile-time evaluation. The
+compile-time evaluation. Normative C040 uses `0.1.35` for the
+built-in data model. The
 next unused semantic
-patch is `0.1.35` unless an approved versioning policy explicitly
+patch is `0.1.36` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

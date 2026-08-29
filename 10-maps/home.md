@@ -148,6 +148,11 @@ This is the selective entry point to the archive. See the
   and the normative 0.1.34 absence-plus-gate stance with the
   derivations-as-generation classification and the cited restriction
   table.
+- [Built-In Data Model](built-in-data-model.md) — routes through
+  C017's scanner kinds, C018's elaboration precedent, and the
+  C029/C033/C035 entry rules, and the normative 0.1.35 twelve-way
+  classification with Text, Character, and Bytes elaborated and
+  content-based comparability entries.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

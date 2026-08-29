@@ -319,9 +319,12 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
 
 **Remaining research.** Catena needs to decide:
 
-- which primitive and built-in types exist beyond C017's fixed atomic spelling:
+- ~~which primitive and built-in types exist beyond C017's fixed atomic spelling:
   unit, numeric runtime types, text/character/byte semantics, tuples, lists,
-  maps, sets, process handles, references, and functions;
+  maps, sets, process handles, references, and functions~~ — closed by C040:
+  the twelve-way classification with Text, Character, and Bytes elaborated
+  from scanned literals; collections remain G101 library territory and
+  references excluded;
 - structural record and variant source operations, uniqueness, row-polymorphic
   behavior, effect order, and public representation guarantees;
 - persistent collection construction and update, duplicate keys, ordering,

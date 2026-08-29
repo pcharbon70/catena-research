@@ -97,6 +97,7 @@ language line is `0.1`; its registered semantic boundaries are:
 | C036 runtime failure taxonomy | `0.1.32` | normative |
 | C037 resource observability | `0.1.33` | normative |
 | C038 compile-time evaluation | `0.1.34` | normative |
+| C040 built-in data model | `0.1.35` | normative |
 
 Governance milestones C007, C009, and C012 apply across the normative corpus
 and do not occupy language revisions. Normative C010 occupies `0.1.8`, and
@@ -104,8 +105,8 @@ normative C013 occupies `0.1.9`; normative C014 occupies `0.1.10`; normative
 C015 occupies `0.1.11`; normative C016 occupies `0.1.12`; normative C017
 occupies `0.1.13`; normative C018 occupies `0.1.14`; normative C019
 occupies `0.1.15`; normative C020 occupies `0.1.16`; normative C021
-occupies `0.1.17`; normative C022 occupies `0.1.18`; normative C023 occupies `0.1.19`; normative C024 occupies `0.1.20`; normative C025 occupies `0.1.21`; normative C026 occupies `0.1.22`; normative C027 occupies `0.1.23`; normative C028 occupies `0.1.24`; normative C029 occupies `0.1.25`; normative C030 occupies `0.1.26`; normative C031 occupies `0.1.27`; normative C032 occupies `0.1.28`; normative C033 occupies `0.1.29`; normative C035 occupies `0.1.30`; normative C034 occupies `0.1.31`; normative C036 occupies `0.1.32`; normative C037 occupies `0.1.33`; normative C038 occupies `0.1.34`; a
-later semantic slice begins at `0.1.35`. Each later
+occupies `0.1.17`; normative C022 occupies `0.1.18`; normative C023 occupies `0.1.19`; normative C024 occupies `0.1.20`; normative C025 occupies `0.1.21`; normative C026 occupies `0.1.22`; normative C027 occupies `0.1.23`; normative C028 occupies `0.1.24`; normative C029 occupies `0.1.25`; normative C030 occupies `0.1.26`; normative C031 occupies `0.1.27`; normative C032 occupies `0.1.28`; normative C033 occupies `0.1.29`; normative C035 occupies `0.1.30`; normative C034 occupies `0.1.31`; normative C036 occupies `0.1.32`; normative C037 occupies `0.1.33`; normative C038 occupies `0.1.34`; normative C040 occupies `0.1.35`; a
+later semantic slice begins at `0.1.36`. Each later
 prototype semantic slice uses
 the next unused `0.1.n` patch until an approved policy replaces this
 convention.

@@ -158,11 +158,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   stance, derivations classification, restriction table, and
   executable evidence are recorded in the
   [C038 conformance journal](../50-journal/2026-08-26-c038-compile-time.md).
+  The normative C040 data-model boundary is version `0.1.35`; its
+  classification, type elaboration, comparability entries, and
+  executable evidence are recorded in the
+  [C040 conformance journal](../50-journal/2026-08-29-c040-data-model.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Built-In Data Model](built-in-data-model/README.md) — the
+  normative version 0.1.35 twelve-way classification with Text,
+  Character, and Bytes elaborated and content-based comparability
+  entries.
 - [Compile-Time Evaluation](compile-time-evaluation/README.md) — the
   normative version 0.1.34 absence-plus-gate stance with the
   derivations-as-generation classification and the cited restriction

@@ -134,6 +134,10 @@ The normative C038 compile-time boundary begins at the
 [Compile-Time Evaluation map](10-maps/compile-time-evaluation.md) and
 its exact
 [0.1.34 specification](60-specification/compile-time-evaluation/README.md).
+The normative C040 data-model boundary begins at the
+[Built-In Data Model map](10-maps/built-in-data-model.md) and its
+exact
+[0.1.35 specification](60-specification/built-in-data-model/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -248,9 +252,10 @@ normative C035 uses `0.1.30` for equality and ordering;
 normative C034 uses `0.1.31` for recursion and termination;
 normative C036 uses `0.1.32` for the runtime failure taxonomy;
 normative C037 uses `0.1.33` for resource observability;
-normative C038 uses `0.1.34` for compile-time evaluation; and
+normative C038 uses `0.1.34` for compile-time evaluation;
+normative C040 uses `0.1.35` for the built-in data model; and
 the next
-unused semantic patch is `0.1.35`. C008 defines package-local editions,
+unused semantic patch is `0.1.36`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

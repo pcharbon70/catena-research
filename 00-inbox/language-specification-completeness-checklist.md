@@ -159,6 +159,10 @@ Normative C038 uses `0.1.34` for compile-time evaluation. Its stance,
 derivations classification, restriction table, and verification are
 recorded in the
 [C038 conformance journal](../50-journal/2026-08-26-c038-compile-time.md).
+Normative C040 uses `0.1.35` for the built-in data model. Its
+classification, type elaboration, comparability entries, and
+verification are recorded in the
+[C040 conformance journal](../50-journal/2026-08-29-c040-data-model.md).
 
 ## Existing research that needs normative consolidation
 
@@ -922,9 +926,32 @@ as small normative rules rather than copied wholesale into a specification.
   specifies kinded parameters, nullary, positional, and named-product
   constructors, atomic recursive groups, explicit existentials and refined
   results, `derives fold`, and transparent or abstract export.
-- [ ] **G040 — Gap — built-in data model.** Define unit, Boolean, numeric, string,
-  binary, tuple, list, map, set, process, reference, and function types, or
-  explicitly exclude each nonessential built-in.
+- [x] **C040 — Complete — built-in data model.**
+  The normative
+  [0.1.35 data model specification](../60-specification/built-in-data-model/README.md),
+  [synthesis](../20-notes/catena-built-in-data-model.md),
+  [resolved inquiry](../40-inquiries/which-types-are-built-in.md),
+  [topic map](../10-maps/built-in-data-model.md), and
+  [C040 record](../50-journal/2026-08-29-c040-data-model.md) fix
+  the twelve-way classification: the seven shipped types (unit, Bool,
+  Int, Float, tuple, function, process handle) restated unchanged;
+  Text, Character, and Bytes as built-ins elaborated from C017's
+  scanned literals by the C018 pattern (Text the decoded scalar
+  sequence, Character its one code point, Bytes the byte sequence),
+  deterministic and total, with content-based comparability — all
+  three comparable and orderable (lexicographic scalar order for
+  Text and Character, byte order for Bytes); list, map, and set as
+  library territory (G101 declares them as ordinary nominal ADTs);
+  and references excluded (G084). The types live at the meaning and
+  classifier level until a frontend encodes their literals. Sibling
+  compiler commit
+  [`44f7dd22b57757accc1da654bf4e99b93db728b4`](https://github.com/pcharbon70/catena/commit/44f7dd22b57757accc1da654bf4e99b93db728b4)
+  supplies complete `BM-OBL-001`–`BM-OBL-008` coverage with 461
+  passing tests through the `Catena.Text` elaboration module, the
+  `Catena.Values` and `Data.comparable_type?` extensions, and the
+  content-order witnesses. Zero new diagnostic families. Collection
+  declarations remain G101's; construction and update G042's; string
+  libraries G105's; references G084's; spellings P109's.
 - [ ] **P041 — Partial — structural records and variants.** Specify literal, selection,
   update, extension, restriction, row-polymorphic typing, duplicate labels, and
   runtime representation.

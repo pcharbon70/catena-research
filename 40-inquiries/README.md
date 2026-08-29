@@ -134,6 +134,11 @@ to `20-notes`.
   — tests the absence-plus-gate stance, the derivations-as-generation
   classification, and the cited restriction table against C034's gate
   and the three shipped bounded meta-evaluators.
+- [Which Types Are Built In?](which-types-are-built-in.md)
+  — tests the twelve-way classification, the C018-pattern elaboration
+  of Text, Character, and Bytes, and the content-based comparability
+  entries against C017's scanner kinds and the C029/C033/C035 entry
+  rules.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

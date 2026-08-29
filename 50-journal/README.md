@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C040 Built-In Data Model](2026-08-29-c040-data-model.md) —
+  records the normative 0.1.35 data-model contract, the code-point
+  character payload discovery, the classifier binary-ambiguity
+  resolution, and immutable compiler identity.
 - [C038 Compile-Time Evaluation](2026-08-26-c038-compile-time.md) —
   records the normative 0.1.34 compile-time decision, the
   decision-not-design stance, the derivation provenance witness, and

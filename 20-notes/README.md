@@ -166,8 +166,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — proposes C038's absence-plus-gate stance for constants,
   attributes, and macros, the derivations-as-generation
   classification, and the cited restriction table.
+- [Catena Built-In Data Model](catena-built-in-data-model.md) —
+  proposes C040's twelve-way classification with Text, Character, and
+  Bytes elaborated by the C018 pattern, collections as library
+  territory, and content-based comparability entries.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C038
+  consolidated record of every developer fork decision across C018–C040
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

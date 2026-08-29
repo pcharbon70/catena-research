@@ -377,6 +377,21 @@ Fixed in: [specification](../60-specification/compile-time-evaluation/README.md)
 | Deliverable | witnesses, zero families (rec) / evaluator skeleton / normative-only | witnesses, zero families |
 
 
+## C040 — built-in data model (`0.1.35`, 2026-08-29)
+
+Fixed in: [specification](../60-specification/built-in-data-model/README.md)
+· [synthesis](catena-built-in-data-model.md)
+· [journal](../50-journal/2026-08-29-c040-data-model.md)
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area BM 0.1.35 (rec) / extend values area / defer to P109 | new area BM |
+| 12-way classification | typed now, library, excluded (rec) / all twelve built-in / classify existing only | typed now, library, excluded |
+| Text semantics | C018 pattern, three types (rec) / Character as Int alias / text-as-bytes | C018 pattern, three types |
+| Comparability | content-based entries (rec) / equality only / defer to G101 | content-based entries |
+| Deliverable | elaboration + classifier (rec) / pipeline integration / normative-only | elaboration + classifier |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry
