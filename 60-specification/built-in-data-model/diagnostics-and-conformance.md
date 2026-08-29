@@ -2,7 +2,7 @@
 title: "Built-In Data Model Diagnostics and Conformance"
 kind: specification
 created: "2026-08-29"
-status: candidate
+status: normative
 spec_version: "0.1.35"
 tags:
   - conformance

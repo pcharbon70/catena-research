@@ -189,7 +189,7 @@ should explain why its links belong together rather than merely list files.
   table.
 - [Built-In Data Model](built-in-data-model.md) — routes through
   C017's scanner kinds, C018's elaboration precedent, and the
-  C029/C033/C035 entry rules, and the proposed twelve-way
+  C029/C033/C035 entry rules, and the normative 0.1.35 twelve-way
   classification with Text, Character, and Bytes elaborated and
   content-based comparability entries.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)

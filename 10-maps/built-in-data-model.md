@@ -28,7 +28,9 @@ collections, construction, spellings, and references.
 - [Resolved data-model inquiry](../40-inquiries/which-types-are-built-in.md)
   records the operational question, hypotheses, and resolution.
 - [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
-  is the candidate version 0.1.35 contract.
+  is the normative version 0.1.35 contract.
+- [C040 evidence record](../50-journal/2026-08-29-c040-data-model.md)
+  records the elaboration and classifier evidence and verification.
 - [Equality and Ordering map](equality-and-ordering.md) fixed the
   entry rule this executes.
 
@@ -46,9 +48,9 @@ collections, construction, spellings, and references.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `BM-OBL-001` through `BM-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `BM-OBL-001` through `BM-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - P109 spellings and the compiled-program path; G101 collection
   declarations; G042 construction and update; G084 references; G105
   string libraries remain the future owners.

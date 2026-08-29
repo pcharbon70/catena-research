@@ -379,9 +379,9 @@ Fixed in: [specification](../60-specification/compile-time-evaluation/README.md)
 
 ## C040 — built-in data model (`0.1.35`, 2026-08-29)
 
-Fixed in: [synthesis](catena-built-in-data-model.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/built-in-data-model/README.md)
+· [synthesis](catena-built-in-data-model.md)
+· [journal](../50-journal/2026-08-29-c040-data-model.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
