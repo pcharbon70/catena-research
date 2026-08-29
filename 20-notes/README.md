@@ -170,8 +170,11 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C040's twelve-way classification with Text, Character, and
   Bytes elaborated by the C018 pattern, collections as library
   territory, and content-based comparability entries.
+- [Catena Structural Records](catena-structural-records.md) —
+  proposes C041's consolidated operation table, kernel rows verbatim,
+  and the semantic-map representation clause.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C040
+  consolidated record of every developer fork decision across C018–C041
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

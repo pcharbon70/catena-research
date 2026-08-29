@@ -392,6 +392,21 @@ Fixed in: [specification](../60-specification/built-in-data-model/README.md)
 | Deliverable | elaboration + classifier (rec) / pipeline integration / normative-only | elaboration + classifier |
 
 
+## C041 — structural records and variants (`0.1.36`, 2026-08-29)
+
+Fixed in: [synthesis](catena-structural-records.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area SR 0.1.36 (rec) / extend data-and-patterns / defer to G042 | new area SR |
+| Coverage shape | full kernel consolidation (rec) / partial elevation | full consolidation |
+| Row typing | kernel rows verbatim (rec) / open-record literals / defer tails | kernel rows verbatim |
+| Representation | semantic maps verbatim (rec) / stable layout | semantic maps |
+| Deliverable | kernel-path witnesses (rec) / frontend integration / normative-only | kernel-path witnesses |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry
