@@ -159,6 +159,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Compile-Time Evaluation](compile-time-evaluation/README.md) — the
+  candidate version 0.1.34 absence-plus-gate stance with the
+  derivations-as-generation classification and the cited restriction
+  table.
 - [Resource Observability](resource-observability/README.md) — the
   normative version 0.1.33 six-way observability classification with
   semantic identity, the two-clause identity rule, and the

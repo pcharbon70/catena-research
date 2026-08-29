@@ -26,6 +26,8 @@ extensions, and code generation.
   develops the stance, the classification, and the table.
 - [Resolved compile-time inquiry](../40-inquiries/what-executes-during-compilation.md)
   records the operational question, hypotheses, and resolution.
+- [Compile-Time Evaluation Specification](../60-specification/compile-time-evaluation/README.md)
+  is the candidate version 0.1.34 contract.
 - [Recursion and Termination map](recursion-and-termination.md)
   fixes the gate this slice inherits.
 

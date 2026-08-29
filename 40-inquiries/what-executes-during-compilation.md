@@ -93,8 +93,9 @@ reasserted rather than invented.
 
 ## Outcome
 
-Resolved as C038 at revision `0.1.34`: the contract will live in
-`60-specification/compile-time-evaluation/`, the reasoning in
+Resolved as C038 at revision `0.1.34`: the contract lives in the
+[Compile-Time Evaluation Specification](../60-specification/compile-time-evaluation/README.md),
+the reasoning in
 [Catena Compile-Time Evaluation](../20-notes/catena-compile-time-evaluation.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). P109 spellings
