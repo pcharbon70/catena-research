@@ -362,6 +362,21 @@ Fixed in: [specification](../60-specification/resource-observability/README.md)
 | Deliverable | witnesses, zero families (rec) / identity helpers / normative-only | witnesses, zero families |
 
 
+## C038 — compile-time evaluation (`0.1.34`, 2026-08-26)
+
+Fixed in: [synthesis](catena-compile-time-evaluation.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area CE 0.1.34 (rec) / extend recursion area / defer to P109 | new area CE |
+| Overall stance | absence + gate (rec) / design const-eval now / design macros now | absence + gate |
+| Derivations | compiler-internal generation (rec) / treat as gated execution / defer to G040 | compiler-internal |
+| Restrictions | cited restriction table (rec) / gate citation only | cited table |
+| Deliverable | witnesses, zero families (rec) / evaluator skeleton / normative-only | witnesses, zero families |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

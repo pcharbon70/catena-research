@@ -182,6 +182,11 @@ should explain why its links belong together rather than merely list files.
   chapter's identity mechanics, and the C029/C032/C035 deferrals, and
   the normative 0.1.33 six-way classification with semantic identity
   and the finalization gate.
+- [Compile-Time Evaluation](compile-time-evaluation.md) — routes
+  through C034's gate and the three shipped bounded meta-evaluators,
+  and the proposed absence-plus-gate stance with the
+  derivations-as-generation classification and the cited restriction
+  table.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.
