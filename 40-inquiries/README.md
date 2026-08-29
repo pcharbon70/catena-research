@@ -130,6 +130,10 @@ to `20-notes`.
   identity, the two-clause identity rule, and the finalization gate
   against the kernel's resource-observability paragraph and the
   C029/C032/C035 deferrals.
+- [What Executes During Compilation?](what-executes-during-compilation.md)
+  — tests the absence-plus-gate stance, the derivations-as-generation
+  classification, and the cited restriction table against C034's gate
+  and the three shipped bounded meta-evaluators.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

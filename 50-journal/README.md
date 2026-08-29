@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C038 Compile-Time Evaluation](2026-08-26-c038-compile-time.md) —
+  records the normative 0.1.34 compile-time decision, the
+  decision-not-design stance, the derivation provenance witness, and
+  immutable compiler identity.
 - [C037 Resource Observability](2026-08-26-c037-observability.md) —
   records the normative 0.1.33 observability contract, the
   rationale-first conversation, the classifier correction, and

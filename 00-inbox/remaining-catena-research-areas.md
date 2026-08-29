@@ -195,8 +195,11 @@ evaluation as `P029`–`G038`.
   C037: the six-way non-observability classification with semantic
   identity and the gated finalization absence; cleanup remains the
   G080s/G084/G095 eras; and
-- whether constants, derivations, macros, or other compile-time computations
-  execute code, and under which purity, totality, and resource limits.
+- ~~whether constants, derivations, macros, or other compile-time computations
+  execute code, and under which purity, totality, and resource limits~~ —
+  closed by C038: constants never execute, attributes and macros are
+  absent and gated, derivations are compiler-internal generation, and
+  the gate plus the three shipped budgets form the complete regime.
 
 **What it would bring.** This work would turn the collection of exact feature
 slices into one predictable language of ordinary expressions. It would give

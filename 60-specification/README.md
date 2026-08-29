@@ -154,11 +154,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   six-way classification, identity rule, finalization gate, and
   executable evidence are recorded in the
   [C037 conformance journal](../50-journal/2026-08-26-c037-observability.md).
+  The normative C038 compile-time boundary is version `0.1.34`; its
+  stance, derivations classification, restriction table, and
+  executable evidence are recorded in the
+  [C038 conformance journal](../50-journal/2026-08-26-c038-compile-time.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Compile-Time Evaluation](compile-time-evaluation/README.md) — the
+  normative version 0.1.34 absence-plus-gate stance with the
+  derivations-as-generation classification and the cited restriction
+  table.
 - [Resource Observability](resource-observability/README.md) — the
   normative version 0.1.33 six-way observability classification with
   semantic identity, the two-clause identity rule, and the

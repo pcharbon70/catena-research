@@ -162,8 +162,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   proposes C037's six-way non-observability classification, semantic
   identity, the two-clause identity rule, the finalization declared
   absence, and the debugging-channel distinction.
+- [Catena Compile-Time Evaluation](catena-compile-time-evaluation.md)
+  — proposes C038's absence-plus-gate stance for constants,
+  attributes, and macros, the derivations-as-generation
+  classification, and the cited restriction table.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C035
+  consolidated record of every developer fork decision across C018–C038
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

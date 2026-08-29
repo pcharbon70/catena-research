@@ -143,6 +143,11 @@ This is the selective entry point to the archive. See the
   chapter's identity mechanics, and the C029/C032/C035 deferrals, and
   the normative 0.1.33 six-way classification with semantic identity
   and the finalization gate.
+- [Compile-Time Evaluation](compile-time-evaluation.md) — routes
+  through C034's gate and the three shipped bounded meta-evaluators,
+  and the normative 0.1.34 absence-plus-gate stance with the
+  derivations-as-generation classification and the cited restriction
+  table.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

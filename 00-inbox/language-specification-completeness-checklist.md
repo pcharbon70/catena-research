@@ -155,6 +155,10 @@ Normative C037 uses `0.1.33` for resource observability. Its six-way
 classification, identity rule, finalization gate, and verification
 are recorded in the
 [C037 conformance journal](../50-journal/2026-08-26-c037-observability.md).
+Normative C038 uses `0.1.34` for compile-time evaluation. Its stance,
+derivations classification, restriction table, and verification are
+recorded in the
+[C038 conformance journal](../50-journal/2026-08-26-c038-compile-time.md).
 
 ## Existing research that needs normative consolidation
 
@@ -885,9 +889,32 @@ as small normative rules rather than copied wholesale into a specification.
   beyond the kernel's remain G084's; message-copy details G085's;
   resource scopes the G080s era's; foreign finalization G095's;
   debugging tools G124's.
-- [ ] **G038 — Gap — compile-time evaluation.** Decide whether constants, attributes,
-  generated derivations, or macros execute code during compilation and under
-  which totality and determinism restrictions.
+- [x] **C038 — Complete — compile-time evaluation.**
+  The normative
+  [0.1.34 compile-time specification](../60-specification/compile-time-evaluation/README.md),
+  [synthesis](../20-notes/catena-compile-time-evaluation.md),
+  [resolved inquiry](../40-inquiries/what-executes-during-compilation.md),
+  [topic map](../10-maps/compile-time-evaluation.md), and
+  [C038 record](../50-journal/2026-08-26-c038-compile-time.md) fix
+  the decision: constants never execute (definitions compile, not
+  run); no attribute system and no macro system exist — each
+  arriving, if ever, through its own slice under C034's gate;
+  generated derivations classify as compiler-internal template
+  generation executing no user code, with `compiler_derived`
+  provenance, deterministic and total by construction, and output
+  checked like handwritten definitions; and the cited restriction
+  table — the gate plus condition normalization (acyclic, C003),
+  the 20,000-step specification checker (C006), and bounded law
+  samples (C004) — is the complete totality and determinism regime.
+  Sibling compiler commit
+  [`30426d558f79498f791a398a5ff01c7590b18cad`](https://github.com/pcharbon70/catena/commit/30426d558f79498f791a398a5ff01c7590b18cad)
+  supplies complete `CE-OBL-001`–`CE-OBL-008` coverage with 451
+  passing tests through the derivation provenance regression with
+  byte-identical recompilation, the three budget regressions, the
+  absence matrix, and determinism. Zero new diagnostic families.
+  Spellings remain P109's; deriving extensions G040's under these
+  rules; code generation G005/G116's; build tooling G121's.
+  Section 4 is complete except for P041's edge.
 
 ## 5. Data, collections, and patterns
 

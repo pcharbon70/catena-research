@@ -130,6 +130,10 @@ The normative C037 observability boundary begins at the
 [Resource Observability map](10-maps/resource-observability.md) and
 its exact
 [0.1.33 specification](60-specification/resource-observability/README.md).
+The normative C038 compile-time boundary begins at the
+[Compile-Time Evaluation map](10-maps/compile-time-evaluation.md) and
+its exact
+[0.1.34 specification](60-specification/compile-time-evaluation/README.md).
 
 Repository-wide authoring and maintenance conventions are defined in
 [`AGENTS.md`](AGENTS.md).
@@ -243,9 +247,10 @@ normative C033 uses `0.1.29` for conditionals and branching;
 normative C035 uses `0.1.30` for equality and ordering;
 normative C034 uses `0.1.31` for recursion and termination;
 normative C036 uses `0.1.32` for the runtime failure taxonomy;
-normative C037 uses `0.1.33` for resource observability; and
+normative C037 uses `0.1.33` for resource observability;
+normative C038 uses `0.1.34` for compile-time evaluation; and
 the next
-unused semantic patch is `0.1.34`. C008 defines package-local editions,
+unused semantic patch is `0.1.35`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.
