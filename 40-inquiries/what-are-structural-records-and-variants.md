@@ -86,9 +86,10 @@ S-expression path, with BEAM-side assertions checking selected values
 
 ## Outcome
 
-Resolved as C041 at revision `0.1.36`: the contract will live in
-`60-specification/structural-records-and-variants/`, the reasoning
-in [Catena Structural Records](../20-notes/catena-structural-records.md),
+Resolved as C041 at revision `0.1.36`: the contract lives in the
+[Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md),
+the reasoning in
+[Catena Structural Records](../20-notes/catena-structural-records.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). P109 spellings
 and the frontend path, G042 collection semantics, G062 aliases, and

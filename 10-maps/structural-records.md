@@ -27,6 +27,8 @@ owners of spellings, collections, aliases, and refutability.
   develops the operation table, the row model, and the maps clause.
 - [Resolved records inquiry](../40-inquiries/what-are-structural-records-and-variants.md)
   records the operational question, hypotheses, and resolution.
+- [Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md)
+  is the candidate version 0.1.36 contract.
 - [Built-In Data Model map](built-in-data-model.md) fixed the
   frontend-absence pattern this rides.
 
