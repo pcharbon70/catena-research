@@ -196,6 +196,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "resource-observability": "0.1.33",
                 "compile-time-evaluation": "0.1.34",
                 "built-in-data-model": "0.1.35",
+                "structural-records-and-variants": "0.1.36",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

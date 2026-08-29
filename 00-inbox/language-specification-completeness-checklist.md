@@ -163,6 +163,10 @@ Normative C040 uses `0.1.35` for the built-in data model. Its
 classification, type elaboration, comparability entries, and
 verification are recorded in the
 [C040 conformance journal](../50-journal/2026-08-29-c040-data-model.md).
+Normative C041 uses `0.1.36` for structural records and variants.
+Its operation table, row model, representation clause, and
+verification are recorded in the
+[C041 conformance journal](../50-journal/2026-08-29-c041-records.md).
 
 ## Existing research that needs normative consolidation
 
@@ -952,9 +956,32 @@ as small normative rules rather than copied wholesale into a specification.
   content-order witnesses. Zero new diagnostic families. Collection
   declarations remain G101's; construction and update G042's; string
   libraries G105's; references G084's; spellings P109's.
-- [ ] **P041 — Partial — structural records and variants.** Specify literal, selection,
-  update, extension, restriction, row-polymorphic typing, duplicate labels, and
-  runtime representation.
+- [x] **C041 — Complete — structural records and variants.**
+  The normative
+  [0.1.36 records specification](../60-specification/structural-records-and-variants/README.md),
+  [synthesis](../20-notes/catena-structural-records.md),
+  [resolved inquiry](../40-inquiries/what-are-structural-records-and-variants.md),
+  [topic map](../10-maps/structural-records.md), and
+  [C041 record](../50-journal/2026-08-29-c041-records.md) fix
+  the structural contract: the seven-operation table — record
+  literal, select, update, extend, restrict, variant inject, and
+  match — elevated from the kernel with cited homes; literals are
+  closed unique-label rows with duplicate labels static invalidity;
+  written field order controls evaluation order (C030) and never
+  equality, comparison, or row identity (C035/C037); extend and
+  restrict produce closed rows over closed inputs; open tails exist
+  only in type positions, composing row polymorphism through
+  signatures; missing-label operations are statically unreachable;
+  records are semantic maps with invisible representation; and the
+  kernel S-expression path is the only frontend expressing the
+  operations until P109. Sibling compiler commit
+  [`f42c9588541b6e61e82fffdf823270e587f2c386`](https://github.com/pcharbon70/catena/commit/f42c9588541b6e61e82fffdf823270e587f2c386)
+  supplies complete `SR-OBL-001`–`SR-OBL-008` coverage with 470
+  passing tests through the fixture's operation round-trip on stepper
+  and compiled BEAM, variant dispatch agreement, duplicate-label
+  rejection, type-position tails, and the frontend absence. Zero new
+  diagnostic families. Collection construction remains G042's;
+  aliases G062's; refutability P044's; spellings P109's.
 - [ ] **G042 — Gap — collection construction and update.** Define persistent update,
   duplicate map keys, ordering, key equality, bounds failures, and complexity
   promises.

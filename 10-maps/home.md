@@ -153,6 +153,10 @@ This is the selective entry point to the archive. See the
   C029/C033/C035 entry rules, and the normative 0.1.35 twelve-way
   classification with Text, Character, and Bytes elaborated and
   content-based comparability entries.
+- [Structural Records](structural-records.md) — routes through the
+  kernel's record calculus, C002's nominal exclusions, C030's order
+  rows, and C037's maps, and the normative 0.1.36 operation table
+  with kernel rows verbatim and the semantic-map clause.
 - [Comments and Documentation Comments](comments-and-documentation-comments.md)
   — routes through C013/C015 foundations, nested comment evidence,
   declaration attachment, CommonMark/raw-HTML policy, doctest opt-in, C016,

@@ -139,6 +139,10 @@ to `20-notes`.
   of Text, Character, and Bytes, and the content-based comparability
   entries against C017's scanner kinds and the C029/C033/C035 entry
   rules.
+- [What Are Structural Records and Variants?](what-are-structural-records-and-variants.md)
+  — tests the consolidated operation table, kernel rows verbatim, and
+  the semantic-map clause against the kernel calculus, C002's nominal
+  exclusions, C030's order rows, and C037's maps.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.

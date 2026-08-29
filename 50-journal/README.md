@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C041 Structural Records and Variants](2026-08-29-c041-records.md)
+  — records the normative 0.1.36 structural contract, the fixture
+    rewrite, the signature-shape row witness, and the map-equality
+    witness decision, with immutable compiler identity.
 - [C040 Built-In Data Model](2026-08-29-c040-data-model.md) —
   records the normative 0.1.35 data-model contract, the code-point
   character payload discovery, the classifier binary-ambiguity
