@@ -159,8 +159,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-three normative areas, the C012 governance policy, and the
-candidate `CE` compile-time area are now
+extracted; all thirty-four normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -202,7 +201,7 @@ sibling compiler repository.
 | `RT` recursion-and-termination | 8 | `c034_recursion_test.exs` (7) | compiler-tagged + gated (`252da7b`); all obligations traced |
 | `FT` runtime-failure-taxonomy | 8 | `c036_failure_test.exs` (7) | compiler-tagged + gated (`22c6a43`); all obligations traced |
 | `RO` resource-observability | 8 | `c037_observability_test.exs` (7) | compiler-tagged + gated (`734aafe`); all obligations traced |
-| `CE` compile-time-evaluation | 8 | `c038_compile_time_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `CE` compile-time-evaluation | 8 | `c038_compile_time_test.exs` (5) | compiler-tagged + gated (`30426d5`); all obligations traced |
 
 ## Trails
 
@@ -1834,10 +1833,11 @@ lacks a focused tag.
 
 ## Compile-time evaluation registry (`CE`, 0.1.34)
 
-Evidence labels will refer to focused tests in
-`test/catena/c038_compile_time_test.exs` and its
-`test/catena/c038_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+Evidence labels refer to focused tests in the immutable compiler
+[`c038_compile_time_test.exs`](https://github.com/pcharbon70/catena/blob/30426d558f79498f791a398a5ff01c7590b18cad/test/catena/c038_compile_time_test.exs)
+and its
+[`c038_traceability_coverage_test.exs`](https://github.com/pcharbon70/catena/blob/30426d558f79498f791a398a5ff01c7590b18cad/test/catena/c038_traceability_coverage_test.exs)
+gate:
 
 - **c038 #1** *keeps 0.1.34 exact selection with every predecessor default pinned and the lifecycle registered*
 - **c038 #2** *fixes the four-form decision: constants never execute; attributes and macros absent; derivations are generation*
@@ -1848,25 +1848,23 @@ compiler repository. The planned focused set is:
 - **c038 #7** *keeps the three meta-evaluators under their unchanged regimes*
 - **c038 #8** *keeps the classification deterministic and outside P109/G040/G005/G116/G121 claims with zero new families*
 
-Anchors currently point at the candidate 0.1.34 chapters and become
-normative anchors at C038 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.34 chapters; `CE-OBL-*` obligations
+are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| CE-OBL-001 | Apply compile-time behavior only at exact 0.1.34 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/compile-time-evaluation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c038 #1; EDN001 | untraced |
-| CE-OBL-002 | Fix the four-form decision: constants never execute; attributes and macros absent; derivations are generation | [`the-compile-time-stance.md#the-decision`](../60-specification/compile-time-evaluation/the-compile-time-stance.md#the-decision) | c038 #2 | untraced |
-| CE-OBL-003 | Keep the gate inherited: no evaluator arrives total-or-bounded-free; none is claimed | [`the-compile-time-stance.md#the-decision`](../60-specification/compile-time-evaluation/the-compile-time-stance.md#the-decision) | c038 #3 | untraced |
-| CE-OBL-004 | Keep derivations compiler-internal: no user code evaluated, provenance marked, output checked | [`the-compile-time-stance.md#generated-derivations`](../60-specification/compile-time-evaluation/the-compile-time-stance.md#generated-derivations) | c038 #4 | untraced |
-| CE-OBL-005 | Keep the restriction table exact: the gate plus the three cited budgets, complete at 0.1.34 | [`totality-and-determinism-restrictions.md#the-restriction-table`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#the-restriction-table) | c038 #5 | untraced |
-| CE-OBL-006 | Keep compilation deterministic: equal declarations, equal derived output, equal bytes | [`totality-and-determinism-restrictions.md#determinism`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#determinism) | c038 #6 | untraced |
-| CE-OBL-007 | Keep the three meta-evaluators under their unchanged regimes | [`totality-and-determinism-restrictions.md#the-restriction-table`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#the-restriction-table) | c038 #7 | untraced |
-| CE-OBL-008 | Keep the classification deterministic and outside P109/G040/G005/G116/G121 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/compile-time-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c038 #8 | untraced |
+| CE-OBL-001 | Apply compile-time behavior only at exact 0.1.34 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/compile-time-evaluation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c038 #1; EDN001 | traced |
+| CE-OBL-002 | Fix the four-form decision: constants never execute; attributes and macros absent; derivations are generation | [`the-compile-time-stance.md#the-decision`](../60-specification/compile-time-evaluation/the-compile-time-stance.md#the-decision) | c038 #2 | traced |
+| CE-OBL-003 | Keep the gate inherited: no evaluator arrives total-or-bounded-free; none is claimed | [`the-compile-time-stance.md#the-decision`](../60-specification/compile-time-evaluation/the-compile-time-stance.md#the-decision) | c038 #3 | traced |
+| CE-OBL-004 | Keep derivations compiler-internal: no user code evaluated, provenance marked, output checked | [`the-compile-time-stance.md#generated-derivations`](../60-specification/compile-time-evaluation/the-compile-time-stance.md#generated-derivations) | c038 #4 | traced |
+| CE-OBL-005 | Keep the restriction table exact: the gate plus the three cited budgets, complete at 0.1.34 | [`totality-and-determinism-restrictions.md#the-restriction-table`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#the-restriction-table) | c038 #5 | traced |
+| CE-OBL-006 | Keep compilation deterministic: equal declarations, equal derived output, equal bytes | [`totality-and-determinism-restrictions.md#determinism`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#determinism) | c038 #6 | traced |
+| CE-OBL-007 | Keep the three meta-evaluators under their unchanged regimes | [`totality-and-determinism-restrictions.md#the-restriction-table`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#the-restriction-table) | c038 #7 | traced |
+| CE-OBL-008 | Keep the classification deterministic and outside P109/G040/G005/G116/G121 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/compile-time-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c038 #8 | traced |
 
-C038 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `CE-OBL-*` identifier lacks a
-focused tag.
+C038 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `CE-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

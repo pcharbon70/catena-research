@@ -364,9 +364,9 @@ Fixed in: [specification](../60-specification/resource-observability/README.md)
 
 ## C038 — compile-time evaluation (`0.1.34`, 2026-08-26)
 
-Fixed in: [synthesis](catena-compile-time-evaluation.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/compile-time-evaluation/README.md)
+· [synthesis](catena-compile-time-evaluation.md)
+· [journal](../50-journal/2026-08-26-c038-compile-time.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

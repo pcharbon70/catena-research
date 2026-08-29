@@ -27,7 +27,9 @@ extensions, and code generation.
 - [Resolved compile-time inquiry](../40-inquiries/what-executes-during-compilation.md)
   records the operational question, hypotheses, and resolution.
 - [Compile-Time Evaluation Specification](../60-specification/compile-time-evaluation/README.md)
-  is the candidate version 0.1.34 contract.
+  is the normative version 0.1.34 contract.
+- [C038 evidence record](../50-journal/2026-08-26-c038-compile-time.md)
+  records the witness evidence and verification.
 - [Recursion and Termination map](recursion-and-termination.md)
   fixes the gate this slice inherits.
 
@@ -45,9 +47,9 @@ extensions, and code generation.
 
 ### Limits and traceability
 
-- [Conformance Traceability](conformance-traceability.md) will
-  register `CE-OBL-001` through `CE-OBL-008` against normative anchors
-  and sibling compiler tests.
+- [Conformance Traceability](conformance-traceability.md) registers
+  `CE-OBL-001` through `CE-OBL-008` against normative anchors and
+  immutable sibling compiler evidence.
 - P109 spellings; G040 deriving extensions; G005/G116 code
   generation; G121 build tooling remain the future owners.
 

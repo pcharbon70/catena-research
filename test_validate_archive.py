@@ -194,6 +194,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "recursion-and-termination": "0.1.31",
                 "runtime-failure-taxonomy": "0.1.32",
                 "resource-observability": "0.1.33",
+                "compile-time-evaluation": "0.1.34",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

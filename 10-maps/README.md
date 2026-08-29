@@ -184,7 +184,7 @@ should explain why its links belong together rather than merely list files.
   and the finalization gate.
 - [Compile-Time Evaluation](compile-time-evaluation.md) — routes
   through C034's gate and the three shipped bounded meta-evaluators,
-  and the proposed absence-plus-gate stance with the
+  and the normative 0.1.34 absence-plus-gate stance with the
   derivations-as-generation classification and the cited restriction
   table.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
