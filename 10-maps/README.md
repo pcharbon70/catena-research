@@ -194,8 +194,8 @@ should explain why its links belong together rather than merely list files.
   content-based comparability entries.
 - [Structural Records](structural-records.md) — routes through the
   kernel's record calculus, C002's nominal exclusions, C030's order
-  rows, and C037's maps, and the proposed consolidated operation
-  table with kernel rows verbatim and the semantic-map clause.
+  rows, and C037's maps, and the normative 0.1.36 operation table
+  with kernel rows verbatim and the semantic-map clause.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

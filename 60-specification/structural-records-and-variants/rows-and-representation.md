@@ -2,7 +2,7 @@
 title: "Rows and Representation"
 kind: specification
 created: "2026-08-29"
-status: candidate
+status: normative
 spec_version: "0.1.36"
 tags:
   - records

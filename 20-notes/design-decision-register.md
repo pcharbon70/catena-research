@@ -394,9 +394,9 @@ Fixed in: [specification](../60-specification/built-in-data-model/README.md)
 
 ## C041 — structural records and variants (`0.1.36`, 2026-08-29)
 
-Fixed in: [synthesis](catena-structural-records.md) — the
-normative specification, journal, and this table's durable links land
-with this slice's promotion commits.
+Fixed in: [specification](../60-specification/structural-records-and-variants/README.md)
+· [synthesis](catena-structural-records.md)
+· [journal](../50-journal/2026-08-29-c041-records.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |

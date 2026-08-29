@@ -171,8 +171,7 @@ widening).
   routes through the kernel calculus, the shipped contracts, and the
   future owners.
 - The [Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md)
-  defines the candidate — then normative at promotion — `0.1.36`
-  contract this note argues for.
+  defines the normative `0.1.36` contract this note argued for.
 - [Catena Built-In Data Model](catena-built-in-data-model.md) fixed
   the frontend-absence pattern this rides.
 - [Catena Resource Observability](catena-resource-observability.md)

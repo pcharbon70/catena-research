@@ -325,8 +325,10 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
   the twelve-way classification with Text, Character, and Bytes elaborated
   from scanned literals; collections remain G101 library territory and
   references excluded;
-- structural record and variant source operations, uniqueness, row-polymorphic
-  behavior, effect order, and public representation guarantees;
+- ~~structural record and variant source operations, uniqueness, row-polymorphic
+  behavior, effect order, and public representation guarantees~~ — closed by
+  C041: the seven-operation table with kernel rows verbatim and semantic
+  maps; collection construction remains G042;
 - persistent collection construction and update, duplicate keys, ordering,
   equality, bounds failure, and complexity promises;
 - which pattern contexts require exhaustiveness and which explicitly permit

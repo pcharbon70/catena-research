@@ -162,13 +162,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   classification, type elaboration, comparability entries, and
   executable evidence are recorded in the
   [C040 conformance journal](../50-journal/2026-08-29-c040-data-model.md).
+  The normative C041 records boundary is version `0.1.36`; its
+  operation table, row model, representation clause, and executable
+  evidence are recorded in the
+  [C041 conformance journal](../50-journal/2026-08-29-c041-records.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Structural Records and Variants](structural-records-and-variants/README.md)
-  — the candidate version 0.1.36 consolidated operation table with
+  — the normative version 0.1.36 consolidated operation table with
   kernel rows verbatim and the semantic-map representation clause.
 - [Built-In Data Model](built-in-data-model/README.md) — the
   normative version 0.1.35 twelve-way classification with Text,
