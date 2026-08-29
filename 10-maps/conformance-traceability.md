@@ -93,6 +93,8 @@ follow-up item now that C011 is reached.
   — the C037 source for `RO-OBL-*` obligations.
 - [Compile-Time Evaluation Specification](../60-specification/compile-time-evaluation/README.md)
   — the C038 source for `CE-OBL-*` obligations.
+- [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
+  — the C040 source for `BM-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -139,6 +141,7 @@ convention.
 | `FT` | runtime-failure-taxonomy | 0.1.32 |
 | `RO` | resource-observability | 0.1.33 |
 | `CE` | compile-time-evaluation | 0.1.34 |
+| `BM` | built-in-data-model | 0.1.35 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -159,7 +162,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-four normative areas and the C012 governance policy are now
+extracted; all thirty-four normative areas, the C012 governance policy, and the
+candidate `BM` data-model area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -202,6 +206,7 @@ sibling compiler repository.
 | `FT` runtime-failure-taxonomy | 8 | `c036_failure_test.exs` (7) | compiler-tagged + gated (`22c6a43`); all obligations traced |
 | `RO` resource-observability | 8 | `c037_observability_test.exs` (7) | compiler-tagged + gated (`734aafe`); all obligations traced |
 | `CE` compile-time-evaluation | 8 | `c038_compile_time_test.exs` (5) | compiler-tagged + gated (`30426d5`); all obligations traced |
+| `BM` built-in-data-model | 8 | `c040_data_model_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1865,6 +1870,42 @@ are fully traced against the immutable compiler commit.
 C038 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `CE-OBL-*` identifier
 lacks a focused tag.
+
+## Built-in data model registry (`BM`, 0.1.35)
+
+Evidence labels will refer to focused tests in
+`test/catena/c040_data_model_test.exs` and its
+`test/catena/c040_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c040 #1** *keeps 0.1.35 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c040 #2** *fixes the twelve-way classification with the seven shipped types restated unchanged*
+- **c040 #3** *elaborates the three scanner kinds deterministically, cooked/raw form-irrelevant over equal content*
+- **c040 #4** *executes the content-based comparability entries: three new comparable-and-orderable types*
+- **c040 #5** *keeps collections as library territory and references excluded, both gated*
+- **c040 #6** *states the frontend absence honestly: no compiled-program text literals*
+- **c040 #7** *keeps the Character one-scalar invariant and Text/Bytes content identity*
+- **c040 #8** *keeps the model deterministic and outside G042/G084/G101/G105/P109 claims with zero new families*
+
+Anchors currently point at the candidate 0.1.35 chapters and become
+normative anchors at C040 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| BM-OBL-001 | Apply data-model behavior only at exact 0.1.35 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/built-in-data-model/diagnostics-and-conformance.md#revision-and-persistence-separation) | c040 #1; EDN001 | untraced |
+| BM-OBL-002 | Fix the twelve-way classification with the seven shipped types restated unchanged | [`the-twelve-way-classification.md#the-decision`](../60-specification/built-in-data-model/the-twelve-way-classification.md#the-decision) | c040 #2 | untraced |
+| BM-OBL-003 | Elaborate the three scanner kinds deterministically and totally, cooked/raw form-irrelevant over equal content | [`text-character-and-bytes.md#elaboration`](../60-specification/built-in-data-model/text-character-and-bytes.md#elaboration) | c040 #3 | untraced |
+| BM-OBL-004 | Execute the content-based comparability entries: three new comparable-and-orderable types with total orders | [`text-character-and-bytes.md#comparability-entries`](../60-specification/built-in-data-model/text-character-and-bytes.md#comparability-entries) | c040 #4 | untraced |
+| BM-OBL-005 | Keep collections as library territory and references excluded, both gated | [`the-twelve-way-classification.md#library-territory-not-exclusion`](../60-specification/built-in-data-model/the-twelve-way-classification.md#library-territory-not-exclusion) | c040 #5 | untraced |
+| BM-OBL-006 | State the frontend absence honestly: no compiled-program text literals; coverage entries at P109 | [`text-character-and-bytes.md#the-frontend-absence`](../60-specification/built-in-data-model/text-character-and-bytes.md#the-frontend-absence) | c040 #6 | untraced |
+| BM-OBL-007 | Keep the Character one-scalar invariant and Text/Bytes content identity | [`text-character-and-bytes.md#the-three-types`](../60-specification/built-in-data-model/text-character-and-bytes.md#the-three-types) | c040 #7 | untraced |
+| BM-OBL-008 | Keep the model deterministic and outside G042/G084/G101/G105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/built-in-data-model/diagnostics-and-conformance.md#abstract-public-boundaries) | c040 #8 | untraced |
+
+C040 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `BM-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
