@@ -95,6 +95,8 @@ follow-up item now that C011 is reached.
   — the C038 source for `CE-OBL-*` obligations.
 - [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
   — the C040 source for `BM-OBL-*` obligations.
+- [Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md)
+  — the C041 source for `SR-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -142,6 +144,7 @@ convention.
 | `RO` | resource-observability | 0.1.33 |
 | `CE` | compile-time-evaluation | 0.1.34 |
 | `BM` | built-in-data-model | 0.1.35 |
+| `SR` | structural-records-and-variants | 0.1.36 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -162,7 +165,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-five normative areas and the C012 governance policy are now
+extracted; all thirty-five normative areas, the C012 governance policy, and the
+candidate `SR` records area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -206,6 +210,7 @@ sibling compiler repository.
 | `RO` resource-observability | 8 | `c037_observability_test.exs` (7) | compiler-tagged + gated (`734aafe`); all obligations traced |
 | `CE` compile-time-evaluation | 8 | `c038_compile_time_test.exs` (5) | compiler-tagged + gated (`30426d5`); all obligations traced |
 | `BM` built-in-data-model | 8 | `c040_data_model_test.exs` (8) | compiler-tagged + gated (`44f7dd2`); all obligations traced |
+| `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1904,6 +1909,42 @@ are fully traced against the immutable compiler commit.
 C040 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `BM-OBL-*` identifier
 lacks a focused tag.
+
+## Structural records registry (`SR`, 0.1.36)
+
+Evidence labels will refer to focused tests in
+`test/catena/c041_records_test.exs` and its
+`test/catena/c041_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c041 #1** *keeps 0.1.36 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c041 #2** *fixes the seven-operation table with cited homes unchanged*
+- **c041 #3** *enforces closed literals: duplicate labels reject; missing-label operations unreachable; no expression produces an open row*
+- **c041 #4** *keeps field order an effect-order fact only, with tails composing through type positions*
+- **c041 #5** *keeps records semantic maps: order never affects equality; representation invisible*
+- **c041 #6** *states the frontend absence: kernel calculus only; spellings at P109*
+- **c041 #7** *keeps variant inject a value and dispatch by semantic label then payload*
+- **c041 #8** *keeps the contract deterministic and outside G042/G062/P044/P109 claims with zero new families*
+
+Anchors currently point at the candidate 0.1.36 chapters and become
+normative anchors at C041 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| SR-OBL-001 | Apply record behavior only at exact 0.1.36 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#revision-and-persistence-separation) | c041 #1; EDN001 | untraced |
+| SR-OBL-002 | Fix the seven-operation table with cited homes unchanged | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #2 | untraced |
+| SR-OBL-003 | Enforce closed literals: duplicate labels reject; missing-label operations statically unreachable; no expression produces an open row | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #3 | untraced |
+| SR-OBL-004 | Keep field order an effect-order fact only, with tails composing through type positions | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #4 | untraced |
+| SR-OBL-005 | Keep records semantic maps: order never affects equality; representation invisible | [`rows-and-representation.md#the-representation-clause`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-representation-clause) | c041 #5 | untraced |
+| SR-OBL-006 | State the frontend absence: kernel calculus only; spellings at P109 | [`the-operation-table.md#the-frontend-absence`](../60-specification/structural-records-and-variants/the-operation-table.md#the-frontend-absence) | c041 #6 | untraced |
+| SR-OBL-007 | Keep variant inject a value and dispatch by semantic label then payload | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #7 | untraced |
+| SR-OBL-008 | Keep the contract deterministic and outside G042/G062/P044/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#abstract-public-boundaries) | c041 #8 | untraced |
+
+C041 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `SR-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
