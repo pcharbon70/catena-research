@@ -96,8 +96,9 @@ conservatively by content, with the rationale written in the journal.
 
 ## Outcome
 
-Resolved as C040 at revision `0.1.35`: the contract will live in
-`60-specification/built-in-data-model/`, the reasoning in
+Resolved as C040 at revision `0.1.35`: the contract lives in the
+[Built-In Data Model Specification](../60-specification/built-in-data-model/README.md),
+the reasoning in
 [Catena Built-In Data Model](../20-notes/catena-built-in-data-model.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). P109 spellings,

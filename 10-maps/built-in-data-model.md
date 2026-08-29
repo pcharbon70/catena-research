@@ -27,6 +27,8 @@ collections, construction, spellings, and references.
   develops the classification, the three types, and the entries.
 - [Resolved data-model inquiry](../40-inquiries/which-types-are-built-in.md)
   records the operational question, hypotheses, and resolution.
+- [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
+  is the candidate version 0.1.35 contract.
 - [Equality and Ordering map](equality-and-ordering.md) fixed the
   entry rule this executes.
 

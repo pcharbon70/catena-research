@@ -195,9 +195,9 @@ semantics bind, representation stays free per C037).
   records the question, hypotheses, and outcome.
 - The [Built-In Data Model map](../10-maps/built-in-data-model.md)
   routes through the scanner, the entry rules, and the future owners.
-- The Built-In Data Model Specification (candidate, then normative at
-  promotion, in `60-specification/built-in-data-model/`) will define
-  the contract this note argues for.
+- The [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
+  defines the candidate — then normative at promotion — `0.1.35`
+  contract this note argues for.
 - [Catena Numeric Literal Semantics](catena-numeric-literal-semantics.md)
   fixed the elaboration pattern this executes.
 - [Catena Equality and Ordering](catena-equality-and-ordering.md)
