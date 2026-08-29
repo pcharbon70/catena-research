@@ -52,10 +52,13 @@ condition rejection re-runs the CND-family shape — the regimes are
 their owning areas' frozen facts, witnessed as unchanged.
 
 The sibling compiler implementation is commit
-[`30426d558f79498f791a398a5ff01c7590b18cad`](https://github.com/pcharbon70/catena/commit/30426d558f79498f791a398a5ff01c7590b18cad)
-on branch `agent/c038-compile-time`, pending compiler PR and research
-promotion following the established publication order (the PR links
-are backfilled at publication).
+[`30426d558f79498f791a398a5ff01c7590b18cad`](https://github.com/pcharbon70/catena/commit/30426d558f79498f791a398a5ff01c7590b18cad),
+merged into the `rewrite` integration line by compiler PR
+[#114](https://github.com/pcharbon70/catena/pull/114) at merge commit
+[`f0bb719`](https://github.com/pcharbon70/catena/commit/f0bb71923aae29d22a14f18ed9a6439524779a73).
+The merge retained the tested tree exactly (tree `2950168`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
