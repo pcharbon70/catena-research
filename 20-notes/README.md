@@ -173,8 +173,11 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 - [Catena Structural Records](catena-structural-records.md) —
   proposes C041's consolidated operation table, kernel rows verbatim,
   and the semantic-map representation clause.
+- [Catena Collection Operations](catena-collection-operations.md) —
+  proposes C042's six-topic routing, miss-as-value bounds failures,
+  and the complexity exclusion with its C037 rationale.
 - [Catena Design Decision Register](design-decision-register.md) — the
-  consolidated record of every developer fork decision across C018–C041
+  consolidated record of every developer fork decision across C018–C042
   plan reviews: options offered, recommendation, choice, overrides, and
   where each decision became normative.
 - [Catena Identifiers and Name Security](catena-identifiers-and-name-security.md)

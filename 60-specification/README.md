@@ -166,11 +166,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   operation table, row model, representation clause, and executable
   evidence are recorded in the
   [C041 conformance journal](../50-journal/2026-08-29-c041-records.md).
+  The normative C042 collections boundary is version `0.1.37`; its
+  six-topic decision, miss classification, complexity exclusion, and
+  executable evidence are recorded in the
+  [C042 conformance journal](../50-journal/2026-08-31-c042-collections.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Collection Construction and Update](collection-construction-and-update/README.md)
+  — the normative version 0.1.37 six-topic decision with
+  miss-as-value bounds failures and the complexity exclusion.
 - [Structural Records and Variants](structural-records-and-variants/README.md)
   — the normative version 0.1.36 consolidated operation table with
   kernel rows verbatim and the semantic-map representation clause.

@@ -196,6 +196,11 @@ should explain why its links belong together rather than merely list files.
   kernel's record calculus, C002's nominal exclusions, C030's order
   rows, and C037's maps, and the normative 0.1.36 operation table
   with kernel rows verbatim and the semantic-map clause.
+- [Collection Construction and Update](collection-construction-and-update.md)
+  — routes through C040's classification, C041's boundary, C035's
+  set, C036's taxonomy, and C037's invisibility, and the proposed
+  six-topic routing with miss as value and the complexity
+  exclusion.
 - [Source Text Encoding and Normalization](source-text-encoding-and-normalization.md)
   — routes through strict UTF-8, BOMs, logical newlines, normalization
   preservation, original-byte scalar locations, and C013 conformance.

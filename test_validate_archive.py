@@ -197,6 +197,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "compile-time-evaluation": "0.1.34",
                 "built-in-data-model": "0.1.35",
                 "structural-records-and-variants": "0.1.36",
+                "collection-construction-and-update": "0.1.37",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

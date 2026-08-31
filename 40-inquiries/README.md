@@ -143,6 +143,10 @@ to `20-notes`.
   — tests the consolidated operation table, kernel rows verbatim, and
   the semantic-map clause against the kernel calculus, C002's nominal
   exclusions, C030's order rows, and C037's maps.
+- [How Do Collections Construct and Update?](how-do-collections-construct-and-update.md)
+  — tests the six-topic routing, miss-as-value bounds failures, and
+  the complexity exclusion against C040's classification, C041's
+  boundary, C035's set, C036's taxonomy, and C037's invisibility.
 - [How Should Catena Define and Secure Identifiers?](how-should-catena-define-and-secure-identifiers.md)
   — resolves C014 with Unicode 17 XID, filtered NFC, role-neutral case,
   qualification, keywords, security profiles, and confusable warnings.
