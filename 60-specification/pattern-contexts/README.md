@@ -38,6 +38,14 @@ receive grammar remains future work. The failure taxonomy remains
 C036's. Handler clause structure remains C005's. `let` structure
 remains C031's. Spellings remain P109's.
 
+## Variability register
+
+This area introduces no implementation-defined choice, recommendation,
+bounded unspecified presentation, or implementation limit. The
+classification is semantic; the reservations and exclusions bind every
+conforming implementation identically; no registry or tooling behavior
+may vary.
+
 ## Index
 
 ### Documents
