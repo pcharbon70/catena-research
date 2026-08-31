@@ -2,7 +2,7 @@
 title: "List Comprehensions"
 kind: note
 created: "2026-08-01"
-maturity: developing
+maturity: stable
 tags:
   - catena
   - comprehensions
