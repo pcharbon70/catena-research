@@ -32,6 +32,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Pattern Contexts](catena-pattern-contexts.md) — argues the
+  three-class classification closing P044 and D046: match the only
+  exhaustive context, irrefutable-only the default, explicit
+  failure the only honest refutability.
 - [An Approachable Vocabulary for Catena](approachable-language-vocabulary.md)
   — proposes a behavior-first public language, an exact internal semantic
   ledger, task-oriented operation families, diagnostic conventions, and an

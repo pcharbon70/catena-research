@@ -96,8 +96,9 @@ the data-model program.
 
 ## Route to sources
 
-- [Pattern Contexts Specification](../60-specification/pattern-contexts/README.md)
-  — the normative `0.1.38` contract.
+- The Pattern Contexts Specification (candidate, then normative at
+  promotion, in `60-specification/pattern-contexts/`) will define
+  the contract this note argues for.
 - [Construction and Pattern Typing](../60-specification/data-and-patterns/construction-and-pattern-typing.md)
   — C002's refutability boundary this slice executes.
 - [Match Semantics and Coverage](../60-specification/data-and-patterns/match-semantics-and-coverage.md)
@@ -106,5 +107,5 @@ the data-model program.
   conclusions (437–451) this slice codifies.
 - [List Comprehensions](list-comprehensions.md) — the generator
   split this slice fixes as principle.
-- [Resolved inquiry](../40-inquiries/which-pattern-contexts-admit-refutable-patterns.md)
-  and the [topic map](pattern-contexts.md).
+- The [resolved inquiry](../40-inquiries/which-pattern-contexts-admit-refutable-patterns.md)
+  and the [topic map](../10-maps/pattern-contexts.md).
