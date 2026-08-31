@@ -90,5 +90,5 @@ falsified and must be amended, not extended silently.
   — C019's routing of dispatch and division to G061/G105.
 - [The Comparable Set](../60-specification/equality-and-ordering/the-comparable-set.md)
   — the same-type pattern ordering already uses.
-- [Numeric literal semantics map](numeric-literal-semantics.md)
+- [Numeric literal semantics map](../10-maps/numeric-literal-semantics.md)
   and the [resolved inquiry](../40-inquiries/how-should-int-and-float-relate-across-operators.md).
