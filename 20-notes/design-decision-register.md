@@ -407,6 +407,21 @@ Fixed in: [specification](../60-specification/structural-records-and-variants/RE
 | Deliverable | kernel-path witnesses (rec) / frontend integration / normative-only | kernel-path witnesses |
 
 
+## C042 — collection construction and update (`0.1.37`, 2026-08-31)
+
+Fixed in: [synthesis](catena-collection-operations.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Area shape | new area CO 0.1.37 (rec) / defer to G101 / extend data-model area | new area CO |
+| Six-way stance | decision + routing (rec) / design operations now / routing table only | decision + routing |
+| Bounds failures | typed failure as value (rec) / trap on miss / defer to G105 | typed failure as value |
+| Complexity | excluded from language (rec) / promise complexity now / defer silently | excluded from language |
+| Deliverable | nominal-ADT witnesses (rec) / collection built-ins / normative-only | nominal-ADT witnesses |
+
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry
