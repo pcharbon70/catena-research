@@ -51,7 +51,9 @@ let name = rhs ; body
   value — the kernel's substitute-after-value rule, elevated.
 - The binder is a plain value name; pattern binding is not a `let`
   form at this revision (its match-based spelling remains
-  C002/P109 surface work).
+  C002/P109 surface work, and any arriving pattern form is
+  irrefutable-only or explicit-failure under the
+  [Pattern Contexts Specification](../pattern-contexts/README.md)).
 
 ## Scope and shadowing
 

@@ -18,7 +18,8 @@ aliases:
 This map routes the P044 question — which pattern contexts admit
 refutable patterns and what happens on mismatch — through the
 archive's decision trail. The normative answer will be revision
-`0.1.38` in `60-specification/pattern-contexts/`.
+`0.1.38` in the [Pattern Contexts
+Specification](../60-specification/pattern-contexts/README.md).
 
 ## The route
 
@@ -46,10 +47,10 @@ archive's decision trail. The normative answer will be revision
    Six Categories](../60-specification/runtime-failure-taxonomy/the-six-categories.md)
    makes `trap` terminal and typed failure a value — there is no
    exception mechanism to hang clauses on.
-6. **The contract.** The Pattern Contexts Specification
-   (`60-specification/pattern-contexts/`): the three classes, the
-   per-context rules, the public-receive reservation, the D046
-   exclusion, and conformance.
+6. **The contract.** The [Pattern Contexts
+   Specification](../60-specification/pattern-contexts/README.md):
+   the three classes, the per-context rules, the public-receive
+   reservation, the D046 exclusion, and conformance.
 7. **The reasoning and decision record.** [Catena Pattern
    Contexts](../20-notes/catena-pattern-contexts.md) argues the
    classification; the [resolved

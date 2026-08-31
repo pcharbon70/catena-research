@@ -175,6 +175,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Pattern Contexts](pattern-contexts/README.md)
+  — the candidate version 0.1.38 three-class refutability contract
+  with per-context rules, reservations, and the D046 exclusion.
 - [Collection Construction and Update](collection-construction-and-update/README.md)
   — the normative version 0.1.37 six-topic decision with
   miss-as-value bounds failures and the complexity exclusion.

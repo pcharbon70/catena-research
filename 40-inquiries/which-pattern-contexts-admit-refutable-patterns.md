@@ -92,8 +92,9 @@ expression hides a runtime Match failure.
 
 ## Outcome
 
-Resolved as C044 at revision `0.1.38`: the contract will live in
-`60-specification/pattern-contexts/`, the reasoning in
+Resolved as C044 at revision `0.1.38`: the contract lives in the
+[Pattern Contexts Specification](../60-specification/pattern-contexts/README.md),
+the reasoning in
 [Catena Pattern Contexts](../20-notes/catena-pattern-contexts.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). D046 closes as
