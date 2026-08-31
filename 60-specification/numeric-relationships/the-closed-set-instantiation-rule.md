@@ -62,8 +62,11 @@ negation over the closed set (`NR-OBL-005`). Float arithmetic
 follows C018's finite binary64 semantics — no NaN, infinities
 excluded by conversion — and the same-type rule: a `Float`
 operand's partner MUST also be `Float`. No float literal spelling
-exists in any frozen frontend; the executable witness runs through
-annotated float parameters.
+and no float type spelling exist in any frozen frontend, so the
+rule is **correct-but-dormant**: the executable witness drives the
+inference engine directly with float-typed operands, and the rule
+becomes input-reachable with the first float-bearing frontend
+(`NR-OBL-005`).
 
 ## The closed set
 

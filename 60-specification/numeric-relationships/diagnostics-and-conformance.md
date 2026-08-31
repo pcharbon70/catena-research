@@ -39,18 +39,23 @@ the existing operand error; no new invalid input exists.
 The shipped boundaries witness the contract; the bootstrap adds no
 new public API (`NR-OBL-001`):
 
-- **JSON-AST checker** — same-type arithmetic instantiation: an
-  annotated `Float → Float` definition whose body applies `add`
-  checks and runs on the reference evaluator and compiled BEAM
-  with binary64 results; mixed operands reject.
-- **Kernel checker** — the same rule at the kernel boundary, where
-  annotated float parameters carry the type.
+- **Inference engine** — the same-type arithmetic instantiation is
+  witnessed by driving the checker's inference directly with
+  float-typed operands: float `add` infers `Float`, Int `add`
+  infers `Int` unchanged, and mixed operands reject. The rule is
+  correct-but-dormant: no frozen frontend carries a float type or
+  literal spelling, so the rule becomes input-reachable with the
+  first float-bearing frontend.
+- **Evaluator and BEAM lowering** — arithmetic on Elixir floats
+  computes natively (`+`/`-`/`*`), dormant until float operands
+  can reach them.
 - **Value classification** — `Int` and `Float` remain the closed
   set's members (`Catena.Values`, unchanged from C040/C035).
 
 Implementations MUST NOT use these boundaries to claim operator
 dispatch, user overloadability, mixed-type acceptance, division,
-remainder, or implicit conversion (`NR-OBL-006`).
+remainder, implicit conversion, or any frontend float spelling
+(`NR-OBL-006`).
 
 ## Determinism
 
@@ -65,7 +70,7 @@ every conforming target (`NR-OBL-006`).
 | `NR-OBL-002` | fix the closed-set instantiation rule: operands unify with each other over exactly {Int, Float} | rule-shape tests |
 | `NR-OBL-003` | keep operators free of dispatch, evidence, and user overloadability | absence tests |
 | `NR-OBL-004` | re-affirm no defaulting, no implicit coercion, no literal constraints; mixed operands ill-typed | mixed-type rejection tests |
-| `NR-OBL-005` | make arithmetic same-type over {Int, Float}: annotated float parameters check and run | annotation witnesses |
+| `NR-OBL-005` | make arithmetic same-type over {Int, Float}: the rule accepts float operands, witnessed on the inference engine, dormant until a float-bearing frontend | inference-engine witnesses |
 | `NR-OBL-006` | keep the contract deterministic with zero new families and the reuse boundary enforced | determinism and exclusion tests |
 | `NR-OBL-007` | route division, remainder, and reserved spellings to G105 with no divide or remainder operator existing | absence tests |
 | `NR-OBL-008` | keep the closed set amendable only by a new revision amending the enumeration | exclusion tests |
@@ -76,14 +81,14 @@ uncovered identifiers before C061 conformance is claimed.
 
 ## Required evidence sets
 
-Positive evidence includes an annotated `Float → Float`
-arithmetic definition agreeing on the reference evaluator and
-compiled BEAM by binary64 selected values; Int arithmetic
-unchanged; ordering and negation unchanged over both members; and
-the lifecycle registration of 0.1.40.
+Positive evidence includes the inference engine typing float `add`
+as `Float` and Int `add` as `Int` unchanged; ordering and negation
+unchanged over both members; Int arithmetic programs running
+unchanged on the reference evaluator and compiled BEAM; and the
+lifecycle registration of 0.1.40.
 
 Negative evidence — in the definitional sense — includes mixed
-`Int`/`Float` operands rejecting on both checker boundaries, no
+`Int`/`Float` operands rejecting in the inference engine, no
 dispatch or overloadability entry points, and no divide or
 remainder operator existing.
 

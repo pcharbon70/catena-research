@@ -46,12 +46,13 @@ belong.
    negation already use, made the rule for all numeric operators.
    Operators are never user-overloadable; a future numeric type
    joins the closed set by amending it in its own revision.
-3. **Float arithmetic becomes checkable and runnable now**: extend
-   `add`/`subtract`/`multiply` from Int-only to same-type
-   `{Int, Float}` in both checkers. Float literals remain
-   inexpressible in the frozen frontends, but an annotated float
-   parameter types an operand — so the extension is witnessed
-   end-to-end without new syntax.
+3. **Float arithmetic becomes checkable now, dormant by necessity**:
+   extend `add`/`subtract`/`multiply` from Int-only to same-type
+   `{Int, Float}` in the checker. Neither frozen frontend carries
+   a float type or literal spelling, so the rule is
+   correct-but-dormant — witnessed by driving the inference engine
+   with float-typed operands, live with the first float-bearing
+   frontend.
 4. **Division and remainder route to G105** (checked and decimal
    arithmetic, the numeric library), matching C019's
    "G105/G061 with their own later revisions" split.

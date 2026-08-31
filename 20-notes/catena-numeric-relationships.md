@@ -61,13 +61,16 @@ unification failure.
 
 ## The witness without literals
 
-Floats are values without literal spellings in either frozen
-frontend. But an annotation types an operand: a definition
-`f : Float → Float` whose body applies `add` to its parameter
-needs no literal, so the extension is expressible, checkable, and
-runnable today — the C035 dormant pattern becomes live. The
-evaluator's arithmetic already computes Elixir floats; only the
-checkers pinned the rule to Int.
+Floats are values without spellings in either frozen frontend —
+and, decisively, without a float **type** spelling too: the JSON
+AST carries no float type tag (`T012` on any attempt) and the
+kernel's type grammar has no `Float`. So float arithmetic cannot
+be made input-reachable today; the extension is
+**correct-but-dormant** in the strict C035 sense — the checker's
+inference rule ships, witnessed by driving the inference engine
+directly with float-typed operands, and the evaluator's `+`/`-`/`*`
+run Elixir floats natively whenever operands first reach them.
+The rule becomes live with the first float-bearing frontend.
 
 ## Tradeoffs, limitations, falsification
 
