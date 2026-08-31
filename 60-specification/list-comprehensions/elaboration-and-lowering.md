@@ -58,13 +58,15 @@ remain the operative semantics (`LC-OBL-010`).
 
 > **Normative definition.**
 
-Lowering produces one fused tail-recursive worker per
-comprehension (`LC-OBL-013`): a single recursive definition
-traverses the sources in order, applies filters and bindings
-inline, and accumulates the output; no intermediate `map`- or
-`filter`-shaped intermediate lists exist between qualifiers
-(`LC-OBL-013`). The worker is stack-safe for linear output, and
-output allocation is linear in the number of yielded elements
+Lowering produces one fused tail-recursive worker chain per
+comprehension (`LC-OBL-013`): one recursive definition per
+generator depth, each tail-recursive in its own source, sharing a
+single output accumulator threaded through the chain, with a final
+ordering pass; filters and bindings apply inline, and no
+intermediate `map`- or `filter`-shaped lists exist between
+qualifiers (`LC-OBL-013`). Stack use is constant in the number of
+generators, the chain is stack-safe for linear output, and output
+allocation is linear in the number of yielded elements
 (`LC-OBL-013`). Generated code is compiler-internal generation in
 the C038 sense: it executes no user code the qualifiers do not
 name, and diagnostics MUST name the source qualifier, never the

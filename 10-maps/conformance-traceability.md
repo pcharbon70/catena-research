@@ -2046,7 +2046,7 @@ compiler repository. The planned focused set is:
 - **c047 #10** *fixes the typed qualifier-tree target, the extensional equations, and the no-dispatch rule*
 - **c047 #11** *fixes List B results with all other targets excluded*
 - **c047 #12** *makes sequential execution normative and parallel forms excluded*
-- **c047 #13** *produces the fused tail-recursive worker with linear allocation, source-faithful diagnostics, and cost honesty*
+- **c047 #13** *produces the fused tail-recursive worker chain with linear allocation, source-faithful diagnostics, and cost honesty*
 - **c047 #14** *keeps the contract deterministic and outside unowned claims with the reuse map enforced*
 
 Anchors currently point at the candidate 0.1.39 chapters and become
