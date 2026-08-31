@@ -39,11 +39,14 @@ in [maps](../../10-maps/README.md).
 
 ### Documents
 
-- [Catena Language Status: 29 August 2026](catena-language-status-2026-08-29.md)
-  — the live snapshot at `0.1.34`: 63/141 items, 34 normative areas,
-  Sections 1–4 complete after the ten-slice C029–C038 run, the
-  Section 4 method recorded, cross-cutting guarantees, declared
+- [Catena Language Status: 31 August 2026](catena-language-status-2026-08-31.md)
+  — the live snapshot at `0.1.39`: 80/141 items, 40 normative
+  areas, Sections 1–6 complete (D059 deferred), the data-era
+  decide-don't-build method recorded, frontend facts, declared
   absences, quality gates, and recommended next moves.
+- [Catena Language Status: 29 August 2026](catena-language-status-2026-08-29.md)
+  — the superseded `0.1.34` snapshot (Sections 1–4 complete after
+  the ten-slice C029–C038 run); retained as history.
 - [Catena Language Status: 26 August 2026](catena-language-status-2026-08-26.md)
   — the superseded `0.1.29` snapshot (Section 4 gap-free); retained
   as history.
@@ -58,4 +61,4 @@ update the parent `20-notes/` README if the directory's role changes.
 When a snapshot's numbers are superseded, the newer snapshot's
 Evidence route becomes the live entry point and the old snapshot stays
 as history. The current live snapshot is the
-[29 August 2026 report](catena-language-status-2026-08-29.md).
+[31 August 2026 report](catena-language-status-2026-08-31.md).
