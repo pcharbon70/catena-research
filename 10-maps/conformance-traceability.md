@@ -101,6 +101,8 @@ follow-up item now that C011 is reached.
   — the C042 source for `CO-OBL-*` obligations.
 - [Pattern Contexts Specification](../60-specification/pattern-contexts/README.md)
   — the C044 source for `PC-OBL-*` obligations.
+- [List Comprehensions Specification](../60-specification/list-comprehensions/README.md)
+  — the C047 source for `LC-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -151,6 +153,7 @@ convention.
 | `SR` | structural-records-and-variants | 0.1.36 |
 | `CO` | collection-construction-and-update | 0.1.37 |
 | `PC` | pattern-contexts | 0.1.38 |
+| `LC` | list-comprehensions | 0.1.39 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -171,7 +174,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-eight normative areas and the C012 governance policy are now
+extracted; all thirty-nine normative areas, the C012 governance policy, and the
+candidate `LC` list-comprehensions area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -218,6 +222,7 @@ sibling compiler repository.
 | `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (7) | compiler-tagged + gated (`f42c958`); all obligations traced |
 | `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (8) | compiler-tagged + gated (`246019f`); all obligations traced |
 | `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
+| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -2021,6 +2026,54 @@ merged compiler evidence (`00bd04c`, branch `agent/c044-pattern-contexts`).
 C044 coverage is 9 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `PC-OBL-*` identifier
 lacks a focused tag.
+
+## List comprehensions registry (`LC`, 0.1.39)
+
+Evidence labels will refer to focused tests in
+`test/catena/c047_list_comprehensions_test.exs` and its
+`test/catena/c047_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c047 #1** *applies comprehension rules only at exact 0.1.39 with the LCP families declared and the elaboration API registered*
+- **c047 #2** *fixes the grammar's semantic roles and keywords with the adoption boundary at the surface capstone*
+- **c047 #3** *requires List A sources with the excluded-source boundary*
+- **c047 #4** *fixes left-to-right depth-first traversal with dependency, once-per-prefix source evaluation, and empty-input behavior*
+- **c047 #5** *fixes when-filter semantics: visible effects, false-as-skip, all other failures propagate, no guard fragment*
+- **c047 #6** *consumes C044's split: total ordinary generators, case mismatch-as-skip, LCP002/LCP003 markers, M001 reuse*
+- **c047 #7** *fixes left-to-right scope, non-escaping non-recursive bindings, LCP001 rebinding, BS001 reuse*
+- **c047 #8** *fixes exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows*
+- **c047 #9** *fixes eager ordered production with lazy and infinite inputs excluded*
+- **c047 #10** *fixes the typed qualifier-tree target, the extensional equations, and the no-dispatch rule*
+- **c047 #11** *fixes List B results with all other targets excluded*
+- **c047 #12** *makes sequential execution normative and parallel forms excluded*
+- **c047 #13** *produces the fused tail-recursive worker with linear allocation, source-faithful diagnostics, and cost honesty*
+- **c047 #14** *keeps the contract deterministic and outside unowned claims with the reuse map enforced*
+
+Anchors currently point at the candidate 0.1.39 chapters and become
+normative anchors at C047 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| LC-OBL-001 | Apply comprehension rules only at exact 0.1.39, register the lifecycle addition, and declare the LCP families and the elaboration API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/list-comprehensions/diagnostics-and-conformance.md#revision-and-persistence-separation) | c047 #1 | untraced |
+| LC-OBL-002 | Fix the grammar's semantic roles and keywords with the adoption boundary at the surface capstone | [`the-surface-contract.md#the-grammars-semantic-roles`](../60-specification/list-comprehensions/the-surface-contract.md#the-grammars-semantic-roles) | c047 #2 | untraced |
+| LC-OBL-003 | Require `List A` sources with the excluded-source boundary | [`generator-and-qualifier-rules.md#sources`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#sources) | c047 #3 | untraced |
+| LC-OBL-004 | Fix left-to-right depth-first traversal with dependency, once-per-prefix source evaluation, and empty-input behavior | [`generator-and-qualifier-rules.md#traversal`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#traversal) | c047 #4 | untraced |
+| LC-OBL-005 | Fix `when` filter semantics: visible effects, false-as-skip, all other failures propagate, no guard fragment | [`generator-and-qualifier-rules.md#filters`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#filters) | c047 #5 | untraced |
+| LC-OBL-006 | Consume C044's split: total ordinary generators, `case` mismatch-as-skip, `LCP002`/`LCP003` markers, `M001` reuse | [`generator-and-qualifier-rules.md#the-pattern-generator-split`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#the-pattern-generator-split) | c047 #6 | untraced |
+| LC-OBL-007 | Fix left-to-right scope, non-escaping non-recursive bindings, `LCP001` rebinding, `BS001` reuse | [`generator-and-qualifier-rules.md#scope-and-rebinding`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#scope-and-rebinding) | c047 #7 | untraced |
+| LC-OBL-008 | Fix exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows | [`evaluation-effects-and-execution.md#exact-order`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#exact-order) | c047 #8 | untraced |
+| LC-OBL-009 | Fix eager ordered production with lazy and infinite inputs excluded | [`the-surface-contract.md#eager-ordered-production`](../60-specification/list-comprehensions/the-surface-contract.md#eager-ordered-production) | c047 #9 | untraced |
+| LC-OBL-010 | Fix the typed qualifier-tree target, the extensional equations, and the no-dispatch rule | [`elaboration-and-lowering.md#the-qualifier-tree-target`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-qualifier-tree-target) | c047 #10 | untraced |
+| LC-OBL-011 | Fix `List B` results with all other targets excluded | [`the-surface-contract.md#the-result-type-boundary`](../60-specification/list-comprehensions/the-surface-contract.md#the-result-type-boundary) | c047 #11 | untraced |
+| LC-OBL-012 | Make sequential execution normative and parallel forms excluded | [`evaluation-effects-and-execution.md#sequential-execution-is-normative`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#sequential-execution-is-normative) | c047 #12 | untraced |
+| LC-OBL-013 | Produce the fused tail-recursive worker with linear allocation, source-faithful diagnostics, and cost honesty | [`elaboration-and-lowering.md#the-fused-worker`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-fused-worker) | c047 #13 | untraced |
+| LC-OBL-014 | Keep the contract deterministic and outside unowned claims with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/list-comprehensions/diagnostics-and-conformance.md#abstract-public-boundaries) | c047 #14 | untraced |
+
+C047 coverage is 0 `traced` and 14 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `LC-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
