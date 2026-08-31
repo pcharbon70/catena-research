@@ -107,8 +107,6 @@ Section 5 continues with the later pattern-form question (list,
 record, variant, binary, range) and the representation boundary;
 Section 6 (comprehensions) consumes the generator principle. The
 next unused semantic patch is `0.1.39`. The decision route is
-preserved by the [pattern-contexts topic
-map](../10-maps/pattern-contexts.md), the [pattern-contexts
-synthesis](../20-notes/catena-pattern-contexts.md), and the
-[traceability registry's PC
-section](../10-maps/conformance-traceability.md).
+preserved by the [pattern-contexts map](../10-maps/pattern-contexts.md),
+the [pattern-contexts synthesis](../20-notes/catena-pattern-contexts.md),
+and the [traceability registry](../10-maps/conformance-traceability.md).
