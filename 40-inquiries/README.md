@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Int and Float Relate Across Operators?](how-should-int-and-float-relate-across-operators.md)
+  — resolves G061: closed-set instantiation over {Int, Float}, no
+    dispatch, float arithmetic witnessed via annotations, division
+    routed to G105 at `0.1.40`.
 - [Which Pattern Contexts Admit Refutable Patterns?](which-pattern-contexts-admit-refutable-patterns.md)
   — resolves P044 and D046: the three context classes with
     per-context rules and reservations at `0.1.38`.

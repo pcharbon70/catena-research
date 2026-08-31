@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Numeric Relationships](catena-numeric-relationships.md) —
+  argues the closed-set instantiation rule closing G061: same-type
+  {Int, Float} operands, no dispatch, division to G105.
 - [Catena Pattern Contexts](catena-pattern-contexts.md) — argues the
   three-class classification closing P044 and D046: match the only
   exhaustive context, irrefutable-only the default, explicit

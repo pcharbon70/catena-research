@@ -450,6 +450,19 @@ slice's promotion commits. Closes P047–P058; D059 stays deferred.
 | Area naming | list-comprehensions LC (rec) / comprehensions-and-iteration CI | list-comprehensions LC |
 | Diagnostics | minimal new LCP set — rebinding, never-match marker, unnecessary marker (rec) / full 12-diagnostic set / zero new families | minimal LCP set |
 
+## C061 — numeric relationships (`0.1.40`, 2026-08-31)
+
+Fixed in: [synthesis](catena-numeric-relationships.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits. Closes G061.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Mechanism | closed-set instantiation, no dispatch (rec) / Numeric trait dispatch / defer to P109 | closed-set instantiation |
+| Float arithmetic | extend, witness via annotations (rec) / codify but keep Int-only | extend, witness via annotations |
+| Division/remainder | route to G105 (rec) / fix division now | route to G105 |
+| Area naming | numeric-relationships NR (rec) / extend operators area / numeric-operator-instantiation NOI | numeric-relationships NR |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

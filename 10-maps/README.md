@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Numeric Relationships](numeric-relationships.md) — routes the
+  G061 operator-relationship decision from C018's exclusions to
+  the `0.1.40` contract.
 - [Pattern Contexts](pattern-contexts.md) — routes the P044
   refutability-by-context decision from C002's reservation to the
   `0.1.38` contract.
