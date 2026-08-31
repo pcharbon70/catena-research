@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [C047 List Comprehensions](2026-08-31-c047-comprehensions.md)
+  — records the normative 0.1.39 comprehension contract, the
+    worker-chain refinement, the balanced-builder rewrite, the
+    probe-based LCP003, and the nesting-limit finding, with
+    immutable compiler identity.
 - [C044 Pattern Contexts](2026-08-31-c044-pattern-contexts.md)
   — records the normative 0.1.38 three-class contract, the
     kernel-vs-JSON redundancy finding, the fixture-as-witness

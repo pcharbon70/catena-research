@@ -135,6 +135,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "structural-records-and-variants": "0.1.36",
     "collection-construction-and-update": "0.1.37",
     "pattern-contexts": "0.1.38",
+    "list-comprehensions": "0.1.39",
 }
 
 

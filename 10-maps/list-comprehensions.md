@@ -32,9 +32,9 @@ carrier-specific method conventions.
 2. [How Should Catena Specify List Comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
    turns the remaining syntax, usability, formal, backend, and extension
    questions into resolution criteria — now resolved.
-3. The List Comprehensions Specification
-   ([`60-specification/list-comprehensions/`](../60-specification/list-comprehensions/README.md),
-   revision `0.1.39`) carries the normative contract this route
+3. The [List Comprehensions
+   Specification](../60-specification/list-comprehensions/README.md)
+   (revision `0.1.39`) carries the normative contract this route
    produced: the surface contract, generator and qualifier rules,
    evaluation and effect order, the elaboration and fused-worker
    boundary, and conformance. The [Pattern Contexts

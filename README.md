@@ -260,8 +260,9 @@ normative C040 uses `0.1.35` for the built-in data model;
 normative C041 uses `0.1.36` for structural records and variants;
 normative C042 uses `0.1.37` for collection construction and update;
 normative C044 uses `0.1.38` for pattern contexts;
+normative C047–C058 use `0.1.39` for list comprehensions;
 and the next
-unused semantic patch is `0.1.39`. C008 defines package-local editions,
+unused semantic patch is `0.1.40`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

@@ -1030,46 +1030,88 @@ as small normative rules rather than copied wholesale into a specification.
 
 ## 6. List comprehensions, generators, and iteration
 
-The [list-comprehension synthesis](../20-notes/list-comprehensions.md) now
-proposes a coherent initial answer. Every item remains unchecked because the
-proposal still needs normative grammar, formalization, implementation, and
-validation.
+The [list-comprehension synthesis](../20-notes/list-comprehensions.md)
+proposed the coherent initial answer, and C047–C058 at `0.1.39` made it
+normative with a dormant elaboration boundary: grammar, formalization,
+implementation, and validation landed together, with surface adoption at
+P109 and D059's neighboring iteration syntax still deferred.
 
-- [ ] **P047 — Partial — list-comprehension surface syntax.** Validate the proposed
-  result-producing `for ... yield` shape and specify total generator,
-  filtering generator, Boolean filter, binding, and nested qualifier grammar.
-- [ ] **P048 — Partial — generator protocol.** Confirm the proposed initial `List A`
-  source; keep iterators, streams, effectful producers, and generic foldable
-  sources explicitly outside that version.
-- [ ] **P049 — Partial — multiple-generator meaning.** Formalize the proposed
-  left-to-right, depth-first Cartesian traversal, dependency, source-evaluation
-  count, and empty-input behavior.
-- [ ] **P050 — Partial — filter semantics.** Validate ordinary typed `Bool` filters
-  with visible effects, false-as-skip, and propagation of all other failures.
-- [ ] **P051 — Partial — pattern-generator failure.** Formalize exhaustive ordinary
-  generators and explicitly marked filtering generators whose pattern mismatch
-  alone skips an element.
-- [ ] **P052 — Partial — qualifier bindings and scope.** Validate left-to-right
-  visibility, non-recursive exhaustive bindings, no escaping names, and the
-  proposed same-comprehension rebinding error.
-- [ ] **P053 — Partial — evaluation and effect order.** Specify and test exact source
-  traversal, qualifier order, multiplicity, short-circuiting, failure timing,
-  and effect-row inference.
-- [ ] **P054 — Partial — eager versus lazy production.** Confirm eager ordered list
-  results; keep lazy streams and infinite inputs under a separate resource and
-  cancellation contract.
-- [ ] **P055 — Partial — elaboration contract.** Formalize the typed qualifier-tree
-  target, pure extensional equations with `map` and `flat_map`, and the fused
-  worker behavior that must preserve effects and failures.
-- [ ] **P056 — Partial — result type.** Confirm initial `List B` output and explicitly
-  exclude maps, sets, binaries, streams, validation values, and arbitrary
-  `Applicative` or `Monad` targets.
-- [ ] **P057 — Partial — sequential versus parallel execution.** Make sequential
-  source-order behavior normative and require separate syntax, effects, and
-  structured-concurrency rules for any future parallel form.
-- [ ] **P058 — Partial — termination and cost.** Verify tail-recursive workers, linear
-  output allocation, no intermediate map/filter lists, Cartesian cost
-  explanations, and debugger/profiler source fidelity.
+- [x] **C047 — Complete — list-comprehension surface syntax.** Normative
+  `0.1.39` fixes the semantic-role grammar: `for pattern in source
+  qualifier* yield expression` with `case ... in` filtering
+  generators, `when` Bool filters, and exhaustive `let` bindings;
+  at least one generator, the first qualifier a generator. Keywords
+  are normative; token-level punctuation, layout, and block forms
+  adopt with P109. Eager ordered production; lazy streams and
+  infinite inputs excluded.
+
+- [x] **C048 — Complete — generator protocol.** Sources are `List A`
+  only: iterators, streams, effectful producers, and generic
+  foldable sources are excluded; a non-list source is a typing
+  error (`T002` through the elaborated module).
+
+- [x] **C049 — Complete — multiple-generator meaning.** Left-to-right
+  depth-first Cartesian traversal with dependency: each source is
+  evaluated once per enclosing prefix visit, later sources may
+  depend on earlier bindings, and an empty input at any depth
+  yields no elements — witnessed `[14, 15, 24, 25]` agreeing on
+  stepper and BEAM.
+
+- [x] **C050 — Complete — filter semantics.** `when` filters are
+  ordinary typed `Bool` expressions with visible effects: `false`
+  skips the element (not the test), every other failure propagates
+  and abandons the comprehension, and C003's guard fragment is not
+  used. A non-`Bool` filter is `T002`.
+
+- [x] **C051 — Complete — pattern-generator failure.** Consumes
+  C044's split: ordinary generators are checked total by the
+  usefulness relation (non-total rejects `M001`), `case` generators
+  mismatch-as-skip explicitly, `LCP002` fires on a never-matching
+  filtering pattern, and `LCP003` advises an unnecessary marker.
+
+- [x] **C052 — Complete — qualifier bindings and scope.** Bindings
+  are visible left-to-right, non-recursive, and never escape;
+  same-comprehension rebinding is `LCP001`; unused bindings report
+  `BS001`; outer shadowing follows the ordinary rule.
+
+- [x] **C053 — Complete — evaluation and effect order.** Exact
+  source-order traversal with per-element suffix completion,
+  once-per-reaching filter evaluation (effects occur even when the
+  value is false), immediate failure timing, and union effect rows
+  threading `uses` through the worker signatures.
+
+- [x] **C054 — Complete — eager versus lazy production.** Eager
+  ordered `List B` results are normative; lazy streams and infinite
+  inputs stay under a separate future resource-and-cancellation
+  contract, with no lazy entry points.
+
+- [x] **C055 — Complete — elaboration contract.** A dedicated typed
+  qualifier tree elaborates to the kernel typed core through
+  `Catena.Comprehension.elaborate/1` — no open trait dispatch —
+  satisfying the pure extensional equations with `map`/`flat_map`
+  (witnessed by desugaring-equivalence with a hand-written
+  recursive map).
+
+- [x] **C056 — Complete — result type.** Results are `List B` only;
+  maps, sets, binaries, streams, validation values, and arbitrary
+  `Applicative`/`Monad` targets are excluded with no entry
+  points.
+
+- [x] **C057 — Complete — sequential execution.** Sequential
+  source-order behavior is normative; implementations MUST NOT
+  parallelize or reorder effectful evaluations; any future parallel
+  form requires its own syntax, effects, and
+  structured-concurrency rules.
+
+- [x] **C058 — Complete — termination and cost honesty.** The fused
+  worker chain — one tail-recursive definition per generator depth,
+  one shared accumulator, a final ordering pass, no intermediate
+  map/filter lists — is stack-safe within the published parser
+  nesting limit (900-element witness on BEAM), allocation is
+  linear in output, Cartesian cost is explained by traversal and
+  visible multiplicity rather than asymptotic language promises
+  (C042's exclusion).
+
 - [ ] **D059 — Deferred — neighboring iteration syntax.** Research ranges,
   effect-only loops, generator functions, async streams, binary and map
   comprehensions, zip qualifiers, and generic collectors independently.

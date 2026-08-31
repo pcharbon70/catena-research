@@ -2,7 +2,7 @@
 title: "List Comprehensions Diagnostics and Conformance"
 kind: specification
 created: "2026-08-31"
-status: candidate
+status: normative
 spec_version: "0.1.39"
 tags:
   - conformance
@@ -128,6 +128,7 @@ next unused semantic patch is `0.1.40`.
 The design route is preserved in the
 [list-comprehensions synthesis](../../20-notes/list-comprehensions.md),
 the [resolved inquiry](../../40-inquiries/how-should-catena-specify-list-comprehensions.md),
-and the [topic map](../../10-maps/list-comprehensions.md). The C047
-evidence record will preserve the sibling-compiler commands and
+and the [topic map](../../10-maps/list-comprehensions.md). The [C047
+evidence record](../../50-journal/2026-08-31-c047-comprehensions.md)
+preserves the sibling-compiler commands and
 archive validation.

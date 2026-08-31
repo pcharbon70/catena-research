@@ -2,7 +2,7 @@
 title: "Evaluation Effects and Execution"
 kind: specification
 created: "2026-08-31"
-status: candidate
+status: normative
 spec_version: "0.1.39"
 tags:
   - comprehensions
