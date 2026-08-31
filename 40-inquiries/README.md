@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [Which Pattern Contexts Admit Refutable Patterns?](which-pattern-contexts-admit-refutable-patterns.md)
+  — resolves P044 and D046: the three context classes with
+    per-context rules and reservations at `0.1.38`.
 - [How Should Catena Decode and Normalize Source Text?](how-should-catena-decode-and-normalize-source-text.md)
   — resolves C013 with strict UTF-8, BOM rejection, LF/CRLF logical newlines,
   no whole-file normalization, scalar columns, and original-byte spans.

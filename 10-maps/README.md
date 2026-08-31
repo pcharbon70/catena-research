@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Pattern Contexts](pattern-contexts.md) — routes the P044
+  refutability-by-context decision from C002's reservation to the
+  `0.1.38` contract.
 - [Approachable Catena Language Design](approachable-catena-language-design.md)
   — connects the behavior-first vocabulary, validation inquiry, diagnostic
   research, and the formal models the public language must preserve.

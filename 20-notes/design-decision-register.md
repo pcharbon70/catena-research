@@ -421,6 +421,20 @@ with this slice's promotion commits.
 | Complexity | excluded from language (rec) / promise complexity now / defer silently | excluded from language |
 | Deliverable | nominal-ADT witnesses (rec) / collection built-ins / normative-only | nominal-ADT witnesses |
 
+## C044 — pattern contexts (`0.1.38`, 2026-08-31)
+
+Fixed in: [synthesis](catena-pattern-contexts.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits. Closes P044 and D046.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Slice shape | classification slice (rec) / implement let-patterns too / pointer-only closure | classification slice |
+| Generators | fix principle, defer grammar to P051 (rec) / leave entirely to Section 6 | fix principle, defer grammar |
+| Absent contexts | reserve public receives + exclude exception clauses (rec) / reserve both / exclude both | reserve receives, exclude exceptions |
+| D046 handling | fold exclusion in (rec) / leave deferred as its own slice | fold exclusion in |
+| Area naming | pattern-contexts PC (rec) / refutability-by-context RC / extend data-and-patterns | pattern-contexts PC |
+
 
 ## Cross-cutting decisions
 

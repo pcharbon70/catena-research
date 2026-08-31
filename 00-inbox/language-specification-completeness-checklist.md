@@ -1000,20 +1000,33 @@ as small normative rules rather than copied wholesale into a specification.
   wildcard, binder, integer and Boolean literal, tuple, positional and named
   constructor, `as`, `or`, and nested patterns; it explicitly excludes list,
   structural-record, row-variant, binary, range, and programmable forms.
-- [ ] **P044 — Partial — refutability by context.** C002 defines all supported
-  pattern forms in exhaustive matches. C003 makes multi-clause
-  functions exhaustive and gives the typed receive harness selective
-  nonconsuming rejection. Local bindings, generators, public receives,
-  handlers, and exception clauses still need their own admissibility and
-  failure rules.
+- [x] **C044 — Complete — refutability by context.** Normative `0.1.38`
+  fixes three context classes: match the only exhaustive context
+  (C045's usefulness relation and `M001`/`M002` unchanged),
+  irrefutable-only the default for binding positions, explicit-failure
+  the only honest refutability — no context inherits an implicit
+  runtime match failure. `let` binders and function parameters stay
+  plain-named today (a pattern-position `let` binder rejects `SYN002`)
+  and are irrefutable-only on arrival; the generator principle is
+  fixed (ordinary total, filtering explicitly mismatch-as-skip) with
+  grammar deferred to Section 6; public receives are reserved as
+  exhaustive-or-explicit-fallback; handler clauses keep plain binders;
+  exception clauses are permanently excluded under C036's terminal
+  trap taxonomy. Compiler witnesses (`00bd04c`): match regression pin
+  agreeing on stepper and BEAM, unchanged `M001`/`M002`, kernel and
+  JSON-AST negative boundary tests, entry-point absences. Zero new
+  diagnostic families.
 - [x] **C045 — Complete — initial coverage and redundancy.** The 0.1.2 normative specification
   uses one usefulness relation for closed nominal data, Booleans, tuples,
   integer literals, abstract types, three-valued inhabitation, guards, `or`
   patterns, and GADT refinements, with witnesses and deterministic limits.
-- [ ] **D046 — Deferred — programmable patterns.** Explicitly exclude or separately
-  specify view patterns, pattern synonyms, active patterns, and their effects,
-  totality, coverage, evaluation count, and cost. C002 explicitly excludes
-  these forms without reserving hidden conversion semantics.
+- [x] **C046 — Complete — programmable patterns excluded.** Closed with
+  C044 at `0.1.38`: view patterns, pattern synonyms, and active
+  patterns are excluded; patterns stay pure (no calls, effects,
+  conversions, or user-defined tests, per C002); any arrival is its
+  own slice stating effects, totality, coverage obligations,
+  evaluation count, and cost, with no hidden conversion semantics
+  reserved.
 
 ## 6. List comprehensions, generators, and iteration
 

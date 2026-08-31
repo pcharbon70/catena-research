@@ -114,8 +114,9 @@ irrefutable or define an explicit failure construct. They MUST NOT inherit an
 implicit runtime match exception.
 
 Receive clauses, handlers, exception clauses, and comprehensions retain their
-own selection and failure rules. This is why checklist item P044 remains
-partial even though match-clause refutability is complete.
+own selection and failure rules. The 0.1.38
+[Pattern Contexts Specification](../pattern-contexts/README.md) now fixes those
+per-context classes, reservations, and exclusions.
 
 ## Diagnostics and evidence
 

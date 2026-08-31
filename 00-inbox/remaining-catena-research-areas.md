@@ -336,11 +336,14 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
   ordering and key equality ride C035's comparable set, a miss is typed
   failure as a value, and complexity is excluded from the language layer
   (documentation stays G101's);
-- which pattern contexts require exhaustiveness and which explicitly permit
-  filtering or selective failure;
-- whether later list, record, variant, binary, range, view, synonym, or active
-  patterns justify their effect, totality, coverage, cost, and abstraction
-  obligations; and
+- ~~which pattern contexts require exhaustiveness and which explicitly permit
+  filtering or selective failure~~ — closed by C044: the three context
+  classes with per-context rules and reservations at `0.1.38`; the
+  programmable-pattern forms are excluded by C046 in the same slice;
+- whether later list, record, variant, binary, or range pattern forms
+  justify their effect, totality, coverage, cost, and abstraction
+  obligations (view, synonym, and active forms are excluded by C046);
+  and
 - the boundary between opaque Catena representation, stable native layout,
   serialized form, and foreign inspection.
 
