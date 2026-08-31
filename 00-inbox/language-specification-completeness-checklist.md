@@ -1121,9 +1121,19 @@ P109 and D059's neighboring iteration syntax still deferred.
 - [x] **C060 — Complete — type syntax.** Version 0.1.1 freezes function, tuple,
   constructor, record, variant, effect-row, constrained, quantified, and
   higher-rank type notation.
-- [ ] **G061 — Gap — primitive numeric relationships.** Decide whether numeric
-  overloading uses traits, literal constraints, defaulting, coercions, or
-  distinct operators.
+- [x] **C061 — Complete — primitive numeric relationships.** Normative
+  `0.1.40` fixes closed-set instantiation: numeric operators are
+  built-in primitive forms whose operands unify with each other and
+  instantiate over exactly `{Int, Float}` — never trait dispatch,
+  instance evidence, or user overloadability; the closed set is
+  amendable only by a new revision. Arithmetic joins ordering and
+  negation over `Float`, correct-but-dormant (no frozen frontend
+  carries a float type or literal spelling; witnessed by driving the
+  inference engine with float-typed operands, `fd75cb7`). No
+  defaulting, implicit coercion, or literal constraints (`NM-OBL-005`/
+  `006` re-affirmed); division, remainder, checked and decimal
+  arithmetic, and explicit conversions route to G105. Zero new
+  diagnostic families and no new public API.
 - [ ] **G062 — Gap — aliases, opaque types, and newtypes.** Define identity,
   representation, constructor access, coercion, deriving, and error messages.
 - [x] **C063 — Complete — generalization boundary.** The effect-aware hybrid

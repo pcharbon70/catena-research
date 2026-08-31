@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C061 Numeric Relationships](2026-08-31-c061-numerics.md)
+  — records the normative 0.1.40 closed-set instantiation contract,
+    the corrected dormant witness, and the escript-purge test
+    interaction, with immutable compiler identity.
 - [C047 List Comprehensions](2026-08-31-c047-comprehensions.md)
   — records the normative 0.1.39 comprehension contract, the
     worker-chain refinement, the balanced-builder rewrite, the

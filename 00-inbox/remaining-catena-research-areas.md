@@ -281,8 +281,12 @@ visible edges.
 
 **Remaining research.** Work includes:
 
-- numeric literal constraints, defaulting or its absence, coercions, and the
-  relationship between primitive and trait-based operations;
+- ~~numeric literal constraints, defaulting or its absence, coercions, and the
+  relationship between primitive and trait-based operations~~ — closed by
+  C061 at `0.1.40`: closed-set instantiation over {Int, Float}, no
+  dispatch, no defaulting, no coercion, no literal constraints, with
+  division, remainder, checked and decimal arithmetic, and conversions
+  kept by G105;
 - aliases, opaque types, newtypes, representation identity, coercion, and
   deriving behavior;
 - whether field, method, constructor, operator, or literal resolution may

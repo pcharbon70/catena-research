@@ -103,6 +103,8 @@ follow-up item now that C011 is reached.
   — the C044 source for `PC-OBL-*` obligations.
 - [List Comprehensions Specification](../60-specification/list-comprehensions/README.md)
   — the C047 source for `LC-OBL-*` obligations.
+- [Numeric Relationships Specification](../60-specification/numeric-relationships/README.md)
+  — the C061 source for `NR-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -154,6 +156,7 @@ convention.
 | `CO` | collection-construction-and-update | 0.1.37 |
 | `PC` | pattern-contexts | 0.1.38 |
 | `LC` | list-comprehensions | 0.1.39 |
+| `NR` | numeric-relationships | 0.1.40 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -174,7 +177,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all forty normative areas and the C012 governance policy are now
+extracted; all forty-one normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -222,6 +225,7 @@ sibling compiler repository.
 | `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (8) | compiler-tagged + gated (`246019f`); all obligations traced |
 | `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
 | `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); all obligations traced |
+| `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 
 ## Trails
 
@@ -2070,6 +2074,40 @@ merged compiler evidence (`3216831`, branch `agent/c047-comprehensions`).
 
 C047 coverage is 14 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `LC-OBL-*` identifier
+lacks a focused tag.
+
+## Numeric relationships registry (`NR`, 0.1.40)
+
+Evidence labels refer to focused tests in
+`test/catena/c061_numeric_relationships_test.exs` and its
+`test/catena/c061_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The focused set is:
+
+- **c061 #1** *applies numeric-relationship rules only at exact 0.1.40 with zero new families and the lifecycle registered*
+- **c061 #2** *fixes the closed-set instantiation rule: operands unify with each other over exactly {Int, Float}*
+- **c061 #3** *keeps operators free of dispatch, evidence, and user overloadability*
+- **c061 #4** *re-affirms no defaulting, no implicit coercion, no literal constraints; mixed operands ill-typed*
+- **c061 #5** *makes arithmetic same-type over {Int, Float}: annotated float parameters check and run*
+- **c061 #6** *keeps the contract deterministic with zero new families and the reuse boundary enforced*
+- **c061 #7** *routes division, remainder, and reserved spellings to G105 with no divide or remainder operator existing*
+- **c061 #8** *keeps the closed set amendable only by a new revision amending the enumeration*
+
+Anchors point at the normative 0.1.40 chapters. Status reflects the
+merged compiler evidence (`fd75cb7`, branch `agent/c061-numerics`).
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| NR-OBL-001 | Apply numeric-relationship rules only at exact 0.1.40 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/numeric-relationships/diagnostics-and-conformance.md#revision-and-persistence-separation) | c061 #1 | traced |
+| NR-OBL-002 | Fix the closed-set instantiation rule: operands unify with each other over exactly {Int, Float} | [`the-closed-set-instantiation-rule.md#the-rule`](../60-specification/numeric-relationships/the-closed-set-instantiation-rule.md#the-rule) | c061 #2 | traced |
+| NR-OBL-003 | Keep operators free of dispatch, evidence, and user overloadability | [`exclusions-and-routings.md#no-dispatch-no-overloadability`](../60-specification/numeric-relationships/exclusions-and-routings.md#no-dispatch-no-overloadability) | c061 #3 | traced |
+| NR-OBL-004 | Re-affirm no defaulting, no implicit coercion, no literal constraints; mixed operands ill-typed | [`exclusions-and-routings.md#the-frozen-exclusions-re-affirmed`](../60-specification/numeric-relationships/exclusions-and-routings.md#the-frozen-exclusions-re-affirmed) | c061 #4 | traced |
+| NR-OBL-005 | Make arithmetic same-type over {Int, Float}: annotated float parameters check and run | [`the-closed-set-instantiation-rule.md#float-arithmetic`](../60-specification/numeric-relationships/the-closed-set-instantiation-rule.md#float-arithmetic) | c061 #5 | traced |
+| NR-OBL-006 | Keep the contract deterministic with zero new families and the reuse boundary enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/numeric-relationships/diagnostics-and-conformance.md#abstract-public-boundaries) | c061 #6 | traced |
+| NR-OBL-007 | Route division, remainder, and reserved spellings to G105 with no divide or remainder operator existing | [`exclusions-and-routings.md#division-and-remainder`](../60-specification/numeric-relationships/exclusions-and-routings.md#division-and-remainder) | c061 #7 | traced |
+| NR-OBL-008 | Keep the closed set amendable only by a new revision amending the enumeration | [`the-closed-set-instantiation-rule.md#the-closed-set`](../60-specification/numeric-relationships/the-closed-set-instantiation-rule.md#the-closed-set) | c061 #8 | traced |
+
+C061 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `NR-OBL-*` identifier
 lacks a focused tag.
 
 ## Open questions

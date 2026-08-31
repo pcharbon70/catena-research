@@ -149,9 +149,10 @@ built-in data model. Normative C041 uses `0.1.36` for structural
 records and variants. Normative C042 uses `0.1.37` for collection
 construction and update. Normative C044 uses `0.1.38` for pattern
 contexts. Normative C047–C058 use `0.1.39` for list
-comprehensions. The
+comprehensions. Normative C061 uses `0.1.40` for numeric
+relationships. The
 next unused semantic
-patch is `0.1.40` unless an approved versioning policy explicitly
+patch is `0.1.41` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.
