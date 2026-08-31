@@ -183,6 +183,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Numeric Relationships](numeric-relationships/README.md)
+  — the candidate version 0.1.40 closed-set instantiation contract
+  with the dispatch exclusion and the G105 routings.
 - [List Comprehensions](list-comprehensions/README.md)
   — the normative version 0.1.39 comprehension contract: surface
   roles, qualifier rules, execution order, fused-worker
