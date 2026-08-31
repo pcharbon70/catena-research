@@ -174,11 +174,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   its three classes, per-context rules, reservations, exclusions,
   and executable evidence are recorded in the
   [C044 conformance journal](../50-journal/2026-08-31-c044-pattern-contexts.md).
+  The normative C047–C058 list-comprehensions boundary is version
+  `0.1.39`; its surface contract, qualifier rules, execution order,
+  elaboration boundary, and executable evidence are recorded in the
+  [C047 conformance journal](../50-journal/2026-08-31-c047-comprehensions.md).
 
 ## Index
 
 ### Subdirectories
 
+- [List Comprehensions](list-comprehensions/README.md)
+  — the normative version 0.1.39 comprehension contract: surface
+  roles, qualifier rules, execution order, fused-worker
+  elaboration, and the `LCP` families.
 - [Pattern Contexts](pattern-contexts/README.md)
   — the normative version 0.1.38 three-class refutability contract
   with per-context rules, reservations, and the D046 exclusion.

@@ -361,27 +361,35 @@ implementation-defined behavior.
 ## 6. Comprehensions, iteration, and streaming boundaries
 
 **Relation to the current corpus.** The
-[list-comprehension synthesis](../20-notes/list-comprehensions.md) proposes an
-eager ordered list-to-list expression with total generators, explicitly
-filtering generators, Boolean filters, exhaustive local bindings, and visible
-effects. The
+[list-comprehension synthesis](../20-notes/list-comprehensions.md) proposed
+an eager ordered list-to-list expression with total generators, explicitly
+filtering generators, Boolean filters, exhaustive local bindings, and
+visible effects. C047–C058 made it normative at `0.1.39` with a dormant
+elaboration boundary (`Catena.Comprehension.elaborate/1`, qualifier tree
+to kernel fused worker chain); the
 [list-comprehension inquiry](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
-and checklist items `P047`–`D059` remain open. No current normative revision
-contains this surface feature.
+is resolved, the surface tokens adopt with P109, and D059's neighboring
+iteration syntax remains open.
 
 **Remaining research.** The initial question requires:
 
-- comprehension syntax and a reliably understood marker for filtering
-  patterns;
-- exact type, scope, rebinding, refutability, and effect-row rules;
-- left-to-right depth-first source evaluation, result order, source
-  multiplicity, failure timing, and short-circuit semantics;
-- a typed qualifier-tree elaboration and fused tail-recursive BEAM worker that
-  preserves source spans and effect traces;
-- stack, allocation, and Cartesian-cost measurements; and
-- a deliberate initial boundary for iterators, lazy streams, infinite inputs,
-  zip, ranges, binaries, maps, sets, builders, reduction, effect-only loops,
-  grouping, ordering, and parallel traversal.
+- ~~a reliably understood marker for filtering patterns~~ — closed by
+  C047/C051: the `case ... in` marker with `LCP002`/`LCP003` policing;
+- ~~exact type, scope, rebinding, refutability, and effect-row rules~~ —
+  closed by C048/C051/C052/C053;
+- ~~left-to-right depth-first source evaluation, result order, source
+  multiplicity, failure timing, and short-circuit semantics~~ — closed by
+  C049/C050/C053;
+- ~~a typed qualifier-tree elaboration and fused tail-recursive BEAM
+  worker that preserves source spans and effect traces~~ — closed by
+  C055/C058 (the dormant boundary; source-span preservation completes at
+  P109 adoption);
+- ~~stack, allocation, and Cartesian-cost measurements~~ — closed by
+  C058 within the published limits; and
+- a deliberate initial boundary for iterators, lazy streams, infinite
+  inputs, zip, ranges, binaries, maps, sets, builders, reduction,
+  effect-only loops, grouping, ordering, and parallel traversal — the
+  exclusions are recorded; the independent designs remain D059's.
 
 **What it would bring.** A resolved list comprehension would make common data
 pipelines concise without pretending that generic `map` is effectful or that
@@ -393,7 +401,9 @@ cancellation, and backpressure have explicit contracts.
 formal qualifier-tree typing and dynamics, coverage diagnostics, reference and
 BEAM equivalence for values/failures/effects, stack-safe linear-output
 lowering, source-level debugging, and an explicit list of excluded neighboring
-forms.
+forms — delivered by C047–C058 except source-level debugging and
+span-faithful diagnostics, which complete at P109 adoption with the surface
+tokens.
 
 ## 7. Traits, combinators, derivation, and the standard library
 

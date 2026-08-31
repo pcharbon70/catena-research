@@ -201,9 +201,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — separates edition, exact language revision, artifact schema, and compiler
   release while proposing package-local selection, named previews, retained
   pins, migration records, and version-aware artifact binding.
-- [List Comprehensions](list-comprehensions.md) — proposes an eager list-to-list
-  form with total generators, explicit filtering patterns, typed Boolean
-  filters, visible effects, ordered execution, and fused BEAM lowering.
+- [List Comprehensions](list-comprehensions.md) — the stable synthesis
+  behind the normative `0.1.39` comprehension contract: total
+  generators, explicit filtering patterns, typed Boolean filters,
+  visible effects, ordered execution, and fused BEAM lowering.
 
 ## Maintaining this index
 

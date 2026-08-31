@@ -436,6 +436,20 @@ with this slice's promotion commits. Closes P044 and D046.
 | Area naming | pattern-contexts PC (rec) / refutability-by-context RC / extend data-and-patterns | pattern-contexts PC |
 
 
+## C047–C058 — list comprehensions (`0.1.39`, 2026-08-31)
+
+Fixed in: [synthesis](list-comprehensions.md) — the normative
+specification, journal, and this table's durable links land with this
+slice's promotion commits. Closes P047–P058; D059 stays deferred.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Scope | P047–P058, all of Section 6's checkable items (rec) / P047–P056 only | P047–P058 |
+| Implementation | dormant elaboration to kernel, P109 adopts surface (rec) / normative-only / new frontend now | dormant elaboration |
+| Grammar home | semantic roles and keywords here, token integration P109 (rec) / all grammar at P109 | grammar here, integration P109 |
+| Area naming | list-comprehensions LC (rec) / comprehensions-and-iteration CI | list-comprehensions LC |
+| Diagnostics | minimal new LCP set — rebinding, never-match marker, unnecessary marker (rec) / full 12-diagnostic set / zero new families | minimal LCP set |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

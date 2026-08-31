@@ -193,8 +193,9 @@ to `20-notes`.
   compatibility, migration, and artifact model through normative C008's
   executable evidence and immutable promotion record.
 - [How Should Catena Specify List Comprehensions?](how-should-catena-specify-list-comprehensions.md)
-  — tests list-specific syntax, total and filtering patterns, scope, effect
-  order, qualifier-tree elaboration, BEAM lowering, and extension pressure.
+  — resolved as C047–C058: the eager list-to-list `for ... yield`
+    contract at `0.1.39`, with token-level surface adoption
+    transferring to P109 and D059's neighbors staying deferred.
 - [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests whether lexical capabilities, duplicate-label rows, deep open
   handlers, affine resumptions, and optimized backends form one sound and

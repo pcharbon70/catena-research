@@ -2,7 +2,7 @@
 title: "How Should Catena Specify List Comprehensions?"
 kind: inquiry
 created: "2026-08-01"
-status: open
+status: resolved
 tags:
   - catena
   - comprehensions
@@ -267,11 +267,29 @@ Resolve this inquiry only after:
 
 ## Outcome
 
-Open. The current provisional direction is an eager list-to-list `for ...
-yield` expression with total generators, explicitly filtering `case`
-generators, typed Boolean filters, exhaustive local bindings, visible effects,
-and depth-first left-to-right execution. Exact syntax and the initial effect
-boundary require validation.
+Resolved as C047–C058 at revision `0.1.39` (area `list-comprehensions`):
+an eager, ordered, `List A → List B` `for ... yield` expression with
+total generators, explicitly filtering `case` generators, typed
+Boolean `when` filters, exhaustive local `let` bindings, visible
+effects, and depth-first left-to-right sequential execution. The
+contract will live in `60-specification/list-comprehensions/`, the
+reasoning in the
+[synthesis](../20-notes/list-comprehensions.md), and the forks in
+the [design decision register](../20-notes/design-decision-register.md).
+
+Two criteria transfer by design. Token-level syntax reliability
+testing belongs to the P109 surface-grammar adoption: this slice
+fixes the grammar's semantic roles and keywords normatively, while
+punctuation, layout, and block forms integrate with the complete
+concrete grammar there. And the implementation is dormant by the
+frozen-frontend constraint: the elaborator
+(`Catena.Comprehension.elaborate/2`, qualifier tree to kernel
+S-expressions) is implemented, tested, and validated by
+desugaring-equivalence on stepper and BEAM — the first
+comprehension-bearing frontend arrives with P109. D059's
+neighboring iteration syntax (ranges, zip, streams, binary and map
+comprehensions, generic collectors) remains independently
+researched.
 
 The evidence route is curated in the
 [List Comprehensions map](../10-maps/list-comprehensions.md).
