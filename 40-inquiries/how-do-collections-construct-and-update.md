@@ -83,8 +83,9 @@ forms.
 
 ## Outcome
 
-Resolved as C042 at revision `0.1.37`: the contract will live in
-`60-specification/collection-construction-and-update/`, the
+Resolved as C042 at revision `0.1.37`: the contract lives in the
+[Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md),
+the
 reasoning in
 [Catena Collection Operations](../20-notes/catena-collection-operations.md),
 and the forks in the [design decision

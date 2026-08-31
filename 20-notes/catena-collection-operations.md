@@ -163,10 +163,9 @@ representation-visible profile, never an amendment of C037).
   records the question, hypotheses, and outcome.
 - The [Collection Construction and Update map](../10-maps/collection-construction-and-update.md)
   routes through the trilogy and the future owners.
-- The Collection Construction and Update Specification (candidate,
-  then normative at promotion, in
-  `60-specification/collection-construction-and-update/`) will
-  define the contract this note argues for.
+- The [Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md)
+  defines the candidate — then normative at promotion — `0.1.37`
+  contract this note argues for.
 - [Catena Built-In Data Model](catena-built-in-data-model.md) fixed
   the classification this executes.
 - [Catena Structural Records](catena-structural-records.md) fixed

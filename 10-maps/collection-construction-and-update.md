@@ -27,6 +27,8 @@ spellings.
   develops the routing, the miss classification, and the exclusion.
 - [Resolved collections inquiry](../40-inquiries/how-do-collections-construct-and-update.md)
   records the operational question, hypotheses, and resolution.
+- [Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md)
+  is the candidate version 0.1.37 contract.
 - [Built-In Data Model map](built-in-data-model.md) fixed the
   classification this executes.
 
