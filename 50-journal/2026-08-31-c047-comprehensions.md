@@ -60,9 +60,13 @@ publication.
 
 The sibling compiler implementation is commit
 [`3216831`](https://github.com/pcharbon70/catena/commit/3216831)
-(implementation `500859d` plus the warning fix) on branch
-`agent/c047-comprehensions`, publication pending: the compiler PR
-merges into `rewrite` first, then this research promotion merges,
+(implementation `500859d` plus the warning fix), merged into the
+`rewrite` integration line by compiler PR
+[#119](https://github.com/pcharbon70/catena/pull/119) at merge
+commit
+[`7b0591d`](https://github.com/pcharbon70/catena/commit/7b0591d417117cb2ca3d94c5779239f3f6a70a5d).
+The merge retained the tested tree exactly (tree `ab84e6d`), and
+the compiler PR was merged before this research promotion,
 following the established publication order.
 
 ## Evidence
