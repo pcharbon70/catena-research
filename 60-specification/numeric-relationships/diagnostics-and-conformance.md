@@ -2,7 +2,7 @@
 title: "Numeric Relationships Diagnostics and Conformance"
 kind: specification
 created: "2026-08-31"
-status: candidate
+status: normative
 spec_version: "0.1.40"
 tags:
   - conformance
@@ -115,6 +115,7 @@ unused semantic patch is `0.1.41`.
 The design route is preserved in the
 [numeric-relationships synthesis](../../20-notes/catena-numeric-relationships.md),
 the [resolved inquiry](../../40-inquiries/how-should-int-and-float-relate-across-operators.md),
-and the [topic map](../../10-maps/numeric-relationships.md). The C061
-evidence record will preserve the sibling-compiler commands and
+and the [topic map](../../10-maps/numeric-relationships.md). The [C061
+evidence record](../../50-journal/2026-08-31-c061-numerics.md)
+preserves the sibling-compiler commands and
 archive validation.

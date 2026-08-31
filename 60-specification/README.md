@@ -178,13 +178,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   `0.1.39`; its surface contract, qualifier rules, execution order,
   elaboration boundary, and executable evidence are recorded in the
   [C047 conformance journal](../50-journal/2026-08-31-c047-comprehensions.md).
+  The normative C061 numeric-relationships boundary is version
+  `0.1.40`; its instantiation rule, exclusions, routings, and
+  executable evidence are recorded in the
+  [C061 conformance journal](../50-journal/2026-08-31-c061-numerics.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Numeric Relationships](numeric-relationships/README.md)
-  — the candidate version 0.1.40 closed-set instantiation contract
+  — the normative version 0.1.40 closed-set instantiation contract
   with the dispatch exclusion and the G105 routings.
 - [List Comprehensions](list-comprehensions/README.md)
   — the normative version 0.1.39 comprehension contract: surface

@@ -136,6 +136,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "collection-construction-and-update": "0.1.37",
     "pattern-contexts": "0.1.38",
     "list-comprehensions": "0.1.39",
+    "numeric-relationships": "0.1.40",
 }
 
 

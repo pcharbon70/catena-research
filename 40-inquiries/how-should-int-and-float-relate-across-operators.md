@@ -87,8 +87,9 @@ checkers pin arithmetic to Int.
 
 ## Outcome
 
-Resolved as C061 at revision `0.1.40`: the contract will live in
-`60-specification/numeric-relationships/`, the reasoning in
+Resolved as C061 at revision `0.1.40`: the contract lives in the
+[Numeric Relationships Specification](../60-specification/numeric-relationships/README.md),
+the reasoning in
 [Catena Numeric Relationships](../20-notes/catena-numeric-relationships.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G105 keeps

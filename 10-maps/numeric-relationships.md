@@ -16,8 +16,8 @@ aliases:
 
 This map routes the G061 question — how `Int` and `Float` relate
 across operators — through the archive's decision trail. The
-normative answer will be revision `0.1.40` in
-`60-specification/numeric-relationships/`.
+normative answer is revision `0.1.40` in the [Numeric Relationships
+Specification](../60-specification/numeric-relationships/README.md).
 
 ## The route
 
@@ -38,10 +38,10 @@ normative answer will be revision `0.1.40` in
    Classification](../60-specification/built-in-data-model/the-twelve-way-classification.md)
    makes `Int` and `Float` the numeric runtime types of the data
    model.
-5. **The contract.** The Numeric Relationships Specification
-   (`60-specification/numeric-relationships/`): the closed-set
-   instantiation rule, the dispatch exclusion, float arithmetic,
-   and the G105 routings.
+5. **The contract.** The [Numeric Relationships
+   Specification](../60-specification/numeric-relationships/README.md):
+   the closed-set instantiation rule, the dispatch exclusion,
+   float arithmetic, and the G105 routings.
 6. **The reasoning and decision record.** [Catena Numeric
    Relationships](../20-notes/catena-numeric-relationships.md)
    argues the rule; the [resolved

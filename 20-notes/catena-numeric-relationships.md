@@ -83,9 +83,8 @@ falsified and must be amended, not extended silently.
 
 ## Route to sources
 
-- The Numeric Relationships Specification (candidate, then
-  normative at promotion, in `60-specification/numeric-relationships/`)
-  will define the contract this note argues for.
+- The [Numeric Relationships Specification](../60-specification/numeric-relationships/README.md)
+  defines the normative `0.1.40` contract this note argues for.
 - [Numeric Types and Literal Typing](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md)
   — C018's no-defaulting and no-coercion clauses this slice
   inherits.
