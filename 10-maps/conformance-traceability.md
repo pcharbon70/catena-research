@@ -97,6 +97,8 @@ follow-up item now that C011 is reached.
   — the C040 source for `BM-OBL-*` obligations.
 - [Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md)
   — the C041 source for `SR-OBL-*` obligations.
+- [Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md)
+  — the C042 source for `CO-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -145,6 +147,7 @@ convention.
 | `CE` | compile-time-evaluation | 0.1.34 |
 | `BM` | built-in-data-model | 0.1.35 |
 | `SR` | structural-records-and-variants | 0.1.36 |
+| `CO` | collection-construction-and-update | 0.1.37 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -165,7 +168,8 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-six normative areas and the C012 governance policy are now
+extracted; all thirty-six normative areas, the C012 governance policy, and the
+candidate `CO` collections area are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -210,6 +214,7 @@ sibling compiler repository.
 | `CE` compile-time-evaluation | 8 | `c038_compile_time_test.exs` (5) | compiler-tagged + gated (`30426d5`); all obligations traced |
 | `BM` built-in-data-model | 8 | `c040_data_model_test.exs` (8) | compiler-tagged + gated (`44f7dd2`); all obligations traced |
 | `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (7) | compiler-tagged + gated (`f42c958`); all obligations traced |
+| `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1943,6 +1948,42 @@ are fully traced against the immutable compiler commit.
 C041 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `SR-OBL-*` identifier
 lacks a focused tag.
+
+## Collection construction registry (`CO`, 0.1.37)
+
+Evidence labels will refer to focused tests in
+`test/catena/c042_collections_test.exs` and its
+`test/catena/c042_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c042 #1** *keeps 0.1.37 exact selection with every predecessor default pinned and the lifecycle registered*
+- **c042 #2** *fixes the six-topic decision with shipped machinery and named owners*
+- **c042 #3** *keeps construction and update as constructor application and match recursion, distinct from records*
+- **c042 #4** *classifies a lookup miss as typed failure as a value: total operations, never a trap*
+- **c042 #5** *excludes complexity from the language layer, delegating documentation to G101*
+- **c042 #6** *fixes duplicate-key behavior as a G101 declaration obligation, explicit in the declaring slice*
+- **c042 #7** *rides C035 for ordering and key equality: keys must be comparable*
+- **c042 #8** *keeps the contract deterministic and outside G101/G105/P109 claims with zero new families*
+
+Anchors currently point at the candidate 0.1.37 chapters and become
+normative anchors at C042 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CO-OBL-001 | Apply collection behavior only at exact 0.1.37 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/collection-construction-and-update/diagnostics-and-conformance.md#revision-and-persistence-separation) | c042 #1; EDN001 | untraced |
+| CO-OBL-002 | Fix the six-topic decision with shipped machinery and named owners | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #2 | untraced |
+| CO-OBL-003 | Keep construction and update as constructor application and match recursion, distinct from records | [`the-six-topic-decision.md#construction-is-construction`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#construction-is-construction) | c042 #3 | untraced |
+| CO-OBL-004 | Classify a lookup miss as typed failure as a value: total operations, never a trap | [`miss-as-value-and-complexity.md#miss-as-value`](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md#miss-as-value) | c042 #4 | untraced |
+| CO-OBL-005 | Exclude complexity from the language layer, delegating documentation to G101 | [`miss-as-value-and-complexity.md#the-complexity-exclusion`](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md#the-complexity-exclusion) | c042 #5 | untraced |
+| CO-OBL-006 | Fix duplicate-key behavior as a G101 declaration obligation, explicit in the declaring slice | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #6 | untraced |
+| CO-OBL-007 | Ride C035 for ordering and key equality: keys must be comparable | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #7 | untraced |
+| CO-OBL-008 | Keep the contract deterministic and outside G101/G105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/collection-construction-and-update/diagnostics-and-conformance.md#abstract-public-boundaries) | c042 #8 | untraced |
+
+C042 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `CO-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
