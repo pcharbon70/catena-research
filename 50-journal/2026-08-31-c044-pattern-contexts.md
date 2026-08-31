@@ -51,10 +51,13 @@ JSON-AST `let` keeps its `"name"` binder with a `"pattern"` key
 rejecting at decode.
 
 The sibling compiler implementation is commit
-[`00bd04c`](https://github.com/pcharbon70/catena/commit/00bd04c)
-on branch `agent/c044-pattern-contexts`, publication pending: the
-compiler PR merges into `rewrite` first, then this research
-promotion merges, following the established publication order.
+[`00bd04c`](https://github.com/pcharbon70/catena/commit/00bd04c),
+merged into the `rewrite` integration line by compiler PR
+[#118](https://github.com/pcharbon70/catena/pull/118) at merge commit
+[`e21a7b5`](https://github.com/pcharbon70/catena/commit/e21a7b56ce373d1875079aad718bf6cf0f878191).
+The merge retained the tested tree exactly (tree `c58ed81`), and the
+compiler PR was merged before this research promotion, following the
+established publication order.
 
 ## Evidence
 
