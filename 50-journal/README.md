@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C044 Pattern Contexts](2026-08-31-c044-pattern-contexts.md)
+  — records the normative 0.1.38 three-class contract, the
+    kernel-vs-JSON redundancy finding, the fixture-as-witness
+    decision, and D046's closure, with immutable compiler identity.
 - [C042 Collection Construction and Update](2026-08-31-c042-collections.md)
   — records the normative 0.1.37 six-topic decision, the kernel
     witness path, the substitution and exhaustiveness findings, and

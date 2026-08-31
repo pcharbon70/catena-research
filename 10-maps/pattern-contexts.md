@@ -17,7 +17,7 @@ aliases:
 
 This map routes the P044 question — which pattern contexts admit
 refutable patterns and what happens on mismatch — through the
-archive's decision trail. The normative answer will be revision
+archive's decision trail. The normative answer is revision
 `0.1.38` in the [Pattern Contexts
 Specification](../60-specification/pattern-contexts/README.md).
 

@@ -170,13 +170,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   six-topic decision, miss classification, complexity exclusion, and
   executable evidence are recorded in the
   [C042 conformance journal](../50-journal/2026-08-31-c042-collections.md).
+  The normative C044 pattern-contexts boundary is version `0.1.38`;
+  its three classes, per-context rules, reservations, exclusions,
+  and executable evidence are recorded in the
+  [C044 conformance journal](../50-journal/2026-08-31-c044-pattern-contexts.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Pattern Contexts](pattern-contexts/README.md)
-  — the candidate version 0.1.38 three-class refutability contract
+  — the normative version 0.1.38 three-class refutability contract
   with per-context rules, reservations, and the D046 exclusion.
 - [Collection Construction and Update](collection-construction-and-update/README.md)
   — the normative version 0.1.37 six-topic decision with

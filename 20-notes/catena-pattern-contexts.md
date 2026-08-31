@@ -97,8 +97,7 @@ the data-model program.
 ## Route to sources
 
 - The [Pattern Contexts Specification](../60-specification/pattern-contexts/README.md)
-  defines the candidate — then normative at promotion — `0.1.38`
-  contract this note argues for.
+  defines the normative `0.1.38` contract this note argues for.
 - [Construction and Pattern Typing](../60-specification/data-and-patterns/construction-and-pattern-typing.md)
   — C002's refutability boundary this slice executes.
 - [Match Semantics and Coverage](../60-specification/data-and-patterns/match-semantics-and-coverage.md)

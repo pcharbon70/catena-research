@@ -171,8 +171,7 @@ compiler coverage check.
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all thirty-seven normative areas, the C012 governance policy, and the
-candidate `PC` pattern-contexts area are now
+extracted; all thirty-eight normative areas and the C012 governance policy are now
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -218,7 +217,7 @@ sibling compiler repository.
 | `BM` built-in-data-model | 8 | `c040_data_model_test.exs` (8) | compiler-tagged + gated (`44f7dd2`); all obligations traced |
 | `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (7) | compiler-tagged + gated (`f42c958`); all obligations traced |
 | `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (8) | compiler-tagged + gated (`246019f`); all obligations traced |
-| `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
 
 ## Trails
 
@@ -1989,10 +1988,10 @@ lacks a focused tag.
 
 ## Pattern contexts registry (`PC`, 0.1.38)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c044_pattern_contexts_test.exs` and its
 `test/catena/c044_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c044 #1** *applies pattern-context rules only at exact 0.1.38 with zero new families and the lifecycle registered*
 - **c044 #2** *fixes the three context classes with exactly one exhaustive context*
@@ -2004,26 +2003,24 @@ compiler repository. The planned focused set is:
 - **c044 #8** *excludes exception clauses under C036's terminal trap taxonomy*
 - **c044 #9** *excludes programmable patterns with recorded arrival conditions*
 
-Anchors currently point at the candidate 0.1.38 chapters and become
-normative anchors at C044 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.38 chapters. Status reflects the
+merged compiler evidence (`00bd04c`, branch `agent/c044-pattern-contexts`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| PC-OBL-001 | Apply pattern-context rules only at exact 0.1.38 and register the stable lifecycle addition with zero new families | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/pattern-contexts/diagnostics-and-conformance.md#revision-and-persistence-separation) | c044 #1 | untraced |
-| PC-OBL-002 | Fix the three context classes with exactly one exhaustive context | [`the-three-context-classes.md#the-classification`](../60-specification/pattern-contexts/the-three-context-classes.md#the-classification) | c044 #2 | untraced |
-| PC-OBL-003 | Keep match's C045 authority and the no-implicit-runtime-match property with unchanged diagnostics | [`the-three-context-classes.md#match-is-the-only-exhaustive-context`](../60-specification/pattern-contexts/the-three-context-classes.md#match-is-the-only-exhaustive-context) | c044 #3 | untraced |
-| PC-OBL-004 | Keep `let` and parameters plain-named today with the irrefutable-only default reserved for arrivals | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #4 | untraced |
-| PC-OBL-005 | Fix the generator principle: ordinary total, filtering explicitly mismatch-as-skip, grammar deferred | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #5 | untraced |
-| PC-OBL-006 | Reserve public receives as exhaustive-or-explicit-fallback in their own slice | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #6 | untraced |
-| PC-OBL-007 | Keep handler clauses on plain binders with irrefutable-only arrival | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #7 | untraced |
-| PC-OBL-008 | Exclude exception clauses under C036's terminal trap taxonomy | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #8 | untraced |
-| PC-OBL-009 | Exclude programmable patterns with recorded arrival conditions | [`context-rules-and-reservations.md#the-programmable-pattern-exclusion`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-programmable-pattern-exclusion) | c044 #9 | untraced |
+| PC-OBL-001 | Apply pattern-context rules only at exact 0.1.38 and register the stable lifecycle addition with zero new families | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/pattern-contexts/diagnostics-and-conformance.md#revision-and-persistence-separation) | c044 #1 | traced |
+| PC-OBL-002 | Fix the three context classes with exactly one exhaustive context | [`the-three-context-classes.md#the-classification`](../60-specification/pattern-contexts/the-three-context-classes.md#the-classification) | c044 #2 | traced |
+| PC-OBL-003 | Keep match's C045 authority and the no-implicit-runtime-match property with unchanged diagnostics | [`the-three-context-classes.md#match-is-the-only-exhaustive-context`](../60-specification/pattern-contexts/the-three-context-classes.md#match-is-the-only-exhaustive-context) | c044 #3 | traced |
+| PC-OBL-004 | Keep `let` and parameters plain-named today with the irrefutable-only default reserved for arrivals | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #4 | traced |
+| PC-OBL-005 | Fix the generator principle: ordinary total, filtering explicitly mismatch-as-skip, grammar deferred | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #5 | traced |
+| PC-OBL-006 | Reserve public receives as exhaustive-or-explicit-fallback in their own slice | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #6 | traced |
+| PC-OBL-007 | Keep handler clauses on plain binders with irrefutable-only arrival | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #7 | traced |
+| PC-OBL-008 | Exclude exception clauses under C036's terminal trap taxonomy | [`context-rules-and-reservations.md#the-context-table`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-context-table) | c044 #8 | traced |
+| PC-OBL-009 | Exclude programmable patterns with recorded arrival conditions | [`context-rules-and-reservations.md#the-programmable-pattern-exclusion`](../60-specification/pattern-contexts/context-rules-and-reservations.md#the-programmable-pattern-exclusion) | c044 #9 | traced |
 
-C044 coverage is 0 `traced` and 9 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `PC-OBL-*` identifier lacks a
-focused tag.
+C044 coverage is 9 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `PC-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 
