@@ -54,10 +54,13 @@ through `present`, agreeing on stepper and BEAM, without pinning
 `PairMap` value shapes — representation stays invisible by contract.
 
 The sibling compiler implementation is commit
-[`246019f`](https://github.com/pcharbon70/catena/commit/246019f)
-on branch `agent/c042-collections`, publication pending: the compiler
-PR merges into `rewrite` first, then this research promotion merges,
-following the established publication order. The slice also repaired
+[`246019f`](https://github.com/pcharbon70/catena/commit/246019f),
+merged into the `rewrite` integration line by compiler PR
+[#117](https://github.com/pcharbon70/catena/pull/117) at merge commit
+[`06f5584`](https://github.com/pcharbon70/catena/commit/06f5584abeaec64c695f4e975fd7864aed2bbeb3).
+The merge retained the tested tree exactly (tree `09e2d9d`), and the
+compiler PR was merged before this research promotion, following the
+established publication order. The slice also repaired
 a CONFORMANCE.md gap — per-slice profile sections had stopped after
 C035 and the identity rows still said `0.1.22`; C036–C042 sections
 and the exact-revision rows are restored to `0.1.37`.
