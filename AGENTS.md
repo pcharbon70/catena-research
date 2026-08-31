@@ -146,9 +146,10 @@ C034 uses `0.1.31` for recursion and termination. Normative C036 uses
 `0.1.33` for resource observability. Normative C038 uses `0.1.34` for
 compile-time evaluation. Normative C040 uses `0.1.35` for the
 built-in data model. Normative C041 uses `0.1.36` for structural
-records and variants. The
+records and variants. Normative C042 uses `0.1.37` for collection
+construction and update. The
 next unused semantic
-patch is `0.1.37` unless an approved versioning policy explicitly
+patch is `0.1.38` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

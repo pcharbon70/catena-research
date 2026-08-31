@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C042 Collection Construction and Update](2026-08-31-c042-collections.md)
+  — records the normative 0.1.37 six-topic decision, the kernel
+    witness path, the substitution and exhaustiveness findings, and
+    the CONFORMANCE.md gap repair, with immutable compiler identity.
 - [C041 Structural Records and Variants](2026-08-29-c041-records.md)
   — records the normative 0.1.36 structural contract, the fixture
     rewrite, the signature-shape row witness, and the map-equality

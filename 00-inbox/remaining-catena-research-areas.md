@@ -328,9 +328,14 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
 - ~~structural record and variant source operations, uniqueness, row-polymorphic
   behavior, effect order, and public representation guarantees~~ — closed by
   C041: the seven-operation table with kernel rows verbatim and semantic
-  maps; collection construction remains G042;
-- persistent collection construction and update, duplicate keys, ordering,
-  equality, bounds failure, and complexity promises;
+  maps;
+- ~~persistent collection construction and update, duplicate keys, ordering,
+  equality, bounds failure, and complexity promises~~ — closed by C042: the
+  six-topic decision — update is constructor application plus match
+  recursion, duplicate-key behavior is a G101 declaration obligation,
+  ordering and key equality ride C035's comparable set, a miss is typed
+  failure as a value, and complexity is excluded from the language layer
+  (documentation stays G101's);
 - which pattern contexts require exhaustiveness and which explicitly permit
   filtering or selective failure;
 - whether later list, record, variant, binary, range, view, synonym, or active

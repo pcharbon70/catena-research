@@ -2,7 +2,7 @@
 title: "Collection Construction and Update Diagnostics and Conformance"
 kind: specification
 created: "2026-08-31"
-status: candidate
+status: normative
 spec_version: "0.1.37"
 tags:
   - conformance
@@ -108,5 +108,6 @@ The design route is preserved in the
 [collections synthesis](../../20-notes/catena-collection-operations.md),
 the [resolved inquiry](../../40-inquiries/how-do-collections-construct-and-update.md),
 and the [topic map](../../10-maps/collection-construction-and-update.md).
-The C042 evidence record will preserve the sibling-compiler commands
+The [C042 evidence record](../../50-journal/2026-08-31-c042-collections.md)
+preserves the sibling-compiler commands
 and archive validation.

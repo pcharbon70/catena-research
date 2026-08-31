@@ -110,7 +110,7 @@ the *language* may not.
 
 ## Selected model
 
-> **Normative definitions (placed in the candidate chapters).**
+> **Normative definitions (placed in the 0.1.37 chapters).**
 
 ### The six-topic routing
 
@@ -164,7 +164,7 @@ representation-visible profile, never an amendment of C037).
 - The [Collection Construction and Update map](../10-maps/collection-construction-and-update.md)
   routes through the trilogy and the future owners.
 - The [Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md)
-  defines the candidate — then normative at promotion — `0.1.37`
+  defines the normative `0.1.37`
   contract this note argues for.
 - [Catena Built-In Data Model](catena-built-in-data-model.md) fixed
   the classification this executes.

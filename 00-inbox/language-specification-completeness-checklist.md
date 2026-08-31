@@ -982,9 +982,20 @@ as small normative rules rather than copied wholesale into a specification.
   rejection, type-position tails, and the frontend absence. Zero new
   diagnostic families. Collection construction remains G042's;
   aliases G062's; refutability P044's; spellings P109's.
-- [ ] **G042 — Gap — collection construction and update.** Define persistent update,
-  duplicate map keys, ordering, key equality, bounds failures, and complexity
-  promises.
+- [x] **C042 — Complete — collection construction and update.** Normative
+  `0.1.37` fixes the six topics: persistent update is constructor
+  application plus match-based recursion (no dedicated operator);
+  duplicate-key behavior is a G101 declaration obligation; ordering and
+  key equality ride C035's comparable set; a bounds-failure miss is
+  typed failure as a value (total, never a trap); and complexity
+  promises are excluded from the language layer — representation is
+  invisible, so a language cost bound would make it observable, and
+  documentation stays G101's. Compiler witnesses on the kernel path
+  (`246019f`): a declared List (construction, head/tail, length,
+  replace-head) and a Pair-keyed lookup agreeing on stepper and BEAM,
+  with a miss returning an Option-typed value. Zero new diagnostic
+  families. Miss-type contents remain G101/G105's; spellings P109's;
+  aliases G062's; refutability P044's.
 - [x] **C043 — Complete — initial pattern grammar.** The 0.1.2 normative specification supports
   wildcard, binder, integer and Boolean literal, tuple, positional and named
   constructor, `as`, `or`, and nested patterns; it explicitly excludes list,
