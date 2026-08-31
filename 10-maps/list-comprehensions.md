@@ -32,13 +32,15 @@ carrier-specific method conventions.
 2. [How Should Catena Specify List Comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
    turns the remaining syntax, usability, formal, backend, and extension
    questions into resolution criteria — now resolved.
-3. The List Comprehensions Specification (`60-specification/list-comprehensions/`,
-   revision `0.1.39`) carries the normative contract this route produced:
-   the surface contract, generator and qualifier rules, evaluation and
-   effect order, the elaboration and fused-worker boundary, and
-   conformance. The [Pattern Contexts map](pattern-contexts.md) fixes the
-   generator refutability principle the contract consumes; P109 owns
-   token-level surface adoption.
+3. The List Comprehensions Specification
+   ([`60-specification/list-comprehensions/`](../60-specification/list-comprehensions/README.md),
+   revision `0.1.39`) carries the normative contract this route
+   produced: the surface contract, generator and qualifier rules,
+   evaluation and effect order, the elaboration and fused-worker
+   boundary, and conformance. The [Pattern Contexts
+   map](pattern-contexts.md) fixes the generator refutability
+   principle the contract consumes; P109 owns token-level surface
+   adoption.
 4. The temporary
    [language-specification checklist](../00-inbox/language-specification-completeness-checklist.md#6-list-comprehensions-generators-and-iteration)
    shows where this deep dive fits within the broader path to a complete
