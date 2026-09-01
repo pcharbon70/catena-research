@@ -80,8 +80,9 @@ instantiation — each pillar already stands; G066 states the roof.
 
 ## Outcome
 
-Resolved as C066 at revision `0.1.42`: the contract will live in
-`60-specification/name-resolution/`, the reasoning in
+Resolved as C066 at revision `0.1.42`: the contract lives in the
+[Name Resolution Specification](../60-specification/name-resolution/README.md),
+the reasoning in
 [Catena Name Resolution](../20-notes/catena-name-resolution.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G067 and D140

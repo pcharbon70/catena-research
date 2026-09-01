@@ -186,13 +186,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   `0.1.41`; its alias exclusion, newtype rules, opaque routing, and
   executable evidence are recorded in the
   [C062 conformance journal](../50-journal/2026-09-01-c062-newtypes.md).
+  The normative C066 name-resolution boundary is version `0.1.42`;
+  its invariant, classification table, exclusions, and executable
+  evidence are recorded in the
+  [C066 conformance journal](../50-journal/2026-09-01-c066-resolution.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Name Resolution](name-resolution/README.md)
-  — the candidate version 0.1.42 type-independence invariant with
+  — the normative version 0.1.42 type-independence invariant with
   the five-way classification and the evidence carve-out.
 - [Aliases and Newtypes](aliases-and-newtypes/README.md)
   — the normative version 0.1.41 alias exclusion with the newtype

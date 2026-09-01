@@ -18,8 +18,8 @@ aliases:
 This map routes the G066 question — whether field, method,
 constructor, literal, and operator resolution may depend on
 inferred types — through the archive's decision trail. The
-normative answer will be revision `0.1.42` in
-`60-specification/name-resolution/`.
+normative answer is revision `0.1.42` in the [Name Resolution
+Specification](../60-specification/name-resolution/README.md).
 
 ## The route
 
@@ -38,10 +38,11 @@ normative answer will be revision `0.1.42` in
    Instantiation
    Rule](../60-specification/numeric-relationships/the-closed-set-instantiation-rule.md)
    fixes one rule per operator over {Int, Float}.
-5. **The contract.** The Name Resolution Specification
-   (`60-specification/name-resolution/`): the invariant, the
-   five-way classification table, the evidence-selection carve-out,
-   the exclusions with arrival conditions, and conformance.
+5. **The contract.** The [Name Resolution
+   Specification](../60-specification/name-resolution/README.md):
+   the invariant, the five-way classification table, the
+   evidence-selection carve-out, the exclusions with arrival
+   conditions, and conformance.
 6. **The reasoning and decision record.** [Catena Name
    Resolution](../20-notes/catena-name-resolution.md) argues the
    roof-over-pillars reading; the [resolved

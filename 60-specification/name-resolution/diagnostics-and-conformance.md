@@ -2,7 +2,7 @@
 title: "Name Resolution Diagnostics and Conformance"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.42"
 tags:
   - conformance
@@ -116,6 +116,7 @@ unused semantic patch is `0.1.43`.
 The design route is preserved in the
 [name-resolution synthesis](../../20-notes/catena-name-resolution.md),
 the [resolved inquiry](../../40-inquiries/may-name-resolution-depend-on-inferred-types.md),
-and the [topic map](../../10-maps/name-resolution.md). The C066
-evidence record will preserve the sibling-compiler commands and
+and the [topic map](../../10-maps/name-resolution.md). The [C066
+evidence record](../../50-journal/2026-09-01-c066-resolution.md)
+preserves the sibling-compiler commands and
 archive validation.

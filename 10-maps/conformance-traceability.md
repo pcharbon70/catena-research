@@ -233,7 +233,7 @@ sibling compiler repository.
 | `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); all obligations traced |
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
-| `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
 
 ## Trails
 
@@ -2154,10 +2154,10 @@ lacks a focused tag.
 
 ## Name resolution registry (`RN`, 0.1.42)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c066_name_resolution_test.exs` and its
 `test/catena/c066_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c066 #1** *applies resolution rules only at exact 0.1.42 with zero new families and the lifecycle registered*
 - **c066 #2** *keeps resolution type-independent: annotations never change a name's target and results never depend on elaboration order*
@@ -2168,25 +2168,23 @@ compiler repository. The planned focused set is:
 - **c066 #7** *keeps scope-structure resolution with collision rejection unchanged from C021*
 - **c066 #8** *keeps the contract deterministic with the reuse map enforced*
 
-Anchors currently point at the candidate 0.1.42 chapters and become
-normative anchors at C066 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.42 chapters. Status reflects the
+merged compiler evidence (`bef5fd5`, branch `agent/c066-resolution`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| RN-OBL-001 | Apply resolution rules only at exact 0.1.42 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/name-resolution/diagnostics-and-conformance.md#revision-and-persistence-separation) | c066 #1 | untraced |
-| RN-OBL-002 | Keep resolution type-independent: annotations never change a name's target and results never depend on elaboration order | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #2 | untraced |
-| RN-OBL-003 | Keep the five-way classification: labels not names, constructors by visibility, literals by spelling, operators closed-set | [`the-resolution-invariant.md#the-five-way-classification`](../60-specification/name-resolution/the-resolution-invariant.md#the-five-way-classification) | c066 #3 | untraced |
-| RN-OBL-004 | Keep evidence selection distinct from name resolution, settled at the instance with no call-site deferral | [`the-resolution-invariant.md#the-evidence-selection-carve-out`](../60-specification/name-resolution/the-resolution-invariant.md#the-evidence-selection-carve-out) | c066 #4 | untraced |
-| RN-OBL-005 | Keep the four exclusions: no overloading by type, no expected-type adaptation, no call-site deferral, no inference-directed field access | [`boundaries-and-reservations.md#the-exclusions`](../60-specification/name-resolution/boundaries-and-reservations.md#the-exclusions) | c066 #5 | untraced |
-| RN-OBL-006 | Keep the table amendable only by a revision stating order-independence | [`boundaries-and-reservations.md#arrival-conditions`](../60-specification/name-resolution/boundaries-and-reservations.md#arrival-conditions) | c066 #6 | untraced |
-| RN-OBL-007 | Keep scope-structure resolution with collision rejection unchanged from C021 | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #7 | untraced |
-| RN-OBL-008 | Keep the contract deterministic with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/name-resolution/diagnostics-and-conformance.md#abstract-public-boundaries) | c066 #8 | untraced |
+| RN-OBL-001 | Apply resolution rules only at exact 0.1.42 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/name-resolution/diagnostics-and-conformance.md#revision-and-persistence-separation) | c066 #1 | traced |
+| RN-OBL-002 | Keep resolution type-independent: annotations never change a name's target and results never depend on elaboration order | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #2 | traced |
+| RN-OBL-003 | Keep the five-way classification: labels not names, constructors by visibility, literals by spelling, operators closed-set | [`the-resolution-invariant.md#the-five-way-classification`](../60-specification/name-resolution/the-resolution-invariant.md#the-five-way-classification) | c066 #3 | traced |
+| RN-OBL-004 | Keep evidence selection distinct from name resolution, settled at the instance with no call-site deferral | [`the-resolution-invariant.md#the-evidence-selection-carve-out`](../60-specification/name-resolution/the-resolution-invariant.md#the-evidence-selection-carve-out) | c066 #4 | traced |
+| RN-OBL-005 | Keep the four exclusions: no overloading by type, no expected-type adaptation, no call-site deferral, no inference-directed field access | [`boundaries-and-reservations.md#the-exclusions`](../60-specification/name-resolution/boundaries-and-reservations.md#the-exclusions) | c066 #5 | traced |
+| RN-OBL-006 | Keep the table amendable only by a revision stating order-independence | [`boundaries-and-reservations.md#arrival-conditions`](../60-specification/name-resolution/boundaries-and-reservations.md#arrival-conditions) | c066 #6 | traced |
+| RN-OBL-007 | Keep scope-structure resolution with collision rejection unchanged from C021 | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #7 | traced |
+| RN-OBL-008 | Keep the contract deterministic with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/name-resolution/diagnostics-and-conformance.md#abstract-public-boundaries) | c066 #8 | traced |
 
-C066 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `RN-OBL-*` identifier lacks a
-focused tag.
+C066 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `RN-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

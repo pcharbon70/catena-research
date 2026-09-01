@@ -77,9 +77,8 @@ classification table explicitly.
 
 ## Route to sources
 
-- The Name Resolution Specification (candidate, then normative at
-  promotion, in `60-specification/name-resolution/`) will define
-  the contract this note argues for.
+- The [Name Resolution Specification](../60-specification/name-resolution/README.md)
+  defines the normative `0.1.42` contract this note argues for.
 - [Catena Namespaces and Shadowing](catena-namespaces-and-shadowing.md)
   — the scope-structural model (pillar one).
 - [Numeric Types and Literal Typing](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md)

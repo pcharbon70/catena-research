@@ -1160,8 +1160,21 @@ P109 and D059's neighboring iteration syntax still deferred.
 - [x] **C065 — Complete — trait constraint solving.** Version 0.1.1 freezes
   instance scope, termination, coherence, ambiguity rejection, no defaulting,
   and failure diagnostics.
-- [ ] **G066 — Gap — type-directed name resolution.** State whether field, method,
-  constructor, literal, and operator resolution may depend on inferred types.
+- [x] **C066 — Complete — type-directed name resolution.** Normative `0.1.42`
+  fixes the invariant: name resolution is type-independent — every name
+  resolves as a function of scope structure alone (C021), annotations
+  never change a name's target, and results never depend on elaboration
+  order. The five-way classification: field labels are not resolved
+  names; trait instance selection is evidence settled at the instance
+  (never deferred to call sites); constructors by visibility; literals
+  by spelling; operators by closed-set instantiation. Four exclusions
+  with arrival conditions: no overloading by type, no expected-type
+  adaptation, no call-site deferral, no inference-directed field
+  access. Compiler witnesses on existing machinery (`bef5fd5`):
+  annotation-invariance pairs, scope-structural shadowing, trait
+  evidence running and rejecting at the instance (`TRT005`),
+  `A004` unknown-constructor rejection, import-collision rejection.
+  Zero new diagnostic families and no new public API.
 - [ ] **G067 — Gap — dynamic and unsafe boundaries.** Define casts, runtime type
   inspection, unchecked operations, compiler intrinsics, and how unsafety is
   made visible—or explicitly exclude them.

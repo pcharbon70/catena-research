@@ -2,7 +2,7 @@
 title: "Boundaries and Reservations"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.42"
 tags:
   - name-resolution

@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C066 Name Resolution](2026-09-01-c066-resolution.md)
+  — records the normative 0.1.42 type-independence invariant, the
+    RN code rename against the identifier contract, and the
+    standing-fact witnesses, with immutable compiler identity.
 - [C062 Aliases and Newtypes](2026-09-01-c062-newtypes.md)
   — records the normative 0.1.41 alias exclusion, opaque routing,
     and newtype rules on existing machinery, with immutable
