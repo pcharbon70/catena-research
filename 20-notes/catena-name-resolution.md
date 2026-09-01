@@ -80,8 +80,8 @@ classification table explicitly.
 - The Name Resolution Specification (candidate, then normative at
   promotion, in `60-specification/name-resolution/`) will define
   the contract this note argues for.
-- [Namespaces and Shadowing](namespaces-and-shadowing.md) — the
-  scope-structural model (pillar one).
+- [Catena Namespaces and Shadowing](catena-namespaces-and-shadowing.md)
+  — the scope-structural model (pillar one).
 - [Numeric Types and Literal Typing](../60-specification/numeric-literal-semantics/numeric-types-and-literal-typing.md)
   — the no-adaptation clause (pillar two).
 - [Declarations, Instances, and Coherence](../60-specification/traits-and-categorical-operations/declarations-instances-and-coherence.md)
