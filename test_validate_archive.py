@@ -201,6 +201,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "pattern-contexts": "0.1.38",
                 "list-comprehensions": "0.1.39",
                 "numeric-relationships": "0.1.40",
+                "aliases-and-newtypes": "0.1.41",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

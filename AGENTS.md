@@ -150,9 +150,10 @@ records and variants. Normative C042 uses `0.1.37` for collection
 construction and update. Normative C044 uses `0.1.38` for pattern
 contexts. Normative C047–C058 use `0.1.39` for list
 comprehensions. Normative C061 uses `0.1.40` for numeric
-relationships. The
+relationships. Normative C062 uses `0.1.41` for aliases and
+newtypes. The
 next unused semantic
-patch is `0.1.41` unless an approved versioning policy explicitly
+patch is `0.1.42` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Aliases and Newtypes](catena-aliases-and-newtypes.md) —
+  argues the G062 mapping: aliases excluded, opaque routed, the
+  newtype as nominal single-field ADT with explicit-only deriving.
 - [Catena Numeric Relationships](catena-numeric-relationships.md) —
   argues the closed-set instantiation rule closing G061: same-type
   {Int, Float} operands, no dispatch, division to G105.

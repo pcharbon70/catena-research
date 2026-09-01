@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Aliases and Newtypes](aliases-and-newtypes.md) — routes the
+  G062 decision from C023's authority vocabulary to the `0.1.41`
+  contract.
 - [Numeric Relationships](numeric-relationships.md) — routes the
   G061 operator-relationship decision from C018's exclusions to
   the `0.1.40` contract.

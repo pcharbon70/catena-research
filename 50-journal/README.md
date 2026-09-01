@@ -30,6 +30,16 @@ source notes.
 
 ### Documents
 
+- [C062 Aliases and Newtypes](2026-09-01-c062-newtypes.md)
+  — records the normative 0.1.41 alias exclusion, opaque routing,
+    and newtype rules on existing machinery, with immutable
+    compiler identity.
+- [BEAM Float Host-Boundary Probes](2026-08-31-beam-float-boundary-probes.md)
+  — records the empirical finding that OTP 29 is finite-only at
+    every language-level float boundary (badarith on domain, pole,
+    and overflow; term format refuses NaN), the correctly-rounded
+    libm landscape, and the open edges routed to G105, G095, and
+    G098.
 - [C061 Numeric Relationships](2026-08-31-c061-numerics.md)
   — records the normative 0.1.40 closed-set instantiation contract,
     the corrected dormant witness, and the escript-purge test

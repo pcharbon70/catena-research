@@ -463,6 +463,19 @@ with this slice's promotion commits. Closes G061.
 | Division/remainder | route to G105 (rec) / fix division now | route to G105 |
 | Area naming | numeric-relationships NR (rec) / extend operators area / numeric-operator-instantiation NOI | numeric-relationships NR |
 
+## C062 — aliases and newtypes (`0.1.41`, 2026-09-01)
+
+Fixed in: [synthesis](catena-aliases-and-newtypes.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits. Closes G062.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Type aliases | exclude with arrival conditions (rec) / define now dormant / leave open | exclude with conditions |
+| Newtype deriving | explicit-target only, no inheritance (rec) / Haskell-style automatic | explicit only |
+| Slice shape | classification slice on existing machinery (rec) / dormant implementation / defer | classification slice |
+| Area naming | aliases-and-newtypes AN (rec) / aliases-opaque-and-newtypes AON / type-wrappers TW | aliases-and-newtypes AN |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry
