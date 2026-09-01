@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [May Name Resolution Depend on Inferred Types?](may-name-resolution-depend-on-inferred-types.md)
+  — resolves G066: type-independent resolution with the five-way
+    table and the evidence-selection carve-out at `0.1.42`.
 - [Should Catena Admit Type Aliases and Newtypes?](should-catena-admit-type-aliases-and-newtypes.md)
   — resolves G062: aliases excluded with arrival conditions,
     opaque routed to C022/C023, newtypes the nominal single-field

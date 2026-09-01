@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Name Resolution](catena-name-resolution.md) — argues
+  G066's invariant: names resolve by scope structure alone, with
+  evidence selection carved out and four pillars already standing.
 - [Catena Aliases and Newtypes](catena-aliases-and-newtypes.md) —
   argues the G062 mapping: aliases excluded, opaque routed, the
   newtype as nominal single-field ADT with explicit-only deriving.
