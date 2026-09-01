@@ -30,6 +30,11 @@ to `20-notes`.
 
 ### Documents
 
+- [Should Catena Admit Type Aliases and Newtypes?](should-catena-admit-type-aliases-and-newtypes.md)
+  — resolves G062: aliases excluded with arrival conditions,
+    opaque routed to C022/C023, newtypes the nominal single-field
+    ADT with explicit-only deriving and no cost promises at
+    `0.1.41`.
 - [How Should Int and Float Relate Across Operators?](how-should-int-and-float-relate-across-operators.md)
   — resolves G061: closed-set instantiation over {Int, Float}, no
     dispatch, float arithmetic witnessed via annotations, division
