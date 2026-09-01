@@ -93,8 +93,9 @@ rule.
 
 ## Outcome
 
-Resolved as C067 at revision `0.1.43`: the contract will live in
-`60-specification/dynamic-and-unsafe-boundaries/`, the reasoning in
+Resolved as C067 at revision `0.1.43`: the contract lives in the
+[Dynamic and Unsafe Boundaries Specification](../60-specification/dynamic-and-unsafe-boundaries/README.md),
+the reasoning in
 [Catena Dynamic and Unsafe Boundaries](../20-notes/catena-dynamic-and-unsafe-boundaries.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G095/G096/G098

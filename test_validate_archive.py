@@ -203,6 +203,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "numeric-relationships": "0.1.40",
                 "aliases-and-newtypes": "0.1.41",
                 "name-resolution": "0.1.42",
+                "dynamic-and-unsafe-boundaries": "0.1.43",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

@@ -17,8 +17,8 @@ aliases:
 This map routes the G067 question — casts, runtime type
 inspection, unchecked operations, compiler intrinsics, and
 visible unsafety — through the archive's decision trail. The
-normative answer will be revision `0.1.43` in
-`60-specification/dynamic-and-unsafe-boundaries/`.
+normative answer is revision `0.1.43` in the [Dynamic and Unsafe
+Boundaries Specification](../60-specification/dynamic-and-unsafe-boundaries/README.md).
 
 ## The route
 
@@ -38,8 +38,8 @@ normative answer will be revision `0.1.43` in
    probes](../50-journal/2026-08-31-beam-float-boundary-probes.md)
    record the term format refusing non-finite payloads — refusal
    as visibility, the precedent the foreign edges inherit.
-5. **The contract.** The Dynamic and Unsafe Boundaries
-   Specification (`60-specification/dynamic-and-unsafe-boundaries/`):
+5. **The contract.** The [Dynamic and Unsafe Boundaries
+   Specification](../60-specification/dynamic-and-unsafe-boundaries/README.md):
    the five intralanguage exclusions with arrival conditions, the
    foreign visibility routing to G095/G096/G098, and conformance.
 6. **The reasoning and decision record.** [Catena Dynamic and

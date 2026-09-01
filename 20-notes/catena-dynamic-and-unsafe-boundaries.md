@@ -73,10 +73,8 @@ and must be amended by a new revision.
 
 ## Route to sources
 
-- The Dynamic and Unsafe Boundaries Specification (candidate,
-  then normative at promotion, in
-  `60-specification/dynamic-and-unsafe-boundaries/`) will define
-  the contract this note argues for.
+- The [Dynamic and Unsafe Boundaries Specification](../60-specification/dynamic-and-unsafe-boundaries/README.md)
+  defines the normative `0.1.43` contract this note argues for.
 - [Syntax and Safety](../60-specification/clause-conditions/syntax-and-safety.md)
   — the guard vocabulary (anchor one).
 - [Artifacts, Erasure, and CLI](../60-specification/specifications-and-governance/artifacts-erasure-and-cli.md)

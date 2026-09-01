@@ -2,7 +2,7 @@
 title: "Dynamic and Unsafe Boundaries Diagnostics and Conformance"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.43"
 tags:
   - conformance
@@ -114,5 +114,6 @@ The design route is preserved in the
 [dynamic-and-unsafe-boundaries synthesis](../../20-notes/catena-dynamic-and-unsafe-boundaries.md),
 the [resolved inquiry](../../40-inquiries/should-catena-have-dynamic-or-unsafe-boundaries.md),
 and the [topic map](../../10-maps/dynamic-and-unsafe-boundaries.md).
-The C067 evidence record will preserve the sibling-compiler
-commands and archive validation.
+The [C067 evidence
+record](../../50-journal/2026-09-01-c067-boundaries.md)
+preserves the sibling-compiler commands and archive validation.

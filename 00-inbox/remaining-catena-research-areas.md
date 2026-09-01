@@ -296,8 +296,10 @@ visible edges.
   depend on inferred types without making results order-dependent~~ —
   closed by C066 at `0.1.42`: type-independent resolution with the
   five-way classification and the evidence-selection carve-out;
-- a clearly visible dynamic or unsafe boundary, or an explicit decision that
-  the initial language has none;
+- ~~a clearly visible dynamic or unsafe boundary, or an explicit decision that
+  the initial language has none~~ — closed by C067 at `0.1.43`: all five
+  forms excluded intralingually with arrival conditions, visibility
+  routed to G095/G096/G098;
 - integrated preservation, progress, principality, coherence, row-unifier
   most-generality, evidence-erasure, and handler-abstraction results;
 - the exact interaction among GADT equalities, effect rows, trait evidence,

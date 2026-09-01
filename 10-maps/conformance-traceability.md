@@ -237,7 +237,7 @@ sibling compiler repository.
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
 | `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
-| `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
 
 ## Trails
 
@@ -2192,10 +2192,10 @@ lacks a focused tag.
 
 ## Dynamic and unsafe boundaries registry (`DU`, 0.1.43)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c067_dynamic_unsafe_test.exs` and its
 `test/catena/c067_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c067 #1** *applies boundary rules only at exact 0.1.43 with zero new families and the lifecycle registered*
 - **c067 #2** *keeps all five intralanguage exclusions: no casts, no runtime type inspection, no unchecked operations, no intrinsics, no reflection*
@@ -2206,25 +2206,23 @@ compiler repository. The planned focused set is:
 - **c067 #7** *keeps erasure intact: no runtime type or specification material for inspection*
 - **c067 #8** *keeps the contract deterministic with no dyn, any, or unknown type existing*
 
-Anchors currently point at the candidate 0.1.43 chapters and become
-normative anchors at C067 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.43 chapters. Status reflects the
+merged compiler evidence (`ed14901`, branch `agent/c067-boundaries`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| DU-OBL-001 | Apply boundary rules only at exact 0.1.43 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/dynamic-and-unsafe-boundaries/diagnostics-and-conformance.md#revision-and-persistence-separation) | c067 #1 | untraced |
-| DU-OBL-002 | Keep all five intralanguage exclusions: no casts, no runtime type inspection, no unchecked operations, no intrinsics, no reflection | [`the-intralanguage-exclusions.md#the-exclusions`](../60-specification/dynamic-and-unsafe-boundaries/the-intralanguage-exclusions.md#the-exclusions) | c067 #2 | untraced |
-| DU-OBL-003 | Keep the guard fragment's rejection of the dynamic vocabulary unchanged from C003 | [`the-intralanguage-exclusions.md#the-exclusions`](../60-specification/dynamic-and-unsafe-boundaries/the-intralanguage-exclusions.md#the-exclusions) | c067 #3 | untraced |
-| DU-OBL-004 | Enforce the cross-edge requirement: dynamic or unsafe values enter only through a visible, typed, failure-classified foreign boundary | [`the-foreign-visibility-routing.md#the-cross-edge-requirement`](../60-specification/dynamic-and-unsafe-boundaries/the-foreign-visibility-routing.md#the-cross-edge-requirement) | c067 #4 | untraced |
-| DU-OBL-005 | Keep the standing precedents cited and add no mechanism or spelling | [`the-foreign-visibility-routing.md#standing-precedents`](../60-specification/dynamic-and-unsafe-boundaries/the-foreign-visibility-routing.md#standing-precedents) | c067 #5 | untraced |
-| DU-OBL-006 | Keep the exclusions amendable only by a revision discharging all four arrival conditions | [`the-intralanguage-exclusions.md#arrival-conditions`](../60-specification/dynamic-and-unsafe-boundaries/the-intralanguage-exclusions.md#arrival-conditions) | c067 #6 | untraced |
-| DU-OBL-007 | Keep erasure intact: no runtime type or specification material for inspection | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/dynamic-and-unsafe-boundaries/diagnostics-and-conformance.md#abstract-public-boundaries) | c067 #7 | untraced |
-| DU-OBL-008 | Keep the contract deterministic with no dyn, any, or unknown type existing | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/dynamic-and-unsafe-boundaries/diagnostics-and-conformance.md#abstract-public-boundaries) | c067 #8 | untraced |
+| DU-OBL-001 | Apply boundary rules only at exact 0.1.43 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/dynamic-and-unsafe-boundaries/diagnostics-and-conformance.md#revision-and-persistence-separation) | c067 #1 | traced |
+| DU-OBL-002 | Keep all five intralanguage exclusions: no casts, no runtime type inspection, no unchecked operations, no intrinsics, no reflection | [`the-intralanguage-exclusions.md#the-exclusions`](../60-specification/dynamic-and-unsafe-boundaries/the-intralanguage-exclusions.md#the-exclusions) | c067 #2 | traced |
+| DU-OBL-003 | Keep the guard fragment's rejection of the dynamic vocabulary unchanged from C003 | [`the-intralanguage-exclusions.md#the-exclusions`](../60-specification/dynamic-and-unsafe-boundaries/the-intralanguage-exclusions.md#the-exclusions) | c067 #3 | traced |
+| DU-OBL-004 | Enforce the cross-edge requirement: dynamic or unsafe values enter only through a visible, typed, failure-classified foreign boundary | [`the-foreign-visibility-routing.md#the-cross-edge-requirement`](../60-specification/dynamic-and-unsafe-boundaries/the-foreign-visibility-routing.md#the-cross-edge-requirement) | c067 #4 | traced |
+| DU-OBL-005 | Keep the standing precedents cited and add no mechanism or spelling | [`the-foreign-visibility-routing.md#standing-precedents`](../60-specification/dynamic-and-unsafe-boundaries/the-foreign-visibility-routing.md#standing-precedents) | c067 #5 | traced |
+| DU-OBL-006 | Keep the exclusions amendable only by a revision discharging all four arrival conditions | [`the-intralanguage-exclusions.md#arrival-conditions`](../60-specification/dynamic-and-unsafe-boundaries/the-intralanguage-exclusions.md#arrival-conditions) | c067 #6 | traced |
+| DU-OBL-007 | Keep erasure intact: no runtime type or specification material for inspection | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/dynamic-and-unsafe-boundaries/diagnostics-and-conformance.md#abstract-public-boundaries) | c067 #7 | traced |
+| DU-OBL-008 | Keep the contract deterministic with no dyn, any, or unknown type existing | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/dynamic-and-unsafe-boundaries/diagnostics-and-conformance.md#abstract-public-boundaries) | c067 #8 | traced |
 
-C067 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `DU-OBL-*` identifier lacks a
-focused tag.
+C067 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `DU-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

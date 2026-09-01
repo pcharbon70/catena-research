@@ -264,8 +264,9 @@ normative C047–C058 use `0.1.39` for list comprehensions;
 normative C061 uses `0.1.40` for numeric relationships;
 normative C062 uses `0.1.41` for aliases and newtypes;
 normative C066 uses `0.1.42` for name resolution;
+normative C067 uses `0.1.43` for dynamic and unsafe boundaries;
 and the next
-unused semantic patch is `0.1.43`. C008 defines package-local editions,
+unused semantic patch is `0.1.44`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.
