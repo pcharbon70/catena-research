@@ -487,7 +487,7 @@ slice's promotion commits. Closes G066.
 | The stance | type-independent resolution with the five-way table (rec) / admit per class / defer | type-independent |
 | Evidence carve-out | instance selection is evidence, not resolution (rec) / count as resolution | evidence, not resolution |
 | Slice shape | classification slice on existing machinery (rec) / dormant implementation / merge with G067 | classification slice |
-| Area naming | name-resolution NMR (rec) / resolution-independence RI / type-independent-resolution TIR | name-resolution NMR |
+| Area naming | name-resolution NMR (rec) / resolution-independence RI / type-independent-resolution TIR | name-resolution (code RN — the validator's two-letter obligation-ID contract) |
 
 ## Cross-cutting decisions
 

@@ -31,7 +31,7 @@ It applies [The Resolution Invariant](the-resolution-invariant.md) and
 ## Stable diagnostics
 
 This area introduces **zero new diagnostic families**
-(`NMR-OBL-001`, `NMR-OBL-002`). Import collision keeps C021's
+(`RN-OBL-001`, `RN-OBL-002`). Import collision keeps C021's
 collision diagnostics — rejection, never type disambiguation;
 missing or ambiguous trait evidence keeps `TRT004`; unknown names
 keep the unbound-name diagnostics of the typing families.
@@ -39,7 +39,7 @@ keep the unbound-name diagnostics of the typing families.
 ## Abstract public boundaries
 
 The shipped boundaries witness the contract on existing machinery;
-the bootstrap adds no new public API (`NMR-OBL-001`):
+the bootstrap adds no new public API (`RN-OBL-001`):
 
 - **Annotation invariance** — a program and its annotation-bearing
   twin resolve every name identically, producing the same values
@@ -53,30 +53,30 @@ the bootstrap adds no new public API (`NMR-OBL-001`):
 Implementations MUST NOT use these boundaries to claim
 overloaded-by-type names, expected-type adaptation, call-site
 ambiguity deferral, or inference-directed field access
-(`NMR-OBL-005`).
+(`RN-OBL-005`).
 
 ## Determinism
 
 Unchanged programs produce identical values, traces, and
 diagnostics on every conforming target; resolution outcomes are
 independent of annotation placement and elaboration order
-(`NMR-OBL-002`).
+(`RN-OBL-002`).
 
 ## Conformance obligations
 
 | ID | Obligation | Required executable evidence |
 | --- | --- | --- |
-| `NMR-OBL-001` | apply resolution rules only at exact 0.1.42 and register the stable lifecycle addition with zero new families and no new API | exact selection, registry, and lifecycle tests |
-| `NMR-OBL-002` | keep resolution type-independent: annotations never change a name's target and results never depend on elaboration order | annotation-invariance witnesses |
-| `NMR-OBL-003` | keep the five-way classification: labels not names, constructors by visibility, literals by spelling, operators closed-set | classification witnesses |
-| `NMR-OBL-004` | keep evidence selection distinct from name resolution, settled at the instance with no call-site deferral | trait evidence witnesses |
-| `NMR-OBL-005` | keep the four exclusions: no overloading by type, no expected-type adaptation, no call-site deferral, no inference-directed field access | absence tests |
-| `NMR-OBL-006` | keep the table amendable only by a revision stating order-independence | exclusion tests |
-| `NMR-OBL-007` | keep scope-structure resolution with collision rejection unchanged from C021 | shadowing and collision witnesses |
-| `NMR-OBL-008` | keep the contract deterministic with the reuse map enforced | determinism tests |
+| `RN-OBL-001` | apply resolution rules only at exact 0.1.42 and register the stable lifecycle addition with zero new families and no new API | exact selection, registry, and lifecycle tests |
+| `RN-OBL-002` | keep resolution type-independent: annotations never change a name's target and results never depend on elaboration order | annotation-invariance witnesses |
+| `RN-OBL-003` | keep the five-way classification: labels not names, constructors by visibility, literals by spelling, operators closed-set | classification witnesses |
+| `RN-OBL-004` | keep evidence selection distinct from name resolution, settled at the instance with no call-site deferral | trait evidence witnesses |
+| `RN-OBL-005` | keep the four exclusions: no overloading by type, no expected-type adaptation, no call-site deferral, no inference-directed field access | absence tests |
+| `RN-OBL-006` | keep the table amendable only by a revision stating order-independence | exclusion tests |
+| `RN-OBL-007` | keep scope-structure resolution with collision rejection unchanged from C021 | shadowing and collision witnesses |
+| `RN-OBL-008` | keep the contract deterministic with the reuse map enforced | determinism tests |
 
 Every obligation has at least one tagged passing test. The sibling
-compiler gates the complete `NMR-OBL-*` set against unknown and
+compiler gates the complete `RN-OBL-*` set against unknown and
 uncovered identifiers before C066 conformance is claimed.
 
 ## Required evidence sets
@@ -104,8 +104,8 @@ and the exclusions; it adds no JSON AST version, kernel
 S-expression version, interface version, artifact version,
 signature domain, typing rule, runtime behavior, BEAM
 representation, manifest field, public API name, or diagnostic
-family, and amends no retained revision (`NMR-OBL-001`,
-`NMR-OBL-002`).
+family, and amends no retained revision (`RN-OBL-001`,
+`RN-OBL-002`).
 
 The source-text decoder accepts cumulative revisions `0.1.9` through
 `0.1.42`; every predecessor API retains its exact selection. The next

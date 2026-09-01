@@ -108,7 +108,7 @@ follow-up item now that C011 is reached.
 - [Aliases and Newtypes Specification](../60-specification/aliases-and-newtypes/README.md)
   — the C062 source for `AN-OBL-*` obligations.
 - [Name Resolution Specification](../60-specification/name-resolution/README.md)
-  — the C066 source for `NMR-OBL-*` obligations.
+  — the C066 source for `RN-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -162,7 +162,7 @@ convention.
 | `LC` | list-comprehensions | 0.1.39 |
 | `NR` | numeric-relationships | 0.1.40 |
 | `AN` | aliases-and-newtypes | 0.1.41 |
-| `NMR` | name-resolution | 0.1.42 |
+| `RN` | name-resolution | 0.1.42 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -2152,7 +2152,7 @@ C062 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `AN-OBL-*` identifier
 lacks a focused tag.
 
-## Name resolution registry (`NMR`, 0.1.42)
+## Name resolution registry (`RN`, 0.1.42)
 
 Evidence labels will refer to focused tests in
 `test/catena/c066_name_resolution_test.exs` and its
@@ -2174,18 +2174,18 @@ compiler evidence lands.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| NMR-OBL-001 | Apply resolution rules only at exact 0.1.42 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/name-resolution/diagnostics-and-conformance.md#revision-and-persistence-separation) | c066 #1 | untraced |
-| NMR-OBL-002 | Keep resolution type-independent: annotations never change a name's target and results never depend on elaboration order | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #2 | untraced |
-| NMR-OBL-003 | Keep the five-way classification: labels not names, constructors by visibility, literals by spelling, operators closed-set | [`the-resolution-invariant.md#the-five-way-classification`](../60-specification/name-resolution/the-resolution-invariant.md#the-five-way-classification) | c066 #3 | untraced |
-| NMR-OBL-004 | Keep evidence selection distinct from name resolution, settled at the instance with no call-site deferral | [`the-resolution-invariant.md#the-evidence-selection-carve-out`](../60-specification/name-resolution/the-resolution-invariant.md#the-evidence-selection-carve-out) | c066 #4 | untraced |
-| NMR-OBL-005 | Keep the four exclusions: no overloading by type, no expected-type adaptation, no call-site deferral, no inference-directed field access | [`boundaries-and-reservations.md#the-exclusions`](../60-specification/name-resolution/boundaries-and-reservations.md#the-exclusions) | c066 #5 | untraced |
-| NMR-OBL-006 | Keep the table amendable only by a revision stating order-independence | [`boundaries-and-reservations.md#arrival-conditions`](../60-specification/name-resolution/boundaries-and-reservations.md#arrival-conditions) | c066 #6 | untraced |
-| NMR-OBL-007 | Keep scope-structure resolution with collision rejection unchanged from C021 | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #7 | untraced |
-| NMR-OBL-008 | Keep the contract deterministic with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/name-resolution/diagnostics-and-conformance.md#abstract-public-boundaries) | c066 #8 | untraced |
+| RN-OBL-001 | Apply resolution rules only at exact 0.1.42 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/name-resolution/diagnostics-and-conformance.md#revision-and-persistence-separation) | c066 #1 | untraced |
+| RN-OBL-002 | Keep resolution type-independent: annotations never change a name's target and results never depend on elaboration order | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #2 | untraced |
+| RN-OBL-003 | Keep the five-way classification: labels not names, constructors by visibility, literals by spelling, operators closed-set | [`the-resolution-invariant.md#the-five-way-classification`](../60-specification/name-resolution/the-resolution-invariant.md#the-five-way-classification) | c066 #3 | untraced |
+| RN-OBL-004 | Keep evidence selection distinct from name resolution, settled at the instance with no call-site deferral | [`the-resolution-invariant.md#the-evidence-selection-carve-out`](../60-specification/name-resolution/the-resolution-invariant.md#the-evidence-selection-carve-out) | c066 #4 | untraced |
+| RN-OBL-005 | Keep the four exclusions: no overloading by type, no expected-type adaptation, no call-site deferral, no inference-directed field access | [`boundaries-and-reservations.md#the-exclusions`](../60-specification/name-resolution/boundaries-and-reservations.md#the-exclusions) | c066 #5 | untraced |
+| RN-OBL-006 | Keep the table amendable only by a revision stating order-independence | [`boundaries-and-reservations.md#arrival-conditions`](../60-specification/name-resolution/boundaries-and-reservations.md#arrival-conditions) | c066 #6 | untraced |
+| RN-OBL-007 | Keep scope-structure resolution with collision rejection unchanged from C021 | [`the-resolution-invariant.md#the-invariant`](../60-specification/name-resolution/the-resolution-invariant.md#the-invariant) | c066 #7 | untraced |
+| RN-OBL-008 | Keep the contract deterministic with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/name-resolution/diagnostics-and-conformance.md#abstract-public-boundaries) | c066 #8 | untraced |
 
 C066 coverage is 0 `traced` and 8 untraced obligations pending the
 sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `NMR-OBL-*` identifier lacks a
+unknown identifiers and fails if any `RN-OBL-*` identifier lacks a
 focused tag.
 
 ## Open questions

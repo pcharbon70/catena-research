@@ -37,13 +37,13 @@ signed formats.
 
 > **Normative definition.**
 
-Name resolution is **type-independent** (`NMR-OBL-002`): every
+Name resolution is **type-independent** (`RN-OBL-002`): every
 written name denotes exactly one declaration, chosen as a function
 of scope structure alone (C021's model, unchanged). Adding,
 removing, or changing a type annotation MUST NOT change which
-declaration a name denotes (`NMR-OBL-002`). Resolution results
+declaration a name denotes (`RN-OBL-002`). Resolution results
 MUST NOT depend on elaboration order, expected types, or any
-information other than the scope structure (`NMR-OBL-002`).
+information other than the scope structure (`RN-OBL-002`).
 
 ## The five-way classification
 
@@ -51,22 +51,22 @@ information other than the scope structure (`NMR-OBL-002`).
 
 | Kind | Classification |
 | --- | --- |
-| Field labels | **not resolved names** — `select r l` is a typed operation over records (C041); the label's presence is well-typedness, not a choice among candidate declarations (`NMR-OBL-003`) |
-| Trait method names | **names resolve by scope** exactly as value names; which instance dictionary runs is **evidence selection** over the resolved name, governed by C065's coherence, termination, and instance-level ambiguity rejection — never deferred to a call site (`NMR-OBL-004`) |
-| Constructors | **declaration-scoped by visibility** (C002/C023): qualified references resolve by declaration and export mode, never by type (`NMR-OBL-003`) |
-| Literals | **self-describing by spelling** (C017/C018): a token's meaning is fixed by its components; no expected-type adaptation exists (`NMR-OBL-003`) |
-| Operators | **closed-set instantiation** (C061): one typing rule per operator; no candidate list exists and no name choice is made (`NMR-OBL-003`) |
+| Field labels | **not resolved names** — `select r l` is a typed operation over records (C041); the label's presence is well-typedness, not a choice among candidate declarations (`RN-OBL-003`) |
+| Trait method names | **names resolve by scope** exactly as value names; which instance dictionary runs is **evidence selection** over the resolved name, governed by C065's coherence, termination, and instance-level ambiguity rejection — never deferred to a call site (`RN-OBL-004`) |
+| Constructors | **declaration-scoped by visibility** (C002/C023): qualified references resolve by declaration and export mode, never by type (`RN-OBL-003`) |
+| Literals | **self-describing by spelling** (C017/C018): a token's meaning is fixed by its components; no expected-type adaptation exists (`RN-OBL-003`) |
+| Operators | **closed-set instantiation** (C061): one typing rule per operator; no candidate list exists and no name choice is made (`RN-OBL-003`) |
 
 ## The evidence-selection carve-out
 
 > **Normative definition.**
 
-Evidence selection is not name resolution (`NMR-OBL-004`): it
+Evidence selection is not name resolution (`RN-OBL-004`): it
 chooses which instance dictionary executes an already-resolved
 method name, cannot rename or shadow anything, and settles at the
 instance under coherence with ambiguity rejected there (C065,
 `TRT004`). An implementation MUST NOT defer evidence ambiguity to
-a call site or resolve it by expected types (`NMR-OBL-004`).
+a call site or resolve it by expected types (`RN-OBL-004`).
 
 ## Rationale and evidence (non-normative)
 

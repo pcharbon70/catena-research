@@ -29,7 +29,7 @@ The rules apply only to source-language revision `0.1.42`.
 > **Normative definition.**
 
 No form of type-directed name selection exists in edition `0.1`
-(`NMR-OBL-005`):
+(`RN-OBL-005`):
 
 - **overloaded-by-type names** — no value, method, or constructor
   name may denote different declarations chosen by inferred or
@@ -40,7 +40,7 @@ No form of type-directed name selection exists in edition `0.1`
   call-site types to disambiguate;
 - **field-access-by-inference** — no access infers which field a
   spelling means from the expression's type; record operations
-  remain typed operations over labels (`NMR-OBL-005`).
+  remain typed operations over labels (`RN-OBL-005`).
 
 ## Arrival conditions
 
@@ -51,8 +51,8 @@ denotes MUST arrive in its own revision that amends the
 classification table of
 [The Resolution Invariant](the-resolution-invariant.md#the-five-way-classification)
 explicitly, and MUST state how it preserves order-independence of
-results and diagnostics naming (`NMR-OBL-006`). Until then, this
-exclusion binds every conforming implementation (`NMR-OBL-005`).
+results and diagnostics naming (`RN-OBL-006`). Until then, this
+exclusion binds every conforming implementation (`RN-OBL-005`).
 
 ## Rationale and evidence (non-normative)
 
