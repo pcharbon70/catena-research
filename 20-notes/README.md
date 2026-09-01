@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Dynamic and Unsafe Boundaries](catena-dynamic-and-unsafe-boundaries.md)
+  — argues G067's exclusion: unsafety unwritable in source, three
+    anchors that decided it, visibility routed to foreign edges.
 - [Catena Name Resolution](catena-name-resolution.md) — argues
   G066's invariant: names resolve by scope structure alone, with
   evidence selection carved out and four pillars already standing.

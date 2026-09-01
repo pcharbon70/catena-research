@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [Should Catena Have Dynamic or Unsafe Boundaries?](should-catena-have-dynamic-or-unsafe-boundaries.md)
+  — resolves G067: intralanguage exclusion with arrival
+    conditions and the visibility requirement routed to the
+    foreign owners at `0.1.43`.
 - [May Name Resolution Depend on Inferred Types?](may-name-resolution-depend-on-inferred-types.md)
   — resolves G066: type-independent resolution with the five-way
     table and the evidence-selection carve-out at `0.1.42`.
