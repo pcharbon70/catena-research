@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C062 Aliases and Newtypes](2026-09-01-c062-newtypes.md)
+  — records the normative 0.1.41 alias exclusion, opaque routing,
+    and newtype rules on existing machinery, with immutable
+    compiler identity.
 - [BEAM Float Host-Boundary Probes](2026-08-31-beam-float-boundary-probes.md)
   — records the empirical finding that OTP 29 is finite-only at
     every language-level float boundary (badarith on domain, pole,
