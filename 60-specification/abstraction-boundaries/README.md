@@ -38,7 +38,10 @@ layout-stability or ABI contract is subsequently fixed by C028's
 declared absence. Views, pattern synonyms,
 and selective construction/matching exposure remain D046/G040's. BEAM
 representation mapping remains P093's. Foreign-term validation remains
-G095's.
+G095's. The alias exclusion extends this area's vocabulary
+completeness from naming itself, and the opaque-type routing for
+newtypes, at `0.1.41` — see the
+[Aliases and Newtypes Specification](../aliases-and-newtypes/README.md).
 
 ## Variability register
 

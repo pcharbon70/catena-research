@@ -187,6 +187,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Aliases and Newtypes](aliases-and-newtypes/README.md)
+  — the candidate version 0.1.41 alias exclusion with the newtype
+  form and the opaque routing.
 - [Numeric Relationships](numeric-relationships/README.md)
   — the normative version 0.1.40 closed-set instantiation contract
   with the dispatch exclusion and the G105 routings.
