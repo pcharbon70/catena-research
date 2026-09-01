@@ -1134,8 +1134,23 @@ P109 and D059's neighboring iteration syntax still deferred.
   `006` re-affirmed); division, remainder, checked and decimal
   arithmetic, and explicit conversions route to G105. Zero new
   diagnostic families and no new public API.
-- [ ] **G062 — Gap — aliases, opaque types, and newtypes.** Define identity,
-  representation, constructor access, coercion, deriving, and error messages.
+- [x] **C062 — Complete — aliases, opaque types, and newtypes.** Normative
+  `0.1.41` fixes one exclusion and two routings: transparent aliases are
+  excluded from edition 0.1 with four recorded arrival conditions
+  (identity-sharing, comparability interaction, C028 compatibility
+  treatment, error-message naming); an opaque type is C022's `abstract`
+  export routed, not redefined — the binary authority vocabulary stays
+  complete; and the newtype is the nominal single-constructor
+  single-field datatype with its own identity, representation invisible
+  with no cost or layout promises, explicit coercion (constructor wraps,
+  pattern unwraps, confusion rejects), explicit-target deriving only
+  with no instance flow through the wrapper, and nominal-spelled
+  diagnostics. Compiler witnesses on existing machinery (`1de0a7d`):
+  kernel and JSON newtype programs on stepper/evaluator/BEAM, the
+  smart-constructor idiom over an abstract export, explicit trait
+  instances attaching and the instance-less twin rejecting, and the
+  transparency-mode closure rejecting `alias` itself. Zero new
+  diagnostic families and no new public API.
 - [x] **C063 — Complete — generalization boundary.** The effect-aware hybrid
   rule freezes generalization, signature subsumption, and recursive annotation
   behavior.

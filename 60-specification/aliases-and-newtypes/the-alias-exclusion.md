@@ -2,7 +2,7 @@
 title: "The Alias Exclusion"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.41"
 tags:
   - type-system

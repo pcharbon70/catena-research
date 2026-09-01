@@ -2,7 +2,7 @@
 title: "Aliases and Newtypes Diagnostics and Conformance"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.41"
 tags:
   - conformance
@@ -112,6 +112,7 @@ unused semantic patch is `0.1.42`.
 The design route is preserved in the
 [aliases-and-newtypes synthesis](../../20-notes/catena-aliases-and-newtypes.md),
 the [resolved inquiry](../../40-inquiries/should-catena-admit-type-aliases-and-newtypes.md),
-and the [topic map](../../10-maps/aliases-and-newtypes.md). The C062
-evidence record will preserve the sibling-compiler commands and
+and the [topic map](../../10-maps/aliases-and-newtypes.md). The [C062
+evidence record](../../50-journal/2026-09-01-c062-newtypes.md)
+preserves the sibling-compiler commands and
 archive validation.

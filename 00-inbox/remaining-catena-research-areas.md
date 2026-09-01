@@ -287,8 +287,11 @@ visible edges.
   dispatch, no defaulting, no coercion, no literal constraints, with
   division, remainder, checked and decimal arithmetic, and conversions
   kept by G105;
-- aliases, opaque types, newtypes, representation identity, coercion, and
-  deriving behavior;
+- ~~aliases, opaque types, newtypes, representation identity, coercion, and
+  deriving behavior~~ — closed by C062: aliases excluded with arrival
+  conditions, opaque = the abstract export, newtype = the nominal
+  single-field datatype with explicit-only deriving and no cost promises
+  at `0.1.41`;
 - whether field, method, constructor, operator, or literal resolution may
   depend on inferred types without making results order-dependent;
 - a clearly visible dynamic or unsafe boundary, or an explicit decision that

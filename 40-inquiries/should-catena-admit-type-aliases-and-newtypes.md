@@ -87,8 +87,9 @@ wrapper its instances without inheritance.
 
 ## Outcome
 
-Resolved as C062 at revision `0.1.41`: the contract will live in
-`60-specification/aliases-and-newtypes/`, the reasoning in
+Resolved as C062 at revision `0.1.41`: the contract lives in the
+[Aliases and Newtypes Specification](../60-specification/aliases-and-newtypes/README.md),
+the reasoning in
 [Catena Aliases and Newtypes](../20-notes/catena-aliases-and-newtypes.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G066, G067, and

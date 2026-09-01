@@ -182,13 +182,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   `0.1.40`; its instantiation rule, exclusions, routings, and
   executable evidence are recorded in the
   [C061 conformance journal](../50-journal/2026-08-31-c061-numerics.md).
+  The normative C062 aliases-and-newtypes boundary is version
+  `0.1.41`; its alias exclusion, newtype rules, opaque routing, and
+  executable evidence are recorded in the
+  [C062 conformance journal](../50-journal/2026-09-01-c062-newtypes.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Aliases and Newtypes](aliases-and-newtypes/README.md)
-  — the candidate version 0.1.41 alias exclusion with the newtype
+  — the normative version 0.1.41 alias exclusion with the newtype
   form and the opaque routing.
 - [Numeric Relationships](numeric-relationships/README.md)
   — the normative version 0.1.40 closed-set instantiation contract

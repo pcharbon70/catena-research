@@ -229,7 +229,7 @@ sibling compiler repository.
 | `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
 | `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); all obligations traced |
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
-| `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
 
 ## Trails
 
@@ -2116,10 +2116,10 @@ lacks a focused tag.
 
 ## Aliases and newtypes registry (`AN`, 0.1.41)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c062_aliases_newtypes_test.exs` and its
 `test/catena/c062_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c062 #1** *applies alias-and-newtype rules only at exact 0.1.41 with zero new families and the lifecycle registered*
 - **c062 #2** *keeps transparent aliases excluded with the four arrival conditions recorded*
@@ -2130,25 +2130,23 @@ compiler repository. The planned focused set is:
 - **c062 #7** *keeps deriving explicit-target only with no instance flow through the wrapper*
 - **c062 #8** *keeps the exclusion amendable only by a revision discharging all four arrival conditions*
 
-Anchors currently point at the candidate 0.1.41 chapters and become
-normative anchors at C062 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.41 chapters. Status reflects the
+merged compiler evidence (`1de0a7d`, branch `agent/c062-newtypes`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| AN-OBL-001 | Apply alias-and-newtype rules only at exact 0.1.41 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/aliases-and-newtypes/diagnostics-and-conformance.md#revision-and-persistence-separation) | c062 #1 | untraced |
-| AN-OBL-002 | Keep transparent aliases excluded with the four arrival conditions recorded | [`the-alias-exclusion.md#the-exclusion`](../60-specification/aliases-and-newtypes/the-alias-exclusion.md#the-exclusion) | c062 #2 | untraced |
-| AN-OBL-003 | Fix the newtype as the nominal single-constructor single-field datatype with its own identity | [`the-newtype-form.md#the-newtype-is-a-declared-form`](../60-specification/aliases-and-newtypes/the-newtype-form.md#the-newtype-is-a-declared-form) | c062 #3 | untraced |
-| AN-OBL-004 | Keep representation invisible with no cost or layout promises attached to a newtype | [`the-newtype-form.md#representation-and-cost`](../60-specification/aliases-and-newtypes/the-newtype-form.md#representation-and-cost) | c062 #4 | untraced |
-| AN-OBL-005 | Route opaque types to the binary authority vocabulary and keep nominal-spelled diagnostics | [`the-newtype-form.md#constructor-access-and-the-opaque-routing`](../60-specification/aliases-and-newtypes/the-newtype-form.md#constructor-access-and-the-opaque-routing) | c062 #5 | untraced |
-| AN-OBL-006 | Keep coercion explicit: constructor wraps, pattern unwraps, confusion rejects | [`the-newtype-form.md#coercion`](../60-specification/aliases-and-newtypes/the-newtype-form.md#coercion) | c062 #6 | untraced |
-| AN-OBL-007 | Keep deriving explicit-target only with no instance flow through the wrapper | [`the-newtype-form.md#deriving`](../60-specification/aliases-and-newtypes/the-newtype-form.md#deriving) | c062 #7 | untraced |
-| AN-OBL-008 | Keep the exclusion amendable only by a revision discharging all four arrival conditions | [`the-alias-exclusion.md#arrival-conditions`](../60-specification/aliases-and-newtypes/the-alias-exclusion.md#arrival-conditions) | c062 #8 | untraced |
+| AN-OBL-001 | Apply alias-and-newtype rules only at exact 0.1.41 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/aliases-and-newtypes/diagnostics-and-conformance.md#revision-and-persistence-separation) | c062 #1 | traced |
+| AN-OBL-002 | Keep transparent aliases excluded with the four arrival conditions recorded | [`the-alias-exclusion.md#the-exclusion`](../60-specification/aliases-and-newtypes/the-alias-exclusion.md#the-exclusion) | c062 #2 | traced |
+| AN-OBL-003 | Fix the newtype as the nominal single-constructor single-field datatype with its own identity | [`the-newtype-form.md#the-newtype-is-a-declared-form`](../60-specification/aliases-and-newtypes/the-newtype-form.md#the-newtype-is-a-declared-form) | c062 #3 | traced |
+| AN-OBL-004 | Keep representation invisible with no cost or layout promises attached to a newtype | [`the-newtype-form.md#representation-and-cost`](../60-specification/aliases-and-newtypes/the-newtype-form.md#representation-and-cost) | c062 #4 | traced |
+| AN-OBL-005 | Route opaque types to the binary authority vocabulary and keep nominal-spelled diagnostics | [`the-newtype-form.md#constructor-access-and-the-opaque-routing`](../60-specification/aliases-and-newtypes/the-newtype-form.md#constructor-access-and-the-opaque-routing) | c062 #5 | traced |
+| AN-OBL-006 | Keep coercion explicit: constructor wraps, pattern unwraps, confusion rejects | [`the-newtype-form.md#coercion`](../60-specification/aliases-and-newtypes/the-newtype-form.md#coercion) | c062 #6 | traced |
+| AN-OBL-007 | Keep deriving explicit-target only with no instance flow through the wrapper | [`the-newtype-form.md#deriving`](../60-specification/aliases-and-newtypes/the-newtype-form.md#deriving) | c062 #7 | traced |
+| AN-OBL-008 | Keep the exclusion amendable only by a revision discharging all four arrival conditions | [`the-alias-exclusion.md#arrival-conditions`](../60-specification/aliases-and-newtypes/the-alias-exclusion.md#arrival-conditions) | c062 #8 | traced |
 
-C062 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `AN-OBL-*` identifier lacks a
-focused tag.
+C062 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `AN-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

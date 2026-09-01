@@ -84,9 +84,8 @@ is falsified and must be amended by a new revision.
 
 ## Route to sources
 
-- The Aliases and Newtypes Specification (candidate, then
-  normative at promotion, in `60-specification/aliases-and-newtypes/`)
-  will define the contract this note argues for.
+- The [Aliases and Newtypes Specification](../60-specification/aliases-and-newtypes/README.md)
+  defines the normative `0.1.41` contract this note argues for.
 - [Authority and Representation Exclusions](../60-specification/abstraction-boundaries/authority-and-representation-exclusions.md)
   — C023's complete authority vocabulary the exclusion extends.
 - [Declarations and Nominal Identity](../60-specification/data-and-patterns/declarations-and-nominal-identity.md)
