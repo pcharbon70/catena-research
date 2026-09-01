@@ -233,7 +233,7 @@ sibling compiler repository.
 | `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); all obligations traced |
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
-| `NMR` name-resolution | 8 | `c066_name_resolution_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 

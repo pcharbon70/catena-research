@@ -59,7 +59,7 @@ identically; no registry or tooling behavior may vary.
 - [Boundaries and Reservations](boundaries-and-reservations.md)
   — the exclusions and their arrival conditions.
 - [Name Resolution Diagnostics and Conformance](diagnostics-and-conformance.md)
-  — zero new families, abstract boundaries, and the `NMR-OBL-*`
+  — zero new families, abstract boundaries, and the `RN-OBL-*`
   obligations with evidence sets.
 
 ## Maintaining this index
