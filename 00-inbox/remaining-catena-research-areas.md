@@ -292,8 +292,10 @@ visible edges.
   conditions, opaque = the abstract export, newtype = the nominal
   single-field datatype with explicit-only deriving and no cost promises
   at `0.1.41`;
-- whether field, method, constructor, operator, or literal resolution may
-  depend on inferred types without making results order-dependent;
+- ~~whether field, method, constructor, operator, or literal resolution may
+  depend on inferred types without making results order-dependent~~ —
+  closed by C066 at `0.1.42`: type-independent resolution with the
+  five-way classification and the evidence-selection carve-out;
 - a clearly visible dynamic or unsafe boundary, or an explicit decision that
   the initial language has none;
 - integrated preservation, progress, principality, coherence, row-unifier

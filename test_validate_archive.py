@@ -202,6 +202,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "list-comprehensions": "0.1.39",
                 "numeric-relationships": "0.1.40",
                 "aliases-and-newtypes": "0.1.41",
+                "name-resolution": "0.1.42",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

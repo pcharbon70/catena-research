@@ -476,6 +476,19 @@ with this slice's promotion commits. Closes G062.
 | Slice shape | classification slice on existing machinery (rec) / dormant implementation / defer | classification slice |
 | Area naming | aliases-and-newtypes AN (rec) / aliases-opaque-and-newtypes AON / type-wrappers TW | aliases-and-newtypes AN |
 
+## C066 — name resolution (`0.1.42`, 2026-09-01)
+
+Fixed in: [synthesis](catena-name-resolution.md) — the normative
+specification, journal, and this table's durable links land with this
+slice's promotion commits. Closes G066.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| The stance | type-independent resolution with the five-way table (rec) / admit per class / defer | type-independent |
+| Evidence carve-out | instance selection is evidence, not resolution (rec) / count as resolution | evidence, not resolution |
+| Slice shape | classification slice on existing machinery (rec) / dormant implementation / merge with G067 | classification slice |
+| Area naming | name-resolution NMR (rec) / resolution-independence RI / type-independent-resolution TIR | name-resolution (code RN — the validator's two-letter obligation-ID contract) |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Name Resolution](name-resolution.md) — routes the G066
+  type-independence decision across its four pillars to the
+  `0.1.42` contract.
 - [Aliases and Newtypes](aliases-and-newtypes.md) — routes the
   G062 decision from C023's authority vocabulary to the `0.1.41`
   contract.
