@@ -190,11 +190,19 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   its invariant, classification table, exclusions, and executable
   evidence are recorded in the
   [C066 conformance journal](../50-journal/2026-09-01-c066-resolution.md).
+  The normative C067 dynamic-and-unsafe-boundaries boundary is
+  version `0.1.43`; its intralanguage exclusions, arrival
+  conditions, foreign visibility routing, and executable evidence
+  are recorded in the
+  [C067 conformance journal](../50-journal/2026-09-01-c067-boundaries.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Dynamic and Unsafe Boundaries](dynamic-and-unsafe-boundaries/README.md)
+  — the normative version 0.1.43 intralanguage exclusions with
+  the foreign visibility routing.
 - [Name Resolution](name-resolution/README.md)
   — the normative version 0.1.42 type-independence invariant with
   the five-way classification and the evidence carve-out.

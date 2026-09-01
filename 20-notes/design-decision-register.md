@@ -489,6 +489,19 @@ slice's promotion commits. Closes G066.
 | Slice shape | classification slice on existing machinery (rec) / dormant implementation / merge with G067 | classification slice |
 | Area naming | name-resolution NMR (rec) / resolution-independence RI / type-independent-resolution TIR | name-resolution (code RN — the validator's two-letter obligation-ID contract) |
 
+## C067 — dynamic and unsafe boundaries (`0.1.43`, 2026-09-01)
+
+Fixed in: [synthesis](catena-dynamic-and-unsafe-boundaries.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits. Closes G067.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| The stance | exclude intralingually with arrival conditions (rec) / define dyn now / partial reservation | exclude intralingually |
+| Visibility routing | route to foreign owners as a requirement (rec) / define mechanism now | route to foreign owners |
+| Slice shape | exclusion slice on existing machinery (rec) / dormant machinery / defer to foreign era | exclusion slice |
+| Area naming | dynamic-and-unsafe-boundaries DU (rec) / unsafe-boundaries UB / casts-and-dynamics CD | dynamic-and-unsafe-boundaries DU |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

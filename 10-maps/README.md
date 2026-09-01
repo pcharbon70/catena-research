@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Dynamic and Unsafe Boundaries](dynamic-and-unsafe-boundaries.md)
+  — routes the G067 exclusion across its three anchors to the
+  `0.1.43` contract.
 - [Name Resolution](name-resolution.md) — routes the G066
   type-independence decision across its four pillars to the
   `0.1.42` contract.

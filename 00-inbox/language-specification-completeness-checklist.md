@@ -1175,9 +1175,22 @@ P109 and D059's neighboring iteration syntax still deferred.
   evidence running and rejecting at the instance (`TRT005`),
   `A004` unknown-constructor rejection, import-collision rejection.
   Zero new diagnostic families and no new public API.
-- [ ] **G067 — Gap — dynamic and unsafe boundaries.** Define casts, runtime type
-  inspection, unchecked operations, compiler intrinsics, and how unsafety is
-  made visible—or explicitly exclude them.
+- [x] **C067 — Complete — dynamic and unsafe boundaries.** Normative `0.1.43`
+  excludes all five forms intralingually: no casts, no runtime type
+  inspection, no unchecked operations, no compiler intrinsics, no
+  reflection — unsafety cannot be written in Catena source. Three
+  anchors: the guard fragment already rejects the dynamic vocabulary
+  (C003), erasure leaves no runtime type material (C006/C113), and the
+  failure taxonomy has no cast kind (C036). Arrival conditions per form:
+  representation, failure classification, visibility, and evidence
+  interaction must all be amended in a future form's own revision.
+  Visibility routes to the foreign owners: dynamic values enter only
+  through a visible, typed, failure-classified boundary owned by
+  G095/G096/G098. Compiler witnesses on existing machinery (`ed14901`):
+  guard rejections unchanged, BEAM chunk inventories free of
+  specification/governance chunks, no cast/typecase/dyn spellings, no
+  foreign entry paths. Zero new diagnostic families and no new public
+  API.
 - [x] **C068 — Complete — checked advanced type profile.** Predicative explicit
   higher rank, signature-directed GADTs, branch-local equalities, and explicit
   rigid constructor existentials are specified behind an annotation boundary.

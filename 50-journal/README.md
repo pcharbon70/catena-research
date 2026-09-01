@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C067 Dynamic and Unsafe Boundaries](2026-09-01-c067-boundaries.md)
+  — records the normative 0.1.43 exclusions, the foreign
+    visibility routing, the BEAM chunk-inventory erasure witness,
+    and two API facts, with immutable compiler identity.
 - [C066 Name Resolution](2026-09-01-c066-resolution.md)
   — records the normative 0.1.42 type-independence invariant, the
     RN code rename against the identifier contract, and the
