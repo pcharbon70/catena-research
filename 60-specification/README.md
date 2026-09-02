@@ -204,6 +204,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Progress and Preservation](progress-and-preservation/README.md)
+  — the candidate version 0.1.45 effects-and-failure targets with
+  the composed integrated theorem.
 - [Excluded Advanced Type Features](excluded-advanced-type-features/README.md)
   — the normative version 0.1.44 exclusion table with the
   seven-point arrival gate.

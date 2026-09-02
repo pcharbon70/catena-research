@@ -51,8 +51,7 @@ The normative design targets these claims:
 5. **Preservation.** Construction, selected match reduction, and generated
    fold dispatch preserve their declared result type.
 6. **Exhaustive progress.** A closed, well-typed match over a value produced by
-   typed construction selects a clause or continues through a false guard; it
-   does not become stuck on missing structure.
+   typed construction selects a clause or continues through a false guard; it   does not become stuck on missing structure.
 7. **Usefulness soundness.** A reported redundant clause cannot be selected
    after prior proved-true clauses, and an accepted exhaustive matrix covers
    every value in the modeled domain.
