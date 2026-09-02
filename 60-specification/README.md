@@ -199,11 +199,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   version `0.1.44`; its exclusion table, seven-point gate, and
   executable evidence are recorded in the
   [C140 conformance journal](../50-journal/2026-09-01-c140-exclusions.md).
+  The normative C132 progress-and-preservation boundary is version
+  `0.1.45`; its effects-and-failure targets, composed theorem, and
+  executable evidence are recorded in the
+  [C132 conformance journal](../50-journal/2026-09-01-c132-metatheory.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Progress and Preservation](progress-and-preservation/README.md)
+  — the normative version 0.1.45 effects-and-failure targets with
+  the composed integrated theorem.
 - [Excluded Advanced Type Features](excluded-advanced-type-features/README.md)
   — the normative version 0.1.44 exclusion table with the
   seven-point arrival gate.

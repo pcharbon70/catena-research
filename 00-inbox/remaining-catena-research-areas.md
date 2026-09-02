@@ -300,8 +300,12 @@ visible edges.
   the initial language has none~~ — closed by C067 at `0.1.43`: all five
   forms excluded intralingually with arrival conditions, visibility
   routed to G095/G096/G098;
-- integrated preservation, progress, principality, coherence, row-unifier
-  most-generality, evidence-erasure, and handler-abstraction results;
+- ~~integrated preservation, progress, principality, coherence, row-unifier
+  most-generality, evidence-erasure, and handler-abstraction results~~ —
+  preservation and progress composed at `0.1.45` (C132) with the
+  composition lemma routed here as the open proof obligation;
+  principality, row-unifier most-generality, and
+  handler-abstraction proofs remain this program's open work;
 - the exact interaction among GADT equalities, effect rows, trait evidence,
   pattern coverage, specifications, and actor messages; and
 - representative programs testing whether signatures and annotations appear

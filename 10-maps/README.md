@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Progress and Preservation](progress-and-preservation.md)
+  — routes the P132 metatheory completion from the component
+  statements to the `0.1.45` composed theorem.
 - [Excluded Advanced Type Features](excluded-advanced-type-features.md)
   — routes the D140 closure from the standing 0.1.1 partition to
   the `0.1.44` gate.

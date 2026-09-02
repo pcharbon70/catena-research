@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C132 Progress and Preservation](2026-09-01-c132-metatheory.md)
+  — records the normative 0.1.45 effects-and-failure targets, the
+    composed theorem with its routed lemma, Section 16's opening,
+    and the sweep-gap finding, with immutable compiler identity.
 - [C140 Excluded Advanced Type Features](2026-09-01-c140-exclusions.md)
   — records the normative 0.1.44 exclusion table with the
     seven-point gate, Section 7's completion, and the live

@@ -1488,12 +1488,21 @@ P109 and D059's neighboring iteration syntax still deferred.
 
 ## 16. Formal validation and release gates
 
-- [ ] **P132 — Partial — progress and preservation targets.** C002 states the
-  nominal and structural claims; C003 adds condition typing, closed
-  safety, predicate expansion, fallthrough, commitment, guarded exhaustive
-  progress, fact soundness, lowering equivalence, receive preservation, and
-  evidence-erasure targets. Effects, public processes, foreign values, and the
-  integrated theorem remain open.
+- [x] **C132 — Complete — progress and preservation targets.** Normative
+  `0.1.45` states the remaining targets on the C002/C003 bar: the
+  effects-and-failure targets over the shipped handler calculus
+  (installation, resume-once, return-clause preservation; effect
+  progress; trap terminality with kernel-verbatim reasons); the
+  integrated theorem as a composed statement — the standing
+  component theorems plus a composition lemma that is a routed
+  proof obligation owned by the formal-validation program, never a
+  claim; and conditional extensions (public processes on
+  G084/G085's own statement, foreign values by construction of
+  C067's typed boundary). Compiler witnesses on existing machinery
+  (`5525662`): handler programs agreeing on stepper and BEAM, the
+  trap fixture, the unhandled-request rejection, and the kernel
+  fixture's composition-parts pin. Zero new diagnostic families
+  and no new public API. Section 16 opens at 1/9.
 - [ ] **P133 — Partial — reference evaluator.** The executable oracle now covers
   C001 pure expressions, C002 nominal matching and folds, and C003
   primitive conditions, lazy Boolean composition, predicate calls, and ordered

@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [What Progress and Preservation Targets Remain?](what-progress-and-preservation-targets-remain.md)
+  — resolves P132: effects-and-failure targets, the composed
+    integrated theorem with a routed proof obligation, and
+    conditional extensions at `0.1.45`.
 - [How Do the Excluded Advanced Type Forms Stay Excluded?](how-do-the-excluded-advanced-type-forms-stay-excluded.md)
   — resolves D140: the seven-form exclusion table with the
     seven-point arrival gate at `0.1.44`, completing Section 7.

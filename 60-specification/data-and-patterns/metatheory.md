@@ -51,8 +51,7 @@ The normative design targets these claims:
 5. **Preservation.** Construction, selected match reduction, and generated
    fold dispatch preserve their declared result type.
 6. **Exhaustive progress.** A closed, well-typed match over a value produced by
-   typed construction selects a clause or continues through a false guard; it
-   does not become stuck on missing structure.
+   typed construction selects a clause or continues through a false guard; it   does not become stuck on missing structure.
 7. **Usefulness soundness.** A reported redundant clause cannot be selected
    after prior proved-true clauses, and an accepted exhaustive matrix covers
    every value in the modeled domain.
@@ -105,4 +104,6 @@ The formal basis and limitations are developed through
 [Maranget's usefulness analysis](../../30-sources/maranget-2007-warnings-pattern-matching.md),
 [GADT inference](../../30-sources/peyton-jones-et-al-2006-gadt-inference.md),
 and [typed representation changes](../../30-sources/leroy-1992-unboxed-objects.md).
-The wider unresolved proof obligations remain in checklist item P132.
+The wider unresolved proof obligations are routed by the
+[Progress and Preservation Specification](../progress-and-preservation/README.md)
+(C132), whose composition lemma owns their discharge.
