@@ -113,6 +113,8 @@ follow-up item now that C011 is reached.
   — the C067 source for `DU-OBL-*` obligations.
 - [Excluded Advanced Type Features Specification](../60-specification/excluded-advanced-type-features/README.md)
   — the C140 source for `EA-OBL-*` obligations.
+- [Progress and Preservation Specification](../60-specification/progress-and-preservation/README.md)
+  — the C132 source for `PP-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -169,6 +171,7 @@ convention.
 | `RN` | name-resolution | 0.1.42 |
 | `DU` | dynamic-and-unsafe-boundaries | 0.1.43 |
 | `EA` | excluded-advanced-type-features | 0.1.44 |
+| `PP` | progress-and-preservation | 0.1.45 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -242,6 +245,7 @@ sibling compiler repository.
 | `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
 | `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
 | `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
+| `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -2259,6 +2263,42 @@ merged compiler evidence (`77fba75`, branch `agent/c140-advanced-exclusions`).
 C140 coverage is 7 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `EA-OBL-*` identifier
 lacks a focused tag.
+
+## Progress and preservation registry (`PP`, 0.1.45)
+
+Evidence labels will refer to focused tests in
+`test/catena/c132_progress_preservation_test.exs` and its
+`test/catena/c132_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The planned focused set is:
+
+- **c132 #1** *applies target rules only at exact 0.1.45 with zero new families and the lifecycle registered*
+- **c132 #2** *states the effects-and-failure targets over the shipped calculus only*
+- **c132 #3** *keeps effect progress and trap terminality as stated with kernel-verbatim reasons*
+- **c132 #4** *carries each target's evidence obligation with the C030 dual-agreement discipline*
+- **c132 #5** *keeps the integrated theorem as a composed statement with the conditional summary*
+- **c132 #6** *keeps the composition lemma a routed proof obligation, never a claim*
+- **c132 #7** *keeps the process and foreign extensions conditional and routed to their owners*
+- **c132 #8** *keeps the contract deterministic with the component corpora unchanged*
+
+Anchors currently point at the candidate 0.1.45 chapters and become
+normative anchors at C132 promotion. Status is `untraced` until the
+compiler evidence lands.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| PP-OBL-001 | Apply target rules only at exact 0.1.45 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/progress-and-preservation/diagnostics-and-conformance.md#revision-and-persistence-separation) | c132 #1 | untraced |
+| PP-OBL-002 | State the effects-and-failure targets over the shipped calculus only | [`the-effects-and-failure-targets.md#the-targets`](../60-specification/progress-and-preservation/the-effects-and-failure-targets.md#the-targets) | c132 #2 | untraced |
+| PP-OBL-003 | Keep effect progress and trap terminality as stated with kernel-verbatim reasons | [`the-effects-and-failure-targets.md#the-targets`](../60-specification/progress-and-preservation/the-effects-and-failure-targets.md#the-targets) | c132 #3 | untraced |
+| PP-OBL-004 | Carry each target's evidence obligation with the C030 dual-agreement discipline | [`the-effects-and-failure-targets.md#evidence-obligations`](../60-specification/progress-and-preservation/the-effects-and-failure-targets.md#evidence-obligations) | c132 #4 | untraced |
+| PP-OBL-005 | Keep the integrated theorem as a composed statement with the conditional summary | [`the-integrated-theorem.md#the-composed-statement`](../60-specification/progress-and-preservation/the-integrated-theorem.md#the-composed-statement) | c132 #5 | untraced |
+| PP-OBL-006 | Keep the composition lemma a routed proof obligation, never a claim | [`the-integrated-theorem.md#the-composition-lemma`](../60-specification/progress-and-preservation/the-integrated-theorem.md#the-composition-lemma) | c132 #6 | untraced |
+| PP-OBL-007 | Keep the process and foreign extensions conditional and routed to their owners | [`the-integrated-theorem.md#conditional-extensions`](../60-specification/progress-and-preservation/the-integrated-theorem.md#conditional-extensions) | c132 #7 | untraced |
+| PP-OBL-008 | Keep the contract deterministic with the component corpora unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/progress-and-preservation/diagnostics-and-conformance.md#abstract-public-boundaries) | c132 #8 | untraced |
+
+C132 coverage is 0 `traced` and 8 untraced obligations pending the
+sibling compiler implementation. The planned dedicated gate rejects
+unknown identifiers and fails if any `PP-OBL-*` identifier lacks a
+focused tag.
 
 ## Open questions
 
