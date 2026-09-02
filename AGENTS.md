@@ -153,8 +153,9 @@ comprehensions. Normative C061 uses `0.1.40` for numeric
 relationships. Normative C062 uses `0.1.41` for aliases and
 newtypes. Normative C066 uses `0.1.42` for name resolution.
 Normative C067 uses `0.1.43` for dynamic and unsafe boundaries.
+Normative C140 uses `0.1.44` for excluded advanced type features.
 The next unused semantic
-patch is `0.1.44` unless an approved versioning policy explicitly
+patch is `0.1.45` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

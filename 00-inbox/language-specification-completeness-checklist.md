@@ -1194,10 +1194,22 @@ P109 and D059's neighboring iteration syntax still deferred.
 - [x] **C068 — Complete — checked advanced type profile.** Predicative explicit
   higher rank, signature-directed GADTs, branch-local equalities, and explicit
   rigid constructor existentials are specified behind an annotation boundary.
-- [ ] **D140 — Deferred — excluded advanced type features.** Impredicativity,
-  inferred higher rank, general linear and dependent types, unrestricted
-  type-level computation, and higher-kinded polymorphism over arbitrary kinds stay
-  outside version 0.1.1.
+- [x] **C140 — Complete — excluded advanced type features.** Normative `0.1.44`
+  keeps the seven forms excluded (C001's 0.1.1 exclusions restated as
+  routing rows: impredicativity, inferred higher rank, first-class
+  existentials beyond declared constructors, general linear types,
+  dependent types, unrestricted type families, higher-kinded
+  polymorphism over arbitrary kinds, unrestricted GADT inference) with
+  C068's checked profile unchanged, and makes the seven-point arrival
+  gate normative: problem statement, repeated-use evidence, interaction
+  audit, formal semantics, operational contract, diagnostic story, and
+  a library comparison — stated per form, independently, with no
+  omnibus revision. Compiler witnesses on existing machinery
+  (`77fba75`): profile-boundary rejections (`T012` spellings, `T010`
+  unannotated GADT matches, `T009` existential escapes) and a
+  signature-directed GADT program evaluating unchanged. Zero new
+  diagnostic families and no new public API. Section 7 completes at
+  10/10.
 
 ## 8. Traits, derivation, and categorical libraries
 

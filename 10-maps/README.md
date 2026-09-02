@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Excluded Advanced Type Features](excluded-advanced-type-features.md)
+  — routes the D140 closure from the standing 0.1.1 partition to
+  the `0.1.44` gate.
 - [Dynamic and Unsafe Boundaries](dynamic-and-unsafe-boundaries.md)
   — routes the G067 exclusion across its three anchors to the
   `0.1.43` contract.

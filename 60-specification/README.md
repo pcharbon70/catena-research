@@ -195,11 +195,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   conditions, foreign visibility routing, and executable evidence
   are recorded in the
   [C067 conformance journal](../50-journal/2026-09-01-c067-boundaries.md).
+  The normative C140 excluded-advanced-type-features boundary is
+  version `0.1.44`; its exclusion table, seven-point gate, and
+  executable evidence are recorded in the
+  [C140 conformance journal](../50-journal/2026-09-01-c140-exclusions.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Excluded Advanced Type Features](excluded-advanced-type-features/README.md)
+  — the normative version 0.1.44 exclusion table with the
+  seven-point arrival gate.
 - [Dynamic and Unsafe Boundaries](dynamic-and-unsafe-boundaries/README.md)
   — the normative version 0.1.43 intralanguage exclusions with
   the foreign visibility routing.
