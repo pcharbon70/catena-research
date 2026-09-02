@@ -502,6 +502,20 @@ with this slice's promotion commits. Closes G067.
 | Slice shape | exclusion slice on existing machinery (rec) / dormant machinery / defer to foreign era | exclusion slice |
 | Area naming | dynamic-and-unsafe-boundaries DU (rec) / unsafe-boundaries UB / casts-and-dynamics CD | dynamic-and-unsafe-boundaries DU |
 
+## C140 — excluded advanced type features (`0.1.44`, 2026-09-01)
+
+Fixed in: [synthesis](catena-excluded-advanced-types.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits. Closes D140; Section 7 completes
+at 10/10.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Slice shape | small confirmation slice at 0.1.44 (rec) / pointer-only closure / fold into P132 | confirmation slice |
+| Table scope | full C001 list of seven forms (rec) / D140's five forms only | full C001 list |
+| Arrival conditions | adopt the seven-point gate verbatim (rec) / bespoke per form | seven-point gate |
+| Area naming | excluded-advanced-type-features EA (rec) / advanced-type-boundaries AB / extend type-system area | excluded-advanced-type-features EA |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

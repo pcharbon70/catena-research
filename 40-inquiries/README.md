@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Do the Excluded Advanced Type Forms Stay Excluded?](how-do-the-excluded-advanced-type-forms-stay-excluded.md)
+  — resolves D140: the seven-form exclusion table with the
+    seven-point arrival gate at `0.1.44`, completing Section 7.
 - [Should Catena Have Dynamic or Unsafe Boundaries?](should-catena-have-dynamic-or-unsafe-boundaries.md)
   — resolves G067: intralanguage exclusion with arrival
     conditions and the visibility requirement routed to the

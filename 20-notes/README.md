@@ -32,6 +32,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Excluded Advanced Types](catena-excluded-advanced-types.md)
+  — argues D140's gate-not-ban reading: the standing 0.1.1
+    partition plus the seven-point arrival discipline made
+    normative.
 - [Catena Dynamic and Unsafe Boundaries](catena-dynamic-and-unsafe-boundaries.md)
   — argues G067's exclusion: unsafety unwritable in source, three
     anchors that decided it, visibility routed to foreign edges.
