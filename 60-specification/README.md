@@ -200,6 +200,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Excluded Advanced Type Features](excluded-advanced-type-features/README.md)
+  — the candidate version 0.1.44 exclusion table with the
+  seven-point arrival gate.
 - [Dynamic and Unsafe Boundaries](dynamic-and-unsafe-boundaries/README.md)
   — the normative version 0.1.43 intralanguage exclusions with
   the foreign visibility routing.

@@ -87,3 +87,5 @@ The higher-rank algorithm is grounded by
 [Complete and Easy Bidirectional Typechecking for Higher-Rank Polymorphism](../../30-sources/dunfield-krishnaswami-2013-bidirectional-typechecking.md),
 while the GADT boundary follows the constraints described in
 [Simple Unification-Based Type Inference for GADTs](../../30-sources/peyton-jones-et-al-2006-gadt-inference.md).
+The 0.1.44 [Exclusion Table and Gate](../excluded-advanced-type-features/the-exclusion-table-and-gate.md)
+records these exclusions' arrival conditions.
