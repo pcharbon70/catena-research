@@ -205,6 +205,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "name-resolution": "0.1.42",
                 "dynamic-and-unsafe-boundaries": "0.1.43",
                 "excluded-advanced-type-features": "0.1.44",
+                "progress-and-preservation": "0.1.45",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

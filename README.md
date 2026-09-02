@@ -266,8 +266,9 @@ normative C062 uses `0.1.41` for aliases and newtypes;
 normative C066 uses `0.1.42` for name resolution;
 normative C067 uses `0.1.43` for dynamic and unsafe boundaries;
 normative C140 uses `0.1.44` for excluded advanced type features;
+normative C132 uses `0.1.45` for progress and preservation;
 and the next
-unused semantic patch is `0.1.45`. C008 defines package-local editions,
+unused semantic patch is `0.1.46`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

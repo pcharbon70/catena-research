@@ -84,8 +84,9 @@ C067's boundary rule makes the foreign conditional nearly free.
 
 ## Outcome
 
-Resolved as C132 at revision `0.1.45`: the contract will live in
-`60-specification/progress-and-preservation/`, the reasoning in
+Resolved as C132 at revision `0.1.45`: the contract lives in the
+[Progress and Preservation Specification](../60-specification/progress-and-preservation/README.md),
+the reasoning in
 [Catena Progress and Preservation](../20-notes/catena-progress-and-preservation.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). Section 16

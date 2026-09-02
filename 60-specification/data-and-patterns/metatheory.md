@@ -104,4 +104,6 @@ The formal basis and limitations are developed through
 [Maranget's usefulness analysis](../../30-sources/maranget-2007-warnings-pattern-matching.md),
 [GADT inference](../../30-sources/peyton-jones-et-al-2006-gadt-inference.md),
 and [typed representation changes](../../30-sources/leroy-1992-unboxed-objects.md).
-The wider unresolved proof obligations remain in checklist item P132.
+The wider unresolved proof obligations are routed by the
+[Progress and Preservation Specification](../progress-and-preservation/README.md)
+(C132), whose composition lemma owns their discharge.

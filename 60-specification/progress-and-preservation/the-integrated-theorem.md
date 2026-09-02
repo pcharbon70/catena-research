@@ -2,7 +2,7 @@
 title: "The Integrated Theorem"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.45"
 tags:
   - metatheory

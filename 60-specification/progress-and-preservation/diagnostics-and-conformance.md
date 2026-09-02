@@ -2,7 +2,7 @@
 title: "Progress and Preservation Diagnostics and Conformance"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.45"
 tags:
   - conformance
@@ -111,5 +111,6 @@ The design route is preserved in the
 [synthesis](../../20-notes/catena-progress-and-preservation.md),
 the [resolved inquiry](../../40-inquiries/what-progress-and-preservation-targets-remain.md),
 and the [topic map](../../10-maps/progress-and-preservation.md).
-The C132 evidence record will preserve the sibling-compiler
-commands and archive validation.
+The [C132 evidence
+record](../../50-journal/2026-09-01-c132-metatheory.md)
+preserves the sibling-compiler commands and archive validation.

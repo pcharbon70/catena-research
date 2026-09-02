@@ -77,10 +77,8 @@ composition lemma is proven.
 
 ## Route to sources
 
-- The Progress and Preservation Specification (candidate, then
-  normative at promotion, in
-  `60-specification/progress-and-preservation/`) will define the
-  contract this note argues for.
+- The [Progress and Preservation Specification](../60-specification/progress-and-preservation/README.md)
+  defines the normative `0.1.45` contract this note argues for.
 - [Metatheory](../60-specification/data-and-patterns/metatheory.md)
   and C003's metatheory chapter — the component statements.
 - [Kernel Metatheory](../60-specification/formal-semantic-kernel/metatheory.md)

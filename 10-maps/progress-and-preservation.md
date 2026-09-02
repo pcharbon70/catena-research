@@ -16,8 +16,8 @@ aliases:
 
 This map routes the P132 question — the remaining progress and
 preservation targets — through the archive's decision trail. The
-normative answer will be revision `0.1.45` in
-`60-specification/progress-and-preservation/`.
+normative answer is revision `0.1.45` in the [Progress and
+Preservation Specification](../60-specification/progress-and-preservation/README.md).
 
 ## The route
 
@@ -37,9 +37,9 @@ normative answer will be revision `0.1.45` in
 4. **The agreement methodology.** [Trace-Observable
    Order](../60-specification/evaluation-order/trace-observable-order.md)
    (C030) is the witnessing discipline the new targets reuse.
-5. **The contract.** The Progress and Preservation Specification
-   (`60-specification/progress-and-preservation/`): the
-   effects-and-failure targets, the composed integrated theorem
+5. **The contract.** The [Progress and Preservation
+   Specification](../60-specification/progress-and-preservation/README.md):
+   the effects-and-failure targets, the composed integrated theorem
    with its routed proof obligation, the conditional extensions,
    and conformance.
 6. **The reasoning and decision record.** [Catena Progress and
