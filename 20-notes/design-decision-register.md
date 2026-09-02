@@ -516,6 +516,19 @@ at 10/10.
 | Arrival conditions | adopt the seven-point gate verbatim (rec) / bespoke per form | seven-point gate |
 | Area naming | excluded-advanced-type-features EA (rec) / advanced-type-boundaries AB / extend type-system area | excluded-advanced-type-features EA |
 
+## C132 — progress and preservation (`0.1.45`, 2026-09-01)
+
+Fixed in: [synthesis](catena-progress-and-preservation.md) — the
+normative specification, journal, and this table's durable links land
+with this slice's promotion commits. Closes P132; Section 16 opens.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Completion bar | state targets + evidence, route proofs (rec) / prove now / split and defer | state targets + evidence |
+| Integrated theorem | composed statement with routed lemma (rec) / defer to Section 16 / claim now | composed statement |
+| Processes/foreign | conditional + routed extensions (rec) / unconditional now | conditional + routed |
+| Area naming | progress-and-preservation PP (rec) / metatheory-targets MT / extend type-system | progress-and-preservation PP |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

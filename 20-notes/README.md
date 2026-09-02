@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Progress and Preservation](catena-progress-and-preservation.md)
+  — argues P132's completion: component targets with evidence,
+    the composed theorem's honest middle, conditional extensions.
 - [Catena Excluded Advanced Types](catena-excluded-advanced-types.md)
   — argues D140's gate-not-ban reading: the standing 0.1.1
     partition plus the seven-point arrival discipline made
