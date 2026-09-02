@@ -70,10 +70,8 @@ the profile boundary, voids this contract and demands amendment.
 
 ## Route to sources
 
-- The Excluded Advanced Type Features Specification (candidate,
-  then normative at promotion, in
-  `60-specification/excluded-advanced-type-features/`) will define
-  the contract this note argues for.
+- The [Excluded Advanced Type Features Specification](../60-specification/excluded-advanced-type-features/README.md)
+  defines the normative `0.1.44` contract this note argues for.
 - [Advanced Type Checking](../60-specification/type-system/advanced-type-checking.md)
   — C001's explicit exclusions and the checked profile.
 - [Remaining research areas](../00-inbox/remaining-catena-research-areas.md)

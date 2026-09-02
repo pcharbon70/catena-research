@@ -2,7 +2,7 @@
 title: "Excluded Advanced Type Features Diagnostics and Conformance"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.44"
 tags:
   - conformance
@@ -103,5 +103,6 @@ The design route is preserved in the
 [excluded-advanced-types synthesis](../../20-notes/catena-excluded-advanced-types.md),
 the [resolved inquiry](../../40-inquiries/how-do-the-excluded-advanced-type-forms-stay-excluded.md),
 and the [topic map](../../10-maps/excluded-advanced-type-features.md).
-The C140 evidence record will preserve the sibling-compiler
-commands and archive validation.
+The [C140 evidence
+record](../../50-journal/2026-09-01-c140-exclusions.md)
+preserves the sibling-compiler commands and archive validation.

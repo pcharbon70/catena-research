@@ -16,8 +16,8 @@ aliases:
 
 This map routes the D140 question — how the excluded advanced type
 features stay excluded — through the archive's decision trail. The
-normative answer will be revision `0.1.44` in
-`60-specification/excluded-advanced-type-features/`.
+normative answer is revision `0.1.44` in the [Excluded Advanced
+Type Features Specification](../60-specification/excluded-advanced-type-features/README.md).
 
 ## The route
 
@@ -37,8 +37,8 @@ normative answer will be revision `0.1.44` in
 3. **The precedent.** The [Pattern Contexts map](pattern-contexts.md)
    shows the shape: D046 closed when C044 recorded its exclusion
    with arrival conditions.
-4. **The contract.** The Excluded Advanced Type Features
-   Specification (`60-specification/excluded-advanced-type-features/`):
+4. **The contract.** The [Excluded Advanced Type Features
+   Specification](../60-specification/excluded-advanced-type-features/README.md):
    the seven-form table, the seven-point gate as the amendment
    route, and conformance.
 5. **The reasoning and decision record.** [Catena Excluded

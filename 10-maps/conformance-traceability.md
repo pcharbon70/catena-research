@@ -241,7 +241,7 @@ sibling compiler repository.
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
 | `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
 | `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
-| `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
 
 ## Trails
 
@@ -2230,10 +2230,10 @@ lacks a focused tag.
 
 ## Excluded advanced type features registry (`EA`, 0.1.44)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c140_excluded_advanced_test.exs` and its
 `test/catena/c140_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c140 #1** *applies exclusion rules only at exact 0.1.44 with zero new families and the lifecycle registered*
 - **c140 #2** *keeps all seven forms excluded with the checked profile unchanged*
@@ -2243,24 +2243,22 @@ compiler repository. The planned focused set is:
 - **c140 #6** *admits no omnibus advanced-features revision*
 - **c140 #7** *keeps the contract deterministic with no excluded spelling accepted*
 
-Anchors currently point at the candidate 0.1.44 chapters and become
-normative anchors at C140 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.44 chapters. Status reflects the
+merged compiler evidence (`77fba75`, branch `agent/c140-advanced-exclusions`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| EA-OBL-001 | Apply exclusion rules only at exact 0.1.44 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/excluded-advanced-type-features/diagnostics-and-conformance.md#revision-and-persistence-separation) | c140 #1 | untraced |
-| EA-OBL-002 | Keep all seven forms excluded with the checked profile unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #2 | untraced |
-| EA-OBL-003 | Keep the seven-point gate as the only amendment route | [`the-exclusion-table-and-gate.md#the-arrival-gate`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-arrival-gate) | c140 #3 | untraced |
-| EA-OBL-004 | Keep rejections identifying the profile boundary | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #4 | untraced |
-| EA-OBL-005 | Keep C068's checked advanced profile checking unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #5 | untraced |
-| EA-OBL-006 | Admit no omnibus advanced-features revision | [`the-exclusion-table-and-gate.md#the-arrival-gate`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-arrival-gate) | c140 #6 | untraced |
-| EA-OBL-007 | Keep the contract deterministic with no excluded spelling accepted | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/excluded-advanced-type-features/diagnostics-and-conformance.md#abstract-public-boundaries) | c140 #7 | untraced |
+| EA-OBL-001 | Apply exclusion rules only at exact 0.1.44 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/excluded-advanced-type-features/diagnostics-and-conformance.md#revision-and-persistence-separation) | c140 #1 | traced |
+| EA-OBL-002 | Keep all seven forms excluded with the checked profile unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #2 | traced |
+| EA-OBL-003 | Keep the seven-point gate as the only amendment route | [`the-exclusion-table-and-gate.md#the-arrival-gate`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-arrival-gate) | c140 #3 | traced |
+| EA-OBL-004 | Keep rejections identifying the profile boundary | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #4 | traced |
+| EA-OBL-005 | Keep C068's checked advanced profile checking unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #5 | traced |
+| EA-OBL-006 | Admit no omnibus advanced-features revision | [`the-exclusion-table-and-gate.md#the-arrival-gate`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-arrival-gate) | c140 #6 | traced |
+| EA-OBL-007 | Keep the contract deterministic with no excluded spelling accepted | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/excluded-advanced-type-features/diagnostics-and-conformance.md#abstract-public-boundaries) | c140 #7 | traced |
 
-C140 coverage is 0 `traced` and 7 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `EA-OBL-*` identifier lacks a
-focused tag.
+C140 coverage is 7 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `EA-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

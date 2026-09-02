@@ -834,8 +834,8 @@ generic or streaming comprehensions, impredicative and dependent typing,
 general linear types, unrestricted type-level computation, shallow or
 multi-shot handlers, higher-order effects, optics syntax, generalized
 recursion schemes, categorical compilation, and distributed assurance
-services. Checklist items `D046`, `D059`, `D083`, and `D140` preserve some of
-these exclusions.
+services. Checklist items `D046`, `D059`, and `D083` preserve some of these
+exclusions (D140 closed as C140 at `0.1.44` with its gate).
 
 **Remaining research.** These should not become one omnibus “advanced
 features” project. Each needs an independent problem statement, evidence of

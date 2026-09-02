@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C140 Excluded Advanced Type Features](2026-09-01-c140-exclusions.md)
+  — records the normative 0.1.44 exclusion table with the
+    seven-point gate, Section 7's completion, and the live
+    profile-boundary diagnostics, with immutable compiler identity.
 - [C067 Dynamic and Unsafe Boundaries](2026-09-01-c067-boundaries.md)
   — records the normative 0.1.43 exclusions, the foreign
     visibility routing, the BEAM chunk-inventory erasure witness,

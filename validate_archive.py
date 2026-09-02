@@ -140,6 +140,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "aliases-and-newtypes": "0.1.41",
     "name-resolution": "0.1.42",
     "dynamic-and-unsafe-boundaries": "0.1.43",
+    "excluded-advanced-type-features": "0.1.44",
 }
 
 

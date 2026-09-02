@@ -2,7 +2,7 @@
 title: "The Exclusion Table and Gate"
 kind: specification
 created: "2026-09-01"
-status: candidate
+status: normative
 spec_version: "0.1.44"
 tags:
   - type-system
