@@ -96,7 +96,7 @@ follow-up item now that C011 is reached.
 - [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
   — the C040 source for `BM-OBL-*` obligations.
 - [Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md)
-  — the C041 source for `RC-OBL-*` obligations.
+  — the C041 source for `SR-OBL-*` obligations.
 - [Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md)
   — the C042 source for `CO-OBL-*` obligations.
 - [Pattern Contexts Specification](../60-specification/pattern-contexts/README.md)
@@ -1966,19 +1966,19 @@ gate:
 - **c041 #7** *keeps variant inject a value and dispatch by semantic label then payload*
 - **c041 #8** *keeps the contract deterministic and outside G042/G062/P044/P109 claims with zero new families*
 
-Anchors point at the normative 0.1.36 chapters; `RC-OBL-*` obligations
+Anchors point at the normative 0.1.36 chapters; `SR-OBL-*` obligations
 are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| RC-OBL-001 | Apply record behavior only at exact 0.1.36 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#revision-and-persistence-separation) | c041 #1; EDN001 | traced |
-| RC-OBL-002 | Fix the seven-operation table with cited homes unchanged | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #2 | traced |
-| RC-OBL-003 | Enforce closed literals: duplicate labels reject; missing-label operations statically unreachable; no expression produces an open row | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #3 | traced |
-| RC-OBL-004 | Keep field order an effect-order fact only, with tails composing through type positions | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #4 | traced |
-| RC-OBL-005 | Keep records semantic maps: order never affects equality; representation invisible | [`rows-and-representation.md#the-representation-clause`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-representation-clause) | c041 #5 | traced |
-| RC-OBL-006 | State the frontend absence: kernel calculus only; spellings at P109 | [`the-operation-table.md#the-frontend-absence`](../60-specification/structural-records-and-variants/the-operation-table.md#the-frontend-absence) | c041 #6 | traced |
-| RC-OBL-007 | Keep variant inject a value and dispatch by semantic label then payload | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #7 | traced |
-| RC-OBL-008 | Keep the contract deterministic and outside G042/G062/P044/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#abstract-public-boundaries) | c041 #8 | traced |
+| SR-OBL-001 | Apply record behavior only at exact 0.1.36 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#revision-and-persistence-separation) | c041 #1; EDN001 | traced |
+| SR-OBL-002 | Fix the seven-operation table with cited homes unchanged | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #2 | traced |
+| SR-OBL-003 | Enforce closed literals: duplicate labels reject; missing-label operations statically unreachable; no expression produces an open row | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #3 | traced |
+| SR-OBL-004 | Keep field order an effect-order fact only, with tails composing through type positions | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #4 | traced |
+| SR-OBL-005 | Keep records semantic maps: order never affects equality; representation invisible | [`rows-and-representation.md#the-representation-clause`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-representation-clause) | c041 #5 | traced |
+| SR-OBL-006 | State the frontend absence: kernel calculus only; spellings at P109 | [`the-operation-table.md#the-frontend-absence`](../60-specification/structural-records-and-variants/the-operation-table.md#the-frontend-absence) | c041 #6 | traced |
+| SR-OBL-007 | Keep variant inject a value and dispatch by semantic label then payload | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #7 | traced |
+| SR-OBL-008 | Keep the contract deterministic and outside G042/G062/P044/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#abstract-public-boundaries) | c041 #8 | traced |
 
 C041 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `RC-OBL-*` identifier
