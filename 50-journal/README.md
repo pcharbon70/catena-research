@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C086 Selective Receive](2026-09-01-c086-receive.md)
+  — records the normative 0.1.46 rule set, the blocked-holder
+    preservation witness, the harness CND006 path, and the SR/RC
+    code collision, with immutable compiler identity.
 - [C132 Progress and Preservation](2026-09-01-c132-metatheory.md)
   — records the normative 0.1.45 effects-and-failure targets, the
     composed theorem with its routed lemma, Section 16's opening,

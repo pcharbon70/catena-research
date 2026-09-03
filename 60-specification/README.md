@@ -203,13 +203,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   `0.1.45`; its effects-and-failure targets, composed theorem, and
   executable evidence are recorded in the
   [C132 conformance journal](../50-journal/2026-09-01-c132-metatheory.md).
+  The normative C086 selective-receive boundary is version
+  `0.1.46`; its rule set, routed interfaces, and executable
+  evidence are recorded in the
+  [C086 conformance journal](../50-journal/2026-09-01-c086-receive.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Selective Receive](selective-receive/README.md)
-  — the candidate version 0.1.46 receive rule set with the four
+  — the normative version 0.1.46 receive rule set with the four
   routed interfaces.
 - [Progress and Preservation](progress-and-preservation/README.md)
   — the normative version 0.1.45 effects-and-failure targets with

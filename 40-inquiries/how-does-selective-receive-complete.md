@@ -90,8 +90,9 @@ statement exactly.
 
 ## Outcome
 
-Resolved as C086 at revision `0.1.46`: the contract will live in
-`60-specification/selective-receive/`, the reasoning in
+Resolved as C086 at revision `0.1.46`: the contract lives in the
+[Selective Receive Specification](../60-specification/selective-receive/README.md),
+the reasoning in
 [Catena Selective Receive](../20-notes/catena-selective-receive.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G085, G087,

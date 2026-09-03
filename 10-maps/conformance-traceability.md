@@ -249,7 +249,7 @@ sibling compiler repository.
 | `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
 | `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
 | `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (10) | compiler-tagged + gated (`5525662`); all obligations traced |
-| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6) | compiler-tagged + gated (`b202887`); all obligations traced |
 
 ## Trails
 
@@ -2304,10 +2304,10 @@ lacks a focused tag.
 
 ## Selective receive registry (`RC`, 0.1.46)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c086_selective_receive_test.exs` and its
 `test/catena/c086_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c086 #1** *applies receive rules only at exact 0.1.46 with zero new families and the lifecycle registered*
 - **c086 #2** *keeps the rule set: FIFO scan, preservation, one-time removal, no hidden semantics*
@@ -2318,25 +2318,23 @@ compiler repository. The planned focused set is:
 - **c086 #7** *keeps the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's*
 - **c086 #8** *keeps the contract deterministic with the C003/C010 receive corpus unchanged*
 
-Anchors currently point at the candidate 0.1.46 chapters and become
-normative anchors at C086 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.46 chapters. Status reflects the
+merged compiler evidence (`b202887`, branch `agent/c086-receive`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| RC-OBL-001 | Apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/selective-receive/diagnostics-and-conformance.md#revision-and-persistence-separation) | c086 #1 | untraced |
-| RC-OBL-002 | Keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #2 | untraced |
-| RC-OBL-003 | Keep the typing and condition rules: closed message type, effect-free form, portable conditions, CND006 | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #3 | untraced |
-| RC-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | untraced |
-| RC-OBL-005 | Keep the P109 interface with the timeout clause named as C044's explicit total fallback | [`the-routed-interfaces.md#public-syntax-p109`](../60-specification/selective-receive/the-routed-interfaces.md#public-syntax-p109) | c086 #5 | untraced |
-| RC-OBL-006 | Keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | [`the-routed-interfaces.md#timeouts-and-cancellation-g088`](../60-specification/selective-receive/the-routed-interfaces.md#timeouts-and-cancellation-g088) | c086 #6 | untraced |
-| RC-OBL-007 | Keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | [`the-routed-interfaces.md#typed-protocols-g087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-g087) | c086 #7 | untraced |
-| RC-OBL-008 | Keep the contract deterministic with the C003/C010 receive corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/selective-receive/diagnostics-and-conformance.md#abstract-public-boundaries) | c086 #8 | untraced |
+| RC-OBL-001 | Apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/selective-receive/diagnostics-and-conformance.md#revision-and-persistence-separation) | c086 #1 | traced |
+| RC-OBL-002 | Keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #2 | traced |
+| RC-OBL-003 | Keep the typing and condition rules: closed message type, effect-free form, portable conditions, CND006 | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #3 | traced |
+| RC-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | traced |
+| RC-OBL-005 | Keep the P109 interface with the timeout clause named as C044's explicit total fallback | [`the-routed-interfaces.md#public-syntax-p109`](../60-specification/selective-receive/the-routed-interfaces.md#public-syntax-p109) | c086 #5 | traced |
+| RC-OBL-006 | Keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | [`the-routed-interfaces.md#timeouts-and-cancellation-g088`](../60-specification/selective-receive/the-routed-interfaces.md#timeouts-and-cancellation-g088) | c086 #6 | traced |
+| RC-OBL-007 | Keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | [`the-routed-interfaces.md#typed-protocols-g087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-g087) | c086 #7 | traced |
+| RC-OBL-008 | Keep the contract deterministic with the C003/C010 receive corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/selective-receive/diagnostics-and-conformance.md#abstract-public-boundaries) | c086 #8 | traced |
 
-C086 coverage is 0 `traced` and 8 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `RC-OBL-*` identifier lacks a
-focused tag.
+C086 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `RC-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

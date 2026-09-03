@@ -1278,11 +1278,21 @@ P109 and D059's neighboring iteration syntax still deferred.
   structured task scopes.
 - [ ] **G085 — Gap — message semantics.** Define send results, copying and sharing,
   ordering guarantees, mailbox growth, unsupported values, and remote delivery.
-- [ ] **P086 — Partial — selective receive.** C003 provides a typed
-  native-only lowering harness requiring one closed message type and portable
-  inlined conditions, while preserving rejected messages. Connect public
-  syntax, effect and protocol typing, timeouts, mailbox scan order, starvation,
-  cancellation, and cost explanations in one normative rule.
+- [x] **C086 — Complete — selective receive.** Normative `0.1.46` fixes the
+  rule set at the language level: FIFO scan from the oldest message, rejected
+  messages preserved in position, one-time removal before the body, one
+  closed message type, an effect-free receive form, portable conditions only
+  (`CND006` unchanged), with starvation stated honestly (a stable rejected
+  prefix starves the receive; scan cost is proportional to the rejected
+  prefix; no fairness guarantee beyond scan order). The remaining
+  connections are routed interfaces: public syntax to P109 (the timeout
+  clause is C044's explicit total fallback), timeouts and cancellation to
+  G088, typed protocols to G087, send-side semantics to G085. Compiler
+  witnesses on existing machinery (`b202887`): the blocked-holder
+  preservation fixture (waiting with both messages retained in order), the
+  C010 launch selection trace re-pinned with its BEAM twin, and the harness
+  `CND006` rejections. Zero new diagnostic families and no new public API.
+  Section 9 advances to 5/8.
 - [ ] **G087 — Gap — typed protocols.** Decide whether mailbox protocols, process
   handles, replies, and protocol evolution are statically tracked or library
   conventions.

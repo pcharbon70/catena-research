@@ -76,9 +76,8 @@ rejected prefix would void the rule set.
 
 ## Route to sources
 
-- The Selective Receive Specification (candidate, then normative
-  at promotion, in `60-specification/selective-receive/`) will
-  define the contract this note argues for.
+- The [Selective Receive Specification](../60-specification/selective-receive/README.md)
+  defines the normative `0.1.46` contract this note argues for.
 - [Clause Contexts and Receive](../60-specification/clause-conditions/clause-contexts-and-receive.md)
   — C003's harness this slice elevates.
 - [Context Rules and Reservations](../60-specification/pattern-contexts/context-rules-and-reservations.md)

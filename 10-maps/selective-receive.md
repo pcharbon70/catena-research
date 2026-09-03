@@ -18,8 +18,8 @@ aliases:
 This map routes the P086 question — connecting public syntax,
 typing, timeouts, scan order, starvation, cancellation, and cost
 for selective receive — through the archive's decision trail. The
-normative answer will be revision `0.1.46` in
-`60-specification/selective-receive/`.
+normative answer is revision `0.1.46` in the [Selective Receive
+Specification](../60-specification/selective-receive/README.md).
 
 ## The route
 
@@ -41,9 +41,10 @@ normative answer will be revision `0.1.46` in
    Exclusion](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md)
    (C042) fixes how starvation and scan cost may be stated:
    explanation, not asymptotic promise.
-5. **The contract.** The Selective Receive Specification
-   (`60-specification/selective-receive/`): the rule set, the four
-   routed interfaces (P109, G088, G087, G085), and conformance.
+5. **The contract.** The [Selective Receive
+   Specification](../60-specification/selective-receive/README.md):
+   the rule set, the four routed interfaces (P109, G088, G087,
+   G085), and conformance.
 6. **The reasoning and decision record.** [Catena Selective
    Receive](../20-notes/catena-selective-receive.md) argues the
    routing; the [resolved
