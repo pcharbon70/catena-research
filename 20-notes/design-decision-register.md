@@ -529,6 +529,19 @@ with this slice's promotion commits. Closes P132; Section 16 opens.
 | Processes/foreign | conditional + routed extensions (rec) / unconditional now | conditional + routed |
 | Area naming | progress-and-preservation PP (rec) / metatheory-targets MT / extend type-system | progress-and-preservation PP |
 
+## C086 — selective receive (`0.1.46`, 2026-09-01)
+
+Fixed in: [synthesis](catena-selective-receive.md) — the normative
+specification, journal, and this table's durable links land with this
+slice's promotion commits. Closes P086; Section 9 advances to 5/8.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Completion stance | rule set + routed interfaces (rec) / full feature with timeouts now / defer to process era | rule set + routed interfaces |
+| Starvation stance | honest cost explanation (rec) / fairness guarantee | honest cost explanation |
+| Witness scope | preservation witness (rec) / re-pin only / dormant machinery | preservation witness |
+| Area naming | selective-receive SR (rec) / receive-semantics RS / extend clause-conditions | selective-receive (code RC — SR is structural-records') |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

@@ -142,6 +142,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "dynamic-and-unsafe-boundaries": "0.1.43",
     "excluded-advanced-type-features": "0.1.44",
     "progress-and-preservation": "0.1.45",
+    "selective-receive": "0.1.46",
 }
 
 

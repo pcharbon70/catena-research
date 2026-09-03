@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Selective Receive](catena-selective-receive.md) —
+  argues P086's completion: the rule set that was already true,
+  honest starvation cost, and the four routed interfaces.
 - [Catena Progress and Preservation](catena-progress-and-preservation.md)
   — argues P132's completion: component targets with evidence,
     the composed theorem's honest middle, conditional extensions.

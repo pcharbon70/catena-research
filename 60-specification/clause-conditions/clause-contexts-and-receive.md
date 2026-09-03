@@ -73,8 +73,10 @@ operation maps to the portable native set.
 
 ## Explicitly unresolved receive semantics
 
-This chapter does not complete selective receive as a language feature. P086
-remains partial until a later specification connects:
+This chapter does not complete selective receive as a language feature. The
+0.1.46 [Selective Receive Specification](../selective-receive/README.md)
+now states the language-level rule set and routes the remaining
+connections:
 
 - public syntax and effect typing;
 - mailbox and message type policy;
