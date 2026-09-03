@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Does Selective Receive Complete?](how-does-selective-receive-complete.md)
+  — resolves P086: the receive rule set with honest starvation
+    cost and four routed interfaces at `0.1.46`.
 - [What Progress and Preservation Targets Remain?](what-progress-and-preservation-targets-remain.md)
   — resolves P132: effects-and-failure targets, the composed
     integrated theorem with a routed proof obligation, and
