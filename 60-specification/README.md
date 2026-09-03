@@ -208,6 +208,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Selective Receive](selective-receive/README.md)
+  — the candidate version 0.1.46 receive rule set with the four
+  routed interfaces.
 - [Progress and Preservation](progress-and-preservation/README.md)
   — the normative version 0.1.45 effects-and-failure targets with
   the composed integrated theorem.
