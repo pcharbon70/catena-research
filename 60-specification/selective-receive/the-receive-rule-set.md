@@ -33,24 +33,24 @@ signed formats.
 
 > **Normative definition.**
 
-Selective receive obeys the following rules (`SR-OBL-002`):
+Selective receive obeys the following rules (`RC-OBL-002`):
 
 1. **Scan order.** A receive attempt scans its process's mailbox
-   from the oldest queued message toward the newest (`SR-OBL-002`).
+   from the oldest queued message toward the newest (`RC-OBL-002`).
 2. **Preservation.** A message its clauses reject remains queued,
-   in position, and scanning continues (`SR-OBL-002`).
+   in position, and scanning continues (`RC-OBL-002`).
 3. **One-time removal.** The selected message is removed exactly
-   once, before its body runs (`SR-OBL-002`).
+   once, before its body runs (`RC-OBL-002`).
 4. **Message typing.** A receive requires one explicit closed
    message type containing no free or rigid type variable; its
    clauses are pattern-typed against that type (C003, unchanged)
-   (`SR-OBL-003`).
+   (`RC-OBL-003`).
 5. **Effects.** The receive form itself performs no effects: no
    capability, no request, no send. Clause bodies carry their own
-   effect rows (`SR-OBL-003`).
+   effect rows (`RC-OBL-003`).
 6. **Conditions.** Only the portable native condition set
    admitted by C003 applies; or-pattern expansion rejects as
-   `CND006` (unchanged) (`SR-OBL-003`).
+   `CND006` (unchanged) (`RC-OBL-003`).
 
 ## Starvation and cost
 
@@ -58,12 +58,12 @@ Selective receive obeys the following rules (`SR-OBL-002`):
 
 A receive whose clauses reject a prefix of its mailbox starves
 while that prefix stands: no fairness guarantee beyond scan order
-exists and none is claimed (`SR-OBL-004`). The cost explanation —
+exists and none is claimed (`RC-OBL-004`). The cost explanation —
 not an asymptotic promise, following C042's exclusion — is: each
 receive attempt's scan cost is proportional to the rejected prefix
 it examines, and a stable rejected prefix is re-examined by every
 subsequent attempt until it is consumed or displaced
-(`SR-OBL-004`).
+(`RC-OBL-004`).
 
 ## No hidden semantics
 
@@ -73,7 +73,7 @@ No receive form consumes, reorders, or duplicates a rejected
 message; no receive performs work between examining two
 candidates; and no implementation optimizes a scan away unless
 every observable outcome — selected value, final mailbox, and
-clause effects — is identical (`SR-OBL-002`).
+clause effects — is identical (`RC-OBL-002`).
 
 ## Rationale and evidence (non-normative)
 

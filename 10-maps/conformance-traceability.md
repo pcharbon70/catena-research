@@ -96,7 +96,7 @@ follow-up item now that C011 is reached.
 - [Built-In Data Model Specification](../60-specification/built-in-data-model/README.md)
   — the C040 source for `BM-OBL-*` obligations.
 - [Structural Records and Variants Specification](../60-specification/structural-records-and-variants/README.md)
-  — the C041 source for `SR-OBL-*` obligations.
+  — the C041 source for `RC-OBL-*` obligations.
 - [Collection Construction and Update Specification](../60-specification/collection-construction-and-update/README.md)
   — the C042 source for `CO-OBL-*` obligations.
 - [Pattern Contexts Specification](../60-specification/pattern-contexts/README.md)
@@ -116,7 +116,7 @@ follow-up item now that C011 is reached.
 - [Progress and Preservation Specification](../60-specification/progress-and-preservation/README.md)
   — the C132 source for `PP-OBL-*` obligations.
 - [Selective Receive Specification](../60-specification/selective-receive/README.md)
-  — the C086 source for `SR-OBL-*` obligations.
+  — the C086 source for `RC-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -174,7 +174,7 @@ convention.
 | `DU` | dynamic-and-unsafe-boundaries | 0.1.43 |
 | `EA` | excluded-advanced-type-features | 0.1.44 |
 | `PP` | progress-and-preservation | 0.1.45 |
-| `SR` | selective-receive | 0.1.46 |
+| `RC` | selective-receive | 0.1.46 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -249,7 +249,7 @@ sibling compiler repository.
 | `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
 | `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
 | `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (10) | compiler-tagged + gated (`5525662`); all obligations traced |
-| `SR` selective-receive | 8 | `c086_selective_receive_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
 
 ## Trails
 
@@ -1966,22 +1966,22 @@ gate:
 - **c041 #7** *keeps variant inject a value and dispatch by semantic label then payload*
 - **c041 #8** *keeps the contract deterministic and outside G042/G062/P044/P109 claims with zero new families*
 
-Anchors point at the normative 0.1.36 chapters; `SR-OBL-*` obligations
+Anchors point at the normative 0.1.36 chapters; `RC-OBL-*` obligations
 are fully traced against the immutable compiler commit.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| SR-OBL-001 | Apply record behavior only at exact 0.1.36 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#revision-and-persistence-separation) | c041 #1; EDN001 | traced |
-| SR-OBL-002 | Fix the seven-operation table with cited homes unchanged | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #2 | traced |
-| SR-OBL-003 | Enforce closed literals: duplicate labels reject; missing-label operations statically unreachable; no expression produces an open row | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #3 | traced |
-| SR-OBL-004 | Keep field order an effect-order fact only, with tails composing through type positions | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #4 | traced |
-| SR-OBL-005 | Keep records semantic maps: order never affects equality; representation invisible | [`rows-and-representation.md#the-representation-clause`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-representation-clause) | c041 #5 | traced |
-| SR-OBL-006 | State the frontend absence: kernel calculus only; spellings at P109 | [`the-operation-table.md#the-frontend-absence`](../60-specification/structural-records-and-variants/the-operation-table.md#the-frontend-absence) | c041 #6 | traced |
-| SR-OBL-007 | Keep variant inject a value and dispatch by semantic label then payload | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #7 | traced |
-| SR-OBL-008 | Keep the contract deterministic and outside G042/G062/P044/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#abstract-public-boundaries) | c041 #8 | traced |
+| RC-OBL-001 | Apply record behavior only at exact 0.1.36 and register the stable lifecycle addition | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#revision-and-persistence-separation) | c041 #1; EDN001 | traced |
+| RC-OBL-002 | Fix the seven-operation table with cited homes unchanged | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #2 | traced |
+| RC-OBL-003 | Enforce closed literals: duplicate labels reject; missing-label operations statically unreachable; no expression produces an open row | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #3 | traced |
+| RC-OBL-004 | Keep field order an effect-order fact only, with tails composing through type positions | [`rows-and-representation.md#the-row-model`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-row-model) | c041 #4 | traced |
+| RC-OBL-005 | Keep records semantic maps: order never affects equality; representation invisible | [`rows-and-representation.md#the-representation-clause`](../60-specification/structural-records-and-variants/rows-and-representation.md#the-representation-clause) | c041 #5 | traced |
+| RC-OBL-006 | State the frontend absence: kernel calculus only; spellings at P109 | [`the-operation-table.md#the-frontend-absence`](../60-specification/structural-records-and-variants/the-operation-table.md#the-frontend-absence) | c041 #6 | traced |
+| RC-OBL-007 | Keep variant inject a value and dispatch by semantic label then payload | [`the-operation-table.md#the-operations`](../60-specification/structural-records-and-variants/the-operation-table.md#the-operations) | c041 #7 | traced |
+| RC-OBL-008 | Keep the contract deterministic and outside G042/G062/P044/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/structural-records-and-variants/diagnostics-and-conformance.md#abstract-public-boundaries) | c041 #8 | traced |
 
 C041 coverage is 8 `traced` and 0 untraced obligations. The dedicated
-gate rejects unknown identifiers and fails if any `SR-OBL-*` identifier
+gate rejects unknown identifiers and fails if any `RC-OBL-*` identifier
 lacks a focused tag.
 
 ## Collection construction registry (`CO`, 0.1.37)
@@ -2302,7 +2302,7 @@ C132 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `PP-OBL-*` identifier
 lacks a focused tag.
 
-## Selective receive registry (`SR`, 0.1.46)
+## Selective receive registry (`RC`, 0.1.46)
 
 Evidence labels will refer to focused tests in
 `test/catena/c086_selective_receive_test.exs` and its
@@ -2324,18 +2324,18 @@ compiler evidence lands.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| SR-OBL-001 | Apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/selective-receive/diagnostics-and-conformance.md#revision-and-persistence-separation) | c086 #1 | untraced |
-| SR-OBL-002 | Keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #2 | untraced |
-| SR-OBL-003 | Keep the typing and condition rules: closed message type, effect-free form, portable conditions, CND006 | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #3 | untraced |
-| SR-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | untraced |
-| SR-OBL-005 | Keep the P109 interface with the timeout clause named as C044's explicit total fallback | [`the-routed-interfaces.md#public-syntax-p109`](../60-specification/selective-receive/the-routed-interfaces.md#public-syntax-p109) | c086 #5 | untraced |
-| SR-OBL-006 | Keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | [`the-routed-interfaces.md#timeouts-and-cancellation-g088`](../60-specification/selective-receive/the-routed-interfaces.md#timeouts-and-cancellation-g088) | c086 #6 | untraced |
-| SR-OBL-007 | Keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | [`the-routed-interfaces.md#typed-protocols-g087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-g087) | c086 #7 | untraced |
-| SR-OBL-008 | Keep the contract deterministic with the C003/C010 receive corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/selective-receive/diagnostics-and-conformance.md#abstract-public-boundaries) | c086 #8 | untraced |
+| RC-OBL-001 | Apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/selective-receive/diagnostics-and-conformance.md#revision-and-persistence-separation) | c086 #1 | untraced |
+| RC-OBL-002 | Keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #2 | untraced |
+| RC-OBL-003 | Keep the typing and condition rules: closed message type, effect-free form, portable conditions, CND006 | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #3 | untraced |
+| RC-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | untraced |
+| RC-OBL-005 | Keep the P109 interface with the timeout clause named as C044's explicit total fallback | [`the-routed-interfaces.md#public-syntax-p109`](../60-specification/selective-receive/the-routed-interfaces.md#public-syntax-p109) | c086 #5 | untraced |
+| RC-OBL-006 | Keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | [`the-routed-interfaces.md#timeouts-and-cancellation-g088`](../60-specification/selective-receive/the-routed-interfaces.md#timeouts-and-cancellation-g088) | c086 #6 | untraced |
+| RC-OBL-007 | Keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | [`the-routed-interfaces.md#typed-protocols-g087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-g087) | c086 #7 | untraced |
+| RC-OBL-008 | Keep the contract deterministic with the C003/C010 receive corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/selective-receive/diagnostics-and-conformance.md#abstract-public-boundaries) | c086 #8 | untraced |
 
 C086 coverage is 0 `traced` and 8 untraced obligations pending the
 sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `SR-OBL-*` identifier lacks a
+unknown identifiers and fails if any `RC-OBL-*` identifier lacks a
 focused tag.
 
 ## Open questions

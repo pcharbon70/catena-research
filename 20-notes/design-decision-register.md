@@ -540,7 +540,7 @@ slice's promotion commits. Closes P086; Section 9 advances to 5/8.
 | Completion stance | rule set + routed interfaces (rec) / full feature with timeouts now / defer to process era | rule set + routed interfaces |
 | Starvation stance | honest cost explanation (rec) / fairness guarantee | honest cost explanation |
 | Witness scope | preservation witness (rec) / re-pin only / dormant machinery | preservation witness |
-| Area naming | selective-receive SR (rec) / receive-semantics RS / extend clause-conditions | selective-receive SR |
+| Area naming | selective-receive SR (rec) / receive-semantics RS / extend clause-conditions | selective-receive (code RC — SR is structural-records') |
 
 ## Cross-cutting decisions
 

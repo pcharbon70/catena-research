@@ -60,7 +60,7 @@ behavior may vary.
 - [The Routed Interfaces](the-routed-interfaces.md)
   — the obligations on P109, G088, G087, and G085.
 - [Selective Receive Diagnostics and Conformance](diagnostics-and-conformance.md)
-  — zero new families, abstract boundaries, and the `SR-OBL-*`
+  — zero new families, abstract boundaries, and the `RC-OBL-*`
   obligations with evidence sets.
 
 ## Maintaining this index

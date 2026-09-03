@@ -30,7 +30,7 @@ It applies [The Receive Rule Set](the-receive-rule-set.md) and
 ## Stable diagnostics
 
 This area introduces **zero new diagnostic families**
-(`SR-OBL-001`, `SR-OBL-002`). Or-pattern receive clauses keep
+(`RC-OBL-001`, `RC-OBL-002`). Or-pattern receive clauses keep
 `CND006`; non-portable conditions keep the C003 condition
 diagnostics; a non-closed message type keeps the harness typing
 diagnostics.
@@ -38,7 +38,7 @@ diagnostics.
 ## Abstract public boundaries
 
 The shipped boundaries witness the contract on existing machinery;
-the bootstrap adds no new public API (`SR-OBL-001`):
+the bootstrap adds no new public API (`RC-OBL-001`):
 
 - **Kernel process receive** — the `Selective`-shape process:
   guarded constructor clauses over a closed message type, running
@@ -51,29 +51,29 @@ the bootstrap adds no new public API (`SR-OBL-001`):
 Implementations MUST NOT use these boundaries to claim public
 receive syntax on general frontends, timeout forms, protocol
 typing, or send-side semantics beyond C010's standing results
-(`SR-OBL-005`, `SR-OBL-006`).
+(`RC-OBL-005`, `RC-OBL-006`).
 
 ## Determinism
 
 Unchanged programs produce identical values, traces, final
 mailboxes, and diagnostics on every conforming target
-(`SR-OBL-002`).
+(`RC-OBL-002`).
 
 ## Conformance obligations
 
 | ID | Obligation | Required executable evidence |
 | --- | --- | --- |
-| `SR-OBL-001` | apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | exact selection, registry, and lifecycle tests |
-| `SR-OBL-002` | keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | preservation witnesses |
-| `SR-OBL-003` | keep the typing and condition rules: closed message type, effect-free form, portable conditions, `CND006` | typing and condition witnesses |
-| `SR-OBL-004` | keep the starvation statement: honest cost, no fairness claim | cost-statement pinning |
-| `SR-OBL-005` | keep the P109 interface with the timeout clause named as C044's explicit total fallback | routing witnesses |
-| `SR-OBL-006` | keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | routing witnesses |
-| `SR-OBL-007` | keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | routing witnesses |
-| `SR-OBL-008` | keep the contract deterministic with the C003/C010 receive corpus unchanged | determinism and re-pin tests |
+| `RC-OBL-001` | apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | exact selection, registry, and lifecycle tests |
+| `RC-OBL-002` | keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | preservation witnesses |
+| `RC-OBL-003` | keep the typing and condition rules: closed message type, effect-free form, portable conditions, `CND006` | typing and condition witnesses |
+| `RC-OBL-004` | keep the starvation statement: honest cost, no fairness claim | cost-statement pinning |
+| `RC-OBL-005` | keep the P109 interface with the timeout clause named as C044's explicit total fallback | routing witnesses |
+| `RC-OBL-006` | keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | routing witnesses |
+| `RC-OBL-007` | keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | routing witnesses |
+| `RC-OBL-008` | keep the contract deterministic with the C003/C010 receive corpus unchanged | determinism and re-pin tests |
 
 Every obligation has at least one tagged passing test. The sibling
-compiler gates the complete `SR-OBL-*` set against unknown and
+compiler gates the complete `RC-OBL-*` set against unknown and
 uncovered identifiers before C086 conformance is claimed.
 
 ## Required evidence sets
@@ -98,8 +98,8 @@ Revision `0.1.46` adds the rule set and the routed interfaces; it
 adds no JSON AST version, kernel S-expression version, interface
 version, artifact version, signature domain, typing rule, runtime
 behavior, BEAM representation, manifest field, public API name, or
-diagnostic family, and amends no retained revision (`SR-OBL-001`,
-`SR-OBL-002`).
+diagnostic family, and amends no retained revision (`RC-OBL-001`,
+`RC-OBL-002`).
 
 The source-text decoder accepts cumulative revisions `0.1.9` through
 `0.1.46`; every predecessor API retains its exact selection. The next

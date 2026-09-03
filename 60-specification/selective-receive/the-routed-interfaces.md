@@ -34,18 +34,18 @@ The rules apply only to source-language revision `0.1.46`.
 
 No frozen frontend carries a public receive expression; the rule
 set of [The Receive Rule Set](the-receive-rule-set.md) is the
-semantic contract the adopting grammar realizes (`SR-OBL-005`).
+semantic contract the adopting grammar realizes (`RC-OBL-005`).
 When P109 adopts the tokens, the public form MUST satisfy C044's
 reservation: exhaustive over its closed message type or carrying
 an **explicit total fallback** — and the **timeout clause, when
-G088 ships it, is that fallback** (`SR-OBL-005`).
+G088 ships it, is that fallback** (`RC-OBL-005`).
 
 ## Timeouts and cancellation — G088
 
 > **Normative definition.**
 
 G088's slice owns timeout evaluation and races, deadlines, and
-cancellation, and MUST state, for the receive form (`SR-OBL-006`):
+cancellation, and MUST state, for the receive form (`RC-OBL-006`):
 when the timeout expression is evaluated relative to the scan;
 what a racing message-timeout interleaving may observe; that the
 timeout clause is total; and how cancellation of a waiting receive
@@ -57,7 +57,7 @@ timeout form exists and none is claimed.
 > **Normative definition.**
 
 G087 owns whether mailbox protocols, process handles, and replies
-are statically tracked (`SR-OBL-007`). Any protocol typing MUST
+are statically tracked (`RC-OBL-007`). Any protocol typing MUST
 compose with the closed-message-type rule: a protocol state refines
 the message type; it never widens scan, preservation, or removal.
 
@@ -66,7 +66,7 @@ the message type; it never widens scan, preservation, or removal.
 > **Normative definition.**
 
 G085 owns send results, copying and sharing, and dead-target
-behavior (`SR-OBL-007`). The receive rule set assumes only what
+behavior (`RC-OBL-007`). The receive rule set assumes only what
 C010 fixed: a live mailbox preserves order and content for its
 process; every other send-side claim is G085's to make.
 
