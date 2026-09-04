@@ -212,6 +212,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Exception Boundary](exception-boundary/README.md)
+  — the candidate version 0.1.47 mechanism partition with the
+  blessed effect pattern and the routing table.
 - [Selective Receive](selective-receive/README.md)
   — the normative version 0.1.46 receive rule set with the four
   routed interfaces.

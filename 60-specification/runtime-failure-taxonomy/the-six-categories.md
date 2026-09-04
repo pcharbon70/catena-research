@@ -38,7 +38,7 @@ The checklist's six categories classify as (`FT-OBL-005`):
 | Typed failure (`Option`/`Result`) | ordinary **values**, non-failures: G105's library types return domain values; a "no answer" is normal termination |
 | Arithmetic faults | **reserved** — no faulting operator exists in the closed inventory; the kind enters with its producer |
 | Failed assertions | **reserved** — no assert form exists; the kind enters with its producer |
-| Foreign exceptions | **reserved** — foreign calls (G095/G096) do not exist; a foreign raise will map to `trap(reason)` |
+| Foreign exceptions | **reserved** — foreign calls (G095/G096) do not exist; a foreign raise will map to `trap(reason)` (the 0.1.47 [Exception Boundary](../exception-boundary/README.md) restates this mapping as its routing row) |
 | VM termination | **operational**, outside program semantics — G084/G092/G121's machinery, never an outcome class |
 
 ## The entry rule
