@@ -555,6 +555,19 @@ slice's promotion commits. Closes G081; Section 9 advances to 6/8.
 | Effect pattern | bless non-resumed requests as the pattern (rec) / leave unstated | bless the pattern |
 | Area naming | exception-boundary XB (rec) / failure-boundaries FB / panic-and-escape PE | exception-boundary XB |
 
+## C082 — top-level effects (`0.1.48`, 2026-09-01)
+
+Fixed in: [synthesis](catena-top-level-effects.md) — the normative
+specification, journal, and this table's durable links land with this
+slice's promotion commits. Closes G082; Section 9 advances to 7/8.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Completion stance | confirm and route (rec) / design the capability channel now / defer | confirm and route |
+| Capability interface | explicit typed values, never ambient (rec) / reserve a host handler | explicit values |
+| Slice shape | two-chapter confirmation slice (rec) / three chapters | two chapters |
+| Area naming | top-level-effects TL (rec) / entry-effects EE / ambient-boundaries AB | top-level-effects TL |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

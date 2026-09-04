@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Top-Level Effects](catena-top-level-effects.md) — argues
+  G082's silent top level: nothing unhandled, nobody
+  interpreting, capabilities explicit or absent.
 - [Catena Exception Boundary](catena-exception-boundary.md) —
   argues G081's partition: values, the effect pattern, and the
   terminal trap — visibly distinct, never blurred.
