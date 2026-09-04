@@ -216,6 +216,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Top-Level Effects](top-level-effects/README.md)
+  — the candidate version 0.1.48 top-level boundary with the
+  G106 capability interface and the supervision routing.
 - [Exception Boundary](exception-boundary/README.md)
   — the normative version 0.1.47 mechanism partition with the
   blessed effect pattern and the routing table.

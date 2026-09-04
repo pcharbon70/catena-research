@@ -67,7 +67,8 @@ recorded result type is the declared `result` (`EN-OBL-003`):
   fixes for process entries. A non-empty row is static invalidity
   reported as `ENT001`; no implicit host handler exists and no entry
   may leave a request unhandled. This is the 0.1.23 answer to the
-  deferred G082 question.
+  deferred G082 question, whose normative home is the 0.1.48
+  [Top-Level Effects Specification](../top-level-effects/README.md).
 - **Result recorded** — the declared `result` MUST equal the export's
   recorded result type; a mismatch is static invalidity reported as
   `ENT001`.
