@@ -69,9 +69,8 @@ not a kinded trap voids this contract.
 
 ## Route to sources
 
-- The Exception Boundary Specification (candidate, then normative
-  at promotion, in `60-specification/exception-boundary/`) will
-  define the contract this note argues for.
+- The [Exception Boundary Specification](../60-specification/exception-boundary/README.md)
+  defines the normative `0.1.47` contract this note argues for.
 - [The Six Categories](../60-specification/runtime-failure-taxonomy/the-six-categories.md)
   — the taxonomy the partition preserves.
 - [Context Rules and Reservations](../60-specification/pattern-contexts/context-rules-and-reservations.md)

@@ -253,7 +253,7 @@ sibling compiler repository.
 | `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
 | `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (10) | compiler-tagged + gated (`5525662`); all obligations traced |
 | `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6) | compiler-tagged + gated (`b202887`); all obligations traced |
-| `XB` exception-boundary | 7 | `c081_exception_boundary_test.exs` (planned) | obligations extracted against candidate chapters; compiler tests planned |
+| `XB` exception-boundary | 7 | `c081_exception_boundary_test.exs` (7) | compiler-tagged + gated (`e0f2a9e`); all obligations traced |
 
 ## Trails
 
@@ -2342,10 +2342,10 @@ lacks a focused tag.
 
 ## Exception boundary registry (`XB`, 0.1.47)
 
-Evidence labels will refer to focused tests in
+Evidence labels refer to focused tests in
 `test/catena/c081_exception_boundary_test.exs` and its
 `test/catena/c081_traceability_coverage_test.exs` gate in the sibling
-compiler repository. The planned focused set is:
+compiler repository. The focused set is:
 
 - **c081 #1** *applies partition rules only at exact 0.1.47 with zero new families and the lifecycle registered*
 - **c081 #2** *keeps the partition: values, the pattern, and the terminal trap visibly distinct with no silent conversion*
@@ -2355,24 +2355,22 @@ compiler repository. The planned focused set is:
 - **c081 #6** *keeps the reopening door as the only amendment route for a language exception form*
 - **c081 #7** *keeps the contract deterministic with the C036/C010 failure corpus unchanged*
 
-Anchors currently point at the candidate 0.1.47 chapters and become
-normative anchors at C081 promotion. Status is `untraced` until the
-compiler evidence lands.
+Anchors point at the normative 0.1.47 chapters. Status reflects the
+merged compiler evidence (`e0f2a9e`, branch `agent/c081-exceptions`).
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
-| XB-OBL-001 | Apply partition rules only at exact 0.1.47 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/exception-boundary/diagnostics-and-conformance.md#revision-and-persistence-separation) | c081 #1 | untraced |
-| XB-OBL-002 | Keep the partition: values, the pattern, and the terminal trap visibly distinct with no silent conversion | [`the-mechanism-partition.md#the-partition`](../60-specification/exception-boundary/the-mechanism-partition.md#the-partition) | c081 #2 | untraced |
-| XB-OBL-003 | Keep the pattern blessing descriptive: declining to resume aborts to the handler's result, per unchanged C005 | [`the-mechanism-partition.md#the-partition`](../60-specification/exception-boundary/the-mechanism-partition.md#the-partition) | c081 #3 | untraced |
-| XB-OBL-004 | Keep panics as trap kinds entering with their producers | [`the-mechanism-partition.md#panic-classification`](../60-specification/exception-boundary/the-mechanism-partition.md#panic-classification) | c081 #4 | untraced |
-| XB-OBL-005 | Keep the routing table's owners: G084, G095/G096, G088, G105, G103 | [`the-mechanism-partition.md#the-routing-table`](../60-specification/exception-boundary/the-mechanism-partition.md#the-routing-table) | c081 #5 | untraced |
-| XB-OBL-006 | Keep the reopening door as the only amendment route for a language exception form | [`the-mechanism-partition.md#the-door`](../60-specification/exception-boundary/the-mechanism-partition.md#the-door) | c081 #6 | untraced |
-| XB-OBL-007 | Keep the contract deterministic with the C036/C010 failure corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/exception-boundary/diagnostics-and-conformance.md#abstract-public-boundaries) | c081 #7 | untraced |
+| XB-OBL-001 | Apply partition rules only at exact 0.1.47 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/exception-boundary/diagnostics-and-conformance.md#revision-and-persistence-separation) | c081 #1 | traced |
+| XB-OBL-002 | Keep the partition: values, the pattern, and the terminal trap visibly distinct with no silent conversion | [`the-mechanism-partition.md#the-partition`](../60-specification/exception-boundary/the-mechanism-partition.md#the-partition) | c081 #2 | traced |
+| XB-OBL-003 | Keep the pattern blessing descriptive: declining to resume aborts to the handler's result, per unchanged C005 | [`the-mechanism-partition.md#the-partition`](../60-specification/exception-boundary/the-mechanism-partition.md#the-partition) | c081 #3 | traced |
+| XB-OBL-004 | Keep panics as trap kinds entering with their producers | [`the-mechanism-partition.md#panic-classification`](../60-specification/exception-boundary/the-mechanism-partition.md#panic-classification) | c081 #4 | traced |
+| XB-OBL-005 | Keep the routing table's owners: G084, G095/G096, G088, G105, G103 | [`the-mechanism-partition.md#the-routing-table`](../60-specification/exception-boundary/the-mechanism-partition.md#the-routing-table) | c081 #5 | traced |
+| XB-OBL-006 | Keep the reopening door as the only amendment route for a language exception form | [`the-mechanism-partition.md#the-door`](../60-specification/exception-boundary/the-mechanism-partition.md#the-door) | c081 #6 | traced |
+| XB-OBL-007 | Keep the contract deterministic with the C036/C010 failure corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/exception-boundary/diagnostics-and-conformance.md#abstract-public-boundaries) | c081 #7 | traced |
 
-C081 coverage is 0 `traced` and 7 untraced obligations pending the
-sibling compiler implementation. The planned dedicated gate rejects
-unknown identifiers and fails if any `XB-OBL-*` identifier lacks a
-focused tag.
+C081 coverage is 7 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `XB-OBL-*` identifier
+lacks a focused tag.
 
 ## Open questions
 

@@ -79,8 +79,9 @@ partition was standing; only the statement was missing.
 
 ## Outcome
 
-Resolved as C081 at revision `0.1.47`: the contract will live in
-`60-specification/exception-boundary/`, the reasoning in
+Resolved as C081 at revision `0.1.47`: the contract lives in the
+[Exception Boundary Specification](../60-specification/exception-boundary/README.md),
+the reasoning in
 [Catena Exception Boundary](../20-notes/catena-exception-boundary.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G084, G088,

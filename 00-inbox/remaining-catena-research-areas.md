@@ -482,8 +482,11 @@ the main missing runtime semantics.
 
 - acquisition and guaranteed release across normal return, handler abort,
   explicit trap or panic, process exit, cancellation, and foreign unwinding;
-- whether domain errors, exceptions, panics, process exits, and foreign
-  failures use one mechanism or several visibly distinct mechanisms;
+- ~~whether domain errors, exceptions, panics, process exits, and foreign
+  failures use one mechanism or several visibly distinct mechanisms~~ —
+  closed by C081 at `0.1.47`: three visibly distinct mechanisms (typed
+  values, the effect pattern, the terminal trap) with panics as trap
+  kinds and the neighbors routed;
 - the set of top-level host effects and how application entry points receive
   their capabilities;
 - structured scopes for tasks, files, sockets, locks, transactions, timeouts,

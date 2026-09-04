@@ -1261,9 +1261,21 @@ P109 and D059's neighboring iteration syntax still deferred.
 - [ ] **G080 — Gap — cleanup and resource scopes.** Specify acquisition, release,
   cancellation, abort, panic, normal return, process exit, and foreign-frame
   unwinding.
-- [ ] **G081 — Gap — exception boundary.** Decide whether exceptions are an effect,
-  process exits, foreign failures, programmer panics, or several distinct
-  mechanisms, and how each is typed and caught.
+- [x] **C081 — Complete — exception boundary.** Normative `0.1.47` fixes the
+  partition: typed failure is a value (G103's contents); exception-style
+  catching is the effect pattern — a handler declining to resume aborts to
+  its result, visible in the effect row, a library idiom over unchanged
+  C005; and `trap(reason)` is the one terminal mechanism, never catchable
+  (C036 unchanged). Panics are traps with the reserved assertion/panic
+  kind entering with their producers. Process exits route to G084,
+  foreign failures map to trap at the visible boundary (G095/G096 with
+  C067's rule), cancellation to G088, library faults to G105, outcome
+  types to G103; C044's reopening door is the only amendment route for a
+  language exception form. Compiler witnesses on existing machinery
+  (`e0f2a9e`): the declining-handler pattern (`0`, not `100`, both
+  targets), the trap fixture terminal, C010's spared spawner re-pinned,
+  and exception-form absences on both frontends. Zero new diagnostic
+  families and no new public API. Section 9 advances to 6/8.
 - [ ] **G082 — Gap — top-level effects.** Define which requests an application entry
   point may leave unhandled and who interprets them.
 - [ ] **D083 — Deferred — scoped and multi-shot computations.** Explicitly bound

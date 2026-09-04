@@ -18,8 +18,8 @@ aliases:
 This map routes the G081 question — whether exceptions are an
 effect, process exits, foreign failures, programmer panics, or
 several distinct mechanisms — through the archive's decision
-trail. The normative answer will be revision `0.1.47` in
-`60-specification/exception-boundary/`.
+trail. The normative answer is revision `0.1.47` in the [Exception
+Boundary Specification](../60-specification/exception-boundary/README.md).
 
 ## The route
 
@@ -38,10 +38,10 @@ trail. The normative answer will be revision `0.1.47` in
 4. **The locality evidence.** C010's process-local trap (trapping
    child, spared spawner) — the standing witness that process
    exits are a distinct, routed mechanism (G084).
-5. **The contract.** The Exception Boundary Specification
-   (`60-specification/exception-boundary/`): the partition, the
-   blessed pattern, panic-as-trap-kind, the routing table, and
-   conformance.
+5. **The contract.** The [Exception Boundary
+   Specification](../60-specification/exception-boundary/README.md):
+   the partition, the blessed pattern, panic-as-trap-kind, the
+   routing table, and conformance.
 6. **The reasoning and decision record.** [Catena Exception
    Boundary](../20-notes/catena-exception-boundary.md) argues the
    partition; the [resolved
