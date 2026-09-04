@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C081 Exception Boundary](2026-09-01-c081-exceptions.md)
+  — records the normative 0.1.47 partition, the declining-handler
+    pattern witness, and the five-element operation grammar, with
+    immutable compiler identity.
 - [C086 Selective Receive](2026-09-01-c086-receive.md)
   — records the normative 0.1.46 rule set, the blocked-holder
     preservation witness, the harness CND006 path, and the SR/RC

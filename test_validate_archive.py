@@ -207,6 +207,7 @@ class SpecificationVersionTests(unittest.TestCase):
                 "excluded-advanced-type-features": "0.1.44",
                 "progress-and-preservation": "0.1.45",
                 "selective-receive": "0.1.46",
+                "exception-boundary": "0.1.47",
             },
             PROTOTYPE_SPECIFICATION_VERSIONS,
         )

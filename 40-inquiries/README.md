@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [Are Exceptions an Effect, a Trap, or a Value?](are-exceptions-an-effect-a-trap-or-a-value.md)
+  — resolves G081: the three-way partition with no language
+    exception form, panics as trap kinds, and the blessed effect
+    pattern at `0.1.47`.
 - [How Does Selective Receive Complete?](how-does-selective-receive-complete.md)
   — resolves P086: the receive rule set with honest starvation
     cost and four routed interfaces at `0.1.46`.

@@ -542,6 +542,19 @@ slice's promotion commits. Closes P086; Section 9 advances to 5/8.
 | Witness scope | preservation witness (rec) / re-pin only / dormant machinery | preservation witness |
 | Area naming | selective-receive SR (rec) / receive-semantics RS / extend clause-conditions | selective-receive (code RC — SR is structural-records') |
 
+## C081 — exception boundary (`0.1.47`, 2026-09-01)
+
+Fixed in: [synthesis](catena-exception-boundary.md) — the normative
+specification, journal, and this table's durable links land with this
+slice's promotion commits. Closes G081; Section 9 advances to 6/8.
+
+| Fork | Options offered | Chosen |
+| --- | --- | --- |
+| Mechanism stance | partition + no language mechanism (rec) / admit exceptions / defer | partition + none |
+| Panic classification | panic = trap kind (rec) / separate panic construct | panic = trap kind |
+| Effect pattern | bless non-resumed requests as the pattern (rec) / leave unstated | bless the pattern |
+| Area naming | exception-boundary XB (rec) / failure-boundaries FB / panic-and-escape PE | exception-boundary XB |
+
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry

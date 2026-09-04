@@ -207,11 +207,18 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   `0.1.46`; its rule set, routed interfaces, and executable
   evidence are recorded in the
   [C086 conformance journal](../50-journal/2026-09-01-c086-receive.md).
+  The normative C081 exception-boundary boundary is version
+  `0.1.47`; its partition, pattern blessing, routing table, and
+  executable evidence are recorded in the
+  [C081 conformance journal](../50-journal/2026-09-01-c081-exceptions.md).
 
 ## Index
 
 ### Subdirectories
 
+- [Exception Boundary](exception-boundary/README.md)
+  — the normative version 0.1.47 mechanism partition with the
+  blessed effect pattern and the routing table.
 - [Selective Receive](selective-receive/README.md)
   — the normative version 0.1.46 receive rule set with the four
   routed interfaces.
