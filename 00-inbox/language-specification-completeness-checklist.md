@@ -1276,8 +1276,21 @@ P109 and D059's neighboring iteration syntax still deferred.
   targets), the trap fixture terminal, C010's spared spawner re-pinned,
   and exception-form absences on both frontends. Zero new diagnostic
   families and no new public API. Section 9 advances to 6/8.
-- [ ] **G082 — Gap — top-level effects.** Define which requests an application entry
-  point may leave unhandled and who interprets them.
+- [x] **C082 — Complete — top-level effects.** Normative `0.1.48` fixes the
+  silent top level: an entry leaves nothing unhandled (effect-closed,
+  `ENT001`, C027 unchanged); nobody interprets unhandled requests because
+  none exist — no ambient host handler exists or is reserved; and launch
+  is invocation only, to completion under unchanged kernel semantics with
+  no scope and no injection. The capability interface for G106:
+  capabilities reach an entry only as explicit typed values through a
+  channel G106's slice defines and justifies — deny-able, never ambient —
+  with the zero-argument and effect-closed rules binding until then.
+  G084's supervision interprets process failure, never requests; the
+  door requires entry-form widening to amend C027 explicitly with
+  who-interprets-what stated. Compiler witnesses on C027's existing
+  machinery (`e962b73`): the launch re-pin (completed twice) and the
+  `ENT001` non-effect-closed rejection. Zero new diagnostic families
+  and no new public API. Section 9 advances to 7/8.
 - [ ] **D083 — Deferred — scoped and multi-shot computations.** Explicitly bound
   generators, async, nondeterminism, transactions, shallow handlers,
   higher-order effects, and multi-shot continuations until their semantics are

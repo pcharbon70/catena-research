@@ -119,6 +119,8 @@ follow-up item now that C011 is reached.
   — the C086 source for `RC-OBL-*` obligations.
 - [Exception Boundary Specification](../60-specification/exception-boundary/README.md)
   — the C081 source for `XB-OBL-*` obligations.
+- [Top-Level Effects Specification](../60-specification/top-level-effects/README.md)
+  — the C082 source for `TL-OBL-*` obligations.
 
 ## Identifier and registry convention
 
@@ -178,6 +180,7 @@ convention.
 | `PP` | progress-and-preservation | 0.1.45 |
 | `RC` | selective-receive | 0.1.46 |
 | `XB` | exception-boundary | 0.1.47 |
+| `TL` | top-level-effects | 0.1.48 |
 
 The **registry** lives in this map (per-area tables below) and records, for each
 obligation:
@@ -254,6 +257,7 @@ sibling compiler repository.
 | `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (10) | compiler-tagged + gated (`5525662`); all obligations traced |
 | `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6) | compiler-tagged + gated (`b202887`); all obligations traced |
 | `XB` exception-boundary | 7 | `c081_exception_boundary_test.exs` (7) | compiler-tagged + gated (`e0f2a9e`); all obligations traced |
+| `TL` top-level-effects | 7 | `c082_top_level_test.exs` (6) | compiler-tagged + gated (`e962b73`); all obligations traced |
 
 ## Trails
 
@@ -2370,6 +2374,38 @@ merged compiler evidence (`e0f2a9e`, branch `agent/c081-exceptions`).
 
 C081 coverage is 7 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `XB-OBL-*` identifier
+lacks a focused tag.
+
+## Top-level effects registry (`TL`, 0.1.48)
+
+Evidence labels refer to focused tests in
+`test/catena/c082_top_level_test.exs` and its
+`test/catena/c082_traceability_coverage_test.exs` gate in the sibling
+compiler repository. The focused set is:
+
+- **c082 #1** *applies boundary rules only at exact 0.1.48 with zero new families and the lifecycle registered*
+- **c082 #2** *keeps the boundary: entries leave nothing unhandled and nobody interprets*
+- **c082 #3** *keeps launch as invocation only: to completion, no scope, no injection*
+- **c082 #4** *keeps the capability interface: explicit typed values via G106's channel or nothing; entry rules bind until then*
+- **c082 #5** *keeps no ambient handler reserved and supervision routed as failure-only*
+- **c082 #6** *keeps the door: entry-form widening amends C027 explicitly with who-interprets-what stated*
+- **c082 #7** *keeps the contract deterministic with the C027 entry corpus unchanged*
+
+Anchors point at the normative 0.1.48 chapters. Status reflects the
+merged compiler evidence (`e962b73`, branch `agent/c082-toplevel`).
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| TL-OBL-001 | Apply boundary rules only at exact 0.1.48 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/top-level-effects/diagnostics-and-conformance.md#revision-and-persistence-separation) | c082 #1 | traced |
+| TL-OBL-002 | Keep the boundary: entries leave nothing unhandled and nobody interprets | [`the-top-level-boundary.md#the-boundary`](../60-specification/top-level-effects/the-top-level-boundary.md#the-boundary) | c082 #2 | traced |
+| TL-OBL-003 | Keep launch as invocation only: to completion, no scope, no injection | [`the-top-level-boundary.md#the-boundary`](../60-specification/top-level-effects/the-top-level-boundary.md#the-boundary) | c082 #3 | traced |
+| TL-OBL-004 | Keep the capability interface: explicit typed values via G106's channel or nothing; entry rules bind until then | [`the-top-level-boundary.md#the-capability-interface`](../60-specification/top-level-effects/the-top-level-boundary.md#the-capability-interface) | c082 #4 | traced |
+| TL-OBL-005 | Keep no ambient handler reserved and supervision routed as failure-only | [`the-top-level-boundary.md#the-supervision-routing`](../60-specification/top-level-effects/the-top-level-boundary.md#the-supervision-routing) | c082 #5 | traced |
+| TL-OBL-006 | Keep the door: entry-form widening amends C027 explicitly with who-interprets-what stated | [`the-top-level-boundary.md#the-door`](../60-specification/top-level-effects/the-top-level-boundary.md#the-door) | c082 #6 | traced |
+| TL-OBL-007 | Keep the contract deterministic with the C027 entry corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/top-level-effects/diagnostics-and-conformance.md#abstract-public-boundaries) | c082 #7 | traced |
+
+C082 coverage is 7 `traced` and 0 untraced obligations. The dedicated
+gate rejects unknown identifiers and fails if any `TL-OBL-*` identifier
 lacks a focused tag.
 
 ## Open questions

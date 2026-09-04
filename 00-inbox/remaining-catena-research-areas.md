@@ -487,8 +487,10 @@ the main missing runtime semantics.
   closed by C081 at `0.1.47`: three visibly distinct mechanisms (typed
   values, the effect pattern, the terminal trap) with panics as trap
   kinds and the neighbors routed;
-- the set of top-level host effects and how application entry points receive
-  their capabilities;
+- ~~the set of top-level host effects and how application entry points receive
+  their capabilities~~ — closed by C082 at `0.1.48`: the silent top level
+  (nothing unhandled, no ambient interpreter, launch as invocation) with
+  the explicit-values capability interface stated for G106;
 - structured scopes for tasks, files, sockets, locks, transactions, timeouts,
   and cancellation;
 - the higher-order effect or dedicated runtime model needed by scoped

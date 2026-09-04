@@ -30,6 +30,10 @@ to `20-notes`.
 
 ### Documents
 
+- [Who Interprets Top-Level Requests?](who-interprets-top-level-requests.md)
+  — resolves G082: the silent top level stated as its own
+    normative home, with G106's capability interface and G084's
+    failure routing at `0.1.48`.
 - [Are Exceptions an Effect, a Trap, or a Value?](are-exceptions-an-effect-a-trap-or-a-value.md)
   — resolves G081: the three-way partition with no language
     exception form, panics as trap kinds, and the blessed effect

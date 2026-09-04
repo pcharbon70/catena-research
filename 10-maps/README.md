@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Top-Level Effects](top-level-effects.md) — routes the G082
+  boundary decision from C027's standing answer to the `0.1.48`
+  contract.
 - [Exception Boundary](exception-boundary.md) — routes the G081
   partition decision from C036's taxonomy to the `0.1.47`
   contract.

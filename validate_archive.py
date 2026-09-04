@@ -144,6 +144,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "progress-and-preservation": "0.1.45",
     "selective-receive": "0.1.46",
     "exception-boundary": "0.1.47",
+    "top-level-effects": "0.1.48",
 }
 
 

@@ -269,8 +269,9 @@ normative C140 uses `0.1.44` for excluded advanced type features;
 normative C132 uses `0.1.45` for progress and preservation;
 normative C086 uses `0.1.46` for selective receive;
 normative C081 uses `0.1.47` for the exception boundary;
+normative C082 uses `0.1.48` for top-level effects;
 and the next
-unused semantic patch is `0.1.48`. C008 defines package-local editions,
+unused semantic patch is `0.1.49`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.
