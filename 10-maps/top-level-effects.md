@@ -17,8 +17,9 @@ aliases:
 
 This map routes the G082 question — which requests an application
 entry point may leave unhandled and who interprets them — through
-the archive's decision trail. The normative answer will be
-revision `0.1.48` in `60-specification/top-level-effects/`.
+the archive's decision trail. The normative answer is revision
+`0.1.48` in the [Top-Level Effects
+Specification](../60-specification/top-level-effects/README.md).
 
 ## The route
 
@@ -42,10 +43,10 @@ revision `0.1.48` in `60-specification/top-level-effects/`.
    Partition](../60-specification/exception-boundary/the-mechanism-partition.md)
    (C081) and C036 — failure interpretation is a separate concern;
    G084's supervision observes traps, never requests.
-6. **The contract.** The Top-Level Effects Specification
-   (`60-specification/top-level-effects/`): the boundary statement,
-   the G106 capability interface, the supervision routing, the
-   door, and conformance.
+6. **The contract.** The [Top-Level Effects
+   Specification](../60-specification/top-level-effects/README.md):
+   the boundary statement, the G106 capability interface, the
+   supervision routing, the door, and conformance.
 7. **The reasoning and decision record.** [Catena Top-Level
    Effects](../20-notes/catena-top-level-effects.md) argues the
    silent top level; the [resolved

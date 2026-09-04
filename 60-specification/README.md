@@ -211,13 +211,17 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   `0.1.47`; its partition, pattern blessing, routing table, and
   executable evidence are recorded in the
   [C081 conformance journal](../50-journal/2026-09-01-c081-exceptions.md).
+  The normative C082 top-level-effects boundary is version
+  `0.1.48`; its boundary statement, capability interface, and
+  executable evidence are recorded in the
+  [C082 conformance journal](../50-journal/2026-09-01-c082-toplevel.md).
 
 ## Index
 
 ### Subdirectories
 
 - [Top-Level Effects](top-level-effects/README.md)
-  — the candidate version 0.1.48 top-level boundary with the
+  — the normative version 0.1.48 top-level boundary with the
   G106 capability interface and the supervision routing.
 - [Exception Boundary](exception-boundary/README.md)
   — the normative version 0.1.47 mechanism partition with the

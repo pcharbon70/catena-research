@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [C082 Top-Level Effects](2026-09-01-c082-toplevel.md)
+  — records the normative 0.1.48 silent top level, the C027-shaped
+    witness corpus, and three entry-corpus alias facts, with
+    immutable compiler identity.
 - [C081 Exception Boundary](2026-09-01-c081-exceptions.md)
   — records the normative 0.1.47 partition, the declining-handler
     pattern witness, and the five-element operation grammar, with

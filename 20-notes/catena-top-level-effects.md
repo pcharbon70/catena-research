@@ -70,9 +70,8 @@ widening of the entry form without amending C027 explicitly.
 
 ## Route to sources
 
-- The Top-Level Effects Specification (candidate, then normative
-  at promotion, in `60-specification/top-level-effects/`) will
-  define the contract this note argues for.
+- The [Top-Level Effects Specification](../60-specification/top-level-effects/README.md)
+  defines the normative `0.1.48` contract this note argues for.
 - [Entry Declarations](../60-specification/entry-points/entry-declarations.md)
   — C027's effect-closed rule, the standing answer this elevates.
 - [Startup and Shutdown](../60-specification/entry-points/startup-and-shutdown.md)

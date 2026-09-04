@@ -76,8 +76,9 @@ interpretation a separate concern from effect interpretation.
 
 ## Outcome
 
-Resolved as C082 at revision `0.1.48`: the contract will live in
-`60-specification/top-level-effects/`, the reasoning in
+Resolved as C082 at revision `0.1.48`: the contract lives in the
+[Top-Level Effects Specification](../60-specification/top-level-effects/README.md),
+the reasoning in
 [Catena Top-Level Effects](../20-notes/catena-top-level-effects.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G106 owns the
