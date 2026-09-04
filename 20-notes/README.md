@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Exception Boundary](catena-exception-boundary.md) —
+  argues G081's partition: values, the effect pattern, and the
+  terminal trap — visibly distinct, never blurred.
 - [Catena Selective Receive](catena-selective-receive.md) —
   argues P086's completion: the rule set that was already true,
   honest starvation cost, and the four routed interfaces.
