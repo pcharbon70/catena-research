@@ -61,7 +61,7 @@ everything the file layer deliberately does not decide.
 
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy that file-size limits defer to under
-  G129.
+  P129.
 - [Conformance Traceability](conformance-traceability.md) registers
   `FU-OBL-001` through `FU-OBL-012` against normative anchors and sibling
   compiler tests.
@@ -72,5 +72,5 @@ C020 is complete at revision `0.1.16`. P109 retains the
 concrete module-header syntax; G022 retains import/export syntax over the C021
 namespace rules;
 C025 has since fixed package assembly, with cross-file duplicate handling owned by its tooling consumers; C027
-has since fixed entry modules; G121/G128 retain build and reproducibility policy
+has since fixed entry modules; P121/P128 retain build and reproducibility policy
 for generated inputs.

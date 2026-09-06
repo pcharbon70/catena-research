@@ -70,5 +70,5 @@ literal boundary and ensures comment markers inside literals remain content.
 G019 must assign comment recognition among concrete token alternatives and
 P109 must enumerate documentable declarations. G020 still owns file/module
 attachment and generated-file behavior. G118 owns formatting preservation,
-documentation rendering is part of G110, and G119 owns the isolated executable
+documentation rendering is part of G110, and P119 owns the isolated executable
 doctest runner and its budgets.

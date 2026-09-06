@@ -35,8 +35,9 @@ should explain why its links belong together rather than merely list files.
 - [Exception Boundary](exception-boundary.md) — routes the G081
   partition decision from C036's taxonomy to the `0.1.47`
   contract.
-- [Selective Receive](selective-receive.md) — routes the P086
-  completion from C003's harness to the `0.1.46` rule set.
+- [Selective Receive](selective-receive.md) — routes the `0.1.46` rules
+  and retained compiler evidence to P086's reopened starvation conflict
+  and its closure criteria.
 - [Progress and Preservation](progress-and-preservation.md)
   — routes the P132 metatheory completion from the component
   statements to the `0.1.45` composed theorem.

@@ -86,7 +86,7 @@ or a renderer's ambient default is not an equivalent profile
 
 C016 requires preservation of the normalized Markdown source and does not
 require the compiler frontend to render it. Symbol links, generated-document
-containers, navigation, and output formats remain G110.
+containers, navigation, and output formats remain P119.
 
 ## Raw HTML safety
 
@@ -111,7 +111,7 @@ words differ; `catena` alone and `doctest` alone differ.
 C016 records `explicit_only` doctest policy and the exact info string but
 executes no documentation. An implementation claiming only 0.1.12 MUST NOT
 evaluate a documentation block, publish an execution result, or reject a
-program because a prospective doctest result differs. G119 owns the future
+program because a prospective doctest result differs. P119 owns the future
 runner, language selection, environment, effects, expected-output syntax,
 budgets, isolation, and build consequences.
 

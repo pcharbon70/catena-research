@@ -35,9 +35,9 @@ Put the observability classification, semantic identity, the identity
 rule, the finalization absence, and C037 conformance obligations
 here. The kernel calculus remains C010's, frozen at 0.1.8. The tail
 guarantee remains C032/C034's. Comparison exclusions remain C035's,
-now permanent. Handle operations remain C010's and G084's. Resource
+now permanent. Handle operations remain C010's and P084's. Resource
 scopes and cleanup remain the G080s era's. Message-copy details remain
-G085's. Foreign finalization remains G095's. Debugging tools remain
+P085's. Foreign finalization remains G095's. Debugging tools remain
 G124's.
 
 ## Variability register

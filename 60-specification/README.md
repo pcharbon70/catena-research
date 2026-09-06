@@ -222,13 +222,13 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 - [Top-Level Effects](top-level-effects/README.md)
   — the normative version 0.1.48 top-level boundary with the
-  G106 capability interface and the supervision routing.
+  P106 capability interface and the supervision routing.
 - [Exception Boundary](exception-boundary/README.md)
   — the normative version 0.1.47 mechanism partition with the
   blessed effect pattern and the routing table.
 - [Selective Receive](selective-receive/README.md)
-  — the normative version 0.1.46 receive rule set with the four
-  routed interfaces.
+  — the normative version 0.1.46 receive rules and four extension
+  interfaces, with P086 reopened for the contradictory starvation statement.
 - [Progress and Preservation](progress-and-preservation/README.md)
   — the normative version 0.1.45 effects-and-failure targets with
   the composed integrated theorem.
@@ -246,11 +246,12 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   form and the opaque routing.
 - [Numeric Relationships](numeric-relationships/README.md)
   — the normative version 0.1.40 closed-set instantiation contract
-  with the dispatch exclusion and the G105 routings.
+  with the dispatch exclusion and the P105 routings.
 - [List Comprehensions](list-comprehensions/README.md)
   — the normative version 0.1.39 comprehension contract: surface
   roles, qualifier rules, execution order, fused-worker
-  elaboration, and the `LCP` families.
+  elaboration, and the `LCP` families; P050/P053/P057 retain missing
+  required effect/failure evidence.
 - [Pattern Contexts](pattern-contexts/README.md)
   — the normative version 0.1.38 three-class refutability contract
   with per-context rules, reservations, and the D046 exclusion.

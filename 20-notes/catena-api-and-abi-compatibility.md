@@ -92,7 +92,7 @@ pre-decided the ABI layer: "a future layout-stability or ABI contract
 — any rule under which a representation choice becomes a compatibility
 surface — is owned by G028." This slice's answer is *not yet*: the
 exclusion converts from "undecided owner" to "decided absence with
-named future consumers" (P093 representation, G094 calling
+named future consumers" (P093 representation, P094 calling
 convention, G095 foreign terms, G092 hot upgrade).
 
 [C024's joint digests](../60-specification/module-dependency-cycles/scc-admission-and-resolution.md)
@@ -202,17 +202,17 @@ cannot classify. Under 0.x the Cargo rule applies to the claim; at
 Section 3 — names, modules, packages, separate compilation — is
 *complete*: the last outstanding item closes. Package authors gain a
 checkable rule for what their version numbers must say (the claim
-validator is the executable form); G121's tooling gains a lintable
-gate for release automation; G101+ gains the semantics prelude bumps
-must obey; G116/P125 migration engines gain the classification input
-they will consume; and the G092/G094/G095 consumers gain a named
+validator is the executable form); P121's tooling gains a lintable
+gate for release automation; P101+ gains the semantics prelude bumps
+must obey; P116/P125 migration engines gain the classification input
+they will consume; and the G092/P094/G095 consumers gain a named
 predecessor that says exactly what they may build on.
 
 ## Remaining questions and falsification criteria
 
-G116/P125 own migration engines; G130 owns registry retirement, yanks,
-and compromised versions; G092 owns hot upgrade; P093/G094/G095 own
-representation, calling-convention, and foreign-term contracts; G121
+P116/P125 own migration engines; P130 owns registry retirement, yanks,
+and compromised versions; G092 owns hot upgrade; P093/P094/G095 own
+representation, calling-convention, and foreign-term contracts; P121
 owns tooling defaults; G136 owns the long-term edition policy that
 succeeds the 0.x convention.
 
@@ -220,7 +220,7 @@ The model should be revisited if the 1.0 era shows the Cargo 0.x
 rule confusing for the ecosystem (the remedy is the C008 edition
 record that names the switch, not silent reinterpretation), or if
 binary consumers emerge and demand a layout-stability contract (the
-remedy is a new slice with P093/G094 as co-designers, not amending
+remedy is a new slice with P093/P094 as co-designers, not amending
 the absence).
 
 ## Connections

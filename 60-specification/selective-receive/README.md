@@ -13,6 +13,12 @@ aliases:
 
 # Selective Receive Specification (`60-specification/selective-receive`)
 
+P086 is reopened for the conflict between the rejected-prefix starvation
+statement and the rule requiring scanning past rejected messages. The
+`0.1.46` chapters retain their normative status; conformance for the
+disputed rule cannot be claimed until the conflict is resolved. See the
+[completion audit](../../50-journal/2026-09-06-checklist-completion-audit.md).
+
 ## Purpose
 
 This directory contains the Catena 0.1.46 contract for selective
@@ -34,8 +40,8 @@ conformance obligations here. The lowering harness and its
 conditions remain C003's, restated here at the language level, not
 amended. The public-receive reservation remains C044's, consumed
 here by the timeout-fallback naming. Mailbox preservation remains
-C010's. Send-side message semantics remain G085's, typed protocols
-G087's, and cancellation and time G088's to ship. Public tokens
+C010's. Send-side message semantics remain P085's, typed protocols
+P087's, and cancellation and time G088's to ship. Public tokens
 remain P109's.
 
 ## Variability register
@@ -58,7 +64,7 @@ behavior may vary.
   — scan order, preservation, removal, typing, conditions, and
   starvation cost.
 - [The Routed Interfaces](the-routed-interfaces.md)
-  — the obligations on P109, G088, G087, and G085.
+  — the obligations on P109, G088, P087, and P085.
 - [Selective Receive Diagnostics and Conformance](diagnostics-and-conformance.md)
   — zero new families, abstract boundaries, and the `RC-OBL-*`
   obligations with evidence sets.

@@ -30,17 +30,16 @@ review; do not let the inbox become permanent storage.
 ### Documents
 
 - [Catena Language Specification Completeness Checklist](language-specification-completeness-checklist.md)
-  — temporary audit of unresolved or unconsolidated language-definition work,
-  including list comprehensions, runtime semantics, interoperability, tooling,
-  and conformance.
+  — current audited work-ahead ledger, distinguishing completed contracts,
+  partial evidence, unresolved boundaries, and deferred extensions.
 - [Remaining Catena Research Areas](remaining-catena-research-areas.md) —
   groups the atomic completeness gaps into connected research programs,
   relates each program to the current normative and exploratory corpus, and
   states what completing it would add to the language design.
 - [Package Publishing Hypothesis: Hex Registry](package-publishing-hypothesis-hex.md)
   — working assumption that Catena publishes through hex.pm Gleam-style,
-  with governance and assurance kept Catena-side; owned by the future
-  G025/G121/G130 package program.
+  with governance and assurance kept Catena-side; C025 now defines package
+  identity, while P121/P130 retain build/fetch and registry policy.
 
 ## Maintaining this index
 

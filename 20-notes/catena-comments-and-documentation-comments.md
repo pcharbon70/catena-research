@@ -56,7 +56,7 @@ The broader corpus distinguishes user-facing API contracts from internal
 notes, but it had not fixed a documentation carrier. C016 makes that
 distinction concrete without choosing module/file ownership (G020), complete
 declaration grammar (P109), generated documentation format, symbol-link syntax,
-or the future doctest execution environment (G119).
+or the future doctest execution environment (P119).
 
 ## Evidence comparison
 
@@ -177,7 +177,7 @@ unsanitized execution is never conforming.
 Fenced code is ordinary documentation unless the fence's trimmed info string
 is exactly `catena doctest`. Labels such as `catena`, `doctest`, `Catena
 doctest`, or `catena doctest extra` do not opt in. C016 records that policy but
-does not execute examples. G119 still owns runner selection, effects,
+does not execute examples. P119 still owns runner selection, effects,
 isolation, expected-output syntax, budgets, failure reporting, and build
 integration.
 

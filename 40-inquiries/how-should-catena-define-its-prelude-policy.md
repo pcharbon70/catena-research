@@ -23,8 +23,8 @@ imports and shipped the origin machinery. C025 made packages nameable,
 digest-bound, resolvable, and lock-pinnable. Yet nothing defines how a
 package says "I want a prelude," what opt-out means, or what an edition
 guarantees — and eight shipped chapters defer exactly those questions to
-G026. Until it closes, every future standard-library design (G101) has
-no admission mechanism to target, and tooling (G121) cannot know whether
+G026. Until it closes, every future standard-library design (P101) has
+no admission mechanism to target, and tooling (P121) cannot know whether
 any name arrives implicitly.
 
 ## Operational question
@@ -42,7 +42,7 @@ on:
 
 The answer must compose with C021's precedence and collision rules, C022's
 import admission, and C025's package identity without amending them, and
-must not decide G101's contents, P102's protocols, G121's tooling
+must not decide P101's contents, P102's protocols, P121's tooling
 defaults, or G027's entry points.
 
 ## Working hypotheses
@@ -58,7 +58,7 @@ defaults, or G027's entry points.
   enters through a lifecycle record, never silently.
 - A prelude package is any valid C025 package — resolvable,
   digest-bound, and lock-pinned like any dependency — including one with
-  zero exports; contents remain G101.
+  zero exports; contents remain P101.
 
 ## Paths to explore
 
@@ -93,7 +93,7 @@ defaults, or G027's entry points.
   A `prelude` sibling reuses it with one package instead of a map.
 - Zero-implicit-names is truthful for 0.1 today (the standard library
   does not exist), so the edition guarantee strengthens rather than
-  amends when G101 freezes contents.
+  amends when P101 freezes contents.
 - The synthesis
   [Catena Prelude Policy](../20-notes/catena-prelude-policy.md)
   develops the full model and falsification criteria; the
@@ -109,7 +109,7 @@ collisions naming both origins; absent/`null` as the complete opt-out;
 the zero-implicit-names edition guarantee with a lifecycle-record path
 for any future default; `PRE001` for malformed selections; and prelude
 selections resolving and locking as ordinary C025 dependencies,
-including zero-export packages, with contents remaining G101's. The
+including zero-export packages, with contents remaining P101's. The
 rules are defined in the
 [normative prelude specification](../60-specification/prelude-policy/README.md).
 
@@ -117,5 +117,5 @@ G026 is complete through the
 [prelude synthesis](../20-notes/catena-prelude-policy.md),
 [topic map](../10-maps/prelude-policy.md), and
 [C026 evidence record](../50-journal/2026-08-24-c026-prelude-policy.md).
-G101 retains contents; P102 retains protocols; G121 retains
+P101 retains contents; P102 retains protocols; P121 retains
 scaffolding; G028/G136 retain compatibility meanings.

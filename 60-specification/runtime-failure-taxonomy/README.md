@@ -36,9 +36,9 @@ six-category mapping, trap observability, the entry rule, and C036
 conformance obligations here. The kernel calculus remains C010's,
 frozen at 0.1.8. The terminal contract remains C029's. Divergence and
 its exclusion remain C034's. Handler-unhandleability remains C005's.
-Option/Result contents remain G105's. Foreign calls remain G095/G096's.
-Process death, links, and monitors remain G084's. VM termination
-remains G092/G121's. Cancellation remains G088's. Allocation
+Option/Result contents remain P105's. Foreign calls remain G095/G096's.
+Process death, links, and monitors remain P084's. VM termination
+remains G092/P121's. Cancellation remains G088's. Allocation
 observability of failure paths remains G037's. Assert/panic spellings
 remain P109's.
 

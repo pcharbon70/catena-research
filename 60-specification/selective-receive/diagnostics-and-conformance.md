@@ -69,7 +69,7 @@ mailboxes, and diagnostics on every conforming target
 | `RC-OBL-004` | keep the starvation statement: honest cost, no fairness claim | cost-statement pinning |
 | `RC-OBL-005` | keep the P109 interface with the timeout clause named as C044's explicit total fallback | routing witnesses |
 | `RC-OBL-006` | keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | routing witnesses |
-| `RC-OBL-007` | keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | routing witnesses |
+| `RC-OBL-007` | keep the P087 and P085 interfaces: protocol typing composes, send-side claims stay P085's | routing witnesses |
 | `RC-OBL-008` | keep the contract deterministic with the C003/C010 receive corpus unchanged | determinism and re-pin tests |
 
 Every obligation has at least one tagged passing test. The sibling

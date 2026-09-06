@@ -84,6 +84,6 @@ Resolved as C081 at revision `0.1.47`: the contract lives in the
 the reasoning in
 [Catena Exception Boundary](../20-notes/catena-exception-boundary.md),
 and the forks in the [design decision
-register](../20-notes/design-decision-register.md). G084, G088,
-G095/G096, G103, and G105 own their routed halves; Section 9
+register](../20-notes/design-decision-register.md). P084, G088,
+G095/G096, G103, and P105 own their routed halves; Section 9
 advances to 6/8.

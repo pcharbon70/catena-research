@@ -58,8 +58,8 @@ Three shipped boundaries gain prelude wiring (`PL-OBL-001`):
   exact version and bundle digest; `replay_lockfile/3` pins it as an
   exact pin under the unchanged `PKG005` rules.
 
-Implementations MUST NOT use these boundaries to claim G101 contents,
-G121 scaffolding, or any default selection (`PL-OBL-010`). The
+Implementations MUST NOT use these boundaries to claim P101 contents,
+P121 scaffolding, or any default selection (`PL-OBL-010`). The
 bootstrap evidence adds no new public API names beyond the option and
 event forms on the three existing operations.
 
@@ -83,7 +83,7 @@ supply — nothing more (`PL-OBL-010`).
 | `PL-OBL-007` | make absent/`null` the complete opt-out: no origin, no qualification, no suggestion | opt-out resolution tests |
 | `PL-OBL-008` | guarantee zero implicit names for edition 0.1 and require a lifecycle record for any future default | no-field zero-origin tests |
 | `PL-OBL-009` | emit stable diagnostics: `PRE001` plus the reused families with unchanged identities | every diagnostic family test |
-| `PL-OBL-010` | keep the wiring deterministic, source-only, and outside G101/G121 phases | repeated-result and absent-phase tests |
+| `PL-OBL-010` | keep the wiring deterministic, source-only, and outside P101/P121 phases | repeated-result and absent-phase tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `PL-OBL-*` set against unknown and

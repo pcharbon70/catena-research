@@ -70,7 +70,7 @@ traces, independent of representation choices (`RO-OBL-008`).
 | `RO-OBL-005` | keep every other value semantically identical only: closure allocation, record sharing, message copying unobservable | closure-and-record agreement tests |
 | `RO-OBL-006` | keep finalization declared absent with its gate: no cleanup form exists or arrives ungated | absence tests |
 | `RO-OBL-007` | keep stack use observable only through completion versus the tail guarantee | tail-guarantee regression tests |
-| `RO-OBL-008` | keep the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families | repeated-result and exclusion tests |
+| `RO-OBL-008` | keep the classification deterministic and outside G080s/P084/P085/G095/G124 claims with zero new families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `RO-OBL-*` set against unknown and

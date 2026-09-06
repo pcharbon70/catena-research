@@ -56,7 +56,7 @@ future obligations.
    era. Checkable in parts now, provable later.
 4. **Conditional, routed extensions** for the remainder: process
    targets restate C010's mailbox results as standing evidence and
-   condition the public-process extension on G084/G085; foreign
+   condition the public-process extension on P084/P085; foreign
    targets condition the theorem on G095/G096's visible boundary,
    where C067's rule makes entering values already-typed and
    preservation holds by construction.

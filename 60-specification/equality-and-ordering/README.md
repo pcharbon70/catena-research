@@ -38,8 +38,8 @@ here. The condition fragment remains C003's, frozen at Int/Bool. The
 operator inventory and spellings remain C019's. The value grammar
 remains C029's. Numeric literal and coercion rules remain C018's.
 Identity observability remains G037's. Handle semantics remain
-G084's. Future types' comparability entries remain G040's. Eq/Ord
-trait layers remain G061/G101's.
+P084's. Future types' comparability entries remain G040's. Eq/Ord
+trait layers remain G061/P101's.
 
 ## Variability register
 

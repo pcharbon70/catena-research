@@ -23,11 +23,11 @@ each answered with shipped machinery or a named owner:
 | Topic | Decision |
 | --- | --- |
 | Persistent update | **is** ordinary constructor application and match-based recursion — expressible today, witnessed on a declared List |
-| Duplicate map keys | a **G101 declaration question**; the language fixes only that the declaring slice states its behavior explicitly |
+| Duplicate map keys | a **P101 declaration question**; the language fixes only that the declaring slice states its behavior explicitly |
 | Ordering | rides **C035's comparable set** — element and key ordering are the entries already shipped |
 | Key equality | keys must be **comparable** (C035) to be usable in equality-dependent operations |
-| Bounds failures | **typed failure as a value** — a lookup miss is a domain answer (Option-style), never a trap; the concrete miss type is the declaring library's (G101/G105) |
-| Complexity promises | **excluded from the language layer** — representation is invisible (C037), so a language-level complexity promise would make representation observable; complexity documentation is G101's library-level contract |
+| Bounds failures | **typed failure as a value** — a lookup miss is a domain answer (Option-style), never a trap; the concrete miss type is the declaring library's (P101/P105) |
+| Complexity promises | **excluded from the language layer** — representation is invisible (C037), so a language-level complexity promise would make representation observable; complexity documentation is P101's library-level contract |
 
 The deliverable is nominal-ADT witnesses with **zero new diagnostic
 families**: a declared `List` (Nil/Cons) exercised end-to-end on the
@@ -54,7 +54,7 @@ Catena proposals below.
 ## Relation to the current corpus
 
 [C040](../60-specification/built-in-data-model/the-twelve-way-classification.md)
-routed list/map/set to G101 as library nominal ADTs — the routing
+routed list/map/set to P101 as library nominal ADTs — the routing
 this slice executes. Everything a collection needs already serves
 nominal types: C002's constructor patterns, C035's constructor-field
 comparability recursion, C004's derivations, C031's recursion, and
@@ -84,7 +84,7 @@ is invisible, so any language-level complexity bound would be a
 promise about an invisible thing — observable the moment a
 conforming implementation chose a different representation. The
 honest language contract promises values, effects, and totals;
-G101's library documentation promises operations' costs, clearly
+P101's library documentation promises operations' costs, clearly
 separated.
 
 ## Comparative evidence and inference
@@ -104,7 +104,7 @@ The corpus chose representation invisibility deliberately (C037's
 three returns), chose nominal declarations for collections (C040),
 and chose representation independence for nominal data (C002). A
 language complexity promise would cut across all three. Libraries
-can still document costs — G101's per-operation documentation —
+can still document costs — P101's per-operation documentation —
 because a *library* fixes a representation and may talk about it;
 the *language* may not.
 
@@ -129,7 +129,7 @@ declaring library's.
 ### Complexity exclusion
 
 No complexity bound is a language-level promise; complexity
-documentation is G101's, separated from semantics.
+documentation is P101's, separated from semantics.
 
 ### Rejected alternatives
 
@@ -139,7 +139,7 @@ As enumerated in the resolved inquiry.
 
 Section 5's decision trilogy completes (5/8): types (C040),
 structural records (C041), and collection operations (C042) leave
-only the pattern partials (P044, D046) and the deferrals. G101
+only the pattern partials (P044, D046) and the deferrals. P101
 receives its complete precondition set — what to declare, how keys
 must compare, what a miss returns, where complexity lives — and
 P109's grammar exercise receives the operation semantics with only
@@ -147,12 +147,12 @@ spellings left.
 
 ## Remaining questions and falsification criteria
 
-G101 owns collection declarations, duplicate-key choices, and
-complexity documentation; G105 miss-type contents and libraries;
+P101 owns collection declarations, duplicate-key choices, and
+complexity documentation; P105 miss-type contents and libraries;
 P109 spellings; C040/C041's classifications unchanged.
 
-The model should be revisited if G101's evidence shows recursion
-inadequate for realistic updates (the remedy is a G101-era slice
+The model should be revisited if P101's evidence shows recursion
+inadequate for realistic updates (the remedy is a P101-era slice
 adding library combinators — not language syntax), or if the runtime
 era demands complexity guarantees (the remedy is a gated
 representation-visible profile, never an amendment of C037).

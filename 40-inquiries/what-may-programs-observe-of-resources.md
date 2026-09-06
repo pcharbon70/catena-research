@@ -48,7 +48,7 @@ deferrals.
    absent. Values carry semantic identity.
 3. Finalization is **declared absence with a gate**: no destructor,
    finalizer, or cleanup form exists; any arrival goes through the
-   resource-scope era (G080s/G084) or the foreign boundary (G095),
+   resource-scope era (G080s/P084) or the foreign boundary (G095),
    each shipping its own semantics.
 4. The identity rule is **two clauses**: process identity is the only
    identity-bearing value — fresh per spawn, observable only through
@@ -97,5 +97,5 @@ the reasoning in
 [Catena Resource Observability](../20-notes/catena-resource-observability.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G080s resource
-scopes, G084 handle operations, G095 foreign finalization, and G124
+scopes, P084 handle operations, G095 foreign finalization, and G124
 debugging tools remain open with their owners.

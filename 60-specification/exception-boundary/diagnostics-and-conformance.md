@@ -65,7 +65,7 @@ diagnostics on every conforming target (`XB-OBL-002`).
 | `XB-OBL-002` | keep the partition: values, the pattern, and the terminal trap visibly distinct with no silent conversion | partition witnesses |
 | `XB-OBL-003` | keep the pattern blessing descriptive: declining to resume aborts to the handler's result, per unchanged C005 | effect-pattern witnesses |
 | `XB-OBL-004` | keep panics as trap kinds entering with their producers | absence and kind tests |
-| `XB-OBL-005` | keep the routing table's owners: G084, G095/G096, G088, G105, G103 | routing witnesses |
+| `XB-OBL-005` | keep the routing table's owners: P084, G095/G096, G088, P105, G103 | routing witnesses |
 | `XB-OBL-006` | keep the reopening door as the only amendment route for a language exception form | absence tests |
 | `XB-OBL-007` | keep the contract deterministic with the C036/C010 failure corpus unchanged | determinism and re-pin tests |
 

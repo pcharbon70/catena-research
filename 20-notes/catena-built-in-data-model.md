@@ -25,8 +25,8 @@ exclude" shape, answered with shipped machinery:
 | --- | --- |
 | Unit, Bool, Int, Float, tuple, function, process handle | **built-in, classified once** — shipped types, their value status and comparability stated together |
 | Text, Character, Bytes | **built-in, elaborated now** — the C018 pattern: C017's scanner already mints the literals; elaboration gives them typed meaning |
-| List, map, set | **library territory** — ordinary nominal ADTs; G101 declares `List` exactly as `Option` is declared today, and nothing about them needs built-in status |
-| Reference | **excluded** — no mutation exists; G084's era if ever |
+| List, map, set | **library territory** — ordinary nominal ADTs; P101 declares `List` exactly as `Option` is declared today, and nothing about them needs built-in status |
+| Reference | **excluded** — no mutation exists; P084's era if ever |
 
 **Text is the decoded Unicode scalar sequence; Character is exactly
 one scalar (its code point); Bytes is the byte sequence.** Elaboration
@@ -39,7 +39,7 @@ the witness-honesty clause.
 **Comparability executes C035's entry rule**: Text comparable and
 orderable (code-point sequence, lexicographic); Character comparable
 and orderable; Bytes comparable and orderable (byte-sequence order).
-List/map/set comparability arrives with G101's nominal declarations —
+List/map/set comparability arrives with P101's nominal declarations —
 constructor-field recursion already handles them. References and
 process handles never compare; Unit stays non-comparable.
 
@@ -85,7 +85,7 @@ three text kinds; `Catena.Text.elaborate` and `Text.Meaning` mirror
 normative slice") names this slice for string, binary, list, map,
 set. The classification is that statement executed: Text, Character,
 and Bytes are values (the decoded content); list/map/set's value
-status arrives with G101's declarations; reference is never a value.
+status arrives with P101's declarations; reference is never a value.
 
 [C035's entry rule](../60-specification/equality-and-ordering/the-comparable-set.md)
 ("every G040 built-in enters with its comparability") executes as
@@ -110,7 +110,7 @@ status would buy dedicated literal syntax — a P109-era surface — and
 nothing else: C002's constructor patterns, C035's constructor-field
 comparability recursion, and C004's derivations all already serve
 nominal ADTs. Making collections built-ins would also pre-decide
-representation (linked lists? vectors?) that G101's library work
+representation (linked lists? vectors?) that P101's library work
 should choose with evidence. The checklist's "or explicitly exclude
 each nonessential built-in" is satisfied by the honest routing: not
 excluded from the language, excluded from the *built-in* list.
@@ -127,7 +127,7 @@ three types — the grammar already decided.
 ### Why content orders, not equality only
 
 The decoded payloads make code-point and byte ordering free and
-total; equality-only entries would decline them and force G101's
+total; equality-only entries would decline them and force P101's
 map/set work to reopen C035 later. Content ordering is also what
 every ecosystem's text comparison means in practice — lexicographic
 scalar sequence.
@@ -157,7 +157,7 @@ Elaboration: `scan_literal` → meaning, deterministic and total.
 | Text | yes | yes | code-point sequence, lexicographic |
 | Character | yes | yes | its scalar |
 | Bytes | yes | yes | byte sequence, lexicographic |
-| List/map/set | with G101 | with G101 | via constructor recursion |
+| List/map/set | with P101 | with P101 | via constructor recursion |
 | Reference, handle | never | never | — |
 | Unit | no (C035 standing) | no | — |
 
@@ -167,9 +167,9 @@ As enumerated in the resolved inquiry.
 
 ## What C040 adds to the design
 
-The Section 5 era opens with its anchor fixed: G101 declares
+The Section 5 era opens with its anchor fixed: P101 declares
 collections on nominal machinery with the entry rules' paths already
-paved; G042's construction and update know what constructs; G105's
+paved; G042's construction and update know what constructs; P105's
 string library receives a typed Text; P109's grammar exercise
 receives three literal semantics already elaborated (only the
 compiled-program path remains); and the twelve-way table answers the
@@ -178,11 +178,11 @@ checklist's question in one place.
 ## Remaining questions and falsification criteria
 
 P109 owns spellings and the compiled-program path for text literals;
-G101 owns collection declarations and their entries; G042 construction
-and update; G084 references; G105 string libraries; G061 numeric
+P101 owns collection declarations and their entries; G042 construction
+and update; P084 references; P105 string libraries; G061 numeric
 trait relationships (unchanged by this slice).
 
-The model should be revisited if G101's evidence shows nominal Lists
+The model should be revisited if P101's evidence shows nominal Lists
 materially inadequate (the remedy is a dedicated slice promoting List
 to built-in with its entry — the classification is a decision, not a
 permanent exclusion), or if text performance demands a different

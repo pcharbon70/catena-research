@@ -39,8 +39,8 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   argues G081's partition: values, the effect pattern, and the
   terminal trap — visibly distinct, never blurred.
 - [Catena Selective Receive](catena-selective-receive.md) —
-  argues P086's completion: the rule set that was already true,
-  honest starvation cost, and the four routed interfaces.
+  separates the shipped receive scan rules from P086's unresolved
+  starvation statement and preserves the four extension interfaces.
 - [Catena Progress and Preservation](catena-progress-and-preservation.md)
   — argues P132's completion: component targets with evidence,
     the composed theorem's honest middle, conditional extensions.
@@ -59,7 +59,7 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   newtype as nominal single-field ADT with explicit-only deriving.
 - [Catena Numeric Relationships](catena-numeric-relationships.md) —
   argues the closed-set instantiation rule closing G061: same-type
-  {Int, Float} operands, no dispatch, division to G105.
+  {Int, Float} operands, no dispatch, division to P105.
 - [Catena Pattern Contexts](catena-pattern-contexts.md) — argues the
   three-class classification closing P044 and D046: match the only
   exhaustive context, irrefutable-only the default, explicit
@@ -229,7 +229,7 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   — separates edition, exact language revision, artifact schema, and compiler
   release while proposing package-local selection, named previews, retained
   pins, migration records, and version-aware artifact binding.
-- [List Comprehensions](list-comprehensions.md) — the stable synthesis
+- [List Comprehensions](list-comprehensions.md) — the developing synthesis
   behind the normative `0.1.39` comprehension contract: total
   generators, explicit filtering patterns, typed Boolean filters,
   visible effects, ordered execution, and fused BEAM lowering.

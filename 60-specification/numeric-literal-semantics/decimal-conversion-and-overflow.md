@@ -118,7 +118,7 @@ itself; input magnitude remains governed by the literal-grammar area's
 
 Runtime float arithmetic, its exceptional outcomes, and its failure
 taxonomy remain G036. Explicit `Int`/`Float` conversions, decimal types, and
-checked arithmetic remain G105. Numeric literal spelling and components
+checked arithmetic remain P105. Numeric literal spelling and components
 remain the exact 0.1.13 literal-grammar contract.
 
 ## Rationale and evidence (non-normative)

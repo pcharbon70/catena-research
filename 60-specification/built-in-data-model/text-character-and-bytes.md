@@ -99,9 +99,9 @@ representation stays free.
 ## Deliberately separate work
 
 Interpolation remains permanently excluded for unprefixed and `r`
-forms (C017); string libraries remain G105's; the compiled-program
+forms (C017); string libraries remain P104's; the compiled-program
 path and spellings remain P109's; byte-vs-text library conversions
-remain G105.
+remain P104.
 
 ## Rationale and evidence (non-normative)
 

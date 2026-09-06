@@ -63,7 +63,7 @@ cancellation.
   `RT-OBL-001` through `RT-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
 - G038 compile-time evaluation under the gate; P109 syntax; G036
-  failure taxonomy (divergence outside it); G084 process loops; G088
+  failure taxonomy (divergence outside it); P084 process loops; G088
   cancellation remain the future owners.
 
 ## Open questions

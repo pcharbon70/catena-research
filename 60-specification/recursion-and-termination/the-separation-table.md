@@ -69,7 +69,7 @@ under every conforming tool (`RT-OBL-008`).
 
 G038 owns compile-time evaluation design under the gate. P109 owns
 syntax. G036 owns the failure taxonomy, with divergence explicitly
-outside it. G088 owns cancellation of long evaluations. G084 owns
+outside it. G088 owns cancellation of long evaluations. P084 owns
 runtime resource limits distinct from meta-level budgets.
 
 ## Rationale and evidence (non-normative)

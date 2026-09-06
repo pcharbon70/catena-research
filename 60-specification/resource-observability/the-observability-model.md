@@ -84,8 +84,8 @@ legality (C034) carries no conformance claim about stack
 
 ## Deliberately separate work
 
-Handle operations beyond the kernel's remain G084's;
-message-copy mechanics beyond semantic irrelevance remain G085's;
+Handle operations beyond the kernel's remain P084's;
+message-copy mechanics beyond semantic irrelevance remain P085's;
 resource scopes and cleanup remain the G080s era; foreign
 finalization remains G095's; debugging tools remain G124's.
 

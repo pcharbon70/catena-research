@@ -71,8 +71,8 @@ slice.
 
 ## Open questions
 
-C025 is complete at revision `0.1.21`. G121 retains build and fetch tooling; G128 retains
-reproducible-build consumption; G130 retains supply-chain signing and
+C025 is complete at revision `0.1.21`. P121 retains build and fetch tooling; P128 retains
+reproducible-build consumption; P130 retains supply-chain signing and
 threat modeling; C028 subsequently fixed compatibility policy and formally
 excluded the re-export facades; C026 and C027 fixed prelude and entry-point
 decisions.

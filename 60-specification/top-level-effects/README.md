@@ -17,7 +17,7 @@ aliases:
 
 This directory contains the Catena 0.1.48 contract for top-level
 effects: the boundary statement (nothing unhandled, nobody
-interpreting), the capability interface G106 must satisfy, the
+interpreting), the capability interface P106 must satisfy, the
 supervision routing, and the conformance obligations.
 
 The repository-level [Specification Authority](../../SPECIFICATION-AUTHORITY.md)
@@ -35,7 +35,7 @@ declaration and validity remain C027's, restated here as routing
 rows, not amended. Launch semantics remain C027's. The prelude's
 zero-implicit-names rule remains C026's. The foreign visibility
 requirement remains C067's. The capability channel's design
-remains G106's, failure interpretation G084's, and entry-form
+remains P106's, failure interpretation P084's, and entry-form
 tokens P109's.
 
 ## Variability register
@@ -64,6 +64,6 @@ vary.
 ## Maintaining this index
 
 Update this README when a chapter is added, renamed, or archived.
-Every direct child belongs in the index. When G106's channel or
+Every direct child belongs in the index. When P106's channel or
 any entry-form widening arrives, link the discharging revision
 here.

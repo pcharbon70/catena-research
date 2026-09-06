@@ -38,7 +38,7 @@ defaulting, rounding, overflow, exceptional values, and negation are fixed by
 the normative 0.1.14
 [Numeric Literal Semantics](../numeric-literal-semantics/README.md) area.
 Atoms/symbols and compound list, tuple, record, map, and binary construction
-remain G040/G042/P093/G097. Concrete token composition, operators, and
+remain G040/G042/P093/P097. Concrete token composition, operators, and
 punctuation remain G019/P109.
 
 ## Variability register

@@ -73,7 +73,7 @@ effects, and traces on every conforming target (`SR-OBL-008`).
 ## Deliberately separate work
 
 G042's collection construction and update are distinct work: maps
-and sets are G101 library types under C040's classification, not
+and sets are P101 library types under C040's classification, not
 structural records. Representation-adjacent guarantees remain C037's
 exclusions, unchanged.
 

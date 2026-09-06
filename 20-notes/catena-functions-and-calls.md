@@ -170,14 +170,14 @@ and parameter spelling decisions with semantics fixed.
 
 G033 owns branch forms; P034 owns termination beyond the tail
 guarantee; G037 owns closure allocation and identity observability;
-G084 owns process-entry tails beyond C010's clause; P109 owns all
+P084 owns process-entry tails beyond C010's clause; P109 owns all
 surface spellings.
 
 The model should be revisited if the surface era's ergonomics demand
 multi-parameter *native* forms (the remedy is a P109 spelling with
 this desugaring as its semantics, not an arity change), or if
 optimization work wants uncurried calling conventions (the remedy is
-G094's calling-convention slice under this model's semantics).
+P094's calling-convention slice under this model's semantics).
 
 ## Connections
 

@@ -43,9 +43,9 @@ stay excluded and are re-owned by the G028 compatibility era.
 
 The executable deliverable is a library engine — vendored SemVer,
 requirement satisfaction, the resolver, lockfile generation and replay,
-and bundle digests — with no CLI, since G121 owns build tools.
+and bundle digests — with no CLI, since P121 owns build tools.
 
-This closes G025 without deciding G121 build and fetch tooling, G130
+This closes G025 without deciding P121 build and fetch tooling, P130
 supply-chain signing and threat modeling, G028 compatibility and
 re-export facades, G026 prelude contents, or G027 entry points.
 
@@ -203,7 +203,7 @@ compatibility-policy question that era will own.
 - **No lockfile:** no reproducibility anchor; fails two checklist
   clauses.
 - **Tarball-checksum identity:** transport-coupled; rebuild-sensitivity.
-- **Signed lockfile now:** duplicates C006 without its lifecycle; G130
+- **Signed lockfile now:** duplicates C006 without its lifecycle; P130
   owns the threat model.
 - **Minimal re-export form now:** drags facade digest-chain semantics
   into this slice.
@@ -212,15 +212,15 @@ compatibility-policy question that era will own.
 ## What C025 adds to the design
 
 Multi-package Catena programs become declarable, resolvable, and
-reproducible: G121 gets a specification-backed engine to build tooling
-on, G128 gets its reproducibility anchor, G130 gets registry-neutral
+reproducible: P121 gets a specification-backed engine to build tooling
+on, P128 gets its reproducibility anchor, P130 gets registry-neutral
 integrity to protect, and the Hex hypothesis becomes a recorded profile
 rather than an inbox wish.
 
 ## Remaining questions and falsification criteria
 
-G121 must build fetch/lock commands on this engine; G128 must consume
-bundle digests for reproducible builds; G130 must layer signing and
+P121 must build fetch/lock commands on this engine; P128 must consume
+bundle digests for reproducible builds; P130 must layer signing and
 threat analysis; G028 must eventually design re-export facades and
 version-skew compatibility; G027 selects entry modules from resolved
 packages.

@@ -59,7 +59,7 @@ Division, remainder, and every reserved spelling's eventual
 semantics belong to the numeric library's own revision (`NR-OBL-007`):
 checked and decimal arithmetic, division-by-zero classification
 under C036's taxonomy, truncation and remainder sign rules, and
-explicit `Int`/`Float` conversions are all G105's. No divide or
+explicit `Int`/`Float` conversions are all P105's. No divide or
 remainder operator exists in this revision (`NR-OBL-007`).
 
 ## Conversion boundary
@@ -67,7 +67,7 @@ remainder operator exists in this revision (`NR-OBL-007`).
 > **Normative definition.**
 
 Conversions between `Int` and `Float` are explicit named
-operations whose library placement is G105's (`NR-OBL-004`,
+operations whose library placement is P105's (`NR-OBL-004`,
 `NM-OBL-006` unchanged); no context performs, inserts, or elides a
 conversion.
 

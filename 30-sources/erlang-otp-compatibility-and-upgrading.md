@@ -102,7 +102,7 @@ compatible as possible, even in cases where we give no compatibility
 guarantees" is explicit about this. Its release-counting promises
 (two releases) presuppose OTP's release cadence and have no Catena
 counterpart. NIF, driver, and distribution mechanics are target
-machinery whose Catena analogues, if any, belong to P093/G094/G095 and
+machinery whose Catena analogues, if any, belong to P093/P094/G095 and
 G091/G092.
 
 ## Derived work

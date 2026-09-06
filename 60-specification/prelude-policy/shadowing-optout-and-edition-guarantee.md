@@ -72,12 +72,12 @@ migration, and the affected revisions; it MUST NOT enter through
 compiler behavior, tooling convention, or silence (`PL-OBL-008`).
 Until such a record exists, every conforming implementation resolves
 bare selections exactly as this chapter states. Freezing prelude
-contents (G101) adds to this guarantee without weakening it.
+contents (P101) adds to this guarantee without weakening it.
 
 ## Deliberately separate work
 
-Prelude contents and the edition-record decision remain G101 and future
-edition work; scaffolding defaults remain G121; the compatibility
+Prelude contents and the edition-record decision remain P101 and future
+edition work; scaffolding defaults remain P121; the compatibility
 meaning of a prelude version bump is subsequently fixed by C028/G136.
 
 ## Rationale and evidence (non-normative)

@@ -17,7 +17,7 @@ aliases:
 
 This directory contains the Catena 0.1.40 contract for how `Int`
 and `Float` relate across operators: the closed-set instantiation
-rule, the dispatch exclusion, float arithmetic, and the G105
+rule, the dispatch exclusion, float arithmetic, and the P105
 routings, with the conformance obligations.
 
 The repository-level [Specification Authority](../../SPECIFICATION-AUTHORITY.md)
@@ -35,7 +35,7 @@ remain C018's. Operator tokens, precedence, and fixity remain
 C019's. The comparable set remains C035's. The numeric runtime
 types remain C040's. Division, remainder, checked and decimal
 arithmetic, explicit conversions, and the numeric library remain
-G105's.
+P105's.
 
 ## Variability register
 
@@ -57,7 +57,7 @@ behavior may vary.
   — the typing mechanism and float arithmetic.
 - [Exclusions and Routings](exclusions-and-routings.md)
   — no dispatch, no defaulting, no coercion, no literal
-  constraints; division and remainder to G105.
+  constraints; division and remainder to P105.
 - [Numeric Relationships Diagnostics and Conformance](diagnostics-and-conformance.md)
   — zero new families, abstract boundaries, and the `NR-OBL-*`
   obligations with evidence sets.

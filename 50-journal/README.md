@@ -30,6 +30,10 @@ source notes.
 
 ### Documents
 
+- [Checklist Completion Audit](2026-09-06-checklist-completion-audit.md)
+  — records the two-repository audit, four reopened items, partial-status
+    corrections, exact compiler identity, and fresh compiler/archive checks.
+
 - [C082 Top-Level Effects](2026-09-01-c082-toplevel.md)
   — records the normative 0.1.48 silent top level, the C027-shaped
     witness corpus, and three entry-corpus alias facts, with

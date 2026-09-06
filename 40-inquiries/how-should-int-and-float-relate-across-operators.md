@@ -53,9 +53,9 @@ belong.
    correct-but-dormant — witnessed by driving the inference engine
    with float-typed operands, live with the first float-bearing
    frontend.
-4. **Division and remainder route to G105** (checked and decimal
+4. **Division and remainder route to P105** (checked and decimal
    arithmetic, the numeric library), matching C019's
-   "G105/G061 with their own later revisions" split.
+   "P105/G061 with their own later revisions" split.
 5. Zero new diagnostic families and no new public API: mixed-type
    rejection stays the unification error; nothing new exists to
    diagnose.
@@ -69,7 +69,7 @@ belong.
 - **Defer everything to P109** — rejected: strands the existing
   same-type ordering pattern half-justified and leaves G061's
   named question unanswered.
-- **Fix division semantics now** — rejected: pre-empts G105's
+- **Fix division semantics now** — rejected: pre-empts P105's
   checked-arithmetic decisions (division-by-zero classification,
   truncation, remainder sign).
 - **Keep arithmetic Int-only** — rejected: the annotation witness
@@ -92,6 +92,6 @@ Resolved as C061 at revision `0.1.40`: the contract lives in the
 the reasoning in
 [Catena Numeric Relationships](../20-notes/catena-numeric-relationships.md),
 and the forks in the [design decision
-register](../20-notes/design-decision-register.md). G105 keeps
+register](../20-notes/design-decision-register.md). P105 keeps
 explicit conversions, checked and decimal arithmetic, division and
 remainder semantics, and the numeric library.

@@ -61,7 +61,7 @@ operations (`PK-OBL-001`):
 
 The engine does not fetch, cache, build, sign, or run registry
 protocols; implementations MUST NOT use this boundary to claim those
-G121/G130 phases (`PK-OBL-012`).
+P121/P130 phases (`PK-OBL-012`).
 
 The bootstrap evidence names these `Catena.Package.Deps.parse_version/1`,
 `parse_requirement/1`, `satisfies?/2`, `resolve/2`,
@@ -91,7 +91,7 @@ member lists, and component lists.
 | `PK-OBL-009` | reject unsatisfiable sets as `PKG003` with every requirer and absent names as `PKG004` | conflict and unknown-name tests |
 | `PK-OBL-010` | generate canonical byte-deterministic `catena.lock` records | double-generation byte-equality tests |
 | `PK-OBL-011` | replay a matching lockfile as exact pins and reject stale or tampered locks as `PKG005` | replay, re-lock, and tamper tests |
-| `PK-OBL-012` | keep the engine deterministic, source-only, and outside G121/G130 phases | repeated-result and absent-phase tests |
+| `PK-OBL-012` | keep the engine deterministic, source-only, and outside P121/P130 phases | repeated-result and absent-phase tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `PK-OBL-*` set against unknown and uncovered

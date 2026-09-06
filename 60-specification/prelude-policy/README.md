@@ -36,8 +36,8 @@ guarantee, prelude diagnostics, and C026 conformance obligations here.
 Name resolution and precedence remain C021's. Import admission and its
 diagnostics remain C022's. Package identity, requirement resolution,
 and lockfile semantics remain C025's. Prelude contents and the name
-freeze remain G101's. Collection protocols remain P102's. Tooling
-scaffolding remains G121's. Entry points are subsequently fixed by C027. Compatibility
+freeze remain P101's. Collection protocols remain P102's. Tooling
+scaffolding remains P121's. Entry points are subsequently fixed by C027. Compatibility
 meanings of prelude version bumps are subsequently fixed by C028/G136's.
 
 ## Variability register
@@ -72,6 +72,6 @@ behavior may vary.
 
 Keep all chapters at one lifecycle status and version. A selection,
 admission, precedence, opt-out, or guarantee change requires an explicit
-later semantic revision. Freezing contents is G101's work on this
+later semantic revision. Freezing contents is P101's work on this
 mechanism. Keep the traceability map, sibling compiler tests,
 source-language guides, and this inventory synchronized.

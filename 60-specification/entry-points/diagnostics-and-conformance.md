@@ -82,7 +82,7 @@ tool (`EN-OBL-010`).
 | `EN-OBL-007` | report `{ completed, value }` or `{ failed, trap }` — return-is-shutdown with the trap identity | completion and failure-report tests |
 | `EN-OBL-008` | reject a launch naming an undeclared entry as `ENT002` | unknown-name launch tests |
 | `EN-OBL-009` | emit stable diagnostics: `ENT001`–`ENT003` plus the reused families with unchanged identities | every diagnostic family test |
-| `EN-OBL-010` | keep the wiring deterministic, source-only, and outside G084/G088/G121 machinery, with compilation roots unchanged | repeated-report and exclusion tests |
+| `EN-OBL-010` | keep the wiring deterministic, source-only, and outside P084/G088/P121 machinery, with compilation roots unchanged | repeated-report and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `EN-OBL-*` set against unknown and

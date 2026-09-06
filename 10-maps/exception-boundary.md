@@ -37,7 +37,7 @@ Boundary Specification](../60-specification/exception-boundary/README.md).
    (C005) — a handler may decline to resume: the one-shot escape.
 4. **The locality evidence.** C010's process-local trap (trapping
    child, spared spawner) — the standing witness that process
-   exits are a distinct, routed mechanism (G084).
+   exits are a distinct, routed mechanism (P084).
 5. **The contract.** The [Exception Boundary
    Specification](../60-specification/exception-boundary/README.md):
    the partition, the blessed pattern, panic-as-trap-kind, the

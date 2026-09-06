@@ -160,7 +160,7 @@ over speculative checking.
 
 G038 owns compile-time evaluation design under the gate; P109 owns
 syntax; G036 owns the failure taxonomy (divergence explicitly outside
-it); G084 owns process-loop termination beyond the kernel's receive
+it); P084 owns process-loop termination beyond the kernel's receive
 clause; G088 owns cancellation of long evaluations.
 
 The model should be revisited if the 1.0 era's ecosystem demands

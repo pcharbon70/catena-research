@@ -61,11 +61,11 @@ owners of branching, termination, allocation, and syntax.
   `FC-OBL-001` through `FC-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
 - G033 branching; P034 termination beyond the tail guarantee; G037
-  closure allocation identity; G084 process-entry tails; P109
+  closure allocation identity; P084 process-entry tails; P109
   surface spellings remain the future owners.
 
 ## Open questions
 
 C032 is complete at revision `0.1.28`. P109 may surface multi-
 parameter and application spellings with this model as their
-semantics; G094 may lower through uncurried conventions under it.
+semantics; P094 may lower through uncurried conventions under it.

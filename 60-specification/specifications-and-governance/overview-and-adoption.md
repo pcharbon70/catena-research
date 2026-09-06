@@ -118,7 +118,7 @@ certificates, temporal specifications, network services, wall-clock expiry,
 transparency logs, hardware-key protocols, package-manager transport,
 cross-format migrations, or interpretation by future compiler versions.
 
-Those exclusions keep long-term evolution item G116 open. They do not permit
+Those exclusions keep long-term evolution item P116 open. They do not permit
 an implementation to invent an alternate runtime profile or signature format
 under version `0.1.6`.
 

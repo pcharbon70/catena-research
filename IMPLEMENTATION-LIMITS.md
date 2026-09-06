@@ -177,7 +177,7 @@ reporting the ordinary successful-send semantics. A deployment that imposes a
 quota needs an explicit admission, backpressure, process-failure, or trapping
 policy at the later concurrency/runtime boundary. Process death, supervision,
 distributed backpressure, and concrete mailbox quotas remain owned by G068
-and G129.
+and P129.
 
 The already specified send-to-dead-target behavior is not changed by this
 policy. Nor does this policy promise that an operating system cannot terminate

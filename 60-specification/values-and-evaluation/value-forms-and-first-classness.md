@@ -86,7 +86,7 @@ exists at this revision.
 
 Exclusions are named, not tiered (`VA-OBL-008`): what storing a
 process handle lets a program observe belongs to G037 (allocation
-observability) and G085 (message semantics); whether and how values
+observability) and P085 (message semantics); whether and how values
 compare belongs to P035; how values render belongs to G110/G118.
 Nothing here pre-decides those owners' answers.
 
@@ -110,7 +110,7 @@ syntax remains P109's.
 
 The [values synthesis](../../20-notes/catena-values-and-evaluation.md)
 records why a closed grammar was selected over open canonical forms,
-why uniform first-classness defers observability to G037/G085, and why
+why uniform first-classness defers observability to G037/P085, and why
 Float is the tenth form. The [resolved
 inquiry](../../40-inquiries/what-are-catenas-values-and-strictness.md)
 and [topic map](../../10-maps/values-and-evaluation.md) preserve the

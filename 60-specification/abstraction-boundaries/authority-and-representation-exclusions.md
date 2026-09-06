@@ -66,7 +66,7 @@ edition 0.1 makes a datatype's runtime representation observable
 
 A future layout-stability or ABI contract — any rule under which a
 representation choice becomes a compatibility surface — is owned by C028,
-together with the representation (P093), calling-convention (G094), and
+together with the representation (P093), calling-convention (P094), and
 foreign-term (G095) boundaries that would consume it. Until that owner
 delivers, every appearance of a stable-layout form in any frontend is
 invalid input, not a semantics.
@@ -80,7 +80,7 @@ provide no exhaustiveness evolution marker. Edition 0.1 adds no
 
 ## Deliberately separate work
 
-Any ABI, wire, or serialization contract (C028 declared absence; G025/G128 consumers); views,
+Any ABI, wire, or serialization contract (C028 declared absence; G025/P128 consumers); views,
 pattern synonyms, and selective exposure (D046/G040); structural record
 and variant abstraction (G040/G041); foreign-term validation (G095);
 BEAM representation mapping (P093).

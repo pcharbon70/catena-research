@@ -74,8 +74,8 @@ as **compiler-internal generation, not execution** (`CE-OBL-004`):
 
 Spellings for any future const/macro/attribute surface remain
 P109's; deriving extensions remain G040's, classified under this
-area's rules on arrival; code-generation programs remain G005/G116's;
-build tooling remains G121's.
+area's rules on arrival; code-generation programs remain G005/P116's;
+build tooling remains P121's.
 
 ## Rationale and evidence (non-normative)
 

@@ -35,8 +35,8 @@ failure taxonomy remains C036's, the exception-clause exclusion
 C044's, the resumption discipline C005's, the process-local trap
 evidence C010's, and the foreign visibility requirement C067's —
 restated here as routing rows, not amended. Outcome-type contents
-remain G103's, library faults G105's, cancellation G088's, process
-death G084's, and foreign typing G095/G096's.
+remain G103's, library faults P105's, cancellation G088's, process
+death P084's, and foreign typing G095/G096's.
 
 ## Variability register
 

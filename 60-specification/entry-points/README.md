@@ -37,9 +37,9 @@ conformance obligations here. Manifest framing and selection remain
 C008's. Manifest optional-field structure remains C025's. Name
 resolution, precedence, and import admission remain C021/C022's.
 Evaluation order, completion, and trap semantics remain C010's.
-Supervision, restart, and process lifetime remain G084/G089's.
+Supervision, restart, and process lifetime remain P084/G089's.
 Cancellation and deadlines remain G088's. The CLI and host-process
-boundary remain G121's. Compatibility meanings of entry-set changes
+boundary remain P121's. Compatibility meanings of entry-set changes
 are subsequently fixed by C028's.
 
 ## Variability register
@@ -73,6 +73,6 @@ tooling behavior may vary.
 
 Keep all chapters at one lifecycle status and version. An entry-shape,
 closure, launch, or report change requires an explicit later semantic
-revision. Supervision-era extensions remain G084/G089 work over this
+revision. Supervision-era extensions remain P084/G089 work over this
 mechanism. Keep the traceability map, sibling compiler tests,
 source-language guides, and this inventory synchronized.

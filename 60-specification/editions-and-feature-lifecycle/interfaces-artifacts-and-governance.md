@@ -101,7 +101,7 @@ change to the selection invalidates an approval for the old selection.
 
 These additions define only the 0.1.7 transition. General policy-schema
 migration, interpretation by arbitrarily newer compilers, archived evidence,
-and reproducible historical decisions remain G116.
+and reproducible historical decisions remain P116.
 
 ## Connections (non-normative)
 

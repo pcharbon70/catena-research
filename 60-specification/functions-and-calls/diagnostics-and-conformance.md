@@ -69,7 +69,7 @@ witnesses are order- and tool-independent (`FC-OBL-008`).
 | `FC-OBL-005` | make the let-bound closure the local-function form under all of C031's rules | local-closure value tests |
 | `FC-OBL-006` | keep the proper-tail-call guarantee: deep tail recursion completes without unbounded stack growth | deep BEAM recursion and stepper termination tests |
 | `FC-OBL-007` | keep named functions as definitions with C031's recursion environment and C022's export rules | named-definition witness tests |
-| `FC-OBL-008` | keep the model deterministic and outside G033/P034/G037/G094/P109 claims with zero new diagnostic families | repeated-result and exclusion tests |
+| `FC-OBL-008` | keep the model deterministic and outside G033/P034/G037/P094/P109 claims with zero new diagnostic families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `FC-OBL-*` set against unknown and

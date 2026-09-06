@@ -25,7 +25,7 @@ were already frozen by C018, and this slice adds the fourth
 and negation over `Float` at `0.1.40`: `add`/`subtract`/`multiply`
 become same-type over `{Int, Float}`, witnessed end-to-end through
 annotated float parameters because the frozen frontends carry no
-float literals. Division and remainder belong to G105's numeric
+float literals. Division and remainder belong to P105's numeric
 library.
 
 ## Scope, method, and definitions
@@ -77,7 +77,7 @@ The rule becomes live with the first float-bearing frontend.
 The closed set is an enumeration: a future numeric type amends it
 by a new revision, and until then float arithmetic beyond
 `+`/`-`/`*` (division, remainder, transcendental functions) simply
-does not exist — G105's territory. If an operator ever resolves by
+does not exist — P105's territory. If an operator ever resolves by
 instance search or accepts mixed operands, this contract is
 falsified and must be amended, not extended silently.
 
@@ -89,7 +89,7 @@ falsified and must be amended, not extended silently.
   — C018's no-defaulting and no-coercion clauses this slice
   inherits.
 - [Precedence and Associativity](../60-specification/operators-and-punctuation/precedence-and-associativity.md)
-  — C019's routing of dispatch and division to G061/G105.
+  — C019's routing of dispatch and division to G061/P105.
 - [The Comparable Set](../60-specification/equality-and-ordering/the-comparable-set.md)
   — the same-type pattern ordering already uses.
 - [Numeric literal semantics map](../10-maps/numeric-literal-semantics.md)

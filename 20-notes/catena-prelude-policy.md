@@ -32,7 +32,7 @@ declaration, an explicit import, or an explicitly selected prelude. Any
 future edition that names a default prelude does so through a lifecycle
 record under C008 — never silently. A prelude package is any valid C025
 package — resolved, digest-bound, and lock-pinned like any dependency,
-including one with zero exports — so G101 freezes contents on this
+including one with zero exports — so P101 freezes contents on this
 mechanism instead of inventing one.
 
 The executable deliverable wires three shipped pieces: the manifest
@@ -41,8 +41,8 @@ decoder gains the optional `prelude` object; the environment builder
 `Catena.Package.Deps` resolves and locks the prelude selection as an
 ordinary dependency with a marked requirer.
 
-This closes G026 without deciding G101's contents, P102's collection
-protocols, G121's tooling defaults, G027's entry points, or G028's
+This closes G026 without deciding P101's contents, P102's collection
+protocols, P121's tooling defaults, G027's entry points, or G028's
 compatibility meanings of prelude version bumps.
 
 ## Scope and method
@@ -112,9 +112,9 @@ origin keeps one rule.
 The standard library does not exist yet, so any 0.1 "default prelude"
 would be empty-by-fiat — a named artifact with no contents, edging
 toward the silent default the corpus forswore. Guaranteeing zero
-implicit names is truthful now, gives G101 a clean upgrade path
+implicit names is truthful now, gives P101 a clean upgrade path
 (introduce contents + a lifecycle record naming a default, together),
-and gives tooling (G121) a firm rule: no scaffold may inject scope.
+and gives tooling (P121) a firm rule: no scaffold may inject scope.
 
 ## Selected model
 
@@ -158,7 +158,7 @@ declaration, an explicit import, or an explicitly selected prelude; no
 name is implicitly in scope. A future edition naming a default prelude
 does so through a C008 lifecycle record that names the package,
 requirement, and migration; it never enters silently. This guarantee is
-upgrade-not-amend: freezing contents (G101) or naming a default (a
+upgrade-not-amend: freezing contents (P101) or naming a default (a
 future edition record) adds to it without weakening it.
 
 ### Lockfile and identity
@@ -179,15 +179,15 @@ deterministic; no separate prelude section exists in the lock.
 - **Per-name hiding:** reintroduces the C022-rejected mechanism and
   ambiguity transfer.
 - **Empty default prelude in 0.1:** a named-but-empty artifact before
-  G101; edges toward silent defaults.
+  P101; edges toward silent defaults.
 - **Normative-only mechanism:** the archive's rejected pattern.
-- **Tooling scaffold defaults (G121):** would blur the language/tooling
+- **Tooling scaffold defaults (P121):** would blur the language/tooling
   line just drawn; a scaffold may pre-fill the field, never imply it.
 
 ## What C026 adds to the design
 
-The standard-library program (G101+) gains its admission target, tooling
-(G121) gains a firm zero-implicit-names rule, and the eight shipped
+The standard-library program (P101+) gains its admission target, tooling
+(P121) gains a firm zero-implicit-names rule, and the eight shipped
 chapters' deferrals to G026 resolve into one mechanism. Most
 importantly, the edition guarantee makes "what does a bare program see?"
 a question with a permanent, checkable answer: nothing that was not
@@ -195,13 +195,13 @@ asked for.
 
 ## Remaining questions and falsification criteria
 
-G101 must freeze contents and decide whether any future edition names a
-default prelude through a lifecycle record; G121 may scaffold the field
+P101 must freeze contents and decide whether any future edition names a
+default prelude through a lifecycle record; P121 may scaffold the field
 but never imply selection; G028/G136 own the compatibility meanings of
 prelude version bumps; P102 owns collection protocols the prelude may
 re-export.
 
-The model should be revisited if G101's usability evidence shows
+The model should be revisited if P101's usability evidence shows
 opt-in-everywhere materially harms adoption (the remedy is an edition
 record naming a default, not silent admission), or if lockfile
 representation of prelude requirers proves ambiguous for tooling.

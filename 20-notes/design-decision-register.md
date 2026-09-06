@@ -186,7 +186,7 @@ Fixed in: [specification](../60-specification/prelude-policy/README.md)
 | Precedence | ordinary import origin (rec) / weaker-than-imports tier / prelude-priority tier | ordinary origin |
 | Opt-out shape | absent/null = out (rec) / explicit none-sentinel / per-name hiding | absent/null = out |
 | Edition guarantee | 0.1 guarantees zero implicit names (rec) / names empty seed prelude / defer the clause | zero implicit names |
-| G101 boundary | mechanism now, contents G101 (rec) / mechanism + minimal contents / normative-only | mechanism now |
+| P101 boundary | mechanism now, contents P101 (rec) / mechanism + minimal contents / normative-only | mechanism now |
 | Deliverable | event grammar + manifest + locks (rec) / events only / mechanism + tooling default | full wiring |
 
 
@@ -339,7 +339,7 @@ Fixed in: [specification](../60-specification/runtime-failure-taxonomy/README.md
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
-| Area shape | new area FT 0.1.32 (rec) / extend values area / defer to G084 | new area FT |
+| Area shape | new area FT 0.1.32 (rec) / extend values area / defer to P084 | new area FT |
 | Taxonomy shape | one outcome, kinded reasons (rec) / multi-class outcomes | one outcome, kinded |
 | Category mapping | six-way mapping (rec) / all six defined now / trap only | six-way mapping |
 | Trap observability | kernel verbatim + witnesses (rec) / classification only / link-monitor exits | kernel verbatim |
@@ -355,7 +355,7 @@ Fixed in: [specification](../60-specification/resource-observability/README.md)
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
-| Area shape | new area RO 0.1.33 (rec) / extend values area / defer to G084 | new area RO |
+| Area shape | new area RO 0.1.33 (rec) / extend values area / defer to P084 | new area RO |
 | Model shape | kernel verbatim, six-way (rec) / list only / admit observables | kernel verbatim, six-way |
 | Finalization | declared absence + gate (rec) / design cleanup now / reserve spellings | declared absence + gate |
 | Identity rule | two-clause identity (rec) / defer closure identity / handle identity equality | two-clause |
@@ -388,7 +388,7 @@ Fixed in: [specification](../60-specification/built-in-data-model/README.md)
 | Area shape | new area BM 0.1.35 (rec) / extend values area / defer to P109 | new area BM |
 | 12-way classification | typed now, library, excluded (rec) / all twelve built-in / classify existing only | typed now, library, excluded |
 | Text semantics | C018 pattern, three types (rec) / Character as Int alias / text-as-bytes | C018 pattern, three types |
-| Comparability | content-based entries (rec) / equality only / defer to G101 | content-based entries |
+| Comparability | content-based entries (rec) / equality only / defer to P101 | content-based entries |
 | Deliverable | elaboration + classifier (rec) / pipeline integration / normative-only | elaboration + classifier |
 
 
@@ -415,9 +415,9 @@ with this slice's promotion commits.
 
 | Fork | Options offered | Chosen |
 | --- | --- | --- |
-| Area shape | new area CO 0.1.37 (rec) / defer to G101 / extend data-model area | new area CO |
+| Area shape | new area CO 0.1.37 (rec) / defer to P101 / extend data-model area | new area CO |
 | Six-way stance | decision + routing (rec) / design operations now / routing table only | decision + routing |
-| Bounds failures | typed failure as value (rec) / trap on miss / defer to G105 | typed failure as value |
+| Bounds failures | typed failure as value (rec) / trap on miss / defer to P105 | typed failure as value |
 | Complexity | excluded from language (rec) / promise complexity now / defer silently | excluded from language |
 | Deliverable | nominal-ADT witnesses (rec) / collection built-ins / normative-only | nominal-ADT witnesses |
 
@@ -460,7 +460,7 @@ with this slice's promotion commits. Closes G061.
 | --- | --- | --- |
 | Mechanism | closed-set instantiation, no dispatch (rec) / Numeric trait dispatch / defer to P109 | closed-set instantiation |
 | Float arithmetic | extend, witness via annotations (rec) / codify but keep Int-only | extend, witness via annotations |
-| Division/remainder | route to G105 (rec) / fix division now | route to G105 |
+| Division/remainder | route to P105 (rec) / fix division now | route to P105 |
 | Area naming | numeric-relationships NR (rec) / extend operators area / numeric-operator-instantiation NOI | numeric-relationships NR |
 
 ## C062 — aliases and newtypes (`0.1.41`, 2026-09-01)
@@ -571,7 +571,7 @@ slice's promotion commits. Closes G082; Section 9 advances to 7/8.
 ## Cross-cutting decisions
 
 - **Package publishing substrate (2026-08-22):** adopt the Hex registry
-  Gleam-style as the working hypothesis for G025/G121/G130, with Catena
+  Gleam-style as the working hypothesis for G025/P121/P130, with Catena
   governance kept inner-package. Not a plan fork — an out-of-band
   developer decision recorded in
   [the inbox capture](../00-inbox/package-publishing-hypothesis-hex.md).

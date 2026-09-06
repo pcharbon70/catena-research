@@ -138,7 +138,7 @@ expressions are fixed by the normative 0.1.14
 [Numeric Literal Semantics](../numeric-literal-semantics/README.md) area.
 G019/P109 own composition with operators and
 punctuation. Compound and BEAM-native data forms remain under their existing
-G040/G042/P093/G097 owners. Future numeric forms require an explicit later
+G040/G042/P093/P097 owners. Future numeric forms require an explicit later
 revision rather than recovery under this grammar.
 
 ## Rationale and evidence (non-normative)

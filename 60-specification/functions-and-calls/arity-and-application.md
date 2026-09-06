@@ -75,7 +75,7 @@ language level.
 Application evaluation order remains C030's. Binding structure and
 non-recursion remain C031's. Branch forms remain G033's. Closure
 allocation and identity observability remain G037's. Calling
-conventions remain G094's. Multi-parameter and application surface
+conventions remain P094's. Multi-parameter and application surface
 spellings remain P109's.
 
 ## Rationale and evidence (non-normative)

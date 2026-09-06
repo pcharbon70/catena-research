@@ -63,7 +63,7 @@ composition counterexample exists (`PP-OBL-005`).
 
 - **Public processes.** The kernel mailbox targets (C010) stand
   as stated. The extension to public process creation and lifetime
-  holds **iff** the owning slice (G084/G085) ships with its own
+  holds **iff** the owning slice (P084/P085) ships with its own
   preservation statement; this chapter claims nothing about
   machinery that does not exist (`PP-OBL-007`).
 - **Foreign values.** Foreign values enter only through the

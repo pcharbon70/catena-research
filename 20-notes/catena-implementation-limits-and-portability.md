@@ -119,7 +119,7 @@ to maximum-heap checks, and can encounter distribution backpressure or host
 memory pressure. A count chosen here would either be false portability or a
 new runtime admission design. C012 therefore publishes the capacity as
 deployment-defined and carries explicit semantic constraints forward to G068
-and G129.
+and P129.
 
 ## Choosing bootstrap floors
 
@@ -148,7 +148,7 @@ value boundary.
 The measurement excludes a leading minus sign. C017 now defines bases and
 separators and measures every based spelling by the decimal digits in its
 mathematical value. C018 bounds decimal component digits with the parallel
-`LIM005` floor, while fixed-width arithmetic remains G061/G105 library
+`LIM005` floor, while fixed-width arithmetic remains G061/P105 library
 policy. The retained frontends and C017 scanner accept 4,096 digits and report
 `LIM002` at 4,097.
 
@@ -229,7 +229,7 @@ or generated amplification; measuring only at the end wastes resources and
 can turn an anticipated source refusal into an opaque backend failure. The
 checks do not replace general denial-of-service work: aggregate file size,
 parser token amplification, memory behavior, concurrency quotas, and hostile
-package graphs remain in G126–G131 and the whole-language performance program.
+package graphs remain in G126–P131 and the whole-language performance program.
 
 ## Rejected alternatives
 
@@ -264,8 +264,8 @@ deployment capacity visible without prematurely standardizing an operations
 policy.
 
 It also clarifies future design work. C017 activates the inherited payload
-contract as `LIM004`; G068 and G129 own explicit capacity and failure semantics rather
-than a silent mailbox cap; G126–G131 can build threat, TCB, reproducibility,
+contract as `LIM004`; G068 and P129 own explicit capacity and failure semantics rather
+than a silent mailbox cap; G126–P131 can build threat, TCB, reproducibility,
 unsafe, and supply-chain policy on top of stable resource classifications; and
 later semantic slices remain separate from this governance milestone.
 

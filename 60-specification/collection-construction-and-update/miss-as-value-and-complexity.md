@@ -39,7 +39,7 @@ value**: normal termination with a domain answer — the shape an
 Option-typed return gives — never a trap, never an undefined
 outcome (`CO-OBL-004`). Collections stay total: no lookup operation
 introduces an abnormal-termination path. The concrete miss type is
-the declaring library's (G101/G105); the language contract fixes
+the declaring library's (P101/P105); the language contract fixes
 the classification and the totality, nothing more.
 
 This is G036's mapping executed: typed failure is a value, so a
@@ -51,7 +51,7 @@ boundary to claim a trapping lookup.
 > **Normative definition.**
 
 No complexity bound is a language-level promise (`CO-OBL-005`).
-Complexity documentation is G101's library-level contract, stated
+Complexity documentation is P101's library-level contract, stated
 per operation, clearly separated from language semantics.
 
 The rationale is architectural, and closing: representation is
@@ -74,7 +74,7 @@ traces on every conforming target (`CO-OBL-008`).
 
 ## Deliberately separate work
 
-Miss-type contents and collection libraries remain G105's; G101
+Miss-type contents and collection libraries remain P105's; P101
 owns the declared collections and their complexity documentation;
 runtime performance observability remains G124's tool-side channel.
 

@@ -41,7 +41,7 @@ The checklist's six topics resolve as (`CO-OBL-002`):
 | Topic | Decision |
 | --- | --- |
 | Persistent update | **is** ordinary constructor application and match-based recursion — no dedicated update operator exists at the language level; spellings are P109's |
-| Duplicate map keys | a **G101 declaration question**: the declaring slice of any key-carrying collection MUST state its duplicate-key behavior explicitly; the language fixes only the explicitness |
+| Duplicate map keys | a **P101 declaration question**: the declaring slice of any key-carrying collection MUST state its duplicate-key behavior explicitly; the language fixes only the explicitness |
 | Ordering | rides **C035's comparable set**: element and key ordering are the entries already shipped — a collection orders when its elements' types order |
 | Key equality | keys must be **comparable** under C035 to serve in equality-dependent operations; non-comparable key types are a typing error in those operations |
 | Bounds failures | **typed failure as a value** ([Miss as Value and Complexity](miss-as-value-and-complexity.md)) |
@@ -64,8 +64,8 @@ operations, and no record acquires collection semantics (`CO-OBL-003`).
 
 ## Deliberately separate work
 
-Collection declarations remain G101's; miss-type contents and
-collection libraries G105's; spellings P109's; the comparable set
+Collection declarations remain P101's; miss-type contents and
+collection libraries P105's; spellings P109's; the comparable set
 C035's; structural records C041's.
 
 ## Rationale and evidence (non-normative)

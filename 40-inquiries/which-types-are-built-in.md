@@ -47,8 +47,8 @@ at 0.1.13 before C018 elaborated their meaning.
    Float, tuple, function, process handle (shipped, classified once)
    plus Text, Character, and Bytes as built-ins with C018-style
    elaboration; **library territory** — list, map, set as ordinary
-   nominal ADTs (G101 declares `List` as `Option` is declared today);
-   **excluded** — reference (no mutation; G084's era if ever).
+   nominal ADTs (P101 declares `List` as `Option` is declared today);
+   **excluded** — reference (no mutation; P084's era if ever).
    *(Recommended: every decision rides shipped machinery.)*
 3. Text, Character, and Bytes follow **the C018 pattern with three
    types**: Text is the decoded Unicode scalar sequence, Character is
@@ -60,7 +60,7 @@ at 0.1.13 before C018 elaborated their meaning.
 4. Comparability executes **content-based entries**: Text comparable
    and orderable (code-point sequence, lexicographic); Character
    comparable and orderable; Bytes comparable and orderable
-   (byte-sequence order); list/map/set enter with G101's nominal
+   (byte-sequence order); list/map/set enter with P101's nominal
    declarations; reference and handles never; Unit stays
    non-comparable.
 5. The deliverable is a `Catena.Text` elaboration module plus the
@@ -81,7 +81,7 @@ at 0.1.13 before C018 elaborated their meaning.
 - **Text-as-bytes single type** — rejected: collapses two scanner
   kinds and loses the scalar/byte distinction the scanner preserves.
 - **Equality-only comparability** — rejected: declines the natural
-  total orders the decoded payloads give; G101's maps and sets need
+  total orders the decoded payloads give; P101's maps and sets need
   ordering anyway.
 - **Pipeline integration now / normative-only** — rejected patterns.
 
@@ -102,5 +102,5 @@ the reasoning in
 [Catena Built-In Data Model](../20-notes/catena-built-in-data-model.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). P109 spellings,
-G101 collection declarations, G042 construction and update, and G084
+P101 collection declarations, G042 construction and update, and P084
 references remain open with their owners.

@@ -78,7 +78,7 @@ their meaning. All three ride into the two-clause rule unchanged.
 
 [C029](../60-specification/values-and-evaluation/value-forms-and-first-classness.md)
 named uniform-first-classness's observability exclusions to G037:
-storing a handle lets a program observe *what G037/G085 own*. The
+storing a handle lets a program observe *what G037/P085 own*. The
 answer: storage observes nothing beyond the value itself.
 
 [C032](../60-specification/functions-and-calls/closures-and-tail-calls.md)
@@ -146,7 +146,7 @@ it needs a gated slice, not a loophole in `equal`.
 
 ### Finalization
 
-Declared absence with a gate: cleanup arrives only through G080s/G084
+Declared absence with a gate: cleanup arrives only through G080s/P084
 or G095, each shipping its own semantics in its admitting slice.
 
 ### Rejected alternatives
@@ -158,14 +158,14 @@ As enumerated in the resolved inquiry.
 The deferred-exclusion sweep closes — every shipped slice's
 "remaining G037's" resolves into one contract. The optimizer's freedom
 budget becomes normative boundary rather than implementation courtesy;
-G080s/G084/G095 receive a clean predecessor stating what they may
+G080s/P084/G095 receive a clean predecessor stating what they may
 observe and when; and G124's debugging program receives its anchor
 inventory.
 
 ## Remaining questions and falsification criteria
 
-G080s own resource scopes and cleanup; G084 handle operations beyond
-the kernel's; G085 message-copy semantics details; G095 foreign
+G080s own resource scopes and cleanup; P084 handle operations beyond
+the kernel's; P085 message-copy semantics details; G095 foreign
 finalization; G124 debugging tools; G040 any representation-adjacent
 entries.
 

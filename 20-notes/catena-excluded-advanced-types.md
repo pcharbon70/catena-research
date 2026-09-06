@@ -16,7 +16,7 @@ aliases:
 ## Executive conclusion
 
 Catena's advanced type boundary has stood complete since `0.1.1`:
-C001 excludes seven forms and requires rejection to identify the
+C001 excludes eight forms and requires rejection to identify the
 profile boundary; C068 ships the checked profile — predicative
 explicit higher rank, signature-directed GADTs, branch-local
 equalities, explicit rigid existentials — behind an annotation

@@ -2,7 +2,7 @@
 title: "Catena Language Specification Completeness Checklist"
 kind: note
 created: "2026-08-01"
-maturity: seed
+maturity: developing
 tags:
   - catena
   - language-design
@@ -13,8 +13,9 @@ aliases:
 
 # Catena Language Specification Completeness Checklist
 
-> Temporary inbox capture. This is an audit and planning checklist, not a
-> normative specification or a commitment to implement every feature listed.
+> Current work-ahead ledger for completing the language definition. This is
+> an audit and planning document, not normative language authority or a
+> commitment to implement every feature listed.
 
 Catena's research establishes a coherent architectural direction, but it does
 not yet constitute a complete language specification. Completeness does not
@@ -58,6 +59,53 @@ An item is complete only when the language reference states, as applicable:
 
 Checking an item may therefore mean either specifying the feature or recording
 that Catena does not support it in the relevant language version.
+
+### Audited status and evidence boundary
+
+The [6 September 2026 audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+checks this ledger against the normative archive and the sibling `../catena`
+implementation at commit `d7e0fcc484d3e1c3b4a292d4d3e703ddcc330535`,
+which supports exact revisions through `0.1.48`. The next unused semantic
+patch is `0.1.49`; this audit introduces no language revision.
+
+A checkbox records the full stated item's completion, including its required
+verification. A normative chapter, passing suite, or obligation tag alone
+is insufficient when its required behavioral witness is missing or its rules
+conflict. Conversely, a defined exclusion or an implemented bounded contract
+can be complete without a general-purpose parser: P109 owns source adoption.
+Whole-language composition proofs and release readiness remain separate work.
+
+The numeric suffix is the permanent item identity. Current owner references
+use the status prefix below; historical promotion records, immutable test
+names, and machine-profile strings may retain their recorded prefix. Dated
+journals and snapshots are historical evidence, not current status summaries.
+
+The current checkboxes total **85 complete, 36 partial, 18 gaps, and 2
+deferred: 141 items**. Counts measure item coverage, not remaining effort.
+Four formerly checked items are reopened (P050/P053/P057/P086); 22 gaps
+are reclassified as partial because bounded work already exists. No new
+item is marked complete by this audit.
+
+| Section | Complete | Partial | Gap | Deferred | Total |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Research foundations | 6 | 0 | 0 | 0 | 6 |
+| 1. Specification form and conformance | 6 | 0 | 0 | 0 | 6 |
+| 2. Lexical grammar and source files | 8 | 0 | 0 | 0 | 8 |
+| 3. Names, modules, packages, and separate compilation | 8 | 0 | 0 | 0 | 8 |
+| 4. Core expressions and evaluation | 10 | 0 | 0 | 0 | 10 |
+| 5. Data, collections, and patterns | 8 | 0 | 0 | 0 | 8 |
+| 6. List comprehensions, generators, and iteration | 9 | 3 | 0 | 1 | 13 |
+| 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
+| 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
+| 9. Effects, failure, and resource scopes | 6 | 0 | 1 | 1 | 8 |
+| 10. Processes, concurrency, and distribution | 0 | 5 | 4 | 0 | 9 |
+| 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
+| 12. Standard library contract | 0 | 8 | 0 | 0 | 8 |
+| 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
+| 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
+| 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
+| 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
+| **Total** | **85** | **36** | **18** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -168,10 +216,10 @@ Its operation table, row model, representation clause, and
 verification are recorded in the
 [C041 conformance journal](../50-journal/2026-08-29-c041-records.md).
 
-## Existing research that needs normative consolidation
+## Consolidated research foundations
 
-These areas already have substantial research. They still need to be rewritten
-as small normative rules rather than copied wholesale into a specification.
+These six research areas have versioned normative contracts and bounded
+implementation evidence. Their remaining extensions have separate owners below.
 
 - [x] **C001 — Complete — Hindley–Milner inference and the advanced typing boundary.**
   The [version 0.1.1 type-system specification](../60-specification/type-system/README.md)
@@ -211,9 +259,9 @@ as small normative rules rather than copied wholesale into a specification.
   define and exercise nominal first-order requests, identity-aware rows, lexical
   capabilities, named deep handlers, affine resumptions, explicit typed core,
   effect-directed CPS, cross-module handlers, and differential reference/BEAM
-  traces. Cleanup, exceptions, host effects, scoped control, performance, and
-  usability remain separately identified work rather than incompleteness in
-  the bounded 0.1.5 feature.
+  traces. Cleanup and scoped control remain G080/D083; C081/C082 subsequently
+  define exception and top-level boundaries, with environmental APIs P106
+  and performance/usability G138/G137 still open.
 - [x] **C006 — Complete — language-integrated specifications and governance.**
   The
   [normative 0.1.6 specification](../60-specification/specifications-and-governance/README.md),
@@ -282,13 +330,17 @@ as small normative rules rather than copied wholesale into a specification.
   where it has a focused executable unit, at least one tagged passing compiler
   test enforced by a per-area coverage gate. The non-normative
   [traceability registry](../10-maps/conformance-traceability.md) held 318
-  obligations at that milestone and now also holds C012's 12 governance
-  obligations and C013's 10 fully traced source-text obligations. The
+  obligations at that milestone; the registry now covers every later
+  specification area as well. Its evidence-status counts are maintained
+  separately from compiler obligation-tag coverage. The
   [resolved inquiry](../40-inquiries/how-should-catena-achieve-exhaustive-rule-to-test-traceability.md)
   and [C011 record](../50-journal/2026-08-12-c011-executable-conformance-suite.md)
   record the coordinated compiler PRs (#76–#87) and the immutable compiler
-  identity. Twenty architectural, future-version, and P117/G095 diagnostic
-  obligations remain explicitly allow-listed and carried by their owner items.
+  identity. The milestone's twenty untraced registry obligations were not
+  the whole compiler allowlist: partial and transitive evidence also appears
+  in those gates. The current audit records both counts and checks the
+  substance of tagged tests; C011 completes the traceability mechanism,
+  not exhaustive behavioral or proof coverage.
   This repository-governance completion creates no language revision and no
   compiler semantic change.
 - [x] **C012 — Complete — implementation limits.** The repository-level
@@ -307,7 +359,7 @@ as small normative rules rather than copied wholesale into a specification.
   [`841af5ee342a31ff4769749bbdaa18a675b1bb21`](https://github.com/pcharbon70/catena/commit/841af5ee342a31ff4769749bbdaa18a675b1bb21)
   on draft PR [#88](https://github.com/pcharbon70/catena/pull/88), with 179
   passing tests and `IL-OBL-001`–`IL-OBL-012` traceability. Mailbox capacity
-  remains deployment-defined under G068/G129 without permitting silent
+  remains deployment-defined under P084/P085/P129 without permitting silent
   per-sender reordering, retargeting, or live-target message loss. This
   repository-governance milestone creates no language revision.
 
@@ -387,8 +439,8 @@ as small normative rules rather than copied wholesale into a specification.
   diagnostics, source-only revision/persistence separation, and complete
   `CM-OBL-001`–`CM-OBL-012` executable coverage. C019 now supplies the complete token stream and
   C020 the file-to-module relationship; P109
-  retains declaration grammar; G110/G118
-  retain rendering/formatting; G119 retains actual doctest execution.
+  retains declaration grammar; P119/G118
+  retain rendering/formatting; P119 retains actual doctest execution.
 - [x] **C017 — Complete — atomic literal grammar.** The normative
   [0.1.13 literal specification](../60-specification/literal-grammar/README.md),
   [synthesis](../20-notes/catena-literal-grammar.md),
@@ -405,9 +457,9 @@ as small normative rules rather than copied wholesale into a specification.
   on compiler PR [#93](https://github.com/pcharbon70/catena/pull/93)
   implements `Catena.scan_literal/2`, exact numeric metadata, provenance,
   source-only lifecycle/persistence separation, and complete
-  `LT-OBL-001`–`LT-OBL-012` coverage with 233 passing tests. Compound lists,
-  tuples, records, maps, and binary construction remain G040/G042/P093/G097;
-  atoms/symbols remain G040/P093/G097; negation spelling and the token
+  `LT-OBL-001`–`LT-OBL-012` coverage with 233 passing tests. C040/C041/C042 subsequently classify data, structural operations, and
+  collection construction. Concrete source adoption remains P109, library
+  collections P101/P102, and foreign/native data P093/P097; negation spelling and the token
   inventory are complete as C019 while P109 retains declaration grammar;
   numeric meaning is complete as C018; and any future interpolation requires
   a new opt-in prefix.
@@ -429,9 +481,9 @@ as small normative rules rather than copied wholesale into a specification.
   commit
   [`6fb2ad89a5cc5518528106f73d60b5adc9387d74`](https://github.com/pcharbon70/catena/commit/6fb2ad89a5cc5518528106f73d60b5adc9387d74)
   supplies complete `NM-OBL-001`–`NM-OBL-014` coverage with 246 passing
-  tests. Numeric traits remain G061, explicit conversions and the numeric
-  library remain G105, primitive equality remains P035, and arithmetic
-  failures remain G036.
+  tests. C061 subsequently fixes primitive numeric relationships, C035
+  comparison, and C036 failure categories. Explicit conversions and numeric
+  library operations remain P105, including each fault producer's policy.
 - [x] **C019 — Complete — operators and punctuation.** The normative
   [0.1.15 operators specification](../60-specification/operators-and-punctuation/README.md),
   [synthesis](../20-notes/catena-operators-and-punctuation.md),
@@ -454,8 +506,9 @@ as small normative rules rather than copied wholesale into a specification.
   supplies complete `OP-OBL-001`–`OP-OBL-016` coverage with 260 passing
   tests. Application and declaration grammar remain P109; file-to-module
   relations are complete as C020, namespace resolution as C021, and
-  imports and exports as C022; field-like access remains G040;
-  operator dispatch remains G061; editor recovery remains G123.
+  imports and exports as C022. C041 defines record selection and C061
+  primitive operator instantiation; their source adoption remains P109,
+  and editor recovery G123.
 - [x] **C020 — Complete — file-to-module relationship.** The normative
   [0.1.16 files specification](../60-specification/files-and-modules/README.md),
   [synthesis](../20-notes/catena-files-and-modules.md),
@@ -474,7 +527,7 @@ as small normative rules rather than copied wholesale into a specification.
   tests through the abstract file-unit resolver. The concrete module-header
   syntax remains P109; module-name resolution is fixed by C021 and
   import/export admission by C022; package
-  assembly remains G025; entry modules remain G027.
+  assembly is defined by C025 and entry declarations by C027.
 
 ## 3. Names, modules, packages, and separate compilation
 
@@ -495,9 +548,9 @@ as small normative rules rather than copied wholesale into a specification.
   [`b482b4cacc4017b8e479173fb3bd3c0ceac4f675`](https://github.com/pcharbon70/catena/commit/b482b4cacc4017b8e479173fb3bd3c0ceac4f675)
   supplies complete `NS-OBL-001`–`NS-OBL-014` coverage with 285 passing
   tests through the abstract scope-event resolver, extended by C022.
-  Module recursion remains G024; package-level module
-  uniqueness remains G025; prelude contents remain G026; type-directed
-  resolution remains G066.
+  C024 subsequently defines module recursion, C025 package assembly,
+  C026 prelude selection, and C066 type-independent name resolution.
+  Prelude contents remain P101 and source punctuation P109.
 - [x] **C022 — Complete — imports and exports.** The normative
   [0.1.18 imports specification](../60-specification/imports-and-exports/README.md),
   [synthesis](../20-notes/catena-imports-and-exports.md),
@@ -509,7 +562,7 @@ as small normative rules rather than copied wholesale into a specification.
   two-segment qualification against digest-bound export sets plus explicit
   possibly-empty unqualified name lists with `IMP002`/`IMP003` validation;
   the declared exclusion of wildcards, hiding, renaming, and aliases; the
-  re-export exclusion since re-owned by C025 to the G028 compatibility
+  re-export exclusion since re-owned by C025 to the C028 compatibility
   era; and the deny-able `IMP001` unused-import warning whose
   qualified references never satisfy unqualified admissions. Sibling
   compiler commit
@@ -517,9 +570,8 @@ as small normative rules rather than copied wholesale into a specification.
   supplies complete `IM-OBL-001`–`IM-OBL-013` coverage with 295 passing
   tests through the extended scope-event resolver, with C023 confirming
   the transparency vocabulary complete and C024 admitting cyclic event
-  graphs over the same resolver. Package identity and re-export assembly
-  remain G025; the
-  prelude remains G026; entry modules remain G027; concrete `use`/`export`
+  graphs over the same resolver. C025 subsequently fixes package identity, C028 excludes re-export
+  facades, C026 fixes prelude selection, and C027 fixes entry declarations; concrete `use`/`export`
   punctuation remains P109.
 - [x] **C023 — Complete — abstraction boundaries.** The normative
   [0.1.19 abstraction specification](../60-specification/abstraction-boundaries/README.md),
@@ -530,10 +582,10 @@ as small normative rules rather than copied wholesale into a specification.
   confirm the transparent/abstract pair as the complete
   constructor-authority vocabulary on every frontend; declare that no
   stable-layout opt-in exists in edition 0.1 with both-layout conformance
-  mandatory, `L001` unchanged, and G028 owning any future
-  layout-stability contract together with P093/G094/G095; exclude
-  selective construction/matching authority and views as future work
-  owned by D046/G040; and sanction the abstract-type-plus
+  mandatory, `L001` unchanged, and C028 owning any future
+  layout-stability contract together with P093/P094/G095; exclude
+  selective construction/matching authority and views as extensions excluded by C046 and subject to its explicit
+  arrival conditions; and sanction the abstract-type-plus
   validating-constructor-plus-observer invariant idiom with typed failure
   and wildcard-plus-observers coverage for abstract scrutinees. Sibling
   compiler commit
@@ -563,8 +615,8 @@ as small normative rules rather than copied wholesale into a specification.
   tests through the abstract SCC grouping and `Catena.compile_scc/2`.
   Package assembly and lockfile representation are subsequently fixed by
   C025; the concrete
-  recursive surface remains P109; joint-digest compatibility remains
-  G028.
+  recursive surface remains P109; C028 classifies joint digests as identity
+  rather than an independent compatibility promise.
 - [x] **C025 — Complete — package identity and dependency resolution.**
   The normative
   [0.1.21 package specification](../60-specification/package-identity-and-dependencies/README.md),
@@ -584,9 +636,9 @@ as small normative rules rather than copied wholesale into a specification.
   [`dcd7da056ba1317fcd7df1df8716981ff8363e1d`](https://github.com/pcharbon70/catena/commit/dcd7da056ba1317fcd7df1df8716981ff8363e1d)
   supplies complete `PK-OBL-001`–`PK-OBL-012` coverage with 323 passing
   tests through the `Catena.Package.Deps` engine. Build and fetch
-  tooling remain G121; reproducible-build consumption remains G128;
-  signing and threat modeling remain G130; compatibility and re-export
-  facades remain G028; the prelude is subsequently fixed by C026.
+  tooling remain P121; reproducible-build consumption remains P128;
+  signing and threat modeling remain P130. C028 subsequently fixes
+  compatibility and excludes re-export facades; C026 fixes prelude selection.
 - [x] **C026 — Complete — prelude policy.**
   The normative
   [0.1.22 prelude specification](../60-specification/prelude-policy/README.md),
@@ -603,13 +655,13 @@ as small normative rules rather than copied wholesale into a specification.
   and prelude resolution, locking, and replay as ordinary C025
   dependencies with marked requirers and bundle digests. Sibling
   compiler commit
-  [`484d7971d4f3ba6dcdbe12dd08c6b6ff37ec7834`](https://github.com/pcharbon70/catena/commit/484d7971d4f3ba6dcdbe12dd08c6b6ff37ec7834)
+  [`484d797a33eaf580f2c43ddd0776c6675078c4f9`](https://github.com/pcharbon70/catena/commit/484d797a33eaf580f2c43ddd0776c6675078c4f9)
   supplies complete `PL-OBL-001`–`PL-OBL-010` coverage with 332 passing
   tests through the manifest decoder, namespace builder, and
   `Catena.Package.Deps` wiring. Prelude contents and the name freeze
-  remain G101; collection protocols remain P102; tooling scaffolding
-  remains G121; compatibility meanings of prelude version bumps remain
-  G028/G136.
+  remain P101; collection protocols remain P102; tooling scaffolding
+  remains P121. C028 classifies prelude version changes; integrated
+  compatibility-suite coverage remains P136.
 - [x] **C027 — Complete — entry points and application structure.**
   The normative
   [0.1.23 entry points specification](../60-specification/entry-points/README.md),
@@ -630,9 +682,9 @@ as small normative rules rather than copied wholesale into a specification.
   supplies complete `EN-OBL-001`–`EN-OBL-010` coverage with 342 passing
   tests through the manifest decoder, package linker validation, and
   `Catena.Entry.launch/2`. Supervision and process lifetime remain
-  G084/G089; cancellation remains G088; CLI and host-process boundaries
-  remain G121; distribution and upgrades remain G091/G092; entry-set
-  compatibility remains G028.
+  P084/G089; cancellation remains G088; CLI and host-process boundaries
+  remain P121; distribution and upgrades remain G091/G092. C028
+  subsequently fixes entry-set compatibility.
 - [x] **C028 — Complete — API and ABI compatibility.**
   The normative
   [0.1.24 compatibility specification](../60-specification/api-and-abi-compatibility/README.md),
@@ -656,10 +708,10 @@ as small normative rules rather than copied wholesale into a specification.
   [`0d96f96792aa161ed2711edb304d75e4cee54af2`](https://github.com/pcharbon70/catena/commit/0d96f96792aa161ed2711edb304d75e4cee54af2)
   supplies complete `CP-OBL-001`–`CP-OBL-010` coverage with 355 passing
   tests through the `Catena.Package.Compat` classifier. Migration
-  engines remain G116/P125; registry retirement and yanks remain G130;
+  engines remain P116/P125; registry retirement and yanks remain P130;
   hot upgrade remains G092; representation, calling-convention, and
-  foreign-term contracts remain P093/G094/G095; tooling automation
-  remains G121; the 1.0-era convention switch remains G136's.
+  foreign-term contracts remain P093/P094/G095; tooling automation
+  remains P121; the 1.0-era convention switch remains P136's.
 
 ## 4. Core expressions and evaluation
 
@@ -675,8 +727,8 @@ as small normative rules rather than copied wholesale into a specification.
   opaque process-handle forms plus Float with C018 semantics
   unchanged — with the closed non-value list (evidence, handler
   declarations, capability names, resumptions, traps, effect rows,
-  signatures); uniform first-classness with G037/G085 observability
-  named as exclusions; the G040 entry rule for future types; the
+  signatures); uniform first-classness with C037/P085 observability
+  named as exclusions; the C040 entry rule for future types; the
   strictness invariant — every subexpression evaluates at most once,
   to a value or a terminal trap, before use — with the kernel's
   `and`/`or` skips as the only named exceptions and an edition-record
@@ -687,10 +739,9 @@ as small normative rules rather than copied wholesale into a specification.
   supplies complete `VA-OBL-001`–`VA-OBL-008` coverage with 366 passing
   tests through the `Catena.Values` classifier and stepper terminal
   witnesses. The slice is definitional: zero new diagnostic families.
-  Per-form order remains P030; bindings/calls/branching remain
-  G031–G033; equality remains P035; failure taxonomy beyond traps
-  remains G036; observability remains G037; future types' value status
-  remains G040.
+  C030–C038 subsequently define order, bindings, calls, branching,
+  equality, recursion, failures, observability, and compile-time evaluation;
+  C040 adds Text/Character/Bytes meanings. Full source adoption remains P109.
 - [x] **C030 — Complete — evaluation order.**
   The normative
   [0.1.26 order specification](../60-specification/evaluation-order/README.md),
@@ -702,9 +753,9 @@ as small normative rules rather than copied wholesale into a specification.
   plus the typed-core completions: curried multi-argument application
   as repeated unary left-to-right, trait-call subject then arguments,
   handler installation before body, annotate transparency — with the
-  future-form entry rule (collections, interpolation, and G040
+  future-form entry rule (collections, interpolation, and C040
   compounds declare their order in their own slices), the
-  order-versus-structure boundary against G031/G032, and trace
+  order-versus-structure boundary against C031/C032, and trace
   observability: a conforming implementation's effect-request trace
   equals the declared order's trace, generalizing C004's traversal and
   C005's handler-order rules, with reference-evaluator and
@@ -712,9 +763,8 @@ as small normative rules rather than copied wholesale into a specification.
   [`5e1e8948249701a45029379e604b7aa0e8376e92`](https://github.com/pcharbon70/catena/commit/5e1e8948249701a45029379e604b7aa0e8376e92)
   supplies complete `EO-OBL-001`–`EO-OBL-008` coverage with 377 passing
   tests through dual-target trace agreement. The slice is definitional:
-  no new public API and zero new diagnostic families. Binding structure
-  remains G031; arity and currying remain G032; branch forms remain
-  G033; future compounds' entries remain G040.
+  no new public API and zero new diagnostic families. C031/C032/C033 subsequently fix binding structure, currying, and
+  branching; C040/C041 fix further data operations. P109 owns source adoption.
 - [x] **C031 — Complete — bindings and sequencing.**
   The normative
   [0.1.27 bindings specification](../60-specification/bindings-and-sequencing/README.md),
@@ -736,9 +786,8 @@ as small normative rules rather than copied wholesale into a specification.
   [`17b5be7b1bce9cd6a4603b9d6b6f5f5d8060951b`](https://github.com/pcharbon70/catena/commit/17b5be7b1bce9cd6a4603b9d6b6f5f5d8060951b)
   supplies complete `BS-OBL-001`–`BS-OBL-008` coverage with 387
   passing tests through the `Catena.Bindings` warning walk, dual
-  evaluator/BEAM traces, and kernel recursion witnesses. Functions and
-  calls remain G032; branching remains G033; termination remains P034;
-  pattern-binding surface forms remain C002/P109.
+  evaluator/BEAM traces, and kernel recursion witnesses. C032/C033/C034 subsequently fix functions, branching, and recursion;
+  C044 constrains pattern-binding positions, whose surface forms remain P109.
 - [x] **C032 — Complete — functions and calls.**
   The normative
   [0.1.28 functions specification](../60-specification/functions-and-calls/README.md),
@@ -751,7 +800,7 @@ as small normative rules rather than copied wholesale into a specification.
   calls as repeated unary application under C030's order — no arity
   mismatch exists to diagnose; any prefix application is a
   first-class closure value (free partial application); capture is
-  lexical and immutable with allocation identity G037's exclusion;
+  lexical and immutable with allocation identity C037's exclusion;
   the let-bound closure is the local-function form under all of
   C031's rules; named functions are definitions with C022's export
   rules; and the kernel's proper-tail-call guarantee is elevated
@@ -761,8 +810,8 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests, including curried and partial-application agreement
   on evaluator and BEAM and a five-million-iteration match-dispatched
   tail recursion completing on compiled BEAM. Zero new diagnostic
-  families. Branching remains G033; termination beyond tails remains
-  P034; calling conventions remain G094.
+  families. C033/C034 subsequently fix branching and unrestricted
+  recursion; the full calling-convention contract remains P094.
 - [x] **C033 — Complete — conditionals and general branching.**
   The normative
   [0.1.29 branching specification](../60-specification/branching/README.md),
@@ -785,10 +834,9 @@ as small normative rules rather than copied wholesale into a specification.
   supplies complete `BR-OBL-001`–`BR-OBL-008` coverage with 406
   passing tests through Bool-pattern dispatch, guarded fallthrough,
   commitment traces, and `M001` regression witnesses. Zero new
-  diagnostic families. Termination remains P034; scrutinee traps
-  remain G036; future coverage entries remain G040; spellings remain
-  P109. Section 4's gaps are now complete; the P029–P038 partials
-  remain.
+  diagnostic families. C034/C036 subsequently fix recursion and
+  failures; C040/C044 classify data and pattern contexts. Spellings remain
+  P109. Section 4's current status is recorded in the audited summary above.
 - [x] **C034 — Complete — recursion and termination.**
   The normative
   [0.1.31 recursion specification](../60-specification/recursion-and-termination/README.md),
@@ -803,7 +851,7 @@ as small normative rules rather than copied wholesale into a specification.
   opt-in analysis; every meta-level evaluator is total-or-bounded by
   its own shipped mechanism (conditions acyclic with `CND004`,
   specification examples under the fixed 20,000-step checker, laws
-  with bounded samples); and any recursive-total fragment — G038
+  with bounded samples); and any recursive-total fragment — C038
   compile-time evaluation foremost — must ship with its totality-or-
   boundedness regime in its admitting slice. Sibling compiler commit
   [`252da7b287dfbfae95056fa778e0b7ce0979599f`](https://github.com/pcharbon70/catena/commit/252da7b287dfbfae95056fa778e0b7ce0979599f)
@@ -811,9 +859,8 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests through non-tail recursion at 10,000 depth on BEAM,
   the stepper's budget-exhaustion divergence witness, tail
   termination, the `CND004` regression, and the bounded-regime
-  matrix. Zero new diagnostic families. Compile-time evaluation
-  design remains G038's under the gate; the failure taxonomy remains
-  G036's with divergence outside it.
+  matrix. Zero new diagnostic families. C038 subsequently applies the gate to compilation; C036 fixes the
+  failure taxonomy, with divergence outside it.
 - [x] **C035 — Complete — equality and ordering of primitive values.**
   The normative
   [0.1.30 equality specification](../60-specification/equality-and-ordering/README.md),
@@ -831,17 +878,15 @@ as small normative rules rather than copied wholesale into a specification.
   error, no coercion); closures and process handles never compare
   (`EQN001`); guards keep C003's frozen Int/Bool fragment, enforced
   by the independent condition checker; the operators are
-  non-overloadable built-ins with an Eq/Ord trait layer left to
-  G101+/G061; and strings/binaries enter with their comparability in
-  G040 slices. Sibling compiler commit
+  non-overloadable built-ins under C061; library-level Eq/Ord APIs remain P101/P102. C040
+  subsequently adds Text/Character/Bytes comparison. Sibling compiler commit
   [`91c4d4929ea2fef316e44d3b1500a8854715b9be`](https://github.com/pcharbon70/catena/commit/91c4d4929ea2fef316e44d3b1500a8854715b9be)
   supplies complete `EQ-OBL-001`–`EQ-OBL-008` coverage with 417
   passing tests through the `Catena.Values` classifier
   (`comparable?/1`, `orderable?/1`, `compare/2`), tuple and
   constructor-value equality agreement on evaluator and BEAM, `EQN001`
-  exclusions, monomorphism rejections, and the guard split. Identity
-  observability remains G037; handle semantics remain G084; future
-  types' entries remain G040.
+  exclusions, monomorphism rejections, and the guard split. C037 subsequently fixes identity observability and C040 the
+  Text/Character/Bytes comparison entries. Public handle extensions remain P084.
 - [x] **C036 — Complete — runtime failure taxonomy.**
   The normative
   [0.1.32 failure specification](../60-specification/runtime-failure-taxonomy/README.md),
@@ -855,8 +900,8 @@ as small normative rules rather than copied wholesale into a specification.
   (mailbox discarded, no exit signal, no spawner effect,
   unobservable through handles, uninterceptable); the six categories
   map — explicit panic is the kernel `trap` expression, typed failure
-  is an ordinary value (G105 returns rather than traps), VM
-  termination is operational (G084/G092/G121), and arithmetic
+  is an ordinary value (P103 owns the outcome types), VM
+  termination is operational (P084/G092/P121), and arithmetic
   faults, assertions, and foreign exceptions are reserved kinds
   entering with their producers classified as `trap(reason)`; and the
   per-producer entry rule forbids any second outcome class. Sibling
@@ -866,8 +911,8 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests through trap reason agreement across stepper and
   BEAM, the process-context witness (trapping child, spared spawner,
   discarded mailbox), the classifier partition, and the reserved-kind
-  absences. Zero new diagnostic families. Library contents remain
-  G105's; foreign calls G095/G096's; process death G084's;
+  absences. Zero new diagnostic families. Outcome-type contents remain
+  P103's; foreign calls G095/G096's; process death P084's;
   cancellation G088's.
 - [x] **C037 — Complete — resource and allocation observability.**
   The normative
@@ -894,8 +939,8 @@ as small normative rules rather than copied wholesale into a specification.
   and BEAM, closure-allocation irrelevance, fresh process identity
   per spawn, handle non-comparability, the finalization absence, and
   the stack boundary. Zero new diagnostic families. Handle operations
-  beyond the kernel's remain G084's; message-copy details G085's;
-  resource scopes the G080s era's; foreign finalization G095's;
+  beyond the kernel's remain P084's; message-copy details P085's;
+  resource scopes G080's; foreign finalization G095's;
   debugging tools G124's.
 - [x] **C038 — Complete — compile-time evaluation.**
   The normative
@@ -920,9 +965,9 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests through the derivation provenance regression with
   byte-identical recompilation, the three budget regressions, the
   absence matrix, and determinism. Zero new diagnostic families.
-  Spellings remain P109's; deriving extensions G040's under these
-  rules; code generation G005/G116's; build tooling G121's.
-  Section 4 is complete except for P041's edge.
+  Spellings remain P109's; future derivations must follow C038's
+  checking discipline; code-generation tooling remains P121's; build tooling P121's.
+
 
 ## 5. Data, collections, and patterns
 
@@ -945,8 +990,8 @@ as small normative rules rather than copied wholesale into a specification.
   deterministic and total, with content-based comparability — all
   three comparable and orderable (lexicographic scalar order for
   Text and Character, byte order for Bytes); list, map, and set as
-  library territory (G101 declares them as ordinary nominal ADTs);
-  and references excluded (G084). The types live at the meaning and
+  library territory (P101 declares them as ordinary nominal ADTs);
+  and references excluded (P084). The types live at the meaning and
   classifier level until a frontend encodes their literals. Sibling
   compiler commit
   [`44f7dd22b57757accc1da654bf4e99b93db728b4`](https://github.com/pcharbon70/catena/commit/44f7dd22b57757accc1da654bf4e99b93db728b4)
@@ -954,8 +999,9 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests through the `Catena.Text` elaboration module, the
   `Catena.Values` and `Data.comparable_type?` extensions, and the
   content-order witnesses. Zero new diagnostic families. Collection
-  declarations remain G101's; construction and update G042's; string
-  libraries G105's; references G084's; spellings P109's.
+  declarations and APIs remain P101/P102; C042 defines construction
+  and update. Text libraries remain P104 and source spellings P109;
+  native reference admission remains P097/G098 subject to C040's exclusion.
 - [x] **C041 — Complete — structural records and variants.**
   The normative
   [0.1.36 records specification](../60-specification/structural-records-and-variants/README.md),
@@ -980,22 +1026,23 @@ as small normative rules rather than copied wholesale into a specification.
   passing tests through the fixture's operation round-trip on stepper
   and compiled BEAM, variant dispatch agreement, duplicate-label
   rejection, type-position tails, and the frontend absence. Zero new
-  diagnostic families. Collection construction remains G042's;
-  aliases G062's; refutability P044's; spellings P109's.
+  diagnostic families. C042/C062/C044 subsequently fix collection construction, the
+  alias exclusion/newtype idiom, and pattern-context refutability.
+  Spellings remain P109.
 - [x] **C042 — Complete — collection construction and update.** Normative
   `0.1.37` fixes the six topics: persistent update is constructor
   application plus match-based recursion (no dedicated operator);
-  duplicate-key behavior is a G101 declaration obligation; ordering and
+  duplicate-key behavior is a P101 declaration obligation; ordering and
   key equality ride C035's comparable set; a bounds-failure miss is
   typed failure as a value (total, never a trap); and complexity
   promises are excluded from the language layer — representation is
   invisible, so a language cost bound would make it observable, and
-  documentation stays G101's. Compiler witnesses on the kernel path
+  documentation stays P101's. Compiler witnesses on the kernel path
   (`246019f`): a declared List (construction, head/tail, length,
   replace-head) and a Pair-keyed lookup agreeing on stepper and BEAM,
   with a miss returning an Option-typed value. Zero new diagnostic
-  families. Miss-type contents remain G101/G105's; spellings P109's;
-  aliases G062's; refutability P044's.
+  families. Miss-type contents remain P101/P103's; spellings P109's;
+  C062/C044 subsequently fix the alias/newtype and pattern-context rules.
 - [x] **C043 — Complete — initial pattern grammar.** The 0.1.2 normative specification supports
   wildcard, binder, integer and Boolean literal, tuple, positional and named
   constructor, `as`, `or`, and nested patterns; it explicitly excludes list,
@@ -1011,8 +1058,8 @@ as small normative rules rather than copied wholesale into a specification.
   fixed (ordinary total, filtering explicitly mismatch-as-skip) with
   grammar deferred to Section 6; public receives are reserved as
   exhaustive-or-explicit-fallback; handler clauses keep plain binders;
-  exception clauses are permanently excluded under C036's terminal
-  trap taxonomy. Compiler witnesses (`00bd04c`): match regression pin
+  exception clauses are excluded unless a future revision explicitly
+  reopens C036's terminal trap taxonomy. Compiler witnesses (`00bd04c`): match regression pin
   agreeing on stepper and BEAM, unchanged `M001`/`M002`, kernel and
   JSON-AST negative boundary tests, entry-point absences. Zero new
   diagnostic families.
@@ -1031,10 +1078,10 @@ as small normative rules rather than copied wholesale into a specification.
 ## 6. List comprehensions, generators, and iteration
 
 The [list-comprehension synthesis](../20-notes/list-comprehensions.md)
-proposed the coherent initial answer, and C047–C058 at `0.1.39` made it
-normative with a dormant elaboration boundary: grammar, formalization,
-implementation, and validation landed together, with surface adoption at
-P109 and D059's neighboring iteration syntax still deferred.
+proposed the initial answer, and revision `0.1.39` made its contract
+normative with a dormant elaboration boundary. The audit retains the
+implemented pure paths and reopens P050/P053/P057 for required effect and
+failure witnesses. Source adoption remains P109; D059 remains deferred.
 
 - [x] **C047 — Complete — list-comprehension surface syntax.** Normative
   `0.1.39` fixes the semantic-role grammar: `for pattern in source
@@ -1057,12 +1104,15 @@ P109 and D059's neighboring iteration syntax still deferred.
   yields no elements — witnessed `[14, 15, 24, 25]` agreeing on
   stepper and BEAM.
 
-- [x] **C050 — Complete — filter semantics.** `when` filters are
-  ordinary typed `Bool` expressions with visible effects: `false`
-  skips the element (not the test), every other failure propagates
-  and abandons the comprehension, and C003's guard fragment is not
-  used. A non-`Bool` filter is `T002`.
-
+- [ ] **P050 — Partial — filter semantics and evidence.** Normative `0.1.39`
+  defines ordinary typed `Bool` filters, visible effects, false-as-skip,
+  propagation of other failures, and separation from C003's guard fragment.
+  The compiler executes pure filtering and rejects non-`Bool` filters.
+  Completion is reopened because the required `LC-OBL-005` witnesses do
+  not exercise effectful filtering or failure propagation. Add executable
+  reference/BEAM witnesses showing that a false filter's effects occur,
+  and that a trap stops the comprehension without evaluating its suffix.
+  See the [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence).
 - [x] **C051 — Complete — pattern-generator failure.** Consumes
   C044's split: ordinary generators are checked total by the
   usefulness relation (non-total rejects `M001`), `case` generators
@@ -1074,12 +1124,15 @@ P109 and D059's neighboring iteration syntax still deferred.
   same-comprehension rebinding is `LCP001`; unused bindings report
   `BS001`; outer shadowing follows the ordinary rule.
 
-- [x] **C053 — Complete — evaluation and effect order.** Exact
-  source-order traversal with per-element suffix completion,
-  once-per-reaching filter evaluation (effects occur even when the
-  value is false), immediate failure timing, and union effect rows
-  threading `uses` through the worker signatures.
-
+- [ ] **P053 — Partial — evaluation and effect-order evidence.** Normative
+  `0.1.39` fixes source-order traversal, once-per-reaching evaluation,
+  immediate failure timing, and effect-row threading. The elaborator and
+  pure value witnesses exist, but the test tagged `LC-OBL-008` only inspects
+  generated strings, including `(uses Ask)`; it does not run an effect-bearing
+  comprehension. Complete the required reference/BEAM trace agreement for
+  source, filter, binding, and yield effects, per-prefix multiplicity,
+  false-filter effects, and failure timing. See the
+  [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence).
 - [x] **C054 — Complete — eager versus lazy production.** Eager
   ordered `List B` results are normative; lazy streams and infinite
   inputs stay under a separate future resource-and-cancellation
@@ -1097,12 +1150,14 @@ P109 and D059's neighboring iteration syntax still deferred.
   `Applicative`/`Monad` targets are excluded with no entry
   points.
 
-- [x] **C057 — Complete — sequential execution.** Sequential
-  source-order behavior is normative; implementations MUST NOT
-  parallelize or reorder effectful evaluations; any future parallel
-  form requires its own syntax, effects, and
+- [ ] **P057 — Partial — sequential-execution evidence.** Sequential
+  source-order execution and the exclusion of parallel forms are normative
+  at `0.1.39`. API-absence and generated-shape tests exist; the
+  `LC-OBL-012` requirement for executable effect-trace evidence remains
+  unmet. Complete that evidence with P053, demonstrating that the generated
+  BEAM execution neither parallelizes nor reorders effectful evaluations.
+  A future parallel form still requires its own syntax, effects, and
   structured-concurrency rules.
-
 - [x] **C058 — Complete — termination and cost honesty.** The fused
   worker chain — one tail-recursive definition per generator depth,
   one shared accumulator, a final ordering pass, no intermediate
@@ -1132,7 +1187,7 @@ P109 and D059's neighboring iteration syntax still deferred.
   inference engine with float-typed operands, `fd75cb7`). No
   defaulting, implicit coercion, or literal constraints (`NM-OBL-005`/
   `006` re-affirmed); division, remainder, checked and decimal
-  arithmetic, and explicit conversions route to G105. Zero new
+  arithmetic, and explicit conversions route to P105. Zero new
   diagnostic families and no new public API.
 - [x] **C062 — Complete — aliases, opaque types, and newtypes.** Normative
   `0.1.41` fixes one exclusion and two routings: transparent aliases are
@@ -1195,7 +1250,7 @@ P109 and D059's neighboring iteration syntax still deferred.
   higher rank, signature-directed GADTs, branch-local equalities, and explicit
   rigid constructor existentials are specified behind an annotation boundary.
 - [x] **C140 — Complete — excluded advanced type features.** Normative `0.1.44`
-  keeps the seven forms excluded (C001's 0.1.1 exclusions restated as
+  keeps the eight forms excluded (C001's 0.1.1 exclusions restated as
   routing rows: impredicativity, inferred higher rank, first-class
   existentials beyond declared constructors, general linear types,
   dependent types, unrestricted type families, higher-kinded
@@ -1208,8 +1263,7 @@ P109 and D059's neighboring iteration syntax still deferred.
   (`77fba75`): profile-boundary rejections (`T012` spellings, `T010`
   unannotated GADT matches, `T009` existential escapes) and a
   signature-directed GADT program evaluating unchanged. Zero new
-  diagnostic families and no new public API. Section 7 completes at
-  10/10.
+  diagnostic families and no new public API. Section 7's ten items are complete within their stated boundaries.
 
 ## 8. Traits, derivation, and categorical libraries
 
@@ -1262,35 +1316,35 @@ P109 and D059's neighboring iteration syntax still deferred.
   cancellation, abort, panic, normal return, process exit, and foreign-frame
   unwinding.
 - [x] **C081 — Complete — exception boundary.** Normative `0.1.47` fixes the
-  partition: typed failure is a value (G103's contents); exception-style
+  partition: typed failure is a value (P103's contents); exception-style
   catching is the effect pattern — a handler declining to resume aborts to
   its result, visible in the effect row, a library idiom over unchanged
   C005; and `trap(reason)` is the one terminal mechanism, never catchable
   (C036 unchanged). Panics are traps with the reserved assertion/panic
-  kind entering with their producers. Process exits route to G084,
+  kind entering with their producers. Process exits route to P084,
   foreign failures map to trap at the visible boundary (G095/G096 with
-  C067's rule), cancellation to G088, library faults to G105, outcome
-  types to G103; C044's reopening door is the only amendment route for a
+  C067's rule), cancellation to G088, library faults to P105, outcome
+  types to P103; C044's reopening door is the only amendment route for a
   language exception form. Compiler witnesses on existing machinery
   (`e0f2a9e`): the declining-handler pattern (`0`, not `100`, both
   targets), the trap fixture terminal, C010's spared spawner re-pinned,
   and exception-form absences on both frontends. Zero new diagnostic
-  families and no new public API. Section 9 advances to 6/8.
+  families and no new public API.
 - [x] **C082 — Complete — top-level effects.** Normative `0.1.48` fixes the
   silent top level: an entry leaves nothing unhandled (effect-closed,
   `ENT001`, C027 unchanged); nobody interprets unhandled requests because
   none exist — no ambient host handler exists or is reserved; and launch
   is invocation only, to completion under unchanged kernel semantics with
-  no scope and no injection. The capability interface for G106:
+  no scope and no injection. The capability interface for P106:
   capabilities reach an entry only as explicit typed values through a
-  channel G106's slice defines and justifies — deny-able, never ambient —
+  channel P106's slice defines and justifies — deny-able, never ambient —
   with the zero-argument and effect-closed rules binding until then.
-  G084's supervision interprets process failure, never requests; the
+  P084's supervision interprets process failure, never requests; the
   door requires entry-form widening to amend C027 explicitly with
   who-interprets-what stated. Compiler witnesses on C027's existing
   machinery (`e962b73`): the launch re-pin (completed twice) and the
   `ENT001` non-effect-closed rejection. Zero new diagnostic families
-  and no new public API. Section 9 advances to 7/8.
+  and no new public API.
 - [ ] **D083 — Deferred — scoped and multi-shot computations.** Explicitly bound
   generators, async, nondeterminism, transactions, shallow handlers,
   higher-order effects, and multi-shot continuations until their semantics are
@@ -1298,36 +1352,48 @@ P109 and D059's neighboring iteration syntax still deferred.
 
 ## 10. Processes, concurrency, and distribution
 
-- [ ] **G084 — Gap — process creation and lifetime.** Define spawn, normal completion,
-  crash, links, monitors, trapping exits, parent-child relationships, and
-  structured task scopes.
-- [ ] **G085 — Gap — message semantics.** Define send results, copying and sharing,
-  ordering guarantees, mailbox growth, unsupported values, and remote delivery.
-- [x] **C086 — Complete — selective receive.** Normative `0.1.46` fixes the
-  rule set at the language level: FIFO scan from the oldest message, rejected
-  messages preserved in position, one-time removal before the body, one
-  closed message type, an effect-free receive form, portable conditions only
-  (`CND006` unchanged), with starvation stated honestly (a stable rejected
-  prefix starves the receive; scan cost is proportional to the rejected
-  prefix; no fairness guarantee beyond scan order). The remaining
-  connections are routed interfaces: public syntax to P109 (the timeout
-  clause is C044's explicit total fallback), timeouts and cancellation to
-  G088, typed protocols to G087, send-side semantics to G085. Compiler
-  witnesses on existing machinery (`b202887`): the blocked-holder
-  preservation fixture (waiting with both messages retained in order), the
-  C010 launch selection trace re-pinned with its BEAM twin, and the harness
-  `CND006` rejections. Zero new diagnostic families and no new public API.
-  Section 9 advances to 5/8.
-- [ ] **G087 — Gap — typed protocols.** Decide whether mailbox protocols, process
-  handles, replies, and protocol evolution are statically tracked or library
-  conventions.
+- [ ] **P084 — Partial — process creation and lifetime.** C010 defines local
+  spawn, fresh typed handles, argument order, isolated capability state,
+  normal completion, and process-local traps with discarded mailboxes;
+  its stepper and BEAM tests exercise those rules. Complete the public
+  lifetime contract for links, monitors, exit trapping, parent-child
+  relationships, and structured task scopes. The local kernel does not
+  establish OTP supervision or general resource cleanup.
+- [ ] **P085 — Partial — message semantics.** C010 defines Unit-returning
+  local send, dead-target discard, immutable sendable messages, per-sender
+  FIFO, and permitted cross-sender interleaving. Complete mailbox
+  growth/exhaustion, copying and sharing obligations at foreign and runtime
+  boundaries, and remote delivery. Preserve the kernel's typed send and
+  message-order guarantees when admitting those extensions.
+- [ ] **P086 — Partial — selective receive.** The `0.1.46` chapters and
+  retained C003/C010 implementation evidence establish FIFO scanning,
+  preservation of rejected messages, one-time removal, closed message
+  typing, and portable conditions. Completion is reopened for a normative
+  contradiction: [the scan rules](../60-specification/selective-receive/the-receive-rule-set.md#the-rules)
+  continue past rejected messages, while [the starvation rule](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost)
+  says a standing rejected prefix starves the receive. C010 and its compiled
+  witness select a later matching message behind such a prefix. Resolve
+  `RC-OBL-004` against the governing scan semantics and align its evidence
+  before claiming completion; see the
+  [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#selective-receive-conflict).
+  Public syntax remains P109, timeouts/cancellation G088, typed protocols
+  P087, and send-side extensions P085. The historical C086 promotion and
+  its successful bounded tests remain recorded in the C086 journal.
+- [ ] **P087 — Partial — typed protocols.** C010 checks `Process M` handles,
+  a closed sendable mailbox type, send payloads, and digest-bound exported
+  process signatures. Decide whether request/reply sequencing, protocol
+  state, and protocol evolution receive static tracking or explicit library
+  contracts; payload typing alone does not establish those guarantees.
 - [ ] **G088 — Gap — cancellation and time.** Define cancellation propagation,
   deadlines, monotonic time, sleep, timer races, and cleanup.
 - [ ] **G089 — Gap — supervision.** Specify which OTP supervision concepts are direct
   language features, standard-library APIs, generated specifications, or plain
   Erlang interoperability.
-- [ ] **G090 — Gap — scheduler observability.** State fairness assumptions, reduction
-  preemption, process priority, blocking foreign work, and determinism limits.
+- [ ] **P090 — Partial — scheduler observability.** C010 specifies
+  nondeterministic runnable-process selection, permitted interleavings,
+  quiescence, and no fairness guarantee. Complete the public contract for
+  reduction preemption, priorities, blocking foreign work, and the bounds
+  of scheduler observability and determinism.
 - [ ] **G091 — Gap — distribution.** Define node identity, serialization, code-version
   skew, connection failure, partitions, authentication, and delivery claims.
 - [ ] **G092 — Gap — hot code upgrade.** Define state migration, old and new code
@@ -1336,12 +1402,20 @@ P109 and D059's neighboring iteration syntax still deferred.
 
 ## 11. BEAM representation and Erlang interoperability
 
-- [ ] **P093 — Partial — Catena-to-BEAM value mapping.** C002 defines and
-  differentially checks uniform and compact nominal ADT layouts behind a
-  layout-free typed interface. Records, variants, closures, trait dictionaries,
-  capabilities, erased artifacts, and the full primitive model remain open.
-- [ ] **G094 — Gap — calling conventions.** Define exported names and arities,
-  currying, closures, tail calls, callbacks, stack traces, and module metadata.
+- [ ] **P093 — Partial — Catena-to-BEAM value mapping.** C002 checks
+  uniform and compact nominal ADT layouts; C010 fixes its bounded
+  record/variant/closure/process representations; C005 defines capability
+  and CPS lowering; C004/C006 specify dictionary and verification-evidence
+  erasure. Complete the integrated primitive, closure, runtime-resource,
+  and foreign-value representation contract. Meaning-level Text/Float
+  support does not establish complete source-to-BEAM adoption, and these
+  internal layouts do not imply a stable external ABI.
+- [ ] **P094 — Partial — calling conventions.** C010 fixes kernel export
+  names, written arities, and hidden process spawn symbols; C005 fixes
+  direct wrappers and CPS workers; C032 specifies currying, immutable
+  lexical capture, and proper tail calls. Complete the foreign-call and
+  callback ABI, stack traces, and module metadata policy without implying
+  the stable BEAM ABI excluded by C028.
 - [ ] **G095 — Gap — Erlang type boundary.** Specify how dynamically typed terms enter
   Catena, which checks occur, how failures are represented, and whether gradual
   or explicit dynamic types exist. Includes the float edge: the external term
@@ -1351,37 +1425,62 @@ P109 and D059's neighboring iteration syntax still deferred.
 - [ ] **G096 — Gap — foreign calls and callbacks.** Define syntax, effect declarations,
   trust, exceptions, blocking behavior, cancellation, ownership, and callback
   lifetime.
-- [ ] **G097 — Gap — binaries, maps, PIDs, ports, references, and funs.** Define which
-  BEAM-native values are first-class and what type and equality guarantees they
-  receive.
+- [ ] **P097 — Partial — binaries, maps, PIDs, ports, references, and funs.**
+  C010 admits opaque typed process handles backed by local PIDs, allows
+  sending them, and excludes equality and reflection on handles. C040
+  defines abstract Text/Character/Bytes meanings. Specify the remaining
+  BEAM-native admission, checking, type/equality guarantees, and foreign
+  exposure. Internal record maps and closure funs do not constitute a
+  general native-value API.
 - [ ] **G098 — Gap — NIFs and ports.** Define unsafe boundaries, scheduler classes,
   resource finalization, VM crashes, capability requirements, and packaging.
   Includes the float edge: a NIF constructing a non-finite double
   (`enif_make_double`) bypasses the term format's refusal, so the NIF boundary
   must refuse or normalize non-finite floats with a witness test
   ([probes](../50-journal/2026-08-31-beam-float-boundary-probes.md)).
-- [ ] **G099 — Gap — OTP compatibility policy.** Define supported versions, feature
-  detection, portable guard subset, generated bytecode level, and upgrade
-  cadence.
-- [ ] **G100 — Gap — debugging metadata.** Define source locations, inlined frames,
-  generated code, erased specifications, effect handlers, and dictionary frames
-  in traces and tooling.
-
+- [ ] **P099 — Partial — OTP compatibility policy.** The normative
+  bootstrap selects OTP 29 Erlang Abstract Format and
+  `compile:noenv_forms/2`; C003 fixes its portable guard subset, and the
+  implementation profile pins the tested toolchain. Complete supported
+  versions, feature detection, generated-artifact compatibility, and the
+  upgrade and retirement policy.
+- [ ] **P100 — Partial — debugging metadata.** C010 retains source spans,
+  executable-node origins, and origin-derived file metadata; effect core
+  nodes carry source paths, and C006 specifies evidence erasure. Complete
+  runtime stack/source mapping for closures, generated and inlined code,
+  handlers, foreign frames, and navigation to erased evidence.
 ## 12. Standard library contract
 
-- [ ] **G101 — Gap — minimum prelude.** Freeze core types, constructors, functions,
-  traits, effects, and automatic imports.
-- [ ] **P102 — Partial — collection protocols.** Specify list, map, set, iterator,
-  stream, fold, traversal, builder, and early-termination contracts, including
-  complexity.
-- [ ] **P103 — Partial — outcome types.** Define `Option`, `Result`, validation, panic,
-  and process failure without conflating their behavior.
-- [ ] **G104 — Gap — text and binary model.** Define Unicode scalar values, graphemes,
-  indexing, slicing, normalization, encoding conversion, interpolation, and
-  binary pattern matching.
-- [ ] **G105 — Gap — numeric library.** Define integer ranges or arbitrary precision,
-  floating-point behavior, decimal support, conversions, parsing, and checked
-  arithmetic. Recorded float edges from the
+- [ ] **P101 — Partial — minimum prelude.** C026 fixes explicit package
+  selection, import precedence, opt-out, and zero implicit names; C004
+  freezes the canonical categorical hierarchy. Freeze the minimum
+  package's types, constructors, functions, traits, and effects within
+  those existing rules. Do not introduce automatic imports without the
+  edition change required by C026.
+- [ ] **P102 — Partial — collection protocols.** C004 specifies standard
+  List mapping/reduction and stack safety, C042 defines ordinary-ADT
+  construction/update and typed lookup misses, and the `0.1.39`
+  comprehension slice supplies eager List construction with the evidence
+  gaps recorded as P050/P053/P057. Complete list, map, set, iterator,
+  stream, fold, traversal, builder, duplicate-key, and early-termination
+  contracts, including library-level complexity guarantees under C042.
+- [ ] **P103 — Partial — outcome types.** C081 fixes typed failure as a
+  value, handler-based escape, and terminal traps as distinct mechanisms;
+  C042 witnesses an Option-shaped lookup miss. Define the canonical
+  `Option`, `Result`, and validation APIs and their relationship to panic
+  and process failure without silently converting between those classes.
+- [ ] **P104 — Partial — text and binary model.** C017/C040 define
+  decoded Unicode-scalar Text, one-scalar Character, Bytes, content
+  equality/order, and the absence of interpolation in existing literal
+  forms. Complete graphemes, indexing, slicing, normalization, encoding
+  conversion, interpolation, and binary-pattern APIs; compiled source
+  adoption remains P109.
+- [ ] **P105 — Partial — numeric library.** C018 fixes unbounded Int,
+  finite binary64 Float, literal conversion and overflow diagnostics;
+  C035 fixes comparison, and C061 fixes closed-set primitive operators.
+  Complete division/remainder, runtime arithmetic failure classification,
+  decimal and checked arithmetic, explicit conversions, parsing,
+  formatting, and math-library guarantees. Recorded float edges from the
   [BEAM host-boundary probes](../50-journal/2026-08-31-beam-float-boundary-probes.md):
   runtime overflow and domain-error classification must be fixed when the first
   runtime-failing producer (division) lands — `trap` with C036's reserved
@@ -1390,16 +1489,21 @@ P109 and D059's neighboring iteration syntax still deferred.
   scope bit-exact determinism to `+ − × ÷ √` or adopt correctly-rounded
   transcendentals (CORE-MATH is MIT-licensed and shelf-ready); and printing
   must round-trip (`parse(print(x)) == x`) on every target.
-- [ ] **G106 — Gap — environmental effects.** Define standard capabilities for I/O,
-  files, network, time, randomness, environment, logging, and process control.
+- [ ] **P106 — Partial — environmental effects.** C010 defines the reserved
+  Process effect; C082 requires explicit typed, deny-able capabilities
+  through a future defined channel, while zero-argument/effect-closed
+  entry rules remain binding. Define that channel and the standard I/O,
+  filesystem, network, time, randomness, environment, logging, and process
+  control APIs. The existing boundary supplies no ambient host services.
 - [ ] **P107 — Partial — category-inspired API names.** Normative 0.1.4 chooses the
   canonical behavior-first trait and method ABI and confines formal names to
   reference metadata. Independent comprehension and usability validation is
   still required.
-- [ ] **G108 — Gap — stability and performance policy.** State which APIs, laws,
-  traversal orders, asymptotic bounds, and representations are compatibility
-  promises.
-
+- [ ] **P108 — Partial — stability and performance policy.** C004 fixes
+  standard operation order, callback multiplicity, and List stack-safety
+  obligations; C028 fixes interface compatibility and excludes a stable
+  BEAM ABI. Complete library-wide API/law stability, per-operation
+  complexity, and any representation promises within those constraints.
 ## 13. Specifications, governance, and erasure
 
 - [ ] **P109 — Partial — surface grammar (the capstone).** Freeze syntax for claims,
@@ -1408,20 +1512,21 @@ P109 and D059's neighboring iteration syntax still deferred.
   leaves public parser punctuation open.
 
   **Scope note (2026-08-24):** P109 is the *capstone* of the language line
-  and must be **widened beyond its original declaration-language scope**
-  before it can close. The original item owns only the specification and
+  and its completion scope extends **beyond its original governance
+  declaration syntax**. The original item covered only the specification and
   governance surface; the concrete *programming* grammar — declaration
   syntax for modules, imports/exports (the `use`/`export` punctuation
   C022 and ~20 shipped chapters defer here), values, functions and calls
-  (G031/G032), conditionals and match expressions (G033), patterns,
+  (C031/C032), conditionals and match expressions (C033), patterns,
   traits, effects and handlers, specifications, and entry declarations —
-  has no other owner. Widening P109 makes it four deliverables at once:
+  has no other owner. P109 therefore owns four deliverables:
   (1) the general declaration and expression grammar over the completed
   C013–C020 scanner stack, parser included; (2) the original governance
   surface syntax; (3) the grammar's diagnostics, completing P117's
   parse-error half; and (4) the input contract for Section 14 tooling
-  (G118 formatter, G119 doc tool, G120 REPL, G123 editor protocol) and
-  the surface halves of P047/D059/G096, all of which are blocked on it.
+  (G118 formatter, P119 doc tool, G120 REPL, G123 editor protocol) and
+  the surface adoption of C047 and any admitted D059/G096 forms,
+  all of which depend on it.
 
   Sequencing stays as the corpus already executes it: semantics first
   over the retained inputs (Sections 4–5, 9–11, stdlib contracts),
@@ -1463,29 +1568,36 @@ P109 and D059's neighboring iteration syntax still deferred.
   revocation, old-and-new normal rotation, predeclared recovery, and historical
   root replay. Transparency services and network identity are excluded from
   the bounded offline protocol and remain possible later additions.
-- [ ] **G116 — Gap — long-term evolution.** Define schema migration, policy-version
-  interpretation, archived evidence, reproducible historical decisions, and
-  compatibility with newer compilers.
-
+- [ ] **P116 — Partial — long-term evolution.** C006 provides fixed-format
+  historical governance replay; C008 retains exact revisions and signed
+  domains. Complete schema migration, policy-version interpretation,
+  archived evidence portability, and reproducible historical decisions
+  across newer compilers and future formats.
 ## 14. Diagnostics, tools, and developer experience
 
-- [ ] **P117 — Partial — diagnostic contract.** C008 adds explicit
-  error/warning severity, stable `EDN`, `PRV`, and `DEP` families,
-  deterministic details, ordered structured edits, and warning denial. Define
+- [ ] **P117 — Partial — diagnostic contract.** C008 defines severity, stable
+  `EDN`/`PRV`/`DEP` families, deterministic details, structured edits, and
+  warning denial; C010/C013 add primary spans and source coordinates. Define
   secondary locations, inferred-type presentation, constraint provenance,
   missing-pattern witnesses, guard explanations, generated-code attribution,
   and a complete cross-language contract.
 - [ ] **G118 — Gap — formatter.** Define canonical formatting, comments, idempotence,
   version coupling, and whether formatting is part of source compatibility.
-- [ ] **G119 — Gap — documentation tool.** Define doc attachment, links, examples,
-  doctests, hidden APIs, traits and implementations, effects, laws, and
-  specification views.
+- [ ] **P119 — Partial — documentation tool.** C016 specifies documentation
+  attachment, normalized CommonMark bodies, inert raw HTML, and explicit
+  future doctest opt-in; extraction is implemented. Complete rendering,
+  symbol links, executable doctests, hidden APIs, traits/implementations,
+  effects, laws, and specification views. Extraction is not a complete
+  documentation tool.
 - [ ] **G120 — Gap — interactive environment.** Define REPL typing and effects,
   declaration replacement, process lifetime, module loading, history, and
   governance behavior.
-- [ ] **G121 — Gap — build system and package manager.** Define project discovery,
-  profiles, dependency fetching, code generation, cache keys, offline builds,
-  and reproducibility.
+- [ ] **P121 — Partial — build system and package manager.** Existing
+  package compilation, CLI entry points, and staged outputs cover retained
+  inputs; C025 implements dependency resolution and lock generation/replay.
+  Complete project discovery, profiles, dependency fetching, code
+  generation, cache keys, offline builds, and the reproducible full build
+  contract. A resolver library is not a registry client or build system.
 - [ ] **G122 — Gap — testing tools.** Define unit, property, model, concurrency, and
   specification tests; seeds; shrinking; timeouts; and evidence capture.
 - [ ] **G123 — Gap — editor protocol.** Define incremental parsing and typing, partial
@@ -1505,22 +1617,36 @@ P109 and D059's neighboring iteration syntax still deferred.
 - [ ] **G126 — Gap — trusted computing base.** Enumerate parser, type checker, trait
   solver, effect checker, proof kernel, serializer, signer, runtime, and foreign
   components whose bugs can violate guarantees.
-- [ ] **G127 — Gap — unsafe-code policy.** Define whether unsafe operations exist,
-  where they may appear, what obligations they assume, and how artifacts expose
-  them.
-- [ ] **G128 — Gap — reproducible builds.** Define environmental inputs, timestamps,
-  path normalization, dependency integrity, generated files, compiler version,
-  and byte-for-byte expectations.
-- [ ] **G129 — Gap — resource exhaustion.** Define compiler limits, runtime memory and
-  mailbox pressure, recursion, unbounded type search, denial-of-service risks,
-  and required diagnostics or controls.
-- [ ] **G130 — Gap — supply-chain policy.** Define package signing, provenance,
-  compromised releases, yanks, lockfiles, native dependencies, and governance
-  evidence.
-- [ ] **G131 — Gap — secrets and capabilities.** Define how credentials and ambient VM
-  authority enter programs without being hidden by effects, build scripts, or
-  specification evaluation.
-
+- [ ] **P127 — Partial — unsafe-code policy.** C067 excludes unchecked
+  operations and other dynamic/unsafe forms inside Catena and requires
+  visible, typed, failure-classified foreign entry. Complete the policy
+  for foreign/native trusted obligations, their scope, and their exposure
+  in interfaces and artifacts, together with G095/G096/G098. Do not
+  reopen the intralanguage exclusion implicitly.
+- [ ] **P128 — Partial — reproducible builds.** C006/C010 provide bounded
+  deterministic artifact and erasure evidence; C025 provides canonical
+  identities and exact lock replay. Complete the full build-input
+  contract for environment, timestamps, path normalization, dependency
+  integrity, generated files, compiler/OTP identity, and byte-for-byte
+  expectations, including packaging rather than only compiled modules.
+- [ ] **P129 — Partial — resource exhaustion.** C012 defines portable
+  minima, machine-readable reporting, and transactional refusal; C034
+  separates recursion from bounded meta-evaluation, and C036/C037 classify
+  failures and resource observability. Complete aggregate compiler limits,
+  runtime memory/mailbox pressure, admission controls, denial-of-service
+  behavior, and diagnostics. Repair stale policy-owner references in the
+  compiler profile when extending its capacity contract; existing bounded
+  tests do not establish deployment-wide exhaustion handling.
+- [ ] **P130 — Partial — supply-chain policy.** C006 binds signed
+  artifacts, provenance, and offline trust transitions; C025 binds package
+  identity and lockfile integrity. Complete package-registry signing and
+  provenance rules, compromised releases, yanks, native dependencies, and
+  the relationship of registry actions to governance evidence.
+- [ ] **P131 — Partial — secrets and capabilities.** C005 provides
+  lexical capabilities, C006 restricts specification evaluation to a pure
+  bounded fragment, and C082 excludes ambient entry services. Complete
+  credential transport, storage/redaction obligations, and how build and
+  foreign components expose ambient VM authority without hidden effects.
 ## 16. Formal validation and release gates
 
 - [x] **C132 — Complete — progress and preservation targets.** Normative
@@ -1532,30 +1658,44 @@ P109 and D059's neighboring iteration syntax still deferred.
   component theorems plus a composition lemma that is a routed
   proof obligation owned by the formal-validation program, never a
   claim; and conditional extensions (public processes on
-  G084/G085's own statement, foreign values by construction of
+  P084/P085's own statement, foreign values by construction of
   C067's typed boundary). Compiler witnesses on existing machinery
   (`5525662`): handler programs agreeing on stepper and BEAM, the
   trap fixture, the unhandled-request rejection, and the kernel
   fixture's composition-parts pin. Zero new diagnostic families
-  and no new public API. Section 16 opens at 1/9.
-- [ ] **P133 — Partial — reference evaluator.** The executable oracle now covers
-  C001 pure expressions, C002 nominal matching and folds, and C003
-  primitive conditions, lazy Boolean composition, predicate calls, and ordered
-  fallthrough. Effects, processes, foreign values, explicit failures, and the
-  remaining language forms are not yet modeled.
-- [ ] **P134 — Partial — differential testing.** C002 compares reference,
-  uniform-layout, and compact-layout observations; C003 compares the
-  reference evaluator with forced native and ordinary BEAM condition lowering.
-  Effects, failures, traces, public concurrency, foreign values, and resource
-  scopes remain open.
-- [ ] **G135 — Gap — optimizer validity.** Identify which rewrites rely on pure
-  semantics, trait laws, evaluation order, totality, or trusted evidence and
-  reject rewrites whose premises are absent.
+  and no new public API. The composition proof remains outstanding in
+  the [formal-validation inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md#outcome);
+  P133/P134 supply evidence, and G139 must state its release disposition.
+  This item completes the statement of targets only.
+- [ ] **P133 — Partial — reference evaluator.** Reference paths already
+  cover the principal core, nominal matching/folds, clause conditions,
+  C005 free requests and handlers, and C010 sequential/actor execution,
+  traps, and bounded schedule exploration. Later slices reuse those
+  paths. Complete their integrated coverage across the admitted language,
+  including source elaboration, resource scopes, public runtime extensions,
+  and foreign values as those contracts arrive. Preserve the separate
+  outstanding composition-proof obligation stated by C132.
+- [ ] **P134 — Partial — differential testing.** Existing evidence
+  compares nominal layouts, native/ordinary condition lowering, C005
+  handler traces, C010 kernel/BEAM observations, and later value, order,
+  failure, collection, and process witnesses. Complete systematic generated
+  and adversarial comparisons across the admitted language, optimizations,
+  public concurrency, resources, and foreign boundaries. P050/P053/P057
+  identify concrete missing comprehension witnesses; tagged tests alone
+  do not establish the behaviors named by their obligations.
+- [ ] **P135 — Partial — optimizer validity.** C004 forbids law-driven
+  rewrites without admitted evidence; C030 fixes observable order, and the
+  comprehension chapters constrain pure equations and effect/failure
+  preservation. Complete the optimizer-wide rewrite inventory, checkable
+  premises, and before/after evidence for purity, laws, order, totality,
+  sharing, and traps; reject rewrites whose premises are absent.
 - [ ] **P136 — Partial — compatibility suite.** C008 tests retained
-  exact pins, neutral interfaces, selection-bound manifests, historical 0.1.6
-  signature domains, and 0.1.7 downgrade/substitution rejection. Extend this
-  to public signatures, data evolution, package resolution, OTP versions, hot
-  upgrades, ecosystem-scale dependency graphs, and future edition boundaries.
+  exact selections, interfaces, historical signatures, and downgrade
+  rejection; C025 tests dependency/lock replay; C028 tests interface diffs
+  and version claims. Extend this to integrated public data evolution,
+  ecosystem-scale dependency graphs, OTP versions, hot upgrades, future
+  editions, and historical builds without treating bounded fixtures as
+  ecosystem-wide compatibility evidence.
 - [ ] **G137 — Gap — usability gate.** Test whether programmers can predict `map`,
   `map2`, `and_then`, traversal, handlers, guards, comprehensions, and
   diagnostics without prerequisite mathematical vocabulary.
@@ -1571,28 +1711,39 @@ P109 and D059's neighboring iteration syntax still deferred.
   bootstrap trust, stage-one and stage-two builds, fixed-point or semantic
   equivalence checks, reproducibility, rollback, distribution, and the
   retained OTP 29 Abstract Format boundary. Elixir remains the bootstrap
-  implementation through C008; changing the implementation language
+  implementation at the audited `0.1.48` compiler; changing the implementation language
   does not change Catena's BEAM-only target.
 
 ## Suggested research order
 
-The checklist is too broad to turn into independent deep dives all at once.
-The following order resolves dependencies first:
+The P109 scope note governs sequencing: semantics first over retained
+inputs, complete public grammar as the capstone. This order reflects the
+current ledger rather than the earlier pre-consolidation plan.
 
-1. **Surface and dynamic kernel:** lexical grammar, expression grammar,
-   evaluation order, failures, and core pattern contexts.
-2. **Modules and execution boundary:** names, signatures, packages, entry
-   points, separate compilation, and BEAM calling conventions.
-3. **Collections and iteration:** concrete collection model, iterator protocol,
-   list comprehensions, generator failure, effect order, and lowering.
-4. **Effects and runtime scopes:** exceptions, cleanup, cancellation,
-   processes, selective receive, and supervision.
-5. **Interoperability and standard library:** BEAM values, Erlang calls, text,
-   numerics, environmental effects, and compatibility policy.
-6. **Normative consolidation:** combine existing type, ADT, guard, trait,
-   effect, and governance research into a versioned reference plus tests.
-7. **Tooling and release gates:** formatter, documentation, REPL, package and
-   build tools, diagnostics, conformance, security, and performance.
+1. **Repair recorded completion gaps.** Resolve P086's normative conflict
+   and discharge P050/P053/P057's required effect/failure witnesses. Keep
+   the specification, evidence registry, inquiries, and checkbox states
+   consistent; no new feature is needed to repair those claims.
+2. **Resource lifetime and the public runtime.** Specify G080 together with
+   the cancellation interface G088 needs, then complete P084/P085/P087/P090
+   and G089. Coordinate G091/G092 with the foreign and compatibility layers.
+3. **BEAM interoperability and library contracts.** Complete P093–P108,
+   including foreign admission, environmental capability delivery, and
+   numeric failure behavior, against the existing exclusions and guarantees.
+4. **Surface capstone.** Jointly design and implement P109's full programming
+   and governance grammar, parser, parse diagnostics, and tooling input
+   contract. Track accumulated adoption requirements throughout the prior
+   work; do not silently borrow or freeze a grammar ahead of that review.
+5. **Tools and long-lived assurance.** Complete P116–P131 alongside the
+   interfaces they depend on. Build, security, and evidence work that does
+   not require the final parser can proceed earlier.
+6. **Integrated validation and release.** Complete P133–G139 with explicit
+   coverage and measured release gates, including C132's outstanding
+   composition proof. Treat self-hosting G141 as the separately gated
+   late-0.x milestone, retaining the BEAM target and supported OTP boundary.
+
+Deferred D059/D083 extensions require their own evidence and inclusion or
+exclusion decisions; they are not automatically prerequisites for release.
 
 ## Connections
 
@@ -1607,8 +1758,8 @@ The following order resolves dependencies first:
   failure, and selective receive, including several decisions needed by
   comprehension qualifiers.
 - [Combinators for Algebraic Data and Categorical Programming](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md)
-  supplies the operations to which comprehensions might lower, while leaving
-  their surface syntax and operational equivalence unspecified.
+  supplies the library-operation research behind the fixed comprehension
+  elaboration contract; P050/P053/P057 track its remaining evidence gaps.
 - [Algebraic Effects and Handlers](../20-notes/algebraic-effects-and-handlers.md)
   constrains comprehension effects, generators, cancellation, and resource
   scopes without defining those features completely.
@@ -1618,7 +1769,8 @@ The following order resolves dependencies first:
 
 ## Promotion criterion
 
-After review, split this capture into a selective specification-roadmap map and
-focused inquiries for the highest-priority gaps. Archive or remove the inbox
-copy once every retained item has an owner, destination, and explicit initial
-language boundary.
+Maintain this file as the current work-ahead ledger while the language
+definition is being completed. Focused inquiries and topic maps carry the
+research for individual items. A later move out of the inbox must preserve
+every numeric item identity, incoming link, current status, and evidence
+route; a writing pass alone does not complete or retire an item.

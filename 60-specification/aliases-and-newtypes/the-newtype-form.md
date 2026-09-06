@@ -73,7 +73,7 @@ exposure exists (C023 exclusion, unchanged).
 No coercion between a newtype and its wrapped type is implicit in
 either direction (`AN-OBL-006`): the constructor wraps, a pattern
 unwraps, and explicit named conversions are library territory
-(G105). An implementation MUST NOT insert, elide, or optimize a
+(P105). An implementation MUST NOT insert, elide, or optimize a
 wrapping without source justification (`AN-OBL-006`).
 
 ## Deriving

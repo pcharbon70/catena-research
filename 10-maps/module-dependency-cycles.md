@@ -46,7 +46,7 @@ slice.
   fixes the digest-bound import form and definition-only modules.
 - [Import Declarations and Admission](../60-specification/imports-and-exports/import-declarations-and-admission.md)
   fixes digest-bound admission and defers context acquisition to
-  C025/G121 — the grouping this design now supplies through the dependency engine.
+  C025/P121 — the grouping this design now supplies through the dependency engine.
 - [Declarations and Nominal Identity](../60-specification/data-and-patterns/declarations-and-nominal-identity.md)
   fixes intra-module recursive groups cycles must not touch.
 - [Editions and Feature Lifecycle](../60-specification/editions-and-feature-lifecycle/README.md)
@@ -68,7 +68,7 @@ slice.
   sibling compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to multi-module SCC
-  checking under G129.
+  checking under P129.
 
 ## Open questions
 

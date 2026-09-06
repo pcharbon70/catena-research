@@ -28,7 +28,7 @@ too: evidence, handler declarations, capability names, resumptions
 in programs but are never fully-evaluated first-class data. Every
 value is **uniformly first-class**: bindable, passable, returnable,
 and storable, with no tiers and no per-type restrictions; what storing
-a process handle lets you observe belongs to G037/G085, not to the
+a process handle lets you observe belongs to G037/P085, not to the
 value grammar.
 
 **Strictness** is a language invariant: every subexpression evaluates
@@ -109,7 +109,7 @@ Tiered first-classness — passable-but-not-storable handles, or
 functions restricted from records — encodes observability policy in
 the value grammar, which is the wrong layer: what storing a process
 handle lets a program observe is a semantics question G037 (allocation
-observability) and G085 (message semantics) own. The kernel treats
+observability) and P085 (message semantics) own. The kernel treats
 handles as opaque values; this slice states that uniformly and defers
 the consequences to their owners by name.
 
@@ -146,7 +146,7 @@ resumptions, traps, effect rows, signatures.
 
 One class. Every value may be bound, passed, returned, and stored.
 Exclusions named, not tiered: observability of handle storage (G037,
-G085), equality between values (P035), rendering (G110/G118).
+P085), equality between values (P035), rendering (G110/G118).
 
 ### The strictness invariant
 
@@ -187,8 +187,8 @@ beyond traps; G037 owns allocation observability; G038 owns
 compile-time evaluation; G040 owns each future type's value status;
 P109 owns all surface syntax.
 
-The model should be revisited if G084's runtime work demands
-non-uniform handle treatment (the remedy is a G037/G085 observability
+The model should be revisited if P084's runtime work demands
+non-uniform handle treatment (the remedy is a G037/P085 observability
 contract, not value tiers), or if the 1.0 era considers lazy forms
 (the remedy is the edition record the gate already requires).
 

@@ -70,7 +70,7 @@ fixes digest-bound admission whose circularity is precisely what an SCC
 must not attempt: the digest of A embeds A's interface, which checking B
 against A requires before A exists. C022 also already classifies a known
 module as "one whose export set and digest the resolution context holds;
-how contexts acquire modules ... remains G025/G121" — the SCC is the
+how contexts acquire modules ... remains G025/P121" — the SCC is the
 context-level grouping that answer anticipated.
 
 [C002's recursive groups](../60-specification/data-and-patterns/declarations-and-nominal-identity.md)

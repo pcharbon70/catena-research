@@ -46,7 +46,7 @@ the bootstrap adds no new public API (`TL-OBL-001`):
 
 Implementations MUST NOT use these boundaries to claim an ambient
 host handler, a parameterized launch, or any capability injection
-without G106's channel (`TL-OBL-004`, `TL-OBL-005`).
+without P106's channel (`TL-OBL-004`, `TL-OBL-005`).
 
 ## Determinism
 
@@ -60,7 +60,7 @@ diagnostics on every conforming target (`TL-OBL-002`).
 | `TL-OBL-001` | apply boundary rules only at exact 0.1.48 and register the stable lifecycle addition with zero new families and no new API | exact selection, registry, and lifecycle tests |
 | `TL-OBL-002` | keep the boundary: entries leave nothing unhandled and nobody interprets | launch and ENT001 witnesses |
 | `TL-OBL-003` | keep launch as invocation only: to completion, no scope, no injection | launch re-pins |
-| `TL-OBL-004` | keep the capability interface: explicit typed values via G106's channel or nothing; entry rules bind until then | absence tests |
+| `TL-OBL-004` | keep the capability interface: explicit typed values via P106's channel or nothing; entry rules bind until then | absence tests |
 | `TL-OBL-005` | keep no ambient handler reserved and supervision routed as failure-only | absence and routing tests |
 | `TL-OBL-006` | keep the door: entry-form widening amends C027 explicitly with who-interprets-what stated | exclusion tests |
 | `TL-OBL-007` | keep the contract deterministic with the C027 entry corpus unchanged | determinism and re-pin tests |

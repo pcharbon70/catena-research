@@ -32,10 +32,10 @@ policy governs resource disclosure; this area adds no new dimension.
 
 Put the six-topic routing, the miss classification, the complexity
 exclusion, and C042 conformance obligations here. Collection type
-declarations remain G101's under C040's classification. Structural
+declarations remain P101's under C040's classification. Structural
 records remain C041's. The comparable set remains C035's. The
 failure taxonomy remains C036's. Representation invisibility remains
-C037's. Miss-type contents and collection libraries remain G105's.
+C037's. Miss-type contents and collection libraries remain P105's.
 Spellings remain P109's.
 
 ## Variability register
@@ -67,6 +67,6 @@ language layer; no registry or tooling behavior may vary.
 
 Keep all chapters at one lifecycle status and version. A routing,
 classification, or exclusion change requires an explicit later
-semantic revision. G101 declares the canonical collections on this
+semantic revision. P101 declares the canonical collections on this
 contract. Keep the traceability map, sibling compiler tests,
 source-language guides, and this inventory synchronized.
