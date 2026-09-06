@@ -52,23 +52,23 @@ timeout clause is total; and how cancellation of a waiting receive
 disposes of nothing it did not enqueue. Until G088 ships, no
 timeout form exists and none is claimed.
 
-## Typed protocols — G087
+## Typed protocols — P087
 
 > **Normative definition.**
 
-G087 owns whether mailbox protocols, process handles, and replies
+P087 owns whether mailbox protocols, process handles, and replies
 are statically tracked (`RC-OBL-007`). Any protocol typing MUST
 compose with the closed-message-type rule: a protocol state refines
 the message type; it never widens scan, preservation, or removal.
 
-## Send-side semantics — G085
+## Send-side semantics — P085
 
 > **Normative definition.**
 
-G085 owns send results, copying and sharing, and dead-target
+P085 owns send results, copying and sharing, and dead-target
 behavior (`RC-OBL-007`). The receive rule set assumes only what
 C010 fixed: a live mailbox preserves order and content for its
-process; every other send-side claim is G085's to make.
+process; every other send-side claim is P085's to make.
 
 ## Rationale and evidence (non-normative)
 

@@ -50,7 +50,7 @@ on:
 The answer must compose with C001's no-defaulting and no-implicit-coercion
 inference contract, C003/C010's mathematical `Int`, C017's exact components,
 C009's behavior classes, and C012's limit contract without silently deciding
-G019 operator syntax, G040 built-ins, G061 numeric traits, G105 numeric
+G019 operator syntax, G040 built-ins, G061 numeric traits, P105 numeric
 libraries, P035 primitive equality, or G036 runtime failure taxonomy.
 
 ## Working hypotheses
@@ -64,7 +64,7 @@ libraries, P035 primitive equality, or G036 runtime failure taxonomy.
   have type `Float`. No numeric defaulting and no constraint-based literal
   typing are introduced.
 - No implicit numeric coercions exist; mixed arithmetic is ill-typed, and
-  explicit conversions are future library work owned by G105.
+  explicit conversions are future library work owned by P105.
 - A decimal literal's `Float` value is its exact rational value rounded once
   by `roundTiesToEven`; subnormal results and underflow to zero are valid,
   and a magnitude that rounds above the largest finite value is statically
@@ -139,6 +139,6 @@ G018 is complete through the
 [topic map](../10-maps/numeric-literal-semantics.md), and
 [C018 evidence record](../50-journal/2026-08-21-c018-numeric-literal-semantics.md).
 G019/P109 retain negation spelling, operators, and grammar composition; G040
-retains the wider built-in data model; G061 retains numeric traits; G105
+retains the wider built-in data model; G061 retains numeric traits; P105
 retains explicit conversions and the numeric library; P035 retains primitive
 equality and ordering; G036 retains the arithmetic failure taxonomy.

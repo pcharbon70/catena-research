@@ -72,7 +72,7 @@ every conforming target (`NR-OBL-006`).
 | `NR-OBL-004` | re-affirm no defaulting, no implicit coercion, no literal constraints; mixed operands ill-typed | mixed-type rejection tests |
 | `NR-OBL-005` | make arithmetic same-type over {Int, Float}: the rule accepts float operands, witnessed on the inference engine, dormant until a float-bearing frontend | inference-engine witnesses |
 | `NR-OBL-006` | keep the contract deterministic with zero new families and the reuse boundary enforced | determinism and exclusion tests |
-| `NR-OBL-007` | route division, remainder, and reserved spellings to G105 with no divide or remainder operator existing | absence tests |
+| `NR-OBL-007` | route division, remainder, and reserved spellings to P105 with no divide or remainder operator existing | absence tests |
 | `NR-OBL-008` | keep the closed set amendable only by a new revision amending the enumeration | exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling

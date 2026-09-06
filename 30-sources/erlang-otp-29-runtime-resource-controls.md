@@ -56,7 +56,7 @@ The evidence argues against inventing a numeric Catena mailbox floor in C012.
 The [root policy](../IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity)
 instead classifies mailbox capacity as deployment-defined while preserving the
 language's per-sender ordering and targeting observations. Concrete quotas,
-process death, supervision, and backpressure remain with G068 and G129.
+process death, supervision, and backpressure remain with G068 and P129.
 
 ## Limits
 

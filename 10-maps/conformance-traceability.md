@@ -191,17 +191,20 @@ obligation:
 | Obligation | A short noun phrase for the requirement. |
 | Normative or governance anchor | A relative link to the governing heading, e.g. [`syntax-and-safety.md#clause-form`](../60-specification/clause-conditions/syntax-and-safety.md#clause-form). |
 | Evidence | The exercising compiler test path and name, plus any stable diagnostic identifier(s). Cross-repo evidence uses a GitHub web link so the archive's local-link check is unaffected. |
-| Status | `traced`, `in-progress`, or `untraced`. |
+| Status | `traced`, `partial`, or `untraced`. |
 
 A registry entry is `traced` only when at least one tagged, passing compiler
 test covers the obligation. A test tags its obligations with ExUnit
 `@tag obligation: "AREA-OBL-NNN"` (or `obligations: [...]`), scanned by the
-compiler coverage check.
+compiler coverage check. A tag is an index, not evidence that every required
+behavior was exercised. Use `partial` where existing witnesses cover only
+part of the obligation or its controlling rule has an unresolved conflict;
+record the missing work and its current checklist owner.
 
 ## Per-area status
 
 `MUST`/`MUST NOT` counts are fixed precisely when each area's obligation set is
-extracted; all forty-one normative areas and the C012 governance policy are now
+extracted; all current normative areas and the C012 governance policy are
 extracted. "Compiler-tagged + gated" means
 the per-area tests carry `@tag obligations: [...]` and a
 `<suite>_traceability_coverage_test.exs` gate is merged (or pending) in the
@@ -248,14 +251,14 @@ sibling compiler repository.
 | `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (7) | compiler-tagged + gated (`f42c958`); all obligations traced |
 | `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (8) | compiler-tagged + gated (`246019f`); all obligations traced |
 | `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
-| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); all obligations traced |
+| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); 11 traced; 3 partial after behavioral-evidence audit |
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
 | `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
 | `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
 | `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
 | `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (10) | compiler-tagged + gated (`5525662`); all obligations traced |
-| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6) | compiler-tagged + gated (`b202887`); all obligations traced |
+| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6) | compiler-tagged + gated (`b202887`); 7 traced; 1 partial pending normative clarification |
 | `XB` exception-boundary | 7 | `c081_exception_boundary_test.exs` (7) | compiler-tagged + gated (`e0f2a9e`); all obligations traced |
 | `TL` top-level-effects | 7 | `c082_top_level_test.exs` (6) | compiler-tagged + gated (`e962b73`); all obligations traced |
 
@@ -1437,7 +1440,7 @@ gate:
 - **c025 #9** *rejects unsatisfiable sets as `PKG003` with every requirer and unknown names as `PKG004`*
 - **c025 #10** *generates byte-deterministic `catena.lock` records and replays them as exact pins*
 - **c025 #11** *rejects stale and tampered lockfiles as `PKG005`*
-- **c025 #12** *keeps the engine deterministic, source-only, and outside G121/G130 phases*
+- **c025 #12** *keeps the engine deterministic, source-only, and outside P121/P130 phases*
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
@@ -1452,7 +1455,7 @@ gate:
 | PK-OBL-009 | Reject unsatisfiable sets as `PKG003` with every requirer and absent names as `PKG004` | [`resolution-and-lockfile.md#single-version-resolution`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#single-version-resolution) | c025 #9; PKG003, PKG004 | traced |
 | PK-OBL-010 | Generate canonical byte-deterministic `catena.lock` records | [`resolution-and-lockfile.md#the-lockfile`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#the-lockfile) | c025 #10 | traced |
 | PK-OBL-011 | Replay a matching lockfile as exact pins and reject stale or tampered locks as `PKG005` | [`resolution-and-lockfile.md#the-lockfile`](../60-specification/package-identity-and-dependencies/resolution-and-lockfile.md#the-lockfile) | c025 #10, #11; PKG005 | traced |
-| PK-OBL-012 | Keep the engine deterministic, source-only, and outside G121/G130 phases | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/package-identity-and-dependencies/diagnostics-and-conformance.md#revision-and-persistence-separation) | c025 #1, #12 | traced |
+| PK-OBL-012 | Keep the engine deterministic, source-only, and outside P121/P130 phases | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/package-identity-and-dependencies/diagnostics-and-conformance.md#revision-and-persistence-separation) | c025 #1, #12 | traced |
 
 C025 coverage is 12 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `PK-OBL-*` identifier
@@ -1475,7 +1478,7 @@ gate:
 - **c026 #7** *makes absent/null the complete opt-out*
 - **c026 #8** *guarantees zero implicit names for edition 0.1*
 - **c026 #9** *emits stable diagnostics with unchanged reused identities*
-- **c026 #10** *keeps the wiring deterministic, source-only, and outside G101/G121*
+- **c026 #10** *keeps the wiring deterministic, source-only, and outside P101/P121*
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
@@ -1488,7 +1491,7 @@ gate:
 | PL-OBL-007 | Make absent/`null` the complete opt-out: no origin, no qualification, no suggestion | [`shadowing-optout-and-edition-guarantee.md#opt-out`](../60-specification/prelude-policy/shadowing-optout-and-edition-guarantee.md#opt-out) | c026 #7 | traced |
 | PL-OBL-008 | Guarantee zero implicit names for edition 0.1 and require a lifecycle record for any future default | [`shadowing-optout-and-edition-guarantee.md#the-edition-guarantee`](../60-specification/prelude-policy/shadowing-optout-and-edition-guarantee.md#the-edition-guarantee) | c026 #8 | traced |
 | PL-OBL-009 | Emit stable diagnostics: `PRE001` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/prelude-policy/diagnostics-and-conformance.md#stable-diagnostics) | c026 #9 | traced |
-| PL-OBL-010 | Keep the wiring deterministic, source-only, and outside G101/G121 phases | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/prelude-policy/diagnostics-and-conformance.md#abstract-public-boundaries) | c026 #1, #10 | traced |
+| PL-OBL-010 | Keep the wiring deterministic, source-only, and outside P101/P121 phases | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/prelude-policy/diagnostics-and-conformance.md#abstract-public-boundaries) | c026 #1, #10 | traced |
 
 C026 coverage is 10 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `PL-OBL-*` identifier
@@ -1511,7 +1514,7 @@ gate:
 - **c027 #7** *reports completed-with-value or failed-with-trap — return-is-shutdown*
 - **c027 #8** *rejects a launch naming an undeclared entry as `ENT002`*
 - **c027 #9** *emits stable diagnostics with unchanged reused identities*
-- **c027 #10** *keeps the wiring deterministic, source-only, and outside G084/G121 machinery*
+- **c027 #10** *keeps the wiring deterministic, source-only, and outside P084/P121 machinery*
 
 Anchors point at the normative 0.1.23 chapters; `EN-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1527,7 +1530,7 @@ are fully traced against the immutable compiler commit.
 | EN-OBL-007 | Report completed-with-value or failed-with-trap: return-is-shutdown with the trap identity | [`startup-and-shutdown.md#return-is-shutdown`](../60-specification/entry-points/startup-and-shutdown.md#return-is-shutdown) | c027 #7; ENT003 | traced |
 | EN-OBL-008 | Reject a launch naming an undeclared entry as `ENT002` | [`startup-and-shutdown.md#launch`](../60-specification/entry-points/startup-and-shutdown.md#launch) | c027 #8; ENT002 | traced |
 | EN-OBL-009 | Emit stable diagnostics: `ENT001`–`ENT003` plus the reused families with unchanged identities | [`diagnostics-and-conformance.md#stable-diagnostics`](../60-specification/entry-points/diagnostics-and-conformance.md#stable-diagnostics) | c027 #9 | traced |
-| EN-OBL-010 | Keep the wiring deterministic, source-only, and outside G084/G088/G121 machinery, with compilation roots unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/entry-points/diagnostics-and-conformance.md#abstract-public-boundaries) | c027 #1, #10 | traced |
+| EN-OBL-010 | Keep the wiring deterministic, source-only, and outside P084/G088/P121 machinery, with compilation roots unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/entry-points/diagnostics-and-conformance.md#abstract-public-boundaries) | c027 #1, #10 | traced |
 
 C027 coverage is 10 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `EN-OBL-*` identifier
@@ -1692,7 +1695,7 @@ gate:
 - **c032 #5** *makes the let-bound closure the local-function form under C031's rules*
 - **c032 #6** *keeps the proper-tail-call guarantee: deep BEAM recursion completes, stepper terminates*
 - **c032 #7** *keeps named functions as definitions with C031's recursion environment and C022's exports*
-- **c032 #8** *keeps the model deterministic and outside G033/P034/G037/G094/P109 claims with zero new families*
+- **c032 #8** *keeps the model deterministic and outside G033/P034/G037/P094/P109 claims with zero new families*
 
 Anchors point at the normative 0.1.28 chapters; `FC-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1706,7 +1709,7 @@ are fully traced against the immutable compiler commit.
 | FC-OBL-005 | Make the let-bound closure the local-function form under all of C031's rules | [`closures-and-tail-calls.md#the-local-function-form`](../60-specification/functions-and-calls/closures-and-tail-calls.md#the-local-function-form) | c032 #5 | traced |
 | FC-OBL-006 | Keep the proper-tail-call guarantee: deep tail recursion completes without unbounded stack growth | [`closures-and-tail-calls.md#proper-tail-calls`](../60-specification/functions-and-calls/closures-and-tail-calls.md#proper-tail-calls) | c032 #6 | traced |
 | FC-OBL-007 | Keep named functions as definitions with C031's recursion environment and C022's export rules | [`arity-and-application.md#named-and-anonymous-functions`](../60-specification/functions-and-calls/arity-and-application.md#named-and-anonymous-functions) | c032 #7 | traced |
-| FC-OBL-008 | Keep the model deterministic and outside G033/P034/G037/G094/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/functions-and-calls/diagnostics-and-conformance.md#abstract-public-boundaries) | c032 #8 | traced |
+| FC-OBL-008 | Keep the model deterministic and outside G033/P034/G037/P094/P109 claims with zero new diagnostic families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/functions-and-calls/diagnostics-and-conformance.md#abstract-public-boundaries) | c032 #8 | traced |
 
 C032 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `FC-OBL-*` identifier
@@ -1797,7 +1800,7 @@ gate:
 - **c034 #5** *keeps every meta-level evaluator total-or-bounded per its cited regime*
 - **c034 #6** *enforces the entry rule: no unbounded meta-level evaluator may be claimed*
 - **c034 #7** *keeps recursive conditions rejecting as `CND004` unchanged*
-- **c034 #8** *keeps the classification deterministic and outside G036/G038/G084/G088/P109 claims with zero new families*
+- **c034 #8** *keeps the classification deterministic and outside G036/G038/P084/G088/P109 claims with zero new families*
 
 Anchors point at the normative 0.1.31 chapters; `RT-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1811,7 +1814,7 @@ are fully traced against the immutable compiler commit.
 | RT-OBL-005 | Keep every meta-level evaluator total-or-bounded per its cited regime | [`the-separation-table.md#the-separation`](../60-specification/recursion-and-termination/the-separation-table.md#the-separation) | c034 #5 | traced |
 | RT-OBL-006 | Enforce the entry rule: no unbounded meta-level evaluator may be claimed | [`the-separation-table.md#the-entry-rule`](../60-specification/recursion-and-termination/the-separation-table.md#the-entry-rule) | c034 #6 | traced |
 | RT-OBL-007 | Keep recursive conditions rejecting as `CND004` unchanged | [`the-separation-table.md#the-separation`](../60-specification/recursion-and-termination/the-separation-table.md#the-separation) | c034 #7; CND004 | traced |
-| RT-OBL-008 | Keep the classification deterministic and outside G036/G038/G084/G088/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/recursion-and-termination/diagnostics-and-conformance.md#abstract-public-boundaries) | c034 #8 | traced |
+| RT-OBL-008 | Keep the classification deterministic and outside G036/G038/P084/G088/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/recursion-and-termination/diagnostics-and-conformance.md#abstract-public-boundaries) | c034 #8 | traced |
 
 C034 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `RT-OBL-*` identifier
@@ -1832,7 +1835,7 @@ gate:
 - **c036 #5** *keeps the six-category mapping exactly as classified*
 - **c036 #6** *enforces the entry rule: no unclassified failure kind, no second outcome class*
 - **c036 #7** *keeps typed failure classified as values, not failures*
-- **c036 #8** *keeps the taxonomy deterministic and outside G084/G088/G092/G095/G105/P109 claims with zero new families*
+- **c036 #8** *keeps the taxonomy deterministic and outside P084/G088/G092/G095/P105/P109 claims with zero new families*
 
 Anchors point at the normative 0.1.32 chapters; `FT-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1846,7 +1849,7 @@ are fully traced against the immutable compiler commit.
 | FT-OBL-005 | Keep the six-category mapping exactly as classified | [`the-six-categories.md#the-mapping`](../60-specification/runtime-failure-taxonomy/the-six-categories.md#the-mapping) | c036 #5 | traced |
 | FT-OBL-006 | Enforce the entry rule: no unclassified failure kind, no second outcome class | [`the-six-categories.md#the-entry-rule`](../60-specification/runtime-failure-taxonomy/the-six-categories.md#the-entry-rule) | c036 #6 | traced |
 | FT-OBL-007 | Keep typed failure classified as values, not failures | [`the-six-categories.md#typed-failure-is-not-failure`](../60-specification/runtime-failure-taxonomy/the-six-categories.md#typed-failure-is-not-failure) | c036 #7 | traced |
-| FT-OBL-008 | Keep the taxonomy deterministic and outside G084/G088/G092/G095/G105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/runtime-failure-taxonomy/diagnostics-and-conformance.md#abstract-public-boundaries) | c036 #8 | traced |
+| FT-OBL-008 | Keep the taxonomy deterministic and outside P084/G088/G092/G095/P105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/runtime-failure-taxonomy/diagnostics-and-conformance.md#abstract-public-boundaries) | c036 #8 | traced |
 
 C036 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `FT-OBL-*` identifier
@@ -1867,7 +1870,7 @@ gate:
 - **c037 #5** *keeps every other value semantically identical only: closures, records, and messages carry no identity*
 - **c037 #6** *keeps finalization declared absent with its gate*
 - **c037 #7** *keeps stack use observable only through completion versus the tail guarantee*
-- **c037 #8** *keeps the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families*
+- **c037 #8** *keeps the classification deterministic and outside G080s/P084/P085/G095/G124 claims with zero new families*
 
 Anchors point at the normative 0.1.33 chapters; `RO-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1881,7 +1884,7 @@ are fully traced against the immutable compiler commit.
 | RO-OBL-005 | Keep every other value semantically identical only: closure allocation, record sharing, message copying unobservable | [`identity-and-finalization.md#the-two-clause-identity-rule`](../60-specification/resource-observability/identity-and-finalization.md#the-two-clause-identity-rule) | c037 #5 | traced |
 | RO-OBL-006 | Keep finalization declared absent with its gate: no cleanup form exists or arrives ungated | [`identity-and-finalization.md#finalization`](../60-specification/resource-observability/identity-and-finalization.md#finalization) | c037 #6 | traced |
 | RO-OBL-007 | Keep stack use observable only through completion versus the tail guarantee | [`the-observability-model.md#stack-use`](../60-specification/resource-observability/the-observability-model.md#stack-use) | c037 #7 | traced |
-| RO-OBL-008 | Keep the classification deterministic and outside G080s/G084/G085/G095/G124 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/resource-observability/diagnostics-and-conformance.md#abstract-public-boundaries) | c037 #8 | traced |
+| RO-OBL-008 | Keep the classification deterministic and outside G080s/P084/P085/G095/G124 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/resource-observability/diagnostics-and-conformance.md#abstract-public-boundaries) | c037 #8 | traced |
 
 C037 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `RO-OBL-*` identifier
@@ -1902,7 +1905,7 @@ gate:
 - **c038 #5** *keeps the restriction table exact: the gate plus the three cited budgets*
 - **c038 #6** *keeps compilation deterministic: equal declarations, equal derived output, equal bytes*
 - **c038 #7** *keeps the three meta-evaluators under their unchanged regimes*
-- **c038 #8** *keeps the classification deterministic and outside P109/G040/G005/G116/G121 claims with zero new families*
+- **c038 #8** *keeps the classification deterministic and outside P109/G040/G005/P116/P121 claims with zero new families*
 
 Anchors point at the normative 0.1.34 chapters; `CE-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1916,7 +1919,7 @@ are fully traced against the immutable compiler commit.
 | CE-OBL-005 | Keep the restriction table exact: the gate plus the three cited budgets, complete at 0.1.34 | [`totality-and-determinism-restrictions.md#the-restriction-table`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#the-restriction-table) | c038 #5 | traced |
 | CE-OBL-006 | Keep compilation deterministic: equal declarations, equal derived output, equal bytes | [`totality-and-determinism-restrictions.md#determinism`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#determinism) | c038 #6 | traced |
 | CE-OBL-007 | Keep the three meta-evaluators under their unchanged regimes | [`totality-and-determinism-restrictions.md#the-restriction-table`](../60-specification/compile-time-evaluation/totality-and-determinism-restrictions.md#the-restriction-table) | c038 #7 | traced |
-| CE-OBL-008 | Keep the classification deterministic and outside P109/G040/G005/G116/G121 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/compile-time-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c038 #8 | traced |
+| CE-OBL-008 | Keep the classification deterministic and outside P109/G040/G005/P116/P121 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/compile-time-evaluation/diagnostics-and-conformance.md#abstract-public-boundaries) | c038 #8 | traced |
 
 C038 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `CE-OBL-*` identifier
@@ -1937,7 +1940,7 @@ gate:
 - **c040 #5** *keeps collections as library territory and references excluded, both gated*
 - **c040 #6** *states the frontend absence honestly: no compiled-program text literals*
 - **c040 #7** *keeps the Character one-scalar invariant and Text/Bytes content identity*
-- **c040 #8** *keeps the model deterministic and outside G042/G084/G101/G105/P109 claims with zero new families*
+- **c040 #8** *keeps the model deterministic and outside G042/P084/P101/P105/P109 claims with zero new families*
 
 Anchors point at the normative 0.1.35 chapters; `BM-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1951,7 +1954,7 @@ are fully traced against the immutable compiler commit.
 | BM-OBL-005 | Keep collections as library territory and references excluded, both gated | [`the-twelve-way-classification.md#library-territory-not-exclusion`](../60-specification/built-in-data-model/the-twelve-way-classification.md#library-territory-not-exclusion) | c040 #5 | traced |
 | BM-OBL-006 | State the frontend absence honestly: no compiled-program text literals; coverage entries at P109 | [`text-character-and-bytes.md#the-frontend-absence`](../60-specification/built-in-data-model/text-character-and-bytes.md#the-frontend-absence) | c040 #6 | traced |
 | BM-OBL-007 | Keep the Character one-scalar invariant and Text/Bytes content identity | [`text-character-and-bytes.md#the-three-types`](../60-specification/built-in-data-model/text-character-and-bytes.md#the-three-types) | c040 #7 | traced |
-| BM-OBL-008 | Keep the model deterministic and outside G042/G084/G101/G105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/built-in-data-model/diagnostics-and-conformance.md#abstract-public-boundaries) | c040 #8 | traced |
+| BM-OBL-008 | Keep the model deterministic and outside G042/P084/P101/P105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/built-in-data-model/diagnostics-and-conformance.md#abstract-public-boundaries) | c040 #8 | traced |
 
 C040 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `BM-OBL-*` identifier
@@ -2003,10 +2006,10 @@ compiler repository. The focused set is:
 - **c042 #2** *fixes the six-topic decision with shipped machinery and named owners*
 - **c042 #3** *keeps construction and update as constructor application and match recursion, distinct from records*
 - **c042 #4** *classifies a lookup miss as typed failure as a value: total operations, never a trap*
-- **c042 #5** *excludes complexity from the language layer, delegating documentation to G101*
-- **c042 #6** *fixes duplicate-key behavior as a G101 declaration obligation, explicit in the declaring slice*
+- **c042 #5** *excludes complexity from the language layer, delegating documentation to P101*
+- **c042 #6** *fixes duplicate-key behavior as a P101 declaration obligation, explicit in the declaring slice*
 - **c042 #7** *rides C035 for ordering and key equality: keys must be comparable*
-- **c042 #8** *keeps the contract deterministic and outside G101/G105/P109 claims with zero new families*
+- **c042 #8** *keeps the contract deterministic and outside P101/P105/P109 claims with zero new families*
 
 Anchors point at the normative 0.1.37 chapters. Status reflects the
 merged compiler evidence (`246019f`, branch `agent/c042-collections`).
@@ -2017,10 +2020,10 @@ merged compiler evidence (`246019f`, branch `agent/c042-collections`).
 | CO-OBL-002 | Fix the six-topic decision with shipped machinery and named owners | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #2 | traced |
 | CO-OBL-003 | Keep construction and update as constructor application and match recursion, distinct from records | [`the-six-topic-decision.md#construction-is-construction`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#construction-is-construction) | c042 #3 | traced |
 | CO-OBL-004 | Classify a lookup miss as typed failure as a value: total operations, never a trap | [`miss-as-value-and-complexity.md#miss-as-value`](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md#miss-as-value) | c042 #4 | traced |
-| CO-OBL-005 | Exclude complexity from the language layer, delegating documentation to G101 | [`miss-as-value-and-complexity.md#the-complexity-exclusion`](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md#the-complexity-exclusion) | c042 #5 | traced |
-| CO-OBL-006 | Fix duplicate-key behavior as a G101 declaration obligation, explicit in the declaring slice | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #6 | traced |
+| CO-OBL-005 | Exclude complexity from the language layer, delegating documentation to P101 | [`miss-as-value-and-complexity.md#the-complexity-exclusion`](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md#the-complexity-exclusion) | c042 #5 | traced |
+| CO-OBL-006 | Fix duplicate-key behavior as a P101 declaration obligation, explicit in the declaring slice | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #6 | traced |
 | CO-OBL-007 | Ride C035 for ordering and key equality: keys must be comparable | [`the-six-topic-decision.md#the-decision`](../60-specification/collection-construction-and-update/the-six-topic-decision.md#the-decision) | c042 #7 | traced |
-| CO-OBL-008 | Keep the contract deterministic and outside G101/G105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/collection-construction-and-update/diagnostics-and-conformance.md#abstract-public-boundaries) | c042 #8 | traced |
+| CO-OBL-008 | Keep the contract deterministic and outside P101/P105/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/collection-construction-and-update/diagnostics-and-conformance.md#abstract-public-boundaries) | c042 #8 | traced |
 
 C042 coverage is 8 `traced` and 0 untraced obligations. The dedicated
 gate rejects unknown identifiers and fails if any `CO-OBL-*` identifier
@@ -2093,18 +2096,22 @@ merged compiler evidence (`3216831`, branch `agent/c047-comprehensions`).
 | LC-OBL-002 | Fix the grammar's semantic roles and keywords with the adoption boundary at the surface capstone | [`the-surface-contract.md#the-grammars-semantic-roles`](../60-specification/list-comprehensions/the-surface-contract.md#the-grammars-semantic-roles) | c047 #2 | traced |
 | LC-OBL-003 | Require `List A` sources with the excluded-source boundary | [`generator-and-qualifier-rules.md#sources`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#sources) | c047 #3 | traced |
 | LC-OBL-004 | Fix left-to-right depth-first traversal with dependency, once-per-prefix source evaluation, and empty-input behavior | [`generator-and-qualifier-rules.md#traversal`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#traversal) | c047 #4 | traced |
-| LC-OBL-005 | Fix `when` filter semantics: visible effects, false-as-skip, all other failures propagate, no guard fragment | [`generator-and-qualifier-rules.md#filters`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#filters) | c047 #5 | traced |
+| LC-OBL-005 | Fix `when` filter semantics: visible effects, false-as-skip, all other failures propagate, no guard fragment | [`generator-and-qualifier-rules.md#filters`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#filters) | c047 #5 | partial |
 | LC-OBL-006 | Consume C044's split: total ordinary generators, `case` mismatch-as-skip, `LCP002`/`LCP003` markers, `M001` reuse | [`generator-and-qualifier-rules.md#the-pattern-generator-split`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#the-pattern-generator-split) | c047 #6 | traced |
 | LC-OBL-007 | Fix left-to-right scope, non-escaping non-recursive bindings, `LCP001` rebinding, `BS001` reuse | [`generator-and-qualifier-rules.md#scope-and-rebinding`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#scope-and-rebinding) | c047 #7 | traced |
-| LC-OBL-008 | Fix exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows | [`evaluation-effects-and-execution.md#exact-order`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#exact-order) | c047 #8 | traced |
+| LC-OBL-008 | Fix exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows | [`evaluation-effects-and-execution.md#exact-order`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#exact-order) | c047 #8 | partial |
 | LC-OBL-009 | Fix eager ordered production with lazy and infinite inputs excluded | [`the-surface-contract.md#eager-ordered-production`](../60-specification/list-comprehensions/the-surface-contract.md#eager-ordered-production) | c047 #9 | traced |
 | LC-OBL-010 | Fix the typed qualifier-tree target, the extensional equations, and the no-dispatch rule | [`elaboration-and-lowering.md#the-qualifier-tree-target`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-qualifier-tree-target) | c047 #10 | traced |
 | LC-OBL-011 | Fix `List B` results with all other targets excluded | [`the-surface-contract.md#the-result-type-boundary`](../60-specification/list-comprehensions/the-surface-contract.md#the-result-type-boundary) | c047 #11 | traced |
-| LC-OBL-012 | Make sequential execution normative and parallel forms excluded | [`evaluation-effects-and-execution.md#sequential-execution-is-normative`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#sequential-execution-is-normative) | c047 #12 | traced |
+| LC-OBL-012 | Make sequential execution normative and parallel forms excluded | [`evaluation-effects-and-execution.md#sequential-execution-is-normative`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#sequential-execution-is-normative) | c047 #12 | partial |
 | LC-OBL-013 | Produce the fused tail-recursive worker with linear allocation, source-faithful diagnostics, and cost honesty | [`elaboration-and-lowering.md#the-fused-worker`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-fused-worker) | c047 #13 | traced |
 | LC-OBL-014 | Keep the contract deterministic and outside unowned claims with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/list-comprehensions/diagnostics-and-conformance.md#abstract-public-boundaries) | c047 #14 | traced |
 
-C047 coverage is 14 `traced` and 0 untraced obligations. The dedicated
+Comprehension coverage is 11 `traced`, 3 `partial`, and 0 untraced
+obligations. The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence)
+reopens P050/P053/P057: `c047 #5` lacks effect/failure witnesses, and
+`c047 #8`/`#12` inspect generated strings and API absence without executing
+an effect-bearing comprehension. The dedicated
 gate rejects unknown identifiers and fails if any `LC-OBL-*` identifier
 lacks a focused tag.
 
@@ -2121,7 +2128,7 @@ compiler repository. The focused set is:
 - **c061 #4** *re-affirms no defaulting, no implicit coercion, no literal constraints; mixed operands ill-typed*
 - **c061 #5** *makes arithmetic same-type over {Int, Float}: annotated float parameters check and run*
 - **c061 #6** *keeps the contract deterministic with zero new families and the reuse boundary enforced*
-- **c061 #7** *routes division, remainder, and reserved spellings to G105 with no divide or remainder operator existing*
+- **c061 #7** *routes division, remainder, and reserved spellings to P105 with no divide or remainder operator existing*
 - **c061 #8** *keeps the closed set amendable only by a new revision amending the enumeration*
 
 Anchors point at the normative 0.1.40 chapters. Status reflects the
@@ -2135,7 +2142,7 @@ merged compiler evidence (`fd75cb7`, branch `agent/c061-numerics`).
 | NR-OBL-004 | Re-affirm no defaulting, no implicit coercion, no literal constraints; mixed operands ill-typed | [`exclusions-and-routings.md#the-frozen-exclusions-re-affirmed`](../60-specification/numeric-relationships/exclusions-and-routings.md#the-frozen-exclusions-re-affirmed) | c061 #4 | traced |
 | NR-OBL-005 | Make arithmetic same-type over {Int, Float}: annotated float parameters check and run | [`the-closed-set-instantiation-rule.md#float-arithmetic`](../60-specification/numeric-relationships/the-closed-set-instantiation-rule.md#float-arithmetic) | c061 #5 | traced |
 | NR-OBL-006 | Keep the contract deterministic with zero new families and the reuse boundary enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/numeric-relationships/diagnostics-and-conformance.md#abstract-public-boundaries) | c061 #6 | traced |
-| NR-OBL-007 | Route division, remainder, and reserved spellings to G105 with no divide or remainder operator existing | [`exclusions-and-routings.md#division-and-remainder`](../60-specification/numeric-relationships/exclusions-and-routings.md#division-and-remainder) | c061 #7 | traced |
+| NR-OBL-007 | Route division, remainder, and reserved spellings to P105 with no divide or remainder operator existing | [`exclusions-and-routings.md#division-and-remainder`](../60-specification/numeric-relationships/exclusions-and-routings.md#division-and-remainder) | c061 #7 | traced |
 | NR-OBL-008 | Keep the closed set amendable only by a new revision amending the enumeration | [`the-closed-set-instantiation-rule.md#the-closed-set`](../60-specification/numeric-relationships/the-closed-set-instantiation-rule.md#the-closed-set) | c061 #8 | traced |
 
 C061 coverage is 8 `traced` and 0 untraced obligations. The dedicated
@@ -2252,7 +2259,7 @@ Evidence labels refer to focused tests in
 compiler repository. The focused set is:
 
 - **c140 #1** *applies exclusion rules only at exact 0.1.44 with zero new families and the lifecycle registered*
-- **c140 #2** *keeps all seven forms excluded with the checked profile unchanged*
+- **c140 #2** *keeps all eight forms excluded with the checked profile unchanged*
 - **c140 #3** *keeps the seven-point gate as the only amendment route*
 - **c140 #4** *keeps rejections identifying the profile boundary*
 - **c140 #5** *keeps C068's checked advanced profile checking unchanged*
@@ -2265,7 +2272,7 @@ merged compiler evidence (`77fba75`, branch `agent/c140-advanced-exclusions`).
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
 | EA-OBL-001 | Apply exclusion rules only at exact 0.1.44 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/excluded-advanced-type-features/diagnostics-and-conformance.md#revision-and-persistence-separation) | c140 #1 | traced |
-| EA-OBL-002 | Keep all seven forms excluded with the checked profile unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #2 | traced |
+| EA-OBL-002 | Keep all eight forms excluded with the checked profile unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #2 | traced |
 | EA-OBL-003 | Keep the seven-point gate as the only amendment route | [`the-exclusion-table-and-gate.md#the-arrival-gate`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-arrival-gate) | c140 #3 | traced |
 | EA-OBL-004 | Keep rejections identifying the profile boundary | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #4 | traced |
 | EA-OBL-005 | Keep C068's checked advanced profile checking unchanged | [`the-exclusion-table-and-gate.md#the-exclusion-table`](../60-specification/excluded-advanced-type-features/the-exclusion-table-and-gate.md#the-exclusion-table) | c140 #5 | traced |
@@ -2323,7 +2330,7 @@ compiler repository. The focused set is:
 - **c086 #4** *keeps the starvation statement: honest cost, no fairness claim*
 - **c086 #5** *keeps the P109 interface with the timeout clause named as C044's explicit total fallback*
 - **c086 #6** *keeps the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations*
-- **c086 #7** *keeps the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's*
+- **c086 #7** *keeps the P087 and P085 interfaces: protocol typing composes, send-side claims stay P085's*
 - **c086 #8** *keeps the contract deterministic with the C003/C010 receive corpus unchanged*
 
 Anchors point at the normative 0.1.46 chapters. Status reflects the
@@ -2334,13 +2341,17 @@ merged compiler evidence (`b202887`, branch `agent/c086-receive`).
 | RC-OBL-001 | Apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/selective-receive/diagnostics-and-conformance.md#revision-and-persistence-separation) | c086 #1 | traced |
 | RC-OBL-002 | Keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #2 | traced |
 | RC-OBL-003 | Keep the typing and condition rules: closed message type, effect-free form, portable conditions, CND006 | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #3 | traced |
-| RC-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | traced |
+| RC-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | partial |
 | RC-OBL-005 | Keep the P109 interface with the timeout clause named as C044's explicit total fallback | [`the-routed-interfaces.md#public-syntax-p109`](../60-specification/selective-receive/the-routed-interfaces.md#public-syntax-p109) | c086 #5 | traced |
 | RC-OBL-006 | Keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | [`the-routed-interfaces.md#timeouts-and-cancellation-g088`](../60-specification/selective-receive/the-routed-interfaces.md#timeouts-and-cancellation-g088) | c086 #6 | traced |
-| RC-OBL-007 | Keep the G087 and G085 interfaces: protocol typing composes, send-side claims stay G085's | [`the-routed-interfaces.md#typed-protocols-g087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-g087) | c086 #7 | traced |
+| RC-OBL-007 | Keep the P087 and P085 interfaces: protocol typing composes, send-side claims stay P085's | [`the-routed-interfaces.md#typed-protocols-p087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-p087) | c086 #7 | traced |
 | RC-OBL-008 | Keep the contract deterministic with the C003/C010 receive corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/selective-receive/diagnostics-and-conformance.md#abstract-public-boundaries) | c086 #8 | traced |
 
-C086 coverage is 8 `traced` and 0 untraced obligations. The dedicated
+Receive coverage is 7 `traced`, 1 `partial`, and 0 untraced obligations.
+The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#selective-receive-conflict)
+reopens P086: the rejected-prefix starvation claim conflicts with the
+scan-continuation rule and the later-matching-message witness. The blocked
+mailbox fixture does not settle `RC-OBL-004`. The dedicated
 gate rejects unknown identifiers and fails if any `RC-OBL-*` identifier
 lacks a focused tag.
 
@@ -2355,7 +2366,7 @@ compiler repository. The focused set is:
 - **c081 #2** *keeps the partition: values, the pattern, and the terminal trap visibly distinct with no silent conversion*
 - **c081 #3** *keeps the pattern blessing descriptive: declining to resume aborts to the handler's result, per unchanged C005*
 - **c081 #4** *keeps panics as trap kinds entering with their producers*
-- **c081 #5** *keeps the routing table's owners: G084, G095/G096, G088, G105, G103*
+- **c081 #5** *keeps the routing table's owners: P084, G095/G096, G088, P105, G103*
 - **c081 #6** *keeps the reopening door as the only amendment route for a language exception form*
 - **c081 #7** *keeps the contract deterministic with the C036/C010 failure corpus unchanged*
 
@@ -2368,7 +2379,7 @@ merged compiler evidence (`e0f2a9e`, branch `agent/c081-exceptions`).
 | XB-OBL-002 | Keep the partition: values, the pattern, and the terminal trap visibly distinct with no silent conversion | [`the-mechanism-partition.md#the-partition`](../60-specification/exception-boundary/the-mechanism-partition.md#the-partition) | c081 #2 | traced |
 | XB-OBL-003 | Keep the pattern blessing descriptive: declining to resume aborts to the handler's result, per unchanged C005 | [`the-mechanism-partition.md#the-partition`](../60-specification/exception-boundary/the-mechanism-partition.md#the-partition) | c081 #3 | traced |
 | XB-OBL-004 | Keep panics as trap kinds entering with their producers | [`the-mechanism-partition.md#panic-classification`](../60-specification/exception-boundary/the-mechanism-partition.md#panic-classification) | c081 #4 | traced |
-| XB-OBL-005 | Keep the routing table's owners: G084, G095/G096, G088, G105, G103 | [`the-mechanism-partition.md#the-routing-table`](../60-specification/exception-boundary/the-mechanism-partition.md#the-routing-table) | c081 #5 | traced |
+| XB-OBL-005 | Keep the routing table's owners: P084, G095/G096, G088, P105, G103 | [`the-mechanism-partition.md#the-routing-table`](../60-specification/exception-boundary/the-mechanism-partition.md#the-routing-table) | c081 #5 | traced |
 | XB-OBL-006 | Keep the reopening door as the only amendment route for a language exception form | [`the-mechanism-partition.md#the-door`](../60-specification/exception-boundary/the-mechanism-partition.md#the-door) | c081 #6 | traced |
 | XB-OBL-007 | Keep the contract deterministic with the C036/C010 failure corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/exception-boundary/diagnostics-and-conformance.md#abstract-public-boundaries) | c081 #7 | traced |
 
@@ -2386,7 +2397,7 @@ compiler repository. The focused set is:
 - **c082 #1** *applies boundary rules only at exact 0.1.48 with zero new families and the lifecycle registered*
 - **c082 #2** *keeps the boundary: entries leave nothing unhandled and nobody interprets*
 - **c082 #3** *keeps launch as invocation only: to completion, no scope, no injection*
-- **c082 #4** *keeps the capability interface: explicit typed values via G106's channel or nothing; entry rules bind until then*
+- **c082 #4** *keeps the capability interface: explicit typed values via P106's channel or nothing; entry rules bind until then*
 - **c082 #5** *keeps no ambient handler reserved and supervision routed as failure-only*
 - **c082 #6** *keeps the door: entry-form widening amends C027 explicitly with who-interprets-what stated*
 - **c082 #7** *keeps the contract deterministic with the C027 entry corpus unchanged*
@@ -2399,7 +2410,7 @@ merged compiler evidence (`e962b73`, branch `agent/c082-toplevel`).
 | TL-OBL-001 | Apply boundary rules only at exact 0.1.48 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/top-level-effects/diagnostics-and-conformance.md#revision-and-persistence-separation) | c082 #1 | traced |
 | TL-OBL-002 | Keep the boundary: entries leave nothing unhandled and nobody interprets | [`the-top-level-boundary.md#the-boundary`](../60-specification/top-level-effects/the-top-level-boundary.md#the-boundary) | c082 #2 | traced |
 | TL-OBL-003 | Keep launch as invocation only: to completion, no scope, no injection | [`the-top-level-boundary.md#the-boundary`](../60-specification/top-level-effects/the-top-level-boundary.md#the-boundary) | c082 #3 | traced |
-| TL-OBL-004 | Keep the capability interface: explicit typed values via G106's channel or nothing; entry rules bind until then | [`the-top-level-boundary.md#the-capability-interface`](../60-specification/top-level-effects/the-top-level-boundary.md#the-capability-interface) | c082 #4 | traced |
+| TL-OBL-004 | Keep the capability interface: explicit typed values via P106's channel or nothing; entry rules bind until then | [`the-top-level-boundary.md#the-capability-interface`](../60-specification/top-level-effects/the-top-level-boundary.md#the-capability-interface) | c082 #4 | traced |
 | TL-OBL-005 | Keep no ambient handler reserved and supervision routed as failure-only | [`the-top-level-boundary.md#the-supervision-routing`](../60-specification/top-level-effects/the-top-level-boundary.md#the-supervision-routing) | c082 #5 | traced |
 | TL-OBL-006 | Keep the door: entry-form widening amends C027 explicitly with who-interprets-what stated | [`the-top-level-boundary.md#the-door`](../60-specification/top-level-effects/the-top-level-boundary.md#the-door) | c082 #6 | traced |
 | TL-OBL-007 | Keep the contract deterministic with the C027 entry corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/top-level-effects/diagnostics-and-conformance.md#abstract-public-boundaries) | c082 #7 | traced |

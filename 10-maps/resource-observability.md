@@ -53,7 +53,7 @@ tools.
 - [Conformance Traceability](conformance-traceability.md) registers
   `RO-OBL-001` through `RO-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
-- G080s resource scopes and cleanup; G084 handle operations; G085
+- G080s resource scopes and cleanup; P084 handle operations; P085
   message-copy details; G095 foreign finalization; G124 debugging
   tools remain the future owners.
 

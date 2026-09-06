@@ -29,7 +29,7 @@ Specification](../60-specification/numeric-relationships/README.md).
 2. **The routing that named this slice.** [Precedence and
    Associativity](../60-specification/operators-and-punctuation/precedence-and-associativity.md)
    leaves operator dispatch to G061 and division/remainder to
-   G105/G061.
+   P105/G061.
 3. **The pattern already in force.** [The Comparable
    Set](../60-specification/equality-and-ordering/the-comparable-set.md)
    types ordering same-type over `Int`/`Float`; C018's negation is
@@ -41,7 +41,7 @@ Specification](../60-specification/numeric-relationships/README.md).
 5. **The contract.** The [Numeric Relationships
    Specification](../60-specification/numeric-relationships/README.md):
    the closed-set instantiation rule, the dispatch exclusion,
-   float arithmetic, and the G105 routings.
+   float arithmetic, and the P105 routings.
 6. **The reasoning and decision record.** [Catena Numeric
    Relationships](../20-notes/catena-numeric-relationships.md)
    argues the rule; the [resolved

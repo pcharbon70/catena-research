@@ -42,10 +42,10 @@ conformance obligations here. Edition mechanics and per-change
 classification remain C008's. Interface content and verification remain
 C002's. SemVer grammar, requirement operators, resolution, and lock
 replay remain C025's. Entry declarations remain C027's. Migration
-engines remain G116/P125's. Registry retirement, yanks, and
-compromised versions remain G130's. Hot upgrade remains G092's.
+engines remain P116/P125's. Registry retirement, yanks, and
+compromised versions remain P130's. Hot upgrade remains G092's.
 Representation, calling-convention, and foreign-term contracts remain
-P093/G094/G095's. Tooling defaults remain G121's.
+P093/P094/G095's. Tooling defaults remain P121's.
 
 ## Variability register
 
@@ -79,6 +79,6 @@ no registry or tooling behavior may vary.
 Keep all chapters at one lifecycle status and version. A layer-stance,
 matrix, or version-meaning change requires an explicit later semantic
 revision. The 1.0-era versioning switch belongs to a future edition
-record; layout-stability contracts belong to P093/G094/G095. Keep the
+record; layout-stability contracts belong to P093/P094/G095. Keep the
 traceability map, sibling compiler tests, source-language guides, and
 this inventory synchronized.

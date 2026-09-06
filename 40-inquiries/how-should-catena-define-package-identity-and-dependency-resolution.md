@@ -24,7 +24,7 @@ makes a build reproducible. Until G025 closes, multi-package programs are
 only a manifest shape: two packages that depend on a third have no defined
 way to agree on which version of it they see, and every one of those
 disagreements would leak into G027's entry points, G028's compatibility
-policy, G121's build tooling, and G130's supply-chain rules.
+policy, P121's build tooling, and P130's supply-chain rules.
 
 ## Operational question
 
@@ -41,7 +41,7 @@ on:
 
 The answer must compose with the C008 manifest's selection semantics, the
 C024 component joint digests, and the C006 canonicalization machinery
-without deciding G121 build tooling, G130 supply-chain signing, G028
+without deciding P121 build tooling, P130 supply-chain signing, G028
 compatibility policy, G026 prelude contents, or G027 entry points.
 
 ## Working hypotheses
@@ -120,6 +120,6 @@ G025 is complete through the
 [package synthesis](../20-notes/catena-package-identity-and-dependencies.md),
 [topic map](../10-maps/package-identity-and-dependencies.md), and
 [C025 evidence record](../50-journal/2026-08-24-c025-package-identity.md).
-G121 retains build and fetch tooling; G128 reproducible-build
-consumption; G130 signing and threat modeling; G028 compatibility and
+P121 retains build and fetch tooling; P128 reproducible-build
+consumption; P130 signing and threat modeling; G028 compatibility and
 re-export facades; G026 and G027 the prelude and entry points.

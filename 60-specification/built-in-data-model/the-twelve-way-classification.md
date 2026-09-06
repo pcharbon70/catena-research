@@ -49,7 +49,7 @@ The checklist's twelve candidates classify as (`BM-OBL-002`):
 | Text | **built-in, elaborated now** | value (this slice) | comparable, orderable |
 | Character | **built-in, elaborated now** | value (this slice) | comparable, orderable |
 | Bytes | **built-in, elaborated now** | value (this slice) | comparable, orderable |
-| List, map, set | **library territory** (G101) | with G101's declarations | with G101, via constructor recursion |
+| List, map, set | **library territory** (P101) | with P101's declarations | with P101, via constructor recursion |
 | Reference | **excluded** | never | never |
 
 No shipped type's status changes: the seven classified built-ins
@@ -62,7 +62,7 @@ List, map, and set are **not excluded from the language** — they are
 excluded from the *built-in list*. A nominal ADT declaring `Nil` and
 `Cons` constructors expresses a list today, with C002 constructor
 patterns, C035 constructor-field comparability, and C004 derivations
-already serving it; G101 declares the canonical collections on this
+already serving it; P101 declares the canonical collections on this
 machinery with representation chosen by evidence. Built-in status
 would buy only dedicated literal syntax — a P109-era surface — and
 would pre-decide representation (`BM-OBL-005`).
@@ -71,7 +71,7 @@ would pre-decide representation (`BM-OBL-005`).
 
 No reference type exists at 0.1.35: no mutable cells, no aliasing
 operations, and C037's semantic identity leaves nothing for a
-reference to observe. Any arrival is G084's gated era; none may enter
+reference to observe. Any arrival is P084's gated era; none may enter
 as a compatible addition (`BM-OBL-005`).
 
 ## Coverage
@@ -83,8 +83,8 @@ per C033's rule (`BM-OBL-006`). This is stated absence, not omission.
 
 ## Deliberately separate work
 
-Collection declarations remain G101's; construction and update G042's;
-string libraries G105's; references G084's; spellings and the
+Collection declarations remain P101's; construction and update G042's;
+string libraries P104's; references P084's; spellings and the
 compiled-program path P109's; numeric trait relationships G061's.
 
 ## Rationale and evidence (non-normative)

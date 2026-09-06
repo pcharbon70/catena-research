@@ -17,9 +17,12 @@ aliases:
 
 This map routes the P086 question — connecting public syntax,
 typing, timeouts, scan order, starvation, cancellation, and cost
-for selective receive — through the archive's decision trail. The
-normative answer is revision `0.1.46` in the [Selective Receive
-Specification](../60-specification/selective-receive/README.md).
+for selective receive — through the archive's decision trail. Revision
+`0.1.46` was promoted in the [Selective Receive
+Specification](../60-specification/selective-receive/README.md), but P086
+is reopened: its starvation statement conflicts with its scan-continuation
+rule. The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+records the discrepancy; conformance for the disputed rule remains blocked.
 
 ## The route
 
@@ -27,7 +30,7 @@ Specification](../60-specification/selective-receive/README.md).
    and Receive](../60-specification/clause-conditions/clause-contexts-and-receive.md)
    fixes C003's typed lowering harness — rejected messages
    preserved, one-time removal, `CND006`, the native-only rule —
-   whose "explicitly unresolved" list P086 answers.
+   whose "explicitly unresolved" list the 0.1.46 slice addressed.
 2. **The public-receive reservation.** [Context Rules and
    Reservations](../60-specification/pattern-contexts/context-rules-and-reservations.md)
    (C044) requires every public receive to be exhaustive or carry
@@ -39,17 +42,21 @@ Specification](../60-specification/selective-receive/README.md).
    mailbox preservation stand as the execution and theorem sides.
 4. **The cost-honesty precedent.** [The Complexity
    Exclusion](../60-specification/collection-construction-and-update/miss-as-value-and-complexity.md)
-   (C042) fixes how starvation and scan cost may be stated:
-   explanation, not asymptotic promise.
+   (C042) distinguishes cost explanations from asymptotic promises; it does
+   not establish that a rejected prefix prevents later selection.
 5. **The contract.** The [Selective Receive
    Specification](../60-specification/selective-receive/README.md):
-   the rule set, the four routed interfaces (P109, G088, G087,
-   G085), and conformance.
+   the rule set, the four routed interfaces (P109, G088, P087,
+   P085), and conformance. Compare [The
+   Rules](../60-specification/selective-receive/the-receive-rule-set.md#the-rules)
+   with [Starvation and
+   Cost](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost)
+   to locate the unresolved `RC-OBL-004` conflict.
 6. **The reasoning and decision record.** [Catena Selective
    Receive](../20-notes/catena-selective-receive.md) argues the
-   routing; the [resolved
+   routing and the current conflict; the [reopened
    inquiry](../40-inquiries/how-does-selective-receive-complete.md)
-   preserves the forks.
+   preserves the historical forks and defines the closure criteria.
 
 ## Related maps
 

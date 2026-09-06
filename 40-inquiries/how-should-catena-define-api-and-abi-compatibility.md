@@ -75,7 +75,7 @@ meanings.
   behavior cannot be checked across producers, and "the kernel is the
   contract" is stronger than an unenforceable promise.
 - **Minimal BEAM ABI contract now** — rejected: the runtime era
-  (G084+) has not designed process/calling boundaries; C023's exclusion
+  (P084+) has not designed process/calling boundaries; C023's exclusion
   was deliberate.
 - **Catena-specific versioning scheme** — rejected: contradicts C025's
   shipped SemVer grammar and the Hex transport profile.
@@ -110,7 +110,7 @@ the reasoning in
 [Catena API and ABI Compatibility](../20-notes/catena-api-and-abi-compatibility.md),
 and the forks in the [design decision
 register](../20-notes/design-decision-register.md). Migration engines
-(G116/P125), registry retirement and yanks (G130), hot upgrade
+(P116/P125), registry retirement and yanks (P130), hot upgrade
 (G092), representation/calling-convention/foreign-term contracts
-(P093/G094/G095), and tooling defaults (G121) remain open with their
+(P093/P094/G095), and tooling defaults (P121) remain open with their
 owners.

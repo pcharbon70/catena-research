@@ -70,7 +70,7 @@ configuration, and distribution pressure. The existing
 [OTP process-semantics note](../30-sources/erlang-otp-29-processes.md) preserves
 the ordering and selective-receive observations. C012 classifies capacity as
 deployment-defined and carries quotas, failure, supervision, and backpressure
-to G068 and G129.
+to G068 and P129.
 
 ### Disclosure and traceability
 
@@ -85,8 +85,8 @@ registry.
 
 The bounded C012 inquiry is resolved, and C017 now activates the decoded
 literal payload floor as `LIM004`; see the [literal map](literal-grammar.md).
-G068 and G129 must
-define concrete capacity and failure protocols. G126–G131 remain responsible
+G068 and P129 must
+define concrete capacity and failure protocols. G126–P131 remain responsible
 for threat models, the trusted computing base, unsafe boundaries,
 reproducibility, denial of service, and supply-chain operations. Aggregate
 source size, cancellation, memory accounting, and large-project performance

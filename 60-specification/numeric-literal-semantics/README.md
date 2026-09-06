@@ -41,7 +41,7 @@ obligations. Numeric token spelling and components remain the exact
 0.1.13 [Literal Grammar](../literal-grammar/README.md) contract. Operator
 spelling, precedence, and token composition remain G019/P109. The wider
 built-in data model remains G040, numeric trait relationships remain G061,
-explicit conversions and the numeric library remain G105, primitive equality
+explicit conversions and the numeric library remain P105, primitive equality
 and ordering remain P035, and the runtime failure taxonomy for arithmetic
 outside this domain remains G036.
 

@@ -38,7 +38,7 @@ diagnostics, and C016 conformance obligations here. Atomic literal bodies are
 defined by C017; concrete operator/punctuation tokenization remains G019; complete
 documentable declarations remain P109; file/module ownership remains G020;
 rendering and formatting remain G110/G118; executable doctest semantics remain
-G119.
+P119.
 
 ## Variability register
 

@@ -58,7 +58,7 @@ diagnostics on every conforming target (`EA-OBL-002`).
 | ID | Obligation | Required executable evidence |
 | --- | --- | --- |
 | `EA-OBL-001` | apply exclusion rules only at exact 0.1.44 and register the stable lifecycle addition with zero new families and no new API | exact selection, registry, and lifecycle tests |
-| `EA-OBL-002` | keep all seven forms excluded with the checked profile unchanged | absence and regression tests |
+| `EA-OBL-002` | keep all eight forms excluded with the checked profile unchanged | absence and regression tests |
 | `EA-OBL-003` | keep the seven-point gate as the only amendment route | exclusion tests |
 | `EA-OBL-004` | keep rejections identifying the profile boundary | rejection witnesses |
 | `EA-OBL-005` | keep C068's checked advanced profile checking unchanged | positive-complement pins |

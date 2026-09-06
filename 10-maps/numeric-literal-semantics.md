@@ -80,6 +80,6 @@ questions deliberately left to other owners.
 C018 is complete at revision `0.1.14`. G019 retains negation spelling and all
 operator tokens;
 G040 retains the wider built-in data model; G061 retains numeric trait
-relationships; G105 retains explicit conversions and the numeric library;
+relationships; P105 retains explicit conversions and the numeric library;
 P035 retains primitive equality and ordering including signed zero; G036
 retains the runtime failure taxonomy for arithmetic outside this domain.

@@ -83,7 +83,7 @@ This chapter introduces no implicit numeric coercion. An operation expecting
 `Float` does not accept an `Int` operand or literal, and mixed numeric
 operations such as integer-plus-decimal are ill-typed. Conversions between
 `Int` and `Float` are explicit named operations whose library placement is
-owned by G105 (`NM-OBL-006`).
+owned by P105 (`NM-OBL-006`).
 
 ## Numeric negation
 
@@ -114,7 +114,7 @@ own coverage and usefulness story (`NM-OBL-008`).
 G019/P109 own negation spelling, precedence, and operator tokens. G040 owns
 placing `Int` and `Float` inside the complete built-in data model, including
 sendability, serialization, and any further numeric types. G061 owns numeric
-trait relationships and any overloaded operators. G105 owns explicit
+trait relationships and any overloaded operators. P105 owns explicit
 conversions, checked and decimal arithmetic, and the numeric library. P035
 owns primitive equality and ordering, including mixed-type comparisons and
 the two zero encodings. G036 owns the runtime failure taxonomy for

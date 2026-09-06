@@ -97,7 +97,7 @@ exact environment, commands, results, and artifact digests are recorded in the
 [C006 conformance journal](../../50-journal/2026-08-03-c006-executable-specification-governance-conformance.md).
 Consequently, P006, P110 through P114, and G115 became C006 and C110 through
 C115. P109 remains partial because public source punctuation is outside 0.1.6,
-and G116 remains open because long-term schema and compiler evolution are
+and P116 remains open because long-term schema and compiler evolution are
 deliberately excluded.
 
 That historical identity does not establish the exact `0.1.1` through

@@ -32,7 +32,7 @@ The rules apply only to source-language revision `0.1.21`.
 Resolution runs against a package environment: a mapping from package
 name to the set of available versions with their metadata. How an
 environment is populated — local files, a registry mirror, a vendor
-directory — is G121's build-tooling question; this chapter defines the
+directory — is P121's build-tooling question; this chapter defines the
 deterministic function from manifest plus environment to outcome
 (`PK-OBL-006`).
 
@@ -110,13 +110,13 @@ hex.pm is the bootstrap transport profile (`PK-OBL-006`): a Catena
 package published there carries the same name and SemVer version, and
 the registry tarball checksum recorded at install MUST equal the package's
 bundle digest for the install to be valid. Registry retirement, signing,
-and mirrors remain G130's layers; the identity above stays
+and mirrors remain P130's layers; the identity above stays
 registry-neutral so a second transport changes nothing.
 
 ## Deliberately separate work
 
-Build and fetch tools (G121), reproducible-build consumption (G128),
-signing and threat modeling (G130), compatibility meanings of versions
+Build and fetch tools (P121), reproducible-build consumption (P128),
+signing and threat modeling (P130), compatibility meanings of versions
 (C028), and re-export facades — re-owned from C022's deferral and
 formally excluded by C028 — stay outside.
 

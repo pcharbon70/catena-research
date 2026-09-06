@@ -52,7 +52,7 @@ amending any retained revision.
    decidable closed list.)*
 3. All values are uniformly first-class — bindable, passable,
    returnable, storable — with observability of storing process
-   handles named as G037/G085's exclusion, not a tier here.
+   handles named as G037/P085's exclusion, not a tier here.
 4. Strictness elevates to a language invariant with the kernel's
    `and`/`or` short-circuits as the named exceptions, and any future
    lazy or short-circuit form gated behind a C008 edition record.
@@ -71,7 +71,7 @@ amending any retained revision.
 - **Kernel list verbatim, Float unclassified** — rejected: floats
   demonstrably exist (C018); the list would be knowingly incomplete.
 - **Tiered first-classness (passable vs storable)** — rejected:
-  pre-decides G037/G085 observability questions this slice need not
+  pre-decides G037/P085 observability questions this slice need not
   answer.
 - **Merge with P030's per-form order** — rejected: the value-grammar
   half should not wait on binding and operator details.

@@ -82,14 +82,14 @@ exports (`PL-OBL-002`). Its identity is the unchanged (name, version,
 SHA-256 bundle digest) triple; prelude selection confers no special
 identity, exemption, or anchoring. Nothing in this chapter reserves a
 name or makes any specific package a prelude; which package, if any, an
-ecosolution standardizes remains G101's contents decision under this
+ecosolution standardizes remains P101's contents decision under this
 mechanism.
 
 ## Deliberately separate work
 
-Prelude contents and the standard-library name freeze remain G101.
+Prelude contents and the standard-library name freeze remain P101.
 Collection protocols remain P102. Tooling scaffolding that pre-fills
-the field remains G121 — a tool may write the field but MUST NOT imply
+the field remains P121 — a tool may write the field but MUST NOT imply
 selection that the manifest does not record. Entry-point defaults remain
 C027. Compatibility meanings of prelude version bumps are subsequently fixed
 by C028/G136.

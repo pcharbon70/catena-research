@@ -60,8 +60,8 @@ conforming target (`CE-OBL-006`). The compiler's own determinism
 ## Deliberately separate work
 
 Budget values themselves remain their owning areas' implementation
-limits; G121 owns build-tooling timeouts distinct from these budgets;
-G116/P125 own migration engines that consume compilation but are not
+limits; P121 owns build-tooling timeouts distinct from these budgets;
+P116/P125 own migration engines that consume compilation but are not
 compilers.
 
 ## Rationale and evidence (non-normative)

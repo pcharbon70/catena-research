@@ -81,7 +81,7 @@ through C025 dependency resolution. Heavyweight: OTP startup is
 supervision-tree-first — `start/2` must return a top-supervisor pid, and
 shutdown is tree termination. Catena's 0.1 deliberately does not adopt
 that: entries are effect-closed value-returning functions, invocation is
-completion, and supervision remains with G084/G089/G121. The OTP model is
+completion, and supervision remains with P084/G089/P121. The OTP model is
 therefore the future integration surface, not the 0.1 semantic.
 
 ## Limits

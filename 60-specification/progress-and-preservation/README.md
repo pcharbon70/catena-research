@@ -37,7 +37,7 @@ condition-era targets C003's, and the kernel targets C010's —
 restated here as composition parts, not amended. The resumption
 discipline remains C005's. The failure terminal remains C036's.
 The trace-agreement methodology remains C030's. Public processes
-remain G084/G085's and foreign values G095/G096's to ship.
+remain P084/P085's and foreign values G095/G096's to ship.
 
 ## Variability register
 

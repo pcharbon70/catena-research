@@ -34,7 +34,7 @@ operator spelling, precedence, and any negative pattern forms remain open.
 
 This closes G018 as C018 without reopening C017 spelling, without amending
 C001's no-defaulting contract, and without deciding G019 operators, G040
-built-ins beyond the two numeric types, G061 numeric traits, G105 numeric
+built-ins beyond the two numeric types, G061 numeric traits, P105 numeric
 libraries, P035 primitive equality, or G036 runtime failure taxonomy.
 
 ## Scope and method
@@ -154,7 +154,7 @@ correctly rounded value below. Both typings are fixed and monomorphic: an
 unconstrained literal is as typed as a constrained one, no numeric class or
 constraint is generated, and no expected-type or inferred-type adaptation
 occurs. Mixed integer/decimal arithmetic and comparison is ill-typed without
-coercions; explicit conversions are library work owned by G105.
+coercions; explicit conversions are library work owned by P105.
 
 ### Decimal conversion
 
@@ -202,7 +202,7 @@ signed-format versions do not change.
   raising arithmetic, has no literal spelling to construct the values, and
   forces the NaN/`Equatable`-reflexivity conflict into P035 now.
 - **Exact rational or decimal `Float`:** rounding-free but unrepresentable on
-  the target without a library numeric tower that G105 has not designed.
+  the target without a library numeric tower that P105 has not designed.
 - **Constrained literals with defaulting (Haskell model):** requires
   amending C001's no-defaulting rule and C004's ambiguity rejection before it
   could mean anything.
@@ -230,13 +230,13 @@ implementation-independent; above it, refusal is a disclosed limit.
 
 G019 must fix negation spelling and precedence; G040 must place `Int` and
 `Float` in the full built-in data model; G061 must relate any future numeric
-traits to these monomorphic types; G105 must design explicit conversions and
+traits to these monomorphic types; P105 must design explicit conversions and
 the numeric library; P035 must decide primitive equality and ordering
 including signed zero; G036 must classify the runtime failures of arithmetic
 that cannot produce values in this domain.
 
 The model should be revisited if the BEAM target changes its
-exceptional-float behavior, if evidence from G105 shows that monomorphic
+exceptional-float behavior, if evidence from P105 shows that monomorphic
 literals materially damage real numeric code, or if exact-component
 conversion below `LIM005` proves non-portable across independent
 implementations. Convenience arguments alone do not reopen C001.

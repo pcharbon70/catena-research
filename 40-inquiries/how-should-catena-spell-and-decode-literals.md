@@ -45,7 +45,7 @@ on:
 
 The answer must compose with C013–C016 and C012 without silently deciding
 G018 runtime numeric semantics, G019's whole tokenizer, P109's surface grammar,
-or the G040/G042/P093/G097 data model.
+or the G040/G042/P093/P097 data model.
 
 ## Paths explored
 

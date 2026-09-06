@@ -33,7 +33,7 @@ hosting machinery rather than building a bespoke registry.
   of a rebuild burden, before Catena's own standard library exists.
 - A bespoke registry adds operational cost and no language-research value;
   Hex already answers parts of the supply-chain questions (yanks/retirement,
-  checksums, semver resolution) that G130 would otherwise have to invent.
+  checksums, semver resolution) that P130 would otherwise have to invent.
 - Gleam demonstrates the interop path works for a non-Erlang-syntax BEAM
   language, including emitting Hex-format packages from its own build tool.
 
@@ -41,7 +41,7 @@ hosting machinery rather than building a bespoke registry.
 
 - Hex is transport, not authority. C006's Ed25519-signed assurance
   manifests and C008's exact-revision pins remain Catena-side trust inside
-  package tarballs; Hex does not validate them. The G130 supply-chain
+  package tarballs; Hex does not validate them. The P130 supply-chain
   policy must state this boundary explicitly rather than letting registry
   presence imply assurance.
 - Hex requires semver package versions; that is the package axis only.
@@ -49,19 +49,19 @@ hosting machinery rather than building a bespoke registry.
   stay separate version axes under C008.
 - Consuming Erlang/Elixir packages needs the foreign-term boundary (G095)
   and foreign-call syntax (G096), which are open; Catena packages consumed
-  from Erlang/Elixir need calling conventions (G094). Registry access
+  from Erlang/Elixir need calling conventions (P094). Registry access
   without those boundaries yields dependencies the language cannot call.
 - The package manifest shape (a `catena.toml`-style file or extension of
   existing formats), directory layout, and build-tool behavior remain G025
-  and G121 design work shaped toward Hex-compatible output.
+  and P121 design work shaped toward Hex-compatible output.
 
 ## Owners
 
 - G025 package identity, manifests, dependency resolution, lockfiles
 - G028 API/ABI compatibility policy
-- G094/G095/G096 calling conventions and foreign-term entry
-- G121 build system and package manager
-- G130 supply-chain policy
+- P094/G095/G096 calling conventions and foreign-term entry
+- P121 build system and package manager
+- P130 supply-chain policy
 
 ## Promotion path
 
@@ -71,14 +71,14 @@ checksum at install, and identity itself stays registry-neutral. See the
 [package specification](../60-specification/package-identity-and-dependencies/README.md)
 and the
 [C025 evidence record](../50-journal/2026-08-24-c025-package-identity.md).
-Remaining owners: G121 (fetch/publish tooling), G130 (signing and
-threat model), G094–G096 (cross-language calls). This note may be
+Remaining owners: P121 (fetch/publish tooling), P130 (signing and
+threat model), P094–G096 (cross-language calls). This note may be
 archived once those slices land.
 
 ## Connections
 
 - [Remaining Catena Research Areas](remaining-catena-research-areas.md)
-  names the package program and its G025/G121/G130 owners.
+  names the package program and its G025/P121/P130 owners.
 - [Language-Integrated Specifications and Governance](../20-notes/language-integrated-specifications-and-governance.md)
   defines the signed-artifact authority that must remain distinct from
   registry trust.

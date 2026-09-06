@@ -172,7 +172,7 @@ mid-branch.
 The model should be revisited if P109's ergonomics genuinely demand a
 non-desugaring conditional (the remedy is an edition record naming the
 form and why match's semantics are insufficient), or if the runtime
-era needs structured exits (the remedy is a G084 slice composing with
+era needs structured exits (the remedy is a P084 slice composing with
 traps, not a statement tier).
 
 ## Connections

@@ -28,7 +28,7 @@ controls status, applicability, rendered labels, and conflicts. The
 requirement force, invalidity, diagnostic presentation, and variability. The
 [Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md)
 policy governs aggregate-input disclosure; this area adds no new resource
-dimension and defers aggregate file-size limits to the G129 owner.
+dimension and defers aggregate file-size limits to the P129 owner.
 
 ## What belongs here
 
@@ -39,14 +39,14 @@ module-header syntax and declaration grammar remain P109. Module-name
 resolution, namespaces, and imports remain G021/G022. Package assembly,
 cross-file duplicate modules, and directory layout remain G025. Entry
 modules are subsequently fixed by C027. Build, cache, and reproducibility policy remain
-G121/G128. Module content semantics remain with their existing slices.
+P121/P128. Module content semantics remain with their existing slices.
 
 ## Variability register
 
 This area introduces no implementation-defined choice, recommendation, or
 bounded unspecified presentation. It introduces no implementation limit.
 Per-token limits of C013–C018 continue to apply to file content; aggregate
-file-size and file-count limits remain with the G129 owner and are not
+file-size and file-count limits remain with the P129 owner and are not
 created here.
 
 ## Index

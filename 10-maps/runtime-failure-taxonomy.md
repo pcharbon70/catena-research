@@ -53,7 +53,7 @@ of library types, foreign calls, runtime death, and spellings.
 - [Conformance Traceability](conformance-traceability.md) registers
   `FT-OBL-001` through `FT-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
-- G105 library types; G095/G096 foreign calls; G084 process death and
+- P105 library types; G095/G096 foreign calls; P084 process death and
   signals; G092 VM termination; G088 cancellation; G037 failure-path
   observability; P109 assert/panic spellings remain the future
   owners.

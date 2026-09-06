@@ -243,7 +243,7 @@ exceptional values, and negative-expression elaboration are complete as C018
 at revision `0.1.14` (see [Catena Numeric Literal
 Semantics](catena-numeric-literal-semantics.md)). G019 must
 decide concrete operator and punctuation tokens and compose all atomic
-scanners. G040/G042/P093/G097 own compound and BEAM-native values.
+scanners. G040/G042/P093/P097 own compound and BEAM-native values.
 
 The model should be revisited if whole-lexer construction reveals an
 unavoidable token ambiguity, if real Catena programs demonstrate that the

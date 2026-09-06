@@ -445,7 +445,7 @@ The [comments map](10-maps/comments-and-documentation-comments.md),
 and [C016 evidence record](50-journal/2026-08-18-c016-comments-and-documentation-comments.md)
 connect those rules to the sibling compiler's abstract scanner and resolver.
 C019 now owns the complete token stream, P109 still owns declaration
-grammar, G020 owns file/module attachment, and G119 owns actual doctest
+grammar, G020 owns file/module attachment, and P119 owns actual doctest
 execution.
 
 ### Normative literal boundary
@@ -468,7 +468,7 @@ and its [map](10-maps/numeric-literal-semantics.md); token/grammar
 composition is fixed by the normative
 [0.1.15 operators specification](60-specification/operators-and-punctuation/README.md)
 while P109 owns declaration grammar; and compound/BEAM-native data remains
-under G040/G042/P093/G097. Existing cooked and raw text is static; a future
+under G040/G042/P093/P097. Existing cooked and raw text is static; a future
 interpolation feature needs a new prefix.
 
 ### Normative formal semantic kernel

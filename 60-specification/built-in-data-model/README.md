@@ -35,8 +35,8 @@ entries, and C040 conformance obligations here. The literal grammar
 remains C017's. The elaboration pattern remains C018's. The value
 grammar and entry rule remain C029's. The comparable set remains
 C035's. Coverage entries remain C033's. Collection declarations
-remain G101's. Construction and update remain G042's. References
-remain G084's. String libraries remain G105's. Spellings and the
+remain P101's. Construction and update remain G042's. References
+remain P084's. String libraries remain P104's. Spellings and the
 compiled-program path for text literals remain P109's.
 
 ## Variability register
@@ -71,6 +71,6 @@ may vary.
 Keep all chapters at one lifecycle status and version. A
 classification, type, or entry change requires an explicit later
 semantic revision. Collections arrive as library nominal types at
-G101; references stay excluded until gated. Keep the traceability
+P101; references stay excluded until gated. Keep the traceability
 map, sibling compiler tests, source-language guides, and this
 inventory synchronized.

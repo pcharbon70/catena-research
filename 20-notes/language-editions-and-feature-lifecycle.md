@@ -153,7 +153,7 @@ installed edition service. Conformance tests must exercise each condition.
 
 This slice does not define all source/API/ABI compatibility, general policy
 schema evolution, an in-place migration engine, or the full ecosystem
-compatibility suite. Those remain G028, G116, P125, and P136. It also does not
+compatibility suite. Those remain G028, P116, P125, and P136. It also does not
 make the compiler self-hosting; that requires a separately gated language and
 toolchain bootstrap.
 

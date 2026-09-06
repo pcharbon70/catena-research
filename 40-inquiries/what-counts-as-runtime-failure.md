@@ -47,9 +47,9 @@ categories honestly, most of whose producers do not exist yet.
    exact stance; multiple outcome classes would amend frozen
    grammar.)*
 3. The six-way mapping: explicit panic = the kernel `trap`
-   expression, elevated; typed failure = ordinary values (G105
+   expression, elevated; typed failure = ordinary values (P105
    returns rather than traps); VM termination = operational, outside
-   program semantics (G084/G092/G121); arithmetic faults,
+   program semantics (P084/G092/P121); arithmetic faults,
    assertions, and foreign exceptions = **reserved kinds** entering
    with their producers.
 4. Trap observability elevates the kernel verbatim: abnormal
@@ -74,7 +74,7 @@ categories honestly, most of whose producers do not exist yet.
   explicit distinction undelivered.
 - **Classification without side-effect rules** — rejected: what a
   trap *does* is most of its meaning.
-- **Link/monitor exit semantics** — rejected: G084's machinery,
+- **Link/monitor exit semantics** — rejected: P084's machinery,
   frozen out of the kernel by C010.
 - **Classification module / normative-only** — rejected patterns.
 
@@ -96,7 +96,7 @@ Resolved as C036 at revision `0.1.32`: the contract lives in the
 the reasoning in
 [Catena Runtime Failure Taxonomy](../20-notes/catena-runtime-failure-taxonomy.md),
 and the forks in the [design decision
-register](../20-notes/design-decision-register.md). G105 library
-contents, G095/G096 foreign calls, G084 process death, G092 VM-level
+register](../20-notes/design-decision-register.md). P105 library
+contents, G095/G096 foreign calls, P084 process death, G092 VM-level
 termination, G088 cancellation, and P109 assert/panic spellings
 remain open with their owners.

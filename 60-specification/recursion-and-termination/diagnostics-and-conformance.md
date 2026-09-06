@@ -69,7 +69,7 @@ target up to its declared budgets (`RT-OBL-008`).
 | `RT-OBL-005` | keep every meta-level evaluator total-or-bounded per its cited regime | regime regression tests |
 | `RT-OBL-006` | enforce the entry rule: no unbounded meta-level evaluator may be claimed | absence and registry-shape tests |
 | `RT-OBL-007` | keep recursive conditions rejecting as `CND004` unchanged | condition regression tests |
-| `RT-OBL-008` | keep the classification deterministic and outside G036/G038/G084/G088/P109 claims with zero new families | repeated-result and exclusion tests |
+| `RT-OBL-008` | keep the classification deterministic and outside G036/G038/P084/G088/P109 claims with zero new families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `RT-OBL-*` set against unknown and

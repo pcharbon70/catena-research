@@ -37,7 +37,7 @@ remain C022's. The constructor-authority vocabulary and the
 smart-constructor idiom remain C023's. Nominal identity remains
 C002's. Comparability remains C035's. Derivation remains C073's.
 Representation invisibility remains C023/C037's. Explicit
-conversions remain G105's library territory. Surface spellings
+conversions remain P105's library territory. Surface spellings
 remain P109's.
 
 ## Variability register

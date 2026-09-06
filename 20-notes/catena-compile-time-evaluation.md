@@ -147,7 +147,7 @@ arrive into a classified home rather than an open question.
 
 P109 owns spellings for any future const/macro/attribute surface;
 G040 owns deriving extensions, classified under this area's rules on
-arrival; G005/G116 own code-generation programs; G121 owns build
+arrival; G005/P116 own code-generation programs; P121 owns build
 tooling.
 
 The model should be revisited if the stdlib era demands constant

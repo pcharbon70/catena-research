@@ -39,7 +39,7 @@ Law checking remains C004's. The derivation engines remain
 C002/C004's. Spellings for any future const/macro/attribute surface
 remain P109's. Deriving extensions remain G040's, classified under
 this area's rules on arrival. Code-generation programs remain
-G005/G116's. Build tooling remains G121's.
+G005/P116's. Build tooling remains P121's.
 
 ## Variability register
 

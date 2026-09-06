@@ -70,7 +70,7 @@ An entry's completion is its shutdown (`EN-OBL-007`):
 No exit-code mapping, termination signal, graceful-stop protocol, or
 post-return hook exists at this layer. A host or tool that needs
 process-level exit behavior derives it from the report under its own
-profile; that derivation remains G121's and changes nothing here.
+profile; that derivation remains P121's and changes nothing here.
 
 ## Determinism
 
@@ -86,12 +86,12 @@ implementations MUST NOT use this chapter's boundary to claim them
 (`EN-OBL-010`):
 
 - supervision trees, restart policies, and child specifications
-  (G084/G089);
-- process spawning, scheduling, and lifetime per launch (G084);
+  (P084/G089);
+- process spawning, scheduling, and lifetime per launch (P084);
 - cancellation, timeouts, and deadlines around a launch (G088);
 - distribution, clustering, and takeover (G091/G092);
-- CLI `run` commands, exit-code profiles, and signal handling (G121);
-- concurrency across entries (G084).
+- CLI `run` commands, exit-code profiles, and signal handling (P121);
+- concurrency across entries (P084).
 
 An OTP-application integration — mapping a supervising entry onto a
 target application callback — is future work over this contract, not

@@ -70,7 +70,7 @@ every target (`BM-OBL-008`).
 | `BM-OBL-005` | keep collections as library territory and references excluded, both gated | absence tests |
 | `BM-OBL-006` | state the frontend absence honestly: no compiled-program text literals; coverage entries at P109 | absence tests |
 | `BM-OBL-007` | keep the Character one-scalar invariant and Text/Bytes content identity | invariant tests |
-| `BM-OBL-008` | keep the model deterministic and outside G042/G084/G101/G105/P109 claims with zero new families | repeated-result and exclusion tests |
+| `BM-OBL-008` | keep the model deterministic and outside C042/P084/P101/P104/P109 claims with zero new families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `BM-OBL-*` set against unknown and

@@ -23,7 +23,7 @@ closed composite grammar — tuples, records (semantic maps), variant
 injections, constructor values — provided every component is
 comparable. **Ordering** admits Int and Float only; Bool is
 equality-only. **Never comparable:** closures and process handles,
-whose identity observability belongs to G037/G084.
+whose identity observability belongs to G037/P084.
 
 **Float equality is bit-exact: `−0.0 ≠ 0.0`**, and float ordering is
 total with `−0.0 < 0.0`. No NaN exists — C018's finite-binary64
@@ -40,7 +40,7 @@ operands to one type, so Int-vs-Float comparison is the existing type
 error — C018's no-coercion stance elevated from literals to operators.
 Strings and binaries do not exist; each G040 type enters with its
 comparability in its own slice. The operators are **non-overloadable
-built-ins**; an Eq/Ord trait layer is G101+/G061 library work on top
+built-ins**; an Eq/Ord trait layer is P101+/G061 library work on top
 of them.
 
 C003's clause conditions stay frozen: guards keep their Int/Bool safe
@@ -149,14 +149,14 @@ As enumerated in the resolved inquiry.
 
 C029's value grammar gains its first consumer-level operation; the
 stdlib era's `Option`/`Result` and map/set keys get defined equality;
-G061's numeric traits and G101's Eq/Ord layer gain their primitive
+G061's numeric traits and P101's Eq/Ord layer gain their primitive
 substrate; and the widened set is a C028 *minor* — the ecosystem
 consequence recorded now, before any consumer exists.
 
 ## Remaining questions and falsification criteria
 
 G037 owns identity observability; G040 owns each new type's
-comparability entry; G061/G101 own Eq/Ord traits; P109 owns spellings
+comparability entry; G061/P101 own Eq/Ord traits; P109 owns spellings
 (fixed by C019's inventory); G036 owns comparison-related runtime
 failure — none exists, equality being total over the closed set.
 

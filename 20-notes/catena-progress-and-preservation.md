@@ -60,7 +60,7 @@ actually occupy.
 ## The conditionals
 
 Public processes: C010's mailbox results stand; the extension to
-G084/G085's spawn-and-lifetime machinery holds iff that slice
+P084/P085's spawn-and-lifetime machinery holds iff that slice
 ships with its own preservation statement. Foreign values: C067's
 rule — entry only through a visible, typed, failure-classified
 boundary — means entering values are already-typed, so

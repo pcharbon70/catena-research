@@ -23,9 +23,9 @@ and nobody interprets unhandled requests because none exist: no
 ambient host handler exists or is reserved, and the launch root
 does exactly one thing, invoke a total entry to completion. What
 G082 adds over C027's standing answer is the home for that
-statement, the interface any future capability channel (G106's)
+statement, the interface any future capability channel (P106's)
 must satisfy — explicit typed values, deny-able, never ambient —
-and the routing that keeps failure interpretation (G084's
+and the routing that keeps failure interpretation (P084's
 supervision) a distinct concern from effect interpretation.
 
 ## Scope, method, and definitions
@@ -51,7 +51,7 @@ scope, injects no capability, and answers no request.
 ## The capability interface, stated for its owner
 
 An entry that needs the world must receive it explicitly: typed
-values, through a channel G106 defines and justifies, deny-able
+values, through a channel P106 defines and justifies, deny-able
 like every capability in the corpus. Until that slice exists, the
 zero-argument and effect-closed rules bind — an application that
 needs I/O today composes it as a library over explicit values

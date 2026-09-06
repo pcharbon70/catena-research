@@ -113,7 +113,7 @@ notation where the arrow is right-associative in types (`OP-OBL-011`).
 Application, declaration, and clause grammar remain P109. Operator trait
 dispatch and overloaded operators remain G061. Whether any operator
 resolution may depend on inferred types remains G066. Division, remainder,
-and every reserved spelling's eventual semantics remain G105/G061 with
+and every reserved spelling's eventual semantics remain P105/G061 with
 their own later revisions.
 
 ## Rationale and evidence (non-normative)

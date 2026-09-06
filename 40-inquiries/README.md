@@ -32,21 +32,21 @@ to `20-notes`.
 
 - [Who Interprets Top-Level Requests?](who-interprets-top-level-requests.md)
   — resolves G082: the silent top level stated as its own
-    normative home, with G106's capability interface and G084's
+    normative home, with P106's capability interface and P084's
     failure routing at `0.1.48`.
 - [Are Exceptions an Effect, a Trap, or a Value?](are-exceptions-an-effect-a-trap-or-a-value.md)
   — resolves G081: the three-way partition with no language
     exception form, panics as trap kinds, and the blessed effect
     pattern at `0.1.47`.
 - [How Does Selective Receive Complete?](how-does-selective-receive-complete.md)
-  — resolves P086: the receive rule set with honest starvation
-    cost and four routed interfaces at `0.1.46`.
+  — reopens P086 for the contradictory starvation statement, retaining
+    the implemented scan rules and four extension interfaces.
 - [What Progress and Preservation Targets Remain?](what-progress-and-preservation-targets-remain.md)
   — resolves P132: effects-and-failure targets, the composed
     integrated theorem with a routed proof obligation, and
     conditional extensions at `0.1.45`.
 - [How Do the Excluded Advanced Type Forms Stay Excluded?](how-do-the-excluded-advanced-type-forms-stay-excluded.md)
-  — resolves D140: the seven-form exclusion table with the
+  — resolves D140: the eight-form exclusion table with the
     seven-point arrival gate at `0.1.44`, completing Section 7.
 - [Should Catena Have Dynamic or Unsafe Boundaries?](should-catena-have-dynamic-or-unsafe-boundaries.md)
   — resolves G067: intralanguage exclusion with arrival
@@ -63,7 +63,7 @@ to `20-notes`.
 - [How Should Int and Float Relate Across Operators?](how-should-int-and-float-relate-across-operators.md)
   — resolves G061: closed-set instantiation over {Int, Float}, no
     dispatch, float arithmetic witnessed via annotations, division
-    routed to G105 at `0.1.40`.
+    routed to P105 at `0.1.40`.
 - [Which Pattern Contexts Admit Refutable Patterns?](which-pattern-contexts-admit-refutable-patterns.md)
   — resolves P044 and D046: the three context classes with
     per-context rules and reservations at `0.1.38`.
@@ -227,9 +227,9 @@ to `20-notes`.
   compatibility, migration, and artifact model through normative C008's
   executable evidence and immutable promotion record.
 - [How Should Catena Specify List Comprehensions?](how-should-catena-specify-list-comprehensions.md)
-  — resolved as C047–C058: the eager list-to-list `for ... yield`
-    contract at `0.1.39`, with token-level surface adoption
-    transferring to P109 and D059's neighbors staying deferred.
+  — reopens P050/P053/P057 for required effect/failure witnesses while
+    retaining the `0.1.39` contract and pure implementation; source
+    adoption remains P109 and D059's neighbors stay deferred.
 - [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests whether lexical capabilities, duplicate-label rows, deep open
   handlers, affine resumptions, and optimized backends form one sound and

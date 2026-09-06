@@ -76,14 +76,14 @@ contracts.
 - [Conformance Traceability](conformance-traceability.md) registers
   `CP-OBL-001` through `CP-OBL-010` against normative anchors and
   immutable sibling compiler evidence.
-- Migration engines (G116/P125), registry retirement and yanks
-  (G130), hot upgrade (G092), representation/calling-convention/
-  foreign-term contracts (P093/G094/G095), and tooling (G121) remain
+- Migration engines (P116/P125), registry retirement and yanks
+  (P130), hot upgrade (G092), representation/calling-convention/
+  foreign-term contracts (P093/P094/G095), and tooling (P121) remain
   the future owners.
 
 ## Open questions
 
 C028 is complete at revision `0.1.24`. Whether the 1.0 era keeps or
 switches the Cargo 0.x rule belongs to the G136 edition-policy era;
-any future layout-stability contract belongs to P093/G094/G095 over
+any future layout-stability contract belongs to P093/P094/G095 over
 this absence.

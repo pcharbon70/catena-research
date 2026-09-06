@@ -69,7 +69,7 @@ bytes on every target (`CE-OBL-008`).
 | `CE-OBL-005` | keep the restriction table exact: the gate plus the three cited budgets, complete at 0.1.34 | budget regression tests |
 | `CE-OBL-006` | keep compilation deterministic: equal declarations, equal derived output, equal bytes | byte-identity tests |
 | `CE-OBL-007` | keep the three meta-evaluators under their unchanged regimes | regime regression tests |
-| `CE-OBL-008` | keep the classification deterministic and outside P109/G040/G005/G116/G121 claims with zero new families | repeated-result and exclusion tests |
+| `CE-OBL-008` | keep the classification deterministic and outside P109/G040/G005/P116/P121 claims with zero new families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `CE-OBL-*` set against unknown and

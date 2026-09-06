@@ -98,7 +98,7 @@ traces; the model is deterministic on every target (`FC-OBL-008`).
 
 Termination beyond the tail guarantee remains P034's. Closure
 allocation observability remains G037's. Process-entry tails beyond
-C010's clause remain G084's. Stack-frame shape outside proper tail
+C010's clause remain P084's. Stack-frame shape outside proper tail
 calls remains the kernel's own exclusion.
 
 ## Rationale and evidence (non-normative)

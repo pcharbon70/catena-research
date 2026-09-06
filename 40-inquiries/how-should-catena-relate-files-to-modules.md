@@ -38,7 +38,7 @@ on:
 - the source-file extension;
 - the spelling rule for file-level module names; and
 - how generated files are recognized, without deciding P109's concrete
-  header syntax, G022 import syntax, G025 package layout, or G121
+  header syntax, G022 import syntax, G025 package layout, or P121
   build policy.
 
 The answer must compose with the C013–C019 source stack, the one-module
@@ -110,4 +110,4 @@ G020 is complete through the
 [C020 evidence record](../50-journal/2026-08-22-c020-files-and-modules.md).
 P109 retains the concrete module-header syntax; G022 retains
 import/export syntax over the C021 namespace rules; G025 retains package assembly; G027 retains entry
-modules; G121/G128 retain build and reproducibility policy.
+modules; P121/P128 retain build and reproducibility policy.

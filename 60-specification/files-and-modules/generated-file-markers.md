@@ -75,14 +75,14 @@ A first-unit comment that begins the marker text but fails the grammar —
 wrong spacing, empty or invalid tool identifier, or trailing content — is
 static invalidity reported as `FIL005` (`FU-OBL-009`). A recognized marker
 yields the tool identifier as file provenance; consumption by builds,
-formatters, editors, and reproducibility policy remains G121/G128, and
+formatters, editors, and reproducibility policy remains P121/P128, and
 editing or regeneration policy remains G118/G123. A no-module file may
 still be generated and carry a marker.
 
 ## Deliberately separate work
 
 How tools generate, regenerate, or verify generated files remains tooling
-and build work (G118/G121/G123/G128). Whether specific declarations admit
+and build work (G118/P121/G123/P128). Whether specific declarations admit
 generated implementations, and any generation of `.cati.json` interfaces or
 BEAM artifacts, remain their own slices.
 

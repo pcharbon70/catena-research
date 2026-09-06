@@ -37,7 +37,7 @@ Decide, for edition 0.1:
 - whether the binary transparent/abstract authority vocabulary is
   complete, and if so, what the sanctioned invariant idiom is and what
   its coverage consequences are; and
-- which future owners (G028, D046, G040, P093, G094, G095) hold the
+- which future owners (G028, D046, G040, P093, P094, G095) hold the
   excluded capabilities.
 
 The answer must preserve C002's interface contract, C022's export-event

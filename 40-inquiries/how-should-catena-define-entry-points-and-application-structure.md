@@ -47,7 +47,7 @@ it means to launch a Catena package.
    answers G082 ("which requests an application entry point may leave
    unhandled") by closure rather than an implicit host handler.
 3. Startup in 0.1 is invocation-only — no supervision, no spawning, no
-   OTP coupling; that vocabulary stays with G084/G089/G121.
+   OTP coupling; that vocabulary stays with P084/G089/P121.
 4. Shutdown is return-is-shutdown — the returned value is the result; no
    exit-code mapping and no graceful-stop protocol in 0.1.
 5. The library/executable distinction is derived from entries-present,
@@ -61,10 +61,10 @@ it means to launch a Catena package.
   but invents exactly the silent-default machinery C022/C026 rejected,
   with no digest-bound identity.
 - **OTP `start/2` application startup** — target-native but couples a
-  language slice to supervision decisions owned by G084/G089
+  language slice to supervision decisions owned by P084/G089
   ([OTP findings](../30-sources/erlang-otp-applications.md)).
 - **Exit-code mapping** — ergonomic for CLIs but presupposes a
-  host-process model G121 owns.
+  host-process model P121 owns.
 - **Explicit `kind: library|executable` manifest field** — creates a
   consistency obligation for information the entries list already
   carries.
@@ -92,6 +92,6 @@ Resolved as C027 at revision `0.1.23`: the contract lives in the
 the reasoning
 in [Catena Entry Points](../20-notes/catena-entry-points.md), and the
 forks in the [design decision register](../20-notes/design-decision-register.md).
-Supervision/restart (G084), cancellation (G088), the CLI/host boundary
-(G121), distribution (G091), and entry-set compatibility (G028) remain
+Supervision/restart (P084), cancellation (G088), the CLI/host boundary
+(P121), distribution (G091), and entry-set compatibility (G028) remain
 open with their owners.

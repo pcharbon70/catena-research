@@ -407,6 +407,47 @@ class TraceabilityRegistryTests(unittest.TestCase):
         self.assertEqual(1, counts["traceability_untraced"])
         self.assertEqual(0, counts.get("traceability_traced", 0))
 
+    def test_status_words_in_prose_and_links_do_not_change_status(self) -> None:
+        body = (
+            "| CC-OBL-017 | Ordinary/lambda/partial/local ops excluded | traced |\n"
+            "| CC-OBL-018 | Unchecked partial primitives excluded | traced |\n"
+            "| SG-OBL-023 | No partially replaced output | traced |\n"
+            "| FC-OBL-003 | [Partial application](calls.md#partial-application) | traced |\n"
+            "| CC-OBL-019 | Replace untraced evidence | partial |\n"
+        )
+        errors, counts = traceability_registry_errors("map.md", body)
+        self.assertEqual([], errors)
+        self.assertEqual(5, counts["traceability_obligations"])
+        self.assertEqual(4, counts["traceability_traced"])
+        self.assertEqual(1, counts["traceability_partial"])
+        self.assertEqual(0, counts.get("traceability_untraced", 0))
+
+    def test_accepts_whitespace_and_optional_trailing_pipe(self) -> None:
+        body = (
+            "| CC-OBL-001 | Active work | partial |  \n"
+            "| CC-OBL-002 | Finished work | traced\n"
+        )
+        errors, counts = traceability_registry_errors("map.md", body)
+        self.assertEqual([], errors)
+        self.assertEqual(2, counts["traceability_obligations"])
+        self.assertEqual(1, counts["traceability_partial"])
+        self.assertEqual(1, counts["traceability_traced"])
+
+    def test_requires_an_exact_status_in_the_final_cell(self) -> None:
+        for status in ("done", "", "untraced-later", "partially traced", "in-progress"):
+            with self.subTest(status=status):
+                body = f"| CC-OBL-001 | Already traced with partial evidence | {status} |\n"
+                errors, counts = traceability_registry_errors("map.md", body)
+                self.assertEqual(1, len(errors))
+                self.assertIn("missing a status", errors[0])
+                self.assertEqual(1, counts["traceability_obligations"])
+                self.assertFalse(
+                    any(
+                        counts.get(f"traceability_{name}", 0)
+                        for name in ("traced", "partial", "untraced")
+                    )
+                )
+
     def test_rejects_malformed_identifier(self) -> None:
         body = "| CC-OBL-1 | bad | traced |\n"
         errors, _counts = traceability_registry_errors("map.md", body)

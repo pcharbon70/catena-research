@@ -30,8 +30,8 @@ carrier-specific method conventions.
    generators, explicit filtering patterns, typed Boolean filters, visible
    effects, and dedicated lowering.
 2. [How Should Catena Specify List Comprehensions?](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
-   turns the remaining syntax, usability, formal, backend, and extension
-   questions into resolution criteria — now resolved.
+   preserves the design decision and now tracks the missing executable
+   effect and failure witnesses for P050, P053, and P057.
 3. The [List Comprehensions
    Specification](../60-specification/list-comprehensions/README.md)
    (revision `0.1.39`) carries the normative contract this route
@@ -45,6 +45,16 @@ carrier-specific method conventions.
    [language-specification checklist](../00-inbox/language-specification-completeness-checklist.md#6-list-comprehensions-generators-and-iteration)
    shows where this deep dive fits within the broader path to a complete
    language reference.
+
+The [2026-08-31 promotion record](../50-journal/2026-08-31-c047-comprehensions.md)
+records the original C047–C058 completion at `0.1.39`. The
+[completion audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+reopens P050/P053/P057 for evidence: pure comprehension execution, generated
+effect-row text, and absence of parallel entry points are covered, but the
+[required trace-agreement evidence](../60-specification/list-comprehensions/diagnostics-and-conformance.md#conformance-obligations)
+for `LC-OBL-005`, `LC-OBL-008`, and `LC-OBL-012` is incomplete. The normative
+contract and dormant `Catena.Comprehension.elaborate/1` boundary remain in
+place.
 
 ## Trails
 
@@ -118,24 +128,28 @@ collection targets.
 This trail explains why clause guards and comprehension filters may share a
 Boolean surface without sharing a safety judgment.
 
-## Proposed decision route
+## Current completion route
 
-1. Validate a result-producing `for ... yield` grammar against Catena's full
-   expression syntax.
-2. Compare `case`, `matching`, and other explicit filtering-pattern markers.
-3. Formalize total generators, filtering generators, filters, bindings, scope,
-   types, effects, and dynamic order in a typed qualifier tree.
-4. Implement a reference evaluator and tail-recursive BEAM worker lowering.
-5. Differentially test values, failures, effects, and source traces.
-6. Measure whether explicit list operations handle zip, streams, builders, and
-   reduction before allocating syntax to them.
+1. Execute real handled requests in generated comprehensions on the kernel
+   stepper and compiled BEAM. Compare exact traces through nested sources,
+   filters, bindings, and yields, including once-per-prefix source evaluation
+   and completion of each element's suffix before the next element.
+2. Witness a false filter retaining its own effects and skipping its suffix;
+   witness traps and handler aborts stopping all later qualifier and element
+   visits. These shared tests close P050/P053/P057 when they satisfy the
+   [inquiry's resolution criteria](../40-inquiries/how-should-catena-specify-list-comprehensions.md#resolution-criteria).
+3. Integrate the fixed semantic roles and keywords with the full source
+   grammar under P109; evaluate their readability under G137 and measure
+   performance under G138.
+4. Measure whether explicit list operations handle D059's zip, streams,
+   builders, and reduction before allocating syntax to them.
 
 ## Open questions
 
-- Should filters permit all ordinary effects initially, or should some
-  qualifiers have a narrower effect boundary?
-- Is a local binding qualifier clearer than an ordinary nested `let`?
-- How should outer-name shadowing behave inside a generator?
+- Do the required runtime witnesses establish the specified effect order,
+  multiplicity, false-filter behavior, and immediate failure timing?
+- How reliably do programmers read the fixed `for`, `case`, `when`, and `let`
+  roles once P109 integrates them with the complete grammar?
 - Can comprehension and guard IR share infrastructure without sharing safety
   or failure semantics?
 - Which source-level cost explanation best communicates Cartesian growth?

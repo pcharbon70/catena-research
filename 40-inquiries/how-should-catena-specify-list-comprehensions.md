@@ -2,7 +2,7 @@
 title: "How Should Catena Specify List Comprehensions?"
 kind: inquiry
 created: "2026-08-01"
-status: resolved
+status: open
 tags:
   - catena
   - comprehensions
@@ -31,9 +31,12 @@ Catena's architecture makes these choices unusually consequential:
 - approachable syntax should not require programmers to infer semantics from
   monad vocabulary or punctuation.
 
-The [synthesis](../20-notes/list-comprehensions.md) proposes a narrow initial
-contract. This inquiry remains open because the exact surface, effect boundary,
-binding qualifier, and evidence for later generalization still need testing.
+The [synthesis](../20-notes/list-comprehensions.md) motivated the narrow initial
+contract adopted in normative `0.1.39`. This inquiry is reopened for
+P050/P053/P057: the required executable witnesses for effectful filters,
+effect order, and failure timing are incomplete. The existing semantic roles,
+effect boundary, and binding rules remain fixed; P109 retains concrete source
+adoption, with usability, performance, and extensions owned separately.
 
 ## Operational question
 
@@ -51,7 +54,7 @@ Can one list-comprehension design let programmers correctly predict:
 without learning category-theory terminology or inspecting generated
 `map`/`flat_map` calls?
 
-The design is ready to stabilize only when it has:
+The original research program asked for:
 
 - a grammar integrated with the complete expression syntax;
 - declarative typing and effect rules;
@@ -62,7 +65,17 @@ The design is ready to stabilize only when it has:
 - representative usability evidence; and
 - benchmark evidence for allocation and stack behavior.
 
-## Working hypotheses
+The bounded `0.1.39` promotion separated these goals: it fixed the semantics
+and dormant elaboration boundary, transferred complete source adoption to
+P109, and left usability and performance to G137/G138. The current reopening
+concerns required executable evidence within that promoted boundary, as
+specified in the [resolution criteria](#resolution-criteria).
+
+## Original working hypotheses
+
+These hypotheses preserve the research route. The `0.1.39` specification now
+fixes the initial source/result carrier, generator split, filters, scope,
+effect order, elaboration, and exclusion boundaries.
 
 1. **Lists should be the only initial source and result carrier.** One concrete
    shape gives the feature a stable order, emptiness, builder, and failure
@@ -249,43 +262,82 @@ surface. It also favors separating total and filtering patterns at the source
 level. These are cross-source inferences, not conclusions established by any
 one comparison language.
 
+### Completion audit
+
+The [2026-09-06 audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+compared the required
+[conformance evidence](../60-specification/list-comprehensions/diagnostics-and-conformance.md#conformance-obligations)
+with the actual sibling compiler suite. The
+[filter test](https://github.com/pcharbon70/catena/blob/d7e0fcc484d3e1c3b4a292d4d3e703ddcc330535/test/catena/c047_list_comprehensions_test.exs#L113)
+executes pure filtering and rejects a non-`Bool` filter; despite its name, it
+does not execute a failing filter. The
+[order and sequential-execution test](https://github.com/pcharbon70/catena/blob/d7e0fcc484d3e1c3b4a292d4d3e703ddcc330535/test/catena/c047_list_comprehensions_test.exs#L206)
+checks generated conditional and `(uses Ask)` text and absent parallel APIs.
+It contains no request or handler and does not execute the generated
+program carrying the effect-row annotation.
+
+The [original evidence record](../50-journal/2026-08-31-c047-comprehensions.md#evidence)
+accurately describes this as effect-row threading. That evidence supports
+part of `LC-OBL-005`, `LC-OBL-008`, and `LC-OBL-012`, but the
+[required evidence set](../60-specification/list-comprehensions/diagnostics-and-conformance.md#required-evidence-sets)
+also requires an effect-bearing comprehension with a source-order trace.
+P050/P053/P057 therefore remain partial even if all existing tagged tests
+pass. Pure execution, diagnostics, the worker shape, and the dormant API
+remain accomplishments.
+
 ## Resolution criteria
 
-Resolve this inquiry only after:
+Resolve the reopened P050/P053/P057 evidence question when the sibling compiler
+provides tagged executable witnesses satisfying the existing
+[filter, order, and sequential-execution obligations](../60-specification/list-comprehensions/diagnostics-and-conformance.md#conformance-obligations):
 
-- syntax tests identify a comprehension form and explicit pattern-filter marker
-  that users interpret reliably;
-- the type/effect calculus and qualifier-tree elaboration are written;
-- coverage produces useful total-pattern errors and filtering-pattern
-  diagnostics;
-- reference and BEAM implementations agree on values, failures, and effects;
-- generated loops are stack-safe and allocate linearly in output size;
-- diagnostics preserve source qualifiers instead of generated combinator
-  frames; and
-- the initial exclusion of generic carriers, zip, streams, binaries, builders,
-  reduction, and parallelism is recorded in the language reference.
+1. A comprehension with actual handled requests runs through
+   `Catena.Comprehension.elaborate/1`, kernel checking, the reference stepper,
+   and compiled BEAM. Its exact traces agree across nested sources, filters,
+   bindings, and yields, including once-per-prefix source evaluation and
+   completion of each element's suffix before the next element (`LC-OBL-008`).
+2. An effectful filter returning `false` performs its own effect once and skips
+   only its suffix. A trapping filter and a handler-aborting qualifier stop
+   later qualifiers and elements, with agreeing outcomes and traces on both
+   targets (`LC-OBL-005`, `LC-OBL-008`).
+3. The executed trace witnesses establish sequential source order, and the
+   existing parallel-entry-point absence tests remain covered
+   (`LC-OBL-012`).
+4. The evidence record identifies the tested compiler revision and results;
+   the checklist and traceability registry are reconciled with what those
+   tests actually exercise.
+
+Source-grammar integration remains P109; usability G137; performance G138;
+and neighboring iteration forms D059. These separate owners do not change the
+above evidence gate or reopen the shipped normative semantics.
 
 ## Outcome
 
-Resolved as C047–C058 at revision `0.1.39` (area `list-comprehensions`):
+The [2026-08-31 promotion](../50-journal/2026-08-31-c047-comprehensions.md)
+recorded C047–C058 complete at revision `0.1.39` (area `list-comprehensions`):
 an eager, ordered, `List A → List B` `for ... yield` expression with
 total generators, explicitly filtering `case` generators, typed
 Boolean `when` filters, exhaustive local `let` bindings, visible
 effects, and depth-first left-to-right sequential execution. The
-contract will live in `60-specification/list-comprehensions/`, the
+contract is authoritative in the
+[normative chapters](../60-specification/list-comprehensions/README.md), the
 reasoning in the
 [synthesis](../20-notes/list-comprehensions.md), and the forks in
 the [design decision register](../20-notes/design-decision-register.md).
 
-Two criteria transfer by design. Token-level syntax reliability
+The completion audit reopens P050/P053/P057 for the missing runtime witnesses
+above; it does not withdraw the normative revision or the implemented
+elaborator. The inquiry is now open until those witnesses are recorded.
+
+Token-level syntax reliability
 testing belongs to the P109 surface-grammar adoption: this slice
 fixes the grammar's semantic roles and keywords normatively, while
 punctuation, layout, and block forms integrate with the complete
 concrete grammar there. And the implementation is dormant by the
 frozen-frontend constraint: the elaborator
-(`Catena.Comprehension.elaborate/2`, qualifier tree to kernel
+(`Catena.Comprehension.elaborate/1`, qualifier tree to kernel
 S-expressions) is implemented, tested, and validated by
-desugaring-equivalence on stepper and BEAM — the first
+pure desugaring-equivalence on stepper and BEAM — the first
 comprehension-bearing frontend arrives with P109. D059's
 neighboring iteration syntax (ranges, zip, streams, binary and map
 comprehensions, generic collectors) remains independently

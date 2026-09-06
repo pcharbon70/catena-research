@@ -33,7 +33,7 @@ spelling, basename match, extension, and marker rules — fully testable
 before P109's concrete header exists.
 
 This closes G020 without deciding P109 declaration grammar, G021/G022 name
-resolution, G025 package layout, G027 entry points, or G121/G128 build and
+resolution, G025 package layout, G027 entry points, or P121/P128 build and
 reproducibility policy.
 
 ## Scope and method
@@ -133,7 +133,7 @@ must be the file's first significant unit — only layout whitespace before
 it — and at most one marker exists per file. The same text appearing after
 any other significant unit, inside a documentation comment, inside a
 literal, or inside a later comment's body is inert content. The marker
-carries provenance for G128; editing and formatting policy stay with
+carries provenance for P128; editing and formatting policy stay with
 G118/G123.
 
 ### Abstract resolver
@@ -166,7 +166,7 @@ or duplicate marker. Exact-selection mismatch remains `EDN001`.
 - **Filename-convention generated files:** conventions drift, collide with
   the basename rule, and carry no tool provenance.
 - **Sidecar manifest for generated files:** a second file format this slice
-  would have to specify; G025/G128 already own manifests.
+  would have to specify; G025/P128 already own manifests.
 
 ## What C020 adds to the design
 
@@ -182,7 +182,7 @@ conventions.
 P109 must fix the concrete module-header syntax that emits declaration
 events; G021/G022 must give module names their namespace meaning; G025 must
 assemble files into packages and resolve duplicate module names across
-files; G027 must select entry modules; G121/G128 must consume generated
+files; G027 must select entry modules; P121/P128 must consume generated
 provenance in builds.
 
 The model should be revisited if P109's grammar needs a header form

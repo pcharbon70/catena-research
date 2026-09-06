@@ -60,11 +60,11 @@ owners of identity observability, future types, and trait layers.
   `EQ-OBL-001` through `EQ-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
 - G037 identity observability; G040 future types' comparability
-  entries; G061/G101 Eq/Ord trait layers; P109 spellings remain the
+  entries; G061/P101 Eq/Ord trait layers; P109 spellings remain the
   future owners.
 
 ## Open questions
 
 C035 is complete at revision `0.1.30`. G040 enters each new type with
-its comparability; G061/G101 build Eq/Ord on the built-ins; the
+its comparability; G061/P101 build Eq/Ord on the built-ins; the
 edition-record gate awaits any IEEE switch.

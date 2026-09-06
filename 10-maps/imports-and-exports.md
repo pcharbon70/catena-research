@@ -70,7 +70,7 @@ decide.
   compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to export-set validation
-  under G129.
+  under P129.
 
 ## Open questions
 

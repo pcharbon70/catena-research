@@ -98,7 +98,7 @@ optimization freedom that uniform-representation boundaries protect, and
 that making a representation observable converts an optimization into a
 compatibility surface. The inference for the stable-layout question: an
 opt-in is not a small feature but a contract class of its own — exactly
-why G028 should own it, with P093/G094/G095 as its consumers, rather than
+why G028 should own it, with P093/P094/G095 as its consumers, rather than
 a per-datatype attribute riding on export declarations.
 
 ### The synthesis corpus: smart constructors over authority splits
@@ -174,7 +174,7 @@ spelling and know it is not Catena, at a construction-only export and
 know it is not Catena, and at an invariant-bearing type and know the
 idiom it should follow. G028 receives an unambiguous starting rule —
 representation is currently non-observable, and any ABI slice starts by
-deciding when that stops being true — and the standard library (G101+)
+deciding when that stops being true — and the standard library (P101+)
 receives its invariant pattern pre-approved.
 
 ## Remaining questions and falsification criteria

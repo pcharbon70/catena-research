@@ -39,7 +39,7 @@ C030's. Binding structure, non-recursion, and shadowing remain
 C031's. Branch forms remain G033's. Termination beyond the tail
 guarantee remains P034's. Closure allocation and identity
 observability remain G037's. Process-entry tails beyond C010's clause
-remain G084's. Calling conventions remain G094's. Surface spellings
+remain P084's. Calling conventions remain P094's. Surface spellings
 remain P109's.
 
 ## Variability register
@@ -74,7 +74,7 @@ vary.
 
 Keep all chapters at one lifecycle status and version. An arity,
 capture, local-function, or tail-rule change requires an explicit
-later semantic revision. G094's calling conventions build under this
+later semantic revision. P094's calling conventions build under this
 model's semantics; P109's spellings build over this desugaring. Keep
 the traceability map, sibling compiler tests, source-language guides,
 and this inventory synchronized.

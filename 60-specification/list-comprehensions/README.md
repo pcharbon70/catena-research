@@ -13,6 +13,11 @@ aliases:
 
 # List Comprehensions Specification (`60-specification/list-comprehensions`)
 
+P050/P053/P057 are reopened for missing required effectful filter, order,
+and sequential-execution witnesses. The `0.1.39` rules remain normative;
+pure implementation and historical promotion remain recorded. See the
+[completion audit](../../50-journal/2026-09-06-checklist-completion-audit.md).
+
 ## Purpose
 
 This directory contains the Catena 0.1.39 contract for list
@@ -35,7 +40,7 @@ qualifier typing and dynamics, the execution and effect order, the
 elaboration contract, and C047 conformance obligations here. The
 generator refutability principle is C044's. Evaluation order is
 C030's. Bindings are C031's. Pattern coverage is C045's. Nominal
-List declarations are G101's. Token-level surface integration is
+List declarations are P101's. Token-level surface integration is
 P109's. Neighboring iteration syntax is D059's.
 
 ## Variability register

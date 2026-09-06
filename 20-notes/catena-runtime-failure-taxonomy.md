@@ -25,11 +25,11 @@ within it, most reserved until their producers exist:
 | Category | Classification |
 | --- | --- |
 | Explicit panic or crash | the kernel's `trap` expression — the only user-invoked failure, elevated |
-| Typed failure (`Option`/`Result`) | ordinary **values**, non-failures — G105's types return rather than trap |
+| Typed failure (`Option`/`Result`) | ordinary **values**, non-failures — P105's types return rather than trap |
 | Arithmetic faults | reserved — enters with the first faulting operator, as `trap(reason)` |
 | Failed assertions | reserved — enters with the first assert form, as `trap(reason)` |
 | Foreign exceptions | reserved — enters with G095/G096, a foreign raise mapping to `trap(reason)` |
-| VM termination | operational, outside program semantics — G084/G092/G121 |
+| VM termination | operational, outside program semantics — P084/G092/P121 |
 
 **Trap observability elevates the kernel verbatim**: a trapping
 process terminates abnormally, discards its mailbox, sends no exit
@@ -139,23 +139,23 @@ As enumerated in the resolved inquiry.
 ## What C036 adds to the design
 
 The three-way partition — values, traps, running — is now stated
-once at the language level. G105's library types gain their
+once at the language level. P105's library types gain their
 classification (non-failures); G095/G096 gain their mapping rule
-(foreign raise → trap); the runtime era's exit/monitor work (G084)
+(foreign raise → trap); the runtime era's exit/monitor work (P084)
 gains the guarantee that its signals are *additions outside* the
 outcome contract, not new outcomes; and the P109 grammar exercise
 gains assert/panic spellings with their semantics already fixed.
 
 ## Remaining questions and falsification criteria
 
-G105 owns Option/Result contents; G095/G096 foreign calls; G084
+P105 owns Option/Result contents; G095/G096 foreign calls; P084
 process death, links, and monitors; G092 VM termination; G088
 cancellation (distinct from failure); G037 allocation observability
 of failure paths; P109 spellings.
 
-The model should be revisited if G084's exit-signal work demands a
+The model should be revisited if P084's exit-signal work demands a
 program-observable death classification (the remedy is an observably
-*delivered* signal in G084's slice composing with the unmodified trap
+*delivered* signal in P084's slice composing with the unmodified trap
 outcome), or if G095's foreign boundary cannot map some exception to
 `trap(reason)` faithfully (the remedy is a bounded presentation of
 the foreign reason, not a new outcome class).

@@ -123,8 +123,8 @@ and never claims behavior (`CP-OBL-010`).
 
 Behavioral equivalence and performance are outside the matrix. Data
 evolution and serialization are outside until P093/G095 deliver
-contracts. Migration edits remain G116/P125. Registry retirement and
-yanks remain G130. Tooling automation remains G121.
+contracts. Migration edits remain P116/P125. Registry retirement and
+yanks remain P130. Tooling automation remains P121.
 
 ## Rationale and evidence (non-normative)
 

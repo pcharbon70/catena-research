@@ -51,7 +51,7 @@ revision, byte for byte (`CP-OBL-003`). Acceptance is cumulative
 forward — each revision adds acceptance and never removes it, per
 C008's registered classification. A package upgrade that selects a new
 revision rechecks under that revision's rules; nothing in this chapter
-migrates source, which remains G116/P121 tooling.
+migrates source, which remains P116/P121 tooling.
 
 **Type/interface.** A consumer validates against a producer's later
 interface if and only if no breaking change defined by
@@ -79,7 +79,7 @@ release is outside every Catena guarantee, exactly as
 [Authority and Representation Exclusions](../abstraction-boundaries/authority-and-representation-exclusions.md)
 fixed for representation. A representation or layout change therefore
 never requires a version increment by itself. Any future
-layout-stability or calling-convention contract belongs to P093, G094,
+layout-stability or calling-convention contract belongs to P093, P094,
 G095, and G092 through an explicit later revision; until such an owner
 delivers, every appearance of a stable-ABI promise in any frontend is
 invalid input, not a semantics.
@@ -121,12 +121,12 @@ warning is never a breaking change, matching C008's classification.
 
 ## Deliberately separate work
 
-Migration engines and conservative source edits remain G116/P125.
+Migration engines and conservative source edits remain P116/P125.
 Registry retirement, yanks, compromised-version policy, and
-dependency graphs spanning editions remain G130. Hot upgrade remains
+dependency graphs spanning editions remain P130. Hot upgrade remains
 G092. Representation, calling-convention, and foreign-term contracts
-remain P093/G094/G095. Tooling automation of claim validation remains
-G121. The G136 edition policy owns the 1.0-era conventions.
+remain P093/P094/G095. Tooling automation of claim validation remains
+P121. The G136 edition policy owns the 1.0-era conventions.
 
 ## Rationale and evidence (non-normative)
 

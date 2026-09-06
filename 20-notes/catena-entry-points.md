@@ -26,7 +26,7 @@ means invoking its function to completion under the ordinary strict
 kernel semantics: startup is invocation, nothing more. The entry's
 returned value *is* the shutdown result; a failed launch reports the
 trap identity. No supervision tree, no spawned processes, no exit-code
-mapping, no implicit host handler — those belong to G084, G089, G121.
+mapping, no implicit host handler — those belong to P084, G089, P121.
 
 Every entry is effect-closed: all requests handled before return,
 exactly as C010 already demands of process entries. This resolves
@@ -95,7 +95,7 @@ exactly as a Catena library simply omits entries. Marked boundary: OTP
 startup is supervision-tree-first — `start/2` must return a supervisor
 pid, and stopping terminates the tree in reverse start order. Catena
 0.1 adopts neither: invocation-only is honest about the runtime layer
-not yet being designed (G084/G089/G121 own it), and the OTP model
+not yet being designed (P084/G089/P121 own it), and the OTP model
 becomes the *future integration surface* — a later slice can map a
 supervising entry onto `start/2` without having prejudiced it.
 
@@ -157,35 +157,35 @@ scheduling, exit codes, or graceful-stop protocol exists at this layer.
   packages.
 - **Implicit host handler** — silent default, no digest-bound identity.
 - **OTP `start/2` startup** — couples 0.1 to undesigned supervision.
-- **Exit-code mapping** — presupposes G121's host boundary.
+- **Exit-code mapping** — presupposes P121's host boundary.
 - **Explicit `kind` field** — a consistency obligation carrying
   information entries already encode.
 - **Declared full absence** — untruthful while the linker compiles
   roots.
-- **Entries + CLI now** — tooling is G121's; the C026 line, kept.
+- **Entries + CLI now** — tooling is P121's; the C026 line, kept.
 
 ## What C027 adds to the design
 
 The checklist's Section 3 program-box closes its executable half: a
 program is a package with entries, a library is a package without, and
-launching is invocation. G121's tooling gains a precise target (`catena
+launching is invocation. P121's tooling gains a precise target (`catena
 run <entry>` is a thin wrapper over the launch operation, later);
 G028's compatibility analysis gains entry-set changes as an explicit
-axis; G084/G089 gain a clean predecessor — supervision composes *over*
+axis; P084/G089 gain a clean predecessor — supervision composes *over*
 completed entries rather than competing with them; and the OTP
 integration path stays open without being prejudiced.
 
 ## Remaining questions and falsification criteria
 
-G084/G089 own supervision, restart, and process lifetime; G088 owns
-cancellation and deadlines; G121 owns the CLI and host-process
+P084/G089 own supervision, restart, and process lifetime; G088 owns
+cancellation and deadlines; P121 owns the CLI and host-process
 boundary; G028 owns whether adding or removing an entry is a breaking
 change; G091/G092 own distribution and upgrades.
 
-The model should be revisited if the G084 era shows that real
+The model should be revisited if the P084 era shows that real
 applications overwhelmingly need startup concurrency (the remedy is a
 supervising entry over a runtime slice, not reopening invocation), or
-if G121's host integration makes value-only reports insufficient (the
+if P121's host integration makes value-only reports insufficient (the
 remedy is an exit-code *profile* at the tooling layer, not a language
 change).
 

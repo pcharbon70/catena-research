@@ -59,7 +59,7 @@ them inside the language (below).
 
 No destructor, finalizer, at-exit hook, or cleanup form exists at
 0.1.33, and none may arrive except through a slice that ships its own
-finalization semantics — the resource-scope era (G080s/G084) or the
+finalization semantics — the resource-scope era (G080s/P084) or the
 foreign boundary (G095) (`RO-OBL-006`). Resource release before 0.1.33
 is unobservable by construction: GC is invisible, handles release
 nothing programs can see, and a trap's mailbox discard (C036) is a
@@ -82,7 +82,7 @@ amendment (`RO-OBL-008`).
 
 ## Deliberately separate work
 
-G080s/G084 resource scopes and cleanup; G085 copy mechanics; G095
+G080s/P084 resource scopes and cleanup; P085 copy mechanics; G095
 foreign finalization; G124 tools.
 
 ## Rationale and evidence (non-normative)

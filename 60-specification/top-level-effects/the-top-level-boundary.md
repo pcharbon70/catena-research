@@ -50,7 +50,7 @@ Return is shutdown (C027, unchanged).
 > **Normative definition.**
 
 Capabilities reach an entry only as **explicit typed values
-through a channel G106's slice defines and justifies**
+through a channel P106's slice defines and justifies**
 (`TL-OBL-004`): deny-able like every capability in the corpus,
 never ambient, never implicit. Until that slice exists, the entry
 form's zero-argument and effect-closed rules bind (`TL-OBL-004`).
@@ -61,7 +61,7 @@ handler for top-level requests (`TL-OBL-005`).
 
 > **Normative definition.**
 
-Failure interpretation is a distinct concern: G084's supervision
+Failure interpretation is a distinct concern: P084's supervision
 observes process failure (trap identity, per C036/C081), never
 effect requests (`TL-OBL-005`). A supervisor is not an
 interpreter; nothing about the supervision program widens this

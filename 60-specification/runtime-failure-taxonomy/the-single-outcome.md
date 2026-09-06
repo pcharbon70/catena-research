@@ -87,7 +87,7 @@ value itself, not merely on trapping.
 
 The terminal contract remains C029's; divergence remains C034's;
 handler semantics remain C005's. Exit signals, links, and monitors
-remain G084's — their arrival composes with the unmodified trap
+remain P084's — their arrival composes with the unmodified trap
 outcome rather than extending it. Cancellation remains G088's —
 distinct from failure. Allocation observability of failure paths
 remains G037's.

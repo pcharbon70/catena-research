@@ -37,7 +37,7 @@ spellings.
 ### Foundations that constrain any answer
 
 - [The Twelve-Way Classification](../60-specification/built-in-data-model/the-twelve-way-classification.md)
-  routes collections to G101's nominal declarations.
+  routes collections to P101's nominal declarations.
 - [The Operation Table](../60-specification/structural-records-and-variants/the-operation-table.md)
   fixes the structural boundary this inherits.
 - [The Comparable Set](../60-specification/equality-and-ordering/the-comparable-set.md)
@@ -51,12 +51,12 @@ spellings.
 - [Conformance Traceability](conformance-traceability.md) will
   register `CO-OBL-001` through `CO-OBL-008` against normative
   anchors and sibling compiler tests.
-- G101 collection declarations, duplicate-key choices, and complexity
-  documentation; G105 miss types and libraries; P109 spellings
+- P101 collection declarations, duplicate-key choices, and complexity
+  documentation; P105 miss types and libraries; P109 spellings
   remain the future owners.
 
 ## Open questions
 
-C042 is complete at revision `0.1.37`. G101 declares the canonical
+C042 is complete at revision `0.1.37`. P101 declares the canonical
 collections on this contract; library combinators for ergonomic
 updates arrive there if recursion proves thin.

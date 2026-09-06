@@ -16,7 +16,7 @@ aliases:
 ## Purpose
 
 This directory contains the Catena 0.1.44 contract for the
-excluded advanced type features: the seven-form exclusion table,
+excluded advanced type features: the eight-form exclusion table,
 the seven-point arrival gate as the amendment route, and the
 conformance obligations.
 

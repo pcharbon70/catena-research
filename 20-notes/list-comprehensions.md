@@ -2,7 +2,7 @@
 title: "List Comprehensions"
 kind: note
 created: "2026-08-01"
-maturity: stable
+maturity: developing
 tags:
   - catena
   - comprehensions
@@ -60,6 +60,42 @@ The initial form should not be generic over `Monad`, `Foldable`, `Enumerable`,
 or an output builder. It should not include zip, parallelism, streams,
 grouping, sorting, reduction, uniqueness, or binary and map targets. Those are
 useful operations with independent failure, order, resource, and law contracts.
+
+## Current specification and evidence
+
+The [normative `0.1.39` specification](../60-specification/list-comprehensions/README.md)
+adopted this note's eager list-to-list model, total and explicitly filtering
+generators, ordinary effectful `Bool` filters, local bindings, and sequential
+source order. Its semantic roles and keywords are fixed; P109 retains concrete
+punctuation, layout, and integration with the full grammar. The proposals,
+alternatives, and schematic examples below preserve the research route and do
+not override that contract.
+
+The [original promotion record](../50-journal/2026-08-31-c047-comprehensions.md)
+records C047–C058 as complete on 2026-08-31. The shipped dormant API is
+`Catena.Comprehension.elaborate/1`: it emits a kernel module with fused workers,
+and the pure corpus runs on the reference stepper and compiled BEAM. No
+frontend yet accepts a comprehension expression.
+
+The [2026-09-06 completion audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+reopens **P050, P053, and P057** because their required effect and failure
+evidence is incomplete. The existing
+[filter test](https://github.com/pcharbon70/catena/blob/d7e0fcc484d3e1c3b4a292d4d3e703ddcc330535/test/catena/c047_list_comprehensions_test.exs#L113)
+checks pure filtering and non-`Bool` rejection. The
+[order test](https://github.com/pcharbon70/catena/blob/d7e0fcc484d3e1c3b4a292d4d3e703ddcc330535/test/catena/c047_list_comprehensions_test.exs#L206)
+checks generated conditional and `(uses Ask)` text plus the absence of parallel
+entry points; it does not execute an effect request or a failing qualifier.
+Obligation tags therefore establish less than the required runtime evidence.
+
+The governing
+[conformance obligations](../60-specification/list-comprehensions/diagnostics-and-conformance.md#conformance-obligations)
+require filter witnesses (`LC-OBL-005`), trace agreement for exact order and
+failure timing (`LC-OBL-008`), and trace plus absence tests for sequential
+execution (`LC-OBL-012`). Completion requires reference/BEAM agreement for
+actual requests in nested comprehensions, a false filter retaining its own
+effects while skipping its suffix, and a trap or handler abort preventing all
+later visits. The [open inquiry](../40-inquiries/how-should-catena-specify-list-comprehensions.md#resolution-criteria)
+owns those witnesses; the language rules themselves remain normative.
 
 ## Question, scope, and decision standard
 
@@ -1151,6 +1187,11 @@ Reconsider the proposal if evidence shows that:
 
 ## Staged implementation recommendation
 
+This sequence records the original implementation recommendation. The
+`0.1.39` elaborator and pure execution corpus have since shipped. Current
+completion work is the effect/failure evidence above; P109 owns source
+adoption, G137 usability, G138 performance, and D059 neighboring forms.
+
 ### Stage 1: semantic kernel
 
 1. Add the typed qualifier-tree IR.
@@ -1195,21 +1236,19 @@ The connected
 [inquiry](../40-inquiries/how-should-catena-specify-list-comprehensions.md)
 tracks the remaining empirical and formal work. Highest priorities are:
 
-1. Does `for ... yield` best fit Catena's complete expression grammar and
-   behavior-first vocabulary?
-2. Is `case` the clearest explicit marker for a filtering pattern, or does a
-   task word such as `matching` transfer better?
-3. Should effectful filters be allowed from the first release, or should
-   effects initially be limited to generator sources and result expressions?
-4. Does a local binding qualifier justify syntax, or is an ordinary nested
-   `let` clearer?
-5. Which shadowing policy minimizes mistakes without making nested
-   comprehensions verbose?
-6. Can the qualifier-tree IR share machinery with clause guard trees without
+1. Do real effectful comprehensions agree on exact traces and failure timing
+   across the reference stepper and BEAM, including false filters and nested
+   source multiplicity? This is the open P050/P053/P057 completion gate.
+2. How well do the fixed `for ... yield`, `case`, `when`, and local `let`
+   roles fit Catena's full expression grammar and programmers' expectations
+   when adopted by P109 and evaluated under G137?
+3. Do programmers correctly predict the already-specified shadowing and
+   effect rules? Changes would require an explicit language revision.
+4. Can the qualifier-tree IR share machinery with clause guard trees without
    conflating their safety and coverage judgments?
-7. Which BEAM lowering best preserves source traces while avoiding
-   intermediate lists?
-8. When do real programs need zip, iterator, stream, binary, or generic builder
+5. What measured performance and diagnostic quality does the fused-worker
+   lowering provide under G138 and the tooling work?
+6. When do real programs need zip, iterator, stream, binary, or generic builder
    forms?
 
 ## Annotated source route

@@ -22,7 +22,7 @@ them." C027 already answered it in passing — the entry-declarations
 chapter fixes effect-closed entries (`ENT001`), denies any implicit
 host handler, and names itself "the 0.1.23 answer to the deferred
 G082 question." What completion adds is the answer's own normative
-home, the capability interface G106 must satisfy, and the
+home, the capability interface P106 must satisfy, and the
 supervision routing that keeps failure interpretation distinct.
 
 ## Operational definitions
@@ -32,7 +32,7 @@ supervision routing that keeps failure interpretation distinct.
 - **Ambient interpreter** — a runtime-provided handler for requests
   no source handler caught; C027 denies one exists.
 - **Capability channel** — how an entry could ever reach host
-  services; G106's to define.
+  services; P106's to define.
 
 ## Hypotheses
 
@@ -45,24 +45,24 @@ supervision routing that keeps failure interpretation distinct.
    exists or is reserved, and the launch root invokes a total entry
    to completion under unchanged kernel semantics, introducing no
    scope and interpreting nothing.
-3. **The capability interface for G106**: capabilities arrive only
-   as explicit typed values through a channel G106's slice defines
+3. **The capability interface for P106**: capabilities arrive only
+   as explicit typed values through a channel P106's slice defines
    and justifies — deny-able, never ambient; the zero-argument and
    effect-closed rules bind until deliberately amended; no
    host-handler concept is reserved.
-4. **The supervision routing**: G084 interprets process failure
+4. **The supervision routing**: P084 interprets process failure
    (trap observation), never effect requests — distinct mechanism,
    distinct slice.
 
 ## Paths explored
 
-- **Design the capability channel now** — rejected: G106's
+- **Design the capability channel now** — rejected: P106's
   territory, undesigned; inventing ahead of the owner is the
   pattern C038 rejected.
 - **Reserve a host handler** — rejected: C027 explicitly denies
   implicit host handlers; reserving one contradicts the standing
   answer G082 exists to state.
-- **Defer** — rejected: the answer exists but unowned; G106's
+- **Defer** — rejected: the answer exists but unowned; P106's
   designers would meet an unstated boundary.
 
 ## Findings
@@ -81,6 +81,6 @@ Resolved as C082 at revision `0.1.48`: the contract lives in the
 the reasoning in
 [Catena Top-Level Effects](../20-notes/catena-top-level-effects.md),
 and the forks in the [design decision
-register](../20-notes/design-decision-register.md). G106 owns the
-capability channel's design; G084 owns failure interpretation;
+register](../20-notes/design-decision-register.md). P106 owns the
+capability channel's design; P084 owns failure interpretation;
 Section 9 advances to 7/8.

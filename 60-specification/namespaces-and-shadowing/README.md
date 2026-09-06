@@ -49,7 +49,7 @@ P109.
 This area introduces no implementation-defined choice, recommendation, or
 bounded unspecified presentation. It introduces no implementation limit.
 Scope-event streams remain subject to the aggregate-input policy of the
-G129 owner.
+P129 owner.
 
 ## Index
 

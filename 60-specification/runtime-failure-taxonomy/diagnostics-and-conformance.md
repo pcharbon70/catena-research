@@ -71,7 +71,7 @@ on every target (`FT-OBL-008`).
 | `FT-OBL-005` | keep the six-category mapping exactly as classified | mapping-shape tests |
 | `FT-OBL-006` | enforce the entry rule: no unclassified failure kind, no second outcome class | absence tests |
 | `FT-OBL-007` | keep typed failure classified as values, not failures | classification tests |
-| `FT-OBL-008` | keep the taxonomy deterministic and outside G084/G088/G092/G095/G105/P109 claims with zero new families | repeated-result and exclusion tests |
+| `FT-OBL-008` | keep the taxonomy deterministic and outside P084/G088/G092/G095/P105/P109 claims with zero new families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `FT-OBL-*` set against unknown and

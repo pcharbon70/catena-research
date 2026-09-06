@@ -65,7 +65,7 @@ an undefined outcome.
 ## What is not promised
 
 Nothing here promises completion, stack depth, memory bounds, or
-cancellation: those belong to G084 (runtime limits), G088
+cancellation: those belong to P084 (runtime limits), G088
 (cancellation), and the
 [implementation limits](../../IMPLEMENTATION-LIMITS.md) policy. The
 stance is the *absence* of a termination obligation, stated once at
@@ -79,7 +79,7 @@ under
 [The Separation Table](the-separation-table.md)'s gate. The failure
 taxonomy remains G036's — divergence is explicitly outside it.
 Process-loop termination beyond the kernel's receive clause remains
-G084's.
+P084's.
 
 ## Rationale and evidence (non-normative)
 

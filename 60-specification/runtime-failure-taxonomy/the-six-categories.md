@@ -35,11 +35,11 @@ The checklist's six categories classify as (`FT-OBL-005`):
 | Category | Classification at 0.1.32 |
 | --- | --- |
 | Explicit panic or crash | the kernel's `trap` expression — the only user-invoked failure; its surface spelling is P109's |
-| Typed failure (`Option`/`Result`) | ordinary **values**, non-failures: G105's library types return domain values; a "no answer" is normal termination |
+| Typed failure (`Option`/`Result`) | ordinary **values**, non-failures: P105's library types return domain values; a "no answer" is normal termination |
 | Arithmetic faults | **reserved** — no faulting operator exists in the closed inventory; the kind enters with its producer |
 | Failed assertions | **reserved** — no assert form exists; the kind enters with its producer |
 | Foreign exceptions | **reserved** — foreign calls (G095/G096) do not exist; a foreign raise will map to `trap(reason)` (the 0.1.47 [Exception Boundary](../exception-boundary/README.md) restates this mapping as its routing row) |
-| VM termination | **operational**, outside program semantics — G084/G092/G121's machinery, never an outcome class |
+| VM termination | **operational**, outside program semantics — P084/G092/P121's machinery, never an outcome class |
 
 ## The entry rule
 
@@ -60,7 +60,7 @@ The mapping's most consequential row deserves its statement: typed
 failure returns; it does not trap. An `Option`-typed function that
 answers "none" has terminated normally with a value — comparable,
 storable, returnable like any value. Classifying domain answers as
-failures would make ordinary total functions abnormal; G105 builds
+failures would make ordinary total functions abnormal; P105 builds
 its types on this separation (`FT-OBL-007`).
 
 ## Determinism
@@ -71,8 +71,8 @@ behaviors (`FT-OBL-008`).
 
 ## Deliberately separate work
 
-G105 owns library contents; G095/G096 the foreign boundary; G084
-process death and signals; G092/G121 VM termination; G088
+P105 owns library contents; G095/G096 the foreign boundary; P084
+process death and signals; G092/P121 VM termination; G088
 cancellation; P109 assert/panic spellings; G037 failure-path
 allocation observability.
 

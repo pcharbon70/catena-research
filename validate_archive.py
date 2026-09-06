@@ -563,7 +563,7 @@ def variability_register_errors(display_path: str, markdown: str) -> list[str]:
 TRACEABILITY_REGISTRY = ROOT / "10-maps" / "conformance-traceability.md"
 OBLIGATION_ROW = re.compile(r"^\|\s*([A-Z]+-OBL-[^\s|]+)")
 OBLIGATION_ID = re.compile(r"^[A-Z]{2}-OBL-\d{3}$")
-OBLIGATION_STATUS_TOKENS = ("untraced", "partial", "traced")
+OBLIGATION_STATUSES = ("traced", "partial", "untraced")
 
 
 def traceability_registry_errors(
@@ -574,8 +574,9 @@ def traceability_registry_errors(
     The registry is non-normative. This check guards its internal integrity
     only: each obligation row carries a well-formed, unique identifier and a
     recognized status. Per-area completeness is reported as counts, not
-    enforced, so the registry can grow one area at a time. ``untraced`` is
-    tested before ``traced`` because the latter is a substring of the former.
+    enforced, so the registry can grow one area at a time. Only the final
+    status cell determines the count; obligation prose and links can contain
+    status words without classifying the row.
     """
 
     errors: list[str] = []
@@ -594,17 +595,15 @@ def traceability_registry_errors(
             )
             continue
         counts["traceability_obligations"] += 1
-        if not any(token in line for token in OBLIGATION_STATUS_TOKENS):
+        status = line.rstrip().removesuffix("|").rsplit("|", 1)[-1].strip()
+        if status not in OBLIGATION_STATUSES:
             errors.append(
                 f"{display_path}:{line_number}: obligation {identifier!r} row "
-                "missing a status (traced, partial, or untraced)"
+                "missing a status (traced, partial, or untraced) "
+                "in its final cell"
             )
-        elif "untraced" in line:
-            counts["traceability_untraced"] += 1
-        elif "partial" in line:
-            counts["traceability_partial"] += 1
         else:
-            counts["traceability_traced"] += 1
+            counts[f"traceability_{status}"] += 1
         seen[identifier] = seen.get(identifier, 0) + 1
 
     for identifier, occurrences in sorted(seen.items()):

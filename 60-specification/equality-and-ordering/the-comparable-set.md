@@ -61,7 +61,7 @@ orderable ::= integer | float
 
 **Closures and process handles are never comparable** (`EQ-OBL-004`):
 comparing them is `EQN001`. Their identity observability belongs to
-G037 and G084; admitting identity equality here would pre-decide those
+G037 and P084; admitting identity equality here would pre-decide those
 owners' answers — the overreach C029's uniform-first-classness
 deliberately declined (all values are first-class; not all values
 compare).
@@ -94,8 +94,8 @@ widening the general set can never widen the fragment.
 
 The operator inventory and spellings remain C019's. The value grammar
 remains C029's. Identity observability remains G037's; handle
-semantics G084's. Future types' entries remain G040's. Eq/Ord trait
-layers remain G061/G101's — the built-ins are non-overloadable, and
+semantics P084's. Future types' entries remain G040's. Eq/Ord trait
+layers remain G061/P101's — the built-ins are non-overloadable, and
 any overloading-by-trait requires an edition record.
 
 ## Rationale and evidence (non-normative)

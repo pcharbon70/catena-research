@@ -174,7 +174,7 @@ evaluation as `P029`–`G038`.
   anonymous functions, callbacks, and proper tail calls~~ — closed by
   C032: semantic-unary currying, free partial application, lexical
   immutable capture, let-bound local functions, and the elevated
-  proper-tail-call guarantee; calling conventions remain G094;
+  proper-tail-call guarantee; calling conventions remain P094;
 - ~~conditionals and other branch forms in relation to exhaustive matches~~ —
   closed by C033: match is the single branch form, the conditional
   sugar promise fixes `if` desugaring, and statement forms are
@@ -188,13 +188,13 @@ evaluation as `P029`–`G038`.
   faults, failed assertions, foreign exceptions, process exit, and VM
   termination as distinct outcomes~~ — closed by C036: the single
   `trap(reason)` outcome with kinded reasons and the per-producer
-  gate; library contents remain G105, foreign calls G095/G096,
-  process death G084;
+  gate; library contents remain P105, foreign calls G095/G096,
+  process death P084;
 - ~~allocation, sharing, object identity, garbage collection, stack use, and
   finalization to the extent programs can observe them~~ — closed by
   C037: the six-way non-observability classification with semantic
   identity and the gated finalization absence; cleanup remains the
-  G080s/G084/G095 eras; and
+  G080s/P084/G095 eras; and
 - ~~whether constants, derivations, macros, or other compile-time computations
   execute code, and under which purity, totality, and resource limits~~ —
   closed by C038: constants never execute, attributes and macros are
@@ -241,20 +241,20 @@ names, modules, packages, and separate-compilation program.
   integrity, conflicting versions, and offline operation~~ — closed by
   C025: manifest dependencies, SemVer operators, single-version
   resolution, `catena.lock`, and registry-neutral bundle digests with
-  the Hex transport profile; fetch tooling and signing remain G121/G130;
+  the Hex transport profile; fetch tooling and signing remain P121/P130;
 - ~~prelude contents and opt-out or shadowing policy~~ — closed by
   C026: opt-in manifest selection at ordinary precedence with
-  zero-implicit-names guarantee; contents remain G101;
+  zero-implicit-names guarantee; contents remain P101;
 - ~~executable and library roots, entry points, startup, shutdown, and
   permitted top-level effects~~ — closed by C027: named zero-argument
   effect-closed entries with derived libraries and invocation-only,
   return-is-shutdown launch; supervision and tooling remain
-  G084/G089/G121; and
+  P084/G089/P121; and
 - ~~source, type, behavior, artifact, BEAM ABI, and hot-upgrade
   compatibility~~ — closed by C028 for API/ABI: strict interface diff
   matrix with minor-as-breaking under 0.x, declared behavior and ABI
   absences; migration, registry, and hot-upgrade work remains
-  G116/G130/G092.
+  P116/P130/G092.
 
 **What it would bring.** This program would make Catena a language for
 multi-file applications and libraries rather than isolated semantic modules.
@@ -286,7 +286,7 @@ visible edges.
   C061 at `0.1.40`: closed-set instantiation over {Int, Float}, no
   dispatch, no defaulting, no coercion, no literal constraints, with
   division, remainder, checked and decimal arithmetic, and conversions
-  kept by G105;
+  kept by P105;
 - ~~aliases, opaque types, newtypes, representation identity, coercion, and
   deriving behavior~~ — closed by C062: aliases excluded with arrival
   conditions, opaque = the abstract export, newtype = the nominal
@@ -338,7 +338,7 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
   unit, numeric runtime types, text/character/byte semantics, tuples, lists,
   maps, sets, process handles, references, and functions~~ — closed by C040:
   the twelve-way classification with Text, Character, and Bytes elaborated
-  from scanned literals; collections remain G101 library territory and
+  from scanned literals; collections remain P101 library territory and
   references excluded;
 - ~~structural record and variant source operations, uniqueness, row-polymorphic
   behavior, effect order, and public representation guarantees~~ — closed by
@@ -347,10 +347,10 @@ Checklist items `G040`–`D046` and `P093` track the remaining general data mode
 - ~~persistent collection construction and update, duplicate keys, ordering,
   equality, bounds failure, and complexity promises~~ — closed by C042: the
   six-topic decision — update is constructor application plus match
-  recursion, duplicate-key behavior is a G101 declaration obligation,
+  recursion, duplicate-key behavior is a P101 declaration obligation,
   ordering and key equality ride C035's comparable set, a miss is typed
   failure as a value, and complexity is excluded from the language layer
-  (documentation stays G101's);
+  (documentation stays P101's);
 - ~~which pattern contexts require exhaustiveness and which explicitly permit
   filtering or selective failure~~ — closed by C044: the three context
   classes with per-context rules and reservations at `0.1.38`; the
@@ -431,7 +431,7 @@ advanced combinator families are worthwhile. The
 [category-theory synthesis](../20-notes/category-theory-for-programming.md),
 [combinator synthesis](../20-notes/combinators-for-algebraic-data-and-categorical-programming.md),
 and [open combinator inquiry](../40-inquiries/which-combinators-should-catena-provide-and-derive.md)
-own this wider program. Standard-library gaps are `G101`–`G108`.
+own this wider program. Standard-library gaps are `P101`–`P108`.
 
 **Remaining research.** This program should produce:
 
@@ -490,7 +490,7 @@ the main missing runtime semantics.
 - ~~the set of top-level host effects and how application entry points receive
   their capabilities~~ — closed by C082 at `0.1.48`: the silent top level
   (nothing unhandled, no ambient interpreter, launch as invocation) with
-  the explicit-values capability interface stated for G106;
+  the explicit-values capability interface stated for P106;
 - structured scopes for tasks, files, sockets, locks, transactions, timeouts,
   and cancellation;
 - the higher-order effect or dedicated runtime model needed by scoped
@@ -559,7 +559,7 @@ per-sender FIFO, oldest-matching receive, nondeterministic cross-sender
 scheduling, suspension, and explicit traps. It deliberately promises no
 protocol typing, fairness, deadlock freedom, links, monitors, timeouts,
 cancellation, supervision, distribution, or hot upgrade. Checklist items
-`G084`–`G092` own this program.
+`P084`–`G092` own this program.
 
 **Remaining research.** The runtime model needs to address:
 
@@ -599,7 +599,7 @@ through supported OTP Abstract Format. C002 tests two opaque nominal-data
 layouts; C004 erases specialized trait evidence; C005 lowers bounded handlers;
 C006 binds erased runtime artifacts; and C010 fixes one kernel representation
 on OTP 29. Those successes do not define the general Erlang or native boundary.
-Checklist items `P093`–`G100` describe the missing platform contract.
+Checklist items `P093`–`P100` describe the missing platform contract.
 
 **Remaining research.** Required decisions include:
 
@@ -638,7 +638,7 @@ complete erasure. C008 versions those artifacts; C009 supplies behavior
 classes; C011 provides obligation traceability. The
 [governance synthesis](../20-notes/language-integrated-specifications-and-governance.md)
 and [governance inquiry](../40-inquiries/how-should-catena-integrate-specifications-and-governance-into-the-language.md)
-remain open for richer assurance. Checklist items `P109` and `G116` record the
+remain open for richer assurance. Checklist items `P109` and `P116` record the
 most direct specification gaps.
 
 **Remaining research.** Later assurance layers include:
@@ -722,7 +722,7 @@ artifact binding. C009 prohibits undefined behavior and requires explicit
 implementation-defined choices and limits. C008 binds exact revisions and
 historical signature domains. The wider threat, resource, and supply-chain
 model now has the completed C012 portability baseline, while the wider threat
-and supply-chain model remains open under `G126`–`G131`.
+and supply-chain model remains open under `G126`–`P131`.
 
 **Remaining research.** The system needs to specify:
 
@@ -802,7 +802,7 @@ revisions, package-local editions, preview lifecycles, migration records, and
 selection-bound interfaces and artifacts. It intentionally does not define
 the complete source/API/ABI policy, package ecosystem, all migration tooling,
 OTP support horizon, or compiler bootstrap. These needs are spread across
-`G099`, `G116`, `P125`, `P136`, `G139`, and `G141`; the API/ABI policy
+`P099`, `P116`, `P125`, `P136`, `G139`, and `G141`; the API/ABI policy
 itself is subsequently fixed by C028.
 
 **Remaining research.** Long-term evolution requires:

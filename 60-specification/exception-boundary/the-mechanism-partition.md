@@ -75,10 +75,10 @@ and its diagnostics in its own revision (`XB-OBL-004`).
 
 | Mechanism | Classification | Owner |
 | --- | --- | --- |
-| Process exits | a distinct mechanism: process death, not language exceptions; C010's local-trap/spared-spawner stands | G084 |
+| Process exits | a distinct mechanism: process death, not language exceptions; C010's local-trap/spared-spawner stands | P084 |
 | Foreign failures | map to `trap(reason)` (C036 standing), typed at the visible foreign boundary | G095/G096 (with C067's rule) |
 | Cancellation | its own time-and-cancellation program, interacting with the pattern per its own slice | G088 |
-| Library faults (arithmetic, division) | kinded traps or typed values per producer | G105 |
+| Library faults (arithmetic, division) | kinded traps or typed values per producer | P105 |
 | Outcome types | value-shaped failure contents | G103 |
 
 (`XB-OBL-005`.)

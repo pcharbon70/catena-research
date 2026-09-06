@@ -12,6 +12,12 @@ aliases:
 This is the selective entry point to the archive. See the
 [archive guide](../README.md) for its structure and authoring conventions.
 
+The [current completion ledger](../00-inbox/language-specification-completeness-checklist.md#audited-status-and-evidence-boundary)
+and [6 September audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+record four reopened items: P050/P053/P057 need required comprehension
+runtime evidence, and P086 needs its normative starvation conflict resolved.
+Historical status reports retain their dated counts.
+
 ## Active inquiries
 
 - [How should Catena version editions and language features?](../40-inquiries/how-should-catena-version-editions-and-language-features.md)

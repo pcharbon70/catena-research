@@ -39,8 +39,8 @@ operators, resolution and conflict rules, the lockfile format and replay
 contract, bundle-digest identity, the Hex transport profile, and C025
 conformance obligations here. The package manifest's selection semantics
 remain C008's. Component joint digests remain C024's. JCS and SHA-256
-remain C006's machinery. Build, fetch, and lock tooling remain G121's.
-Supply-chain signing and threat modeling remain G130's. Compatibility
+remain C006's machinery. Build, fetch, and lock tooling remain P121's.
+Supply-chain signing and threat modeling remain P130's. Compatibility
 policy, version-skew rules, and re-export facades are subsequently fixed by
 C028's. The
 prelude remains G026's; entry points are subsequently fixed by C027's.

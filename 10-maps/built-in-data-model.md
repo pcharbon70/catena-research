@@ -51,12 +51,12 @@ collections, construction, spellings, and references.
 - [Conformance Traceability](conformance-traceability.md) registers
   `BM-OBL-001` through `BM-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
-- P109 spellings and the compiled-program path; G101 collection
-  declarations; G042 construction and update; G084 references; G105
+- P109 spellings and the compiled-program path; P101 collection
+  declarations; G042 construction and update; P084 references; P105
   string libraries remain the future owners.
 
 ## Open questions
 
 C040 is complete at revision `0.1.35`. Collections arrive as library
-nominal types at G101; references stay excluded until G084's era if
+nominal types at P101; references stay excluded until P084's era if
 ever; text literals reach compiled programs at P109.

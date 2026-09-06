@@ -63,10 +63,10 @@ values, traces, and miss answers on every target (`CO-OBL-008`).
 | `CO-OBL-002` | fix the six-topic decision with shipped machinery and named owners | decision-shape tests |
 | `CO-OBL-003` | keep construction and update as constructor application and match recursion, distinct from records | declared-List operation tests |
 | `CO-OBL-004` | classify a lookup miss as typed failure as a value: total operations, never a trap | miss-as-value witness tests |
-| `CO-OBL-005` | exclude complexity from the language layer, delegating documentation to G101 | absence tests |
-| `CO-OBL-006` | fix duplicate-key behavior as a G101 declaration obligation, explicit in the declaring slice | classification tests |
+| `CO-OBL-005` | exclude complexity from the language layer, delegating documentation to P101 | absence tests |
+| `CO-OBL-006` | fix duplicate-key behavior as a P101 declaration obligation, explicit in the declaring slice | classification tests |
 | `CO-OBL-007` | ride C035 for ordering and key equality: keys must be comparable | key-equality witness tests |
-| `CO-OBL-008` | keep the contract deterministic and outside G101/G105/P109 claims with zero new families | repeated-result and exclusion tests |
+| `CO-OBL-008` | keep the contract deterministic and outside P101/P105/P109 claims with zero new families | repeated-result and exclusion tests |
 
 Every obligation has at least one tagged passing test. The sibling
 compiler gates the complete `CO-OBL-*` set against unknown and

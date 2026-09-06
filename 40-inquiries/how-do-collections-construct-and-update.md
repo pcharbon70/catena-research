@@ -18,7 +18,7 @@ aliases:
 
 G042 asks the checklist question: "Define persistent update, duplicate
 map keys, ordering, key equality, bounds failures, and complexity
-promises." C040 classified collections as library territory (G101
+promises." C040 classified collections as library territory (P101
 nominal ADTs) and C041 distinguished records from collections while
 deferring here. This inquiry resolves the six topics with the
 decision-not-design pattern the era established.
@@ -39,19 +39,19 @@ decision-not-design pattern the era established.
    decision trilogy. *(Recommended: one-version-per-area.)*
 2. **Decision + routing per topic**: persistent update IS ordinary
    constructor application and match-based recursion (expressible
-   today, witnessed); duplicate map keys are a G101 declaration
+   today, witnessed); duplicate map keys are a P101 declaration
    question with the language fixing only explicitness; ordering and
    key equality ride C035's comparable set; bounds failures classify
    per G036; complexity gets its own exclusion.
 3. **Bounds failures are typed failure as a value**: a lookup miss
    is a domain answer (Option-style), never a trap — collections
    stay total; the concrete miss type is the declaring library's
-   (G101/G105).
+   (P101/P105).
 4. **Complexity promises are excluded from the language layer**:
    representation is invisible (C037), collections are libraries
    over invisible representations, and a language-level complexity
    promise would make representation observable (amending C037,
-   narrowing C002). Complexity documentation is G101's library-level
+   narrowing C002). Complexity documentation is P101's library-level
    contract.
 5. The deliverable is nominal-ADT witnesses with zero new
    diagnostic families: a declared List exercised end-to-end on the
@@ -89,6 +89,6 @@ the
 reasoning in
 [Catena Collection Operations](../20-notes/catena-collection-operations.md),
 and the forks in the [design decision
-register](../20-notes/design-decision-register.md). G101 collection
-declarations, G105 miss types and libraries, P109 spellings, and
+register](../20-notes/design-decision-register.md). P101 collection
+declarations, P105 miss types and libraries, P109 spellings, and
 C040/C041's classifications remain with their owners.

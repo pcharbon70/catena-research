@@ -38,7 +38,7 @@ Choose a model in which independent implementations agree on:
 - the stable failure when documentation has no valid target.
 
 The answer must compose with C013 and C015 without claiming G019's complete
-tokenizer, P109's declaration grammar, C020's file/module rule, or G119's
+tokenizer, P109's declaration grammar, C020's file/module rule, or P119's
 doctest runner.
 
 ## Paths explored
@@ -88,7 +88,7 @@ combines adjacent comments, and attaches only to the next parser-supplied
 declaration after exactly one LF. Invalid attachment is `DOC001`.
 
 Documentation bodies use `commonmark-0.31.2`; raw HTML never executes
-unsanitized. Only exact trimmed `catena doctest` fences opt into the future G119
+unsanitized. Only exact trimmed `catena doctest` fences opt into the future P119
 runner. The [synthesis](../20-notes/catena-comments-and-documentation-comments.md)
 develops the design, the
 [normative specification](../60-specification/comments-and-documentation-comments/README.md)

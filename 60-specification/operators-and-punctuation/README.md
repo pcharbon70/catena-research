@@ -30,7 +30,7 @@ controls status, applicability, rendered labels, and conflicts. The
 requirement force, invalidity, diagnostic presentation, and variability. The
 [Catena Implementation Limits and Portability](../../IMPLEMENTATION-LIMITS.md)
 policy governs aggregate-input disclosure; this area adds no new resource
-dimension and defers aggregate token-count limits to the G129 owner.
+dimension and defers aggregate token-count limits to the P129 owner.
 
 ## What belongs here
 
@@ -50,7 +50,7 @@ G123.
 This area introduces no implementation-defined choice, recommendation, or
 bounded unspecified presentation. It introduces no implementation limit. The
 whole-source token stream consumes the existing C013–C018 per-token limits;
-aggregate file and token-count limits remain with the G129 owner and are not
+aggregate file and token-count limits remain with the P129 owner and are not
 created here.
 
 ## Index

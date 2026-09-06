@@ -73,7 +73,7 @@ C021.
 
 A known module is one whose export set and digest the resolution context
 holds; how contexts acquire modules — package assembly, build inputs —
-remains G025/G121.
+remains G025/P121.
 
 ## Declared exclusions
 
@@ -103,7 +103,7 @@ never changes resolution order, scope structure, or spelling classes.
 ## Deliberately separate work
 
 Module recursion across imports remains G024. Module discovery,
-package identity, and re-exports remain G025/G121. Prelude contents and
+package identity, and re-exports remain G025/P121. Prelude contents and
 opt-out remain G026. Entry modules are subsequently fixed by C027. The concrete `use`
 surface punctuation remains P109.
 
