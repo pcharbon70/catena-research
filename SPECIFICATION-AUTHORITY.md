@@ -147,6 +147,8 @@ The [cancellation/time target](60-specification/cancellation-and-time/deadlines-
 occupies `0.1.53`. It fills prior timeout reservations only within that compound
 target and preserves exact `0.1.52` admission, old interfaces and signed formats.
 
+The [outcome contract](60-specification/outcome-contracts/values-sequencing-and-validation.md) occupies `0.1.54`. It adds explicit ordinary library meanings without a new executable frontend or persisted format.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

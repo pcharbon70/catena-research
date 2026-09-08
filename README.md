@@ -346,3 +346,5 @@ C080 uses `0.1.51` for [owned resource scopes](60-specification/resource-scopes/
 C084 uses `0.1.52` for [owned tasks and managed relationships](60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md), preserving raw actor isolation.
 
 C088 uses `0.1.53` for [cancellation and time](60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md), with exact local deadlines and bounded cancellable waits.
+
+C103 uses `0.1.54` for [outcome contracts](60-specification/outcome-contracts/values-sequencing-and-validation.md), delivered through an explicitly selected ordinary library package.

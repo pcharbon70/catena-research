@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Outcome Contract Implementation](2026-09-08-outcome-contracts.md) — C103 implementation alternatives, compiler repairs and outcome evidence.
+
 - [Cancellation and Time Admission](2026-09-08-cancellation-and-time.md) — G088 decisions, exact deadline experiments and publication evidence after C084.
 
 - [Language Completion: Owned Task Lifetimes](2026-09-08-owned-task-lifetimes.md) — records process relationship, structured ownership and cancellation decisions with their implementation gates.

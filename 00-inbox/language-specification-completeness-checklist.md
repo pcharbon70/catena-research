@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **92 complete, 31 partial, 16 gaps, and 2
+The current checkboxes total **93 complete, 30 partial, 16 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.54`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.55`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -102,7 +102,7 @@ item is marked complete by this audit.
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
 | 10. Processes, concurrency, and distribution | 3 | 3 | 3 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
-| 12. Standard library contract | 0 | 8 | 0 | 0 | 8 |
+| 12. Standard library contract | 1 | 7 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
@@ -902,7 +902,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   (mailbox discarded, no exit signal, no spawner effect,
   unobservable through handles, uninterceptable); the six categories
   map — explicit panic is the kernel `trap` expression, typed failure
-  is an ordinary value (P103 owns the outcome types), VM
+  is an ordinary value (C103 owns the outcome types), VM
   termination is operational (C084/G092/P121), and arithmetic
   faults, assertions, and foreign exceptions are reserved kinds
   entering with their producers classified as `trap(reason)`; and the
@@ -914,7 +914,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   BEAM, the process-context witness (trapping child, spared spawner,
   discarded mailbox), the classifier partition, and the reserved-kind
   absences. Zero new diagnostic families. Outcome-type contents remain
-  P103's; foreign calls G095/G096's; process death C084's;
+  C103's; foreign calls G095/G096's; process death C084's;
   cancellation C088's.
 - [x] **C037 — Complete — resource and allocation observability.**
   The normative
@@ -1043,7 +1043,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   (`246019f`): a declared List (construction, head/tail, length,
   replace-head) and a Pair-keyed lookup agreeing on stepper and BEAM,
   with a miss returning an Option-typed value. Zero new diagnostic
-  families. Miss-type contents remain P101/P103's; spellings P109's;
+  families. Miss-type contents remain P101/C103's; spellings P109's;
   C062/C044 subsequently fix the alias/newtype and pattern-context rules.
 - [x] **C043 — Complete — initial pattern grammar.** The 0.1.2 normative specification supports
   wildcard, binder, integer and Boolean literal, tuple, positional and named
@@ -1328,7 +1328,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   propagation remains C088. See the
   [implementation evidence](../50-journal/2026-09-08-resource-lifetime.md).
 - [x] **C081 — Complete — exception boundary.** Normative `0.1.47` fixes the
-  partition: typed failure is a value (P103's contents); exception-style
+  partition: typed failure is a value (C103's contents); exception-style
   catching is the effect pattern — a handler declining to resume aborts to
   its result, visible in the effect row, a library idiom over unchanged
   C005; and `trap(reason)` is the one terminal mechanism, never catchable
@@ -1336,7 +1336,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   kind entering with their producers. Process exits route to C084,
   foreign failures map to trap at the visible boundary (G095/G096 with
   C067's rule), cancellation to C088, library faults to P105, outcome
-  types to P103; C044's reopening door is the only amendment route for a
+  types to C103; C044's reopening door is the only amendment route for a
   language exception form. Compiler witnesses on existing machinery
   (`e0f2a9e`): the declining-handler pattern (`0`, not `100`, both
   targets), the trap fixture terminal, C010's spared spawner re-pinned,
@@ -1482,11 +1482,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   gaps recorded as P050/P053/P057. Complete list, map, set, iterator,
   stream, fold, traversal, builder, duplicate-key, and early-termination
   contracts, including library-level complexity guarantees under C042.
-- [ ] **P103 — Partial — outcome types.** C081 fixes typed failure as a
-  value, handler-based escape, and terminal traps as distinct mechanisms;
-  C042 witnesses an Option-shaped lookup miss. Define the canonical
-  `Option`, `Result`, and validation APIs and their relationship to panic
-  and process failure without silently converting between those classes.
+- [x] **C103 — Complete — outcome types.** The
+  [0.1.54 contract](../60-specification/outcome-contracts/values-sequencing-and-validation.md)
+  defines ordinary optional and dependent values, nonempty accumulating
+  validation, coherent categorical dictionaries, explicit conversion and
+  elimination, callback counts and failure-class separation. The explicit
+  digest-bound package has ordinary compiler and specialized BEAM evidence
+  against independent equations; public vocabulary remains P109 and foreign
+  admission remains G095/G096. See the
+  [implementation evidence](../50-journal/2026-09-08-outcome-contracts.md).
 - [ ] **P104 — Partial — text and binary model.** C017/C040 define
   decoded Unicode-scalar Text, one-scalar Character, Bytes, content
   equality/order, and the absence of interpolation in existing literal
