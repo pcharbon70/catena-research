@@ -1062,3 +1062,8 @@ C053 acceptance now executes CP-053-1 through CP-053-7 on the shared target.
 The [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md#c050-publication-and-p053-acceptance-decisions)
 records context/pattern evidence and EO-I01–EO-I03; the advisory repair keeps
 the selected checker authoritative for totality. P057 acceptance remains.
+
+C057 acceptance executes CP-057-1 through CP-057-3: the positional handler
+result, exact trace and admission rejection witness serial execution.
+[SQ-I01 and SQ-I02](../50-journal/2026-09-08-capability-kernel-integration.md#c053-publication-and-p057-acceptance-decisions)
+record implementation choices without introducing public vocabulary.

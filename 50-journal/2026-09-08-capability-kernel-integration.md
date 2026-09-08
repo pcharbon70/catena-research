@@ -315,3 +315,33 @@ with warnings as errors and both diff checks pass. Archive validation passes:
 586 documents, 62 directories, 6670 local links and 721 obligations, now
 **625 traced, 75 partial and 21 untraced**. C053/LC-OBL-008 is complete;
 P057/LC-OBL-012 retains its separate order-sensitive handler acceptance.
+
+## C053 publication and P057 acceptance decisions
+
+C053 was merged through [research PR 81](https://github.com/pcharbon70/catena-research/pull/81)
+and [compiler PR 131](https://github.com/pcharbon70/catena/pull/131).
+Both integration branches were synchronized before local and remote feature
+branch deletion. P057 proceeds on `codex/comprehension-sequential-execution`.
+
+| Decision | Four alternatives explored | Selected recommendation |
+| --- | --- | --- |
+| SQ-I01 | A: return a positional base-1000 encoding of request markers through the enclosing handler, with a fixed contract-derived expected integer and permutation counterexamples; B: return only a request count; C: inspect generated worker strings; D: delay each request and compare wall time. | **A, recommended and selected.** Affine resumption followed by a noncommuting positional fold makes the final language value sensitive to order without production tracing or scheduler timing. Existing trace and trap witnesses remain independent supplements. |
+| SQ-I02 | A: reject unsupported or duplicate execution options at the compound boundary; B: silently ignore an apparent parallel switch; C: admit a hidden parallel switch; D: infer permission to parallelize from purity. | **A, recommended and selected.** Only the established handler and language-selection options are accepted. This closes misleading admission while retaining the normative serial worker path and deferring any future parallel form. |
+
+## C057 verified completion
+
+The enclosing handler now has an independent order-sensitive acceptance
+witness: its base-1000 positional result is
+`532432332531431331203202312511411311201100` on both reference and production
+BEAM. Reversed and explicitly interleaved alternatives differ. Existing
+exact trace, false-filter, empty-source and abort-prefix witnesses preserve
+each reached candidate's complete suffix. Lowering retains serial recursive
+calls; unsupported or duplicate compound-boundary options now reject instead
+of silently accepting an apparent parallel switch.
+
+`mix test --seed 0` passes **668 tests**. Formatting, production compilation
+with warnings as errors and diff checks pass. Archive validation passes:
+586 documents, 62 directories, 6672 local links and 721 obligations,
+**626 traced, 74 partial and 21 untraced**. C057/LC-OBL-012 is complete;
+all fourteen LC obligations are traced. This is execution evidence at the
+explicit closed target, not adoption of public vocabulary or general open rows.

@@ -230,8 +230,8 @@ to `20-notes`.
   compatibility, migration, and artifact model through normative C008's
   executable evidence and immutable promotion record.
 - [How Should Catena Specify List Comprehensions?](how-should-catena-specify-list-comprehensions.md)
-  — records C050/C053 closure through the `0.1.50` target and pending
-    P057 acceptance alongside the retained `0.1.39` contract; source
+  — records C050/C053/C057 closure through the `0.1.50` target
+    alongside the retained `0.1.39` contract; source
     adoption remains P109 and D059's neighbors stay deferred.
 - [Which Algebraic-Effect Semantics Should Catena Adopt?](which-algebraic-effect-semantics-should-catena-adopt.md)
   — tests whether lexical capabilities, duplicate-label rows, deep open

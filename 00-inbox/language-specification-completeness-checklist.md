@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **88 complete, 33 partial, 18 gaps, and 2
+The current checkboxes total **89 complete, 32 partial, 18 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -96,7 +96,7 @@ item is marked complete by this audit.
 | 3. Names, modules, packages, and separate compilation | 8 | 0 | 0 | 0 | 8 |
 | 4. Core expressions and evaluation | 10 | 0 | 0 | 0 | 10 |
 | 5. Data, collections, and patterns | 8 | 0 | 0 | 0 | 8 |
-| 6. List comprehensions, generators, and iteration | 11 | 1 | 0 | 1 | 13 |
+| 6. List comprehensions, generators, and iteration | 12 | 0 | 0 | 1 | 13 |
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 6 | 0 | 1 | 1 | 8 |
@@ -107,7 +107,7 @@ item is marked complete by this audit.
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **88** | **33** | **18** | **2** | **141** |
+| **Total** | **89** | **32** | **18** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1153,11 +1153,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   `Applicative`/`Monad` targets are excluded with no entry
   points.
 
-- [ ] **P057 — Partial — sequential-execution evidence.** Sequential
-  execution remains normative. The [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) now preserves
-  escaping effects and enclosing-handler abort on reference and BEAM. The
-  per-gap acceptance pass will add an order-sensitive handler observation
-  and review the no-parallelization boundary before closing `LC-OBL-012`.
+- [x] **C057 — Complete — sequential-execution evidence.** The
+  [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md)
+  preserves complete candidate suffixes, false-filter effects, empty inner
+  sources and whole-traversal abort on reference and production BEAM.
+  An enclosing handler returns a positional encoding of requests whose
+  exact value rejects reversed and interleaved alternatives. Unsupported
+  parallel execution options reject; lowering retains serial worker calls.
+  This completes `LC-OBL-012` without admitting a parallel form. See the
+  [acceptance journal](../50-journal/2026-09-08-capability-kernel-integration.md).
 - [x] **C058 — Complete — termination and cost honesty.** The fused
   worker chain — one tail-recursive definition per generator depth,
   one shared accumulator, a final ordering pass, no intermediate
