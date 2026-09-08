@@ -1067,3 +1067,9 @@ C057 acceptance executes CP-057-1 through CP-057-3: the positional handler
 result, exact trace and admission rejection witness serial execution.
 [SQ-I01 and SQ-I02](../50-journal/2026-09-08-capability-kernel-integration.md#c053-publication-and-p057-acceptance-decisions)
 record implementation choices without introducing public vocabulary.
+
+Resource-lifetime execution begins with CP-080-1 through CP-080-7 and the
+shared cancellation boundary. The [resource journal](../50-journal/2026-09-08-resource-lifetime.md)
+records RL-I01–RL-I06 and keeps G080 open until integration evidence exists.
+
+C080 execution decisions RL-I01–RL-I19 are recorded in the [resource journal](../50-journal/2026-09-08-resource-lifetime.md); the selected bounded contract is durable in [owned lifetime and mandatory cleanup](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md).

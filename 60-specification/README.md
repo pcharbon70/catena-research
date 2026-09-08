@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Resource Scopes](resource-scopes/README.md) — local owned lifetime, cleanup, scoped handles and cancellation/deadline interfaces.
+
 - [Closed Capability Kernel](closed-capability-kernel/README.md) — the normative
   0.1.50 identity-row target and verified comprehension artifact boundary.
 

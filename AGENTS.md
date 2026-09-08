@@ -159,7 +159,7 @@ Normative C086 uses `0.1.46` for selective receive. Normative
 C081 uses `0.1.47` for the exception boundary. Normative C082 uses
 `0.1.48` for top-level effects. The C086 selective-receive correction uses
 `0.1.49`. The closed capability-kernel and comprehension target uses
-`0.1.50`. The next unused semantic patch is `0.1.51` unless an approved versioning policy explicitly
+`0.1.50`. The next unused semantic patch is `0.1.52` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.
@@ -420,3 +420,5 @@ the same change rather than silently bypassing a check.
 - Before pushing, report and resolve validation failures.
 - In the final handoff, summarize documents created or changed, maps and
   indexes updated, validation performed, and whether changes remain uncommitted.
+
+C080 uses `0.1.51` for [owned resource scopes](60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md), including mandatory local cleanup and bounded release.

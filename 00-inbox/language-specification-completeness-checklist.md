@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **89 complete, 32 partial, 18 gaps, and 2
+The current checkboxes total **90 complete, 32 partial, 17 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.51`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.52`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -99,7 +99,7 @@ item is marked complete by this audit.
 | 6. List comprehensions, generators, and iteration | 12 | 0 | 0 | 1 | 13 |
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
-| 9. Effects, failure, and resource scopes | 6 | 0 | 1 | 1 | 8 |
+| 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
 | 10. Processes, concurrency, and distribution | 1 | 4 | 4 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
 | 12. Standard library contract | 0 | 8 | 0 | 0 | 8 |
@@ -107,7 +107,7 @@ item is marked complete by this audit.
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **89** | **32** | **18** | **2** | **141** |
+| **Total** | **90** | **32** | **17** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1316,9 +1316,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   deep reinstallation, and outer-scope effects from return and operation
   clauses. The independent free-request evaluator and generated BEAM agree on
   the bounded conformance traces.
-- [ ] **G080 — Gap — cleanup and resource scopes.** Specify acquisition, release,
-  cancellation, abort, panic, normal return, process exit, and foreign-frame
-  unwinding.
+- [x] **C080 — Complete — cleanup and resource scopes.** Normative
+  [0.1.51 owned lifetimes](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md)
+  implement successful-acquisition registration, reverse mandatory cleanup,
+  actual handler abandonment, primary traps, typed failure values, owner
+  cancellation and cooperative exit. Scoped handles cannot escape or be
+  captured. Reference execution, production BEAM and bounded schedule tests
+  cover release failure precedence, deadline races and local actor return.
+  Forced process/VM loss has no cleanup guarantee; process-affine foreign
+  resources remain unadmitted until their adapter exists. General task/time
+  propagation remains G088. See the
+  [implementation evidence](../50-journal/2026-09-08-resource-lifetime.md).
 - [x] **C081 — Complete — exception boundary.** Normative `0.1.47` fixes the
   partition: typed failure is a value (P103's contents); exception-style
   catching is the effect pattern — a handler declining to resume aborts to
