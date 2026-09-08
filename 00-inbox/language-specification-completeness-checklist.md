@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **95 complete, 30 partial, 14 gaps, and 2
+The current checkboxes total **96 complete, 29 partial, 14 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.57`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.58`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1473,12 +1473,16 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   (`enif_make_double`) bypasses the term format's refusal, so the NIF boundary
   must refuse or normalize non-finite floats with a witness test
   ([probes](../50-journal/2026-08-31-beam-float-boundary-probes.md)).
-- [ ] **P099 — Partial — OTP compatibility policy.** The normative
-  bootstrap selects OTP 29 Erlang Abstract Format and
-  `compile:noenv_forms/2`; C003 fixes its portable guard subset, and the
-  implementation profile pins the tested toolchain. Complete supported
-  versions, feature detection, generated-artifact compatibility, and the
-  upgrade and retirement policy.
+- [x] **C099 — Complete — OTP compatibility policy.** The
+  [0.1.57 policy](../60-specification/otp-compatibility/support-probes-and-artifacts.md)
+  publishes the exact tested OTP 29.0.4/ERTS 17.0.4/Elixir 1.20.2 row,
+  required feature probes, early unsupported-host rejection and toolchain-bound
+  artifact loading. Discovery reports observed support and retirement policy.
+  Separate-VM execution passes on the measured row; other patches and hosts
+  remain unsupported, with simulated mismatch tests explicitly labeled.
+  Expansion requires full semantic/artifact evidence; retirement has an explicit
+  notice window and rebuild path. See the
+  [implementation evidence](../50-journal/2026-09-08-otp-compatibility.md).
 - [ ] **P100 — Partial — debugging metadata.** C010 retains source spans,
   executable-node origins, and origin-derived file metadata; effect core
   nodes carry source paths, and C006 specifies evidence erasure. Complete

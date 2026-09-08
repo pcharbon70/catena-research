@@ -2574,3 +2574,20 @@ static worker subset and narrow lifecycle admission.
 | SU-OBL-006 | Bounded shutdown and cleanup order | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#shutdown-and-owned-integration) | supervision_runtime: reverse stop order and noncooperative zero-grace forced termination; description rejects bad bounds | traced |
 | SU-OBL-007 | Managed owner and tree failure | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#shutdown-and-owned-integration) | supervision_runtime: trapped tree loss, already-dead root join and child cleanup before owner result | traced |
 | SU-OBL-008 | Origin-bound deterministic artifacts | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#generated-artifacts-and-compatibility) | supervision_description: byte/manifest tampering, deterministic compile, loaded typed worker restart and owned artifact startup | traced |
+
+## OTP compatibility registry (`OC`, 0.1.57)
+
+The [policy](../60-specification/otp-compatibility/support-probes-and-artifacts.md)
+and [journal](../50-journal/2026-09-08-otp-compatibility.md) distinguish actual
+supported-host execution from simulated rejection fixtures.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| OC-OBL-001 | Retained formats and separate toolchain axis | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#status-and-authority) | language_version and lifecycle regressions; historical frontends still compile | traced |
+| OC-OBL-002 | Exact tested matrix | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#tested-support-matrix) | otp_profile: measured host equals singleton support row; full corpus on that row | traced |
+| OC-OBL-003 | Required facilities and early rejection | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#observations-and-required-facilities) | otp_profile: every missing facility and altered fingerprint rejected; private probe mailbox empty | traced |
+| OC-OBL-004 | Deterministic discovery | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#observations-and-required-facilities) | otp_profile: repeated discovery equal; language-info/conformance-info regressions | traced |
+| OC-OBL-005 | Deterministic fingerprint-bearing artifacts | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#artifact-provenance-and-loading) | otp_profile: repeated binary equality and compile-info fingerprint/digest | traced |
+| OC-OBL-006 | Checked load and entry diagnostics | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#artifact-provenance-and-loading) | otp_profile: malformed/untagged/mismatched artifacts and entry rejection; separate VM load executes 42 | traced |
+| OC-OBL-007 | Evidence-gated expansion | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#expansion-and-retirement) | otp_profile: unsupported patch/platform fixtures refused; journal labels separate-VM and single-host limits | traced |
+| OC-OBL-008 | Explicit retirement and rebuild policy | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#expansion-and-retirement) | normative review: no scheduled row retirement; old untagged artifact rejected with rebuild diagnostic | traced |

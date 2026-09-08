@@ -153,6 +153,8 @@ The [local protocol contract](60-specification/local-protocol-contracts/schemas-
 
 The [typed supervision contract](60-specification/typed-supervision/checked-trees-and-lifecycle.md) occupies `0.1.56`, admitting checked static worker descriptions and a narrow owned OTP lifecycle adapter while preserving existing interface and signed formats.
 
+The [OTP compatibility policy](60-specification/otp-compatibility/support-probes-and-artifacts.md) occupies `0.1.57`. It binds new artifacts to tested toolchains without adding an executable frontend or changing retained source/interface formats.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is
