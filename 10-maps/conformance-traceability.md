@@ -2521,3 +2521,21 @@ owned-task and resource suites. The separate tag inventory is bookkeeping.
 | TM-OBL-006 | Single selected branch/completion across races | [Choices](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#cancellation-and-completion-choices) | time_kernel reply-before/after selection and post-wait interruption; managed_reference selected linked failure; task_kernel expiry races | traced |
 | TM-OBL-007 | Masked cleanup, expiry and foreign exclusion | [Cleanup](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#masking-expiry-and-foreign-boundaries) | time_runtime repeated cancellation during blocked finalization; task_runtime noncooperative forced shutdown | traced |
 | TM-OBL-008 | No timer leakage or rejected-message loss | [Waiting](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#relative-and-absolute-waiting) | time_runtime mailbox inspection; time_kernel fallback preservation and nested absolute waits | traced |
+
+## Outcome contract registry (`OV`, 0.1.54)
+
+The [outcome chapter](../60-specification/outcome-contracts/values-sequencing-and-validation.md)
+defines C103. The sibling `outcome_contract_test.exs` supplies the following
+behavioral witnesses; the [journal](../50-journal/2026-09-08-outcome-contracts.md)
+records immutable publication evidence.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| OV-OBL-001 | Explicit digest-bound package and retained formats | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#status-and-authority) | outcome_contract: deterministic package and tampering tests | traced |
+| OV-OBL-002 | Distinct nominal shapes and invalid input rejection | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#type-shapes-and-separation) | outcome_contract: wrong payload, empty invalid constructor and nested outcomes | traced |
+| OV-OBL-003 | Mapping and dependent laws | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#mapping-and-dependent-sequencing) | outcome_contract: reference/BEAM maps, bounded identity/composition/associativity | traced |
+| OV-OBL-004 | Eager binary and skipped dependent callbacks | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#mapping-and-dependent-sequencing) | outcome_contract: failure callback counts and first failure preservation | traced |
+| OV-OBL-005 | Ordered independent accumulation and coherence | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#independent-accumulation) | outcome_contract: four-combination specialized artifact and absent Workflow instance | traced |
+| OV-OBL-006 | Explicit elimination and conversions | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#explicit-elimination-and-conversion) | outcome_contract: empty sequence, singleton errors, nested absence and adapter counts | traced |
+| OV-OBL-007 | Separate traps and process exits | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#explicit-elimination-and-conversion) | outcome_contract: throw/exit/arithmetic propagation without interception | traced |
+| OV-OBL-008 | Deterministic implementation and linear stack-safe accumulation | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#execution-diagnostics-and-limits) | outcome_contract: repeated compilation/linking and 50,001-error sequence | traced |

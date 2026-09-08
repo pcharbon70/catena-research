@@ -220,6 +220,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Outcome Contracts](outcome-contracts/README.md) — normative optional, dependent and accumulating outcome library contract for C103 at `0.1.54`.
 - [Cancellation and Time](cancellation-and-time/README.md) — normative exact-duration, deadline and cancellable-wait contract for C088 at `0.1.53`.
 
 - [Process Lifetimes](process-lifetimes/README.md) — normative C084 owned-task and managed-relationship contract at exact `0.1.52`.
