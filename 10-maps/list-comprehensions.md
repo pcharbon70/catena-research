@@ -56,6 +56,11 @@ for `LC-OBL-005`, `LC-OBL-008`, and `LC-OBL-012` is incomplete. The normative
 contract and dormant `Catena.Comprehension.elaborate/1` boundary remain in
 place.
 
+The [first completion-plan implementation](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+adds real locally handled traces and traps. Follow its kernel-target finding
+before attempting general escaping effects or enclosing-handler abort;
+those boundaries keep the three items partial.
+
 ## Trails
 
 ### A small list-specific kernel

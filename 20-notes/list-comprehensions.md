@@ -87,6 +87,12 @@ checks generated conditional and `(uses Ask)` text plus the absence of parallel
 entry points; it does not execute an effect request or a failing qualifier.
 Obligation tags therefore establish less than the required runtime evidence.
 
+The [subsequent first implementation](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+adds actual locally handled requests and trap prefixes on both execution
+paths. General escaping effects still need a versioned kernel-target
+refinement: C005's identity-aware row union and C010's retained ordinary
+multiplicity cannot be silently treated as the same recursive effect model.
+
 The governing
 [conformance obligations](../60-specification/list-comprehensions/diagnostics-and-conformance.md#conformance-obligations)
 require filter witnesses (`LC-OBL-005`), trace agreement for exact order and

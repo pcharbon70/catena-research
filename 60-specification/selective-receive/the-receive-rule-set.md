@@ -29,6 +29,11 @@ The rules apply only to source-language revision `0.1.46`. They do
 not reinterpret retained manifests, interfaces, artifacts, or
 signed formats.
 
+> **Non-normative note.**
+> The retained starvation paragraph below is disputed for exact `0.1.46`.
+> The [0.1.49 amendment](../selective-receive-correction/waiting-and-scan-cost-amendment.md#status-and-authority)
+> explicitly repairs it for the amended contract without rewriting this history.
+
 ## The rules
 
 > **Normative definition.**

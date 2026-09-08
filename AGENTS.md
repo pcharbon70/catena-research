@@ -157,8 +157,8 @@ Normative C140 uses `0.1.44` for excluded advanced type features.
 Normative C132 uses `0.1.45` for progress and preservation.
 Normative C086 uses `0.1.46` for selective receive. Normative
 C081 uses `0.1.47` for the exception boundary. Normative C082 uses
-`0.1.48` for top-level effects. The next unused semantic
-patch is `0.1.49` unless an approved versioning policy explicitly
+`0.1.48` for top-level effects. The C086 selective-receive correction uses
+`0.1.49`. The next unused semantic patch is `0.1.50` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

@@ -2,7 +2,7 @@
 title: "How Does Selective Receive Complete?"
 kind: inquiry
 created: "2026-09-01"
-status: open
+status: resolved
 tags:
   - catena
   - receive
@@ -123,7 +123,7 @@ behavior nor this inquiry resolves the normative discrepancy.
    workflow](../SPECIFICATION-AUTHORITY.md#repair-and-promotion-workflow),
    then validate before restoring the completion claim.
 
-## Outcome
+## Historical outcome
 
 Historically promoted as C086 at revision `0.1.46`; reopened as P086 by the
 2026-09-06 audit. The contract lives in the
@@ -134,3 +134,12 @@ and the forks in the [design decision
 register](../20-notes/design-decision-register.md). P085, P087,
 G088, and P109 retain their routed interfaces. Completion remains open and
 conformance for the disputed starvation rule is not claimed.
+
+## Outcome after correction
+
+The [0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md) repairs the disputed rule explicitly while
+retaining the historical 0.1.46 text. The [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
+records exact selection/lifecycle tests and independent stepper/BEAM
+witnesses for two successive oldest matches, residual order, and empty or
+all-rejected waiting. This resolves the reopened receive contradiction.
+P085, P087, G088 and P109 retain their separately tracked interfaces.

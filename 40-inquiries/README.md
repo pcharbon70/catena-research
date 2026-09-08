@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Can Catena Complete Its Language Definition?](how-can-catena-complete-its-language-definition.md)
+  — tracks the full plan's cross-item dependencies, executable milestones
+  and honest completion gates while vocabulary remains held.
 - [Who Interprets Top-Level Requests?](who-interprets-top-level-requests.md)
   — resolves G082: the silent top level stated as its own
     normative home, with P106's capability interface and P084's
@@ -39,8 +42,8 @@ to `20-notes`.
     exception form, panics as trap kinds, and the blessed effect
     pattern at `0.1.47`.
 - [How Does Selective Receive Complete?](how-does-selective-receive-complete.md)
-  — reopens P086 for the contradictory starvation statement, retaining
-    the implemented scan rules and four extension interfaces.
+  — resolves the reopened P086 starvation conflict through the 0.1.49
+    correction and preserves the four extension interfaces.
 - [What Progress and Preservation Targets Remain?](what-progress-and-preservation-targets-remain.md)
   — resolves P132: effects-and-failure targets, the composed
     integrated theorem with a routed proof obligation, and

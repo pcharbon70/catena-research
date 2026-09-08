@@ -258,7 +258,7 @@ sibling compiler repository.
 | `DU` dynamic-and-unsafe-boundaries | 8 | `c067_dynamic_unsafe_test.exs` (10) | compiler-tagged + gated (`ed14901`); all obligations traced |
 | `EA` excluded-advanced-type-features | 7 | `c140_excluded_advanced_test.exs` (8) | compiler-tagged + gated (`77fba75`); all obligations traced |
 | `PP` progress-and-preservation | 8 | `c132_progress_preservation_test.exs` (10) | compiler-tagged + gated (`5525662`); all obligations traced |
-| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6) | compiler-tagged + gated (`b202887`); 7 traced; 1 partial pending normative clarification |
+| `RC` selective-receive | 8 | `c086_selective_receive_test.exs` (6), `c086_receive_completion_test.exs` (4) | historical base plus tested uncommitted 0.1.49 correction; 8 traced; tag inventory is not semantic proof |
 | `XB` exception-boundary | 7 | `c081_exception_boundary_test.exs` (7) | compiler-tagged + gated (`e0f2a9e`); all obligations traced |
 | `TL` top-level-effects | 7 | `c082_top_level_test.exs` (6) | compiler-tagged + gated (`e962b73`); all obligations traced |
 
@@ -2087,8 +2087,13 @@ compiler repository. The focused set is:
 - **c047 #13** *produces the fused tail-recursive worker chain with linear allocation, source-faithful diagnostics, and cost honesty*
 - **c047 #14** *keeps the contract deterministic and outside unowned claims with the reuse map enforced*
 
-Anchors point at the normative 0.1.39 chapters. Status reflects the
-merged compiler evidence (`3216831`, branch `agent/c047-comprehensions`).
+Anchors point at the normative 0.1.39 chapters. The labels above retain
+the original evidence inventory (`3216831`, branch
+`agent/c047-comprehensions`); they do not themselves establish completion.
+The completion audit supplies the partial classifications below. The
+[first implementation follow-up](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+records additional working-tree evidence in
+`test/catena/c047_effects_completion_test.exs`, without promoting those statuses.
 
 | ID | Obligation | Normative anchor | Evidence | Status |
 | --- | --- | --- | --- | --- |
@@ -2114,6 +2119,13 @@ reopens P050/P053/P057: `c047 #5` lacks effect/failure witnesses, and
 an effect-bearing comprehension. The dedicated
 gate rejects unknown identifiers and fails if any `LC-OBL-*` identifier
 lacks a focused tag.
+
+Subsequent locally handled request tests now cover source/filter/binding/yield
+order, empty sources, false-filter effects and terminal trap prefixes on
+reference and BEAM. The old structural tests are labeled accordingly and the
+gate inventories both test files. General escaping effects and enclosing
+handler abort remain partial pending the explicit kernel-target refinement;
+the execution journal records the row-equation evidence and selected next step.
 
 ## Numeric relationships registry (`NR`, 0.1.40)
 
@@ -2341,19 +2353,21 @@ merged compiler evidence (`b202887`, branch `agent/c086-receive`).
 | RC-OBL-001 | Apply receive rules only at exact 0.1.46 and register the stable lifecycle addition with zero new families and no new API | [`diagnostics-and-conformance.md#revision-and-persistence-separation`](../60-specification/selective-receive/diagnostics-and-conformance.md#revision-and-persistence-separation) | c086 #1 | traced |
 | RC-OBL-002 | Keep the rule set: FIFO scan, preservation, one-time removal, no hidden semantics | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #2 | traced |
 | RC-OBL-003 | Keep the typing and condition rules: closed message type, effect-free form, portable conditions, CND006 | [`the-receive-rule-set.md#the-rules`](../60-specification/selective-receive/the-receive-rule-set.md#the-rules) | c086 #3 | traced |
-| RC-OBL-004 | Keep the starvation statement: honest cost, no fairness claim | [`the-receive-rule-set.md#starvation-and-cost`](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost) | c086 #4 | partial |
+| RC-OBL-004 | No-match suspension, rejected-prefix bypass, examined-candidate cost, no fairness promise at 0.1.49 | [Waiting and scan work](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md#waiting-and-selection) | c086 completion #2–4 | traced |
 | RC-OBL-005 | Keep the P109 interface with the timeout clause named as C044's explicit total fallback | [`the-routed-interfaces.md#public-syntax-p109`](../60-specification/selective-receive/the-routed-interfaces.md#public-syntax-p109) | c086 #5 | traced |
 | RC-OBL-006 | Keep the G088 interface: timeout evaluation, races, totality, and cancellation disposal stated as G088's obligations | [`the-routed-interfaces.md#timeouts-and-cancellation-g088`](../60-specification/selective-receive/the-routed-interfaces.md#timeouts-and-cancellation-g088) | c086 #6 | traced |
 | RC-OBL-007 | Keep the P087 and P085 interfaces: protocol typing composes, send-side claims stay P085's | [`the-routed-interfaces.md#typed-protocols-p087`](../60-specification/selective-receive/the-routed-interfaces.md#typed-protocols-p087) | c086 #7 | traced |
 | RC-OBL-008 | Keep the contract deterministic with the C003/C010 receive corpus unchanged | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/selective-receive/diagnostics-and-conformance.md#abstract-public-boundaries) | c086 #8 | traced |
 
-Receive coverage is 7 `traced`, 1 `partial`, and 0 untraced obligations.
-The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#selective-receive-conflict)
-reopens P086: the rejected-prefix starvation claim conflicts with the
-scan-continuation rule and the later-matching-message witness. The blocked
-mailbox fixture does not settle `RC-OBL-004`. The dedicated
-gate rejects unknown identifiers and fails if any `RC-OBL-*` identifier
-lacks a focused tag.
+Receive coverage is 8 `traced`, 0 `partial`, and 0 untraced obligations for
+the amended contract. The original `0.1.46` evidence above remains historical.
+The [0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md) replaces RC-OBL-004 and extends RC-OBL-001's
+selection/lifecycle boundary. `test/catena/c086_receive_completion_test.exs`
+adds **c086 completion #1** (exact correction registration), **#2** (successive
+oldest selection and residual mailbox on stepper/BEAM), **#3–4** (empty and
+all-rejected waiting on both targets). The tag inventory includes both test
+files and is explicitly not semantic proof. The [journal](../50-journal/2026-09-08-capability-kernel-integration.md)
+records the tested uncommitted compiler state, not a merged release.
 
 ## Exception boundary registry (`XB`, 0.1.47)
 

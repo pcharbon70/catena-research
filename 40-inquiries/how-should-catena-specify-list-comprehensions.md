@@ -285,6 +285,17 @@ P050/P053/P057 therefore remain partial even if all existing tagged tests
 pass. Pure execution, diagnostics, the worker shape, and the dormant API
 remain accomplishments.
 
+### First implementation follow-up
+
+The [first completion-plan slice](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+adds real locally handled requests and terminal trap prefixes on reference
+and BEAM. It also exposes a normative target dependency: C047's C005 row
+union cannot in general be expressed by the exact C010 multiplicity contract
+for recursive escaping effects. A versioned target refinement is needed
+before general row threading and enclosing-handler abort evidence. Local
+handling changes the scope of a decline, so these new witnesses preserve
+partial status rather than standing in for the broader contract.
+
 ## Resolution criteria
 
 Resolve the reopened P050/P053/P057 evidence question when the sibling compiler
