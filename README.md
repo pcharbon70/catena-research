@@ -271,8 +271,8 @@ normative C086 uses `0.1.46` for selective receive;
 normative C081 uses `0.1.47` for the exception boundary;
 normative C082 uses `0.1.48` for top-level effects;
 and the next
-unused semantic patch is `0.1.50`; the selective-receive correction uses
-`0.1.49`. C008 defines package-local editions,
+unused semantic patch is `0.1.51`; the selective-receive correction uses
+`0.1.49`, and the closed capability-kernel target uses `0.1.50`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.

@@ -13,14 +13,14 @@ aliases:
 
 # List Comprehensions Specification (`60-specification/list-comprehensions`)
 
-P050/P053/P057 are reopened for missing required effectful filter, order,
-and sequential-execution witnesses. The `0.1.39` rules remain normative;
-pure implementation and historical promotion remain recorded. See the
-[completion audit](../../50-journal/2026-09-06-checklist-completion-audit.md).
-The [first implementation follow-up](../../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
-adds locally handled request and trap evidence but leaves the general
-escaping-effect/kernel-target dependency open. This evidence notice does
-not amend the normative chapters.
+The [completion audit](../../50-journal/2026-09-06-checklist-completion-audit.md)
+historically reopened P050/P053/P057 for effectful filter, order and
+sequential-execution evidence. The
+[0.1.50 target amendment](../closed-capability-kernel/identity-rows-and-comprehension-target.md)
+now supplies closed identity rows, escaping filter execution and enclosing
+handlers. C050 is restored; P053/P057 await their own acceptance passes.
+The retained `0.1.39` chapters and pure implementation remain applicable
+under the amendment's explicit target boundary.
 
 ## Purpose
 

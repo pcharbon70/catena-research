@@ -179,6 +179,7 @@ convention.
 | `EA` | excluded-advanced-type-features | 0.1.44 |
 | `PP` | progress-and-preservation | 0.1.45 |
 | `RC` | selective-receive | 0.1.46 |
+| `CK` | closed-capability-kernel | 0.1.50 |
 | `XB` | exception-boundary | 0.1.47 |
 | `TL` | top-level-effects | 0.1.48 |
 
@@ -251,7 +252,7 @@ sibling compiler repository.
 | `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (7) | compiler-tagged + gated (`f42c958`); all obligations traced |
 | `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (8) | compiler-tagged + gated (`246019f`); all obligations traced |
 | `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
-| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); 11 traced; 3 partial after behavioral-evidence audit |
+| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); 12 traced; 2 partial after C050 target acceptance |
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
 | `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
@@ -2101,7 +2102,7 @@ records additional working-tree evidence in
 | LC-OBL-002 | Fix the grammar's semantic roles and keywords with the adoption boundary at the surface capstone | [`the-surface-contract.md#the-grammars-semantic-roles`](../60-specification/list-comprehensions/the-surface-contract.md#the-grammars-semantic-roles) | c047 #2 | traced |
 | LC-OBL-003 | Require `List A` sources with the excluded-source boundary | [`generator-and-qualifier-rules.md#sources`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#sources) | c047 #3 | traced |
 | LC-OBL-004 | Fix left-to-right depth-first traversal with dependency, once-per-prefix source evaluation, and empty-input behavior | [`generator-and-qualifier-rules.md#traversal`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#traversal) | c047 #4 | traced |
-| LC-OBL-005 | Fix `when` filter semantics: visible effects, false-as-skip, all other failures propagate, no guard fragment | [`generator-and-qualifier-rules.md#filters`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#filters) | c047 #5 | partial |
+| LC-OBL-005 | Ordinary filters preserve effects, false-as-skip, failures and enclosing-handler abort at 0.1.50 | [Fragment checking](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#fragment-checking-and-generated-workers) | c047 capability filter, false-filter trap, outer decline and result-type witnesses | traced |
 | LC-OBL-006 | Consume C044's split: total ordinary generators, `case` mismatch-as-skip, `LCP002`/`LCP003` markers, `M001` reuse | [`generator-and-qualifier-rules.md#the-pattern-generator-split`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#the-pattern-generator-split) | c047 #6 | traced |
 | LC-OBL-007 | Fix left-to-right scope, non-escaping non-recursive bindings, `LCP001` rebinding, `BS001` reuse | [`generator-and-qualifier-rules.md#scope-and-rebinding`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#scope-and-rebinding) | c047 #7 | traced |
 | LC-OBL-008 | Fix exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows | [`evaluation-effects-and-execution.md#exact-order`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#exact-order) | c047 #8 | partial |
@@ -2112,20 +2113,13 @@ records additional working-tree evidence in
 | LC-OBL-013 | Produce the fused tail-recursive worker with linear allocation, source-faithful diagnostics, and cost honesty | [`elaboration-and-lowering.md#the-fused-worker`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-fused-worker) | c047 #13 | traced |
 | LC-OBL-014 | Keep the contract deterministic and outside unowned claims with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/list-comprehensions/diagnostics-and-conformance.md#abstract-public-boundaries) | c047 #14 | traced |
 
-Comprehension coverage is 11 `traced`, 3 `partial`, and 0 untraced
+Comprehension coverage is 12 `traced`, 2 `partial`, and 0 untraced
 obligations. The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence)
-reopens P050/P053/P057: `c047 #5` lacks effect/failure witnesses, and
-`c047 #8`/`#12` inspect generated strings and API absence without executing
-an effect-bearing comprehension. The dedicated
-gate rejects unknown identifiers and fails if any `LC-OBL-*` identifier
-lacks a focused tag.
-
-Subsequent locally handled request tests now cover source/filter/binding/yield
-order, empty sources, false-filter effects and terminal trap prefixes on
-reference and BEAM. The old structural tests are labeled accordingly and the
-gate inventories both test files. General escaping effects and enclosing
-handler abort remain partial pending the explicit kernel-target refinement;
-the execution journal records the row-equation evidence and selected next step.
+historically reopened P050/P053/P057. The 0.1.50 target now discharges
+C050's escaping-filter and enclosing-handler boundary; LC-OBL-005 is traced.
+LC-OBL-008 and LC-OBL-012 remain partial pending their separate acceptance
+passes for context/pattern and order-sensitive observations. The complete
+closed-target implementation has its own CK registry below.
 
 ## Numeric relationships registry (`NR`, 0.1.40)
 
@@ -2444,3 +2438,22 @@ lacks a focused tag.
   incrementally.
 - Whether the `SHOULD`/`MAY`/declarative/definitions follow-up is a new
   checklist item or a sub-item of C011.
+
+## Closed capability-kernel registry (`CK`, 0.1.50)
+
+The [normative target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) defines the compound boundary. Evidence is
+in sibling `kernel_capability_integration_test.exs`, `kernel_capability_row_test.exs`,
+`kernel_capability_binding_test.exs`, and `c047_capability_comprehension_test.exs`.
+The tag-inventory test is bookkeeping, not semantic proof. Tests use the
+production deterministic BEAM compiler and the independent reference stepper.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CK-OBL-001 | Exact selection and retained-format separation | [Input](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#input-and-selection) | registered boundary test, old selection and metadata | traced |
+| CK-OBL-002 | Structural identity and same-family descriptor consistency | [Input](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#input-and-selection) | identity properties and two-slot handler witness | traced |
+| CK-OBL-003 | Closed identity rows and simultaneous instantiation | [Rows](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#identity-rows-and-lexical-scope) | row laws, subtraction, substitution and malformed rows | traced |
+| CK-OBL-004 | Lexical scope, fresh handling and escape rejection | [Scope](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#identity-rows-and-lexical-scope) | ambient/escaping rejection and enclosing abort | traced |
+| CK-OBL-005 | Independent context and fragment row checking | [Probes](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#fragment-checking-and-generated-workers) | understated/overstated rows and recursive-context rejection | traced |
+| CK-OBL-006 | Worker arrow stages and whole-traversal handler scope | [Workers](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#fragment-checking-and-generated-workers) | exact nested traces, all first/last failures, result-type change | traced |
+| CK-OBL-007 | Independent verification and identity-aware CPS | [Verification](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#verification-and-beam-artifacts) | forged core and recursive reference/BEAM agreement | traced |
+| CK-OBL-008 | Fully handled entry and distinct artifact | [Artifact](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#verification-and-beam-artifacts) | unhandled/latent entry rejection and production metadata | traced |

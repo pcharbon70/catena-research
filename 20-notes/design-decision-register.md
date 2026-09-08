@@ -1048,3 +1048,12 @@ recommendations above. All four selected A options are now durable in the
 and [September 8 implementation evidence](../50-journal/2026-09-08-capability-kernel-integration.md).
 There is no override of those recommendations. CK-I05 through CK-I07 in the
 journal record the emerging sequencing, witness and archive-layout decisions.
+
+## Completion-plan execution links: filter remediation
+
+CP-050-1 through CP-050-3 and the selected supporting CP-053 effect/row choices
+are implemented in the [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) and the
+[September 8 journal](../50-journal/2026-09-08-capability-kernel-integration.md).
+Their original four-option rows remain unchanged. The journal records CK-I11
+through CK-I20 as emerging implementation decisions. C050 is the first
+per-gap acceptance; P053/P057 follow independently using the shared target.

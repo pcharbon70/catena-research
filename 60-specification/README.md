@@ -220,6 +220,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Closed Capability Kernel](closed-capability-kernel/README.md) — the normative
+  0.1.50 identity-row target and verified comprehension artifact boundary.
+
 - [Selective Receive Correction](selective-receive-correction/README.md) — the
   normative 0.1.49 waiting and scan-cost amendment with explicit historical boundaries.
 

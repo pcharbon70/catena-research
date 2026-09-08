@@ -27,6 +27,10 @@ dormant-witness pattern of C035.
 
 The rules apply only to source-language revision `0.1.39`.
 
+> **Non-normative note.**
+> The [0.1.50 target amendment](../closed-capability-kernel/identity-rows-and-comprehension-target.md#status-and-authority)
+> explicitly replaces this retained target for the new compound-input selection.
+
 ## The qualifier-tree target
 
 > **Normative definition.**
