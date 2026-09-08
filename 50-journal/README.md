@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Typed Supervision Workbench](2026-09-08-typed-supervision.md) — C089 model, lifecycle repairs, checked artifact decisions and completion evidence.
+
 - [Local Protocol Contract Implementation](2026-09-08-local-protocol-contracts.md) — completed C087 decisions, schema, model, compiled application and runtime evidence.
 
 - [Outcome Contract Implementation](2026-09-08-outcome-contracts.md) — C103 implementation alternatives, compiler repairs and outcome evidence.
