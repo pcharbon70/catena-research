@@ -236,7 +236,7 @@ decision alternatives above intact.
 | --- | --- | --- |
 | M0 planning | Complete | All 141 items, 392 decisions and 1,568 alternatives verified; register and archive validated. |
 | M1 first implementation | Complete within its bounded scope | Backend call/handler repairs and real locally handled comprehension traces applied in `../catena`; 624 full-suite tests, clean compilation, formatting and escript build pass. The journal records the remaining general-effect boundary. |
-| M1 general comprehension effects | C050/C053 complete; P057 acceptance next | The 0.1.50 closed capability target now checks fragment rows, preserves enclosing handlers and emits distinct BEAM artifacts. Exact C010 remains unchanged. |
+| M1 general comprehension effects | C050/C053/C057 complete | The 0.1.50 closed capability target now checks fragment rows, preserves enclosing handlers and emits distinct BEAM artifacts. Exact C010 remains unchanged. |
 | M1 receive resolution | Complete at 0.1.49 | Explicit amendment, exact lifecycle registration, and stepper/BEAM selection, residual-mailbox and waiting witnesses; see the September 8 journal. |
 | M2–M7 | Planned | Follow dependencies and per-item gates; no claim of implementation from planning. |
 | M8 vocabulary and grammar | Held by user scope | Keep preparation semantic; return to joint design only after the hold is released. |

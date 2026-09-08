@@ -1314,6 +1314,6 @@ The [0.1.50 closed capability target](../60-specification/closed-capability-kern
 for its explicit compound input. C050's escaping filters and whole-traversal
 handler abort now have reference/production-BEAM evidence, with independent
 fragment checks. C053 adds verified context and dependent-pattern ordering;
-P057 retains its order-sensitive handler acceptance pass. The
+C057 adds a noncommuting handler result that rejects reordered execution. The
 [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
 records the staged completion and publication workflow.

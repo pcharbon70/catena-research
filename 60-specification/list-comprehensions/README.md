@@ -18,7 +18,7 @@ historically reopened P050/P053/P057 for effectful filter, order and
 sequential-execution evidence. The
 [0.1.50 target amendment](../closed-capability-kernel/identity-rows-and-comprehension-target.md)
 now supplies closed identity rows, escaping filter execution and enclosing
-handlers. C050 and C053 are restored; P057 awaits its order-sensitive acceptance pass.
+handlers. C050, C053 and C057 are restored by their separate executable acceptance passes.
 The retained `0.1.39` chapters and pure implementation remain applicable
 under the amendment's explicit target boundary.
 
