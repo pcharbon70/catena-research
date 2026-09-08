@@ -143,6 +143,10 @@ occupies `0.1.52`. It adds explicit owned children and managed relationships
 without changing raw spawn or admitting general time, supervision or foreign
 ownership.
 
+The [cancellation/time target](60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md)
+occupies `0.1.53`. It fills prior timeout reservations only within that compound
+target and preserves exact `0.1.52` admission, old interfaces and signed formats.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

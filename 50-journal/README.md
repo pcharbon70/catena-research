@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Cancellation and Time Admission](2026-09-08-cancellation-and-time.md) — G088 decisions, exact deadline experiments and publication evidence after C084.
+
 - [Language Completion: Owned Task Lifetimes](2026-09-08-owned-task-lifetimes.md) — records process relationship, structured ownership and cancellation decisions with their implementation gates.
 
 - [Language Completion: Resource Lifetime](2026-09-08-resource-lifetime.md) — records resource ownership, cleanup, cancellation and failure-transition decisions and their implementation gates.

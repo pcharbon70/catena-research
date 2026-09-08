@@ -1075,3 +1075,5 @@ records RL-I01–RL-I06 and keeps G080 open until integration evidence exists.
 C080 execution decisions RL-I01–RL-I19 are recorded in the [resource journal](../50-journal/2026-09-08-resource-lifetime.md); the selected bounded contract is durable in [owned lifetime and mandatory cleanup](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md).
 
 P084/G088 execution begins with OT-I01–OT-I06 in the [owned task journal](../50-journal/2026-09-08-owned-task-lifetimes.md), preserving the original CP-084 and CP-088 recommendations.
+
+G088 continues the selected CP-088 recommendations in the [cancellation and time journal](../50-journal/2026-09-08-cancellation-and-time.md), beginning with opaque deadline and exact conversion decisions TM-I01–TM-I03.
