@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [OTP Compatibility Implementation](2026-09-08-otp-compatibility.md) — C099 measured toolchain, required probes and artifact-loading evidence.
+
 - [Typed Supervision Workbench](2026-09-08-typed-supervision.md) — C089 model, lifecycle repairs, checked artifact decisions and completion evidence.
 
 - [Local Protocol Contract Implementation](2026-09-08-local-protocol-contracts.md) — completed C087 decisions, schema, model, compiled application and runtime evidence.
