@@ -147,6 +147,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "closed-capability-kernel": "0.1.50",
     "resource-scopes": "0.1.51",
     "process-lifetimes": "0.1.52",
+    "cancellation-and-time": "0.1.53",
     "exception-boundary": "0.1.47",
     "top-level-effects": "0.1.48",
 }

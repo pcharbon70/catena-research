@@ -2503,3 +2503,21 @@ supply the evidence. General time tests remain experimental G088 work.
 | OT-OBL-010 | Trapping selection and restoration | [Links](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#linked-propagation-and-trapping) | monitor_kernel real handler abandonment; managed_reference ignored normal exit; lifecycle delivery selection | traced |
 | OT-OBL-011 | Safe points and bounded shutdown | [Cancellation](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#cancellation-and-shutdown-bounds) | kernel virtual expiry and recursive cancellation; runtime forced loss and cleanup; instrument automatic polling | traced |
 | OT-OBL-012 | Capability isolation and separate control channels | [Ownership](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#static-ownership-and-capability-boundary) | kernel parent-handler rejection; managed_kernel raw-context rejection and selected receive envelopes | traced |
+
+## Cancellation and time registry (`TM`, 0.1.53)
+
+The [time contract](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md)
+defines C088. Witnesses are in sibling `task_time_kernel_test.exs` and
+`task_time_runtime_test.exs`, with inherited lifetime/expiry evidence in the
+owned-task and resource suites. The separate tag inventory is bookkeeping.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| TM-OBL-001 | Exact verified deterministic artifact and old-boundary rejection | [Artifacts](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#diagnostics-artifacts-and-conformance) | time_kernel selected artifacts, wrong selection and forged evidence | traced |
+| TM-OBL-002 | Exact duration, large values and virtual eligibility | [Units](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#durations-and-local-origins) | time_kernel positive/negative deadlines; time_runtime large exact conversion | traced |
+| TM-OBL-003 | Once-before-scan, zero-time queued match and mailbox preservation | [Receive](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#timed-selective-receive) | time_kernel effectful duration, zero timeout and fallback preservation | traced |
+| TM-OBL-004 | Opaque origin and shared absolute budget | [Origins](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#durations-and-local-origins) | time_kernel repeated absolute waits and escape rejection; time_runtime foreign/ended/forged origin | traced |
+| TM-OBL-005 | Owned blocking and post-wait cancellation | [Cancellation](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#cancellation-and-completion-choices) | time_kernel raw actor with explicit owned scope and post-wait interruption; retained recursive cancellation | traced |
+| TM-OBL-006 | Single selected branch/completion across races | [Choices](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#cancellation-and-completion-choices) | time_kernel reply-before/after selection and post-wait interruption; managed_reference selected linked failure; task_kernel expiry races | traced |
+| TM-OBL-007 | Masked cleanup, expiry and foreign exclusion | [Cleanup](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#masking-expiry-and-foreign-boundaries) | time_runtime repeated cancellation during blocked finalization; task_runtime noncooperative forced shutdown | traced |
+| TM-OBL-008 | No timer leakage or rejected-message loss | [Waiting](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md#relative-and-absolute-waiting) | time_runtime mailbox inspection; time_kernel fallback preservation and nested absolute waits | traced |

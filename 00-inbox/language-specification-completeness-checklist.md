@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **91 complete, 31 partial, 17 gaps, and 2
+The current checkboxes total **92 complete, 31 partial, 16 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.53`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.54`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 2 | 3 | 4 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 3 | 3 | 3 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
 | 12. Standard library contract | 0 | 8 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **91** | **31** | **17** | **2** | **141** |
+| **Total** | **92** | **31** | **16** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -684,7 +684,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   supplies complete `EN-OBL-001`–`EN-OBL-010` coverage with 342 passing
   tests through the manifest decoder, package linker validation, and
   `Catena.Entry.launch/2`. Supervision and process lifetime remain
-  C084/G089; cancellation remains G088; CLI and host-process boundaries
+  C084/G089; cancellation remains C088; CLI and host-process boundaries
   remain P121; distribution and upgrades remain G091/G092. C028
   subsequently fixes entry-set compatibility.
 - [x] **C028 — Complete — API and ABI compatibility.**
@@ -915,7 +915,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   discarded mailbox), the classifier partition, and the reserved-kind
   absences. Zero new diagnostic families. Outcome-type contents remain
   P103's; foreign calls G095/G096's; process death C084's;
-  cancellation G088's.
+  cancellation C088's.
 - [x] **C037 — Complete — resource and allocation observability.**
   The normative
   [0.1.33 observability specification](../60-specification/resource-observability/README.md),
@@ -1325,7 +1325,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   cover release failure precedence, deadline races and local actor return.
   Forced process/VM loss has no cleanup guarantee; process-affine foreign
   resources remain unadmitted until their adapter exists. General task/time
-  propagation remains G088. See the
+  propagation remains C088. See the
   [implementation evidence](../50-journal/2026-09-08-resource-lifetime.md).
 - [x] **C081 — Complete — exception boundary.** Normative `0.1.47` fixes the
   partition: typed failure is a value (P103's contents); exception-style
@@ -1335,7 +1335,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   (C036 unchanged). Panics are traps with the reserved assertion/panic
   kind entering with their producers. Process exits route to C084,
   foreign failures map to trap at the visible boundary (G095/G096 with
-  C067's rule), cancellation to G088, library faults to P105, outcome
+  C067's rule), cancellation to C088, library faults to P105, outcome
   types to P103; C044's reopening door is the only amendment route for a
   language exception form. Compiler witnesses on existing machinery
   (`e0f2a9e`): the declining-handler pattern (`0`, not `100`, both
@@ -1370,7 +1370,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   symmetric managed links, trapping regions and bounded cleanup. Reference and
   BEAM witnesses cover registration/death, unlink generations, first failure,
   sibling cancellation, parent cancellation during acquisition, scoped handles,
-  capability isolation and deterministic artifacts. General time remains G088;
+  capability isolation and deterministic artifacts. General time remains C088;
   supervision is G089 and distributed transport G091. See the
   [implementation evidence](../50-journal/2026-09-08-owned-task-lifetimes.md).
 - [ ] **P085 — Partial — message semantics.** C010 defines Unit-returning
@@ -1388,15 +1388,22 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   candidates without a universal rescan or fairness promise. The
   [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
   records verification. Historical 0.1.46 text and formats remain preserved.
-  Public syntax remains P109, timeouts/cancellation G088, typed protocols
+  Public syntax remains P109, timeouts/cancellation C088, typed protocols
   P087, and send-side extensions P085.
 - [ ] **P087 — Partial — typed protocols.** C010 checks `Process M` handles,
   a closed sendable mailbox type, send payloads, and digest-bound exported
   process signatures. Decide whether request/reply sequencing, protocol
   state, and protocol evolution receive static tracking or explicit library
   contracts; payload typing alone does not establish those guarantees.
-- [ ] **G088 — Gap — cancellation and time.** Define cancellation propagation,
-  deadlines, monotonic time, sleep, timer races, and cleanup.
+- [x] **C088 — Complete — cancellation and time.** The
+  [0.1.53 contract](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md)
+  defines exact durations, opaque scope-local deadlines, sleep, total timed
+  receive and cancellation boundaries. Selected reference/BEAM witnesses cover
+  once-before-scan evaluation, queued zero-time matches, skipped messages,
+  shared absolute budgets, origin rejection, deadline/reply choices, masked
+  finalizer expiry and no timer-message leaks. Foreign interruption and
+  distributed clocks remain explicitly outside this target. See the
+  [implementation evidence](../50-journal/2026-09-08-cancellation-and-time.md).
 - [ ] **G089 — Gap — supervision.** Specify which OTP supervision concepts are direct
   language features, standard-library APIs, generated specifications, or plain
   Erlang interoperability.
@@ -1742,7 +1749,7 @@ current ledger rather than the earlier pre-consolidation plan.
    the specification, evidence registry, inquiries, and checkbox states
    consistent; no new feature is needed to repair those claims.
 2. **Resource lifetime and the public runtime.** Specify G080 together with
-   the cancellation interface G088 needs, then complete C084/P085/P087/P090
+   the cancellation interface C088 needs, then complete C084/P085/P087/P090
    and G089. Coordinate G091/G092 with the foreign and compatibility layers.
 3. **BEAM interoperability and library contracts.** Complete P093–P108,
    including foreign admission, environmental capability delivery, and
