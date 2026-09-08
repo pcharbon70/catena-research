@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Local Protocol Contract Implementation](2026-09-08-local-protocol-contracts.md) — completed C087 decisions, schema, model, compiled application and runtime evidence.
+
 - [Outcome Contract Implementation](2026-09-08-outcome-contracts.md) — C103 implementation alternatives, compiler repairs and outcome evidence.
 
 - [Cancellation and Time Admission](2026-09-08-cancellation-and-time.md) — G088 decisions, exact deadline experiments and publication evidence after C084.

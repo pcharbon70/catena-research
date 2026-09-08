@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **93 complete, 30 partial, 16 gaps, and 2
+The current checkboxes total **94 complete, 29 partial, 16 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.55`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.56`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1378,7 +1378,9 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   FIFO, and permitted cross-sender interleaving. Complete mailbox
   growth/exhaustion, copying and sharing obligations at foreign and runtime
   boundaries, and remote delivery. Preserve the kernel's typed send and
-  message-order guarantees when admitting those extensions.
+  message-order guarantees when admitting those extensions. C087 now supplies
+  an explicit local request-admission bound above raw send; remote capacity
+  and foreign sharing remain open.
 - [x] **C086 — Complete — selective receive.** The [0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md)
   repairs the rejected-prefix starvation contradiction with explicit
   applicability and migration. A receive bypasses rejected messages to select
@@ -1390,11 +1392,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   records verification. Historical 0.1.46 text and formats remain preserved.
   Public syntax remains P109, timeouts/cancellation C088, typed protocols
   P087, and send-side extensions P085.
-- [ ] **P087 — Partial — typed protocols.** C010 checks `Process M` handles,
-  a closed sendable mailbox type, send payloads, and digest-bound exported
-  process signatures. Decide whether request/reply sequencing, protocol
-  state, and protocol evolution receive static tracking or explicit library
-  contracts; payload typing alone does not establish those guarantees.
+- [x] **C087 — Complete — typed protocols.** The
+  [0.1.55 explicit local library contract](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md)
+  binds closed payloads and role schemas to verified process interfaces,
+  rejects incompatible peers before application traffic, and enforces distinct
+  correlations, one terminal result, observation-bound admission credit and
+  owned cleanup. Checked payload producers and exact selected artifacts are
+  exercised by compiled client/actor exchange and independent model evidence.
+  Wrong payloads, nominal owner mismatches, late/double replies, cancellation,
+  timeout and peer loss have explicit outcomes. This closes the chosen library
+  contract, not static session fidelity or G091 remote transport. See the
+  [implementation evidence](../50-journal/2026-09-08-local-protocol-contracts.md).
 - [x] **C088 — Complete — cancellation and time.** The
   [0.1.53 contract](../60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md)
   defines exact durations, opaque scope-local deadlines, sleep, total timed

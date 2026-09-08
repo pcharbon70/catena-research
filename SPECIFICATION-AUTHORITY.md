@@ -149,6 +149,8 @@ target and preserves exact `0.1.52` admission, old interfaces and signed formats
 
 The [outcome contract](60-specification/outcome-contracts/values-sequencing-and-validation.md) occupies `0.1.54`. It adds explicit ordinary library meanings without a new executable frontend or persisted format.
 
+The [local protocol contract](60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md) occupies `0.1.55`. It adds an exact checked library-application boundary and preserves old kernel interfaces and signed formats.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is
