@@ -159,7 +159,7 @@ Normative C086 uses `0.1.46` for selective receive. Normative
 C081 uses `0.1.47` for the exception boundary. Normative C082 uses
 `0.1.48` for top-level effects. The C086 selective-receive correction uses
 `0.1.49`. The closed capability-kernel and comprehension target uses
-`0.1.50`. Normative C084 uses `0.1.52` for owned tasks and managed relationships. Normative C088 uses `0.1.53` for cancellation and time. Normative C103 uses `0.1.54` for outcome contracts. Normative C087 uses `0.1.55` for local protocol contracts. The next unused semantic patch is `0.1.56` unless an approved versioning policy explicitly
+`0.1.50`. Normative C084 uses `0.1.52` for owned tasks and managed relationships. Normative C088 uses `0.1.53` for cancellation and time. Normative C103 uses `0.1.54` for outcome contracts. Normative C087 uses `0.1.55` for local protocol contracts. Normative C089 uses `0.1.56` for typed supervision. The next unused semantic patch is `0.1.57` unless an approved versioning policy explicitly
 replaces this temporary convention.
 Compiler-package releases, external software versions, and historical
 artifact observations are separate version axes.

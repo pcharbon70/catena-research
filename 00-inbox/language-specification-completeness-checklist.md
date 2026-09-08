@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **94 complete, 29 partial, 16 gaps, and 2
+The current checkboxes total **95 complete, 30 partial, 14 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.56`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.57`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1412,9 +1412,16 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   finalizer expiry and no timer-message leaks. Foreign interruption and
   distributed clocks remain explicitly outside this target. See the
   [implementation evidence](../50-journal/2026-09-08-cancellation-and-time.md).
-- [ ] **G089 — Gap — supervision.** Specify which OTP supervision concepts are direct
-  language features, standard-library APIs, generated specifications, or plain
-  Erlang interoperability.
+- [x] **C089 — Complete — supervision.** The
+  [0.1.56 library contract](../60-specification/typed-supervision/checked-trees-and-lifecycle.md)
+  defines three restart strategies, three child restart classes, explicit
+  intensity and shutdown bounds, fresh checked worker entries, deterministic
+  origin-bound OTP child artifacts and managed owner cleanup. Model and native
+  witnesses cover ordered restart/shutdown, temporary children, stale identity,
+  startup rollback, restart storms, forced termination and owner observation.
+  The supported static-worker inventory explicitly excludes arbitrary callbacks,
+  nested supervisor descriptions and hot upgrades. See the
+  [implementation evidence](../50-journal/2026-09-08-typed-supervision.md).
 - [ ] **P090 — Partial — scheduler observability.** C010 specifies
   nondeterministic runnable-process selection, permitted interleavings,
   quiescence, and no fairness guarantee. Complete the public contract for
@@ -1448,7 +1455,9 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   format provably refuses non-finite payloads
   ([probes](../50-journal/2026-08-31-beam-float-boundary-probes.md)); any other
   entry path must refuse or normalize non-finite floats the same way.
-- [ ] **G096 — Gap — foreign calls and callbacks.** Define syntax, effect declarations,
+- [ ] **P096 — Partial — foreign calls and callbacks.** C089 admits a narrow
+  checked OTP lifecycle adapter with verified process entries and artifacts.
+  Complete general call/callback syntax, effect declarations,
   trust, exceptions, blocking behavior, cancellation, ownership, and callback
   lifetime.
 - [ ] **P097 — Partial — binaries, maps, PIDs, ports, references, and funs.**

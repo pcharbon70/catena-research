@@ -2557,3 +2557,20 @@ are not a claim that it executes native peers.
 | LP-OBL-006 | Owned cleanup and peer loss | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#time-and-owned-lifetime) | protocol_session: peer death, cancellation joins worker, abandoned aliases and stale handle | traced |
 | LP-OBL-007 | Ordinary monitor variant composition | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#representation-composition-and-evidence) | task_monitor_kernel: selected typed observation match agrees on stepper/BEAM; task_time_kernel regression | traced |
 | LP-OBL-008 | Independent model and compiled peers | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#representation-composition-and-evidence) | protocol_program: model/native agreement; protocol_session: compiled client exchanges with compiled typed actor | traced |
+
+## Typed supervision registry (`SU`, 0.1.56)
+
+The [contract](../60-specification/typed-supervision/checked-trees-and-lifecycle.md)
+and [journal](../50-journal/2026-09-08-typed-supervision.md) define the supported
+static worker subset and narrow lifecycle admission.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| SU-OBL-001 | Exact library selection and historical gates | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#status-and-authority) | supervision_description: all earlier selections and forged profile rejected; BEAM selection metadata | traced |
+| SU-OBL-002 | Strategy and child policy matrix | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#supported-policy-inventory) | supervision_model and supervision_runtime: three strategies, temporary collateral removal, transient normal completion | traced |
+| SU-OBL-003 | Checked entries and fresh provisioning | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#child-entry-and-provisioning) | supervision_description: wrong/parameterized child, captured provisioning, duplicate ID; runtime fresh process per restart | traced |
+| SU-OBL-004 | Startup acknowledgment and rollback | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#child-entry-and-provisioning) | supervision_runtime: failed start rolls back previous child, repeated immediate body failure | traced |
+| SU-OBL-005 | Intensity and stale generation | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#restart-intensity-and-generations) | supervision_model: inclusive window and stale identity; supervision_runtime: restart storm terminates tree | traced |
+| SU-OBL-006 | Bounded shutdown and cleanup order | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#shutdown-and-owned-integration) | supervision_runtime: reverse stop order and noncooperative zero-grace forced termination; description rejects bad bounds | traced |
+| SU-OBL-007 | Managed owner and tree failure | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#shutdown-and-owned-integration) | supervision_runtime: trapped tree loss, already-dead root join and child cleanup before owner result | traced |
+| SU-OBL-008 | Origin-bound deterministic artifacts | [Rule](../60-specification/typed-supervision/checked-trees-and-lifecycle.md#generated-artifacts-and-compatibility) | supervision_description: byte/manifest tampering, deterministic compile, loaded typed worker restart and owned artifact startup | traced |

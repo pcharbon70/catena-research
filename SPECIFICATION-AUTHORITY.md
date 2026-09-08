@@ -151,6 +151,8 @@ The [outcome contract](60-specification/outcome-contracts/values-sequencing-and-
 
 The [local protocol contract](60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md) occupies `0.1.55`. It adds an exact checked library-application boundary and preserves old kernel interfaces and signed formats.
 
+The [typed supervision contract](60-specification/typed-supervision/checked-trees-and-lifecycle.md) occupies `0.1.56`, admitting checked static worker descriptions and a narrow owned OTP lifecycle adapter while preserving existing interface and signed formats.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is
