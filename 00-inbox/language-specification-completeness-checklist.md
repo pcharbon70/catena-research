@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **90 complete, 32 partial, 17 gaps, and 2
+The current checkboxes total **91 complete, 31 partial, 17 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.52`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.53`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 1 | 4 | 4 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 2 | 3 | 4 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
 | 12. Standard library contract | 0 | 8 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **90** | **32** | **17** | **2** | **141** |
+| **Total** | **91** | **31** | **17** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -361,7 +361,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   [`841af5ee342a31ff4769749bbdaa18a675b1bb21`](https://github.com/pcharbon70/catena/commit/841af5ee342a31ff4769749bbdaa18a675b1bb21)
   on draft PR [#88](https://github.com/pcharbon70/catena/pull/88), with 179
   passing tests and `IL-OBL-001`–`IL-OBL-012` traceability. Mailbox capacity
-  remains deployment-defined under P084/P085/P129 without permitting silent
+  remains deployment-defined under C084/P085/P129 without permitting silent
   per-sender reordering, retargeting, or live-target message loss. This
   repository-governance milestone creates no language revision.
 
@@ -684,7 +684,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   supplies complete `EN-OBL-001`–`EN-OBL-010` coverage with 342 passing
   tests through the manifest decoder, package linker validation, and
   `Catena.Entry.launch/2`. Supervision and process lifetime remain
-  P084/G089; cancellation remains G088; CLI and host-process boundaries
+  C084/G089; cancellation remains G088; CLI and host-process boundaries
   remain P121; distribution and upgrades remain G091/G092. C028
   subsequently fixes entry-set compatibility.
 - [x] **C028 — Complete — API and ABI compatibility.**
@@ -888,7 +888,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   (`comparable?/1`, `orderable?/1`, `compare/2`), tuple and
   constructor-value equality agreement on evaluator and BEAM, `EQN001`
   exclusions, monomorphism rejections, and the guard split. C037 subsequently fixes identity observability and C040 the
-  Text/Character/Bytes comparison entries. Public handle extensions remain P084.
+  Text/Character/Bytes comparison entries. Public handle extensions remain C084.
 - [x] **C036 — Complete — runtime failure taxonomy.**
   The normative
   [0.1.32 failure specification](../60-specification/runtime-failure-taxonomy/README.md),
@@ -903,7 +903,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   unobservable through handles, uninterceptable); the six categories
   map — explicit panic is the kernel `trap` expression, typed failure
   is an ordinary value (P103 owns the outcome types), VM
-  termination is operational (P084/G092/P121), and arithmetic
+  termination is operational (C084/G092/P121), and arithmetic
   faults, assertions, and foreign exceptions are reserved kinds
   entering with their producers classified as `trap(reason)`; and the
   per-producer entry rule forbids any second outcome class. Sibling
@@ -914,7 +914,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   BEAM, the process-context witness (trapping child, spared spawner,
   discarded mailbox), the classifier partition, and the reserved-kind
   absences. Zero new diagnostic families. Outcome-type contents remain
-  P103's; foreign calls G095/G096's; process death P084's;
+  P103's; foreign calls G095/G096's; process death C084's;
   cancellation G088's.
 - [x] **C037 — Complete — resource and allocation observability.**
   The normative
@@ -941,7 +941,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   and BEAM, closure-allocation irrelevance, fresh process identity
   per spawn, handle non-comparability, the finalization absence, and
   the stack boundary. Zero new diagnostic families. Handle operations
-  beyond the kernel's remain P084's; message-copy details P085's;
+  beyond the kernel's remain C084's; message-copy details P085's;
   resource scopes G080's; foreign finalization G095's;
   debugging tools G124's.
 - [x] **C038 — Complete — compile-time evaluation.**
@@ -993,7 +993,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   three comparable and orderable (lexicographic scalar order for
   Text and Character, byte order for Bytes); list, map, and set as
   library territory (P101 declares them as ordinary nominal ADTs);
-  and references excluded (P084). The types live at the meaning and
+  and references excluded (C084). The types live at the meaning and
   classifier level until a frontend encodes their literals. Sibling
   compiler commit
   [`44f7dd22b57757accc1da654bf4e99b93db728b4`](https://github.com/pcharbon70/catena/commit/44f7dd22b57757accc1da654bf4e99b93db728b4)
@@ -1333,7 +1333,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   its result, visible in the effect row, a library idiom over unchanged
   C005; and `trap(reason)` is the one terminal mechanism, never catchable
   (C036 unchanged). Panics are traps with the reserved assertion/panic
-  kind entering with their producers. Process exits route to P084,
+  kind entering with their producers. Process exits route to C084,
   foreign failures map to trap at the visible boundary (G095/G096 with
   C067's rule), cancellation to G088, library faults to P105, outcome
   types to P103; C044's reopening door is the only amendment route for a
@@ -1351,7 +1351,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   capabilities reach an entry only as explicit typed values through a
   channel P106's slice defines and justifies — deny-able, never ambient —
   with the zero-argument and effect-closed rules binding until then.
-  P084's supervision interprets process failure, never requests; the
+  C084's supervision interprets process failure, never requests; the
   door requires entry-form widening to amend C027 explicitly with
   who-interprets-what stated. Compiler witnesses on C027's existing
   machinery (`e962b73`): the launch re-pin (completed twice) and the
@@ -1364,13 +1364,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 
 ## 10. Processes, concurrency, and distribution
 
-- [ ] **P084 — Partial — process creation and lifetime.** C010 defines local
-  spawn, fresh typed handles, argument order, isolated capability state,
-  normal completion, and process-local traps with discarded mailboxes;
-  its stepper and BEAM tests exercise those rules. Complete the public
-  lifetime contract for links, monitors, exit trapping, parent-child
-  relationships, and structured task scopes. The local kernel does not
-  establish OTP supervision or general resource cleanup.
+- [x] **C084 — Complete — process creation and lifetime.** The
+  [0.1.52 lifetime contract](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md)
+  retains raw isolated spawn and adds checked owned task scopes, typed monitors,
+  symmetric managed links, trapping regions and bounded cleanup. Reference and
+  BEAM witnesses cover registration/death, unlink generations, first failure,
+  sibling cancellation, parent cancellation during acquisition, scoped handles,
+  capability isolation and deterministic artifacts. General time remains G088;
+  supervision is G089 and distributed transport G091. See the
+  [implementation evidence](../50-journal/2026-09-08-owned-task-lifetimes.md).
 - [ ] **P085 — Partial — message semantics.** C010 defines Unit-returning
   local send, dead-target discard, immutable sendable messages, per-sender
   FIFO, and permitted cross-sender interleaving. Complete mailbox
@@ -1667,7 +1669,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   component theorems plus a composition lemma that is a routed
   proof obligation owned by the formal-validation program, never a
   claim; and conditional extensions (public processes on
-  P084/P085's own statement, foreign values by construction of
+  C084/P085's own statement, foreign values by construction of
   C067's typed boundary). Compiler witnesses on existing machinery
   (`5525662`): handler programs agreeing on stepper and BEAM, the
   trap fixture, the unhandled-request rejection, and the kernel
@@ -1740,7 +1742,7 @@ current ledger rather than the earlier pre-consolidation plan.
    the specification, evidence registry, inquiries, and checkbox states
    consistent; no new feature is needed to repair those claims.
 2. **Resource lifetime and the public runtime.** Specify G080 together with
-   the cancellation interface G088 needs, then complete P084/P085/P087/P090
+   the cancellation interface G088 needs, then complete C084/P085/P087/P090
    and G089. Coordinate G091/G092 with the foreign and compatibility layers.
 3. **BEAM interoperability and library contracts.** Complete P093–P108,
    including foreign admission, environmental capability delivery, and

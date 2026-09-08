@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Process Lifetimes](process-lifetimes/README.md) — normative C084 owned-task and managed-relationship contract at exact `0.1.52`.
+
 - [Resource Scopes](resource-scopes/README.md) — local owned lifetime, cleanup, scoped handles and cancellation/deadline interfaces.
 
 - [Closed Capability Kernel](closed-capability-kernel/README.md) — the normative

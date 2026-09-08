@@ -138,6 +138,11 @@ The [owned-resource target](60-specification/resource-scopes/owned-lifetime-and-
 occupies `0.1.51`. Its explicit cleanup replacement applies only to that
 compound target; retained formats and foreign admission remain unchanged.
 
+The [process-lifetime target](60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md)
+occupies `0.1.52`. It adds explicit owned children and managed relationships
+without changing raw spawn or admitting general time, supervision or foreign
+ownership.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is
