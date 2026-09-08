@@ -145,6 +145,7 @@ PROTOTYPE_SPECIFICATION_VERSIONS = {
     "selective-receive": "0.1.46",
     "selective-receive-correction": "0.1.49",
     "closed-capability-kernel": "0.1.50",
+    "resource-scopes": "0.1.51",
     "exception-boundary": "0.1.47",
     "top-level-effects": "0.1.48",
 }

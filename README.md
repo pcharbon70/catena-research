@@ -271,7 +271,7 @@ normative C086 uses `0.1.46` for selective receive;
 normative C081 uses `0.1.47` for the exception boundary;
 normative C082 uses `0.1.48` for top-level effects;
 and the next
-unused semantic patch is `0.1.51`; the selective-receive correction uses
+unused semantic patch is `0.1.52`; the selective-receive correction uses
 `0.1.49`, and the closed capability-kernel target uses `0.1.50`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
@@ -340,3 +340,5 @@ python3 -m unittest test_validate_archive.py
   for deterministic archive and specification-structure checks
 - [`validate_archive.py`](validate_archive.py) — deterministic archive
   validation
+
+C080 uses `0.1.51` for [owned resource scopes](60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md), including mandatory local cleanup and bounded release.

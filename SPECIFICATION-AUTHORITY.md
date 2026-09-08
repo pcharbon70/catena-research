@@ -134,6 +134,10 @@ The [closed capability-kernel target](60-specification/closed-capability-kernel/
 occupies `0.1.50`. Its explicit replacement of the dormant comprehension
 target does not reinterpret old source, interfaces or signed formats.
 
+The [owned-resource target](60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md)
+occupies `0.1.51`. Its explicit cleanup replacement applies only to that
+compound target; retained formats and foreign admission remain unchanged.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

@@ -132,6 +132,7 @@ convention.
 
 | Area code | Normative area or governance policy | Slice or milestone |
 | --- | --- | --- |
+| `RS` | resource-scopes | 0.1.51 |
 | `TS` | type-system | 0.1.1 |
 | `DP` | data-and-patterns | 0.1.2 |
 | `CC` | clause-conditions | 0.1.3 |
@@ -2457,3 +2458,26 @@ production deterministic BEAM compiler and the independent reference stepper.
 | CK-OBL-006 | Worker arrow stages and whole-traversal handler scope | [Workers](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#fragment-checking-and-generated-workers) | exact nested traces, all first/last failures, result-type change | traced |
 | CK-OBL-007 | Independent verification and identity-aware CPS | [Verification](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#verification-and-beam-artifacts) | forged core and recursive reference/BEAM agreement | traced |
 | CK-OBL-008 | Fully handled entry and distinct artifact | [Artifact](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#verification-and-beam-artifacts) | unhandled/latent entry rejection and production metadata | traced |
+
+## Owned resource registry (`RS`, 0.1.51)
+
+The [owned lifetime contract](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md)
+is normative. Compiler witnesses below are tagged behavioral tests in
+`test/catena/resource_*_test.exs`; the separate inventory test checks tags only.
+The local contract excludes process-affine foreign resources and forced-loss
+cleanup guarantees. General task propagation remains G088.
+
+| Obligation | Requirement | Normative source | Executable witnesses | Status |
+| --- | --- | --- | --- | --- |
+| RS-OBL-001 | Checked exact compound formation | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#compound-input-and-static-semantics) | kernel #1–2 | traced |
+| RS-OBL-002 | Success-only registration | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#acquisition-and-cleanup-order) | execution #4, #6; lifecycle #1, #3 | traced |
+| RS-OBL-003 | Reverse cleanup before continuation and actor exit | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#acquisition-and-cleanup-order) | execution #1, #9; process #1 | traced |
+| RS-OBL-004 | Real handler resume, abandonment and trap | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#outcomes-and-provenance) | execution #1–2, #6–7 | traced |
+| RS-OBL-005 | Primary outcomes, release failure precedence and reentry | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#outcomes-and-provenance) | execution #2–3, #7–9; handle #6; lifecycle #2, #4 | traced |
+| RS-OBL-006 | Scoped identity, reads and no escape/capture | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#compound-input-and-static-semantics) | kernel #1; handle #1–3; lifecycle #5 | traced |
+| RS-OBL-007 | Owned cancellation and cooperative exit | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#local-cancellation-exit-and-deadlines) | handle #4; lifecycle #6; explorer #1 | traced |
+| RS-OBL-008 | Bounded release and eligible deadline races | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#local-cancellation-exit-and-deadlines) | execution #5; lifecycle #7; explorer #2 | traced |
+| RS-OBL-009 | Local actor cleanup and explicit external exclusions | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#host-boundary-and-exclusions) | process #1; handle #5; lifecycle #8 | traced |
+| RS-OBL-010 | Verified deterministic artifact and closed entry | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#artifacts-diagnostics-and-conformance) | kernel #1, #3 | traced |
+
+Witness numbers follow declaration order within the named resource test file.

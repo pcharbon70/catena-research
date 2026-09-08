@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Language Completion: Resource Lifetime](2026-09-08-resource-lifetime.md) — records resource ownership, cleanup, cancellation and failure-transition decisions and their implementation gates.
+
 - [Language Completion: Capability Kernel Integration](2026-09-08-capability-kernel-integration.md) — records the resumed implementation, capability-row decisions, verification and remaining integration gates.
 
 - [Language Completion Plan and First Implementation](2026-09-06-language-completion-plan.md)
