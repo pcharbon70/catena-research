@@ -362,6 +362,7 @@ The evidence route is curated in the
 The [0.1.50 closed capability target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) replaces the earlier target
 for its explicit compound input. C050's escaping filters and whole-traversal
 handler abort now have reference/production-BEAM evidence, with independent
-fragment checks. P053 and P057 keep their separate acceptance passes; the
+fragment checks. C053 adds verified context and dependent-pattern ordering;
+P057 retains its order-sensitive handler acceptance pass. The
 [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
 records the staged completion and publication workflow.

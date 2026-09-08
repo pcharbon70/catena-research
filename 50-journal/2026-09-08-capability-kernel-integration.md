@@ -283,3 +283,35 @@ acceptance passes rather than being inferred from this filter closure.
 This change is prepared for the authorized C050 PR pair on research `main`
 and compiler `rewrite`. Publication and integration-branch synchronization
 precede feature-branch deletion; no scheduled continuation is used.
+
+## C050 publication and P053 acceptance decisions
+
+C050 was merged through [research PR 80](https://github.com/pcharbon70/catena-research/pull/80)
+and [compiler PR 130](https://github.com/pcharbon70/catena/pull/130).
+Research `main` and compiler `rewrite` were checked out and synchronized with
+origin before local and remote feature-branch deletion. The next branch is
+`codex/comprehension-evaluation-order`.
+
+| Decision | Four alternatives explored | Selected recommendation |
+| --- | --- | --- |
+| EO-I01 | A: exercise effectful context definitions at each actual reference, including an earlier dependency and an unused context, with explicit expected events; B: force all contexts eagerly once; C: test context rows only with rejection cases; D: memoize effectful globals during elaboration. | **A, recommended and selected.** Context entries are ordinary definitions under the existing kernel target, not implicit one-time let bindings. Evaluating each reached reference preserves ordinary semantics and exposes ordering or hoisting errors. |
+| EO-I02 | A: add a dependent case-generator with rejected and accepted values and assert exact source/filter/yield prefixes on reference and BEAM; B: compare only its output list; C: test pure pattern rejection only; D: infer events from generated workers. | **A, recommended and selected.** Source effects precede pattern selection; rejected patterns skip the suffix and cannot suppress already executed source effects. Independent expected traces supplement the nested fixture and all-position failures already present. |
+
+| Decision | Four alternatives explored | Selected recommendation |
+| --- | --- | --- |
+| EO-I03 | A: recompute unnecessary case-marker advisories with a non-advisory checking pass at the selected capability target; B: trust the retained pure-target probe even when escaping effects make it reject; C: recognize only wildcard/binder strings syntactically; D: suppress the advisory for every new-target input. | **A, recommended and selected.** The selected checker, including ordinary-generator totality, remains authoritative. Separating core checking from advisory construction avoids recursive advisory work and preserves the C051 diagnostic boundary. |
+
+## C053 verified completion
+
+Four new reference/production-BEAM witnesses cover repeated context evaluation
+with an earlier dependency and an unused definition, a context trap prefix,
+dependent case-pattern skipping with filter effects, and the total-pattern
+advisory under escaping effects. The advisory now probes the selected target
+through a checking-only entry, preserving checker authority without recursively
+constructing advisories. No semantic patch or public syntax is introduced.
+
+`mix test --seed 0` passes **666 tests**. Formatting, production compilation
+with warnings as errors and both diff checks pass. Archive validation passes:
+586 documents, 62 directories, 6670 local links and 721 obligations, now
+**625 traced, 75 partial and 21 untraced**. C053/LC-OBL-008 is complete;
+P057/LC-OBL-012 retains its separate order-sensitive handler acceptance.
