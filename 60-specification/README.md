@@ -220,6 +220,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Local Protocol Contracts](local-protocol-contracts/README.md) — exact `0.1.55` closed schemas, correlated local requests and owned session outcomes for C087.
 - [Outcome Contracts](outcome-contracts/README.md) — normative optional, dependent and accumulating outcome library contract for C103 at `0.1.54`.
 - [Cancellation and Time](cancellation-and-time/README.md) — normative exact-duration, deadline and cancellable-wait contract for C088 at `0.1.53`.
 

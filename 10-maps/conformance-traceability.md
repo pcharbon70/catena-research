@@ -2539,3 +2539,21 @@ records immutable publication evidence.
 | OV-OBL-006 | Explicit elimination and conversions | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#explicit-elimination-and-conversion) | outcome_contract: empty sequence, singleton errors, nested absence and adapter counts | traced |
 | OV-OBL-007 | Separate traps and process exits | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#explicit-elimination-and-conversion) | outcome_contract: throw/exit/arithmetic propagation without interception | traced |
 | OV-OBL-008 | Deterministic implementation and linear stack-safe accumulation | [Rule](../60-specification/outcome-contracts/values-sequencing-and-validation.md#execution-diagnostics-and-limits) | outcome_contract: repeated compilation/linking and 50,001-error sequence | traced |
+
+## Local protocol contract registry (`LP`, 0.1.55)
+
+The [contract](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md)
+and [journal](../50-journal/2026-09-08-local-protocol-contracts.md) define the
+explicit local library boundary. Peer event scripts in the reference model
+are not a claim that it executes native peers.
+
+| Obligation | Meaning | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| LP-OBL-001 | Exact selection and artifact identity | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#status-and-authority) | protocol_program: historical rejection, forged selection and deterministic compile metadata | traced |
+| LP-OBL-002 | Closed schema and pre-payload negotiation | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#schema-and-admission) | protocol_contract and protocol_session: malformed schema, digest/version changes, mismatch without request traffic | traced |
+| LP-OBL-003 | Checked producers and nominal ownership | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#checked-application-boundary) | protocol_program: wrong producer, unknown/duplicate key, bounds, forged evidence and alternate nominal owner | traced |
+| LP-OBL-004 | Correlation and admission credit | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#session-transitions-and-credit) | protocol_model, protocol_session and protocol_program: reversed replies, overload, unread completed credit and observation recovery | traced |
+| LP-OBL-005 | Single terminal result and non-resetting time | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#session-transitions-and-credit) | protocol_model: all reply/cancel/expiry permutations; protocol_session: zero time, invalid/late responses and cancellation | traced |
+| LP-OBL-006 | Owned cleanup and peer loss | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#time-and-owned-lifetime) | protocol_session: peer death, cancellation joins worker, abandoned aliases and stale handle | traced |
+| LP-OBL-007 | Ordinary monitor variant composition | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#representation-composition-and-evidence) | task_monitor_kernel: selected typed observation match agrees on stepper/BEAM; task_time_kernel regression | traced |
+| LP-OBL-008 | Independent model and compiled peers | [Rule](../60-specification/local-protocol-contracts/schemas-sessions-and-outcomes.md#representation-composition-and-evidence) | protocol_program: model/native agreement; protocol_session: compiled client exchanges with compiled typed actor | traced |
