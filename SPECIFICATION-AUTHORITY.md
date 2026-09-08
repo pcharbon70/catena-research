@@ -130,6 +130,10 @@ occupies `0.1.49` after C082 `0.1.48`. Its explicit replacement of the
 conflicting C086 waiting/cost rule applies at `0.1.49` and inherited later
 same-edition selections; it does not retroactively amend `0.1.46`.
 
+The [closed capability-kernel target](60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md)
+occupies `0.1.50`. Its explicit replacement of the dormant comprehension
+target does not reinterpret old source, interfaces or signed formats.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

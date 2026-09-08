@@ -160,3 +160,12 @@ Boolean surface without sharing a safety judgment.
 - Which source-level cost explanation best communicates Cartesian growth?
 - What evidence would justify iterator, stream, zip, binary, builder,
   reduction, query, or parallel extensions?
+
+## Closed target and filter completion
+
+The [0.1.50 closed capability target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) replaces the earlier target
+for its explicit compound input. C050's escaping filters and whole-traversal
+handler abort now have reference/production-BEAM evidence, with independent
+fragment checks. P053 and P057 keep their separate acceptance passes; the
+[implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
+records the staged completion and publication workflow.

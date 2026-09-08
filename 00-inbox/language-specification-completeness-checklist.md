@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **86 complete, 35 partial, 18 gaps, and 2
+The current checkboxes total **87 complete, 34 partial, 18 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.50`. In the audit, 22 gaps
+semantic patch is `0.1.51`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -96,7 +96,7 @@ item is marked complete by this audit.
 | 3. Names, modules, packages, and separate compilation | 8 | 0 | 0 | 0 | 8 |
 | 4. Core expressions and evaluation | 10 | 0 | 0 | 0 | 10 |
 | 5. Data, collections, and patterns | 8 | 0 | 0 | 0 | 8 |
-| 6. List comprehensions, generators, and iteration | 9 | 3 | 0 | 1 | 13 |
+| 6. List comprehensions, generators, and iteration | 10 | 2 | 0 | 1 | 13 |
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 6 | 0 | 1 | 1 | 8 |
@@ -107,7 +107,7 @@ item is marked complete by this audit.
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **86** | **35** | **18** | **2** | **141** |
+| **Total** | **87** | **34** | **18** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1106,15 +1106,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   yields no elements — witnessed `[14, 15, 24, 25]` agreeing on
   stepper and BEAM.
 
-- [ ] **P050 — Partial — filter semantics and evidence.** Normative `0.1.39`
-  defines ordinary typed `Bool` filters, visible effects, false-as-skip,
-  propagation of other failures, and separation from C003's guard fragment.
-  The compiler executes pure filtering and rejects non-`Bool` filters.
-  The [first implementation](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
-  adds real locally handled filter requests, false-filter effects and trap
-  prefixes on reference/BEAM. General escaping filter effects and an
-  enclosing handler's abort still need the explicit kernel-target refinement
-  tracked with P053; `LC-OBL-005` remains partial.
+- [x] **C050 — Complete — filter semantics and evidence.** The explicit
+  [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) executes ordinary typed `Bool` filters with
+  visible escaping effects, false-as-skip, immediate trap propagation and
+  whole-computation handler abort. Independent nonrecursive probes reject
+  forged fragment rows before recursive worker annotation. Reference and
+  production BEAM witnesses preserve false-filter effects and all first/last
+  failure prefixes; an enclosing handler can also change the whole result
+  type. This completes `LC-OBL-005` without changing exact 0.1.8 or choosing
+  public vocabulary. See the [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md).
 - [x] **C051 — Complete — pattern-generator failure.** Consumes
   C044's split: ordinary generators are checked total by the
   usefulness relation (non-total rejects `M001`), `case` generators
@@ -1126,18 +1126,13 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   same-comprehension rebinding is `LCP001`; unused bindings report
   `BS001`; outer shadowing follows the ordinary rule.
 
-- [ ] **P053 — Partial — evaluation and effect-order evidence.** Normative
-  `0.1.39` fixes source-order traversal, once-per-reaching evaluation,
-  immediate failure timing, and effect-row threading. The elaborator and
-  pure value witnesses exist. The
-  [first implementation](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
-  adds exact nested request traces and failure prefixes for locally handled
-  source, filter, binding and yield fragments. General escaping ordinary
-  effects expose a target mismatch: C005 coalesces concrete capability uses,
-  while exact C010 preserves ordinary multiplicity, making repeated escaping
-  requests in a recursive worker's finite row impossible. Specify the target
-  refinement, implement row threading and enclosing-handler scope, then
-  complete `LC-OBL-008`; aggregate `(uses Ask)` text is not that evidence.
+- [ ] **P053 — Partial — evaluation and effect-order evidence.** The
+  [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) now supplies closed identity rows, checked
+  fragment metadata, final-stage worker effects and enclosing-handler scope.
+  Nested source/filter/binding/yield traces and immediate failures agree on
+  reference and production BEAM. The next per-gap acceptance pass checks
+  effectful context evaluation and additional dependent-pattern boundaries
+  before closing `LC-OBL-008`; C050's filter acceptance is complete.
 - [x] **C054 — Complete — eager versus lazy production.** Eager
   ordered `List B` results are normative; lazy streams and infinite
   inputs stay under a separate future resource-and-cancellation
@@ -1156,14 +1151,10 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   points.
 
 - [ ] **P057 — Partial — sequential-execution evidence.** Sequential
-  source-order execution and the exclusion of parallel forms are normative
-  at `0.1.39`. API-absence and generated-shape tests now have
-  [locally handled request witnesses](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
-  for exact sequential reference/BEAM traversal. Complete `LC-OBL-012`
-  with P053's escaping-effect and enclosing-handler boundary, demonstrating
-  that the generated BEAM preserves order and multiplicity there too.
-  A future parallel form still requires its own syntax, effects, and
-  structured-concurrency rules.
+  execution remains normative. The [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) now preserves
+  escaping effects and enclosing-handler abort on reference and BEAM. The
+  per-gap acceptance pass will add an order-sensitive handler observation
+  and review the no-parallelization boundary before closing `LC-OBL-012`.
 - [x] **C058 — Complete — termination and cost honesty.** The fused
   worker chain — one tail-recursive definition per generator depth,
   one shared accumulator, a final ordering pass, no intermediate
