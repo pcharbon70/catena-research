@@ -2481,3 +2481,25 @@ cleanup guarantees. General task propagation remains G088.
 | RS-OBL-010 | Verified deterministic artifact and closed entry | [Owned lifetime](../60-specification/resource-scopes/owned-lifetime-and-mandatory-cleanup.md#artifacts-diagnostics-and-conformance) | kernel #1, #3 | traced |
 
 Witness numbers follow declaration order within the named resource test file.
+
+## Process lifetime registry (`OT`, 0.1.52)
+
+The [lifetime contract](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md)
+defines C084. Named witnesses below are in sibling `test/catena/task_*_test.exs`.
+The tag inventory is bookkeeping; actual state, cleanup and artifact assertions
+supply the evidence. General time tests remain experimental G088 work.
+
+| ID | Obligation | Normative anchor | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| OT-OBL-001 | Exact verified deterministic artifact and old-format separation | [Artifact](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#diagnostics-and-conformance) | kernel selected artifact; managed_kernel selected artifact and forged entry | traced |
+| OT-OBL-002 | Scoped identities and handle escape rejection | [Ownership](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#static-ownership-and-capability-boundary) | kernel escaped/captured handles; runtime stale scope; monitor_kernel escape | traced |
+| OT-OBL-003 | Registration before start and normal join | [Scopes](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#structured-lifetime-transitions) | runtime immediate completion and twenty-child join; lifecycle raw-child isolation | traced |
+| OT-OBL-004 | First child failure and secondary evidence | [Scopes](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#structured-lifetime-transitions) | runtime sibling failure; kernel outcome evidence; lifecycle first observation | traced |
+| OT-OBL-005 | Ordered cleanup and acquisition cancellation | [Scopes](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#structured-lifetime-transitions) | kernel handler abandonment and mixed release order; runtime parent acquisition cancellation | traced |
+| OT-OBL-006 | Typed independent terminal monitoring | [Monitors](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#monitored-completion) | monitor independence/absence/duplicate rejection; monitor_kernel CEK and BEAM | traced |
+| OT-OBL-007 | Demonitoring and private observer closure | [Monitors](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#monitored-completion) | monitor scope closure and message preservation; lifecycle/OTP demonitor flush | traced |
+| OT-OBL-008 | Symmetric links and cleanup before exit | [Links](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#linked-propagation-and-trapping) | managed one-sided registration failure and normal linked exit; monitor_kernel | traced |
+| OT-OBL-009 | Unlink and generation races | [Links](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#linked-propagation-and-trapping) | managed remote unlink/relink and absence; managed_reference stale signal and pending remote observation | traced |
+| OT-OBL-010 | Trapping selection and restoration | [Links](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#linked-propagation-and-trapping) | monitor_kernel real handler abandonment; managed_reference ignored normal exit; lifecycle delivery selection | traced |
+| OT-OBL-011 | Safe points and bounded shutdown | [Cancellation](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#cancellation-and-shutdown-bounds) | kernel virtual expiry and recursive cancellation; runtime forced loss and cleanup; instrument automatic polling | traced |
+| OT-OBL-012 | Capability isolation and separate control channels | [Ownership](../60-specification/process-lifetimes/owned-tasks-and-managed-relationships.md#static-ownership-and-capability-boundary) | kernel parent-handler rejection; managed_kernel raw-context rejection and selected receive envelopes | traced |
