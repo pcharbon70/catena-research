@@ -32,6 +32,16 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena Language Completion Plan](language-completion-plan.md) — sequences
+  all 141 checklist items, delegated decisions, implementation milestones
+  and evidence gates while keeping public vocabulary held.
+- [Language Completion Plan: Foundations](language-completion-plan-foundations.md)
+  — gives item-specific alternatives, selections and integration gates for
+  items 001–046.
+- [Language Completion Plan: Composition, Effects, and Processes](language-completion-plan-semantics.md)
+  — plans items 047–092, from comprehension evidence to effects and processes.
+- [Language Completion Plan: Interoperability, Delivery, and Assurance](language-completion-plan-delivery.md)
+  — plans items 093–141, including libraries, tools, assurance and self-hosting.
 - [Catena Top-Level Effects](catena-top-level-effects.md) — argues
   G082's silent top level: nothing unhandled, nobody
   interpreting, capabilities explicit or absent.
@@ -39,8 +49,8 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   argues G081's partition: values, the effect pattern, and the
   terminal trap — visibly distinct, never blurred.
 - [Catena Selective Receive](catena-selective-receive.md) —
-  separates the shipped receive scan rules from P086's unresolved
-  starvation statement and preserves the four extension interfaces.
+  explains the 0.1.49 correction to the historical starvation conflict
+  and preserves the four extension interfaces.
 - [Catena Progress and Preservation](catena-progress-and-preservation.md)
   — argues P132's completion: component targets with evidence,
     the composed theorem's honest middle, conditional extensions.

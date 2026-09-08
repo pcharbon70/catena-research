@@ -13,11 +13,10 @@ aliases:
 
 # Selective Receive Specification (`60-specification/selective-receive`)
 
-P086 is reopened for the conflict between the rejected-prefix starvation
-statement and the rule requiring scanning past rejected messages. The
-`0.1.46` chapters retain their normative status; conformance for the
-disputed rule cannot be claimed until the conflict is resolved. See the
-[completion audit](../../50-journal/2026-09-06-checklist-completion-audit.md).
+The `0.1.49` [waiting and scan cost amendment](../selective-receive-correction/waiting-and-scan-cost-amendment.md)
+repairs the rejected-prefix contradiction in the retained `0.1.46` rule set.
+The historical chapter remains available; the amendment explicitly identifies
+which rules it replaces and adopts.
 
 ## Purpose
 
@@ -46,11 +45,11 @@ remain P109's.
 
 ## Variability register
 
-This area introduces no implementation-defined choice,
-recommendation, bounded unspecified presentation, or implementation
-limit. Scan order, preservation, and the cost statement bind every
-conforming implementation identically; no registry or tooling
-behavior may vary.
+The amendment permits internal scan caching only within the visibly declared
+unobservable strategy equivalence class in
+[Scan work](../selective-receive-correction/waiting-and-scan-cost-amendment.md#scan-work). Selected messages,
+residual mailbox and effects remain fixed. No new implementation-defined
+choice or implementation limit is introduced.
 
 ## Index
 
@@ -59,6 +58,7 @@ behavior may vary.
 - None yet.
 
 ### Documents
+
 
 - [The Receive Rule Set](the-receive-rule-set.md)
   — scan order, preservation, removal, typing, conditions, and

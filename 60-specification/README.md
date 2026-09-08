@@ -220,6 +220,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Selective Receive Correction](selective-receive-correction/README.md) — the
+  normative 0.1.49 waiting and scan-cost amendment with explicit historical boundaries.
+
 - [Top-Level Effects](top-level-effects/README.md)
   — the normative version 0.1.48 top-level boundary with the
   P106 capability interface and the supervision routing.
@@ -228,7 +231,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   blessed effect pattern and the routing table.
 - [Selective Receive](selective-receive/README.md)
   — the normative version 0.1.46 receive rules and four extension
-  interfaces, with P086 reopened for the contradictory starvation statement.
+  interfaces, with the explicit 0.1.49 waiting and scan-cost correction.
 - [Progress and Preservation](progress-and-preservation/README.md)
   — the normative version 0.1.45 effects-and-failure targets with
   the composed integrated theorem.

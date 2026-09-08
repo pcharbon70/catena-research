@@ -29,6 +29,8 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Language Completion](language-completion.md) — connects the audited
+  checklist to the full implementation plan, decision register and evidence.
 - [Top-Level Effects](top-level-effects.md) — routes the G082
   boundary decision from C027's standing answer to the `0.1.48`
   contract.
@@ -36,7 +38,7 @@ should explain why its links belong together rather than merely list files.
   partition decision from C036's taxonomy to the `0.1.47`
   contract.
 - [Selective Receive](selective-receive.md) — routes the `0.1.46` rules
-  and retained compiler evidence to P086's reopened starvation conflict
+  and retained compiler evidence through C086's versioned starvation correction
   and its closure criteria.
 - [Progress and Preservation](progress-and-preservation.md)
   — routes the P132 metatheory completion from the component

@@ -30,6 +30,11 @@ source notes.
 
 ### Documents
 
+- [Language Completion: Capability Kernel Integration](2026-09-08-capability-kernel-integration.md) — records the resumed implementation, capability-row decisions, verification and remaining integration gates.
+
+- [Language Completion Plan and First Implementation](2026-09-06-language-completion-plan.md)
+  — records the delegated four-option planning gate and subsequent compiler
+  experiments, changes and verification.
 - [Checklist Completion Audit](2026-09-06-checklist-completion-audit.md)
   — records the two-repository audit, four reopened items, partial-status
     corrections, exact compiler identity, and fresh compiler/archive checks.

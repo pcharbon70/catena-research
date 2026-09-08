@@ -125,6 +125,11 @@ record describes bytes emitted by an immutable compiler commit. They are not
 current language or protocol aliases. C008 defines the end-user edition,
 compatibility, deprecation, preview, and migration policy.
 
+The [selective-receive correction](60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md)
+occupies `0.1.49` after C082 `0.1.48`. Its explicit replacement of the
+conflicting C086 waiting/cost rule applies at `0.1.49` and inherited later
+same-edition selections; it does not retroactively amend `0.1.46`.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

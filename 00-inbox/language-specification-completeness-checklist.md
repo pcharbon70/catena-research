@@ -80,9 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **85 complete, 36 partial, 18 gaps, and 2
+The current checkboxes total **86 complete, 35 partial, 18 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
-Four formerly checked items are reopened (P050/P053/P057/P086); 22 gaps
+The audit reopened four formerly checked items (P050/P053/P057/P086); C086
+is restored by the 8 September correction at `0.1.49`. The current next unused
+semantic patch is `0.1.50`. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -98,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 6 | 0 | 1 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 0 | 5 | 4 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 1 | 4 | 4 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
 | 12. Standard library contract | 0 | 8 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **85** | **36** | **18** | **2** | **141** |
+| **Total** | **86** | **35** | **18** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1108,11 +1110,11 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   defines ordinary typed `Bool` filters, visible effects, false-as-skip,
   propagation of other failures, and separation from C003's guard fragment.
   The compiler executes pure filtering and rejects non-`Bool` filters.
-  Completion is reopened because the required `LC-OBL-005` witnesses do
-  not exercise effectful filtering or failure propagation. Add executable
-  reference/BEAM witnesses showing that a false filter's effects occur,
-  and that a trap stops the comprehension without evaluating its suffix.
-  See the [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence).
+  The [first implementation](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+  adds real locally handled filter requests, false-filter effects and trap
+  prefixes on reference/BEAM. General escaping filter effects and an
+  enclosing handler's abort still need the explicit kernel-target refinement
+  tracked with P053; `LC-OBL-005` remains partial.
 - [x] **C051 — Complete — pattern-generator failure.** Consumes
   C044's split: ordinary generators are checked total by the
   usefulness relation (non-total rejects `M001`), `case` generators
@@ -1127,12 +1129,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 - [ ] **P053 — Partial — evaluation and effect-order evidence.** Normative
   `0.1.39` fixes source-order traversal, once-per-reaching evaluation,
   immediate failure timing, and effect-row threading. The elaborator and
-  pure value witnesses exist, but the test tagged `LC-OBL-008` only inspects
-  generated strings, including `(uses Ask)`; it does not run an effect-bearing
-  comprehension. Complete the required reference/BEAM trace agreement for
-  source, filter, binding, and yield effects, per-prefix multiplicity,
-  false-filter effects, and failure timing. See the
-  [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence).
+  pure value witnesses exist. The
+  [first implementation](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+  adds exact nested request traces and failure prefixes for locally handled
+  source, filter, binding and yield fragments. General escaping ordinary
+  effects expose a target mismatch: C005 coalesces concrete capability uses,
+  while exact C010 preserves ordinary multiplicity, making repeated escaping
+  requests in a recursive worker's finite row impossible. Specify the target
+  refinement, implement row threading and enclosing-handler scope, then
+  complete `LC-OBL-008`; aggregate `(uses Ask)` text is not that evidence.
 - [x] **C054 — Complete — eager versus lazy production.** Eager
   ordered `List B` results are normative; lazy streams and infinite
   inputs stay under a separate future resource-and-cancellation
@@ -1152,10 +1157,11 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 
 - [ ] **P057 — Partial — sequential-execution evidence.** Sequential
   source-order execution and the exclusion of parallel forms are normative
-  at `0.1.39`. API-absence and generated-shape tests exist; the
-  `LC-OBL-012` requirement for executable effect-trace evidence remains
-  unmet. Complete that evidence with P053, demonstrating that the generated
-  BEAM execution neither parallelizes nor reorders effectful evaluations.
+  at `0.1.39`. API-absence and generated-shape tests now have
+  [locally handled request witnesses](../50-journal/2026-09-06-language-completion-plan.md#first-implementation-findings)
+  for exact sequential reference/BEAM traversal. Complete `LC-OBL-012`
+  with P053's escaping-effect and enclosing-handler boundary, demonstrating
+  that the generated BEAM preserves order and multiplicity there too.
   A future parallel form still requires its own syntax, effects, and
   structured-concurrency rules.
 - [x] **C058 — Complete — termination and cost honesty.** The fused
@@ -1365,20 +1371,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   growth/exhaustion, copying and sharing obligations at foreign and runtime
   boundaries, and remote delivery. Preserve the kernel's typed send and
   message-order guarantees when admitting those extensions.
-- [ ] **P086 — Partial — selective receive.** The `0.1.46` chapters and
-  retained C003/C010 implementation evidence establish FIFO scanning,
-  preservation of rejected messages, one-time removal, closed message
-  typing, and portable conditions. Completion is reopened for a normative
-  contradiction: [the scan rules](../60-specification/selective-receive/the-receive-rule-set.md#the-rules)
-  continue past rejected messages, while [the starvation rule](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost)
-  says a standing rejected prefix starves the receive. C010 and its compiled
-  witness select a later matching message behind such a prefix. Resolve
-  `RC-OBL-004` against the governing scan semantics and align its evidence
-  before claiming completion; see the
-  [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#selective-receive-conflict).
+- [x] **C086 — Complete — selective receive.** The [0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md)
+  repairs the rejected-prefix starvation contradiction with explicit
+  applicability and migration. A receive bypasses rejected messages to select
+  the oldest match; with no match it waits without consumption. Two successive
+  selections, exact remaining-mailbox order, and empty/all-rejected waiting
+  agree on reference stepper and BEAM. Scan cost counts actually examined
+  candidates without a universal rescan or fairness promise. The
+  [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
+  records verification. Historical 0.1.46 text and formats remain preserved.
   Public syntax remains P109, timeouts/cancellation G088, typed protocols
-  P087, and send-side extensions P085. The historical C086 promotion and
-  its successful bounded tests remain recorded in the C086 journal.
+  P087, and send-side extensions P085.
 - [ ] **P087 — Partial — typed protocols.** C010 checks `Process M` handles,
   a closed sendable mailbox type, send payloads, and digest-bound exported
   process signatures. Decide whether request/reply sequencing, protocol
@@ -1715,6 +1718,12 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   does not change Catena's BEAM-only target.
 
 ## Suggested research order
+
+The [detailed implementation plan](../20-notes/language-completion-plan.md)
+covers every item with explored alternatives, recommended selections,
+dependencies and acceptance evidence. Its delegated decisions do not mark
+work complete. Public vocabulary and the final grammar remain held for later
+joint design; the plan begins with semantics over retained compiler inputs.
 
 The P109 scope note governs sequencing: semantics first over retained
 inputs, complete public grammar as the capstone. This order reflects the

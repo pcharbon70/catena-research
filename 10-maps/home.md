@@ -18,8 +18,17 @@ record four reopened items: P050/P053/P057 need required comprehension
 runtime evidence, and P086 needs its normative starvation conflict resolved.
 Historical status reports retain their dated counts.
 
+The [language completion plan](../20-notes/language-completion-plan.md)
+turns that ledger into per-item decisions and executable milestones. Its
+[map](language-completion.md) connects the complete four-option decision
+record to implementation evidence. Public vocabulary and the final grammar
+remain held for later joint design.
+
 ## Active inquiries
 
+- [How can Catena complete its language definition?](../40-inquiries/how-can-catena-complete-its-language-definition.md)
+  — tracks cross-item dependencies, implementation evidence, integrated
+  assurance and the held public adoption gate.
 - [How should Catena version editions and language features?](../40-inquiries/how-should-catena-version-editions-and-language-features.md)
   — carries edition `0.1`, exact retained revisions, named previews,
   compatibility, migration, and selection-bound artifacts through normative

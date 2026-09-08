@@ -18,11 +18,11 @@ aliases:
 This map routes the P086 question — connecting public syntax,
 typing, timeouts, scan order, starvation, cancellation, and cost
 for selective receive — through the archive's decision trail. Revision
-`0.1.46` was promoted in the [Selective Receive
-Specification](../60-specification/selective-receive/README.md), but P086
-is reopened: its starvation statement conflicts with its scan-continuation
-rule. The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md)
-records the discrepancy; conformance for the disputed rule remains blocked.
+`0.1.46` was promoted and then reopened by the completion audit. The
+[0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md) resolves that conflict with explicit applicability
+and stepper/BEAM evidence for bypass, one-time removal and no-match waiting.
+The [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md)
+records the correction's verification.
 
 ## The route
 
@@ -51,10 +51,11 @@ records the discrepancy; conformance for the disputed rule remains blocked.
    Rules](../60-specification/selective-receive/the-receive-rule-set.md#the-rules)
    with [Starvation and
    Cost](../60-specification/selective-receive/the-receive-rule-set.md#starvation-and-cost)
-   to locate the unresolved `RC-OBL-004` conflict.
+   to locate the historical `RC-OBL-004` conflict; the amendment replaces the
+   disputed rule for the new selection.
 6. **The reasoning and decision record.** [Catena Selective
    Receive](../20-notes/catena-selective-receive.md) argues the
-   routing and the current conflict; the [reopened
+   routing and the current conflict; the [resolved
    inquiry](../40-inquiries/how-does-selective-receive-complete.md)
    preserves the historical forks and defines the closure criteria.
 

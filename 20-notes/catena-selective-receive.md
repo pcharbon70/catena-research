@@ -17,8 +17,10 @@ aliases:
 ## Executive conclusion
 
 Selective receive was promoted at `0.1.46` as a fixed rule set plus four
-routed interfaces. P086 is now reopened because the normative starvation
-statement conflicts with the scan-continuation rule. The delivered rules —
+routed interfaces. The audit reopened P086 because the normative starvation
+statement conflicted with scan continuation. The
+[0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md) now resolves that conflict with explicit
+applicability and migration; the old wording remains historical. The delivered rules —
 FIFO scan from the oldest message,
 rejected messages preserved, one-time removal, one closed message
 type, an effect-free receive form, portable conditions only —
@@ -61,7 +63,7 @@ rejecting `Some 0`, and a blocked holder retains both messages when its
 guard rejects both. The second observation cannot justify starvation for
 every rejected prefix. The [completion
 audit](../50-journal/2026-09-06-checklist-completion-audit.md) records the
-current discrepancy without replacing normative language through observed
+historical discrepancy without replacing normative language through observed
 compiler behavior.
 
 Under [Conflict Resolution](../SPECIFICATION-AUTHORITY.md#conflict-resolution),
@@ -119,3 +121,10 @@ examined from any stronger asymptotic or fairness promise.
   — the cost-honesty precedent.
 - The [reopened inquiry](../40-inquiries/how-does-selective-receive-complete.md)
   preserves the decision route and the remaining closure criteria.
+
+## Correction evidence
+
+The [September 8 journal](../50-journal/2026-09-08-capability-kernel-integration.md)
+records successive selection of 2 then 1 from `[0, 2, -1, 1, 3]`, with
+`[0, -1, 3]` remaining on both stepper and BEAM, plus empty and all-rejected
+waiting. These bounded witnesses establish no scheduler fairness claim.
