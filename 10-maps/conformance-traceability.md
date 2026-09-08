@@ -252,7 +252,7 @@ sibling compiler repository.
 | `SR` structural-records-and-variants | 8 | `c041_records_test.exs` (7) | compiler-tagged + gated (`f42c958`); all obligations traced |
 | `CO` collection-construction-and-update | 8 | `c042_collections_test.exs` (8) | compiler-tagged + gated (`246019f`); all obligations traced |
 | `PC` pattern-contexts | 9 | `c044_pattern_contexts_test.exs` (10) | compiler-tagged + gated (`00bd04c`); all obligations traced |
-| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); 12 traced; 2 partial after C050 target acceptance |
+| `LC` list-comprehensions | 14 | `c047_list_comprehensions_test.exs` (14) | compiler-tagged + gated (`3216831`); 13 traced; 1 partial after C053 order acceptance |
 | `NR` numeric-relationships | 8 | `c061_numeric_relationships_test.exs` (9) | compiler-tagged + gated (`fd75cb7`); all obligations traced |
 | `AN` aliases-and-newtypes | 8 | `c062_aliases_newtypes_test.exs` (11) | compiler-tagged + gated (`1de0a7d`); all obligations traced |
 | `RN` name-resolution | 8 | `c066_name_resolution_test.exs` (10) | compiler-tagged + gated (`bef5fd5`); all obligations traced |
@@ -2105,7 +2105,7 @@ records additional working-tree evidence in
 | LC-OBL-005 | Ordinary filters preserve effects, false-as-skip, failures and enclosing-handler abort at 0.1.50 | [Fragment checking](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md#fragment-checking-and-generated-workers) | c047 capability filter, false-filter trap, outer decline and result-type witnesses | traced |
 | LC-OBL-006 | Consume C044's split: total ordinary generators, `case` mismatch-as-skip, `LCP002`/`LCP003` markers, `M001` reuse | [`generator-and-qualifier-rules.md#the-pattern-generator-split`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#the-pattern-generator-split) | c047 #6 | traced |
 | LC-OBL-007 | Fix left-to-right scope, non-escaping non-recursive bindings, `LCP001` rebinding, `BS001` reuse | [`generator-and-qualifier-rules.md#scope-and-rebinding`](../60-specification/list-comprehensions/generator-and-qualifier-rules.md#scope-and-rebinding) | c047 #7 | traced |
-| LC-OBL-008 | Fix exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows | [`evaluation-effects-and-execution.md#exact-order`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#exact-order) | c047 #8 | partial |
+| LC-OBL-008 | Fix exact order, multiplicity, non-short-circuiting filters, and failure timing with visible effect rows | [`evaluation-effects-and-execution.md#exact-order`](../60-specification/list-comprehensions/evaluation-effects-and-execution.md#exact-order) | c047 #8; capability context/pattern witnesses | traced |
 | LC-OBL-009 | Fix eager ordered production with lazy and infinite inputs excluded | [`the-surface-contract.md#eager-ordered-production`](../60-specification/list-comprehensions/the-surface-contract.md#eager-ordered-production) | c047 #9 | traced |
 | LC-OBL-010 | Fix the typed qualifier-tree target, the extensional equations, and the no-dispatch rule | [`elaboration-and-lowering.md#the-qualifier-tree-target`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-qualifier-tree-target) | c047 #10 | traced |
 | LC-OBL-011 | Fix `List B` results with all other targets excluded | [`the-surface-contract.md#the-result-type-boundary`](../60-specification/list-comprehensions/the-surface-contract.md#the-result-type-boundary) | c047 #11 | traced |
@@ -2113,12 +2113,12 @@ records additional working-tree evidence in
 | LC-OBL-013 | Produce the fused tail-recursive worker with linear allocation, source-faithful diagnostics, and cost honesty | [`elaboration-and-lowering.md#the-fused-worker`](../60-specification/list-comprehensions/elaboration-and-lowering.md#the-fused-worker) | c047 #13 | traced |
 | LC-OBL-014 | Keep the contract deterministic and outside unowned claims with the reuse map enforced | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/list-comprehensions/diagnostics-and-conformance.md#abstract-public-boundaries) | c047 #14 | traced |
 
-Comprehension coverage is 12 `traced`, 2 `partial`, and 0 untraced
+Comprehension coverage is 13 `traced`, 1 `partial`, and 0 untraced
 obligations. The [completion audit](../50-journal/2026-09-06-checklist-completion-audit.md#comprehension-evidence)
 historically reopened P050/P053/P057. The 0.1.50 target now discharges
 C050's escaping-filter and enclosing-handler boundary; LC-OBL-005 is traced.
-LC-OBL-008 and LC-OBL-012 remain partial pending their separate acceptance
-passes for context/pattern and order-sensitive observations. The complete
+LC-OBL-008 is traced after context/pattern acceptance. LC-OBL-012 remains
+partial pending the order-sensitive handler acceptance. The complete
 closed-target implementation has its own CK registry below.
 
 ## Numeric relationships registry (`NR`, 0.1.40)

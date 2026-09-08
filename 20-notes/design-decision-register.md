@@ -1057,3 +1057,8 @@ are implemented in the [0.1.50 target](../60-specification/closed-capability-ker
 Their original four-option rows remain unchanged. The journal records CK-I11
 through CK-I20 as emerging implementation decisions. C050 is the first
 per-gap acceptance; P053/P057 follow independently using the shared target.
+
+C053 acceptance now executes CP-053-1 through CP-053-7 on the shared target.
+The [implementation journal](../50-journal/2026-09-08-capability-kernel-integration.md#c050-publication-and-p053-acceptance-decisions)
+records context/pattern evidence and EO-I01–EO-I03; the advisory repair keeps
+the selected checker authoritative for totality. P057 acceptance remains.

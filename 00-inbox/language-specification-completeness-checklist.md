@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **87 complete, 34 partial, 18 gaps, and 2
+The current checkboxes total **88 complete, 33 partial, 18 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -96,7 +96,7 @@ item is marked complete by this audit.
 | 3. Names, modules, packages, and separate compilation | 8 | 0 | 0 | 0 | 8 |
 | 4. Core expressions and evaluation | 10 | 0 | 0 | 0 | 10 |
 | 5. Data, collections, and patterns | 8 | 0 | 0 | 0 | 8 |
-| 6. List comprehensions, generators, and iteration | 10 | 2 | 0 | 1 | 13 |
+| 6. List comprehensions, generators, and iteration | 11 | 1 | 0 | 1 | 13 |
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 6 | 0 | 1 | 1 | 8 |
@@ -107,7 +107,7 @@ item is marked complete by this audit.
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **87** | **34** | **18** | **2** | **141** |
+| **Total** | **88** | **33** | **18** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1126,13 +1126,16 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   same-comprehension rebinding is `LCP001`; unused bindings report
   `BS001`; outer shadowing follows the ordinary rule.
 
-- [ ] **P053 — Partial — evaluation and effect-order evidence.** The
-  [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md) now supplies closed identity rows, checked
-  fragment metadata, final-stage worker effects and enclosing-handler scope.
-  Nested source/filter/binding/yield traces and immediate failures agree on
-  reference and production BEAM. The next per-gap acceptance pass checks
-  effectful context evaluation and additional dependent-pattern boundaries
-  before closing `LC-OBL-008`; C050's filter acceptance is complete.
+- [x] **C053 — Complete — evaluation and effect-order evidence.** The
+  [0.1.50 target](../60-specification/closed-capability-kernel/identity-rows-and-comprehension-target.md)
+  checks exact fragment rows and charges worker effects at the final call
+  stage. Explicit nested request sequences and first/last failures agree on
+  reference and production BEAM. Effectful context references preserve
+  dependency order and repeated evaluation; unused definitions remain inert.
+  Dependent filtering patterns retain source effects while skipping only
+  their suffix. Total-pattern advisories use the selected target's checker.
+  This completes `LC-OBL-008`; see the
+  [acceptance journal](../50-journal/2026-09-08-capability-kernel-integration.md).
 - [x] **C054 — Complete — eager versus lazy production.** Eager
   ordered `List B` results are normative; lazy streams and infinite
   inputs stay under a separate future resource-and-cancellation
