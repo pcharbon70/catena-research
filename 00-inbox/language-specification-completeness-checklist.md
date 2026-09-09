@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **98 complete, 27 partial, 14 gaps, and 2
+The current checkboxes total **99 complete, 27 partial, 13 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.60`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.61`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -585,7 +585,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   constructor-authority vocabulary on every frontend; declare that no
   stable-layout opt-in exists in edition 0.1 with both-layout conformance
   mandatory, `L001` unchanged, and C028 owning any future
-  layout-stability contract together with P093/P094/G095; exclude
+  layout-stability contract together with P093/P094/C095; exclude
   selective construction/matching authority and views as extensions excluded by C046 and subject to its explicit
   arrival conditions; and sanction the abstract-type-plus
   validating-constructor-plus-observer invariant idiom with typed failure
@@ -712,7 +712,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   tests through the `Catena.Package.Compat` classifier. Migration
   engines remain P116/P125; registry retirement and yanks remain P130;
   hot upgrade remains G092; representation, calling-convention, and
-  foreign-term contracts remain P093/P094/G095; tooling automation
+  foreign-term contracts remain P093/P094/C095; tooling automation
   remains P121; the 1.0-era convention switch remains P136's.
 
 ## 4. Core expressions and evaluation
@@ -914,7 +914,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   BEAM, the process-context witness (trapping child, spared spawner,
   discarded mailbox), the classifier partition, and the reserved-kind
   absences. Zero new diagnostic families. Outcome-type contents remain
-  C103's; foreign calls G095/G096's; process death C084's;
+  C103's; foreign calls C095/G096's; process death C084's;
   cancellation C088's.
 - [x] **C037 — Complete — resource and allocation observability.**
   The normative
@@ -942,7 +942,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   per spawn, handle non-comparability, the finalization absence, and
   the stack boundary. Zero new diagnostic families. Handle operations
   beyond the kernel's remain C084's; message-copy details P085's;
-  resource scopes G080's; foreign finalization G095's;
+  resource scopes G080's; foreign finalization C095's;
   debugging tools G124's.
 - [x] **C038 — Complete — compile-time evaluation.**
   The normative
@@ -1245,7 +1245,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   interaction must all be amended in a future form's own revision.
   Visibility routes to the foreign owners: dynamic values enter only
   through a visible, typed, failure-classified boundary owned by
-  G095/G096/G098. Compiler witnesses on existing machinery (`ed14901`):
+  C095/G096/G098. Compiler witnesses on existing machinery (`ed14901`):
   guard rejections unchanged, BEAM chunk inventories free of
   specification/governance chunks, no cast/typecase/dyn spellings, no
   foreign entry paths. Zero new diagnostic families and no new public
@@ -1334,7 +1334,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   C005; and `trap(reason)` is the one terminal mechanism, never catchable
   (C036 unchanged). Panics are traps with the reserved assertion/panic
   kind entering with their producers. Process exits route to C084,
-  foreign failures map to trap at the visible boundary (G095/G096 with
+  foreign failures map to trap at the visible boundary (C095/G096 with
   C067's rule), cancellation to C088, library faults to P105, outcome
   types to C103; C044's reopening door is the only amendment route for a
   language exception form. Compiler witnesses on existing machinery
@@ -1454,15 +1454,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   and proper tails. Scoped synchronous callbacks reject forged, expired and
   wrong-owner handles; retained managed-process/OTP lifecycle adapters have
   exact call sidecars. General foreign declarations and asynchronous callbacks
-  remain P096, recursive foreign data G095, and full stack tooling P100.
+  remain P096; C095 supplies recursive data conversion, and full stack tooling remains P100.
   No stable cross-build ABI or final vocabulary is adopted. See the
   [implementation evidence](../50-journal/2026-09-09-calling-conventions.md).
-- [ ] **G095 — Gap — Erlang type boundary.** Specify how dynamically typed terms enter
-  Catena, which checks occur, how failures are represented, and whether gradual
-  or explicit dynamic types exist. Includes the float edge: the external term
-  format provably refuses non-finite payloads
-  ([probes](../50-journal/2026-08-31-beam-float-boundary-probes.md)); any other
-  entry path must refuse or normalize non-finite floats the same way.
+- [x] **C095 — Complete — Erlang type boundary.** The
+  [0.1.60 contract](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md)
+  requires explicit typed codecs, re-derived nominal identity, complete
+  input/output node/byte/depth validation and expected conversion failures.
+  Proper Erlang lists map only to verified declared constructor roles; wire
+  encoding and Catena runtime layout stay distinct. Independent Erlang and
+  isolated native fixtures preserve finite Float bits and refuse non-finite
+  NIF/ETF construction. Generic raw handles remain excluded and no dynamic
+  type or final vocabulary is introduced. See the
+  [implementation evidence](../50-journal/2026-09-09-erlang-type-boundary.md).
 - [ ] **P096 — Partial — foreign calls and callbacks.** C089 admits a narrow
   checked OTP lifecycle adapter with verified process entries and artifacts.
   Complete general call/callback syntax, effect declarations,
@@ -1477,10 +1481,10 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   general native-value API.
 - [ ] **G098 — Gap — NIFs and ports.** Define unsafe boundaries, scheduler classes,
   resource finalization, VM crashes, capability requirements, and packaging.
-  Includes the float edge: a NIF constructing a non-finite double
-  (`enif_make_double`) bypasses the term format's refusal, so the NIF boundary
-  must refuse or normalize non-finite floats with a witness test
-  ([probes](../50-journal/2026-08-31-beam-float-boundary-probes.md)).
+  C095 verifies that the documented `enif_make_double` constructor refuses
+  non-finite doubles; arbitrary native memory corruption remains outside that
+  guarantee. Define native trust and isolation without relying on the earlier
+  bypass conjecture; see the [corrected evidence](../50-journal/2026-09-09-erlang-type-boundary.md#native-float-correction).
 - [x] **C099 — Complete — OTP compatibility policy.** The
   [0.1.57 policy](../60-specification/otp-compatibility/support-probes-and-artifacts.md)
   publishes the exact tested OTP 29.0.4/ERTS 17.0.4/Elixir 1.20.2 row,
@@ -1518,7 +1522,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   elimination, callback counts and failure-class separation. The explicit
   digest-bound package has ordinary compiler and specialized BEAM evidence
   against independent equations; public vocabulary remains P109 and foreign
-  admission remains G095/G096. See the
+  admission remains C095/G096. See the
   [implementation evidence](../50-journal/2026-09-08-outcome-contracts.md).
 - [ ] **P104 — Partial — text and binary model.** C017/C040 define
   decoded Unicode-scalar Text, one-scalar Character, Bytes, content
@@ -1672,7 +1676,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   operations and other dynamic/unsafe forms inside Catena and requires
   visible, typed, failure-classified foreign entry. Complete the policy
   for foreign/native trusted obligations, their scope, and their exposure
-  in interfaces and artifacts, together with G095/G096/G098. Do not
+  in interfaces and artifacts, together with C095/G096/G098. Do not
   reopen the intralanguage exclusion implicitly.
 - [ ] **P128 — Partial — reproducible builds.** C006/C010 provide bounded
   deterministic artifact and erasure evidence; C025 provides canonical

@@ -75,3 +75,13 @@ transcendentals are now shelf-ware if G105 wants them.
 
 These edges are also recorded in the owning checklist entries
 (G105, G095, G098) so their slices cannot close without them.
+
+
+## Correction verified on 9 September 2026
+
+The conjecture in open edge 4 above was incorrect for the documented API.
+`enif_make_double` rejects non-finite arguments. The
+[C095 isolated native witness](2026-09-09-erlang-type-boundary.md#native-float-correction)
+observes bad-argument rejection for both infinities and NaN, and exact finite
+bit preservation. The earlier sentence remains as historical provenance;
+it is not the current API claim. General native trust and isolation remain G098.

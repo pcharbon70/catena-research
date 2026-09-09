@@ -2633,3 +2633,23 @@ observations to verified artifacts and preserve separately owned foreign work.
 | CV-OBL-010 | Checked failures and data budgets | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#failures-frames-and-limits) | calling_descriptor, calling_callback: wrong data refusal, callback trap identity; value_boundary budgets | traced |
 | CV-OBL-011 | Traceable technical frames | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#failures-frames-and-limits) | calling_metadata: actual trap stack maps to origin, technical frames retained, unknown frame unmapped | traced |
 | CV-OBL-012 | Arity and proper-tail limits | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#failures-frames-and-limits) | calling_metadata: private 255-arity CPS worker and million-step saturated/partial tail calls; full limits regressions | traced |
+
+
+## Erlang-type-boundary registry (`ET`, 0.1.60)
+
+The [contract](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md)
+and [journal](../50-journal/2026-09-09-erlang-type-boundary.md) bind typed
+conversion to verified declarations and complete input/output bounds.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| ET-OBL-001 | Exact selection and retained formats | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#status-and-authority) | foreign_codec: exact selection, forged codec and unchanged executable/interface/signed boundaries | traced |
+| ET-OBL-002 | Trusted schema and metadata | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#trusted-descriptions-and-admitted-meanings) | foreign_codec: re-derived export descriptions and forged metadata rejection | traced |
+| ET-OBL-003 | Primitive and structural invariants | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#trusted-descriptions-and-admitted-meanings) | foreign_codec, foreign_native: nested closed data, UTF-8/scalar/type rejection and finite Float bits | traced |
+| ET-OBL-004 | Nominal identity and visibility | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#trusted-descriptions-and-admitted-meanings) | foreign_codec: compact/uniform/fixed layouts, private sequence and wrong constructors refused; retained value_boundary private-constructor tests | traced |
+| ET-OBL-005 | Authority exclusions | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#trusted-descriptions-and-admitted-meanings) | foreign_codec: raw PID/reference/fun and forged handle refused | traced |
+| ET-OBL-006 | Verified proper sequence relation | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#declared-sequence-relation) | foreign_codec: explicit roles, private/reversed roles, improper lists and bad suffixes refused | traced |
+| ET-OBL-007 | Wire and runtime separation | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#declared-sequence-relation) | foreign_codec: list-to-fixed carrier, both backend literal lowerers and independent verifier | traced |
+| ET-OBL-008 | Whole-carrier explicit bounds | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#whole-carrier-budgets-and-expected-failure) | foreign_codec: exact node/byte/depth thresholds, output depth exhaustion and large scalar witnesses | traced |
+| ET-OBL-009 | Expected conversion failure | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#whole-carrier-budgets-and-expected-failure) | foreign_codec: malformed payload, invalid codec, unsupported carrier and budget reason checks | traced |
+| ET-OBL-010 | Preservation | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#preservation-obligation) | foreign_codec, foreign_native: generated sequence round-trips, independent Erlang nested data and bit-exact finite Float corpus | traced |
