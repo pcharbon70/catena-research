@@ -71,3 +71,15 @@ extend beyond the current local C010 actor kernel.
 - [Catena Implementation Limits and Portability](../20-notes/catena-implementation-limits-and-portability.md)
 - [Implementation Limits and Portability map](../10-maps/implementation-limits-and-portability.md)
 - [C012 Implementation Limits](../50-journal/2026-08-17-c012-implementation-limits.md)
+
+## Sensitive-process follow-up
+
+The same official module reference was inspected at OTP 29.0.6 on 2026-09-09.
+Its `process_flag(sensitive, true)` entry says tracing is suppressed, message-queue
+and dictionary inspection return empty lists, and stack backtraces are unavailable.
+Crash dumps omit that process's stack, messages and dictionary. Existing saved-call
+history is not cleared by enabling the flag. This is a scoped observation control;
+it does not establish an OS sandbox or secure memory erasure.
+
+The [secret-capability investigation](../50-journal/2026-09-09-secret-capabilities.md)
+uses this alongside explicit server-status redaction and protected transport.

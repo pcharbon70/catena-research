@@ -284,3 +284,5 @@ C101 uses `0.1.69` for the [minimum prelude](60-specification/minimum-prelude/ex
 C126 uses `0.1.70` for the [trusted computing base](60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md), disclosing guarantee-specific dependencies and executable source/data inventory without claiming a proof-verified compiler.
 
 C127 uses `0.1.71` for [trusted obligation policy](60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md), a separate exact sidecar and scoped admission contract retaining C067 exclusions.
+
+C131 uses `0.1.72` for [secret capabilities](60-specification/secret-capabilities/sealed-values-and-protected-delivery.md), with sealed credential delivery and protected observations.

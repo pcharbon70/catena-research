@@ -419,3 +419,5 @@ metadata where available, never invent unknown fields, and link derived work.
 - [Python Subprocess Session Ownership](python-subprocess-session-ownership.md) — primary host API evidence for C106 environmental adapters.
 
 - [Erlang Passive TCP Sockets](erlang-passive-tcp-sockets.md) — primary host API evidence for C106 environmental adapters.
+
+- [OTP server status redaction](erlang-otp-29-server-status-redaction.md) — documented status/crash formatting for secret-bearing managers.

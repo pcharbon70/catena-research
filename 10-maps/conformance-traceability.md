@@ -2882,3 +2882,25 @@ Underlying unsafe exclusions and native/foreign enforcement retain their origina
 | TP-OBL-009 | Revocation | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#scoped-admission) | trusted_policy: existing/future descendants denied; child revocation preserves parent | traced |
 | TP-OBL-010 | Checked execution | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#execution) | trusted_policy: actual compiled pure/foreign entries and signed native service execution | traced |
 | TP-OBL-011 | Bounds and refusal | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#limits-and-refusal) | trusted_policy: graph/sidecar/grant/scope limits, unchanged grants after denied attenuation, conformance disclosure | traced |
+
+## C131 secret capabilities
+
+The [secret contract](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md)
+and [journal](../50-journal/2026-09-09-secret-capabilities.md) bind these obligations
+to `test/catena/secret_capabilities_test.exs` and retained language version tests.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| SK-OBL-001 | Exact revision | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#status-and-authority) | language_version: revision 72 and retained formats | traced |
+| SK-OBL-002 | Explicit retrieval | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#sealed-values) | secret_capabilities: supplied input and authorized environment lookup; missing provider denied | traced |
+| SK-OBL-003 | Sealed operations | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#sealed-values) | secret_capabilities: base64/hex/concat and nested reply projection remain references | traced |
+| SK-OBL-004 | Scope narrowing | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#scope-and-lineage) | secret_capabilities: ownership, forgery, subset, expiry and owner death | traced |
+| SK-OBL-005 | Origin lifetime | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#scope-and-lineage) | secret_capabilities: parent-derived value, pending job and completed reply preserve child revocation | traced |
+| SK-OBL-006 | Recipient delivery | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#checked-delivery) | secret_capabilities: exact foreign descriptor and approved process stdin | traced |
+| SK-OBL-007 | Network boundary | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#checked-delivery) | secret_capabilities: actual loopback broker and refused remote grant | traced |
+| SK-OBL-008 | Cleanup publication | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#checked-delivery) | secret_capabilities: cancellation, crash, owner death and actual forced seven-second deadline | traced |
+| SK-OBL-009 | Protected observations | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#public-observations-and-artifacts) | secret_capabilities: marker/nested redaction, fixed context diagnostics/traces, status and sensitivity restoration | traced |
+| SK-OBL-010 | Artifact refusal | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#public-observations-and-artifacts) | secret_capabilities: canonical JSON/JCS and assurance refusal, closed crash reason | traced |
+| SK-OBL-011 | Compiled entry | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#compiled-entry) | secret_capabilities: actual compiled Unit entry, absent provider and changed artifact refusal | traced |
+| SK-OBL-012 | Value bounds | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#limits-and-exhaustion) | secret_capabilities: input/transformation/storage object limits and malformed setup | traced |
+| SK-OBL-013 | Exhaustion outcome | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#limits-and-exhaustion) | secret_capabilities: no truncation, scope capacity, actual force deadline and false erasure/host-secrecy profile | traced |

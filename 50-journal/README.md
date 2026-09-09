@@ -319,3 +319,5 @@ outputs, and artifact links needed to reproduce local experiments.
 - [Trusted computing base](2026-09-09-trusted-computing-base.md) — C126 guarantee dependencies, privileged-path inventory and mutation witnesses.
 
 - [Trusted obligation policy](2026-09-09-trusted-obligation-policy.md) — transitive boundary disclosure, scoped admission and revocation evidence.
+
+- [Secret capabilities](2026-09-09-secret-capabilities.md) — P131 opaque credentials, restricted transport and observation-protection work.
