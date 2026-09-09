@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **97 complete, 28 partial, 14 gaps, and 2
+The current checkboxes total **98 complete, 27 partial, 14 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.58`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.60`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1446,12 +1446,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   admitted by ordinary data conversion. General callbacks remain P096 and no
   stable external ABI or final vocabulary is adopted. See the
   [implementation evidence](../50-journal/2026-09-08-value-boundaries.md).
-- [ ] **P094 — Partial — calling conventions.** C010 fixes kernel export
-  names, written arities, and hidden process spawn symbols; C005 fixes
-  direct wrappers and CPS workers; C032 specifies currying, immutable
-  lexical capture, and proper tail calls. Complete the foreign-call and
-  callback ABI, stack traces, and module metadata policy without implying
-  the stable BEAM ABI excluded by C028.
+- [x] **C094 — Complete — calling conventions.** The
+  [0.1.59 contract](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md)
+  binds actual exports, written and semantic arities, stage effects, private
+  worker arguments, compiler/interface identity and generated source origins.
+  Checked saturated and partial calls preserve immutable capture, stage traps
+  and proper tails. Scoped synchronous callbacks reject forged, expired and
+  wrong-owner handles; retained managed-process/OTP lifecycle adapters have
+  exact call sidecars. General foreign declarations and asynchronous callbacks
+  remain P096, recursive foreign data G095, and full stack tooling P100.
+  No stable cross-build ABI or final vocabulary is adopted. See the
+  [implementation evidence](../50-journal/2026-09-09-calling-conventions.md).
 - [ ] **G095 — Gap — Erlang type boundary.** Specify how dynamically typed terms enter
   Catena, which checks occur, how failures are represented, and whether gradual
   or explicit dynamic types exist. Includes the float edge: the external term

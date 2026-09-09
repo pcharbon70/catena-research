@@ -220,6 +220,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Calling Conventions](calling-conventions/README.md) — normative C094 exact call/artifact, staged closure and callback contract at 0.1.59.
 - [Value Boundaries](value-boundaries/README.md) — normative C093 carrier, typed-tree and checked-conversion contract at 0.1.58.
 
 - [OTP Compatibility](otp-compatibility/README.md) — `0.1.57` tested toolchains, required probes, artifact provenance and support lifecycle for C099.

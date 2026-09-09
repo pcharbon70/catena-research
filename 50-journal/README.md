@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Calling Convention Workbench](2026-09-09-calling-conventions.md) — P094 descriptor decisions, verified entry inventory and remaining integration gates.
+
 - [Value Boundary Workbench](2026-09-08-value-boundaries.md) — active P093 verifier repairs and typed representation-adapter evidence.
 
 - [OTP Compatibility Implementation](2026-09-08-otp-compatibility.md) — C099 measured toolchain, required probes and artifact-loading evidence.
