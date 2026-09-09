@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Value Boundary Workbench](2026-09-08-value-boundaries.md) — active P093 verifier repairs and typed representation-adapter evidence.
+
 - [OTP Compatibility Implementation](2026-09-08-otp-compatibility.md) — C099 measured toolchain, required probes and artifact-loading evidence.
 
 - [Typed Supervision Workbench](2026-09-08-typed-supervision.md) — C089 model, lifecycle repairs, checked artifact decisions and completion evidence.

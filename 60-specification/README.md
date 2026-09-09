@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Value Boundaries](value-boundaries/README.md) — normative C093 carrier, typed-tree and checked-conversion contract at 0.1.58.
+
 - [OTP Compatibility](otp-compatibility/README.md) — `0.1.57` tested toolchains, required probes, artifact provenance and support lifecycle for C099.
 - [Typed Supervision](typed-supervision/README.md) — exact `0.1.56` checked static worker policies, generated artifacts and owned OTP lifecycle for C089.
 - [Local Protocol Contracts](local-protocol-contracts/README.md) — exact `0.1.55` closed schemas, correlated local requests and owned session outcomes for C087.

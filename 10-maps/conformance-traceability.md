@@ -2591,3 +2591,23 @@ supported-host execution from simulated rejection fixtures.
 | OC-OBL-006 | Checked load and entry diagnostics | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#artifact-provenance-and-loading) | otp_profile: malformed/untagged/mismatched artifacts and entry rejection; separate VM load executes 42 | traced |
 | OC-OBL-007 | Evidence-gated expansion | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#expansion-and-retirement) | otp_profile: unsupported patch/platform fixtures refused; journal labels separate-VM and single-host limits | traced |
 | OC-OBL-008 | Explicit retirement and rebuild policy | [Rule](../60-specification/otp-compatibility/support-probes-and-artifacts.md#expansion-and-retirement) | normative review: no scheduled row retirement; old untagged artifact rejected with rebuild diagnostic | traced |
+
+
+## Value-boundary registry (`VB`, 0.1.58)
+
+The [contract](../60-specification/value-boundaries/carriers-and-checked-conversion.md)
+and [journal](../50-journal/2026-09-08-value-boundaries.md) bind observations to
+verified layout ownership and retain the exclusions on foreign authority.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| VB-OBL-001 | Exact selection and retained formats | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#status-and-authority) | value_boundary: exact selection, old interface decoding and persisted-format lists | traced |
+| VB-OBL-002 | Descriptor ownership | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#representation-ownership) | value_boundary: forged descriptor and wrong nominal identity rejected | traced |
+| VB-OBL-003 | Primitive invariants | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#representation-ownership) | value_boundary: independent verifier payload checks; signed zero, UTF-8, scalar range and Bytes | traced |
+| VB-OBL-004 | Pure typed tree | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#pure-value-tree-boundary) | value_boundary: typed Text capture, stepper/native observations and latent process-effect rejection | traced |
+| VB-OBL-005 | Independent verification and artifacts | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#pure-value-tree-boundary) | value_boundary: changed old core rejected; deterministic 0.1.58 artifact provenance | traced |
+| VB-OBL-006 | Structural conversion | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#checked-structural-and-nominal-conversion) | value_boundary: nested records/variants/products, extra fields and malformed ingress | traced |
+| VB-OBL-007 | Nominal conversion | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#checked-structural-and-nominal-conversion) | value_boundary: compact/uniform/fixed round-trips, generic Text, private constructors and improper payloads | traced |
+| VB-OBL-008 | Closures and authority exclusions | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#checked-structural-and-nominal-conversion) | value_boundary: captured closure and raw fun/PID/reference rejection; resource_handle, c004_categorical, kernel_capability_binding suites | traced |
+| VB-OBL-009 | Explicit payload budgets | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#budgets-diagnostics-and-limits) | value_boundary: node/byte exhaustion, empty binary, large integer and deep structures | traced |
+| VB-OBL-010 | Inherited compiler limits | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#budgets-diagnostics-and-limits) | value_boundary: decoded literal at/above configured limit; generated module/arity checks and full limits suite | traced |
