@@ -317,3 +317,5 @@ outputs, and artifact links needed to reproduce local experiments.
 - [Minimum prelude](2026-09-09-minimum-prelude.md) — P101 catalog, explicit package adoption and application evidence.
 
 - [Trusted computing base](2026-09-09-trusted-computing-base.md) — C126 guarantee dependencies, privileged-path inventory and mutation witnesses.
+
+- [Trusted obligation policy](2026-09-09-trusted-obligation-policy.md) — transitive boundary disclosure, scoped admission and revocation evidence.

@@ -2860,3 +2860,25 @@ in the sibling compiler. Undetected semantic changes remain explicit residual tr
 | TC-OBL-009 | Scanner limits | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#executable-source-and-data-inventory) | trust_boundary: comments ignored, guard-only difference not detected and Python input not executed | traced |
 | TC-OBL-010 | Maintained profile | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#profile-and-maintenance) | trust_boundary: canonical profile forgery refusal and machine conformance disclosure | traced |
 | TC-OBL-011 | Bounds and costs | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#bounds-and-reporting) | trust_boundary: oversized source refused and finite syntax/data audit | traced |
+
+
+## C127 trusted obligation policy
+
+The [policy contract](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md)
+and [journal](../50-journal/2026-09-09-trusted-obligation-policy.md) bind the following
+obligations to `test/catena/trusted_policy_test.exs` in the sibling compiler.
+Underlying unsafe exclusions and native/foreign enforcement retain their original witnesses.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| TP-OBL-001 | Exact policy | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#status-and-authority) | trusted_policy: revision disclosure preserves retained executable/signed formats; c067_dynamic_unsafe exclusions | traced |
+| TP-OBL-002 | Derived obligations | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#obligations-and-responsibility) | trusted_policy: verified pure/foreign/native inputs; forged core/artifact refusal | traced |
+| TP-OBL-003 | Evidence limits | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#obligations-and-responsibility) | trusted_policy: host-safety flag false; native and host obligation records remain visible | traced |
+| TP-OBL-004 | Transitive closure | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#exact-dependency-closure) | trusted_policy: diamond closure, missing/cyclic/duplicate/unreachable graph rejection | traced |
+| TP-OBL-005 | Owner-qualified identity | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#exact-dependency-closure) | trusted_policy: package renaming/version replacement and signed native replacement require new grants | traced |
+| TP-OBL-006 | Artifact binding | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#interface-and-artifact-exposure) | trusted_policy: rehashed omission decodes but fails rebinding to checked inputs | traced |
+| TP-OBL-007 | Explicit admission | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#scoped-admission) | trusted_policy: missing grants and incomplete acknowledgements deny transitive application entry | traced |
+| TP-OBL-008 | Scoped attenuation | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#scoped-admission) | trusted_policy: forgery/cross-owner refusal, subset checks, escaped scope and owner-death expiry | traced |
+| TP-OBL-009 | Revocation | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#scoped-admission) | trusted_policy: existing/future descendants denied; child revocation preserves parent | traced |
+| TP-OBL-010 | Checked execution | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#execution) | trusted_policy: actual compiled pure/foreign entries and signed native service execution | traced |
+| TP-OBL-011 | Bounds and refusal | [Rule](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md#limits-and-refusal) | trusted_policy: graph/sidecar/grant/scope limits, unchanged grants after denied attenuation, conformance disclosure | traced |
