@@ -2791,3 +2791,28 @@ independent rational evidence and compiled/reference execution.
 | NL-OBL-010 | Typed operations | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#typed-compiled-and-reference-adoption) | numeric_program: both input owners, incompatible steps, early failure and 253/254 caps | traced |
 | NL-OBL-011 | Rebuilt execution identity | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#typed-compiled-and-reference-adoption) | numeric_program: sidecar mutation, repeated reuse and loaded conflict | traced |
 | NL-OBL-012 | Costs and budgets | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#bounds-and-costs) | numeric_library: large integers, parser/decimal limits and complete input/output budgets | traced |
+
+
+## C106 environmental effects
+
+The [contract](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md)
+and [journal](../50-journal/2026-09-09-environmental-effects.md) distinguish actual
+host observations from the checked launch and authority rules. Tests are in
+`test/catena/environment_{kernel,policy,runtime,program}_test.exs` in the sibling compiler.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| EV-OBL-001 | Exact profile | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#status-and-authority) | environment_kernel: exact scalar/capability profile and retained refusal | traced |
+| EV-OBL-002 | Entry amendment | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#versioned-entry-amendment) | environment_program: compiled explicit entry and missing/forged bindings | traced |
+| EV-OBL-003 | Closed launch | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#versioned-entry-amendment) | environment_program: empty authority, local handler and absent grant | traced |
+| EV-OBL-004 | Authority identity | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#authority-transport-and-attenuation) | environment_runtime: nonce forgery and cross-owner refusal; retained capability-scope suite | traced |
+| EV-OBL-005 | Attenuation | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#authority-transport-and-attenuation) | environment_policy/environment_runtime: resource escalation, expiry and descendant revocation | traced |
+| EV-OBL-006 | Service shapes | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#service-contracts) | environment_policy: all operation codecs; environment_runtime: eight real services | traced |
+| EV-OBL-007 | Whole answers | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#service-contracts) | environment_runtime: wrong-service failure and oversized output refusal | traced |
+| EV-OBL-008 | Relative file access | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#filesystem-and-network-confinement) | environment_runtime: real read/write, symlink and escape refusal | traced |
+| EV-OBL-009 | Exact TCP authority | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#filesystem-and-network-confinement) | environment_runtime: loopback exchange and ungranted alias refusal | traced |
+| EV-OBL-010 | Owned child and devices | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#host-process-and-device-ownership) | environment_runtime: explicit devices, exact child input and PID reaping | traced |
+| EV-OBL-011 | Terminal arbitration | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#lifetime-cancellation-and-shutdown) | environment_runtime: cancel/revoke/expiry and one completed event per request | traced |
+| EV-OBL-012 | Mandatory release | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#lifetime-cancellation-and-shutdown) | environment_runtime: owner death, source trap and suspended-worker cleanup failure | traced |
+| EV-OBL-013 | Executable identity | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#artifact-and-manifest-boundary) | environment_program: compiled/reference trace, sidecar mutation and manifest refusal | traced |
+| EV-OBL-014 | Bounds | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#bounds-and-costs) | environment_policy/environment_runtime: policy bounds, request cap and whole-carrier refusal | traced |

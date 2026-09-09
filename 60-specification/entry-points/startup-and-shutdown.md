@@ -105,3 +105,10 @@ spawn-per-entry, what the [OTP applications
 analysis](../../30-sources/erlang-otp-applications.md) contributes, and
 the falsification criteria that would reopen the model. The [topic
 map](../../10-maps/entry-points.md) routes the decision.
+
+
+## Later revision connection (non-normative)
+
+C106's [explicit entry amendment](../environmental-effects/explicit-authority-and-closed-launches.md#versioned-entry-amendment)
+adds the exact 0.1.68 authority parameter and owned launch scope. This chapter's
+retained revision keeps its original contract.

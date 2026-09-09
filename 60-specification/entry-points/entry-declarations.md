@@ -133,3 +133,10 @@ kernel and prelude contracts. The [resolved
 inquiry](../../40-inquiries/how-should-catena-define-entry-points-and-application-structure.md)
 and [topic map](../../10-maps/entry-points.md) preserve the decision
 route.
+
+
+## Later revision connection (non-normative)
+
+C106's [explicit entry amendment](../environmental-effects/explicit-authority-and-closed-launches.md#versioned-entry-amendment)
+adds the exact 0.1.68 authority parameter and owned launch scope. This chapter's
+retained revision keeps its original contract.

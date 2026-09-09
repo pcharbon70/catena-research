@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **105 complete, 22 partial, 12 gaps, and 2
+The current checkboxes total **106 complete, 21 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.68`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.69`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -102,12 +102,12 @@ item is marked complete by this audit.
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
 | 10. Processes, concurrency, and distribution | 5 | 2 | 2 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
-| 12. Standard library contract | 4 | 4 | 0 | 0 | 8 |
+| 12. Standard library contract | 5 | 3 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **105** | **22** | **12** | **2** | **141** |
+| **Total** | **106** | **21** | **12** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -262,8 +262,8 @@ implementation evidence. Their remaining extensions have separate owners below.
   capabilities, named deep handlers, affine resumptions, explicit typed core,
   effect-directed CPS, cross-module handlers, and differential reference/BEAM
   traces. Cleanup and scoped control remain G080/D083; C081/C082 subsequently
-  define exception and top-level boundaries, with environmental APIs P106
-  and performance/usability G138/G137 still open.
+  define exception and top-level boundaries; C106 supplies environmental APIs.
+  Performance/usability G138/G137 remain open.
 - [x] **C006 — Complete — language-integrated specifications and governance.**
   The
   [normative 0.1.6 specification](../60-specification/specifications-and-governance/README.md),
@@ -1347,10 +1347,11 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   `ENT001`, C027 unchanged); nobody interprets unhandled requests because
   none exist — no ambient host handler exists or is reserved; and launch
   is invocation only, to completion under unchanged kernel semantics with
-  no scope and no injection. The capability interface for P106:
+  no scope and no injection. The capability interface now supplied by C106:
   capabilities reach an entry only as explicit typed values through a
-  channel P106's slice defines and justifies — deny-able, never ambient —
-  with the zero-argument and effect-closed rules binding until then.
+  channel C106's slice defines and justifies — deny-able, never ambient —
+  with retained zero-argument entries unchanged and the new 0.1.68 entry
+  explicitly amended to receive authority while remaining effect-closed.
   C084's supervision interprets process failure, never requests; the
   door requires entry-form widening to amend C027 explicitly with
   who-interprets-what stated. Compiler witnesses on C027's existing
@@ -1558,12 +1559,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   includes independent rational vectors and compiled/reference witnesses.
   Transcendentals remain absent behind named admission gate NL-T01, as the
   reviewed plan permits; public vocabulary remains held.
-- [ ] **P106 — Partial — environmental effects.** C010 defines the reserved
-  Process effect; C082 requires explicit typed, deny-able capabilities
-  through a future defined channel, while zero-argument/effect-closed
-  entry rules remain binding. Define that channel and the standard I/O,
-  filesystem, network, time, randomness, environment, logging, and process
-  control APIs. The existing boundary supplies no ambient host services.
+- [x] **C106 — Complete — environmental effects.** Exact `0.1.68`
+  [explicit authority and closed launches](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md)
+  amend C027/C082 for a typed service-authority parameter, preserving closed effects
+  and retained zero-argument entries. Eight concrete adapters cover I/O, filesystem,
+  numeric-endpoint TCP, time, randomness, environment, logging and approved host
+  processes. Attenuation, denied/expired/revoked authority, owned cleanup and
+  deterministic models have [compiled/reference and real-host evidence](../50-journal/2026-09-09-environmental-effects.md).
+  Public names and launch syntax remain held; P096 callback composition remains
+  separate, and approved host commands are trusted code rather than an OS sandbox.
 - [ ] **P107 — Partial — category-inspired API names.** Normative 0.1.4 chooses the
   canonical behavior-first trait and method ABI and confines formal names to
   reference metadata. Independent comprehension and usability validation is

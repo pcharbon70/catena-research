@@ -85,3 +85,10 @@ completion rule converging — and what immediacy it trades for
 total determinism at the boundary. The [resolved
 inquiry](../../40-inquiries/who-interprets-top-level-requests.md)
 preserves the decision route.
+
+
+## Later revision connection (non-normative)
+
+C106's [explicit entry amendment](../environmental-effects/explicit-authority-and-closed-launches.md#versioned-entry-amendment)
+adds the exact 0.1.68 authority parameter and owned launch scope. This chapter's
+retained revision keeps its original contract.

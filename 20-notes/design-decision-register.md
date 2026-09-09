@@ -1101,3 +1101,10 @@ and [implementation decisions](../50-journal/2026-09-09-numeric-library.md#imple
 make the checked arithmetic, explicit rounding and validated-kernel admission
 choices durable. The initial empty transcendental set follows the plan's named
 follow-up provision; exact decimal printing supplies the required round trip.
+
+## C106 execution links
+
+CP-106-1 through CP-106-5 retain their original recommended selections. The
+[environmental implementation journal](../50-journal/2026-09-09-environmental-effects.md#implementation-decisions)
+records explicit authority values, a new closed launch wrapper, attenuable service
+grants and deterministic/real adapters. The [normative amendment](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md) makes the choices durable at exact revision 0.1.68.

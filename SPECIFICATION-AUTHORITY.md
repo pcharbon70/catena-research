@@ -276,3 +276,5 @@ Those items may extend this policy, but evidence must continue to remain
 distinct from language authority.
 
 C105 uses `0.1.67` for the [numeric library](60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md), including checked arithmetic, explicit rounding and exact executable adoption.
+
+C106 uses `0.1.68` for [environmental effects](60-specification/environmental-effects/explicit-authority-and-closed-launches.md), explicitly amending C027/C082 for a typed authority parameter while retaining closed effects and historical entry rules.

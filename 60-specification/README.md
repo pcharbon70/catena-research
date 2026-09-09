@@ -420,6 +420,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Type System](type-system/README.md) — the version 0.1.1 principal and
   annotation-directed static semantics, elaboration contract, and evidence.
 
+- [Environmental effects](environmental-effects/README.md) — explicit authority, closed launches and owned service adapters.
+
 ### Documents
 
 - None yet.
