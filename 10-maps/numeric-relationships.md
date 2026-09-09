@@ -54,3 +54,5 @@ Specification](../60-specification/numeric-relationships/README.md).
   the literal half of the numeric program.
 - [Built-In Data Model map](built-in-data-model.md) — the closed
   set's home.
+
+- [C105 numeric library](../60-specification/numeric-library/README.md) — checked arithmetic, explicit conversion/decimal rounding and verified executable adoption.

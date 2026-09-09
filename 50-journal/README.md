@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [2026-09-09 numeric library](2026-09-09-numeric-library.md) — exact arithmetic, decimal decisions, independent vectors and compiled evidence.
+
 - [Text and Binary Model Implementation](2026-09-09-text-binary-model.md) — C104 decisions, pinned conformance vectors and compiled runtime adoption.
 
 - [Collection Protocol Implementation](2026-09-09-collection-protocols.md) — C102 decisions, compiled laws, bounded conversion and owned pull evidence.

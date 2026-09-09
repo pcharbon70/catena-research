@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **104 complete, 23 partial, 12 gaps, and 2
+The current checkboxes total **105 complete, 22 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.65`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.68`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 3 | 3 | 3 | 0 | 9 |
-| 11. BEAM representation and Erlang interoperability | 0 | 5 | 3 | 0 | 8 |
-| 12. Standard library contract | 1 | 7 | 0 | 0 | 8 |
+| 10. Processes, concurrency, and distribution | 5 | 2 | 2 | 0 | 9 |
+| 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
+| 12. Standard library contract | 4 | 4 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **92** | **31** | **16** | **2** | **141** |
+| **Total** | **105** | **22** | **12** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -485,7 +485,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   supplies complete `NM-OBL-001`–`NM-OBL-014` coverage with 246 passing
   tests. C061 subsequently fixes primitive numeric relationships, C035
   comparison, and C036 failure categories. Explicit conversions and numeric
-  library operations remain P105, including each fault producer's policy.
+  library operations are defined by C105, including each fault producer's policy.
 - [x] **C019 — Complete — operators and punctuation.** The normative
   [0.1.15 operators specification](../60-specification/operators-and-punctuation/README.md),
   [synthesis](../20-notes/catena-operators-and-punctuation.md),
@@ -1191,7 +1191,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   inference engine with float-typed operands, `fd75cb7`). No
   defaulting, implicit coercion, or literal constraints (`NM-OBL-005`/
   `006` re-affirmed); division, remainder, checked and decimal
-  arithmetic, and explicit conversions route to P105. Zero new
+  arithmetic, and explicit conversions are defined by C105. Zero new
   diagnostic families and no new public API.
 - [x] **C062 — Complete — aliases, opaque types, and newtypes.** Normative
   `0.1.41` fixes one exclusion and two routings: transparent aliases are
@@ -1335,7 +1335,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   (C036 unchanged). Panics are traps with the reserved assertion/panic
   kind entering with their producers. Process exits route to C084,
   foreign failures map to trap at the visible boundary (C095/G096 with
-  C067's rule), cancellation to C088, library faults to P105, outcome
+  C067's rule), cancellation to C088, library faults to C105, outcome
   types to C103; C044's reopening door is the only amendment route for a
   language exception form. Compiler witnesses on existing machinery
   (`e0f2a9e`): the declining-handler pattern (`0`, not `100`, both
@@ -1548,20 +1548,16 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   remains P109. [Executed evidence](../50-journal/2026-09-09-text-binary-model.md)
   includes all pinned grapheme/normalization vectors, the supplementary scalar
   invariant, long combining runs, independent bit arithmetic and both backend owners.
-- [ ] **P105 — Partial — numeric library.** C018 fixes unbounded Int,
-  finite binary64 Float, literal conversion and overflow diagnostics;
-  C035 fixes comparison, and C061 fixes closed-set primitive operators.
-  Complete division/remainder, runtime arithmetic failure classification,
-  decimal and checked arithmetic, explicit conversions, parsing,
-  formatting, and math-library guarantees. Recorded float edges from the
-  [BEAM host-boundary probes](../50-journal/2026-08-31-beam-float-boundary-probes.md):
-  runtime overflow and domain-error classification must be fixed when the first
-  runtime-failing producer (division) lands — `trap` with C036's reserved
-  arithmetic kind or typed failure per producer (the host raises `badarith`;
-  literal overflow is already static `NUM001`); the math library must either
-  scope bit-exact determinism to `+ − × ÷ √` or adopt correctly-rounded
-  transcendentals (CORE-MATH is MIT-licensed and shelf-ready); and printing
-  must round-trip (`parse(print(x)) == x`) on every target.
+- [x] **C105 — Complete — numeric library.** Exact `0.1.67`
+  [checked arithmetic and rounding](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md)
+  defines Euclidean quotient/remainder, finite binary64 operations, distinct
+  primitive arithmetic traps and checked failures, explicit conversions, ordinary
+  decimal values/contexts, deterministic exact decimal print/parse and correctly
+  rounded square root. Typed pipelines execute over retained inputs without
+  widening old source grammar. [Evidence](../50-journal/2026-09-09-numeric-library.md)
+  includes independent rational vectors and compiled/reference witnesses.
+  Transcendentals remain absent behind named admission gate NL-T01, as the
+  reviewed plan permits; public vocabulary remains held.
 - [ ] **P106 — Partial — environmental effects.** C010 defines the reserved
   Process effect; C082 requires explicit typed, deny-able capabilities
   through a future defined channel, while zero-argument/effect-closed

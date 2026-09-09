@@ -2770,3 +2770,24 @@ semantics to pinned primary data and executable ordinary/tree adoption.
 | TB-OBL-010 | Rebuilt artifact identity | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#retained-input-compiled-adoption) | text_program: changed sidecar/steps refusal and exact-code reuse versus module conflict | traced |
 | TB-OBL-011 | Carrier and operation bounds | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#bounds-and-costs) | text_binary/text_program: complete output budgets, huge slices and typed descriptors | traced |
 | TB-OBL-012 | Declared cost scope | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#bounds-and-costs) | text_unicode/text_binary: long combining/contextual runs and oversized segment refusal without requested allocation | traced |
+
+## C105 numeric library
+
+The [contract](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md)
+and [journal](../50-journal/2026-09-09-numeric-library.md) bind numeric promises to
+independent rational evidence and compiled/reference execution.
+
+| Obligation | Contract | Rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| NL-OBL-001 | Exact profile | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#status-and-authority) | numeric_program: exact artifact identity and nominal package | traced |
+| NL-OBL-002 | Euclidean arithmetic | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#integer-arithmetic-and-division) | numeric_library: signed identities and 5001-digit input | traced |
+| NL-OBL-003 | Finite Float operations | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#finite-binary64-arithmetic) | numeric_library: 6688 independent Fraction vectors and finite boundary bits | traced |
+| NL-OBL-004 | Trap versus typed answer | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#primitive-traps-and-typed-answers) | numeric_program: compiled primitive overflow versus checked failure | traced |
+| NL-OBL-005 | Explicit conversions | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#explicit-conversions) | numeric_library: midpoint, very large Int and decimal loss | traced |
+| NL-OBL-006 | Ordinary decimal contexts | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#decimal-package-and-contexts) | numeric_program/numeric_library: ordinary constructor/eliminator and forged context | traced |
+| NL-OBL-007 | Single decimal rounding | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#decimal-package-and-contexts) | numeric_library/numeric_program: declared modes, precision and compiled division | traced |
+| NL-OBL-008 | Deterministic text conversion | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#parsing-and-formatting) | numeric_library: over 2000 exact bit round trips and malformed/huge exponent input | traced |
+| NL-OBL-009 | Validated math scope | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#mathematical-functions-and-admission) | numeric_library: exact root midpoint bounds and unsupported sine refusal | traced |
+| NL-OBL-010 | Typed operations | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#typed-compiled-and-reference-adoption) | numeric_program: both input owners, incompatible steps, early failure and 253/254 caps | traced |
+| NL-OBL-011 | Rebuilt execution identity | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#typed-compiled-and-reference-adoption) | numeric_program: sidecar mutation, repeated reuse and loaded conflict | traced |
+| NL-OBL-012 | Costs and budgets | [Rule](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md#bounds-and-costs) | numeric_library: large integers, parser/decimal limits and complete input/output budgets | traced |
