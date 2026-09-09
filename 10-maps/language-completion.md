@@ -73,3 +73,5 @@ this plan does not resolve them merely by choosing a direction.
 - [C105 numeric library](../60-specification/numeric-library/README.md) — checked arithmetic, explicit conversion/decimal rounding and verified executable adoption.
 
 - [C106 environmental effects](../60-specification/environmental-effects/README.md) — explicit service authority closes launch effects and owns adapter cleanup.
+
+- [C101 minimum prelude](../60-specification/minimum-prelude/README.md) — explicit catalog selection assembles the pure minimum and separately granted services.

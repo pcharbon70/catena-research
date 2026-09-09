@@ -1108,3 +1108,11 @@ CP-106-1 through CP-106-5 retain their original recommended selections. The
 [environmental implementation journal](../50-journal/2026-09-09-environmental-effects.md#implementation-decisions)
 records explicit authority values, a new closed launch wrapper, attenuable service
 grants and deterministic/real adapters. The [normative amendment](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md) makes the choices durable at exact revision 0.1.68.
+
+
+## C101 execution links
+
+CP-101-1 through CP-101-3 retain their recommended selections. The
+[minimum-prelude journal](../50-journal/2026-09-09-minimum-prelude.md#implementation-decisions)
+records the exact catalog, ordinary foundations and explicit executable adoption.
+The [normative minimum](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md) makes these choices durable at exact semantic revision 0.1.69.
