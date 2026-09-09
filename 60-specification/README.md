@@ -422,6 +422,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 - [Environmental effects](environmental-effects/README.md) — explicit authority, closed launches and owned service adapters.
 
+- [Minimum prelude](minimum-prelude/README.md) — exact selected standard components, ordinary foundations and executable applications.
+
 ### Documents
 
 - None yet.

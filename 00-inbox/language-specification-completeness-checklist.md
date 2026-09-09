@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **106 complete, 21 partial, 12 gaps, and 2
+The current checkboxes total **107 complete, 20 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.69`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.70`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -102,12 +102,12 @@ item is marked complete by this audit.
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
 | 10. Processes, concurrency, and distribution | 5 | 2 | 2 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
-| 12. Standard library contract | 5 | 3 | 0 | 0 | 8 |
+| 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **106** | **21** | **12** | **2** | **141** |
+| **Total** | **107** | **20** | **12** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1516,12 +1516,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   BEAM bytes after an erased-checker change and preserved foreign authority.
 ## 12. Standard library contract
 
-- [ ] **P101 — Partial — minimum prelude.** C026 fixes explicit package
-  selection, import precedence, opt-out, and zero implicit names; C004
-  freezes the canonical categorical hierarchy. Freeze the minimum
-  package's types, constructors, functions, traits, and effects within
-  those existing rules. Do not introduce automatic imports without the
-  edition change required by C026.
+- [x] **C101 — Complete — minimum prelude.** Exact `0.1.69`
+  [explicit minimum and component identity](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md)
+  assembles ordinary foundations, the retained categorical hierarchy, outcomes,
+  collections, text/binary and numerics with separately selectable environmental
+  contracts. Exact package/component/interface digests bind dependency resolution
+  and lock replay. Opt-out supplies no standard interfaces or implicit names;
+  importing services grants no authority. [Evidence](../50-journal/2026-09-09-minimum-prelude.md)
+  includes foundation laws and compiled transformation, validation, numeric, text
+  and actual capability-using applications. Public vocabulary and grammar remain held.
 - [x] **C102 — Complete — collection protocols.** The
   [0.1.65 contract](../60-specification/collection-protocols/finite-families-and-owned-pulls.md)
   defines ordinary finite families, semantic key order, strict duplicate failure,

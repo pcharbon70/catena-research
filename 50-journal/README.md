@@ -313,3 +313,5 @@ outside the greenfield research boundary.
 
 Name entries by date, index every direct entry, and retain commands, versions,
 outputs, and artifact links needed to reproduce local experiments.
+
+- [Minimum prelude](2026-09-09-minimum-prelude.md) — P101 catalog, explicit package adoption and application evidence.

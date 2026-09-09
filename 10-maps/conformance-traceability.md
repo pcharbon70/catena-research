@@ -2816,3 +2816,25 @@ host observations from the checked launch and authority rules. Tests are in
 | EV-OBL-012 | Mandatory release | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#lifetime-cancellation-and-shutdown) | environment_runtime: owner death, source trap and suspended-worker cleanup failure | traced |
 | EV-OBL-013 | Executable identity | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#artifact-and-manifest-boundary) | environment_program: compiled/reference trace, sidecar mutation and manifest refusal | traced |
 | EV-OBL-014 | Bounds | [Rule](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md#bounds-and-costs) | environment_policy/environment_runtime: policy bounds, request cap and whole-carrier refusal | traced |
+
+
+## C101 minimum prelude
+
+The [contract](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md)
+and [journal](../50-journal/2026-09-09-minimum-prelude.md) bind the new assembly to
+`test/catena/minimum_prelude_test.exs` and its retained source fixtures in the sibling compiler.
+Existing family laws remain traced by C004 and C102–C106.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| MP-OBL-001 | Exact scope | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#status-and-authority) | minimum_prelude: catalog identity and retained hierarchy | traced |
+| MP-OBL-002 | Semantic families | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#minimum-semantic-inventory) | minimum_prelude: five compiled modules plus inherited outcome/collection/text/numeric law suites | traced |
+| MP-OBL-003 | Explicit services | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#minimum-semantic-inventory) | minimum_prelude: real compiled I/O denied without actual authority | traced |
+| MP-OBL-004 | Foundation laws | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#ordinary-foundation-meaning) | minimum_prelude: 61-input identity/composition/product laws, reference identity and callback order | traced |
+| MP-OBL-005 | Pinned content | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#exact-package-and-component-selection) | minimum_prelude: rehashed changed catalog and hierarchy refusal | traced |
+| MP-OBL-006 | Selection shape | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#exact-package-and-component-selection) | minimum_prelude: missing/duplicate packages, extra fields and wrong version/digest | traced |
+| MP-OBL-007 | Dependency replay | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#prelude-dependency-and-names) | minimum_prelude: actual five-interface lock generation and exact content replay | traced |
+| MP-OBL-008 | Opt-out and names | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#prelude-dependency-and-names) | minimum_prelude: empty application, absent standard nominal type and conflicting aliases | traced |
+| MP-OBL-009 | Ordinary delivery | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#checked-executable-delivery) | minimum_prelude: compiled transformation and validation via selected nominal interfaces | traced |
+| MP-OBL-010 | Checked entry selection | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#checked-executable-delivery) | minimum_prelude: numeric/reference, Unicode and explicitly authorized compiled service execution | traced |
+| MP-OBL-011 | Bounds and costs | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#bounds-costs-and-exclusions) | minimum_prelude: oversized manifest and component capacity plus inherited carrier/source limits | traced |

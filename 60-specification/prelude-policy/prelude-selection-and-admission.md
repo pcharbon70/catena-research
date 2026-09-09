@@ -103,3 +103,10 @@ opt-in selection on ordinary C025 machinery was selected. The
 [resolved inquiry](../../40-inquiries/how-should-catena-define-its-prelude-policy.md)
 and [topic map](../../10-maps/prelude-policy.md) preserve the decision
 route.
+
+
+## Later contents contract (non-normative)
+
+C101's [minimum catalog](../minimum-prelude/explicit-minimum-and-component-identity.md)
+now defines exact component assembly and executable evidence. The retained 0.1.22
+selection rules above remain unchanged; public vocabulary still belongs to P107/P109.
