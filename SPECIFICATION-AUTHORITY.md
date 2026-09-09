@@ -155,6 +155,8 @@ The [typed supervision contract](60-specification/typed-supervision/checked-tree
 
 The [OTP compatibility policy](60-specification/otp-compatibility/support-probes-and-artifacts.md) occupies `0.1.57`. It binds new artifacts to tested toolchains without adding an executable frontend or changing retained source/interface formats.
 
+The [value-boundary contract](60-specification/value-boundaries/carriers-and-checked-conversion.md) occupies `0.1.58`. It admits an exact pure value-tree target and checked representation conversion while preserving retained source, interface and signed formats.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

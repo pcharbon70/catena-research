@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **96 complete, 29 partial, 14 gaps, and 2
+The current checkboxes total **97 complete, 28 partial, 14 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -1435,14 +1435,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 
 ## 11. BEAM representation and Erlang interoperability
 
-- [ ] **P093 — Partial — Catena-to-BEAM value mapping.** C002 checks
-  uniform and compact nominal ADT layouts; C010 fixes its bounded
-  record/variant/closure/process representations; C005 defines capability
-  and CPS lowering; C004/C006 specify dictionary and verification-evidence
-  erasure. Complete the integrated primitive, closure, runtime-resource,
-  and foreign-value representation contract. Meaning-level Text/Float
-  support does not establish complete source-to-BEAM adoption, and these
-  internal layouts do not imply a stable external ABI.
+- [x] **C093 — Complete — Catena-to-BEAM value mapping.** The
+  [0.1.58 contract](../60-specification/value-boundaries/carriers-and-checked-conversion.md)
+  adds an exact pure value-tree boundary for finite Float, Text, Character and
+  Bytes, including typed closure capture and reference/BEAM agreement. Checked
+  scalar, product, record, variant and nominal conversion preserves compact,
+  uniform and fixed layouts, qualified identity and explicit node/byte budgets.
+  Existing dictionary/evidence erasure and scoped-handle ownership retain their
+  contracts; raw foreign funs, references and authority-bearing handles are not
+  admitted by ordinary data conversion. General callbacks remain P096 and no
+  stable external ABI or final vocabulary is adopted. See the
+  [implementation evidence](../50-journal/2026-09-08-value-boundaries.md).
 - [ ] **P094 — Partial — calling conventions.** C010 fixes kernel export
   names, written arities, and hidden process spawn symbols; C005 fixes
   direct wrappers and CPS workers; C032 specifies currying, immutable

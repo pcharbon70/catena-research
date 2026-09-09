@@ -51,6 +51,8 @@ Public vocabulary and the final grammar remain held for later joint design.
   [conformance registry](conformance-traceability.md) remains the rule-to-test
   inventory rather than a substitute for behavioral witnesses.
 
+- [Value boundaries](../60-specification/value-boundaries/README.md) completes C093 with typed scalar/structural/nominal conversion, verified closure capture and explicit authority exclusions.
+
 ## Open questions
 
 The [completion inquiry](../40-inquiries/how-can-catena-complete-its-language-definition.md)
