@@ -84,7 +84,7 @@ The current checkboxes total **99 complete, 27 partial, 13 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.61`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.62`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1467,11 +1467,14 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   NIF/ETF construction. Generic raw handles remain excluded and no dynamic
   type or final vocabulary is introduced. See the
   [implementation evidence](../50-journal/2026-09-09-erlang-type-boundary.md).
-- [ ] **P096 — Partial — foreign calls and callbacks.** C089 admits a narrow
-  checked OTP lifecycle adapter with verified process entries and artifacts.
-  Complete general call/callback syntax, effect declarations,
-  trust, exceptions, blocking behavior, cancellation, ownership, and callback
-  lifetime.
+- [ ] **P096 — Partial — foreign calls and callbacks.** The
+  [0.1.61 adapter milestone](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md)
+  executes typed capability-bound host calls and scope-owned pure callbacks,
+  with checked captures, visible traps, cooperative cancellation races and
+  C080 bounded cleanup. A retained C050 entry runs through checked foreign
+  bindings and a separate artifact. General effectful/resource-capturing
+  callbacks, application authority provisioning and the plan's public-surface
+  gate remain open. See the [implementation evidence](../50-journal/2026-09-09-foreign-adapters.md).
 - [ ] **P097 — Partial — binaries, maps, PIDs, ports, references, and funs.**
   C010 admits opaque typed process handles backed by local PIDs, allows
   sending them, and excludes equality and reflection on handles. C040

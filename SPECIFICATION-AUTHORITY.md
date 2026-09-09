@@ -159,6 +159,8 @@ The [value-boundary contract](60-specification/value-boundaries/carriers-and-che
 The [calling-convention contract](60-specification/calling-conventions/checked-calls-and-artifact-identity.md) occupies `0.1.59`. It adds exact build-bound calling sidecars, staged checked closures, synchronous data callbacks and retained lifecycle call descriptions; historical inputs and persisted interface/signed formats remain distinct.
 The [Erlang type-boundary contract](60-specification/erlang-type-boundary/typed-conversion-and-preservation.md) occupies `0.1.60`. It adds explicit typed codecs, full-carrier validation and verified nominal sequence bridges without adding a dynamic type or new persisted/executable format.
 
+The [foreign-adapter milestone](60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md) occupies `0.1.61`. It adds explicit trusted grants, scoped pure callbacks and a checked capability-program artifact. P096 retains its later surface and broader callback gates.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

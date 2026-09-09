@@ -61,3 +61,5 @@ The [completion inquiry](../40-inquiries/how-can-catena-complete-its-language-de
 owns cross-item dependencies, proof disposition and the held public adoption
 gate. Focused inquiries continue to own their individual research questions;
 this plan does not resolve them merely by choosing a direction.
+
+- [Foreign adapter milestone](../60-specification/foreign-adapters/README.md) — P096 executed authority/lifetime work; its public-surface and broader callback gates remain open.

@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Foreign Adapter Implementation](2026-09-09-foreign-adapters.md) — P096 decisions, executed bindings, cancellation and callback lifetime evidence.
+
 - [Erlang Type Boundary Implementation](2026-09-09-erlang-type-boundary.md) — C095 decisions, typed codecs, preservation corpus and isolated NIF correction evidence.
 
 - [Calling Convention Workbench](2026-09-09-calling-conventions.md) — P094 descriptor decisions, verified entry inventory and remaining integration gates.
