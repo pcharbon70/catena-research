@@ -1092,3 +1092,12 @@ CP-104-1 through CP-104-3 retain their original recommended selections. The
 and [implementation decisions](../50-journal/2026-09-09-text-binary-model.md#implementation-decisions)
 record distinct units, explicit pinned algorithms and semantic formatting before
 syntax adoption, without overriding the reviewed forks.
+
+## C105 execution links
+
+CP-105-1 through CP-105-6 retain their recommended selections. The
+[numeric contract](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md)
+and [implementation decisions](../50-journal/2026-09-09-numeric-library.md#implementation-decisions)
+make the checked arithmetic, explicit rounding and validated-kernel admission
+choices durable. The initial empty transcendental set follows the plan's named
+follow-up provision; exact decimal printing supplies the required round trip.

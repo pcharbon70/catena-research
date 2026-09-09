@@ -100,3 +100,5 @@ Catena cites only the requirements by name.
 - [Catena Numeric Literal Semantics](../20-notes/catena-numeric-literal-semantics.md)
 - [How Should Catena Define Numeric Literal Semantics?](../40-inquiries/how-should-catena-define-numeric-literal-semantics.md)
 - [Numeric Literal Semantics map](../10-maps/numeric-literal-semantics.md)
+
+- [Checked numeric library](../60-specification/numeric-library/checked-arithmetic-and-explicit-rounding.md) — explicit finite arithmetic and conversion adoption.
