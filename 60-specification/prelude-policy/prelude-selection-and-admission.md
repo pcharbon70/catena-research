@@ -88,7 +88,7 @@ mechanism.
 ## Deliberately separate work
 
 Prelude contents and the standard-library name freeze remain P101.
-Collection protocols remain P102. Tooling scaffolding that pre-fills
+Collection protocols are supplied by [C102](../collection-protocols/finite-families-and-owned-pulls.md#status-and-authority). Tooling scaffolding that pre-fills
 the field remains P121 — a tool may write the field but MUST NOT imply
 selection that the manifest does not record. Entry-point defaults remain
 C027. Compatibility meanings of prelude version bumps are subsequently fixed

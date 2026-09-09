@@ -1077,3 +1077,10 @@ C080 execution decisions RL-I01–RL-I19 are recorded in the [resource journal](
 P084/G088 execution begins with OT-I01–OT-I06 in the [owned task journal](../50-journal/2026-09-08-owned-task-lifetimes.md), preserving the original CP-084 and CP-088 recommendations.
 
 G088 continues the selected CP-088 recommendations in the [cancellation and time journal](../50-journal/2026-09-08-cancellation-and-time.md), beginning with opaque deadline and exact conversion decisions TM-I01–TM-I03.
+
+## C102 execution links
+
+CP-102-1 through CP-102-4 retain their recorded recommended selections. The
+[finite and pull contract](../60-specification/collection-protocols/finite-families-and-owned-pulls.md)
+and [implementation decisions](../50-journal/2026-09-09-collection-protocols.md#implementation-decisions)
+make those choices durable; no original fork is overridden.

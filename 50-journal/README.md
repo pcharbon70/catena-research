@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Collection Protocol Implementation](2026-09-09-collection-protocols.md) — C102 decisions, compiled laws, bounded conversion and owned pull evidence.
+
 - [Debugging Metadata Implementation](2026-09-09-debugging-metadata.md) — C100 source identities, inline chains and executed frame/erasure witnesses.
 
 - [Native Service Implementation](2026-09-09-native-services.md) — C098 decisions and isolated executable native-service witnesses.

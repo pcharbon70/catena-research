@@ -60,3 +60,5 @@ spellings.
 C042 is complete at revision `0.1.37`. P101 declares the canonical
 collections on this contract; library combinators for ergonomic
 updates arrive there if recursion proves thin.
+
+- [Collection protocols](../60-specification/collection-protocols/README.md) — C102 executes the library contracts with semantic key order, explicit outcomes and owned pull cleanup.

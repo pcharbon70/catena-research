@@ -178,3 +178,12 @@ representation-visible profile, never an amendment of C037).
 - [The Comparable Set](../60-specification/equality-and-ordering/the-comparable-set.md)
 - [The Six Categories](../60-specification/runtime-failure-taxonomy/the-six-categories.md)
 - [The Observability Model](../60-specification/resource-observability/the-observability-model.md)
+
+## Executed library contract
+
+[C102](../60-specification/collection-protocols/README.md) now supplies the
+explicit finite collection and pull protocols delegated here. It keeps semantic
+order evidence separate from comparability, strict collisions separate from
+replacement/combining, and categorical laws separate from per-operation costs.
+The [journal](../50-journal/2026-09-09-collection-protocols.md) records executable
+ordinary package/dictionary and owned-stream evidence. Public names remain held.

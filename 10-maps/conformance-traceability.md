@@ -2730,3 +2730,22 @@ sidecars to executed generated-code failures and evidence-erasure checks.
 | DB-OBL-006 | Foreign authority and disclosure | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#foreign-entry-and-disclosure-boundary) | debugging_metadata: granted/denied foreign entry, redacted host reason and checked tuple disclosure | traced |
 | DB-OBL-007 | External evidence and verification | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#verification-and-evidence-erasure) | debugging_metadata: tampered/missing sidecars and unchanged BEAM after erased-checker change | traced |
 | DB-OBL-008 | Retention and limits | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#retention-modes-and-limits) | debugging_metadata: stripped frames and source/node/inline/history bounds | traced |
+
+## C102 collection protocols
+
+The [contract](../60-specification/collection-protocols/finite-families-and-owned-pulls.md)
+and [journal](../50-journal/2026-09-09-collection-protocols.md) connect finite
+families and owned pulls to ordinary compiled and independent model evidence.
+
+| Obligation | Contract | Rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| CL-OBL-001 | Exact ordinary package | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#status-and-authority) | collection_protocol: compilation, package identity and retained revision discovery | traced |
+| CL-OBL-002 | Semantic order | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#finite-families-and-order) | collection_protocol: signed-zero identity and fabricated/unsupported order refusal | traced |
+| CL-OBL-003 | Strict construction | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#construction-lookup-and-update) | collection_protocol: first duplicate and immutable typed lookup/replacement | traced |
+| CL-OBL-004 | Explicit combining | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#construction-lookup-and-update) | collection_protocol: input-order traps and independent Int associativity equations | traced |
+| CL-OBL-005 | Lawful pure transformations | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#mapping-folds-and-traversal) | collection_protocol: specialized BEAM identity/composition/folds and compiled effectful callback rejection | traced |
+| CL-OBL-006 | Ordered outcome traversal | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#mapping-folds-and-traversal) | collection_protocol: accumulated errors, empty values and dependent skip versus independent trap | traced |
+| CL-OBL-007 | Pull authority | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#owned-pull-protocol) | collection_iterator: absent grants and cross-owner/expired handles | traced |
+| CL-OBL-008 | Demand and lifetime | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#owned-pull-protocol) | collection_iterator: no eager pull, early cap, compiled pure stop, abandonment and owner death | traced |
+| CL-OBL-009 | Cancellation and cleanup | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#owned-pull-protocol) | collection_iterator: timeout, step exhaustion, last-state release and failed-release single attempt | traced |
+| CL-OBL-010 | Costs and budgets | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#costs-bounds-and-failure) | collection_protocol/collection_iterator: 50,000-element equations, result bounds and explicit pull limits | traced |

@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **102 complete, 25 partial, 12 gaps, and 2
+The current checkboxes total **103 complete, 24 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -460,8 +460,8 @@ implementation evidence. Their remaining extensions have separate owners below.
   implements `Catena.scan_literal/2`, exact numeric metadata, provenance,
   source-only lifecycle/persistence separation, and complete
   `LT-OBL-001`–`LT-OBL-012` coverage with 233 passing tests. C040/C041/C042 subsequently classify data, structural operations, and
-  collection construction. Concrete source adoption remains P109, library
-  collections P101/P102, and foreign/native data P093/C097; negation spelling and the token
+  collection construction. Concrete source adoption remains P109; C102 supplies collection
+  protocols while P101 retains prelude admission, and C093/C097 supply foreign/native data; negation spelling and the token
   inventory are complete as C019 while P109 retains declaration grammar;
   numeric meaning is complete as C018; and any future interpolation requires
   a new opt-in prefix.
@@ -661,7 +661,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   supplies complete `PL-OBL-001`–`PL-OBL-010` coverage with 332 passing
   tests through the manifest decoder, namespace builder, and
   `Catena.Package.Deps` wiring. Prelude contents and the name freeze
-  remain P101; collection protocols remain P102; tooling scaffolding
+  remain P101; collection protocols are C102; tooling scaffolding
   remains P121. C028 classifies prelude version changes; integrated
   compatibility-suite coverage remains P136.
 - [x] **C027 — Complete — entry points and application structure.**
@@ -880,7 +880,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   error, no coercion); closures and process handles never compare
   (`EQN001`); guards keep C003's frozen Int/Bool fragment, enforced
   by the independent condition checker; the operators are
-  non-overloadable built-ins under C061; library-level Eq/Ord APIs remain P101/P102. C040
+  non-overloadable built-ins under C061; library-level Eq/Ord naming remains P101, while C102 supplies closed semantic key-order evidence. C040
   subsequently adds Text/Character/Bytes comparison. Sibling compiler commit
   [`91c4d4929ea2fef316e44d3b1500a8854715b9be`](https://github.com/pcharbon70/catena/commit/91c4d4929ea2fef316e44d3b1500a8854715b9be)
   supplies complete `EQ-OBL-001`–`EQ-OBL-008` coverage with 417
@@ -1000,8 +1000,8 @@ implementation evidence. Their remaining extensions have separate owners below.
   supplies complete `BM-OBL-001`–`BM-OBL-008` coverage with 461
   passing tests through the `Catena.Text` elaboration module, the
   `Catena.Values` and `Data.comparable_type?` extensions, and the
-  content-order witnesses. Zero new diagnostic families. Collection
-  declarations and APIs remain P101/P102; C042 defines construction
+  content-order witnesses. Zero new diagnostic families. C102 supplies explicit collection
+  declarations and operations; P101 retains prelude admission. C042 defines construction
   and update. Text libraries remain P104 and source spellings P109;
   native reference admission remains C097/G098 subject to C040's exclusion.
 - [x] **C041 — Complete — structural records and variants.**
@@ -1521,13 +1521,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   package's types, constructors, functions, traits, and effects within
   those existing rules. Do not introduce automatic imports without the
   edition change required by C026.
-- [ ] **P102 — Partial — collection protocols.** C004 specifies standard
-  List mapping/reduction and stack safety, C042 defines ordinary-ADT
-  construction/update and typed lookup misses, and the `0.1.39`
-  comprehension slice supplies eager List construction with the evidence
-  gaps recorded as P050/P053/P057. Complete list, map, set, iterator,
-  stream, fold, traversal, builder, duplicate-key, and early-termination
-  contracts, including library-level complexity guarantees under C042.
+- [x] **C102 — Complete — collection protocols.** The
+  [0.1.65 contract](../60-specification/collection-protocols/finite-families-and-owned-pulls.md)
+  defines ordinary finite families, semantic key order, strict duplicate failure,
+  explicit replacement/combining, lawful dictionaries, ordered folds/traversal,
+  checked pure callbacks and owned demand-driven streams. Costs include complete
+  conversion and retained pull evidence; early stop, owner death and abandonment
+  have mandatory bounded release. The [executed evidence](../50-journal/2026-09-09-collection-protocols.md)
+  covers compiled dictionaries, independent laws, large lists, typed collisions,
+  callback refusal and pull/release traces. Public vocabulary remains held.
 - [x] **C103 — Complete — outcome types.** The
   [0.1.54 contract](../60-specification/outcome-contracts/values-sequencing-and-validation.md)
   defines ordinary optional and dependent values, nonempty accumulating
