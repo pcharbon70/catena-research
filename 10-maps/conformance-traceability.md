@@ -2611,3 +2611,25 @@ verified layout ownership and retain the exclusions on foreign authority.
 | VB-OBL-008 | Closures and authority exclusions | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#checked-structural-and-nominal-conversion) | value_boundary: captured closure and raw fun/PID/reference rejection; resource_handle, c004_categorical, kernel_capability_binding suites | traced |
 | VB-OBL-009 | Explicit payload budgets | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#budgets-diagnostics-and-limits) | value_boundary: node/byte exhaustion, empty binary, large integer and deep structures | traced |
 | VB-OBL-010 | Inherited compiler limits | [Rule](../60-specification/value-boundaries/carriers-and-checked-conversion.md#budgets-diagnostics-and-limits) | value_boundary: decoded literal at/above configured limit; generated module/arity checks and full limits suite | traced |
+
+
+## Calling-convention registry (`CV`, 0.1.59)
+
+The [contract](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md)
+and [journal](../50-journal/2026-09-09-calling-conventions.md) bind calling
+observations to verified artifacts and preserve separately owned foreign work.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| CV-OBL-001 | Exact selection and retained formats | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#status-and-authority) | calling_selection: exact selection, historical core/interface/signed boundaries | traced |
+| CV-OBL-002 | Call inventory and typed admission | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#call-classes-and-admission) | calling_descriptor, calling_callback, calling_lifecycle: checked entries and explicit refusals | traced |
+| CV-OBL-003 | Written and semantic arity | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#descriptor-and-executable-identity) | calling_descriptor, calling_metadata: spine/BEAM distinction, per-stage effects and private worker arity | traced |
+| CV-OBL-004 | Compiler and artifact metadata | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#descriptor-and-executable-identity) | calling_metadata: interface-owned builder, compile-info digest and forged compiler/forms refusal | traced |
+| CV-OBL-005 | Rebuild-bound artifact verification | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#descriptor-and-executable-identity) | calling_descriptor, calling_lifecycle: replaced binaries and rewritten digests rejected before entry | traced |
+| CV-OBL-006 | Application stages and capture | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#application-stages-and-lifetime) | calling_scope: partial/saturated agreement, independent captures and first-stage trap | traced |
+| CV-OBL-007 | Handle ownership and exhaustion | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#application-stages-and-lifetime) | calling_scope, calling_callback: cross-owner, forged, revoked, expired and bounded handles | traced |
+| CV-OBL-008 | Synchronous typed callback | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#application-stages-and-lifetime) | calling_callback: separately compiled Erlang ingress, explicit authority and expiry | traced |
+| CV-OBL-009 | Retained managed lifecycle | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#application-stages-and-lifetime) | calling_lifecycle: actual child exports, OTP callback arities and owner shutdown | traced |
+| CV-OBL-010 | Checked failures and data budgets | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#failures-frames-and-limits) | calling_descriptor, calling_callback: wrong data refusal, callback trap identity; value_boundary budgets | traced |
+| CV-OBL-011 | Traceable technical frames | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#failures-frames-and-limits) | calling_metadata: actual trap stack maps to origin, technical frames retained, unknown frame unmapped | traced |
+| CV-OBL-012 | Arity and proper-tail limits | [Rule](../60-specification/calling-conventions/checked-calls-and-artifact-identity.md#failures-frames-and-limits) | calling_metadata: private 255-arity CPS worker and million-step saturated/partial tail calls; full limits regressions | traced |

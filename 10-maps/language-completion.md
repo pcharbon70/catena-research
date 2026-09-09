@@ -51,6 +51,7 @@ Public vocabulary and the final grammar remain held for later joint design.
   [conformance registry](conformance-traceability.md) remains the rule-to-test
   inventory rather than a substitute for behavioral witnesses.
 
+- [Calling conventions workbench](../50-journal/2026-09-09-calling-conventions.md) records C094 completion at 0.1.59: verified call/artifact identity, staged closures, typed synchronous callbacks and retained lifecycle adapters.
 - [Value boundaries](../60-specification/value-boundaries/README.md) completes C093 with typed scalar/structural/nominal conversion, verified closure capture and explicit authority exclusions.
 
 ## Open questions
