@@ -78,4 +78,5 @@ this plan does not resolve them merely by choosing a direction.
 
 - [C126 trusted computing base](../60-specification/trusted-computing-base/README.md) — named enforcement and residual dependencies with mutation-tested boundaries.
 
+- [C131 secret capabilities](../60-specification/secret-capabilities/README.md) — sealed transformations, scoped delivery and explicit host trust.
 - [C127 trusted obligation policy](../60-specification/trusted-obligation-policy/README.md) — artifact-derived transitive trust with owner-qualified admission and revocation.

@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **109 complete, 19 partial, 11 gaps, and 2
+The current checkboxes total **110 complete, 18 partial, 11 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.72`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.73`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1726,11 +1726,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   identity and lockfile integrity. Complete package-registry signing and
   provenance rules, compromised releases, yanks, native dependencies, and
   the relationship of registry actions to governance evidence.
-- [ ] **P131 — Partial — secrets and capabilities.** C005 provides
-  lexical capabilities, C006 restricts specification evaluation to a pure
-  bounded fragment, and C082 excludes ambient entry services. Complete
-  credential transport, storage/redaction obligations, and how build and
-  foreign components expose ambient VM authority without hidden effects.
+- [x] **C131 — Complete — secrets and capabilities.** Normative `0.1.72`
+  defines [sealed values and protected delivery](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md):
+  explicit providers, scoped recipients, sensitivity-preserving transformations
+  and replies, origin revocation, redacted observations, artifact refusal and
+  bounded owned cleanup. Compiled capability, process stdin and loopback broker
+  witnesses use synthetic sentinels. Host/native trust and lack of secure erasure
+  remain explicit; general source/build adoption remains P109/P121. See the
+  [verification journal](../50-journal/2026-09-09-secret-capabilities.md).
+
 ## 16. Formal validation and release gates
 
 - [x] **C132 — Complete — progress and preservation targets.** Normative
