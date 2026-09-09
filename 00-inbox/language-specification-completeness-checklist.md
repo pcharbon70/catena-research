@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **101 complete, 26 partial, 12 gaps, and 2
+The current checkboxes total **102 complete, 25 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.64`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.65`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1454,7 +1454,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   and proper tails. Scoped synchronous callbacks reject forged, expired and
   wrong-owner handles; retained managed-process/OTP lifecycle adapters have
   exact call sidecars. General foreign declarations and asynchronous callbacks
-  remain P096; C095 supplies recursive data conversion, and full stack tooling remains P100.
+  remain P096; C095 supplies recursive data conversion, and C100 supplies verified stack/source tooling.
   No stable cross-build ABI or final vocabulary is adopted. See the
   [implementation evidence](../50-journal/2026-09-09-calling-conventions.md).
 - [x] **C095 — Complete — Erlang type boundary.** The
@@ -1503,11 +1503,16 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   Expansion requires full semantic/artifact evidence; retirement has an explicit
   notice window and rebuild path. See the
   [implementation evidence](../50-journal/2026-09-08-otp-compatibility.md).
-- [ ] **P100 — Partial — debugging metadata.** C010 retains source spans,
-  executable-node origins, and origin-derived file metadata; effect core
-  nodes carry source paths, and C006 specifies evidence erasure. Complete
-  runtime stack/source mapping for closures, generated and inlined code,
-  handlers, foreign frames, and navigation to erased evidence.
+- [x] **C100 — Complete — debugging metadata.** The
+  [0.1.64 sidecar contract](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md)
+  maps actual closure, handler, ordinary-expression and foreign-entry frames
+  through rebuilt source/BEAM identities. Bounded inline chains retain call-site
+  history; Unicode scalar columns and collision-free JSON paths refer to original
+  bytes. Missing/tampered sidecars and different runtime identities cannot supply
+  origins. Stripped frames remain unmapped, values default to redaction and
+  erased evidence is navigable only through external verified references.
+  [Executed evidence](../50-journal/2026-09-09-debugging-metadata.md) includes unchanged
+  BEAM bytes after an erased-checker change and preserved foreign authority.
 ## 12. Standard library contract
 
 - [ ] **P101 — Partial — minimum prelude.** C026 fixes explicit package
