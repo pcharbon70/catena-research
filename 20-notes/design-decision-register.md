@@ -1123,3 +1123,8 @@ The [normative minimum](../60-specification/minimum-prelude/explicit-minimum-and
 CP-126-1..3 retain their recommendations. The [trust-base journal](../50-journal/2026-09-09-trusted-computing-base.md#implementation-decisions)
 records the guarantee graph, source-boundary gate and mutation-test design.
 The disclosure contract and executable boundary gate are complete; no proof-verified compiler claim is made.
+
+
+## C127 execution links
+
+CP-127-1..3 retain their recommendations. The [policy journal](../50-journal/2026-09-09-trusted-obligation-policy.md#implementation-decisions) records the explicit sidecar, dependency closure and scoped admission decisions. The [normative policy](../60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md) makes these choices durable at 0.1.71.
