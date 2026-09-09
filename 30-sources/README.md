@@ -413,3 +413,9 @@ mentions can remain as citations in the document that uses them.
 
 Index every direct source note with a concise description. Preserve exact
 metadata where available, never invent unknown fields, and link derived work.
+
+- [Python Directory-Relative OS Operations](python-directory-relative-os-operations.md) — primary host API evidence for C106 environmental adapters.
+
+- [Python Subprocess Session Ownership](python-subprocess-session-ownership.md) — primary host API evidence for C106 environmental adapters.
+
+- [Erlang Passive TCP Sockets](erlang-passive-tcp-sockets.md) — primary host API evidence for C106 environmental adapters.

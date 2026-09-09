@@ -71,3 +71,5 @@ this plan does not resolve them merely by choosing a direction.
 - [Text and binary operations](../60-specification/text-binary-model/README.md) — C104 supplies explicit index units, pinned Unicode, typed conversion and compiled adoption while vocabulary remains held.
 
 - [C105 numeric library](../60-specification/numeric-library/README.md) — checked arithmetic, explicit conversion/decimal rounding and verified executable adoption.
+
+- [C106 environmental effects](../60-specification/environmental-effects/README.md) — explicit service authority closes launch effects and owns adapter cleanup.
