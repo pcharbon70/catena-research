@@ -1116,3 +1116,10 @@ CP-101-1 through CP-101-3 retain their recommended selections. The
 [minimum-prelude journal](../50-journal/2026-09-09-minimum-prelude.md#implementation-decisions)
 records the exact catalog, ordinary foundations and explicit executable adoption.
 The [normative minimum](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md) makes these choices durable at exact semantic revision 0.1.69.
+
+
+## C126 execution links
+
+CP-126-1..3 retain their recommendations. The [trust-base journal](../50-journal/2026-09-09-trusted-computing-base.md#implementation-decisions)
+records the guarantee graph, source-boundary gate and mutation-test design.
+The disclosure contract and executable boundary gate are complete; no proof-verified compiler claim is made.
