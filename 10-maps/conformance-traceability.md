@@ -2675,3 +2675,22 @@ P096 milestone; public syntax and broader callback authority remain open.
 | FA-OBL-010 | Scoped publication and revocation | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#scoped-compiled-callbacks) | foreign_adapter: explicit callback authority, retained cross-process invocation, revocation and expiry | traced |
 | FA-OBL-011 | Overlap and callback worker lifetime | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#scoped-compiled-callbacks) | foreign_adapter: nonterminating compiled callback, overlap refusal and release of waiting caller | traced |
 | FA-OBL-012 | Checked capability artifact | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#checked-capability-program-bridge) | foreign_adapter: matching/missing/wrong-typed bindings, interface builders, forged binary refusal and native execution | traced |
+
+
+## Native-value-role registry (`NV`, 0.1.62)
+
+The [contract](../60-specification/native-value-roles/typed-admission-and-native-identity.md)
+and [journal](../50-journal/2026-09-09-native-value-roles.md) cover C097
+native-kind admission, role authority and explicit exclusions.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| NV-OBL-001 | Exact native-role selection | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#status-and-authority) | native_value: exact 0.1.62, refusal of explicit old selection and unchanged executable/artifact/interface/signed boundaries | traced |
+| NV-OBL-002 | Immutable binary and map meaning | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#immutable-data-mappings) | native_value: one-megabyte Bytes round-trip, bound exhaustion, invalid UTF-8 and unsupported/extra keys | traced |
+| NV-OBL-003 | Registered explicit authority | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#registered-role-authority) | native_value: indexed grants, forged token/role and raw PID/reference refusal | traced |
+| NV-OBL-004 | Transferred borrowed process send | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#borrowed-local-process-send-role) | native_value: checked Int sends, cross-process send-only transfer, borrowed target survival and dead-target Unit | traced |
+| NV-OBL-005 | Fresh reference lifetime and role | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#fresh-correlation-reference-role) | native_value: actual reference host argument, wrong-scope/owner/operation refusal and expired reference | traced |
+| NV-OBL-006 | Checked fun admission | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#functions-and-ports) | native_value: raw fun refusal; foreign_adapter: scoped compiled capture, typed ingress, overlap and expiry | traced |
+| NV-OBL-007 | Open and closed port exclusion | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#functions-and-ports) | native_value: live and closed cat-process port witnesses both refused; explicit port-role refusal | traced |
+| NV-OBL-008 | Equality, reflection and type checks | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#value-equality-and-transport-checking) | native_value: Values classification/comparison, checker role-operation and forged equality flag rejection | traced |
+| NV-OBL-009 | Bounds and ownership cleanup | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#lifetime-and-limits) | native_value: grant/send capacity, expired handles and borrowed target preservation; retained foreign_adapter bounded cleanup | traced |
