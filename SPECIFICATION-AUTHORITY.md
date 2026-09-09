@@ -162,6 +162,8 @@ The [Erlang type-boundary contract](60-specification/erlang-type-boundary/typed-
 The [foreign-adapter milestone](60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md) occupies `0.1.61`. It adds explicit trusted grants, scoped pure callbacks and a checked capability-program artifact. P096 retains its later surface and broader callback gates.
 
 The [native-value role contract](60-specification/native-value-roles/typed-admission-and-native-identity.md) occupies `0.1.62`. It adds registered borrowed process-send and fresh-reference roles and a complete native-kind inventory. No retained artifact or persisted format is widened.
+The [native service contract](60-specification/native-services/signed-loading-and-owned-execution.md) occupies `0.1.63`, with separate signed native envelope format `1`, explicit native trust and owned port/NIF execution. It does not widen retained Catena artifact or governance formats.
+
 
 ## Normative and non-normative material
 

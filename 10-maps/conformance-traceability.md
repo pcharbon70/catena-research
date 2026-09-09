@@ -2694,3 +2694,21 @@ native-kind admission, role authority and explicit exclusions.
 | NV-OBL-007 | Open and closed port exclusion | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#functions-and-ports) | native_value: live and closed cat-process port witnesses both refused; explicit port-role refusal | traced |
 | NV-OBL-008 | Equality, reflection and type checks | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#value-equality-and-transport-checking) | native_value: Values classification/comparison, checker role-operation and forged equality flag rejection | traced |
 | NV-OBL-009 | Bounds and ownership cleanup | [Rule](../60-specification/native-value-roles/typed-admission-and-native-identity.md#lifetime-and-limits) | native_value: grant/send capacity, expired handles and borrowed target preservation; retained foreign_adapter bounded cleanup | traced |
+
+
+## C098 native service obligations
+
+The [contract](../60-specification/native-services/signed-loading-and-owned-execution.md)
+and [journal](../50-journal/2026-09-09-native-services.md) connect signed native
+admission to actual port and disposable-VM NIF witnesses.
+
+| Obligation | Subject | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| NI-OBL-001 | Exact native envelope | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#status-and-authority) | native_services: signed metadata, retained version discovery | traced |
+| NI-OBL-002 | External trust and identity | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#explicit-package-authority) | native_services: unsigned/tampered/missing trust/kind/size/obligation refusal | traced |
+| NI-OBL-003 | Scheduler declarations | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#scheduling-and-native-trust) | native_services: wrong scheduler refusal and actual enif_thread_type observation | traced |
+| NI-OBL-004 | Native crash scope | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#scheduling-and-native-trust) | native_services: port crash isolation and native abort in disposable VM | traced |
+| NI-OBL-005 | Typed finite Float ABI | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#typed-calls-and-transport) | native_services: finite bit patterns, nonfinite and wrong-type rejection | traced |
+| NI-OBL-006 | Bounded waits | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#deadlines-and-failure) | native_services: port timeout/reaping and NIF timeout with poisoned scope | traced |
+| NI-OBL-007 | Owned close and fallback | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#owned-lifetime-and-finalization) | native_services: double close, GC fallback, owner death, expiry and private release token | traced |
+| NI-OBL-008 | Failure inventory | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#diagnostics-and-conformance) | native_services: native_services suite admission/load/call/close outcomes | traced |

@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Native Service Implementation](2026-09-09-native-services.md) — C098 decisions and isolated executable native-service witnesses.
+
 - [Native Value Role Implementation](2026-09-09-native-value-roles.md) — C097 choices and executable native identity/data witnesses.
 
 - [Foreign Adapter Implementation](2026-09-09-foreign-adapters.md) — P096 decisions, executed bindings, cancellation and callback lifetime evidence.
