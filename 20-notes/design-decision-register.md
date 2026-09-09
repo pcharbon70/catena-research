@@ -1084,3 +1084,11 @@ CP-102-1 through CP-102-4 retain their recorded recommended selections. The
 [finite and pull contract](../60-specification/collection-protocols/finite-families-and-owned-pulls.md)
 and [implementation decisions](../50-journal/2026-09-09-collection-protocols.md#implementation-decisions)
 make those choices durable; no original fork is overridden.
+
+## C104 execution links
+
+CP-104-1 through CP-104-3 retain their original recommended selections. The
+[text/binary contract](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md)
+and [implementation decisions](../50-journal/2026-09-09-text-binary-model.md#implementation-decisions)
+record distinct units, explicit pinned algorithms and semantic formatting before
+syntax adoption, without overriding the reviewed forks.

@@ -70,3 +70,5 @@ are protocol and language-design decisions that C013 must state separately.
 - [Catena Source-Text Encoding and Normalization](../20-notes/catena-source-text-encoding-and-normalization.md)
 - [How Should Catena Decode and Normalize Source Text?](../40-inquiries/how-should-catena-decode-and-normalize-source-text.md)
 - [Source-Text Envelope](../60-specification/source-text/source-text-envelope.md)
+
+- [Text and Binary Model](../60-specification/text-binary-model/README.md) — explicit runtime operations; [C104 evidence](../50-journal/2026-09-09-text-binary-model.md) distinguishes local conformance runs from source claims.

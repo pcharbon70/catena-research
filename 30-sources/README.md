@@ -30,6 +30,8 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [Unicode Text Segmentation](hadley-2025-unicode-text-segmentation.md) — UAX #29 revision 47 default extended grapheme rules and their scope.
+
 - [Erlang/OTP NIF Float Construction](erlang-otp-nif-float-construction.md) — documented finite-only constructor behavior and the distinction from unsafe native memory operations.
 
 - [Erlang/OTP 29 Supervision](erlang-otp-29-supervision.md) — pinned supervisor policy, restart window and shutdown evidence.
