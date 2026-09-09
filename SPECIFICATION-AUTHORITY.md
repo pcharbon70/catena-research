@@ -161,6 +161,8 @@ The [Erlang type-boundary contract](60-specification/erlang-type-boundary/typed-
 
 The [foreign-adapter milestone](60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md) occupies `0.1.61`. It adds explicit trusted grants, scoped pure callbacks and a checked capability-program artifact. P096 retains its later surface and broader callback gates.
 
+The [native-value role contract](60-specification/native-value-roles/typed-admission-and-native-identity.md) occupies `0.1.62`. It adds registered borrowed process-send and fresh-reference roles and a complete native-kind inventory. No retained artifact or persisted format is widened.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

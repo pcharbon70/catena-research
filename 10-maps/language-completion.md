@@ -63,3 +63,5 @@ gate. Focused inquiries continue to own their individual research questions;
 this plan does not resolve them merely by choosing a direction.
 
 - [Foreign adapter milestone](../60-specification/foreign-adapters/README.md) — P096 executed authority/lifetime work; its public-surface and broader callback gates remain open.
+
+- [Native value roles](../60-specification/native-value-roles/README.md) — C097 complete native-kind admission inventory, registered identity and explicit native-service exclusions.

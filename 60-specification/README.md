@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Native Value Roles](native-value-roles/README.md) — typed native-kind admission, identity, transport and exclusions.
+
 - [Foreign Adapters](foreign-adapters/README.md) — exact trusted host calls, scoped callbacks and capability bindings.
 
 - [Erlang Type Boundary](erlang-type-boundary/README.md) — normative C095 explicit codecs, whole-carrier budgets and preservation contract at 0.1.60.

@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **99 complete, 27 partial, 13 gaps, and 2
+The current checkboxes total **100 complete, 26 partial, 13 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.62`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.63`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -461,7 +461,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   source-only lifecycle/persistence separation, and complete
   `LT-OBL-001`–`LT-OBL-012` coverage with 233 passing tests. C040/C041/C042 subsequently classify data, structural operations, and
   collection construction. Concrete source adoption remains P109, library
-  collections P101/P102, and foreign/native data P093/P097; negation spelling and the token
+  collections P101/P102, and foreign/native data P093/C097; negation spelling and the token
   inventory are complete as C019 while P109 retains declaration grammar;
   numeric meaning is complete as C018; and any future interpolation requires
   a new opt-in prefix.
@@ -1003,7 +1003,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   content-order witnesses. Zero new diagnostic families. Collection
   declarations and APIs remain P101/P102; C042 defines construction
   and update. Text libraries remain P104 and source spellings P109;
-  native reference admission remains P097/G098 subject to C040's exclusion.
+  native reference admission remains C097/G098 subject to C040's exclusion.
 - [x] **C041 — Complete — structural records and variants.**
   The normative
   [0.1.36 records specification](../60-specification/structural-records-and-variants/README.md),
@@ -1475,13 +1475,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   bindings and a separate artifact. General effectful/resource-capturing
   callbacks, application authority provisioning and the plan's public-surface
   gate remain open. See the [implementation evidence](../50-journal/2026-09-09-foreign-adapters.md).
-- [ ] **P097 — Partial — binaries, maps, PIDs, ports, references, and funs.**
-  C010 admits opaque typed process handles backed by local PIDs, allows
-  sending them, and excludes equality and reflection on handles. C040
-  defines abstract Text/Character/Bytes meanings. Specify the remaining
-  BEAM-native admission, checking, type/equality guarantees, and foreign
-  exposure. Internal record maps and closure funs do not constitute a
-  general native-value API.
+- [x] **C097 — Complete — binaries, maps, PIDs, ports, references, and funs.**
+  The [0.1.62 native-role inventory](../60-specification/native-value-roles/typed-admission-and-native-identity.md)
+  assigns every kind an executable typed role or justified exclusion. Checked
+  binary/map codecs retain C095; borrowed local PID send authority and fresh
+  references use live scope registries; P096 supplies compiled callbacks.
+  Handle equality, reflection, forged wrappers and generic raw fun/port
+  admission are refused. Dead PID sends preserve Unit without liveness claims;
+  G098 retains native service loading and port/NIF lifecycle work. See the
+  [implementation evidence](../50-journal/2026-09-09-native-value-roles.md).
 - [ ] **G098 — Gap — NIFs and ports.** Define unsafe boundaries, scheduler classes,
   resource finalization, VM crashes, capability requirements, and packaging.
   C095 verifies that the documented `enif_make_double` constructor refuses
