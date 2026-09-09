@@ -30,6 +30,8 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [Erlang/OTP NIF Float Construction](erlang-otp-nif-float-construction.md) — documented finite-only constructor behavior and the distinction from unsafe native memory operations.
+
 - [Erlang/OTP 29 Supervision](erlang-otp-29-supervision.md) — pinned supervisor policy, restart window and shutdown evidence.
 
 - [Erlang/OTP 29 Time and Process BIFs](erlang-otp-29-time-and-process-bifs.md) — pins the monitor, unlink and monotonic-time contracts used by local resource release.

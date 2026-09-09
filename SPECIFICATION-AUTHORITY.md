@@ -157,6 +157,7 @@ The [OTP compatibility policy](60-specification/otp-compatibility/support-probes
 
 The [value-boundary contract](60-specification/value-boundaries/carriers-and-checked-conversion.md) occupies `0.1.58`. It admits an exact pure value-tree target and checked representation conversion while preserving retained source, interface and signed formats.
 The [calling-convention contract](60-specification/calling-conventions/checked-calls-and-artifact-identity.md) occupies `0.1.59`. It adds exact build-bound calling sidecars, staged checked closures, synchronous data callbacks and retained lifecycle call descriptions; historical inputs and persisted interface/signed formats remain distinct.
+The [Erlang type-boundary contract](60-specification/erlang-type-boundary/typed-conversion-and-preservation.md) occupies `0.1.60`. It adds explicit typed codecs, full-carrier validation and verified nominal sequence bridges without adding a dynamic type or new persisted/executable format.
 
 ## Normative and non-normative material
 
