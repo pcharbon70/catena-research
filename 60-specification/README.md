@@ -424,6 +424,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 - [Minimum prelude](minimum-prelude/README.md) — exact selected standard components, ordinary foundations and executable applications.
 
+- [Trusted computing base](trusted-computing-base/README.md) — guarantee dependencies, residual trust and executable source/data boundary checks.
+
 ### Documents
 
 - None yet.

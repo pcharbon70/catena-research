@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **107 complete, 20 partial, 12 gaps, and 2
+The current checkboxes total **108 complete, 20 partial, 11 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.70`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.71`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -105,9 +105,9 @@ item is marked complete by this audit.
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
-| 15. Security, reproducibility, and operational limits | 0 | 5 | 1 | 0 | 6 |
+| 15. Security, reproducibility, and operational limits | 1 | 5 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **107** | **20** | **12** | **2** | **141** |
+| **Total** | **108** | **20** | **11** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1690,9 +1690,14 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 
 ## 15. Security, reproducibility, and operational limits
 
-- [ ] **G126 — Gap — trusted computing base.** Enumerate parser, type checker, trait
-  solver, effect checker, proof kernel, serializer, signer, runtime, and foreign
-  components whose bugs can violate guarantees.
+- [x] **C126 — Complete — trusted computing base.** Normative 0.1.70's
+  [guarantee-specific trust contract](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md)
+  names enforcement components, shared helpers and residual host assumptions.
+  The maintained compiler profile inventories source/call/data boundaries;
+  mutation tests demonstrate both detected substitutions and undetected semantic
+  changes. The [verification journal](../50-journal/2026-09-09-trusted-computing-base.md)
+  records the evidence. This completes disclosure and its development gate,
+  without claiming a proof-verified compiler or closing the formal program.
 - [ ] **P127 — Partial — unsafe-code policy.** C067 excludes unchecked
   operations and other dynamic/unsafe forms inside Catena and requires
   visible, typed, failure-classified foreign entry. Complete the policy

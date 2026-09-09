@@ -75,3 +75,5 @@ this plan does not resolve them merely by choosing a direction.
 - [C106 environmental effects](../60-specification/environmental-effects/README.md) — explicit service authority closes launch effects and owns adapter cleanup.
 
 - [C101 minimum prelude](../60-specification/minimum-prelude/README.md) — explicit catalog selection assembles the pure minimum and separately granted services.
+
+- [C126 trusted computing base](../60-specification/trusted-computing-base/README.md) — named enforcement and residual dependencies with mutation-tested boundaries.

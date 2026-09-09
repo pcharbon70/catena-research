@@ -2838,3 +2838,25 @@ Existing family laws remain traced by C004 and C102–C106.
 | MP-OBL-009 | Ordinary delivery | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#checked-executable-delivery) | minimum_prelude: compiled transformation and validation via selected nominal interfaces | traced |
 | MP-OBL-010 | Checked entry selection | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#checked-executable-delivery) | minimum_prelude: numeric/reference, Unicode and explicitly authorized compiled service execution | traced |
 | MP-OBL-011 | Bounds and costs | [Rule](../60-specification/minimum-prelude/explicit-minimum-and-component-identity.md#bounds-costs-and-exclusions) | minimum_prelude: oversized manifest and component capacity plus inherited carrier/source limits | traced |
+
+
+## C126 trusted computing base
+
+The [contract](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md)
+and [journal](../50-journal/2026-09-09-trusted-computing-base.md) bind guarantee
+claims to `test/catena/trust_boundary_test.exs` and the checked machine inventory
+in the sibling compiler. Undetected semantic changes remain explicit residual trust.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| TC-OBL-001 | Exact disclosure | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#status-and-authority) | trust_boundary: profile identity and false proof/sandbox flags | traced |
+| TC-OBL-002 | Guarantee graph | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#guarantee-specific-graph) | trust_boundary: 12 guarantees and complete unique source ownership | traced |
+| TC-OBL-003 | Structural checking | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#independent-checks-and-their-limits) | trust_boundary: ordinary/kernel forged types and kernel effect evidence | traced |
+| TC-OBL-004 | Lowering trust | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#independent-checks-and-their-limits) | trust_boundary: wrong OTP result accepted; exact original artifact refuses substituted bytes | traced |
+| TC-OBL-005 | Proof scope | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#independent-checks-and-their-limits) | trust_boundary: well-typed changed source accepted; profile disclaims proof verification | traced |
+| TC-OBL-006 | Authenticity distinction | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#authenticity-and-ingress) | trust_boundary: valid signature on unsupported claim; changed payload refused | traced |
+| TC-OBL-007 | Typed ingress | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#authenticity-and-ingress) | trust_boundary: nested malformed UTF-8 and forged authority refusal | traced |
+| TC-OBL-008 | Source/data coverage | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#executable-source-and-data-inventory) | trust_boundary: current inventory, new/missing paths, native format and build-literal mutations | traced |
+| TC-OBL-009 | Scanner limits | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#executable-source-and-data-inventory) | trust_boundary: comments ignored, guard-only difference not detected and Python input not executed | traced |
+| TC-OBL-010 | Maintained profile | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#profile-and-maintenance) | trust_boundary: canonical profile forgery refusal and machine conformance disclosure | traced |
+| TC-OBL-011 | Bounds and costs | [Rule](../60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md#bounds-and-reporting) | trust_boundary: oversized source refused and finite syntax/data audit | traced |

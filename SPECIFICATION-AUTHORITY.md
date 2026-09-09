@@ -280,3 +280,5 @@ C105 uses `0.1.67` for the [numeric library](60-specification/numeric-library/ch
 C106 uses `0.1.68` for [environmental effects](60-specification/environmental-effects/explicit-authority-and-closed-launches.md), explicitly amending C027/C082 for a typed authority parameter while retaining closed effects and historical entry rules.
 
 C101 uses `0.1.69` for the [minimum prelude](60-specification/minimum-prelude/explicit-minimum-and-component-identity.md), including exact component assembly, ordinary foundations and explicit selection without new public vocabulary.
+
+C126 uses `0.1.70` for the [trusted computing base](60-specification/trusted-computing-base/guarantees-assumptions-and-boundary-checks.md), disclosing guarantee-specific dependencies and executable source/data inventory without claiming a proof-verified compiler.
