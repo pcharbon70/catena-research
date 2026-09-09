@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **100 complete, 26 partial, 13 gaps, and 2
+The current checkboxes total **101 complete, 26 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.63`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.64`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1482,14 +1482,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   references use live scope registries; P096 supplies compiled callbacks.
   Handle equality, reflection, forged wrappers and generic raw fun/port
   admission are refused. Dead PID sends preserve Unit without liveness claims;
-  G098 retains native service loading and port/NIF lifecycle work. See the
+  C098 supplies separately admitted native service loading and port/NIF lifecycle rules. See the
   [implementation evidence](../50-journal/2026-09-09-native-value-roles.md).
-- [ ] **G098 — Gap — NIFs and ports.** Define unsafe boundaries, scheduler classes,
-  resource finalization, VM crashes, capability requirements, and packaging.
-  C095 verifies that the documented `enif_make_double` constructor refuses
-  non-finite doubles; arbitrary native memory corruption remains outside that
-  guarantee. Define native trust and isolation without relying on the earlier
-  bypass conjecture; see the [corrected evidence](../50-journal/2026-09-09-erlang-type-boundary.md#native-float-correction).
+- [x] **C098 — Complete — NIFs and ports.** The
+  [0.1.63 native-service contract](../60-specification/native-services/signed-loading-and-owned-execution.md)
+  supplies signed payload admission, explicit publisher/unsafe grants, scheduler
+  and work contracts, finite Float calls, a bounded guardian-owned port service,
+  and separately admitted dirty-CPU NIFs. Port death/deadline reaping, double
+  close, GC fallback, owner death and isolated NIF VM-crash witnesses execute.
+  NIF timeout reports potentially continuing native work; it promises neither
+  rollback nor VM survival. See the
+  [implementation evidence](../50-journal/2026-09-09-native-services.md).
 - [x] **C099 — Complete — OTP compatibility policy.** The
   [0.1.57 policy](../60-specification/otp-compatibility/support-probes-and-artifacts.md)
   publishes the exact tested OTP 29.0.4/ERTS 17.0.4/Elixir 1.20.2 row,

@@ -40,9 +40,19 @@ than normalization at C095. The independent local witness is evidence about the
 pinned runtime; the live documentation's version does not silently expand
 Catena's supported-host matrix.
 
+## Scheduler and resource findings
+
+The same API's resource-object section specifies destructor-based fallback and
+resource validity while retained. Its long-running-NIF section states that a
+dirty NIF can continue after process termination. `enif_thread_type` distinguishes
+normal, dirty-CPU and dirty-I/O scheduler threads. These claims support C098's
+explicit continuing-work and finalization limits, not an in-process crash sandbox.
+
 ## Derived work
 
 - [Erlang type boundary workbench](../50-journal/2026-09-09-erlang-type-boundary.md) —
   records the isolated finite/non-finite native experiment.
 - [Typed Conversion and Preservation](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md) —
   keeps finite Float semantics explicit at the language boundary.
+
+- [Native service journal](../50-journal/2026-09-09-native-services.md) — scheduler, resource and crash experiments.
