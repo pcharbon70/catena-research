@@ -68,3 +68,14 @@ supported OTP release rather than copy internal compiler assumptions.
 - [Catena Language Overview](../language-overview.md) places the adapter after
   typed-core verification rather than treating Abstract Format as a semantic
   core.
+
+
+## Debugging follow-up (2026-09-09)
+
+The [compiler options](https://www.erlang.org/doc/apps/compiler/compile.html)
+document `no_line_info` for omitting runtime line information and `source` for
+setting the reported source identity. The live page now describes OTP 29.0.6;
+C100's actual optimized/stripped witnesses use the pinned OTP 29.0.4 compiler.
+These options do not verify Catena origins: the
+[debugging journal](../50-journal/2026-09-09-debugging-metadata.md) records the
+independent sidecar contract and local evidence.

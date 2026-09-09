@@ -163,6 +163,8 @@ The [foreign-adapter milestone](60-specification/foreign-adapters/authority-call
 
 The [native-value role contract](60-specification/native-value-roles/typed-admission-and-native-identity.md) occupies `0.1.62`. It adds registered borrowed process-send and fresh-reference roles and a complete native-kind inventory. No retained artifact or persisted format is widened.
 The [native service contract](60-specification/native-services/signed-loading-and-owned-execution.md) occupies `0.1.63`, with separate signed native envelope format `1`, explicit native trust and owned port/NIF execution. It does not widen retained Catena artifact or governance formats.
+The [debugging metadata contract](60-specification/debugging-metadata/verified-origins-and-redacted-frames.md) occupies `0.1.64`, including a debug executable/artifact profile and externally verified source/evidence sidecars. Retained interfaces and signed-governance formats are unchanged.
+
 
 
 ## Normative and non-normative material

@@ -2712,3 +2712,21 @@ admission to actual port and disposable-VM NIF witnesses.
 | NI-OBL-006 | Bounded waits | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#deadlines-and-failure) | native_services: port timeout/reaping and NIF timeout with poisoned scope | traced |
 | NI-OBL-007 | Owned close and fallback | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#owned-lifetime-and-finalization) | native_services: double close, GC fallback, owner death, expiry and private release token | traced |
 | NI-OBL-008 | Failure inventory | [Rule](../60-specification/native-services/signed-loading-and-owned-execution.md#diagnostics-and-conformance) | native_services: native_services suite admission/load/call/close outcomes | traced |
+
+
+## C100 debugging metadata obligations
+
+The [contract](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md)
+and [journal](../50-journal/2026-09-09-debugging-metadata.md) connect source-bound
+sidecars to executed generated-code failures and evidence-erasure checks.
+
+| Obligation | Subject | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| DB-OBL-001 | Explicit debug profile | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#status-and-authority) | debugging_metadata: exact artifact/source selection and retained format discovery | traced |
+| DB-OBL-002 | Source and node identity | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#input-source-and-node-identity) | debugging_metadata: normalized path refusal, deterministic rebuild and changed input/binary rejection | traced |
+| DB-OBL-003 | Original Unicode coordinates | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#input-source-and-node-identity) | debugging_metadata: ordinary JSON expression, byte/scalar split, CRLF and dotted-key disambiguation | traced |
+| DB-OBL-004 | Bounded generated origins | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#lowered-locations-and-origin-chains) | debugging_metadata: escaped closure, handler and actual inline expansion chains | traced |
+| DB-OBL-005 | Actual runtime frames | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#lowered-locations-and-origin-chains) | debugging_metadata: physical source faults, different-runtime refusal and unmapped host frames | traced |
+| DB-OBL-006 | Foreign authority and disclosure | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#foreign-entry-and-disclosure-boundary) | debugging_metadata: granted/denied foreign entry, redacted host reason and checked tuple disclosure | traced |
+| DB-OBL-007 | External evidence and verification | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#verification-and-evidence-erasure) | debugging_metadata: tampered/missing sidecars and unchanged BEAM after erased-checker change | traced |
+| DB-OBL-008 | Retention and limits | [Rule](../60-specification/debugging-metadata/verified-origins-and-redacted-frames.md#retention-modes-and-limits) | debugging_metadata: stripped frames and source/node/inline/history bounds | traced |

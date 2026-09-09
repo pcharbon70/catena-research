@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Debugging Metadata](debugging-metadata/README.md) — verified sidecars, redacted frames and external evidence navigation.
+
 - [Native Services](native-services/README.md) — signed ports/NIFs, scheduler trust and owned native cleanup.
 
 - [Native Value Roles](native-value-roles/README.md) — typed native-kind admission, identity, transport and exclusions.

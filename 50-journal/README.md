@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Debugging Metadata Implementation](2026-09-09-debugging-metadata.md) — C100 source identities, inline chains and executed frame/erasure witnesses.
+
 - [Native Service Implementation](2026-09-09-native-services.md) — C098 decisions and isolated executable native-service witnesses.
 
 - [Native Value Role Implementation](2026-09-09-native-value-roles.md) — C097 choices and executable native identity/data witnesses.
