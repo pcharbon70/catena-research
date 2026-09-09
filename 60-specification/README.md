@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Collection Protocols](collection-protocols/README.md) — C102 finite families, lawful operations and owned pulls at 0.1.65.
+
 - [Debugging Metadata](debugging-metadata/README.md) — verified sidecars, redacted frames and external evidence navigation.
 
 - [Native Services](native-services/README.md) — signed ports/NIFs, scheduler trust and owned native cleanup.

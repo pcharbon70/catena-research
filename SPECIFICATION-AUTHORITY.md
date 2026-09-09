@@ -167,6 +167,8 @@ The [debugging metadata contract](60-specification/debugging-metadata/verified-o
 
 
 
+The [collection protocol contract](60-specification/collection-protocols/finite-families-and-owned-pulls.md) occupies `0.1.65`, using a separate ordinary nominal package, checked finite operations and owned pulls. Retained source, executable, interface and signed formats are unchanged.
+
 ## Normative and non-normative material
 
 Normative chapter content is normative by default. A plain declarative rule is

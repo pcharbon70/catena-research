@@ -36,7 +36,7 @@ guarantee, prelude diagnostics, and C026 conformance obligations here.
 Name resolution and precedence remain C021's. Import admission and its
 diagnostics remain C022's. Package identity, requirement resolution,
 and lockfile semantics remain C025's. Prelude contents and the name
-freeze remain P101's. Collection protocols remain P102's. Tooling
+freeze remain P101's. Collection protocols are supplied by [C102](../collection-protocols/README.md). Tooling
 scaffolding remains P121's. Entry points are subsequently fixed by C027. Compatibility
 meanings of prelude version bumps are subsequently fixed by C028/G136's.
 
