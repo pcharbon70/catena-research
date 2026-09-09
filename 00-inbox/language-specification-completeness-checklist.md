@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **103 complete, 24 partial, 12 gaps, and 2
+The current checkboxes total **104 complete, 23 partial, 12 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -1002,7 +1002,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   `Catena.Values` and `Data.comparable_type?` extensions, and the
   content-order witnesses. Zero new diagnostic families. C102 supplies explicit collection
   declarations and operations; P101 retains prelude admission. C042 defines construction
-  and update. Text libraries remain P104 and source spellings P109;
+  and update. C104 supplies explicit text libraries while source spellings remain P109;
   native reference admission remains C097/G098 subject to C040's exclusion.
 - [x] **C041 — Complete — structural records and variants.**
   The normative
@@ -1539,12 +1539,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   against independent equations; public vocabulary remains P109 and foreign
   admission remains C095/G096. See the
   [implementation evidence](../50-journal/2026-09-08-outcome-contracts.md).
-- [ ] **P104 — Partial — text and binary model.** C017/C040 define
-  decoded Unicode-scalar Text, one-scalar Character, Bytes, content
-  equality/order, and the absence of interpolation in existing literal
-  forms. Complete graphemes, indexing, slicing, normalization, encoding
-  conversion, interpolation, and binary-pattern APIs; compiled source
-  adoption remains P109.
+- [x] **C104 — Complete — text and binary model.** The
+  [0.1.66 contract](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md)
+  separates nominal byte/scalar/grapheme indices, checked slices, Unicode 17
+  extended graphemes and explicit normalization, strict UTF-8/16/32 conversion,
+  pure formatting and checked sequential binary segments. A rebuilt artifact
+  executes typed pipelines over retained core; source/interpolation spelling
+  remains P109. [Executed evidence](../50-journal/2026-09-09-text-binary-model.md)
+  includes all pinned grapheme/normalization vectors, the supplementary scalar
+  invariant, long combining runs, independent bit arithmetic and both backend owners.
 - [ ] **P105 — Partial — numeric library.** C018 fixes unbounded Int,
   finite binary64 Float, literal conversion and overflow diagnostics;
   C035 fixes comparison, and C061 fixes closed-set primitive operators.

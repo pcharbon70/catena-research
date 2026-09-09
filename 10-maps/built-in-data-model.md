@@ -60,3 +60,5 @@ collections, construction, spellings, and references.
 C040 is complete at revision `0.1.35`. Collections arrive as library
 nominal types at P101; references stay excluded until P084's era if
 ever; text literals reach compiled programs at P109.
+
+- [Text and binary operations](../60-specification/text-binary-model/README.md) — C104 supplies explicit index units, pinned Unicode, typed conversion and compiled adoption while vocabulary remains held.

@@ -67,3 +67,5 @@ this plan does not resolve them merely by choosing a direction.
 - [Native value roles](../60-specification/native-value-roles/README.md) — C097 complete native-kind admission inventory, registered identity and explicit native-service exclusions.
 
 - [Collection protocols](../60-specification/collection-protocols/README.md) — C102 executes the library contracts with semantic key order, explicit outcomes and owned pull cleanup.
+
+- [Text and binary operations](../60-specification/text-binary-model/README.md) — C104 supplies explicit index units, pinned Unicode, typed conversion and compiled adoption while vocabulary remains held.

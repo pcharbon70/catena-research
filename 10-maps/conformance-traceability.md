@@ -2749,3 +2749,24 @@ families and owned pulls to ordinary compiled and independent model evidence.
 | CL-OBL-008 | Demand and lifetime | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#owned-pull-protocol) | collection_iterator: no eager pull, early cap, compiled pure stop, abandonment and owner death | traced |
 | CL-OBL-009 | Cancellation and cleanup | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#owned-pull-protocol) | collection_iterator: timeout, step exhaustion, last-state release and failed-release single attempt | traced |
 | CL-OBL-010 | Costs and budgets | [Rule](../60-specification/collection-protocols/finite-families-and-owned-pulls.md#costs-bounds-and-failure) | collection_protocol/collection_iterator: 50,000-element equations, result bounds and explicit pull limits | traced |
+
+## C104 text and binary model
+
+The [contract](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md)
+and [journal](../50-journal/2026-09-09-text-binary-model.md) bind explicit text
+semantics to pinned primary data and executable ordinary/tree adoption.
+
+| Obligation | Contract | Rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| TB-OBL-001 | Exact profile and data | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#status-and-authority) | text_unicode/text_program: table manifest, exact artifact and retained discovery | traced |
+| TB-OBL-002 | Distinct nominal units | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#index-units-and-nominal-roles) | text_program/text_binary: compiled nominal conversion, wrong constructor and mixed units | traced |
+| TB-OBL-003 | Checked slices | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#measurement-and-slices) | text_binary: empty/huge/reversed bounds, scalar split and byte slicing | traced |
+| TB-OBL-004 | Pinned graphemes | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#pinned-unicode-algorithms) | text_unicode: all 766 official vectors and contextual long runs | traced |
+| TB-OBL-005 | Explicit normalization | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#pinned-unicode-algorithms) | text_unicode: all 20,034 vector equations and supplementary scalar invariant | traced |
+| TB-OBL-006 | Strict encodings | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#strict-encoding-conversion) | text_binary: UTF-8/16/32 round trips, malformed offsets and BOM/noncharacter preservation | traced |
+| TB-OBL-007 | Pure formatting | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#pure-composition-and-format-roles) | text_binary/text_program: typed fragments, compiled formatting and no implicit normalization | traced |
+| TB-OBL-008 | Binary matching | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#sequential-binary-pattern-contract) | text_binary: independent integer model, declared fields and whole-input mismatch | traced |
+| TB-OBL-009 | Typed compiled adoption | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#retained-input-compiled-adoption) | text_program: both lowering owners, fixed pipeline types and early dependent failure | traced |
+| TB-OBL-010 | Rebuilt artifact identity | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#retained-input-compiled-adoption) | text_program: changed sidecar/steps refusal and exact-code reuse versus module conflict | traced |
+| TB-OBL-011 | Carrier and operation bounds | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#bounds-and-costs) | text_binary/text_program: complete output budgets, huge slices and typed descriptors | traced |
+| TB-OBL-012 | Declared cost scope | [Rule](../60-specification/text-binary-model/units-unicode-and-checked-binary-operations.md#bounds-and-costs) | text_unicode/text_binary: long combining/contextual runs and oversized segment refusal without requested allocation | traced |
