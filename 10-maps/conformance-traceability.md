@@ -2653,3 +2653,25 @@ conversion to verified declarations and complete input/output bounds.
 | ET-OBL-008 | Whole-carrier explicit bounds | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#whole-carrier-budgets-and-expected-failure) | foreign_codec: exact node/byte/depth thresholds, output depth exhaustion and large scalar witnesses | traced |
 | ET-OBL-009 | Expected conversion failure | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#whole-carrier-budgets-and-expected-failure) | foreign_codec: malformed payload, invalid codec, unsupported carrier and budget reason checks | traced |
 | ET-OBL-010 | Preservation | [Rule](../60-specification/erlang-type-boundary/typed-conversion-and-preservation.md#preservation-obligation) | foreign_codec, foreign_native: generated sequence round-trips, independent Erlang nested data and bit-exact finite Float corpus | traced |
+
+
+## Foreign-adapter registry (`FA`, 0.1.61)
+
+The [contract](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md)
+and [journal](../50-journal/2026-09-09-foreign-adapters.md) cover the executed
+P096 milestone; public syntax and broader callback authority remain open.
+
+| ID | Obligation | Normative source | Executable evidence | Status |
+| --- | --- | --- | --- | --- |
+| FA-OBL-001 | Exact selection and retained axes | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#status-and-authority) | foreign_adapter: exact selection and retained codec/interface/signed boundaries | traced |
+| FA-OBL-002 | Pinned host declaration | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#explicit-declarations-and-authority) | foreign_adapter: setup denial, altered descriptor and replaced host module refused | traced |
+| FA-OBL-003 | Scope-owned explicit grants | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#explicit-declarations-and-authority) | foreign_adapter: denied host entry, copied scope and forged call/callback handles | traced |
+| FA-OBL-004 | Visible foreign effects | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#explicit-declarations-and-authority) | foreign_adapter: actual compiled capability request and terminal trace; no denied host entry | traced |
+| FA-OBL-005 | Typed vectors and callback arguments | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#typed-calls-and-outcomes) | foreign_adapter: argument arity/type checks, exact callback codecs and wrong result refusal | traced |
+| FA-OBL-006 | Trap outcomes | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#typed-calls-and-outcomes) | foreign_adapter: foreign raise and typed result trap; bounded diagnostic conversion | traced |
+| FA-OBL-007 | Cancellation and completion race | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#cooperative-cancellation-and-cleanup) | foreign_adapter: cooperative stop, ignored cancellation then completion, repeated and terminal cancellation | traced |
+| FA-OBL-008 | Mandatory cleanup and owner death | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#cooperative-cancellation-and-cleanup) | foreign_adapter: outstanding worker termination, owner kill and deliberately stalled cleanup deadline | traced |
+| FA-OBL-009 | Verified callback capture | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#scoped-compiled-callbacks) | foreign_adapter: immutable captured addition, changed capture/type/name refusal | traced |
+| FA-OBL-010 | Scoped publication and revocation | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#scoped-compiled-callbacks) | foreign_adapter: explicit callback authority, retained cross-process invocation, revocation and expiry | traced |
+| FA-OBL-011 | Overlap and callback worker lifetime | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#scoped-compiled-callbacks) | foreign_adapter: nonterminating compiled callback, overlap refusal and release of waiting caller | traced |
+| FA-OBL-012 | Checked capability artifact | [Rule](../60-specification/foreign-adapters/authority-calls-and-callback-lifetime.md#checked-capability-program-bridge) | foreign_adapter: matching/missing/wrong-typed bindings, interface builders, forged binary refusal and native execution | traced |

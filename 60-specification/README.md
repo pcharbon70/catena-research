@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Foreign Adapters](foreign-adapters/README.md) — exact trusted host calls, scoped callbacks and capability bindings.
+
 - [Erlang Type Boundary](erlang-type-boundary/README.md) — normative C095 explicit codecs, whole-carrier budgets and preservation contract at 0.1.60.
 - [Calling Conventions](calling-conventions/README.md) — normative C094 exact call/artifact, staged closure and callback contract at 0.1.59.
 - [Value Boundaries](value-boundaries/README.md) — normative C093 carrier, typed-tree and checked-conversion contract at 0.1.58.
