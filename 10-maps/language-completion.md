@@ -55,6 +55,7 @@ Public vocabulary and the final grammar remain held for later joint design.
 - [Calling conventions workbench](../50-journal/2026-09-09-calling-conventions.md) records C094 completion at 0.1.59: verified call/artifact identity, staged closures, typed synchronous callbacks and retained lifecycle adapters.
 - [Value boundaries](../60-specification/value-boundaries/README.md) completes C093 with typed scalar/structural/nominal conversion, verified closure capture and explicit authority exclusions.
 - [Release readiness](../60-specification/release-readiness/README.md) completes G139's gate definition with exact experimental, complete, and stable evidence boundaries while leaving held and unproved gates visible.
+- [Diagnostic contract](../60-specification/diagnostic-contract/README.md) completes P117's shared semantic explanations and repairs while keeping public parse and recovery coverage visibly held for P109.
 
 ## Open questions
 

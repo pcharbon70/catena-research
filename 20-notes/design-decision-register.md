@@ -1305,3 +1305,14 @@ handling, publication, and trust. The
 makes the selections durable at `0.1.90`; compiler PRs 175 and 176 implement
 and harden the assessor and pinned bounded proof without overriding a
 recommendation.
+
+## P117 execution links
+
+The [diagnostic-contract journal](../50-journal/2026-09-10-diagnostic-contract.md#implementation-decisions)
+records nineteen four-way implementation decisions for record evolution,
+locations, type presentation, causes, coverage explanations, generated
+origins, repair safety, serialization, grammar deferral, and trust placement.
+The [P117 normative contract](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md)
+makes CP-117-1..3 and those implementation choices durable at `0.1.91`;
+compiler PRs 177–179 implement and harden them without overriding a
+recommendation.
