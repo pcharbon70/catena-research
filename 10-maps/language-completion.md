@@ -56,6 +56,7 @@ Public vocabulary and the final grammar remain held for later joint design.
 - [Value boundaries](../60-specification/value-boundaries/README.md) completes C093 with typed scalar/structural/nominal conversion, verified closure capture and explicit authority exclusions.
 - [Release readiness](../60-specification/release-readiness/README.md) completes G139's gate definition with exact experimental, complete, and stable evidence boundaries while leaving held and unproved gates visible.
 - [Diagnostic contract](../60-specification/diagnostic-contract/README.md) completes P117's shared semantic explanations and repairs while keeping public parse and recovery coverage visibly held for P109.
+- [Documentation tool](../60-specification/documentation-tool/README.md) completes P119's interface graph, links, rendering, and retained-input doctests while keeping public-source examples visibly held for P109.
 
 ## Open questions
 

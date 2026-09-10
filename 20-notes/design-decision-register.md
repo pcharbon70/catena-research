@@ -1316,3 +1316,14 @@ The [P117 normative contract](../60-specification/diagnostic-contract/structured
 makes CP-117-1..3 and those implementation choices durable at `0.1.91`;
 compiler PRs 177–179 implement and harden them without overriding a
 recommendation.
+
+## P119 execution links
+
+The [documentation-tool journal](../50-journal/2026-09-10-documentation-tool.md#implementation-decisions)
+records eighteen four-way implementation decisions for graph authority,
+identity, semantic views, visibility, anchors, links, rendering, HTML safety,
+doctest selection, effects, failures, and bounds. The
+[P119 normative contract](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md)
+makes CP-119-1..3 and those implementation choices durable at `0.1.92`;
+compiler PRs 180–182 implement and harden the retained-input slice without
+overriding a recommendation.

@@ -3377,3 +3377,29 @@ Public parse and recovery evidence remains held for P109.
 | DX-OBL-011 | Published limits and bounded exhaustion | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | profile, truncation digest, and cardinality cases | traced |
 | DX-OBL-012 | Complete semantic implementation evidence | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | compiler PRs 177–179, 1,143 tests, production build, escript, and trust audit | traced |
 | DX-OBL-013 | Public parse and recovery diagnostics | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | explicit `held_for_p109` profile value | partial |
+
+## P119 documentation tool
+
+The [documentation-tool contract](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md)
+maps to the verified-interface graph, deterministic Markdown renderer,
+resolved symbol links, explicit retained-input doctests, conformance profile,
+and negative cases at revision `0.1.92`. Public-source examples remain held
+for P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DC-OBL-001 | Retained-input scope and public-source hold | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#status-and-authority) | lifecycle and profile assertions | traced |
+| DC-OBL-002 | Verified interface graph authority | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#graph-authority-and-visibility) | forged-interface refusal | traced |
+| DC-OBL-003 | Complete interface symbol families and stable identity | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#graph-authority-and-visibility) | graph kind, detail, and ordering assertions | traced |
+| DC-OBL-004 | Public visibility and authorized internal view | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#graph-authority-and-visibility) | hidden-target and unauthorized-internal refusal | traced |
+| DC-OBL-005 | Explicit missing state, uniqueness, and finite bounds | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#graph-authority-and-visibility) | placeholder, empty-body, duplicate-anchor, and profile cases | traced |
+| DC-OBL-006 | Verified local and dependency link resolution | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#links-and-deterministic-rendering) | local, external, unresolved, forged, and duplicate-module cases | traced |
+| DC-OBL-007 | Deterministic Markdown and stable anchors | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#links-and-deterministic-rendering) | repeated byte-identical rendering and link assertions | traced |
+| DC-OBL-008 | Inert HTML and explicit executable fences | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#links-and-deterministic-rendering) | active-HTML refusal and exact-fence cases | traced |
+| DC-OBL-009 | Subject-bound retained-input envelope | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#explicit-retained-input-doctests) | passing and stale doctest cases | traced |
+| DC-OBL-010 | Bounded G122 execution and distinct outcomes | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#explicit-retained-input-doctests) | runner report and lifecycle assertions | traced |
+| DC-OBL-011 | No environmental services and fail-closed construction | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#explicit-retained-input-doctests) | nonempty-effect and stale-example refusal | traced |
+| DC-OBL-012 | Canonical graph digest and render verification | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | deterministic graph and forged-graph refusal | traced |
+| DC-OBL-013 | Complete machine-readable profile | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | conformance-info assertions | traced |
+| DC-OBL-014 | Complete bounded retained-input evidence | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | compiler PRs 180–182, 1,149 tests, production build, escript, and trust audit | traced |
+| DC-OBL-015 | Public parser and source examples | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | explicit `held_for_p109` profile value | partial |

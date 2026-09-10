@@ -220,6 +220,8 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Documentation Tool](documentation-tool/README.md) — P119 verified interface graph, deterministic rendering, semantic links, and retained-input doctests at 0.1.92.
+
 - [Numeric library](numeric-library/README.md) — exact checked arithmetic, decimal rounding and verified compiled adoption.
 
 - [Text and Binary Model](text-binary-model/README.md) — C104 explicit units, pinned Unicode and checked binary operations at 0.1.66.
