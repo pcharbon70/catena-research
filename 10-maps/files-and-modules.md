@@ -61,7 +61,7 @@ everything the file layer deliberately does not decide.
 
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy that file-size limits defer to under
-  P129.
+  C129.
 - [Conformance Traceability](conformance-traceability.md) registers
   `FU-OBL-001` through `FU-OBL-012` against normative anchors and sibling
   compiler tests.

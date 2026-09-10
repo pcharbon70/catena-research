@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **112 complete, 16 partial, 11 gaps, and 2
+The current checkboxes total **113 complete, 15 partial, 11 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.75`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.76`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -105,9 +105,9 @@ item is marked complete by this audit.
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
-| 15. Security, reproducibility, and operational limits | 5 | 1 | 0 | 0 | 6 |
+| 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **112** | **16** | **11** | **2** | **141** |
+| **Total** | **113** | **15** | **11** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -361,7 +361,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   [`841af5ee342a31ff4769749bbdaa18a675b1bb21`](https://github.com/pcharbon70/catena/commit/841af5ee342a31ff4769749bbdaa18a675b1bb21)
   on draft PR [#88](https://github.com/pcharbon70/catena/pull/88), with 179
   passing tests and `IL-OBL-001`–`IL-OBL-012` traceability. Mailbox capacity
-  remains deployment-defined under C084/P085/P129 without permitting silent
+  remains deployment-defined under C084/C129/P085 without permitting silent
   per-sender reordering, retargeting, or live-target message loss. This
   repository-governance milestone creates no language revision.
 
@@ -1716,14 +1716,18 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   preserves the published archive. Registry authentication and general workflows
   registry authentication is completed by C130 while general workflows remain P121;
   see the [evidence journal](../50-journal/2026-09-09-reproducible-packages.md).
-- [ ] **P129 — Partial — resource exhaustion.** C012 defines portable
-  minima, machine-readable reporting, and transactional refusal; C034
-  separates recursion from bounded meta-evaluation, and C036/C037 classify
-  failures and resource observability. Complete aggregate compiler limits,
-  runtime memory/mailbox pressure, admission controls, denial-of-service
-  behavior, and diagnostics. Repair stale policy-owner references in the
-  compiler profile when extending its capacity contract; existing bounded
-  tests do not establish deployment-wide exhaustion handling.
+- [x] **C129 — Complete — resource exhaustion.** Normative `0.1.75` defines
+  [aggregate budgets and runtime admission](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md):
+  portable and configured limits for transaction-wide files, source bytes,
+  decoded nodes, and package output bytes; `LIM006`–`LIM009` structured
+  refusal before publication; and an explicit bounded FIFO queue with
+  message and encoded-byte admission, reject or terminate overload policy,
+  owner-only consumption, observable cleanup, and owner-death cancellation.
+  Raw send remains unchanged, P085 owns sendable payload integration, and VM
+  or operating-system fatal exhaustion remains explicit deployment risk. The
+  [verification journal](../50-journal/2026-09-10-resource-exhaustion.md)
+  records exact-boundary, pressure, cancellation, profile, full-suite, and
+  trusted-inventory evidence.
 - [x] **C130 — Complete — supply-chain policy.** Normative `0.1.74` defines a
   [signed registry and immutable acquisition contract](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md):
   explicit roots and dual-authority rotation, threshold snapshots, scoped

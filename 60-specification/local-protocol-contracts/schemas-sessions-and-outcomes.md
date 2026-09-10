@@ -172,7 +172,7 @@ Allocation, generated artifacts and atom resources inherit the
 [standing capacity policy](../../IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity).
 The [area register](README.md#variability-register) records this inheritance.
 This contract supplies no universal mailbox capacity or scheduler fairness
-floor. P085 and P129 retain deployment resource reporting; P085's remote facet
+floor. P085 and C129 retain deployment resource reporting; P085's remote facet
 remains open until G091.
 
 ## Rationale and evidence (non-normative)

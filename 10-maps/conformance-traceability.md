@@ -963,12 +963,18 @@ gate:
 | IL-OBL-011 | Limit refusals report common structured measurements before successful output publication | [`IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure`](../IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure) | LIM001–LIM004; c012 #2–#4; c017 #9 | traced |
 | IL-OBL-012 | C012 changes governance and compiler conformance behavior without creating revision 0.1.9 | [`IMPLEMENTATION-LIMITS.md#evolution-and-version-axes`](../IMPLEMENTATION-LIMITS.md#evolution-and-version-axes) | Governance/version-axis obligation; compiler coverage gate allow-list | untraced |
 | IL-OBL-013 | C018 decimal literals accept exact components through 4,096 total digits and refuse the next digit as LIM005 | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | LIM005; c018 #9 in the `NM` registry above | traced |
+| IL-OBL-014 | Aggregate source files, bytes, and decoded nodes meet their portable floors and refuse the next unit distinctly | [`IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima`](../IMPLEMENTATION-LIMITS.md#bootstrap-portable-minima) | resource_exhaustion: LIM006–LIM008 exact thresholds and aggregate small inputs | traced |
+| IL-OBL-015 | Aggregate publication output meets its portable floor and refuses before final output changes | [`IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure`](../IMPLEMENTATION-LIMITS.md#limit-diagnostics-and-transactional-failure) | resource_exhaustion: LIM009 boundary; retained package transaction tests | traced |
+| IL-OBL-016 | Explicit runtime admission reports limits and applies reject or terminate without silent success | [`IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity`](../IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity) | resource_exhaustion: queue admission, FIFO rejection and terminal overload | traced |
+| IL-OBL-017 | Queue cleanup is observable while host-fatal exhaustion remains a disclosed residual | [`IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity`](../IMPLEMENTATION-LIMITS.md#runtime-and-mailbox-capacity) | resource_exhaustion: pressured close, owner death and profile residuals | traced |
 
 C012 coverage is 12 `traced` and 1 governance-only `untraced` obligation.
 `IL-OBL-013` is exercised by the C018 decimal-component boundary test and
-gated with the `NM` set. The compiler coverage gate explicitly allow-lists
-IL-OBL-012 because emitting a language revision is a repository and
-release-governance decision, not an executable compiler behavior.
+remains gated with the `NM` set. `IL-OBL-014` through `IL-OBL-017` are
+exercised by the C129 aggregate-budget and capacity tests. The compiler
+coverage gate explicitly allow-lists IL-OBL-012 because emitting a language
+revision is a repository and release-governance decision, not an executable
+compiler behavior.
 
 ## Source-text registry (`ST`, 0.1.9)
 
@@ -2950,3 +2956,27 @@ and retained revision tests.
 | RG-OBL-012 | Offline/compromise | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#offline-and-compromise-semantics) | package_registry: yanked exact offline replay succeeds; observed compromised replay fails | traced |
 | RG-OBL-013 | Bounded refusal | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#limits-refusal-and-host-trust) | package_registry: metadata/canonical rejection and machine-reported ceilings | traced |
 | RG-OBL-014 | Residual trust | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#limits-refusal-and-host-trust) | trust_boundary: registry source/calls classified; profile names root/time/key residuals | traced |
+
+## C129 resource exhaustion
+
+The [resource-exhaustion contract](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md)
+defines aggregate compiler limits and explicit bounded runtime admission at
+revision `0.1.75`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| RX-OBL-001 | Scope and retained boundaries | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#status-and-authority) | resource_exhaustion: lifecycle/profile revision; raw send unchanged | traced |
+| RX-OBL-002 | Aggregate source count and bytes | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#aggregate-compiler-input) | resource_exhaustion: exact file/byte thresholds and many-small-source acceptance | traced |
+| RX-OBL-003 | Aggregate decoded nodes | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#aggregate-compiler-input) | resource_exhaustion: exact recursive node threshold and next-unit LIM008 refusal | traced |
+| RX-OBL-004 | Compiler integration | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#aggregate-compiler-input) | resource_exhaustion plus retained JSON/kernel/SCC/package suites | traced |
+| RX-OBL-005 | Pre-publication output budget | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#publication-and-diagnostics) | resource_exhaustion: output threshold; retained package transaction tests | traced |
+| RX-OBL-006 | Stable aggregate diagnostics | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#publication-and-diagnostics) | resource_exhaustion: LIM006–LIM009 exact observed values; c012 profile details | traced |
+| RX-OBL-007 | Refusal classification | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#publication-and-diagnostics) | c012 implementation-limit/evidence-bound distinction and transactional compiler APIs | traced |
+| RX-OBL-008 | Queue bounds and accounting | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#explicit-bounded-runtime-queues) | resource_exhaustion: message/byte admission and external-size profile | traced |
+| RX-OBL-009 | Authority and FIFO | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#explicit-bounded-runtime-queues) | resource_exhaustion: several producers, owner-only operations, ordered take and forged-handle refusal | traced |
+| RX-OBL-010 | Reject overload | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#explicit-bounded-runtime-queues) | resource_exhaustion: explicit overload with intact FIFO payloads and rejection count | traced |
+| RX-OBL-011 | Terminate overload | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#explicit-bounded-runtime-queues) | resource_exhaustion: capacity-exhausted return, owner event and process exit | traced |
+| RX-OBL-012 | Cancellation and cleanup | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#explicit-bounded-runtime-queues) | resource_exhaustion: full-queue close reports discard and owner death cancels | traced |
+| RX-OBL-013 | Host-fatal residuals | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#denial-of-service-and-residual-failure) | conformance profile and trust inventory disclose no host-fatal recovery | traced |
+| RX-OBL-014 | Raw and remote exclusions | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#denial-of-service-and-residual-failure) | resource_exhaustion: raw-send status false; P085/G091 owner references | traced |
+| RX-OBL-015 | Complete profile and suite | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#profile-and-conformance) | resource_exhaustion, c008, c012, language_version and trust_boundary suites | traced |

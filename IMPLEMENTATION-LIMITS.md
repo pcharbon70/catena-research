@@ -69,6 +69,10 @@ arbitrary zero.
 | Decoded text or byte literal payload | 65,536 bytes | Bytes in each decoded C017 text UTF-8 scalar sequence or byte-literal octet sequence, after escape processing. | `LIM004` |
 | Decimal literal component digits | 4,096 digits | Total decimal digits across the integral, fractional, and exponent components of each C017 decimal literal. | `LIM005` |
 | Generated BEAM module | 1,048,576 bytes | Bytes in each generated `.beam` module before successful publication. | `LIM003` |
+| Aggregate source files | 128 files | Complete de-duplicated source, interface, manifest, governance, and trust-root input set in one compiler or package transaction. | `LIM006` |
+| Aggregate source bytes | 16,777,216 bytes | Sum of exact bytes in the complete supplied input set for one compiler or package transaction. | `LIM007` |
+| Aggregate decoded input | 100,000 nodes | Recursively visited structures, maps, keys, lists, tuples, and leaves in one decoded syntax or semantic input. | `LIM008` |
+| Aggregate package output | 16,777,216 bytes | Sum of every prepared final output before one package publication transaction. | `LIM009` |
 | Pattern usefulness and coverage | 20,000 analysis steps | Existing data-and-pattern coverage boundary. | `M004` |
 | Condition normalization | 20,000 nodes or steps | Existing clause-condition normalization and transitive-inlining boundary. | `CND007` |
 | Trait resolution | 20,000 solver steps | Existing trait-resolution boundary. | `TRT008` |
@@ -103,8 +107,10 @@ machine-readable conformance profile. The profile MUST include:
   not-applicable reserved dimension;
 - for each finite bound, its stable identifier, classification, unit, portable
   minimum, configured value, applicability, and exhaustion outcome; and
-- deployment-defined mailbox capacity and its non-negotiable semantic
-  constraints.
+- deployment-defined raw mailbox capacity and its non-negotiable semantic
+  constraints; and
+- the explicit bounded-queue ceilings, accounting method, overload outcomes,
+  cleanup rules, and host-fatal residuals required by C129.
 
 The bootstrap command is `catena conformance-info`. It emits format
 `catena-conformance-info`, version `1`, as one JSON value. The human-readable
@@ -165,24 +171,30 @@ and portable floor used by conformance evidence.
 
 ## Runtime and mailbox capacity
 
-Catena does not assign a portable numeric mailbox-capacity minimum. OTP mailbox
-storage shares finite process and node resources, can use on-heap or off-heap
-message data, and can be constrained indirectly by process heap, distribution,
+Catena does not assign a portable numeric capacity minimum to a raw OTP mailbox.
+Mailbox storage shares finite process and node resources, can use on-heap or
+off-heap message data, and can be constrained by process heap, distribution,
 container, or operating-system policy. Those values belong to the deployment
 profile rather than source acceptance.
 
-Resource pressure MUST NOT silently reorder messages from one sender,
-retarget a send, or discard a message addressed to a live target while
-reporting the ordinary successful-send semantics. A deployment that imposes a
-quota needs an explicit admission, backpressure, process-failure, or trapping
-policy at the later concurrency/runtime boundary. Process death, supervision,
-distributed backpressure, and concrete mailbox quotas remain owned by G068
-and P129.
+C129 provides an explicit bounded queue above raw local send. A queue selects
+positive message and encoded-byte capacities no greater than the implementation
+ceilings and selects `reject` or `terminate` overload behavior. The bootstrap
+ceilings are 65,536 messages and 67,108,864 bytes. Bytes are measured by the
+deterministic Erlang external-size estimate; they do not claim physical resident
+memory. Accepted messages retain FIFO admission order. Rejection preserves every
+admitted payload, while termination reports capacity exhaustion to its owner.
+Owner death cancels the queue, and close reports discarded count and bytes.
 
-The already specified send-to-dead-target behavior is not changed by this
-policy. Nor does this policy promise that an operating system cannot terminate
-a node. It requires conformance claims to separate those external or explicit
-runtime outcomes from silent semantic variation.
+Resource pressure MUST NOT silently reorder messages from one sender, retarget a
+send, or discard a message addressed to a live target while reporting ordinary
+successful-send semantics. Raw send retains its existing behavior. A component
+that needs overload feedback uses the explicit admission service; P085 owns its
+integration with public sendable-message types and G091 owns remote delivery.
+
+No bounded queue promises process scheduling, physical-memory reservation, node
+survival, or cleanup after a host-fatal event. Operating-system or VM termination
+remains outside recoverable Catena behavior and MUST be disclosed separately.
 
 ## Evolution and version axes
 
@@ -210,8 +222,9 @@ C016 uses `0.1.12` for comments and documentation comments without adding a
 resource dimension; normative C017 uses `0.1.13` for atomic literals and
 activates the reserved decoded-payload dimension as `LIM004`; normative C018
 uses `0.1.14` for numeric literal semantics and activates the new
-decimal-component dimension as `LIM005`; `0.1.15` is the next unused semantic
-patch.
+decimal-component dimension as `LIM005`. Normative C129 uses `0.1.75`, adds
+aggregate dimensions `LIM006` through `LIM009`, and defines explicit bounded
+runtime admission. `0.1.76` is the next unused semantic patch.
 
 ## Conformance obligations
 
@@ -246,6 +259,18 @@ The following permanent obligations connect this policy to the
 - **IL-OBL-013 — Decimal-component floor.** C018 decimal literals accept
   exact components through 4,096 total digits and refuse the next digit as
   `LIM005`, without turning representable decimals into refusals.
+- **IL-OBL-014 — Aggregate input floors.** A transaction admits 128 source
+  files, 16,777,216 source bytes, and 100,000 decoded nodes, then refuses the
+  next unit as `LIM006`, `LIM007`, or `LIM008` respectively.
+- **IL-OBL-015 — Aggregate publication floor.** A package transaction admits
+  16,777,216 prepared output bytes and refuses the next byte as `LIM009` before
+  changing final outputs.
+- **IL-OBL-016 — Explicit runtime admission.** A bounded queue reports its
+  message and encoded-byte capacity, admits in FIFO order, and applies only its
+  selected reject or terminate policy without silent success.
+- **IL-OBL-017 — Runtime cleanup and residuals.** Owner cancellation and close
+  terminate the bounded queue with disclosed discarded work, while VM and
+  operating-system fatal exhaustion remain outside recoverable semantics.
 
 ## Research route
 

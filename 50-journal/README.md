@@ -31,6 +31,7 @@ source notes.
 ### Documents
 
 - [Signed package registry](2026-09-10-signed-package-registry.md) — registry trust, immutable acquisition, offline replay, and attack-fixture evidence.
+- [Resource exhaustion](2026-09-10-resource-exhaustion.md) — C129 aggregate compiler budgets, bounded runtime admission, pressure cleanup, and residual host failure evidence.
 - [Reproducible packages](2026-09-09-reproducible-packages.md) — exact input envelopes and independent build investigation.
 
 - [2026-09-09 environmental effects](2026-09-09-environmental-effects.md) — ongoing authority, launch and adapter implementation decisions.

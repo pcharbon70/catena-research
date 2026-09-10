@@ -290,3 +290,5 @@ C131 uses `0.1.72` for [secret capabilities](60-specification/secret-capabilitie
 C128 uses `0.1.73` for [reproducible builds](60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md), an exact input and canonical full-output packaging contract.
 
 C130 uses `0.1.74` for [signed registry and immutable acquisition](60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md), separating authenticated immutable content from availability, replay and governance decisions.
+
+C129 uses `0.1.75` for [aggregate budgets and runtime admission](60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md), with transactional compiler ceilings, explicit bounded queues, and declared host-fatal residuals.

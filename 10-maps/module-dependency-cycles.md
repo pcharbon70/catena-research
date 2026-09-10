@@ -68,7 +68,7 @@ slice.
   sibling compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to multi-module SCC
-  checking under P129.
+  checking under C129.
 
 ## Open questions
 

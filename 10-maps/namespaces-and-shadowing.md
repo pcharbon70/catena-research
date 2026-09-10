@@ -69,7 +69,7 @@ the owners of everything the namespace layer deliberately does not decide.
   compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy relevant to scope-event streams under
-  P129.
+  C129.
 
 ## Open questions
 

@@ -51,7 +51,7 @@ This area introduces no implementation-defined choice and no bounded
 unspecified presentation. It introduces one deny-able warning, `IMP001`,
 through the existing C008 warning machinery. It introduces no
 implementation limit; export-set validation remains subject to the
-aggregate-input policy of the P129 owner.
+aggregate-input policy fixed by C129.
 
 ## Index
 

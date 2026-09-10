@@ -96,7 +96,7 @@ details, and the `IL-OBL-001`–`IL-OBL-012`
 
 The [C012 record](../50-journal/2026-08-17-c012-implementation-limits.md)
 preserves the immutable compiler identity and validation. C017 now activates
-the decoded literal floor as `LIM004`; G068 and P129 own concrete concurrency capacity,
+the decoded literal floor as `LIM004`; C129 owns concrete local admission capacity,
 backpressure, and failure semantics; and G126–P131 retain the wider security,
 reproducibility, TCB, and operational-resource program. Those exclusions do
 not reopen the bounded C012 decision.
