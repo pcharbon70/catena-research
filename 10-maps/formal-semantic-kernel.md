@@ -52,6 +52,9 @@ and promotion record for Catena's integrated 0.1.8 kernel.
    and explicit delivery uncertainty; the supporting
    [OTP 29 source note](../30-sources/erlang-otp-29-distribution-security-and-external-terms.md)
    separates host transport behavior from Catena's application contract.
+6. [Values, Capacity, and Transport](../60-specification/message-semantics/values-capacity-and-transport.md)
+   closes the message contract by composing local send and ordering with checked
+   capacity, foreign/native admission, and remote outcomes.
 
 ### Compose the existing language
 

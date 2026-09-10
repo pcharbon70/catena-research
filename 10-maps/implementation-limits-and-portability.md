@@ -71,8 +71,9 @@ configuration, and distribution pressure. The existing
 the ordering and selective-receive observations. C129 now defines
 [aggregate budgets and explicit bounded admission](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md):
 logical message and encoded-byte ceilings, visible reject or terminate outcomes,
-owner cleanup, and explicit VM/OS fatal residuals. P085 consumes this layer for
-public sendable values; G091 retains remote delivery.
+owner cleanup, and explicit VM/OS fatal residuals. C085 now composes this layer
+with checked public sendable values, while C091 supplies remote delivery
+outcomes.
 
 ### Disclosure and traceability
 
@@ -90,7 +91,7 @@ The bounded C012 inquiry is resolved, C017 activates the decoded literal payload
 floor as `LIM004`, and C129 adds `LIM006` through `LIM009` for aggregate files,
 bytes, decoded nodes, and publication output. See the [literal map](literal-grammar.md)
 and [resource-exhaustion specification](../60-specification/resource-exhaustion/README.md).
-P085 must connect public sendable values to bounded admission, while G091 retains
-remote backpressure and failure. Physical-memory reservation, scheduler fairness,
-and node survival remain deployment responsibilities rather than portable
-language promises.
+C085 connects public sendable values to bounded admission and C091 defines remote
+backpressure and failure. Physical-memory reservation, scheduler fairness, and
+node survival remain deployment responsibilities rather than portable language
+promises.
