@@ -1327,3 +1327,15 @@ doctest selection, effects, failures, and bounds. The
 makes CP-119-1..3 and those implementation choices durable at `0.1.92`;
 compiler PRs 180–182 implement and harden the retained-input slice without
 overriding a recommendation.
+
+## P125 execution links
+
+The [migration-tool journal](../50-journal/2026-09-10-migration-tool.md#implementation-decisions)
+records twenty four-way implementation decisions for tool separation, retained
+input, edit admission, plan and byte identity, overlap, preview, authorization,
+filesystem safety, staging, backups, commit, interruption, rollback, semantic
+rechecks, governance, audit, bounds, and exhaustion. The
+[P125 normative contract](../60-specification/migration-tool/transactional-retained-json-edits.md)
+makes CP-125-1..3 and those implementation choices durable at `0.1.93`;
+compiler PRs 183–185 implement, correct, and fully exercise the retained-input slice without
+overriding a recommendation.

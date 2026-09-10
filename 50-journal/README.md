@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Migration tool](2026-09-10-migration-tool.md) — P125 exact previews, explicit authorization, retained-JSON transactions, rollback, semantic rechecks, limits, and public-source hold.
 - [Documentation tool](2026-09-10-documentation-tool.md) — P119 interface graph, visibility, links, rendering, doctest isolation, and retained-input evidence decisions.
 - [Diagnostic contract](2026-09-10-diagnostic-contract.md) — P117 semantic locations, type and causal explanations, coverage evidence, generated origins, and repair decisions.
 - [Release readiness](2026-09-10-release-readiness.md) — G139 release classes, evidence manifest, exact proof registry, contradiction dispositions, and compiler verification.

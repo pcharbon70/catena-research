@@ -1766,9 +1766,23 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [implementation evidence](../50-journal/2026-09-10-debugging-and-observability.md).
 - [ ] **P125 — Partial — migration tools.** C008 defines conservative
   `json-edit` suggestions with explicit applicability and requires the C008
-  compiler to report rather than apply them. Define transactional application,
-  backups, rollback, source rewrites, API refactors, and deprecated-syntax
-  handling.
+  compiler to report rather than apply them. Normative
+  [0.1.93](../60-specification/migration-tool/transactional-retained-json-edits.md)
+  now defines a separate explicitly authorized retained-JSON tool with exact
+  previews, normalized nonoverlapping machine-applicable edits, safe rooted
+  paths, all-file staging, retained backups, rollback and distinct rollback
+  failure, semantic rechecks, canonical audit evidence, no inherited governance
+  approval, and fixed limits with a distinct exhaustion outcome. Compiler
+  [PR 183](https://github.com/pcharbon70/catena/pull/183) implements the
+  transaction and passes 1,158 tests; corrective
+  [PR 184](https://github.com/pcharbon70/catena/pull/184) aligns finite-resource
+  refusal with the implementation-limit policy; evidence
+  [PR 185](https://github.com/pcharbon70/catena/pull/185) directly covers every
+  resource bound and occupied backup identities. The complete 1,160-test suite
+  passes. Source
+  rewrites, API refactors, and deprecated-syntax handling remain held for P109,
+  so P125 remains partial. See the
+  [implementation evidence](../50-journal/2026-09-10-migration-tool.md).
 
 ## 15. Security, reproducibility, and operational limits
 
