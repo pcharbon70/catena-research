@@ -3251,3 +3251,30 @@ defines the closed checked-rewrite boundary at revision `0.1.86`.
 | OZ-OBL-016 | Large-tree semantics and transactional exhaustion | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#refusal-and-observation-preservation) | 128-level deterministic optimization | traced |
 | OZ-OBL-017 | Machine-readable modes, rules, inventory, and disclaimer | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#profile-and-evidence-scope) | optimizer_validity conformance profile | traced |
 | OZ-OBL-018 | Complete bounded suite and no proof claim | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#profile-and-evidence-scope) | 1,115 tests, production builds, and trust audit | traced |
+
+## P108 standard stability and performance
+
+The [standard stability and performance contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md)
+maps to the compiler's canonical operation catalog, replacement classifier,
+observation validator, lifecycle profile, and focused mutation cases.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| SP-OBL-001 | Revision scope and public-source hold | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#status-and-authority) | lifecycle and profile cases | traced |
+| SP-OBL-002 | Complete per-operation fields | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#operation-contract-inventory) | twenty-record catalog validation | traced |
+| SP-OBL-003 | Canonical unique digest-bound inventory | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#operation-contract-inventory) | deterministic, reordered, and tampered cases | traced |
+| SP-OBL-004 | Package revision owns contract change | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#operation-contract-inventory) | package fields and lifecycle selection | traced |
+| SP-OBL-005 | Distinct stability tiers | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#stability-tiers-and-compatible-replacement) | catalog enum and profile exclusions | traced |
+| SP-OBL-006 | Compatible replacement preserves semantics | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#stability-tiers-and-compatible-replacement) | identical and field mutation cases | traced |
+| SP-OBL-007 | Improved bounds allowed, regressions breaking | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#stability-tiers-and-compatible-replacement) | improved lookup and quadratic mutation | traced |
+| SP-OBL-008 | Private implementation changes remain free | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#stability-tiers-and-compatible-replacement) | representation-neutral catalog | traced |
+| SP-OBL-009 | Closed worst-case complexity classes | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#complexity-and-callback-meaning) | catalog and service-bound entries | traced |
+| SP-OBL-010 | Count validation, ordering, conversion, and dispatch | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#complexity-and-callback-meaning) | collection, text, and numeric rows | traced |
+| SP-OBL-011 | Exact callback multiplicity and stop behavior | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#complexity-and-callback-meaning) | callback and order mutations | traced |
+| SP-OBL-012 | Constant stack and distinct exhaustion | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#complexity-and-callback-meaning) | catalog and retained large-input suites | traced |
+| SP-OBL-013 | No representation or stable ABI promise | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#representation-and-measurement-boundary) | catalog and profile exclusions | traced |
+| SP-OBL-014 | Complete observation identity | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#representation-and-measurement-boundary) | contract, toolchain, and sample binding | traced |
+| SP-OBL-015 | Measurements create no portable promise | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#representation-and-measurement-boundary) | profile and portable-claim assertion | traced |
+| SP-OBL-016 | Reject malformed or altered observations | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#representation-and-measurement-boundary) | unordered sizes and digest tampering | traced |
+| SP-OBL-017 | Machine-readable policy profile | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#profile-and-conformance) | conformance-info assertions | traced |
+| SP-OBL-018 | Complete bounded evidence scope | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#profile-and-conformance) | 1,120 tests and trust audit | traced |

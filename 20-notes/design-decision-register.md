@@ -1248,3 +1248,10 @@ records eighteen additional four-way decisions. The
 [normative contract](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md)
 makes CP-135-1..3 durable at `0.1.86`; compiler PR 169 completes the selections
 without an override.
+
+
+## P108 execution links
+
+CP-108-1..3 retain their recommended selections. The [stability and performance journal](../50-journal/2026-09-10-standard-stability-and-performance.md#implementation-decisions) records eighteen implementation forks for operation identity, stability tiers, complexity, callbacks, replacement rules, representation, and empirical evidence.
+
+The [P108 normative contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md) makes those choices durable at 0.1.87. The compiler catalog and mutation cases complete the selections without an override.

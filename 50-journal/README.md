@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Standard stability and performance](2026-09-10-standard-stability-and-performance.md) — P108 operation inventory, compatibility, complexity, representation, and measurement decisions.
 - [Optimizer validity](2026-09-10-optimizer-validity.md) — C135 transformation inventory, checked-rule, certificate replay, refusal, and compiler evidence.
 - [Differential testing](2026-09-10-differential-testing.md) — C134 independent paths, generated semantic descriptors, adversarial mutations, shrinking, and retained-corpus evidence.
 - [Scheduler observability](2026-09-10-scheduler-observability.md) — C090 schedule nondeterminism, priority limits, foreign-work classification, and bounded worker evidence.
