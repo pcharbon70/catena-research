@@ -1255,3 +1255,14 @@ without an override.
 CP-108-1..3 retain their recommended selections. The [stability and performance journal](../50-journal/2026-09-10-standard-stability-and-performance.md#implementation-decisions) records eighteen implementation forks for operation identity, stability tiers, complexity, callbacks, replacement rules, representation, and empirical evidence.
 
 The [P108 normative contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md) makes those choices durable at 0.1.87. The compiler catalog and mutation cases complete the selections without an override.
+
+## G138 execution links
+
+CP-138-1..3 retain their recommended selections. The [performance-envelope journal](../50-journal/2026-09-10-performance-envelope.md#implementation-decisions)
+records sixteen implementation forks for coverage, baselines, semantic gates,
+host and workload identity, sampling, memory, timeout, regression, optimizer,
+and claim scope.
+
+The [G138 normative contract](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
+makes those choices durable at `0.1.88`. The supported-host runner, raw report,
+and negative fixtures complete the selections without an override.

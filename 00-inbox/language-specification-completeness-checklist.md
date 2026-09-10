@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **125 complete, 6 partial, 8 gaps, and 2
+The current checkboxes total **126 complete, 6 partial, 7 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.88`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.89`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1868,9 +1868,16 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 - [ ] **G137 — Gap — usability gate.** Test whether programmers can predict `map`,
   `map2`, `and_then`, traversal, handlers, guards, comprehensions, and
   diagnostics without prerequisite mathematical vocabulary.
-- [ ] **G138 — Gap — performance envelope.** Benchmark direct calls, traits, ADTs,
-  pattern matching, guards, comprehensions, effects, processes, erasure, code
-  size, compile time, and diagnostic provenance.
+- [x] **G138 — Complete — performance envelope.** The normative
+  [0.1.88 supported-host contract](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
+  requires fifteen workload families spanning calls, traits, data, control,
+  effects, processes, resources, foreign conversion, erasure, code size,
+  compilation, and diagnostics. The retained OTP 29/Linux/x86-64 report has
+  45 semantically matched rows with raw samples, memory observations, exact
+  host and workload identities, and explicit nonportable scope. Mismatch,
+  timeout, tamper, and artificial-regression fixtures enforce the scoring gate;
+  the [journal](../50-journal/2026-09-10-performance-envelope.md) records all
+  decisions and measured limits.
 - [ ] **G139 — Gap — release-readiness definition.** State the minimum normative
   chapters, conformance coverage, platform support, known limitations, and
   stability promises required before calling a version complete.

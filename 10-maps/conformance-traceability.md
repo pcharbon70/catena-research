@@ -3278,3 +3278,28 @@ observation validator, lifecycle profile, and focused mutation cases.
 | SP-OBL-016 | Reject malformed or altered observations | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#representation-and-measurement-boundary) | unordered sizes and digest tampering | traced |
 | SP-OBL-017 | Machine-readable policy profile | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#profile-and-conformance) | conformance-info assertions | traced |
 | SP-OBL-018 | Complete bounded evidence scope | [Rule](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md#profile-and-conformance) | 1,120 tests and trust audit | traced |
+
+## G138 performance envelope
+
+The [supported-host performance contract](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
+maps to the fifteen-family runner, retained 45-row report, comparison engine,
+negative fixtures, lifecycle profile, and trust audit.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| PE-OBL-001 | Revision scope and public-source hold | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#status-and-authority) | lifecycle and profile cases | traced |
+| PE-OBL-002 | Fifteen required workload families | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#workload-coverage-and-identity) | runner and complete-family assertion | traced |
+| PE-OBL-003 | Stable workload and size identity | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#workload-coverage-and-identity) | workload validation and row digests | traced |
+| PE-OBL-004 | Host, contract, run, sample, and report identity | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#workload-coverage-and-identity) | retained canonical report | traced |
+| PE-OBL-005 | Warmup and complete sample statistics | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#measurement-protocol) | 45 measured rows with raw samples | traced |
+| PE-OBL-006 | Median scoring and integer relative ratio | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#measurement-protocol) | report field and JCS verification | traced |
+| PE-OBL-007 | Separate cold and warm scope | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#measurement-protocol) | compile/code-size and runtime families | traced |
+| PE-OBL-008 | Empty, large, adverse, memory, and unfavorable evidence | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#measurement-protocol) | ordered size families and retained deltas | traced |
+| PE-OBL-009 | Semantic equality before scoring | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#semantic-gate-and-negative-results) | result-digest mismatch fixture | traced |
+| PE-OBL-010 | Retain measured, timeout, failure, and mismatch | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#semantic-gate-and-negative-results) | mismatch and timeout focused case | traced |
+| PE-OBL-011 | Optimizer wins require P135 preservation | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#semantic-gate-and-negative-results) | shared digest gate and P135 regression suite | traced |
+| PE-OBL-012 | Exact aggregate gate and invalidity | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#semantic-gate-and-negative-results) | empty suite and tamper cases | traced |
+| PE-OBL-013 | Same-host, same-contract row pairing | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | envelope comparator | traced |
+| PE-OBL-014 | Declared median ratio regression | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | artificial two-times regression | traced |
+| PE-OBL-015 | Exact-host empirical claim only | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | portable false and journal limits | traced |
+| PE-OBL-016 | Profile, raw report, negative fixtures, and full suite | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | 1,124 tests and trust audit | traced |
