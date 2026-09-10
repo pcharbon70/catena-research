@@ -34,8 +34,9 @@ is (`AB-OBL-004`):
    construction and matching outside the defining module;
 2. export one or more validating constructor functions whose failure is
    visible in their result type — the shape
-   `parse : String -> Result EmailError Email` — so every invalid input
-   is rejected by typing before any value exists; and
+   `parse : String -> Result EmailError Email` — so dynamic validation
+   returns a typed error for invalid input before any abstract value exists,
+   and callers must handle that failure in the result type; and
 3. export observer functions through which clients read the value's
    contents.
 

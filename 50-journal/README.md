@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Release readiness](2026-09-10-release-readiness.md) — G139 release classes, evidence manifest, exact proof registry, contradiction dispositions, and compiler verification.
 - [Debugging and observability](2026-09-10-debugging-and-observability.md) — C124 breakpoint, trace-loss, process identity, profiling, crash-report, redaction, and evidence decisions.
 - [Standard stability and performance](2026-09-10-standard-stability-and-performance.md) — P108 operation inventory, compatibility, complexity, representation, and measurement decisions.
 - [Performance envelope](2026-09-10-performance-envelope.md) — G138 workload coverage, semantic gates, raw supported-host measurements, and regression policy.

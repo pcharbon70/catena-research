@@ -3328,3 +3328,29 @@ bounded runtime events, profiles, crash reports, and external evidence links.
 | DO-OBL-014 | Honest optimized-value and derivation attribution | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | unavailable marker and derivation event inventory | traced |
 | DO-OBL-015 | External erased evidence and stripped boundary | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | absent BEAM evidence and verified locator case | traced |
 | DO-OBL-016 | Complete profile and executable evidence scope | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | 1,128 tests, production builds, and trust audit | traced |
+
+## G139 release readiness
+
+The [release-readiness contract](../60-specification/release-readiness/evidence-gates-and-release-claims.md)
+maps to the canonical manifest builder and verifier, class-specific assessor,
+exact platform and proof registries, contradiction audit, and pinned Rocq
+workbench at revision `0.1.90`.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| RR-OBL-001 | Revision scope and no language-complete claim | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#status-and-authority) | lifecycle, profile, and blocked complete case | traced |
+| RR-OBL-002 | Exact three classes and no inferred upgrade | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#release-classes-and-claims) | profile and experimental assessment case | traced |
+| RR-OBL-003 | Disclosed experimental gaps and bounded claim | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#release-classes-and-claims) | passing partial-coverage experimental manifest | traced |
+| RR-OBL-004 | Complete/stable gates and stability policy | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#release-classes-and-claims) | complete-class blocker assertions and profile | traced |
+| RR-OBL-005 | Canonical complete manifest inventory | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#canonical-release-manifest) | canonical builder and verifier tests | traced |
+| RR-OBL-006 | Exact obligation arithmetic by class | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#canonical-release-manifest) | partial experimental, blocked complete, and malformed total cases | traced |
+| RR-OBL-007 | Nonempty identified limitation ledger | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#canonical-release-manifest) | schema and missing-inventory refusal | traced |
+| RR-OBL-008 | Digest and schema invalidity | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#canonical-release-manifest) | tampered digest and malformed manifest cases | traced |
+| RR-OBL-009 | Four separate evidence domains | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#evidence-and-platform-gates) | experimental and complete evidence-status cases | traced |
+| RR-OBL-010 | Exact supported platform fingerprint | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#evidence-and-platform-gates) | supported row and unsupported-host blocker | traced |
+| RR-OBL-011 | Closed completion-gate inventory | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#evidence-and-platform-gates) | profile gate list and complete-class blocker | traced |
+| RR-OBL-012 | Exact separately admitted proof registry | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#proof-ledger-and-claim-boundary) | forged source digest and self-admission refusal | traced |
+| RR-OBL-013 | Pinned bounded Rocq proof and exact scope | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#proof-ledger-and-claim-boundary) | Rocq 9.2 check, source/image digests, and theorem inventory | traced |
+| RR-OBL-014 | No admitted integrated Catena theorem | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#proof-ledger-and-claim-boundary) | asserted integrated proof remains blocked | traced |
+| RR-OBL-015 | Two explicit contradiction dispositions | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#contradiction-audit-and-publication) | corrected normative text and unresolved-audit case | traced |
+| RR-OBL-016 | Complete profile, negative suite, and no publication | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#contradiction-audit-and-publication) | 1,137 tests, production build, trust audit, proof check, and result flags | traced |

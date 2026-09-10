@@ -1284,3 +1284,24 @@ profiling, crash reports, redaction, generated code, and erasure. The
 [C124 normative contract](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md)
 makes them durable at `0.1.89`; compiler PR 173 completes the selections
 without an override.
+
+## G139 release-readiness decisions
+
+| Decision | Option A | Option B | Option C | Option D | Selected recommendation |
+| --- | --- | --- | --- | --- | --- |
+| CP-139-1 | Test count alone. | Explicit experimental/complete/stable profiles. | Require all future features. | Call held grammar complete. | **B**, recommended and agent-selected: claim strength follows explicit evidence gates. |
+| CP-139-2 | Tests discharge composition. | Exact proof ledger and checked artifacts. | Delete the proof target. | Treat normative statements as proof. | **B**, recommended and agent-selected: scope and checker identity remain reviewable. |
+| CP-139-3 | Document presence. | Machine-readable obligation/platform/limitation manifest. | Unchecked checklist. | Ignore contradictions when tests pass. | **B**, recommended and agent-selected: canonical evidence and explicit audit dispositions drive assessment. |
+| CP-139-4 | Proof sketches. | Mechanize core and composition in a pinned checker. | Bounded exploration as proof. | Correctness by design. | **B**, recommended and agent-selected: kernel checking supplies independently inspectable formal evidence. |
+| CP-139-5 | Rocq. | Lean. | Isabelle/HOL. | Custom kernel. | **A**, recommended and agent-selected: Rocq inductive relations fit the current calculus and are pinned at 9.2. |
+
+## G139 execution links
+
+The [release-readiness journal](../50-journal/2026-09-10-release-readiness.md#implementation-decisions)
+records sixteen additional four-way decisions for manifest encoding, evidence
+classes, obligation and platform identity, proof admission, contradiction
+handling, publication, and trust. The
+[G139 normative contract](../60-specification/release-readiness/evidence-gates-and-release-claims.md)
+makes the selections durable at `0.1.90`; compiler PRs 175 and 176 implement
+and harden the assessor and pinned bounded proof without overriding a
+recommendation.
