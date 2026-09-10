@@ -47,6 +47,11 @@ and promotion record for Catena's integrated 0.1.8 kernel.
    the configuration and lowering.
 4. [Actors, Messages, and Failures](../60-specification/formal-semantic-kernel/actors-messages-and-failures.md)
    states Catena's exact boundary.
+5. [Typed Authenticated Transport](../60-specification/distribution/typed-authenticated-transport.md)
+   crosses that boundary through authenticated service identity, checked frames,
+   and explicit delivery uncertainty; the supporting
+   [OTP 29 source note](../30-sources/erlang-otp-29-distribution-security-and-external-terms.md)
+   separates host transport behavior from Catena's application contract.
 
 ### Compose the existing language
 
@@ -62,6 +67,7 @@ and promotion record for Catena's integrated 0.1.8 kernel.
   literals, and numeric literal meaning are fixed by C014–C018; token through
   file/module structure remain in G019–G020.
 - Cleanup, exception catching, time, supervision, distribution, foreign
-  values, and optimizer validity remain outside C010.
+  values, and optimizer validity remain outside C010; later chapters define
+  each admitted extension without retroactively changing the kernel.
 - Machine-checked metatheory may be considered after the paper model and
   executable evidence stabilize.

@@ -292,3 +292,4 @@ C128 uses `0.1.73` for [reproducible builds](60-specification/reproducible-build
 C130 uses `0.1.74` for [signed registry and immutable acquisition](60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md), separating authenticated immutable content from availability, replay and governance decisions.
 
 C129 uses `0.1.75` for [aggregate budgets and runtime admission](60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md), with transactional compiler ceilings, explicit bounded queues, and declared host-fatal residuals.
+C091 uses `0.1.76` for [typed authenticated distribution](60-specification/distribution/typed-authenticated-transport.md), with exact endpoint identity, bounded schema-directed frames, mutual authentication, compatibility refusal, and explicit partition uncertainty.

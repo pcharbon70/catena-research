@@ -428,6 +428,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 - [Reproducible builds](reproducible-builds/README.md) — exact input envelopes, independent builds and canonical complete archives.
 - [Resource exhaustion](resource-exhaustion/README.md) — aggregate compiler budgets, transactional refusal, and bounded runtime admission.
+- [Distribution](distribution/README.md) — authenticated endpoint identity, bounded typed framing, compatibility refusal, and explicit delivery uncertainty.
 - [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.

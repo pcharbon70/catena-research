@@ -53,6 +53,9 @@ mentions can remain as citations in the document that uses them.
   — documents process heap limits, on/off-heap message storage, and emulator
   controls that make mailbox capacity a deployment concern rather than one
   portable message count.
+- [Erlang/OTP 29 Distribution Security and External Terms](erlang-otp-29-distribution-security-and-external-terms.md)
+  — separates TLS transport authentication, application authorization,
+  external-term runtime safety, and typed application validation.
 - [Erlang/OTP 29 System Limits](erlang-otp-29-system-limits.md) — records the
   arity-255 target ceiling and distinguishes VM ceilings from Catena portable
   source floors.
