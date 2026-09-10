@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **117 complete, 13 partial, 9 gaps, and 2
+The current checkboxes total **118 complete, 12 partial, 9 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -1672,11 +1672,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   revocation, old-and-new normal rotation, predeclared recovery, and historical
   root replay. Transparency services and network identity are excluded from
   the bounded offline protocol and remain possible later additions.
-- [ ] **P116 — Partial — long-term evolution.** C006 provides fixed-format
-  historical governance replay; C008 retains exact revisions and signed
-  domains. Complete schema migration, policy-version interpretation,
-  archived evidence portability, and reproducible historical decisions
-  across newer compilers and future formats.
+- [x] **C116 — Complete — long-term evolution.** The normative
+  [0.1.80 contract](../60-specification/long-term-evolution/historical-replay-and-migration.md)
+  fixes exact-version interpretation for retained governance formats,
+  deterministic adjacent schema migration, semantic-loss refusal, immutable
+  original-byte and signature retention, derived provenance, historical-root
+  replay, and explicit missing-tool/dependency outcomes. Compiler
+  [PR 162](https://github.com/pcharbon70/catena/pull/162) supplies complete
+  `LE-OBL-001`–`LE-OBL-014` evidence with 1,068 passing tests. Unknown future
+  formats remain refused rather than guessed.
 ## 14. Diagnostics, tools, and developer experience
 
 - [ ] **P117 — Partial — diagnostic contract.** C008 defines severity, stable

@@ -432,6 +432,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Message semantics](message-semantics/README.md) — integrated local, checked-capacity, foreign/native, and remote message behavior.
 - [Scheduler observability](scheduler-observability/README.md) — nondeterministic schedules, deployment priorities, classified foreign work, and bounded blocking admission.
 - [Hot code upgrade](hot-code-upgrade/README.md) — exact preflight, quiescent bounded state migration, one draining generation, and explicit rollback limits.
+- [Long-term evolution](long-term-evolution/README.md) — exact historical interpretation, adjacent artifact migration, immutable provenance, and archive portability.
 - [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.
