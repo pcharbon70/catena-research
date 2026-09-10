@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **115 complete, 14 partial, 10 gaps, and 2
+The current checkboxes total **116 complete, 13 partial, 10 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 7 | 1 | 1 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 8 | 0 | 1 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **115** | **14** | **10** | **2** | **141** |
+| **Total** | **116** | **13** | **10** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1426,11 +1426,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   The supported static-worker inventory explicitly excludes arbitrary callbacks,
   nested supervisor descriptions and hot upgrades. See the
   [implementation evidence](../50-journal/2026-09-08-typed-supervision.md).
-- [ ] **P090 — Partial — scheduler observability.** C010 specifies
-  nondeterministic runnable-process selection, permitted interleavings,
-  quiescence, and no fairness guarantee. Complete the public contract for
-  reduction preemption, priorities, blocking foreign work, and the bounds
-  of scheduler observability and determinism.
+- [x] **C090 — Complete — scheduler observability.** The
+  [0.1.78 policy contract](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md)
+  preserves nondeterministic runnable-process selection, permitted
+  interleavings, quiescence, and no fairness guarantee. Reduction counts and
+  run queues are unobservable; deployment priorities cannot weaken semantics.
+  Work is classified as preemptible, scheduled blocking, or unsafe unbounded;
+  unknown/unsafe work is refused and admitted blocking work uses explicit
+  finite worker capacity. Bounded exploration retains multiple schedules and
+  reports incomplete bounds honestly; a real owned foreign worker permits
+  independent runnable progress. See the
+  [implementation evidence](../50-journal/2026-09-10-scheduler-observability.md).
 - [x] **C091 — Complete — distribution.** The
   [0.1.76 typed authenticated transport](../60-specification/distribution/typed-authenticated-transport.md)
   binds opaque node/service identity to exact package and local-protocol

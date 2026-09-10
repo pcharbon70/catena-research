@@ -3029,3 +3029,25 @@ revision `0.1.77`.
 | MS-OBL-014 | Remote outcomes | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#remote-transport) | distribution: not-enqueued, delivery-unknown and admitted transitions | traced |
 | MS-OBL-015 | Retry and skew | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#remote-transport) | distribution: duplicates, protocol skew and no automatic retry | traced |
 | MS-OBL-016 | Profile and complete suite | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#diagnostics-and-conformance) | message_semantics plus retained message/resource/native/distribution suites | traced |
+
+## C090 scheduler observability
+
+The [scheduler contract](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md)
+defines observable schedule and foreign-work limits at revision `0.1.78`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| SC-OBL-001 | Exact scope and revision | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#status-and-authority) | scheduler_observability and lifecycle exact revision | traced |
+| SC-OBL-002 | Preserved semantics | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#observable-schedule-semantics) | retained kernel, message, effect, resource and authority suites | traced |
+| SC-OBL-003 | Reduction opacity | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#observable-schedule-semantics) | scheduler profile validation and mutation refusal | traced |
+| SC-OBL-004 | No fairness claim | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#observable-schedule-semantics) | scheduler profile false deterministic/fairness fields; kernel quiescence cases | traced |
+| SC-OBL-005 | Runtime preemption | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#preemption-and-priorities) | profile runtime-defined preemption and unobservable-count fields | traced |
+| SC-OBL-006 | Deployment priorities | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#preemption-and-priorities) | scheduler policy accepts exact low/normal/high set and rejects invalid options | traced |
+| SC-OBL-007 | Exact work classes | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#foreign-work-classes) | scheduler_observability: Catena, foreign, native, unknown and unsafe cases | traced |
+| SC-OBL-008 | Existing adapter duties | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#foreign-work-classes) | retained foreign_adapter and native_services suites | traced |
+| SC-OBL-009 | Worker capacity | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#capacity-and-blocking-isolation) | scheduler_observability: exact one-worker exhaustion and token release | traced |
+| SC-OBL-010 | Blocking isolation | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#capacity-and-blocking-isolation) | scheduler_observability: independent process advances beside owned blocking worker | traced |
+| SC-OBL-011 | Capacity disclosure | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#capacity-and-blocking-isolation) | scheduler profile and invalid-policy tests | traced |
+| SC-OBL-012 | Bounded exploration | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#reference-exploration-and-evidence) | scheduler_observability and c010: multiple schedules and exhausted bound | traced |
+| SC-OBL-013 | Evidence scope | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#reference-exploration-and-evidence) | explorer reports set/bounds without runtime timing claims | traced |
+| SC-OBL-014 | Profile and complete suite | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#diagnostics-and-conformance) | scheduler_observability, c010, foreign_adapter, native_services and trust_boundary | traced |

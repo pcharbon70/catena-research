@@ -94,4 +94,6 @@ and [resource-exhaustion specification](../60-specification/resource-exhaustion/
 C085 connects public sendable values to bounded admission and C091 defines remote
 backpressure and failure. Physical-memory reservation, scheduler fairness, and
 node survival remain deployment responsibilities rather than portable language
-promises.
+promises. C090 now publishes the exact scheduler work classes, priority scope,
+and finite foreign-worker ceiling without converting those controls into
+portable fairness or timing guarantees.
