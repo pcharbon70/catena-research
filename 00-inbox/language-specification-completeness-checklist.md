@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **113 complete, 15 partial, 11 gaps, and 2
+The current checkboxes total **114 complete, 15 partial, 10 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 5 | 2 | 2 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 6 | 2 | 1 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **113** | **15** | **11** | **2** | **141** |
+| **Total** | **114** | **15** | **10** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1428,8 +1428,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   quiescence, and no fairness guarantee. Complete the public contract for
   reduction preemption, priorities, blocking foreign work, and the bounds
   of scheduler observability and determinism.
-- [ ] **G091 — Gap — distribution.** Define node identity, serialization, code-version
-  skew, connection failure, partitions, authentication, and delivery claims.
+- [x] **C091 — Complete — distribution.** The
+  [0.1.76 typed authenticated transport](../60-specification/distribution/typed-authenticated-transport.md)
+  binds opaque node/service identity to exact package and local-protocol
+  digests, mutually authenticated TLS certificates, bounded canonical typed
+  frames, and explicit peer policy. It refuses version skew and malformed or
+  authority-bearing payloads before delivery; distinguishes `not_enqueued`,
+  `delivery_unknown`, and remote admission; and makes neither automatic-retry,
+  exactly-once-processing, nor synchronized-clock claims. A deterministic
+  transition model covers capacity, partitions, reconnects, and duplicate
+  conflicts; two separately certified logical endpoints exchange a checked
+  frame over a real TLS 1.3 loopback socket. See the
+  [implementation evidence](../50-journal/2026-09-10-distribution.md). Public
+  source vocabulary remains P109 and hot replacement remains G092.
 - [ ] **G092 — Gap — hot code upgrade.** Define state migration, old and new code
   coexistence, capability and type compatibility, rollback, and governance
   evidence.

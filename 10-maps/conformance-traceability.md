@@ -2980,3 +2980,27 @@ revision `0.1.75`.
 | RX-OBL-013 | Host-fatal residuals | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#denial-of-service-and-residual-failure) | conformance profile and trust inventory disclose no host-fatal recovery | traced |
 | RX-OBL-014 | Raw and remote exclusions | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#denial-of-service-and-residual-failure) | resource_exhaustion: raw-send status false; P085/G091 owner references | traced |
 | RX-OBL-015 | Complete profile and suite | [Rule](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md#profile-and-conformance) | resource_exhaustion, c008, c012, language_version and trust_boundary suites | traced |
+
+## C091 distribution
+
+The [distribution contract](../60-specification/distribution/typed-authenticated-transport.md)
+defines authenticated typed remote transport at revision `0.1.76`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| DS-OBL-001 | Exact scope and revision | [Rule](../60-specification/distribution/typed-authenticated-transport.md#status-and-authority) | distribution: lifecycle/profile revision and local-handle separation | traced |
+| DS-OBL-002 | Endpoint identity | [Rule](../60-specification/distribution/typed-authenticated-transport.md#endpoint-and-peer-identity) | distribution: distinct valid contracts and digest mutation refusal | traced |
+| DS-OBL-003 | Peer authorization | [Rule](../60-specification/distribution/typed-authenticated-transport.md#endpoint-and-peer-identity) | distribution: certificate, service and package mismatch refusal | traced |
+| DS-OBL-004 | Mutual application greeting | [Rule](../60-specification/distribution/typed-authenticated-transport.md#endpoint-and-peer-identity) | distribution: successful mutual ready and server-side policy refusal observed by client | traced |
+| DS-OBL-005 | TLS carrier | [Rule](../60-specification/distribution/typed-authenticated-transport.md#transport-and-framing) | distribution: separate CA-signed client/server certificates over TLS 1.3 socket | traced |
+| DS-OBL-006 | Exact frame binding | [Rule](../60-specification/distribution/typed-authenticated-transport.md#transport-and-framing) | distribution: stable round trip, unknown-field and noncanonical refusal | traced |
+| DS-OBL-007 | Typed canonical values | [Rule](../60-specification/distribution/typed-authenticated-transport.md#transport-and-framing) | distribution: integer and nominal payload round trips; exact float/profile declaration | traced |
+| DS-OBL-008 | Authority exclusion | [Rule](../60-specification/distribution/typed-authenticated-transport.md#transport-and-framing) | distribution: process value rejected; wire implementation avoids external-term decode | traced |
+| DS-OBL-009 | Ingress limits | [Rule](../60-specification/distribution/typed-authenticated-transport.md#limits-and-refusal) | distribution: oversized frame refusal and disclosed byte/node/depth/digit limits | traced |
+| DS-OBL-010 | Configuration disclosure | [Rule](../60-specification/distribution/typed-authenticated-transport.md#limits-and-refusal) | distribution profile plus exact TLS configuration validation | traced |
+| DS-OBL-011 | Pending admission | [Rule](../60-specification/distribution/typed-authenticated-transport.md#delivery-and-partition-semantics) | distribution: disconnected and over-capacity preparation refuse | traced |
+| DS-OBL-012 | Partition outcomes | [Rule](../60-specification/distribution/typed-authenticated-transport.md#delivery-and-partition-semantics) | distribution: prepared maps to not-enqueued; transmitted maps to delivery-unknown | traced |
+| DS-OBL-013 | Retry and duplicates | [Rule](../60-specification/distribution/typed-authenticated-transport.md#delivery-and-partition-semantics) | distribution: exact duplicate suppressed, conflicting duplicate rejected, no automatic retry | traced |
+| DS-OBL-014 | Reconnection | [Rule](../60-specification/distribution/typed-authenticated-transport.md#delivery-and-partition-semantics) | distribution: pending clear and fresh authenticated reconnect | traced |
+| DS-OBL-015 | Compatibility | [Rule](../60-specification/distribution/typed-authenticated-transport.md#compatibility-and-ordering) | distribution: differing local-protocol revision refused at handshake | traced |
+| DS-OBL-016 | Profile and complete suite | [Rule](../60-specification/distribution/typed-authenticated-transport.md#diagnostics-and-conformance) | distribution, lifecycle, language_version and trust_boundary suites | traced |

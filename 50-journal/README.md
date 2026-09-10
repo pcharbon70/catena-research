@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Distribution](2026-09-10-distribution.md) — C091 typed framing, mutual TLS, compatibility refusal, partition uncertainty, and duplicate evidence.
 - [Signed package registry](2026-09-10-signed-package-registry.md) — registry trust, immutable acquisition, offline replay, and attack-fixture evidence.
 - [Resource exhaustion](2026-09-10-resource-exhaustion.md) — C129 aggregate compiler budgets, bounded runtime admission, pressure cleanup, and residual host failure evidence.
 - [Reproducible packages](2026-09-09-reproducible-packages.md) — exact input envelopes and independent build investigation.

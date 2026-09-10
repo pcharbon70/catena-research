@@ -1151,3 +1151,9 @@ The [C130 normative contract](../60-specification/supply-chain-policy/signed-reg
 CP-129-1..3 retain their recommendations. The [resource-exhaustion journal](../50-journal/2026-09-10-resource-exhaustion.md#implementation-decisions) records aggregate accounting, transaction, admission, ownership, overload, cleanup, diagnostic, and residual-host forks.
 
 The [C129 normative contract](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md) makes CP-129-1..3 durable at `0.1.75`. The compiler implementation and pressure fixtures completed the selected choices without an override.
+
+## C091 execution links
+
+CP-091-1..7 retain their recommendations. The [distribution journal](../50-journal/2026-09-10-distribution.md#implementation-decisions) records carrier, identity, authorization, framing, payload, bounds, failure, duplicate, reconnect, compatibility, and evidence forks.
+
+The [C091 normative contract](../60-specification/distribution/typed-authenticated-transport.md) makes those choices durable at `0.1.76`. The compiler model and mutually authenticated TLS fixture complete the selected choices without an override.
