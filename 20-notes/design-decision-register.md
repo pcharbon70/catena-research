@@ -1200,3 +1200,19 @@ The [C136 normative contract](../60-specification/compatibility-suite/layered-ma
 CP-133-1..3 retain their recommendations. The [reference-evaluator journal](../50-journal/2026-09-10-reference-evaluator.md#implementation-decisions) records fifteen four-way decisions for independent adapters, observation shape, terminal classes, engine-specific bounds, schedules, resources, foreign and external values, retained source, unsupported coverage, and proof limits.
 
 The [C133 normative contract](../60-specification/reference-evaluator/common-observations-and-bounded-models.md) makes those choices durable at `0.1.83`. Compiler PR 166 and the integrated observation suite complete the selections without an override.
+
+## C122 testing-tools decisions
+
+| Decision | Option A | Option B | Option C | Option D | Selected recommendation |
+| --- | --- | --- | --- | --- | --- |
+| CP-122-1 | One Boolean result for all tests; simple but hides evidence scope. | Distinct unit/property/model/concurrency/specification result kinds; richer. | Treat every passing test as proof; false. | Require an external test tool forever; fragmented. | **B**, recommended and agent-selected: the implementation also retains law as an explicit evidence kind. |
+| CP-122-2 | Implicit random seeds; easy but irreproducible. | Explicit seeds, typed generators, invariant-preserving shrinkers; implementation cost. | Fixed examples only; misses interactions. | Untyped byte fuzzing only; mostly invalid cases. | **B**, recommended and agent-selected: counterexamples remain in the admitted semantic domain. |
+| CP-122-3 | Wall-clock timeout means language divergence; easy but false. | Distinguish semantic fuel, schedule bounds, and host timeout; precise. | No timeouts; hangs builds. | Retry failures until green; hides defects. | **B**, recommended and agent-selected: implementation also identifies shrink exhaustion separately. |
+
+## C122 execution links
+
+The [testing-tools journal](../50-journal/2026-09-10-testing-tools.md#implementation-decisions)
+records eighteen additional four-way implementation decisions. The
+[normative contract](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md)
+makes CP-122-1..3 durable at `0.1.84`; compiler PR 167 completes the selections
+without an override.

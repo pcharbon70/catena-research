@@ -36,6 +36,7 @@ source notes.
 - [Build system and package manager](2026-09-10-build-system.md) — C121 workspace graphs, acquisition transactions, cache identity, offline builds, and publication evidence.
 - [Compatibility suite](2026-09-10-compatibility-suite.md) — C136 layered matrix decisions, retained authorities, generated graph coverage, and compiler verification.
 - [Reference evaluator](2026-09-10-reference-evaluator.md) — C133 observation-schema decisions, independent model adapters, bounds, and compiler verification.
+- [Testing tools](2026-09-10-testing-tools.md) — C122 seeded-run, typed-generator, shrinking, isolation, evidence-scope, and compiler verification decisions.
 - [Message semantics](2026-09-10-message-semantics.md) — C085 immutable values, checked admission, sender order, native authority, and remote-outcome integration.
 - [Distribution](2026-09-10-distribution.md) — C091 typed framing, mutual TLS, compatibility refusal, partition uncertainty, and duplicate evidence.
 - [Signed package registry](2026-09-10-signed-package-registry.md) — registry trust, immutable acquisition, offline replay, and attack-fixture evidence.

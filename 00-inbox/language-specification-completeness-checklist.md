@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **121 complete, 9 partial, 9 gaps, and 2
+The current checkboxes total **122 complete, 9 partial, 8 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.84`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.85`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -104,10 +104,10 @@ item is marked complete by this audit.
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
-| 14. Diagnostics, tools, and developer experience | 1 | 3 | 5 | 0 | 9 |
+| 14. Diagnostics, tools, and developer experience | 2 | 3 | 4 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 3 | 2 | 4 | 0 | 9 |
-| **Total** | **121** | **9** | **9** | **2** | **141** |
+| **Total** | **122** | **9** | **8** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1710,8 +1710,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [PR 163](https://github.com/pcharbon70/catena/pull/163) supplies complete
   `BG-OBL-001`–`BG-OBL-016` evidence with 1,077 passing tests. Public project
   and source vocabulary remains deferred to P109.
-- [ ] **G122 — Gap — testing tools.** Define unit, property, model, concurrency, and
-  specification tests; seeds; shrinking; timeouts; and evidence capture.
+- [x] **C122 — Complete — testing tools.** Normative `0.1.84`'s
+  [bounded runner contract](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md)
+  and [implementation evidence](../50-journal/2026-09-10-testing-tools.md)
+  define distinct unit, law, property, model, concurrency, and specification
+  results; exact subject-bound plans; explicit deterministic seeds; typed
+  generation; invariant-preserving bounded shrinking; declared effect
+  accounting; runner-owned process cleanup; and portable finite reports.
+  Compiler [PR 167](https://github.com/pcharbon70/catena/pull/167) passes 1,097
+  tests and keeps semantic fuel, schedule bounds, shrink bounds, and host
+  timeout distinct. Public test notation remains held for P109/P107, and
+  passing observations do not claim proof.
 - [ ] **G123 — Gap — editor protocol.** Define incremental parsing and typing, partial
   programs, completion, hover, rename, formatting, semantic tokens, and stable
   diagnostic identity.
