@@ -441,6 +441,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Optimizer validity](optimizer-validity/README.md) — explicitly selected checked rewrites, replayable certificates, conservative refusal, and observation preservation.
 - [Standard stability and performance](standard-stability-and-performance/README.md) — versioned per-operation laws, callback and complexity contracts, replacement classification, and empirical evidence boundaries.
 - [Performance envelope](performance-envelope/README.md) — supported-host workload coverage, semantic scoring gates, retained negative results, and relative regression policy.
+- [Debugging and observability](debugging-and-observability/README.md) — verified source breakpoints, bounded traces, process and message identity, profiles, crash reports, and erased-evidence navigation.
 - [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.

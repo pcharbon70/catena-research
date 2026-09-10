@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **126 complete, 6 partial, 7 gaps, and 2
+The current checkboxes total **127 complete, 6 partial, 6 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.89`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.90`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1732,9 +1732,20 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 - [ ] **G123 — Gap — editor protocol.** Define incremental parsing and typing, partial
   programs, completion, hover, rename, formatting, semantic tokens, and stable
   diagnostic identity.
-- [ ] **G124 — Gap — debugging and observability.** Define breakpoints, stack traces,
-  handlers, processes, messages, generated derivations, erased declarations,
-  tracing, profiling, and crash reports.
+- [x] **C124 — Complete — debugging and observability.** Normative `0.1.89`'s
+  [source-aware bounded sessions](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md)
+  verify executable and P100 sidecar identity before admitting owner-bound
+  cooperative checkpoints, mapped redacted stacks, actor/message/handler/
+  foreign/cancellation events, bounded drop-oldest traces, host-relative
+  profiles, and crash reports. Stripped origins and optimized values remain
+  explicitly unavailable; C113 declarations stay erased and navigate only
+  through verified external evidence. Compiler
+  [PR 173](https://github.com/pcharbon70/catena/pull/173) passes 1,128 tests,
+  while [PR 174](https://github.com/pcharbon70/catena/pull/174) closes explicit
+  optimized-value and derivation evidence. Production compilation, escript
+  construction, and the trust audit pass without
+  adopting P107 vocabulary or P109 grammar. See the
+  [implementation evidence](../50-journal/2026-09-10-debugging-and-observability.md).
 - [ ] **P125 — Partial — migration tools.** C008 defines conservative
   `json-edit` suggestions with explicit applicability and requires the C008
   compiler to report rather than apply them. Define transactional application,

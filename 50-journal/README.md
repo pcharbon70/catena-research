@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Debugging and observability](2026-09-10-debugging-and-observability.md) — C124 breakpoint, trace-loss, process identity, profiling, crash-report, redaction, and evidence decisions.
 - [Standard stability and performance](2026-09-10-standard-stability-and-performance.md) — P108 operation inventory, compatibility, complexity, representation, and measurement decisions.
 - [Performance envelope](2026-09-10-performance-envelope.md) — G138 workload coverage, semantic gates, raw supported-host measurements, and regression policy.
 - [Optimizer validity](2026-09-10-optimizer-validity.md) — C135 transformation inventory, checked-rule, certificate replay, refusal, and compiler evidence.

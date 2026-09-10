@@ -183,3 +183,11 @@ The [G138 performance envelope](../60-specification/performance-envelope/support
 then measures those operations beside compiler, process, resource, erasure, and
 diagnostic workloads on the exact supported host. Semantic result digests gate
 every relative measurement.
+
+## Runtime debugging and evidence
+
+The [C124 debugging contract](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md)
+maps compiled closures, handlers, actor messages, cancellations, foreign
+boundaries, and generated derivations through verified P100 origins. Bounded
+trace loss and host-relative profiling remain visible, values are redacted by
+default, and C113 evidence stays outside runtime artifacts.
