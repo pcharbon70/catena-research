@@ -78,8 +78,8 @@ contracts.
   immutable sibling compiler evidence.
 - Migration engines (P116/P125), registry retirement and yanks
   (P130), hot upgrade (G092), representation/calling-convention/
-  foreign-term contracts (P093/P094/G095), and tooling (P121) remain
-  the future owners.
+  foreign-term contracts (P093/P094/G095) remain future owners; C121 now owns
+  build tooling.
 
 ## Open questions
 

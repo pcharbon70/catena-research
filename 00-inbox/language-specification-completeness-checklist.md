@@ -638,7 +638,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   [`dcd7da056ba1317fcd7df1df8716981ff8363e1d`](https://github.com/pcharbon70/catena/commit/dcd7da056ba1317fcd7df1df8716981ff8363e1d)
   supplies complete `PK-OBL-001`–`PK-OBL-012` coverage with 323 passing
   tests through the `Catena.Package.Deps` engine. Build and fetch
-  tooling remain P121; reproducible-build consumption remains P128;
+  tooling are completed by C121; reproducible-build consumption remains P128;
   registry signing and threat modeling are completed by C130. C028 subsequently fixes
   compatibility and excludes re-export facades; C026 fixes prelude selection.
 - [x] **C026 — Complete — prelude policy.**
@@ -662,7 +662,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   tests through the manifest decoder, namespace builder, and
   `Catena.Package.Deps` wiring. Prelude contents and the name freeze
   remain P101; collection protocols are C102; tooling scaffolding
-  remains P121. C028 classifies prelude version changes; integrated
+  is completed by C121. C028 classifies prelude version changes; integrated
   compatibility-suite coverage remains P136.
 - [x] **C027 — Complete — entry points and application structure.**
   The normative
@@ -683,9 +683,9 @@ implementation evidence. Their remaining extensions have separate owners below.
   [`cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5`](https://github.com/pcharbon70/catena/commit/cd0e5c543ee7ddb7ca840c6657451e3b6c21d7c5)
   supplies complete `EN-OBL-001`–`EN-OBL-010` coverage with 342 passing
   tests through the manifest decoder, package linker validation, and
-  `Catena.Entry.launch/2`. Supervision and process lifetime remain
-  C084/G089; cancellation remains C088; CLI and host-process boundaries
-  remain P121; distribution and upgrades remain G091/G092. C028
+  `Catena.Entry.launch/2`. Supervision and process lifetime are
+  C084/C089; cancellation remains C088; CLI and host-process boundaries
+  are completed by C121; distribution and upgrades are C091/C092. C028
   subsequently fixes entry-set compatibility.
 - [x] **C028 — Complete — API and ABI compatibility.**
   The normative
@@ -713,7 +713,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   engines remain P116/P125; registry retirement and yanks are fixed by C130;
   hot upgrade remains G092; representation, calling-convention, and
   foreign-term contracts remain P093/P094/C095; tooling automation
-  remains P121; the 1.0-era convention switch remains P136's.
+  is completed by C121; the 1.0-era convention switch remains P136's.
 
 ## 4. Core expressions and evaluation
 
@@ -903,7 +903,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   unobservable through handles, uninterceptable); the six categories
   map — explicit panic is the kernel `trap` expression, typed failure
   is an ordinary value (C103 owns the outcome types), VM
-  termination is operational (C084/G092/P121), and arithmetic
+  termination is operational (C084/C092/C121), and arithmetic
   faults, assertions, and foreign exceptions are reserved kinds
   entering with their producers classified as `trap(reason)`; and the
   per-producer entry rule forbids any second outcome class. Sibling
@@ -968,7 +968,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   byte-identical recompilation, the three budget regressions, the
   absence matrix, and determinism. Zero new diagnostic families.
   Spellings remain P109's; future derivations must follow C038's
-  checking discipline; code-generation tooling remains P121's; build tooling P121's.
+  checking discipline; constrained code generation and build tooling are C121's.
 
 
 ## 5. Data, collections, and patterns
@@ -1460,7 +1460,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [PR 161](https://github.com/pcharbon70/catena/pull/161) supplies complete
   `HU-OBL-001`–`HU-OBL-015` evidence with 1,063 passing tests. Public upgrade
   syntax remains P109; release tooling and compatibility-matrix automation
-  remain P121/P136.
+  is C121 while compatibility-matrix automation remains P136.
 
 ## 11. BEAM representation and Erlang interoperability
 
@@ -1700,12 +1700,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 - [ ] **G120 — Gap — interactive environment.** Define REPL typing and effects,
   declaration replacement, process lifetime, module loading, history, and
   governance behavior.
-- [ ] **P121 — Partial — build system and package manager.** Existing
-  package compilation, CLI entry points, and staged outputs cover retained
-  inputs; C025 implements dependency resolution and lock generation/replay.
-  Complete project discovery, profiles, dependency fetching, code
-  generation, cache keys, offline builds, and the reproducible full build
-  contract. A resolver library is not a registry client or build system.
+- [x] **C121 — Complete — build system and package manager.** The normative
+  [0.1.81 contract](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md)
+  fixes deterministic discovery, named profiles, finite workspace DAGs,
+  verified transactional acquisition, transitive content-addressed cache
+  keys, constrained declared generators, offline retained compilation, and
+  verified atomic publication. Compiler
+  [PR 163](https://github.com/pcharbon70/catena/pull/163) supplies complete
+  `BG-OBL-001`–`BG-OBL-016` evidence with 1,077 passing tests. Public project
+  and source vocabulary remains deferred to P109.
 - [ ] **G122 — Gap — testing tools.** Define unit, property, model, concurrency, and
   specification tests; seeds; shrinking; timeouts; and evidence capture.
 - [ ] **G123 — Gap — editor protocol.** Define incremental parsing and typing, partial
@@ -1745,8 +1748,8 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   normalized build paths, full-output archives and rebuild assurance. Independent
   roots compare actual BEAM, interface and assurance bytes; altered inputs and
   rehashed output substitutions fail identity/rebuild checks. Interrupted staging
-  preserves the published archive. Registry authentication and general workflows
-  registry authentication is completed by C130 while general workflows remain P121;
+  preserves the published archive. Registry authentication is completed by C130
+  while general workflows are completed by C121;
   see the [evidence journal](../50-journal/2026-09-09-reproducible-packages.md).
 - [x] **C129 — Complete — resource exhaustion.** Normative `0.1.75` defines
   [aggregate budgets and runtime admission](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md):
@@ -1775,7 +1778,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   and replies, origin revocation, redacted observations, artifact refusal and
   bounded owned cleanup. Compiled capability, process stdin and loopback broker
   witnesses use synthetic sentinels. Host/native trust and lack of secure erasure
-  remain explicit; general source/build adoption remains P109/P121. See the
+  remain explicit; general source adoption remains P109 while retained builds are C121. See the
   [verification journal](../50-journal/2026-09-09-secret-capabilities.md).
 
 ## 16. Formal validation and release gates

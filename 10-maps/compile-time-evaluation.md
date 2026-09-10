@@ -50,8 +50,8 @@ extensions, and code generation.
 - [Conformance Traceability](conformance-traceability.md) registers
   `CE-OBL-001` through `CE-OBL-008` against normative anchors and
   immutable sibling compiler evidence.
-- P109 spellings; G040 deriving extensions; G005/P116 code
-  generation; P121 build tooling remain the future owners.
+- P109 spellings; G040 deriving extensions; G005/P116 code generation remain
+  future owners; C121 now owns constrained build tooling.
 
 ## Open questions
 

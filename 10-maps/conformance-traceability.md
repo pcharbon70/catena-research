@@ -3096,3 +3096,27 @@ defines exact historical interpretation and migration at revision `0.1.80`.
 | LE-OBL-012 | Derived governance | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#archive-portability) | distinct derived identity | traced |
 | LE-OBL-013 | Published support | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#variability-and-limits) | exact profile ledger | traced |
 | LE-OBL-014 | Complete suite | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#diagnostics-and-conformance) | 1,068 tests and release checks | traced |
+
+## C121 build system and package manager
+
+The [build contract](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md)
+defines deterministic orchestration and offline retained compilation at revision `0.1.81`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| BG-OBL-001 | Scope, revision, and vocabulary hold | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#status-and-authority) | build_system and lifecycle tests | traced |
+| BG-OBL-002 | Discovery precedence and ambiguity | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#project-discovery-and-profiles) | explicit/root/nested discovery cases | traced |
+| BG-OBL-003 | Exact named profiles | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#project-discovery-and-profiles) | development/test/release profile tests | traced |
+| BG-OBL-004 | Finite valid DAG | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#workspace-graph) | missing edge, duplicate, malformed, and cycle refusal | traced |
+| BG-OBL-005 | Stable one-time topological execution | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#workspace-graph) | diamond workspace order and one-build evidence | traced |
+| BG-OBL-006 | Transitive cache identity | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#workspace-graph) | dependency change invalidates core and app keys | traced |
+| BG-OBL-007 | Locked digest verification | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#acquisition-and-offline-execution) | exact external bundle acquisition | traced |
+| BG-OBL-008 | Transactional acquisition | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#acquisition-and-offline-execution) | interrupted second download returns original empty cache | traced |
+| BG-OBL-009 | Network-free offline refusal | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#acquisition-and-offline-execution) | missing and corrupt cache cases | traced |
+| BG-OBL-010 | Generator confinement | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#generators-and-cache-identity) | relative declarations and parent-escape refusal | traced |
+| BG-OBL-011 | Generator and capability identity | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#generators-and-cache-identity) | changed generator/capability key cases | traced |
+| BG-OBL-012 | Cached archive input binding | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#generators-and-cache-identity) | canonical archive and expected input validation | traced |
+| BG-OBL-013 | Clean/cached/offline equivalence | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#output-publication) | real retained compiler archive equality | traced |
+| BG-OBL-014 | Transactional publication | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#output-publication) | corrupt replacement preserves destination | traced |
+| BG-OBL-015 | Published finite profile | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#variability-and-limits) | conformance build_system profile | traced |
+| BG-OBL-016 | Complete suite and trust | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#diagnostics-and-conformance) | 1,077 tests, production builds, trust audit | traced |
