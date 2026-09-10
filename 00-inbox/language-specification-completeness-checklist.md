@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **124 complete, 7 partial, 8 gaps, and 2
+The current checkboxes total **125 complete, 6 partial, 8 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.87`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.88`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1604,11 +1604,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   canonical behavior-first trait and method ABI and confines formal names to
   reference metadata. Independent comprehension and usability validation is
   still required.
-- [ ] **P108 — Partial — stability and performance policy.** C004 fixes
-  standard operation order, callback multiplicity, and List stack-safety
-  obligations; C028 fixes interface compatibility and excludes a stable
-  BEAM ABI. Complete library-wide API/law stability, per-operation
-  complexity, and any representation promises within those constraints.
+- [x] **P108 — Complete — stability and performance policy.** The normative
+  [0.1.87 operation contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md)
+  inventories every selected standard role's laws, order, callback
+  multiplicity, failures, worst-case time and auxiliary-space class, constant
+  stack obligation, stability tier, and representation stance. The compiler
+  validates a canonical digest-bound catalog, classifies strengthened
+  requirements or semantic/cost regressions as breaking, permits bound
+  improvements, and binds empirical samples to exact toolchains without
+  creating portable time, ABI, or layout promises. Focused mutation and
+  tamper cases plus the complete 1,120-test suite are recorded in the
+  [implementation journal](../50-journal/2026-09-10-standard-stability-and-performance.md).
+  G138 retains the broader measured performance envelope.
+
 ## 13. Specifications, governance, and erasure
 
 - [ ] **P109 — Partial — surface grammar (the capstone).** Freeze syntax for claims,

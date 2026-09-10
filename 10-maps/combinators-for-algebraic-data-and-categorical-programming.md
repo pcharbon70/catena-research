@@ -173,3 +173,8 @@ Track experiments and resolution criteria in
 [Which Combinators Should Catena Provide and Derive?](../40-inquiries/which-combinators-should-catena-provide-and-derive.md).
 Vocabulary prediction and transfer are tracked in
 [How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md).
+
+
+## Standard stability and cost contracts
+
+The [P108 operation contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md) binds the completed standard roles to explicit laws, order, callback multiplicity, failures, asymptotic time and space, and stack guarantees. It keeps these package promises separate from empirical toolchain observations and from the public naming study.
