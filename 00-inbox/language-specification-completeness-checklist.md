@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **111 complete, 17 partial, 11 gaps, and 2
+The current checkboxes total **112 complete, 16 partial, 11 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.74`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.75`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -105,9 +105,9 @@ item is marked complete by this audit.
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
-| 15. Security, reproducibility, and operational limits | 2 | 4 | 0 | 0 | 6 |
+| 15. Security, reproducibility, and operational limits | 5 | 1 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **109** | **19** | **11** | **2** | **141** |
+| **Total** | **112** | **16** | **11** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -639,7 +639,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   supplies complete `PK-OBL-001`–`PK-OBL-012` coverage with 323 passing
   tests through the `Catena.Package.Deps` engine. Build and fetch
   tooling remain P121; reproducible-build consumption remains P128;
-  signing and threat modeling remain P130. C028 subsequently fixes
+  registry signing and threat modeling are completed by C130. C028 subsequently fixes
   compatibility and excludes re-export facades; C026 fixes prelude selection.
 - [x] **C026 — Complete — prelude policy.**
   The normative
@@ -710,7 +710,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   [`0d96f96792aa161ed2711edb304d75e4cee54af2`](https://github.com/pcharbon70/catena/commit/0d96f96792aa161ed2711edb304d75e4cee54af2)
   supplies complete `CP-OBL-001`–`CP-OBL-010` coverage with 355 passing
   tests through the `Catena.Package.Compat` classifier. Migration
-  engines remain P116/P125; registry retirement and yanks remain P130;
+  engines remain P116/P125; registry retirement and yanks are fixed by C130;
   hot upgrade remains G092; representation, calling-convention, and
   foreign-term contracts remain P093/P094/C095; tooling automation
   remains P121; the 1.0-era convention switch remains P136's.
@@ -1714,7 +1714,8 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   roots compare actual BEAM, interface and assurance bytes; altered inputs and
   rehashed output substitutions fail identity/rebuild checks. Interrupted staging
   preserves the published archive. Registry authentication and general workflows
-  remain P130/P121; see the [evidence journal](../50-journal/2026-09-09-reproducible-packages.md).
+  registry authentication is completed by C130 while general workflows remain P121;
+  see the [evidence journal](../50-journal/2026-09-09-reproducible-packages.md).
 - [ ] **P129 — Partial — resource exhaustion.** C012 defines portable
   minima, machine-readable reporting, and transactional refusal; C034
   separates recursion from bounded meta-evaluation, and C036/C037 classify
@@ -1723,11 +1724,15 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   behavior, and diagnostics. Repair stale policy-owner references in the
   compiler profile when extending its capacity contract; existing bounded
   tests do not establish deployment-wide exhaustion handling.
-- [ ] **P130 — Partial — supply-chain policy.** C006 binds signed
-  artifacts, provenance, and offline trust transitions; C025 binds package
-  identity and lockfile integrity. Complete package-registry signing and
-  provenance rules, compromised releases, yanks, native dependencies, and
-  the relationship of registry actions to governance evidence.
+- [x] **C130 — Complete — supply-chain policy.** Normative `0.1.74` defines a
+  [signed registry and immutable acquisition contract](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md):
+  explicit roots and dual-authority rotation, threshold snapshots, scoped
+  publishers, immutable content/provenance, current acquisition, exact offline
+  replay, and distinct yank/compromise rules. Source fixtures resolve through
+  C025 and build through C128; native fixtures bind platform, toolchain and C127
+  obligations. Forgery, replacement, staleness, rollback, equivocation and wrong
+  platform fail closed. Registry signatures remain separate from C006 governance;
+  see the [verification journal](../50-journal/2026-09-10-signed-package-registry.md).
 - [x] **C131 — Complete — secrets and capabilities.** Normative `0.1.72`
   defines [sealed values and protected delivery](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md):
   explicit providers, scoped recipients, sensitivity-preserving transformations

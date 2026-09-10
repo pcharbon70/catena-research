@@ -2926,3 +2926,27 @@ obligations to `test/catena/reproducible_package_test.exs` and revision discover
 | RB-OBL-011 | Rebuild assurance | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#canonical-full-output-archive) | reproducible_package: rehashed substituted output decodes but full rebuild verification refuses it | traced |
 | RB-OBL-012 | Atomic publication | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#publication-and-interruption) | reproducible_package: staging cancellation/corruption and actual owner death preserve prior destination | traced |
 | RB-OBL-013 | Capacity refusal | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#limits-and-variability-register) | reproducible_package: oversized file, file count, generator and public environment bounds; machine profile | traced |
+
+## C130 supply-chain policy
+
+The [registry contract](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md)
+and [journal](../50-journal/2026-09-10-signed-package-registry.md) bind these
+obligations to `test/catena/package_registry_test.exs`, the trusted-boundary audit,
+and retained revision tests.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| RG-OBL-001 | Exact scope | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#status-and-authority) | package_registry: revision/profile and real source build; native safety and governance remain separate | traced |
+| RG-OBL-002 | Root shape | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#trust-roots-and-rotation) | package_registry: canonical root, exact fields, derived key identities and forged loaded-root refusal | traced |
+| RG-OBL-003 | Root rotation | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#trust-roots-and-rotation) | package_registry: old-plus-new normal threshold, missing-new denial and recovery authority | traced |
+| RG-OBL-004 | Snapshot authenticity | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#signed-snapshots-and-history) | package_registry: signed canonical opening, persisted-client reconstruction and mutation refusal | traced |
+| RG-OBL-005 | Monotonic history | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#signed-snapshots-and-history) | package_registry: rollback, equivocation and attempted post-compromise restoration refusal | traced |
+| RG-OBL-006 | Publisher/status separation | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#publisher-authority-and-immutable-releases) | package_registry: publisher-signed artifacts plus registry-signed status; altered artifact invalidates signature | traced |
+| RG-OBL-007 | Source provenance | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#publisher-authority-and-immutable-releases) | package_registry: C025 environment resolution/lock and exact C128 plan/build from acquired source | traced |
+| RG-OBL-008 | Native provenance | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#publisher-authority-and-immutable-releases) | package_registry: package/content/toolchain/platform/obligation binding and wrong-platform refusal | traced |
+| RG-OBL-009 | Current acquisition | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#acquisition-mirrors-and-status) | package_registry: explicit observation, expired metadata, yanked new acquisition and unsupported options refuse | traced |
+| RG-OBL-010 | Mirror bytes | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#acquisition-mirrors-and-status) | package_registry: first exact mirror accepted; replacement and empty mirror set refused | traced |
+| RG-OBL-011 | Lock replay | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#acquisition-mirrors-and-status) | package_registry: assurance-level C025 replay and snapshot-bound lock mutation refusal | traced |
+| RG-OBL-012 | Offline/compromise | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#offline-and-compromise-semantics) | package_registry: yanked exact offline replay succeeds; observed compromised replay fails | traced |
+| RG-OBL-013 | Bounded refusal | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#limits-refusal-and-host-trust) | package_registry: metadata/canonical rejection and machine-reported ceilings | traced |
+| RG-OBL-014 | Residual trust | [Rule](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md#limits-refusal-and-host-trust) | trust_boundary: registry source/calls classified; profile names root/time/key residuals | traced |

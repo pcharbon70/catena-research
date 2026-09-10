@@ -427,6 +427,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Trusted computing base](trusted-computing-base/README.md) — guarantee dependencies, residual trust and executable source/data boundary checks.
 
 - [Reproducible builds](reproducible-builds/README.md) — exact input envelopes, independent builds and canonical complete archives.
+- [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.
 
