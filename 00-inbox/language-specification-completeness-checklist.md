@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **120 complete, 10 partial, 9 gaps, and 2
+The current checkboxes total **121 complete, 9 partial, 9 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.83`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.84`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -106,8 +106,8 @@ item is marked complete by this audit.
 | 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 1 | 3 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
-| 16. Formal validation and release gates | 2 | 3 | 4 | 0 | 9 |
-| **Total** | **120** | **10** | **9** | **2** | **141** |
+| 16. Formal validation and release gates | 3 | 2 | 4 | 0 | 9 |
+| **Total** | **121** | **9** | **9** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1800,16 +1800,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   fixture's composition-parts pin. Zero new diagnostic families
   and no new public API. The composition proof remains outstanding in
   the [formal-validation inquiry](../40-inquiries/what-should-a-greenfield-catena-type-system-guarantee.md#outcome);
-  P133/P134 supply evidence, and G139 must state its release disposition.
+  C133/P134 supply evidence, and G139 must state its release disposition.
   This item completes the statement of targets only.
-- [ ] **P133 — Partial — reference evaluator.** Reference paths already
-  cover the principal core, nominal matching/folds, clause conditions,
-  C005 free requests and handlers, and C010 sequential/actor execution,
-  traps, and bounded schedule exploration. Later slices reuse those
-  paths. Complete their integrated coverage across the admitted language,
-  including source elaboration, resource scopes, public runtime extensions,
-  and foreign values as those contracts arrive. Preserve the separate
-  outstanding composition-proof obligation stated by C132.
+- [x] **C133 — Complete — reference evaluator.** The normative
+  [0.1.83 contract](../60-specification/reference-evaluator/common-observations-and-bounded-models.md)
+  and [implementation evidence](../50-journal/2026-09-10-reference-evaluator.md)
+  integrate the independent expression, effect, kernel, schedule, resource,
+  foreign, external-response, and retained-source models through one common
+  observation record. Compiler [PR 166](https://github.com/pcharbon70/catena/pull/166)
+  preserves values, kinded terminals, ordered events, lifetime states,
+  semantic fuel, schedule bounds, host deadlines, rejection, and unsupported
+  coverage with 1,089 passing tests. Public source reports the P109 hold
+  explicitly, and bounded agreement does not claim C132's outstanding
+  composition proof.
 - [ ] **P134 — Partial — differential testing.** Existing evidence
   compares nominal layouts, native/ordinary condition lowering, C005
   handler traces, C010 kernel/BEAM observations, and later value, order,

@@ -435,6 +435,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Long-term evolution](long-term-evolution/README.md) — exact historical interpretation, adjacent artifact migration, immutable provenance, and archive portability.
 - [Build system and package manager](build-system/README.md) — exact workspace graphs, verified acquisition, transitive caches, offline compilation, and transactional publication.
 - [Compatibility suite](compatibility-suite/README.md) — bounded machine-readable evidence across seven separate compatibility layers.
+- [Reference evaluator](reference-evaluator/README.md) — common bounded observations over independent semantic and boundary models.
 - [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.

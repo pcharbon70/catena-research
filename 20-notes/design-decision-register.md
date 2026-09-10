@@ -1194,3 +1194,9 @@ The [C121 normative contract](../60-specification/build-system/project-graphs-ac
 CP-136-1..3 retain their recommendations. The [compatibility-suite journal](../50-journal/2026-09-10-compatibility-suite.md#implementation-decisions) records sixteen four-way decisions for matrix representation, layer and outcome separation, retained sources, interfaces, graphs, data, signatures, exact hosts, runtime upgrades, bounds, and trust.
 
 The [C136 normative contract](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md) makes those choices durable at `0.1.82`. Compiler PR 164 and the integrated bounded matrix complete the selections without an override.
+
+## C133 execution links
+
+CP-133-1..3 retain their recommendations. The [reference-evaluator journal](../50-journal/2026-09-10-reference-evaluator.md#implementation-decisions) records fifteen four-way decisions for independent adapters, observation shape, terminal classes, engine-specific bounds, schedules, resources, foreign and external values, retained source, unsupported coverage, and proof limits.
+
+The [C133 normative contract](../60-specification/reference-evaluator/common-observations-and-bounded-models.md) makes those choices durable at `0.1.83`. Compiler PR 166 and the integrated observation suite complete the selections without an override.

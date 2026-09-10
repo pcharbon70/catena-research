@@ -3146,3 +3146,29 @@ defines bounded layered matrix evidence at revision `0.1.82`.
 | CS-OBL-016 | No ecosystem-wide inference | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#coverage-and-edition-policy) | profile ecosystem_wide_claim false | traced |
 | CS-OBL-017 | Published finite limits | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#variability-and-limits) | 4,096-case and 1-MiB case profile/refusal | traced |
 | CS-OBL-018 | Complete suite and trust | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#diagnostics-and-conformance) | 1,083 tests, production builds, and trust audit | traced |
+
+## C133 reference evaluator
+
+The [reference-observation contract](../60-specification/reference-evaluator/common-observations-and-bounded-models.md)
+defines integrated bounded observations at revision `0.1.83`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| RE-OBL-001 | Scope, revision, vocabulary hold, and proof limit | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#status-and-authority) | lifecycle, profile, and public-source-hold cases | traced |
+| RE-OBL-002 | Fixed common observation record | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#observation-contract) | all reference_observation cases | traced |
+| RE-OBL-003 | Distinct terminal and coverage statuses | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#observation-contract) | value, trap, timeout, exhaustion, rejection, and unsupported cases | traced |
+| RE-OBL-004 | Independently structured model adapters | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#observation-contract) | expression/effect/kernel/resource/foreign dispatch | traced |
+| RE-OBL-005 | Pure result and semantic fuel | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#semantic-engines) | pure value and exact fuel-exhaustion cases | traced |
+| RE-OBL-006 | Effect order and host deadline distinction | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#semantic-engines) | handled trace and external host-timeout cases | traced |
+| RE-OBL-007 | Kernel terminals, trace, lifetime, and steps | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#semantic-engines) | kernel adapter plus C010/C036/C081 task suites | traced |
+| RE-OBL-008 | Bounded schedule outcome sets | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#semantic-engines) | schedule adapter and kernel explorer exhaustion suite | traced |
+| RE-OBL-009 | Resource lifetime and cleanup evidence | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#boundary-models) | lifecycle exploration plus release success/failure suites | traced |
+| RE-OBL-010 | Checked foreign-value model | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#boundary-models) | valid and invalid C095 codec observations | traced |
+| RE-OBL-011 | Explicit external response catalog | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#boundary-models) | value, trap, host-timeout, and absent request cases | traced |
+| RE-OBL-012 | Retained source elaboration | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#source-and-model-coverage) | checked kernel source adapter and parser refusal suite | traced |
+| RE-OBL-013 | Public-source hold | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#source-and-model-coverage) | public format reports held-for-P109 unsupported | traced |
+| RE-OBL-014 | Unknown and malformed model refusal | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#source-and-model-coverage) | forged core, unknown engine, and invalid-bound cases | traced |
+| RE-OBL-015 | Published per-engine bounds | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#bounds-evidence-and-proof-status) | reference_evaluator conformance profile | traced |
+| RE-OBL-016 | Admitted semantic coverage | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#bounds-evidence-and-proof-status) | integrated adapters and retained subsystem suites | traced |
+| RE-OBL-017 | Agreement is evidence, not proof | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#bounds-evidence-and-proof-status) | profile agreement_is_proof false | traced |
+| RE-OBL-018 | Complete suite and trust | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#diagnostics-and-conformance) | 1,089 tests, production builds, and trust audit | traced |
