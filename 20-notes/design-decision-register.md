@@ -1266,3 +1266,21 @@ and claim scope.
 The [G138 normative contract](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
 makes those choices durable at `0.1.88`. The supported-host runner, raw report,
 and negative fixtures complete the selections without an override.
+
+## C124 debugging and observability decisions
+
+| Decision | Option A | Option B | Option C | Option D | Selected recommendation |
+| --- | --- | --- | --- | --- | --- |
+| CP-124-1 | Expose raw BEAM state only. | Adapt real execution through verified Catena origins. | Build a custom VM debugger. | Simulate execution. | **B**, recommended and agent-selected: the implementation maps actual compiled failures through P100 sidecars. |
+| CP-124-2 | Claim tracing preserves timing. | Disclose perturbation and bounded loss while preserving retained event identity. | Hide dropped events. | Retain events without a bound. | **B**, recommended and agent-selected: capacity, loss count, and host-relative timing are explicit. |
+| CP-124-3 | Load erased declarations. | Navigate verified external evidence under default redaction. | Disable evidence navigation. | Expose all values. | **B**, recommended and agent-selected: C113 erasure and P131 authority remain intact. |
+
+## C124 execution links
+
+The [debugging journal](../50-journal/2026-09-10-debugging-and-observability.md#implementation-decisions)
+records sixteen four-way implementation decisions for session authority,
+breakpoints, stacks, actor and message identity, events, bounded loss,
+profiling, crash reports, redaction, generated code, and erasure. The
+[C124 normative contract](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md)
+makes them durable at `0.1.89`; compiler PR 173 completes the selections
+without an override.

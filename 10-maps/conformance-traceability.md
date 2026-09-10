@@ -3303,3 +3303,28 @@ negative fixtures, lifecycle profile, and trust audit.
 | PE-OBL-014 | Declared median ratio regression | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | artificial two-times regression | traced |
 | PE-OBL-015 | Exact-host empirical claim only | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | portable false and journal limits | traced |
 | PE-OBL-016 | Profile, raw report, negative fixtures, and full suite | [Rule](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md#regression-policy-and-claims) | 1,124 tests and trust audit | traced |
+
+## C124 debugging and observability
+
+The [source-aware debugging contract](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md)
+maps to verified P100 sidecars, owner-bound sessions, cooperative checkpoints,
+bounded runtime events, profiles, crash reports, and external evidence links.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DO-OBL-001 | Revision scope and public-source hold | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#status-and-authority) | lifecycle and profile cases | traced |
+| DO-OBL-002 | Verified artifact and owner-bound session | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#session-and-breakpoint-authority) | tamper, cross-owner, owner-death, and close cases | traced |
+| DO-OBL-003 | Verified source-node breakpoints and stripped refusal | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#session-and-breakpoint-authority) | node listing, mapped origin, and stripped case | traced |
+| DO-OBL-004 | Cooperative pause and exact continuation | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#session-and-breakpoint-authority) | compiled checkpoint pause/resume case | traced |
+| DO-OBL-005 | Source-aware stacks and admitted path identity | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#stacks-handlers-processes-and-messages) | compiled trap plus inherited closure/handler/foreign cases | traced |
+| DO-OBL-006 | Opaque process relationship identity | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#stacks-handlers-processes-and-messages) | stable process pseudonym assertion | traced |
+| DO-OBL-007 | Message outcomes and default payload redaction | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#stacks-handlers-processes-and-messages) | message event and payload-redaction case | traced |
+| DO-OBL-008 | Complete minimum event inventory | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#stacks-handlers-processes-and-messages) | closed event-kind implementation and focused cases | traced |
+| DO-OBL-009 | Finite drop-oldest trace and exact loss | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#bounded-traces-and-profiles) | two-event overflow case | traced |
+| DO-OBL-010 | Perturbation and scheduling disclaimer | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#bounded-traces-and-profiles) | snapshot and profile assertions | traced |
+| DO-OBL-011 | Source-attributed nonportable profiles | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#bounded-traces-and-profiles) | grouped node/kind profile case | traced |
+| DO-OBL-012 | Redacted classified crash report | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#bounded-traces-and-profiles) | compiled trap, mapped frame, and bounded trace | traced |
+| DO-OBL-013 | Default value redaction and no authority amplification | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | value, message, argument, and secret redaction paths | traced |
+| DO-OBL-014 | Honest optimized-value and derivation attribution | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | unavailable marker and derivation event inventory | traced |
+| DO-OBL-015 | External erased evidence and stripped boundary | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | absent BEAM evidence and verified locator case | traced |
+| DO-OBL-016 | Complete profile and executable evidence scope | [Rule](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md#values-generated-code-and-erased-evidence) | 1,128 tests, production builds, and trust audit | traced |
