@@ -178,3 +178,8 @@ Vocabulary prediction and transfer are tracked in
 ## Standard stability and cost contracts
 
 The [P108 operation contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md) binds the completed standard roles to explicit laws, order, callback multiplicity, failures, asymptotic time and space, and stack guarantees. It keeps these package promises separate from empirical toolchain observations and from the public naming study.
+
+The [G138 performance envelope](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
+then measures those operations beside compiler, process, resource, erasure, and
+diagnostic workloads on the exact supported host. Semantic result digests gate
+every relative measurement.
