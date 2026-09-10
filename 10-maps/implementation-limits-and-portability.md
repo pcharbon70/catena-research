@@ -68,26 +68,29 @@ and `exhausted` cannot be promoted into source rejection or proof.
 connects message storage to process heaps, garbage collection, emulator
 configuration, and distribution pressure. The existing
 [OTP process-semantics note](../30-sources/erlang-otp-29-processes.md) preserves
-the ordering and selective-receive observations. C012 classifies capacity as
-deployment-defined and carries quotas, failure, supervision, and backpressure
-to G068 and P129.
+the ordering and selective-receive observations. C129 now defines
+[aggregate budgets and explicit bounded admission](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md):
+logical message and encoded-byte ceilings, visible reject or terminate outcomes,
+owner cleanup, and explicit VM/OS fatal residuals. P085 consumes this layer for
+public sendable values; G091 retains remote delivery.
 
 ### Disclosure and traceability
 
 [Catena Conformance Vocabulary](../CONFORMANCE-VOCABULARY.md) defines the
 implementation-limit behavior class. The
 [Conformance Traceability map](conformance-traceability.md) registers the
-twelve C012 obligations and their compiler evidence. The sibling compiler's
+seventeen implementation-limit obligations, including C129's aggregate and
+runtime-admission additions, with compiler evidence. The sibling compiler's
 human-readable profile and `catena conformance-info` consume one executable
 registry.
 
 ## Open questions
 
-The bounded C012 inquiry is resolved, and C017 now activates the decoded
-literal payload floor as `LIM004`; see the [literal map](literal-grammar.md).
-G068 and P129 must
-define concrete capacity and failure protocols. G126–P131 remain responsible
-for threat models, the trusted computing base, unsafe boundaries,
-reproducibility, denial of service, and supply-chain operations. Aggregate
-source size, cancellation, memory accounting, and large-project performance
-also remain outside the C012 floor set.
+The bounded C012 inquiry is resolved, C017 activates the decoded literal payload
+floor as `LIM004`, and C129 adds `LIM006` through `LIM009` for aggregate files,
+bytes, decoded nodes, and publication output. See the [literal map](literal-grammar.md)
+and [resource-exhaustion specification](../60-specification/resource-exhaustion/README.md).
+P085 must connect public sendable values to bounded admission, while G091 retains
+remote backpressure and failure. Physical-memory reservation, scheduler fairness,
+and node survival remain deployment responsibilities rather than portable
+language promises.

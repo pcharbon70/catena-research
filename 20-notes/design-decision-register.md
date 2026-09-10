@@ -1145,3 +1145,9 @@ CP-128-1..3 retain their recommendations. The [reproducible-package journal](../
 CP-130-1..3 retain their recommendations. The [signed-registry journal](../50-journal/2026-09-10-signed-package-registry.md#implementation-decisions) records root, snapshot, publisher, status, mirror, offline, dependency, native, and limit forks. Execution is in progress.
 
 The [C130 normative contract](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md) makes CP-130-1..3 durable at `0.1.74`. The compiler implementation and attack fixtures completed the selected choices without an override.
+
+## C129 execution links
+
+CP-129-1..3 retain their recommendations. The [resource-exhaustion journal](../50-journal/2026-09-10-resource-exhaustion.md#implementation-decisions) records aggregate accounting, transaction, admission, ownership, overload, cleanup, diagnostic, and residual-host forks.
+
+The [C129 normative contract](../60-specification/resource-exhaustion/aggregate-budgets-and-runtime-admission.md) makes CP-129-1..3 durable at `0.1.75`. The compiler implementation and pressure fixtures completed the selected choices without an override.

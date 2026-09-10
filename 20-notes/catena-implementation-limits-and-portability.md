@@ -118,8 +118,8 @@ in size, can be stored on or off the process heap, can contribute differently
 to maximum-heap checks, and can encounter distribution backpressure or host
 memory pressure. A count chosen here would either be false portability or a
 new runtime admission design. C012 therefore publishes the capacity as
-deployment-defined and carries explicit semantic constraints forward to G068
-and P129.
+deployment-defined; C129 now supplies explicit bounded admission and retains
+remote transport under G091.
 
 ## Choosing bootstrap floors
 
@@ -264,7 +264,7 @@ deployment capacity visible without prematurely standardizing an operations
 policy.
 
 It also clarifies future design work. C017 activates the inherited payload
-contract as `LIM004`; G068 and P129 own explicit capacity and failure semantics rather
+contract as `LIM004`; C129 owns explicit local capacity and failure semantics rather
 than a silent mailbox cap; G126–P131 can build threat, TCB, reproducibility,
 unsafe, and supply-chain policy on top of stable resource classifications; and
 later semantic slices remain separate from this governance milestone.

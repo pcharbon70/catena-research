@@ -69,8 +69,7 @@ decide.
   `IM-OBL-001` through `IM-OBL-013` against normative anchors and sibling
   compiler tests.
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
-  carries the aggregate-input policy relevant to export-set validation
-  under P129.
+  carries C129's aggregate-input policy relevant to export-set validation.
 
 ## Open questions
 

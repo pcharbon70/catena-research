@@ -72,7 +72,7 @@ everything the token grammar deliberately does not decide.
 
 - [Implementation Limits and Portability map](implementation-limits-and-portability.md)
   carries the aggregate-input policy that a whole-file token stream defers
-  to under P129.
+  to under C129.
 - [Conformance Traceability](conformance-traceability.md) registers
   `OP-OBL-001` through `OP-OBL-016` against normative anchors and sibling
   compiler tests.
