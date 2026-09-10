@@ -1163,3 +1163,9 @@ The [C091 normative contract](../60-specification/distribution/typed-authenticat
 CP-085-1..5 retain their recommendations. The [message journal](../50-journal/2026-09-10-message-semantics.md#implementation-decisions) records integration, descriptor, snapshot, physical storage, local result, validation, capacity, ordering, foreign mutation, native authority, remote outcome, and evidence forks.
 
 The [C085 normative contract](../60-specification/message-semantics/values-capacity-and-transport.md) makes those choices durable at `0.1.77`. The checked message boundary and retained subsystem suites complete the selections without an override.
+
+## C090 execution links
+
+CP-090-1..3 retain their recommendations. The [scheduler journal](../50-journal/2026-09-10-scheduler-observability.md#implementation-decisions) records schedule, reduction, preemption, priority, work-class, capacity, explorer, and blocking-evidence forks.
+
+The [C090 normative contract](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md) makes those choices durable at `0.1.78`. The policy model, explorer, and owned-worker fixture complete the selections without an override.

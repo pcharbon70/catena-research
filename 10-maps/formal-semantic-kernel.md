@@ -55,6 +55,9 @@ and promotion record for Catena's integrated 0.1.8 kernel.
 6. [Values, Capacity, and Transport](../60-specification/message-semantics/values-capacity-and-transport.md)
    closes the message contract by composing local send and ordering with checked
    capacity, foreign/native admission, and remote outcomes.
+7. [Policy Classes and Visible Limits](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md)
+   states which schedule details remain nondeterministic or unobservable and
+   classifies blocking work before bounded admission.
 
 ### Compose the existing language
 
