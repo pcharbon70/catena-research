@@ -34,6 +34,8 @@ contracts.
   records the operational question, hypotheses, and resolution.
 - [API and ABI Compatibility Specification](../60-specification/api-and-abi-compatibility/README.md)
   is the normative version 0.1.24 contract.
+- [Compatibility Suite](../60-specification/compatibility-suite/README.md)
+  turns the layered contract into bounded, digest-bound executable evidence.
 - [C028 evidence record](../50-journal/2026-08-24-c028-api-compat.md)
   records the executable classifier and verification.
 - [Package Identity and Dependencies map](package-identity-and-dependencies.md)
@@ -76,14 +78,12 @@ contracts.
 - [Conformance Traceability](conformance-traceability.md) registers
   `CP-OBL-001` through `CP-OBL-010` against normative anchors and
   immutable sibling compiler evidence.
-- Migration engines (P116/P125), registry retirement and yanks
-  (P130), hot upgrade (G092), representation/calling-convention/
-  foreign-term contracts (P093/P094/G095) remain future owners; C121 now owns
-  build tooling.
+- C116 owns historical migration, C130 registry status, C092 hot upgrade, and
+  C121 build tooling. Representation, calling-convention, and foreign-term
+  refinements remain with P093/P094/G095.
 
 ## Open questions
 
-C028 is complete at revision `0.1.24`. Whether the 1.0 era keeps or
-switches the Cargo 0.x rule belongs to the G136 edition-policy era;
-any future layout-stability contract belongs to P093/P094/G095 over
-this absence.
+C028 is complete at revision `0.1.24`, and C136 adds bounded compatibility
+evidence at `0.1.82` without choosing the future `1.0` convention. Any future
+layout-stability contract belongs to P093/P094/G095 over this absence.
