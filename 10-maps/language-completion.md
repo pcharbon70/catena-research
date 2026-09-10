@@ -57,6 +57,7 @@ Public vocabulary and the final grammar remain held for later joint design.
 - [Release readiness](../60-specification/release-readiness/README.md) completes G139's gate definition with exact experimental, complete, and stable evidence boundaries while leaving held and unproved gates visible.
 - [Diagnostic contract](../60-specification/diagnostic-contract/README.md) completes P117's shared semantic explanations and repairs while keeping public parse and recovery coverage visibly held for P109.
 - [Documentation tool](../60-specification/documentation-tool/README.md) completes P119's interface graph, links, rendering, and retained-input doctests while keeping public-source examples visibly held for P109.
+- [Migration tool](../60-specification/migration-tool/README.md) completes P125's retained-JSON transaction, exact preview, rollback, semantic recheck, and audit slice while keeping source/API rewrites visibly held for P109.
 
 ## Open questions
 

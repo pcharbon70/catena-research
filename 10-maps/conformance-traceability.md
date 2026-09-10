@@ -3403,3 +3403,30 @@ for P109.
 | DC-OBL-013 | Complete machine-readable profile | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | conformance-info assertions | traced |
 | DC-OBL-014 | Complete bounded retained-input evidence | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | compiler PRs 180–182, 1,149 tests, production build, escript, and trust audit | traced |
 | DC-OBL-015 | Public parser and source examples | [Rule](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md#artifact-reporting-and-conformance) | explicit `held_for_p109` profile value | partial |
+
+## P125 migration tool
+
+The [migration-tool contract](../60-specification/migration-tool/transactional-retained-json-edits.md)
+maps to exact retained-JSON plans and previews, explicit authorization,
+root-confined staged transactions, backups and rollback, semantic rechecks,
+canonical audit evidence, and fixed limits at revision `0.1.93`. Public source,
+API, and deprecated-syntax rewrites remain held for P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| MT-OBL-001 | Retained-input scope and public-source hold | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#status-and-authority) | lifecycle and profile assertions | traced |
+| MT-OBL-002 | Separate report-only compiler and explicit migration action | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#plans-and-exact-previews) | authorization and edit-admission cases | traced |
+| MT-OBL-003 | Canonical byte-bound disjoint plan | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#plans-and-exact-previews) | overlap and tampered-plan refusal | traced |
+| MT-OBL-004 | Exact nonmutating preview and separate authorization | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#plans-and-exact-previews) | Base64 preimage/result and unauthorized apply assertions | traced |
+| MT-OBL-005 | Root, traversal, regular-file, and symlink safety | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#filesystem-transaction-and-rollback) | path escape, source symlink, and backup symlink refusal | traced |
+| MT-OBL-006 | Stale check, all-file staging, and precommit nonmutation | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#filesystem-transaction-and-rollback) | stale input and interrupted multi-file cases | traced |
+| MT-OBL-007 | Exact rollback and distinct rollback-failure paths | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#filesystem-transaction-and-rollback) | moved-original, interruption, and rollback-failure cases | traced |
+| MT-OBL-008 | Retained immutable plan-specific backups | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#filesystem-transaction-and-rollback) | exact backup bytes and occupied-identity refusal | traced |
+| MT-OBL-009 | Module/interface and manifest/selection preservation | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#semantic-checks-and-authority) | successful module/manifest and behavior-change refusal | traced |
+| MT-OBL-010 | No inherited governance authority | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#semantic-checks-and-authority) | audit and profile assertions | traced |
+| MT-OBL-011 | Canonical complete audit evidence | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#semantic-checks-and-authority) | audit digest and field assertions | traced |
+| MT-OBL-012 | Fixed limits and distinct exhaustion without mutation | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#variability-and-limits) | PRs 184–185 outcome and all-dimension witnesses | traced |
+| MT-OBL-013 | Zero variability | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#variability-and-limits) | exact profile values | traced |
+| MT-OBL-014 | Complete machine-readable profile | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#diagnostics-and-conformance) | conformance-info assertions | traced |
+| MT-OBL-015 | Complete bounded retained-input evidence | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#diagnostics-and-conformance) | compiler PRs 183–185, 1,160 tests, production build, escript, and trust audit | traced |
+| MT-OBL-016 | Public source/API/deprecated-syntax migration | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#diagnostics-and-conformance) | explicit `held_for_p109` profile value | partial |
