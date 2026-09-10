@@ -286,3 +286,5 @@ C126 uses `0.1.70` for the [trusted computing base](60-specification/trusted-com
 C127 uses `0.1.71` for [trusted obligation policy](60-specification/trusted-obligation-policy/transitive-disclosure-and-scoped-admission.md), a separate exact sidecar and scoped admission contract retaining C067 exclusions.
 
 C131 uses `0.1.72` for [secret capabilities](60-specification/secret-capabilities/sealed-values-and-protected-delivery.md), with sealed credential delivery and protected observations.
+
+C128 uses `0.1.73` for [reproducible builds](60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md), an exact input and canonical full-output packaging contract.
