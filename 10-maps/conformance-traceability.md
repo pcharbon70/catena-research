@@ -2904,3 +2904,25 @@ to `test/catena/secret_capabilities_test.exs` and retained language version test
 | SK-OBL-011 | Compiled entry | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#compiled-entry) | secret_capabilities: actual compiled Unit entry, absent provider and changed artifact refusal | traced |
 | SK-OBL-012 | Value bounds | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#limits-and-exhaustion) | secret_capabilities: input/transformation/storage object limits and malformed setup | traced |
 | SK-OBL-013 | Exhaustion outcome | [Rule](../60-specification/secret-capabilities/sealed-values-and-protected-delivery.md#limits-and-exhaustion) | secret_capabilities: no truncation, scope capacity, actual force deadline and false erasure/host-secrecy profile | traced |
+
+## C128 reproducible builds
+
+The [reproducibility contract](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md)
+and [journal](../50-journal/2026-09-09-reproducible-packages.md) bind the following
+obligations to `test/catena/reproducible_package_test.exs` and revision discovery.
+
+| Obligation | Contract | Rule | Behavioral witness | Status |
+| --- | --- | --- | --- | --- |
+| RB-OBL-001 | Exact scope | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#status-and-authority) | reproducible_package: revision discovery and fixed profile; retained package compilation | traced |
+| RB-OBL-002 | Complete envelope | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#input-envelope) | reproducible_package: changed files and generator declarations change identity; forged input refused | traced |
+| RB-OBL-003 | Toolchain identity | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#input-envelope) | reproducible_package: wrong compiler rejected before build; verified cache identity | traced |
+| RB-OBL-004 | Acquired bytes | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#input-envelope) | reproducible_package: changed supplied lock bytes change identity; full interface and assurance outputs | traced |
+| RB-OBL-005 | Closed generators | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#generators-and-environment) | reproducible_package: declared public environment generator executes; missing and arbitrary generator refused | traced |
+| RB-OBL-006 | Sensitivity and events | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#generators-and-environment) | reproducible_package: marked file/environment input refused; build-only manifest admission | traced |
+| RB-OBL-007 | Fresh roots | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#independent-build-roots) | reproducible_package: existing root contents preserved; traversal and absolute paths refused | traced |
+| RB-OBL-008 | Logical paths | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#independent-build-roots) | reproducible_package: independent roots under changed environment produce identical bytes | traced |
+| RB-OBL-009 | Complete outputs | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#independent-build-roots) | reproducible_package: four-file package and empty package two-file output; temporary root removed | traced |
+| RB-OBL-010 | Canonical metadata | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#canonical-full-output-archive) | reproducible_package: order independence, fixed mode/time, duplicates and modified metadata rejected | traced |
+| RB-OBL-011 | Rebuild assurance | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#canonical-full-output-archive) | reproducible_package: rehashed substituted output decodes but full rebuild verification refuses it | traced |
+| RB-OBL-012 | Atomic publication | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#publication-and-interruption) | reproducible_package: staging cancellation/corruption and actual owner death preserve prior destination | traced |
+| RB-OBL-013 | Capacity refusal | [Rule](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md#limits-and-variability-register) | reproducible_package: oversized file, file count, generator and public environment bounds; machine profile | traced |

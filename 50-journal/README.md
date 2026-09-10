@@ -30,6 +30,8 @@ source notes.
 
 ### Documents
 
+- [Reproducible packages](2026-09-09-reproducible-packages.md) — exact input envelopes and independent build investigation.
+
 - [2026-09-09 environmental effects](2026-09-09-environmental-effects.md) — ongoing authority, launch and adapter implementation decisions.
 
 - [2026-09-09 numeric library](2026-09-09-numeric-library.md) — exact arithmetic, decimal decisions, independent vectors and compiled evidence.

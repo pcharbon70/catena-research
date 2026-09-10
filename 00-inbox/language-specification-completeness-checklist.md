@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **110 complete, 18 partial, 11 gaps, and 2
+The current checkboxes total **111 complete, 17 partial, 11 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.73`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.74`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1707,12 +1707,14 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   covers diamonds, forged omissions, denied dependencies and replacement.
   This completes policy for admitted boundaries; host honesty, VM safety,
   future registry acquisition and unadmitted callback forms remain explicit limits.
-- [ ] **P128 — Partial — reproducible builds.** C006/C010 provide bounded
-  deterministic artifact and erasure evidence; C025 provides canonical
-  identities and exact lock replay. Complete the full build-input
-  contract for environment, timestamps, path normalization, dependency
-  integrity, generated files, compiler/OTP identity, and byte-for-byte
-  expectations, including packaging rather than only compiled modules.
+- [x] **C128 — Complete — reproducible builds.** Normative `0.1.73`
+  defines [exact inputs and canonical packages](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md):
+  explicit files/environment/generators, exact compiler/toolchain identity,
+  normalized build paths, full-output archives and rebuild assurance. Independent
+  roots compare actual BEAM, interface and assurance bytes; altered inputs and
+  rehashed output substitutions fail identity/rebuild checks. Interrupted staging
+  preserves the published archive. Registry authentication and general workflows
+  remain P130/P121; see the [evidence journal](../50-journal/2026-09-09-reproducible-packages.md).
 - [ ] **P129 — Partial — resource exhaustion.** C012 defines portable
   minima, machine-readable reporting, and transactional refusal; C034
   separates recursion from bounded meta-evaluation, and C036/C037 classify
