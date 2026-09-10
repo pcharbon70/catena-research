@@ -27,6 +27,8 @@ and promotion record for Catena's integrated 0.1.8 kernel.
   contains the normative language contract.
 - [Reference Evaluator](../60-specification/reference-evaluator/README.md)
   adapts the retained independent machines into one bounded observation contract.
+- [Testing Tools](../60-specification/testing-tools/README.md) execute those
+  observations in subject-bound seeded runs while preserving their finite scope.
 
 ## Trails
 
@@ -80,5 +82,6 @@ and promotion record for Catena's integrated 0.1.8 kernel.
 - Cleanup, exception catching, time, supervision, distribution, foreign
   values, and optimizer validity remain outside C010; later chapters define
   each admitted extension without retroactively changing the kernel.
-- C133 now supplies integrated executable observations. Machine-checked
-  metatheory and the composition lemma remain separate proof work.
+- C133 supplies integrated executable observations, and C122 supplies the
+  bounded runner that records their scope. Machine-checked metatheory and the
+  composition lemma remain separate proof work.

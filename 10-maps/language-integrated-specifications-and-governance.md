@@ -114,6 +114,10 @@ base when their results can be rechecked.
 
 ### One language meaning for many tools
 
+[Testing Tools](../60-specification/testing-tools/README.md) bind finite unit,
+law, property, model, concurrency, and specification observations to an exact
+subject. Their passing evidence does not promote or amend normative text.
+
 [An Overview of the K Semantic Framework](../30-sources/rosu-serbanuta-2010-k-semantic-framework.md)
 shows how an executable semantic definition can support parsing,
 interpretation, state exploration, and analysis.

@@ -3172,3 +3172,29 @@ defines integrated bounded observations at revision `0.1.83`.
 | RE-OBL-016 | Admitted semantic coverage | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#bounds-evidence-and-proof-status) | integrated adapters and retained subsystem suites | traced |
 | RE-OBL-017 | Agreement is evidence, not proof | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#bounds-evidence-and-proof-status) | profile agreement_is_proof false | traced |
 | RE-OBL-018 | Complete suite and trust | [Rule](../60-specification/reference-evaluator/common-observations-and-bounded-models.md#diagnostics-and-conformance) | 1,089 tests, production builds, and trust audit | traced |
+
+## C122 testing tools
+
+The [testing-tools contract](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md)
+defines subject-bound, seeded, isolated finite test evidence at revision `0.1.84`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| TT-OBL-001 | Scope, revision, and public-vocabulary hold | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#status-and-authority) | lifecycle and testing-tools profile cases | traced |
+| TT-OBL-002 | Nonempty plan identity and explicit seed | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#plans-subjects-and-identities) | definition, zero-test, seed, duplicate, and bound cases | traced |
+| TT-OBL-003 | Canonical portable plan identity | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#plans-subjects-and-identities) | plan digest and deterministic replay cases | traced |
+| TT-OBL-004 | Stale, tampered, and empty-plan refusal | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#plans-subjects-and-identities) | stale subject, tampered plan, and zero-test cases | traced |
+| TT-OBL-005 | Six distinct result kinds | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#result-kinds-and-evidence-scope) | integrated all-kinds execution case | traced |
+| TT-OBL-006 | Subject-bound finite report and digest | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#result-kinds-and-evidence-scope) | report shape, order, scope, and digest assertions | traced |
+| TT-OBL-007 | Portable finite evidence | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#result-kinds-and-evidence-scope) | live process evidence refusal | traced |
+| TT-OBL-008 | Exact governed-evidence subject | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#result-kinds-and-evidence-scope) | specification subject mismatch case | traced |
+| TT-OBL-009 | Deterministic derived seeds and reproduction | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#seeds-generation-and-shrinking) | repeated property report equality | traced |
+| TT-OBL-010 | Generator domain validation | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#seeds-generation-and-shrinking) | invalid-generator case | traced |
+| TT-OBL-011 | Stable invariant-preserving shrinking | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#seeds-generation-and-shrinking) | typed minimal threshold counterexample | traced |
+| TT-OBL-012 | Explicit nonminimal shrink exhaustion | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#seeds-generation-and-shrinking) | one-step shrink-bound case | traced |
+| TT-OBL-013 | Runner-owned child cleanup | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#isolation-effects-and-cleanup) | live child terminated before report | traced |
+| TT-OBL-014 | Declared effect accounting | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#isolation-effects-and-cleanup) | declared pass and undeclared-effect failure | traced |
+| TT-OBL-015 | Trusted callback boundary | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#isolation-effects-and-cleanup) | trust profile residual boundary | traced |
+| TT-OBL-016 | Distinct semantic, schedule, shrink, and host bounds | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#bounds-and-outcomes) | four-outcome integrated bounds case | traced |
+| TT-OBL-017 | Published finite limits and partial evidence | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#bounds-and-outcomes) | testing_tools conformance profile and exhaustion reports | traced |
+| TT-OBL-018 | Complete suite and trust | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#diagnostics-and-conformance) | 1,097 tests, production builds, and trust audit | traced |
