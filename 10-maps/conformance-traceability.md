@@ -3354,3 +3354,26 @@ workbench at revision `0.1.90`.
 | RR-OBL-014 | No admitted integrated Catena theorem | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#proof-ledger-and-claim-boundary) | asserted integrated proof remains blocked | traced |
 | RR-OBL-015 | Two explicit contradiction dispositions | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#contradiction-audit-and-publication) | corrected normative text and unresolved-audit case | traced |
 | RR-OBL-016 | Complete profile, negative suite, and no publication | [Rule](../60-specification/release-readiness/evidence-gates-and-release-claims.md#contradiction-audit-and-publication) | 1,137 tests, production build, trust audit, proof check, and result flags | traced |
+
+## P117 diagnostic contract
+
+The [diagnostic contract](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md)
+maps to shared diagnostic records, reports, semantic producers, exact
+source-origin binding, and bounded edit validation at revision `0.1.91`.
+Public parse and recovery evidence remains held for P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| DX-OBL-001 | Semantic scope and explicit public-parse hold | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#status-and-authority) | lifecycle and conformance profile | traced |
+| DX-OBL-002 | Stable identity and at most eight related spans | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#identity-and-locations) | structured report and cardinality cases | traced |
+| DX-OBL-003 | UTF-8 scalar-aligned spans in exact preimage | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#identity-and-locations) | Unicode related-span and split-scalar refusal cases | traced |
+| DX-OBL-004 | Normalized bounded type presentation with digest | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#explanations-and-provenance) | short and truncated long type cases | traced |
+| DX-OBL-005 | Unique bounded causal provenance | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#explanations-and-provenance) | type-unification cause and report cases | traced |
+| DX-OBL-006 | Missing witness and distinct redundancy causes | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#explanations-and-provenance) | M001 witness and M002 false-guard cases | traced |
+| DX-OBL-007 | Exact generated-node and source-slice binding | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#explanations-and-provenance) | accepted exact origin and forged-digest refusal | traced |
+| DX-OBL-008 | Applicable preimage-bound nonoverlapping edits | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#repair-edits) | valid, overlap, and applicability validation cases | traced |
+| DX-OBL-009 | Report-only repairs and invalidity without mutation | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#repair-edits) | stale, split-scalar, and overlap refusal cases | traced |
+| DX-OBL-010 | Structured report and serialization preservation | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | Report field assertions and complete suite | traced |
+| DX-OBL-011 | Published limits and bounded exhaustion | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | profile, truncation digest, and cardinality cases | traced |
+| DX-OBL-012 | Complete semantic implementation evidence | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | compiler PRs 177–179, 1,143 tests, production build, escript, and trust audit | traced |
+| DX-OBL-013 | Public parse and recovery diagnostics | [Rule](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md#reports-bounds-and-conformance) | explicit `held_for_p109` profile value | partial |

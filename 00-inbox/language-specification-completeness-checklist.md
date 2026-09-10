@@ -84,7 +84,7 @@ The current checkboxes total **128 complete, 6 partial, 5 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.91`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.92`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1693,11 +1693,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 ## 14. Diagnostics, tools, and developer experience
 
 - [ ] **P117 — Partial — diagnostic contract.** C008 defines severity, stable
-  `EDN`/`PRV`/`DEP` families, deterministic details, structured edits, and
-  warning denial; C010/C013 add primary spans and source coordinates. Define
-  secondary locations, inferred-type presentation, constraint provenance,
-  missing-pattern witnesses, guard explanations, generated-code attribution,
-  and a complete cross-language contract.
+  `EDN`/`PRV`/`DEP` families and warning denial. Normative
+  [0.1.91](../60-specification/diagnostic-contract/structured-explanations-and-repairs.md)
+  now defines bounded secondary locations, normalized inferred and expected
+  types, causal constraint provenance, missing-pattern witnesses, distinct
+  guard explanations, exact source-bound generated attribution, and
+  preimage-bound nonoverlapping repairs. Compiler
+  [PR 177](https://github.com/pcharbon70/catena/pull/177) implements the shared
+  records and producers; [PR 178](https://github.com/pcharbon70/catena/pull/178)
+  closes overlap, origin, and guard-class evidence; and
+  [PR 179](https://github.com/pcharbon70/catena/pull/179) binds generated origins
+  to their exact node and source slice. The complete 1,143-test suite passes.
+  P117 remains partial only because public parse and recovery diagnostics await
+  P109's held grammar.
 - [ ] **G118 — Gap — formatter.** Define canonical formatting, comments, idempotence,
   version coupling, and whether formatting is part of source compatibility.
 - [ ] **P119 — Partial — documentation tool.** C016 specifies documentation
