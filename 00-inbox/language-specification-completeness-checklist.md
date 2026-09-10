@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **114 complete, 15 partial, 10 gaps, and 2
+The current checkboxes total **115 complete, 14 partial, 10 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 6 | 2 | 1 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 7 | 1 | 1 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
 | 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **114** | **15** | **10** | **2** | **141** |
+| **Total** | **115** | **14** | **10** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1374,14 +1374,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   capability isolation and deterministic artifacts. General time remains C088;
   supervision is G089 and distributed transport G091. See the
   [implementation evidence](../50-journal/2026-09-08-owned-task-lifetimes.md).
-- [ ] **P085 — Partial — message semantics.** C010 defines Unit-returning
-  local send, dead-target discard, immutable sendable messages, per-sender
-  FIFO, and permitted cross-sender interleaving. Complete mailbox
-  growth/exhaustion, copying and sharing obligations at foreign and runtime
-  boundaries, and remote delivery. Preserve the kernel's typed send and
-  message-order guarantees when admitting those extensions. C087 now supplies
-  an explicit local request-admission bound above raw send; remote capacity
-  and foreign sharing remain open.
+- [x] **C085 — Complete — message semantics.** The
+  [0.1.77 integrated contract](../60-specification/message-semantics/values-capacity-and-transport.md)
+  retains Unit-returning raw local send, dead-target discard, immutable values,
+  per-sender FIFO, and cross-sender interleaving. Checked local and capacity
+  paths validate the complete declared value before sending or accounting;
+  physical copy/share identity is unobservable; C095/C097 conversions and
+  borrowed process authority remain typed and scope-bound. C129 supplies
+  explicit overload above deployment-sized raw mailboxes, and C091 supplies
+  authenticated `not_enqueued`, `delivery_unknown`, and admission outcomes
+  without automatic retry or exactly-once processing. See the
+  [implementation evidence](../50-journal/2026-09-10-message-semantics.md).
 - [x] **C086 — Complete — selective receive.** The [0.1.49 amendment](../60-specification/selective-receive-correction/waiting-and-scan-cost-amendment.md)
   repairs the rejected-prefix starvation contradiction with explicit
   applicability and migration. A receive bypasses rejected messages to select

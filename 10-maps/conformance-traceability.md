@@ -3004,3 +3004,28 @@ defines authenticated typed remote transport at revision `0.1.76`.
 | DS-OBL-014 | Reconnection | [Rule](../60-specification/distribution/typed-authenticated-transport.md#delivery-and-partition-semantics) | distribution: pending clear and fresh authenticated reconnect | traced |
 | DS-OBL-015 | Compatibility | [Rule](../60-specification/distribution/typed-authenticated-transport.md#compatibility-and-ordering) | distribution: differing local-protocol revision refused at handshake | traced |
 | DS-OBL-016 | Profile and complete suite | [Rule](../60-specification/distribution/typed-authenticated-transport.md#diagnostics-and-conformance) | distribution, lifecycle, language_version and trust_boundary suites | traced |
+
+## C085 message semantics
+
+The [message contract](../60-specification/message-semantics/values-capacity-and-transport.md)
+integrates local, capacity-sensitive, foreign/native, and remote behavior at
+revision `0.1.77`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| MS-OBL-001 | Exact scope and revision | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#status-and-authority) | message_semantics and lifecycle: exact revision; retained frontends | traced |
+| MS-OBL-002 | Trusted message descriptor | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#message-values-and-observations) | message_semantics: exact codec round trip and invalid payload refusal | traced |
+| MS-OBL-003 | Sendable data and authority | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#message-values-and-observations) | value_boundary plus native_value: data and borrowed local process role | traced |
+| MS-OBL-004 | Excluded carriers | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#message-values-and-observations) | foreign_codec, native_value, secret_capabilities and distribution negative cases | traced |
+| MS-OBL-005 | Copy/share opacity | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#message-values-and-observations) | message_semantics: immutable binary snapshot and profile observations | traced |
+| MS-OBL-006 | Unit and dead target | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#local-raw-send) | message_semantics, task_kernel and native_value dead-target cases | traced |
+| MS-OBL-007 | Sender order | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#local-raw-send) | message_semantics: two producers; retained kernel and selective-receive suites | traced |
+| MS-OBL-008 | Raw capacity boundary | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#local-raw-send) | resource_exhaustion: explicit queue and host-fatal/raw-send profile | traced |
+| MS-OBL-009 | Checked local send | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#checked-local-and-bounded-admission) | message_semantics: valid, invalid and dead-target checked sends | traced |
+| MS-OBL-010 | Checked capacity admission | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#checked-local-and-bounded-admission) | message_semantics: pre-accounting refusal, success, overload and FIFO | traced |
+| MS-OBL-011 | Capacity disclosure | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#checked-local-and-bounded-admission) | conformance_info and resource_exhaustion profile assertions | traced |
+| MS-OBL-012 | Foreign snapshot | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#foreign-and-native-boundaries) | foreign_codec and value_boundary complete conversion/budget corpus | traced |
+| MS-OBL-013 | Native send role | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#foreign-and-native-boundaries) | native_value: live/expired/forged handles, mailbox codec and operation budget | traced |
+| MS-OBL-014 | Remote outcomes | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#remote-transport) | distribution: not-enqueued, delivery-unknown and admitted transitions | traced |
+| MS-OBL-015 | Retry and skew | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#remote-transport) | distribution: duplicates, protocol skew and no automatic retry | traced |
+| MS-OBL-016 | Profile and complete suite | [Rule](../60-specification/message-semantics/values-capacity-and-transport.md#diagnostics-and-conformance) | message_semantics plus retained message/resource/native/distribution suites | traced |
