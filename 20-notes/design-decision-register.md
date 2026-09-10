@@ -1139,3 +1139,9 @@ The [C131 normative contract](../60-specification/secret-capabilities/sealed-val
 ## C128 execution links
 
 CP-128-1..3 retain their recommendations. The [reproducible-package journal](../50-journal/2026-09-09-reproducible-packages.md#implementation-decisions) records implementation forks and verification. The [C128 contract](../60-specification/reproducible-builds/exact-inputs-and-canonical-packages.md) makes these choices durable.
+
+## P130 execution links
+
+CP-130-1..3 retain their recommendations. The [signed-registry journal](../50-journal/2026-09-10-signed-package-registry.md#implementation-decisions) records root, snapshot, publisher, status, mirror, offline, dependency, native, and limit forks. Execution is in progress.
+
+The [C130 normative contract](../60-specification/supply-chain-policy/signed-registry-and-immutable-acquisition.md) makes CP-130-1..3 durable at `0.1.74`. The compiler implementation and attack fixtures completed the selected choices without an override.
