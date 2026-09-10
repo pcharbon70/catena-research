@@ -229,6 +229,10 @@ remaining questions are:
 - Does language integration remain simpler than a stable language IR consumed
   by a separately deployed governance protocol?
 
+The [C134 differential-testing contract](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
+adds subject-bound generated and adversarial evidence whose scope remains
+distinct from a governed proof claim.
+
 The map should remain open until generalized formal semantics, representative
 performance evaluation, long-term protocol evolution, and a vocabulary study
 provide evidence beyond the bounded reference evaluator, implementation, and

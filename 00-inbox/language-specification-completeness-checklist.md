@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **122 complete, 9 partial, 8 gaps, and 2
+The current checkboxes total **123 complete, 8 partial, 8 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.85`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.86`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -106,8 +106,8 @@ item is marked complete by this audit.
 | 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 2 | 3 | 4 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
-| 16. Formal validation and release gates | 3 | 2 | 4 | 0 | 9 |
-| **Total** | **122** | **9** | **8** | **2** | **141** |
+| 16. Formal validation and release gates | 4 | 1 | 4 | 0 | 9 |
+| **Total** | **123** | **8** | **8** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1822,14 +1822,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   coverage with 1,089 passing tests. Public source reports the P109 hold
   explicitly, and bounded agreement does not claim C132's outstanding
   composition proof.
-- [ ] **P134 — Partial — differential testing.** Existing evidence
-  compares nominal layouts, native/ordinary condition lowering, C005
-  handler traces, C010 kernel/BEAM observations, and later value, order,
-  failure, collection, and process witnesses. Complete systematic generated
-  and adversarial comparisons across the admitted language, optimizations,
-  public concurrency, resources, and foreign boundaries. P050/P053/P057
-  identify concrete missing comprehension witnesses; tagged tests alone
-  do not establish the behaviors named by their obligations.
+- [x] **C134 — Complete — differential testing.** The normative
+  [0.1.85 contract](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
+  and [implementation evidence](../50-journal/2026-09-10-differential-testing.md)
+  define independent reference/BEAM comparison over declared C133
+  observations, deterministic typed-kernel and comprehension generation,
+  allowed finite schedule sets, domain-preserving shrinking, four adversarial
+  mutation families, and a source/toolchain/scenario/observation-bound retained
+  corpus. Compiler [PR 168](https://github.com/pcharbon70/catena/pull/168)
+  supplies nine focused cases and 1,106 passing tests. Unsupported scope is
+  explicit, public source remains P109, optimizer transformations remain P135,
+  and finite agreement does not claim C132's composition proof.
 - [ ] **P135 — Partial — optimizer validity.** C004 forbids law-driven
   rewrites without admitted evidence; C030 fixes observable order, and the
   comprehension chapters constrain pure equations and effect/failure

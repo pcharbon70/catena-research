@@ -437,6 +437,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Compatibility suite](compatibility-suite/README.md) — bounded machine-readable evidence across seven separate compatibility layers.
 - [Reference evaluator](reference-evaluator/README.md) — common bounded observations over independent semantic and boundary models.
 - [Testing tools](testing-tools/README.md) — subject-bound seeded runs, typed shrinking, scoped effects, owned cleanup, and finite evidence.
+- [Differential testing](differential-testing/README.md) — independent reference/BEAM observations, typed generation, hostile mutations, and durable minimized counterexamples.
 - [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.

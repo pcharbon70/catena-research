@@ -3198,3 +3198,30 @@ defines subject-bound, seeded, isolated finite test evidence at revision `0.1.84
 | TT-OBL-016 | Distinct semantic, schedule, shrink, and host bounds | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#bounds-and-outcomes) | four-outcome integrated bounds case | traced |
 | TT-OBL-017 | Published finite limits and partial evidence | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#bounds-and-outcomes) | testing_tools conformance profile and exhaustion reports | traced |
 | TT-OBL-018 | Complete suite and trust | [Rule](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md#diagnostics-and-conformance) | 1,097 tests, production builds, and trust audit | traced |
+
+## C134 differential testing
+
+The [differential-testing contract](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
+defines independent generated and adversarial observation comparison at revision
+`0.1.85`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| DF-OBL-001 | Revision scope and public-source hold | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#status-and-authority) | lifecycle, profile, and source-status cases | traced |
+| DF-OBL-002 | Bound scenario and explicit unsupported outcome | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#differential-scenarios) | unknown scenario and bound validation cases | traced |
+| DF-OBL-003 | Structurally independent reference and production paths | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#differential-scenarios) | stepper and BEAM adapters in semantic generators | traced |
+| DF-OBL-004 | Generated and retained domain disclosure | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#differential-scenarios) | differential_testing conformance profile | traced |
+| DF-OBL-005 | Declared canonical C133 observation projections | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#declared-observations) | retained cross-feature and foreign comparisons | traced |
+| DF-OBL-006 | Exact deterministic equality | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#declared-observations) | 64 generated and retained exact comparisons | traced |
+| DF-OBL-007 | Normatively bounded allowed observation sets | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#declared-observations) | permitted schedule-set and invented-observation cases | traced |
+| DF-OBL-008 | Distinct terminal and bound outcomes | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#declared-observations) | normalized C133 status comparison | traced |
+| DF-OBL-009 | Typed generated domain and separate invalid mutations | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#generation-and-adversarial-mutation) | descriptor validator and mutation-family cases | traced |
+| DF-OBL-010 | Seeded reproducible generation | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#generation-and-adversarial-mutation) | deterministic 64-observation C122 property plan | traced |
+| DF-OBL-011 | Value, event-order, callback-count, and cancellation detection | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#generation-and-adversarial-mutation) | four injected mutation cases | traced |
+| DF-OBL-012 | Stable domain-preserving shrinking | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#generation-and-adversarial-mutation) | minimized `%{"n" => 3}` generated disagreement | traced |
+| DF-OBL-013 | Counterexample provenance and identity | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#retained-counterexamples) | four retained canonical corpus entries | traced |
+| DF-OBL-014 | Corpus recomputation, retention, and tamper refusal | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#retained-counterexamples) | valid corpus plus altered digest refusal | traced |
+| DF-OBL-015 | Published finite differential limits | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#bounds-scope-and-proof-claims) | differential_testing conformance profile | traced |
+| DF-OBL-016 | Finite agreement is not proof | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#bounds-scope-and-proof-claims) | profile agreement_is_proof false | traced |
+| DF-OBL-017 | Complete machine-readable disclosure | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#bounds-scope-and-proof-claims) | feature profile and exact 0.1.85 lifecycle selection | traced |
+| DF-OBL-018 | Complete suite and trusted-boundary audit | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#diagnostics-and-conformance) | 1,106 tests, production builds, and trust audit | traced |

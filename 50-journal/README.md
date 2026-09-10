@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Differential testing](2026-09-10-differential-testing.md) — C134 independent paths, generated semantic descriptors, adversarial mutations, shrinking, and retained-corpus evidence.
 - [Scheduler observability](2026-09-10-scheduler-observability.md) — C090 schedule nondeterminism, priority limits, foreign-work classification, and bounded worker evidence.
 - [Hot code upgrade](2026-09-10-hot-code-upgrade.md) — C092 preflight, quiescence, bounded migration, coexistence, OTP activation, and rollback evidence.
 - [Long-term evolution](2026-09-10-long-term-evolution.md) — C116 historical interpreter, adjacent migration, provenance retention, and archive-context evidence.

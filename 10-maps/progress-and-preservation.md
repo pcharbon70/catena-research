@@ -50,6 +50,9 @@ Preservation Specification](../60-specification/progress-and-preservation/README
 7. **Integrated observations.** [Common Observations and Bounded Models](../60-specification/reference-evaluator/common-observations-and-bounded-models.md)
    records C133's value, terminal, event, lifetime, and exhaustion evidence
    while preserving the separate composition-proof obligation.
+8. **Systematic comparison.** [Generated and Adversarial Agreement](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
+   records C134's independent reference/BEAM comparisons, hostile mutations,
+   and finite evidence boundary without upgrading tests into proof.
 
 ## Related maps
 
