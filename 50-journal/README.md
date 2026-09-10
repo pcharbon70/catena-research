@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Optimizer validity](2026-09-10-optimizer-validity.md) — C135 transformation inventory, checked-rule, certificate replay, refusal, and compiler evidence.
 - [Differential testing](2026-09-10-differential-testing.md) — C134 independent paths, generated semantic descriptors, adversarial mutations, shrinking, and retained-corpus evidence.
 - [Scheduler observability](2026-09-10-scheduler-observability.md) — C090 schedule nondeterminism, priority limits, foreign-work classification, and bounded worker evidence.
 - [Hot code upgrade](2026-09-10-hot-code-upgrade.md) — C092 preflight, quiescence, bounded migration, coexistence, OTP activation, and rollback evidence.

@@ -85,5 +85,7 @@ and promotion record for Catena's integrated 0.1.8 kernel.
 - C133 supplies integrated executable observations, and C122 supplies the
   bounded runner that records their scope. [C134 differential testing](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
   compares those observations through generated and adversarial cases.
+  [C135 optimizer validity](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md)
+  requires verified-core input and output plus replayable local certificates.
   Machine-checked metatheory and the composition lemma remain separate proof
   work.

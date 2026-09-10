@@ -3225,3 +3225,29 @@ defines independent generated and adversarial observation comparison at revision
 | DF-OBL-016 | Finite agreement is not proof | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#bounds-scope-and-proof-claims) | profile agreement_is_proof false | traced |
 | DF-OBL-017 | Complete machine-readable disclosure | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#bounds-scope-and-proof-claims) | feature profile and exact 0.1.85 lifecycle selection | traced |
 | DF-OBL-018 | Complete suite and trusted-boundary audit | [Rule](../60-specification/differential-testing/generated-and-adversarial-agreement.md#diagnostics-and-conformance) | 1,106 tests, production builds, and trust audit | traced |
+
+## C135 optimizer validity
+
+The [optimizer-validity contract](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md)
+defines the closed checked-rewrite boundary at revision `0.1.86`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| OZ-OBL-001 | Revision scope and public-source hold | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#status-and-authority) | profile and lifecycle cases | traced |
+| OZ-OBL-002 | Complete current transformation inventory | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#transformation-inventory-and-selection) | optimizer profile inventory assertions | traced |
+| OZ-OBL-003 | Explicit selection and disabled identity | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#transformation-inventory-and-selection) | disabled compile path and zero-certificate case | traced |
+| OZ-OBL-004 | Exact closed rule selection | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#transformation-inventory-and-selection) | unknown and duplicate rule refusal | traced |
+| OZ-OBL-005 | Checked integer literal folding premises | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#admitted-rules-and-premises) | nested literal certificate cases | traced |
+| OZ-OBL-006 | Checked right-identity premises | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#admitted-rules-and-premises) | exact-once call and large-tree cases | traced |
+| OZ-OBL-007 | Stable child-before-parent traversal | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#admitted-rules-and-premises) | repeated 128-level result equality | traced |
+| OZ-OBL-008 | Sampled law evidence does not authorize rewriting | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#admitted-rules-and-premises) | closed enabled/refused rule profile | traced |
+| OZ-OBL-009 | Independent input and output verification | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#verification-and-certificates) | optimize and compile checked-path cases | traced |
+| OZ-OBL-010 | Digest-bound local certificates | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#verification-and-certificates) | certificate shape and replay assertions | traced |
+| OZ-OBL-011 | Complete replay and tamper refusal | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#verification-and-certificates) | altered premise certificate refusal | traced |
+| OZ-OBL-012 | Only verified output lowers with metadata | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#verification-and-certificates) | disabled/checked BEAM metadata cases | traced |
+| OZ-OBL-013 | Nonliteral annihilation refusal | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#refusal-and-observation-preservation) | variable and trap annihilation cases | traced |
+| OZ-OBL-014 | Preserve values, terminals, order, calls, lifetime, and termination | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#refusal-and-observation-preservation) | reference/BEAM, trap, and exact-once call cases | traced |
+| OZ-OBL-015 | Preserve attributable debug provenance | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#refusal-and-observation-preservation) | inherited checked expression observation fields | traced |
+| OZ-OBL-016 | Large-tree semantics and transactional exhaustion | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#refusal-and-observation-preservation) | 128-level deterministic optimization | traced |
+| OZ-OBL-017 | Machine-readable modes, rules, inventory, and disclaimer | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#profile-and-evidence-scope) | optimizer_validity conformance profile | traced |
+| OZ-OBL-018 | Complete bounded suite and no proof claim | [Rule](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md#profile-and-evidence-scope) | 1,115 tests, production builds, and trust audit | traced |

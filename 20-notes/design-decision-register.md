@@ -1232,3 +1232,19 @@ records eighteen additional four-way decisions. The
 [normative contract](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
 makes CP-134-1..3 durable at `0.1.85`; compiler PR 168 completes the selections
 without an override.
+
+## C135 optimizer-validity decisions
+
+| Decision | Option A | Option B | Option C | Option D | Selected recommendation |
+| --- | --- | --- | --- | --- | --- |
+| CP-135-1 | Unrestricted algebraic rewriting; fast but ignores effects and divergence. | Explicit rewrite inventory with machine-checkable premises. | No optimization; simple but poor performance. | Profile-guided semantic guesses; unsafe. | **B**, recommended and agent-selected: revision 0.1.86 starts with a closed two-rule inventory. |
+| CP-135-2 | Trust optimizer annotations. | Reverify typed core and replay checked certificates. | Treat BEAM compilation as correctness. | Test selected outputs only. | **B**, recommended and agent-selected: both input and replayed output pass the independent verifier. |
+| CP-135-3 | Optimize every feature at once. | Begin with simple proven pure rewrites and grow through measured differential cases. | Enable only in release builds without tests. | Accept faster wrong results. | **B**, recommended and agent-selected: calls, traps, order, and termination remain observable. |
+
+## C135 execution links
+
+The [optimizer-validity journal](../50-journal/2026-09-10-optimizer-validity.md#implementation-decisions)
+records eighteen additional four-way decisions. The
+[normative contract](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md)
+makes CP-135-1..3 durable at `0.1.86`; compiler PR 169 completes the selections
+without an override.

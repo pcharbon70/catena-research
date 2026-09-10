@@ -157,6 +157,11 @@ computational data while native handlers provide direct language effects.
 
 ## Open questions
 
+The [C135 optimizer-validity contract](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md)
+keeps promised and tested categorical laws from authorizing rewrites by
+themselves; later law-driven optimization needs machine-checkable operational
+premises.
+
 - Which Catena fragment admits the relational parametricity theorem required
   for naturality and free-theorem tooling?
 - Can value, unary-constructor, and binary-constructor constraints for all

@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **123 complete, 8 partial, 8 gaps, and 2
+The current checkboxes total **124 complete, 7 partial, 8 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.86`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.87`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -106,8 +106,8 @@ item is marked complete by this audit.
 | 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
 | 14. Diagnostics, tools, and developer experience | 2 | 3 | 4 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
-| 16. Formal validation and release gates | 4 | 1 | 4 | 0 | 9 |
-| **Total** | **123** | **8** | **8** | **2** | **141** |
+| 16. Formal validation and release gates | 5 | 0 | 4 | 0 | 9 |
+| **Total** | **124** | **7** | **8** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1833,12 +1833,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   supplies nine focused cases and 1,106 passing tests. Unsupported scope is
   explicit, public source remains P109, optimizer transformations remain P135,
   and finite agreement does not claim C132's composition proof.
-- [ ] **P135 — Partial — optimizer validity.** C004 forbids law-driven
-  rewrites without admitted evidence; C030 fixes observable order, and the
-  comprehension chapters constrain pure equations and effect/failure
-  preservation. Complete the optimizer-wide rewrite inventory, checkable
-  premises, and before/after evidence for purity, laws, order, totality,
-  sharing, and traps; reject rewrites whose premises are absent.
+- [x] **C135 — Complete — optimizer validity.** The normative
+  [0.1.86 contract](../60-specification/optimizer-validity/checked-rewrites-and-observation-preservation.md)
+  and [implementation evidence](../50-journal/2026-09-10-optimizer-validity.md)
+  classify every current transformation owner and define an explicitly
+  selected checked optimizer with a closed two-rule inventory. Compiler
+  [PR 169](https://github.com/pcharbon70/catena/pull/169) verifies input and
+  output core, emits digest-bound local certificates, replays the complete
+  certificate sequence before lowering, preserves exact-once calls and traps,
+  and refuses nonliteral integer annihilation without machine-checked purity
+  and totality. Nine focused cases and the 1,115-test suite establish bounded
+  evidence; public syntax remains P109 and testing does not claim proof.
 - [x] **C136 — Complete — compatibility suite.** The normative
   [0.1.82 contract](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md)
   and [implementation evidence](../50-journal/2026-09-10-compatibility-suite.md)
