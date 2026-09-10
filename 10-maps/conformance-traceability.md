@@ -3074,3 +3074,25 @@ defines checked migration and activation at revision `0.1.79`.
 | HU-OBL-013 | OTP boundary | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#otp-realization) | source note and adapter exclude raw load/purge | traced |
 | HU-OBL-014 | Published limits | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#variability-and-limits) | conformance profile and bounded migration tests | traced |
 | HU-OBL-015 | Complete retained suite | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#diagnostics-and-conformance) | 1,063 tests, production build, escript and trust audit | traced |
+
+## C116 long-term evolution
+
+The [evolution contract](../60-specification/long-term-evolution/historical-replay-and-migration.md)
+defines exact historical interpretation and migration at revision `0.1.80`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| LE-OBL-001 | Scope and revision | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#status-and-authority) | long_term_evolution and lifecycle | traced |
+| LE-OBL-002 | Exact interpreters | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#interpretation-ledger) | formats 0.1.6–0.1.8 replay | traced |
+| LE-OBL-003 | Unknown refusal | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#interpretation-ledger) | 0.1.99 rejection | traced |
+| LE-OBL-004 | Historical roots | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#interpretation-ledger) | revoked-root cases | traced |
+| LE-OBL-005 | Missing context | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#interpretation-ledger) | tool/dependency outcomes | traced |
+| LE-OBL-006 | Adjacent chain | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#adjacent-migration) | deterministic two-hop path | traced |
+| LE-OBL-007 | Loss refusal | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#adjacent-migration) | reported-loss rejection | traced |
+| LE-OBL-008 | Immutable source | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#adjacent-migration) | bytes/signature retained | traced |
+| LE-OBL-009 | Derived envelope | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#adjacent-migration) | canonical path envelope | traced |
+| LE-OBL-010 | Verification | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#adjacent-migration) | source digest/version checks | traced |
+| LE-OBL-011 | Archive set | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#archive-portability) | context availability checks | traced |
+| LE-OBL-012 | Derived governance | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#archive-portability) | distinct derived identity | traced |
+| LE-OBL-013 | Published support | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#variability-and-limits) | exact profile ledger | traced |
+| LE-OBL-014 | Complete suite | [Rule](../60-specification/long-term-evolution/historical-replay-and-migration.md#diagnostics-and-conformance) | 1,068 tests and release checks | traced |
