@@ -84,7 +84,7 @@ The current checkboxes total **128 complete, 6 partial, 5 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.92`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.93`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -1709,11 +1709,21 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 - [ ] **G118 — Gap — formatter.** Define canonical formatting, comments, idempotence,
   version coupling, and whether formatting is part of source compatibility.
 - [ ] **P119 — Partial — documentation tool.** C016 specifies documentation
-  attachment, normalized CommonMark bodies, inert raw HTML, and explicit
-  future doctest opt-in; extraction is implemented. Complete rendering,
-  symbol links, executable doctests, hidden APIs, traits/implementations,
-  effects, laws, and specification views. Extraction is not a complete
-  documentation tool.
+  attachment and normalized CommonMark bodies. Normative
+  [0.1.92](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md)
+  now defines a verified interface-linked graph, deterministic Markdown,
+  fully qualified local and verified dependency links, explicit missing-doc
+  states, visibility-aware public and authorized internal views, inert HTML,
+  semantic views for types, values, traits, laws, instances, effects,
+  handlers, and claims, and subject-bound retained-input doctests executed by
+  the bounded G122 runner. Compiler
+  [PR 180](https://github.com/pcharbon70/catena/pull/180) implements the tool;
+  [PR 181](https://github.com/pcharbon70/catena/pull/181) closes duplicate
+  dependency-module and missing-placeholder evidence; and
+  [PR 182](https://github.com/pcharbon70/catena/pull/182) directly verifies
+  forged-graph refusal. The complete 1,149-test suite passes. P119 remains
+  partial only because real public-source examples await P109's held parser
+  and grammar.
 - [ ] **G120 — Gap — interactive environment.** Define REPL typing and effects,
   declaration replacement, process lifetime, module loading, history, and
   governance behavior.
