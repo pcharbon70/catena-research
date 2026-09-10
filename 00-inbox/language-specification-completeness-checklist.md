@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **127 complete, 6 partial, 6 gaps, and 2
+The current checkboxes total **128 complete, 6 partial, 5 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.90`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.91`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -102,12 +102,12 @@ item is marked complete by this audit.
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
 | 10. Processes, concurrency, and distribution | 9 | 0 | 0 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
-| 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
+| 12. Standard library contract | 7 | 1 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
-| 14. Diagnostics, tools, and developer experience | 2 | 3 | 4 | 0 | 9 |
+| 14. Diagnostics, tools, and developer experience | 3 | 3 | 3 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
-| 16. Formal validation and release gates | 5 | 0 | 4 | 0 | 9 |
-| **Total** | **124** | **7** | **8** | **2** | **141** |
+| 16. Formal validation and release gates | 7 | 0 | 2 | 0 | 9 |
+| **Total** | **128** | **6** | **5** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -1889,9 +1889,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   timeout, tamper, and artificial-regression fixtures enforce the scoring gate;
   the [journal](../50-journal/2026-09-10-performance-envelope.md) records all
   decisions and measured limits.
-- [ ] **G139 — Gap — release-readiness definition.** State the minimum normative
-  chapters, conformance coverage, platform support, known limitations, and
-  stability promises required before calling a version complete.
+- [x] **G139 — Complete — release-readiness definition.** Normative
+  [0.1.90](../60-specification/release-readiness/evidence-gates-and-release-claims.md)
+  defines separate experimental, complete, and stable claims over a canonical
+  digest-bound manifest. Compiler [PR 175](https://github.com/pcharbon70/catena/pull/175)
+  and hardening [PR 176](https://github.com/pcharbon70/catena/pull/176)
+  verify exact normative, obligation, platform, evidence, limitation,
+  contradiction, and proof inventories; forged proofs, unsupported hosts,
+  incomplete coverage, held gates, and unresolved contradictions block their
+  corresponding class, including duplicate inventories and every declared
+  open item. A pinned Rocq 9.2 workbench proves six bounded-core
+  lemmas without admitted assumptions, while its exact scope and the absent
+  integrated Catena theorem keep complete and stable claims blocked. Passing
+  assessment neither publishes nor automatically upgrades a release.
 - [ ] **G141 — Gap — compiler self-hosting.** Define the late-0.x milestone at
   which Catena can implement its own compiler, including the required language
   subset, parser and module facilities, tool effects, host interoperability,

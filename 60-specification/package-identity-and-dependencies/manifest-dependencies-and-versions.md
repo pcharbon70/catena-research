@@ -35,8 +35,8 @@ A version 0.1.7 or later `catena-package-manifest` MAY carry a
 `dependencies` object (`PK-OBL-002`). Each key is a package name; each
 value is one requirement string in the grammar below. A package name is
 one or more ASCII lowercase-initial segments of letters, digits, and
-hyphens joined by single hyphens — `json_tools` and `catena-web` are
-well-formed names. An absent `dependencies` field means the package is
+hyphens joined by single hyphens — `json-tools` and `catena-web` are
+well-formed names; underscores are not. An absent `dependencies` field means the package is
 dependency-free; an empty object is equivalent. Duplicate keys,
 non-object values, or malformed requirements are static invalidity
 reported as `PKG001` (`PK-OBL-002`).

@@ -54,6 +54,7 @@ Public vocabulary and the final grammar remain held for later joint design.
 - [Erlang type boundary](../60-specification/erlang-type-boundary/README.md) completes C095 with explicit typed conversion, bounded whole-carrier checks and verified nominal list roles.
 - [Calling conventions workbench](../50-journal/2026-09-09-calling-conventions.md) records C094 completion at 0.1.59: verified call/artifact identity, staged closures, typed synchronous callbacks and retained lifecycle adapters.
 - [Value boundaries](../60-specification/value-boundaries/README.md) completes C093 with typed scalar/structural/nominal conversion, verified closure capture and explicit authority exclusions.
+- [Release readiness](../60-specification/release-readiness/README.md) completes G139's gate definition with exact experimental, complete, and stable evidence boundaries while leaving held and unproved gates visible.
 
 ## Open questions
 
