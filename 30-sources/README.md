@@ -30,6 +30,8 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [Erlang/OTP 29 Code Loading and Release Handling](erlang-otp-29-code-loading-and-release-handling.md) — documents current/old module coexistence, managed code change, release workflow, and per-node coordination for C092.
+
 - [CORE-MATH correct-rounding kernels](core-math-correct-rounding-kernels.md) — upstream lead and limits of the current numeric admission evidence.
 
 - [Unicode Text Segmentation](hadley-2025-unicode-text-segmentation.md) — UAX #29 revision 47 default extended grapheme rules and their scope.

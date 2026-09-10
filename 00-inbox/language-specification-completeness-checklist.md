@@ -80,7 +80,7 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **116 complete, 13 partial, 10 gaps, and 2
+The current checkboxes total **117 complete, 13 partial, 9 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
@@ -1450,9 +1450,17 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   frame over a real TLS 1.3 loopback socket. See the
   [implementation evidence](../50-journal/2026-09-10-distribution.md). Public
   source vocabulary remains P109 and hot replacement remains G092.
-- [ ] **G092 — Gap — hot code upgrade.** Define state migration, old and new code
-  coexistence, capability and type compatibility, rollback, and governance
-  evidence.
+- [x] **C092 — Complete — hot code upgrade.** The normative
+  [0.1.79 contract](../60-specification/hot-code-upgrade/checked-migration-and-activation.md)
+  defines exact artifact/interface/schema/evidence preflight, explicit
+  quiescence, one active and one draining generation, bounded checked state
+  migration, ordered messages during drain, precommit snapshot restoration,
+  explicit reverse migration after commit, mixed-node admission, and the
+  narrow managed OTP adapter. Compiler
+  [PR 161](https://github.com/pcharbon70/catena/pull/161) supplies complete
+  `HU-OBL-001`–`HU-OBL-015` evidence with 1,063 passing tests. Public upgrade
+  syntax remains P109; release tooling and compatibility-matrix automation
+  remain P121/P136.
 
 ## 11. BEAM representation and Erlang interoperability
 

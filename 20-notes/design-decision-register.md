@@ -1169,3 +1169,9 @@ The [C085 normative contract](../60-specification/message-semantics/values-capac
 CP-090-1..3 retain their recommendations. The [scheduler journal](../50-journal/2026-09-10-scheduler-observability.md#implementation-decisions) records schedule, reduction, preemption, priority, work-class, capacity, explorer, and blocking-evidence forks.
 
 The [C090 normative contract](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md) makes those choices durable at `0.1.78`. The policy model, explorer, and owned-worker fixture complete the selections without an override.
+
+## C092 execution links
+
+CP-092-1..7 retain their recommendations. The [hot-upgrade journal](../50-journal/2026-09-10-hot-code-upgrade.md#implementation-decisions) records fourteen four-way decisions covering identity, compatibility, quiescence, migration, coexistence, rollback, OTP realization, distribution, and evidence.
+
+The [C092 normative contract](../60-specification/hot-code-upgrade/checked-migration-and-activation.md) makes those choices durable at `0.1.79`. Compiler PR 161 and the retained suite complete the selections without an override.
