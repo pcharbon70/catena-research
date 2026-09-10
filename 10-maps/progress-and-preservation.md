@@ -47,6 +47,9 @@ Preservation Specification](../60-specification/progress-and-preservation/README
    argues the composed-statement middle; the [resolved
    inquiry](../40-inquiries/what-progress-and-preservation-targets-remain.md)
    preserves the forks.
+7. **Integrated observations.** [Common Observations and Bounded Models](../60-specification/reference-evaluator/common-observations-and-bounded-models.md)
+   records C133's value, terminal, event, lifetime, and exhaustion evidence
+   while preserving the separate composition-proof obligation.
 
 ## Related maps
 
