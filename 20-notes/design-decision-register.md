@@ -1216,3 +1216,19 @@ records eighteen additional four-way implementation decisions. The
 [normative contract](../60-specification/testing-tools/isolated-seeded-and-scoped-runs.md)
 makes CP-122-1..3 durable at `0.1.84`; compiler PR 167 completes the selections
 without an override.
+
+## C134 differential-testing decisions
+
+| Decision | Option A | Option B | Option C | Option D | Selected recommendation |
+| --- | --- | --- | --- | --- | --- |
+| CP-134-1 | Random source bytes only; good parser stress but few valid programs. | Typed/effect-aware generators plus separate invalid mutations; focused coverage. | Fixed happy paths only; weak interactions. | Generate through production lowering; correlated defects. | **B**, recommended and agent-selected: valid generation and hostile boundary probes remain distinct. |
+| CP-134-2 | Treat backend strings as behavior evidence; cheap but inadequate. | Execute independent reference and BEAM paths and compare declared observations. | Compare modes sharing all logic; correlated. | Compare termination only; misses values and traces. | **B**, recommended and agent-selected: portable C133 projections expose promised behavior. |
+| CP-134-3 | Discard repaired seeds; loses history. | Persist minimized counterexamples with source, toolchain, scenario, and observation identity. | Retry nondeterministic failures; hides races. | Require one exact host schedule; overconstrained. | **B**, recommended and agent-selected: allowed sets and durable witnesses preserve honest scope. |
+
+## C134 execution links
+
+The [differential-testing journal](../50-journal/2026-09-10-differential-testing.md#implementation-decisions)
+records eighteen additional four-way decisions. The
+[normative contract](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
+makes CP-134-1..3 durable at `0.1.85`; compiler PR 168 completes the selections
+without an override.

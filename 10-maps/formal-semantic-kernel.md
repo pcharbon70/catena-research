@@ -83,5 +83,7 @@ and promotion record for Catena's integrated 0.1.8 kernel.
   values, and optimizer validity remain outside C010; later chapters define
   each admitted extension without retroactively changing the kernel.
 - C133 supplies integrated executable observations, and C122 supplies the
-  bounded runner that records their scope. Machine-checked metatheory and the
-  composition lemma remain separate proof work.
+  bounded runner that records their scope. [C134 differential testing](../60-specification/differential-testing/generated-and-adversarial-agreement.md)
+  compares those observations through generated and adversarial cases.
+  Machine-checked metatheory and the composition lemma remain separate proof
+  work.
