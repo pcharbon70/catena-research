@@ -80,11 +80,11 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **118 complete, 12 partial, 9 gaps, and 2
+The current checkboxes total **120 complete, 10 partial, 9 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.76`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
+semantic patch is `0.1.83`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
 are reclassified as partial because bounded work already exists. No new
 item is marked complete by this audit.
 
@@ -100,14 +100,14 @@ item is marked complete by this audit.
 | 7. Type-system surface and advanced boundaries | 10 | 0 | 0 | 0 | 10 |
 | 8. Traits, derivation, and categorical libraries | 7 | 0 | 0 | 0 | 7 |
 | 9. Effects, failure, and resource scopes | 7 | 0 | 0 | 1 | 8 |
-| 10. Processes, concurrency, and distribution | 8 | 0 | 1 | 0 | 9 |
+| 10. Processes, concurrency, and distribution | 9 | 0 | 0 | 0 | 9 |
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
 | 12. Standard library contract | 6 | 2 | 0 | 0 | 8 |
-| 13. Specifications, governance, and erasure | 6 | 2 | 0 | 0 | 8 |
-| 14. Diagnostics, tools, and developer experience | 0 | 4 | 5 | 0 | 9 |
+| 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
+| 14. Diagnostics, tools, and developer experience | 1 | 3 | 5 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
-| 16. Formal validation and release gates | 1 | 4 | 4 | 0 | 9 |
-| **Total** | **116** | **13** | **10** | **2** | **141** |
+| 16. Formal validation and release gates | 2 | 3 | 4 | 0 | 9 |
+| **Total** | **120** | **10** | **9** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -663,7 +663,7 @@ implementation evidence. Their remaining extensions have separate owners below.
   `Catena.Package.Deps` wiring. Prelude contents and the name freeze
   remain P101; collection protocols are C102; tooling scaffolding
   is completed by C121. C028 classifies prelude version changes; integrated
-  compatibility-suite coverage remains P136.
+  bounded compatibility-suite coverage is C136.
 - [x] **C027 — Complete — entry points and application structure.**
   The normative
   [0.1.23 entry points specification](../60-specification/entry-points/README.md),
@@ -713,7 +713,8 @@ implementation evidence. Their remaining extensions have separate owners below.
   engines remain P116/P125; registry retirement and yanks are fixed by C130;
   hot upgrade remains G092; representation, calling-convention, and
   foreign-term contracts remain P093/P094/C095; tooling automation
-  is completed by C121; the 1.0-era convention switch remains P136's.
+  is completed by C121. C136 retains the 0.x convention and leaves any
+  post-prototype policy to a later explicit edition decision.
 
 ## 4. Core expressions and evaluation
 
@@ -1460,7 +1461,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [PR 161](https://github.com/pcharbon70/catena/pull/161) supplies complete
   `HU-OBL-001`–`HU-OBL-015` evidence with 1,063 passing tests. Public upgrade
   syntax remains P109; release tooling and compatibility-matrix automation
-  is C121 while compatibility-matrix automation remains P136.
+  is C121, while the bounded compatibility matrix is C136.
 
 ## 11. BEAM representation and Erlang interoperability
 
@@ -1823,13 +1824,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   preservation. Complete the optimizer-wide rewrite inventory, checkable
   premises, and before/after evidence for purity, laws, order, totality,
   sharing, and traps; reject rewrites whose premises are absent.
-- [ ] **P136 — Partial — compatibility suite.** C008 tests retained
-  exact selections, interfaces, historical signatures, and downgrade
-  rejection; C025 tests dependency/lock replay; C028 tests interface diffs
-  and version claims. Extend this to integrated public data evolution,
-  ecosystem-scale dependency graphs, OTP versions, hot upgrades, future
-  editions, and historical builds without treating bounded fixtures as
-  ecosystem-wide compatibility evidence.
+- [x] **C136 — Complete — compatibility suite.** The normative
+  [0.1.82 contract](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md)
+  and [implementation evidence](../50-journal/2026-09-10-compatibility-suite.md)
+  define a canonical bounded matrix with separate source, interface,
+  dependency, data, toolchain, historical-signature, and runtime-upgrade
+  rows. Compiler [PR 164](https://github.com/pcharbon70/catena/pull/164) and
+  outcome-regression [PR 165](https://github.com/pcharbon70/catena/pull/165)
+  supplies exact retained and current selections, semantic interface checks,
+  wide and deep generated lock graphs, historical replay and Ed25519
+  verification, exact oldest/newest supported-host rows, checked hot-upgrade
+  preflight, explicit pass/fail/unsupported outcomes, published limits, and
+  trust classification with 1,083 passing tests. Bounded fixtures make no
+  ecosystem-wide or future-edition claim.
 - [ ] **G137 — Gap — usability gate.** Test whether programmers can predict `map`,
   `map2`, `and_then`, traversal, handlers, guards, comprehensions, and
   diagnostics without prerequisite mathematical vocabulary.

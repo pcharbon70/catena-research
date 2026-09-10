@@ -34,6 +34,7 @@ source notes.
 - [Hot code upgrade](2026-09-10-hot-code-upgrade.md) — C092 preflight, quiescence, bounded migration, coexistence, OTP activation, and rollback evidence.
 - [Long-term evolution](2026-09-10-long-term-evolution.md) — C116 historical interpreter, adjacent migration, provenance retention, and archive-context evidence.
 - [Build system and package manager](2026-09-10-build-system.md) — C121 workspace graphs, acquisition transactions, cache identity, offline builds, and publication evidence.
+- [Compatibility suite](2026-09-10-compatibility-suite.md) — C136 layered matrix decisions, retained authorities, generated graph coverage, and compiler verification.
 - [Message semantics](2026-09-10-message-semantics.md) — C085 immutable values, checked admission, sender order, native authority, and remote-outcome integration.
 - [Distribution](2026-09-10-distribution.md) — C091 typed framing, mutual TLS, compatibility refusal, partition uncertainty, and duplicate evidence.
 - [Signed package registry](2026-09-10-signed-package-registry.md) — registry trust, immutable acquisition, offline replay, and attack-fixture evidence.

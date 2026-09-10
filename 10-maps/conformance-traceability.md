@@ -3120,3 +3120,29 @@ defines deterministic orchestration and offline retained compilation at revision
 | BG-OBL-014 | Transactional publication | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#output-publication) | corrupt replacement preserves destination | traced |
 | BG-OBL-015 | Published finite profile | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#variability-and-limits) | conformance build_system profile | traced |
 | BG-OBL-016 | Complete suite and trust | [Rule](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md#diagnostics-and-conformance) | 1,077 tests, production builds, trust audit | traced |
+
+## C136 compatibility suite
+
+The [compatibility-suite contract](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md)
+defines bounded layered matrix evidence at revision `0.1.82`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| CS-OBL-001 | Scope, revision, and vocabulary hold | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#status-and-authority) | lifecycle and compatibility profile tests | traced |
+| CS-OBL-002 | Canonical finite matrix identity | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#matrix-identity-and-scope) | define, validation, duplicate, and digest cases | traced |
+| CS-OBL-003 | Seven distinct layers | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#matrix-identity-and-scope) | integrated seven-layer matrix | traced |
+| CS-OBL-004 | Digest-bound complete report | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#matrix-identity-and-scope) | deterministic report equality and case digests | traced |
+| CS-OBL-005 | Pass, fail, and unsupported separation | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#observations-and-outcomes) | three-outcome and expectation-mismatch cases | traced |
+| CS-OBL-006 | Missing and malformed adapter outcomes | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#observations-and-outcomes) | absent adapter and invalid protocol paths | traced |
+| CS-OBL-007 | Exact retained source selections | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | 0.1.1, 0.1.82, wrong revision, and edition suite | traced |
+| CS-OBL-008 | Semantic interface classification | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | C028 classifier adapter and retained suite | traced |
+| CS-OBL-009 | Complete exact dependency replay | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | diamond, width-64, depth-48, and lock replay | traced |
+| CS-OBL-010 | Historical data and immutable provenance | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | C116 replay adapter and migration suite | traced |
+| CS-OBL-011 | Exact endpoint host profiles | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | oldest/newest supported fingerprint rows | traced |
+| CS-OBL-012 | Original historical signature domain | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | Ed25519 compatibility adapter and governance suite | traced |
+| CS-OBL-013 | Checked runtime-upgrade authority | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#layer-authorities) | C092 preflight adapter and upgrade suite | traced |
+| CS-OBL-014 | Curated and generated coverage | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#coverage-and-edition-policy) | retained authorities and generated graph families | traced |
+| CS-OBL-015 | Claim closure and retained edition | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#coverage-and-edition-policy) | exact revision and outcome aggregation | traced |
+| CS-OBL-016 | No ecosystem-wide inference | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#coverage-and-edition-policy) | profile ecosystem_wide_claim false | traced |
+| CS-OBL-017 | Published finite limits | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#variability-and-limits) | 4,096-case and 1-MiB case profile/refusal | traced |
+| CS-OBL-018 | Complete suite and trust | [Rule](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md#diagnostics-and-conformance) | 1,083 tests, production builds, and trust audit | traced |

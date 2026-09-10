@@ -1188,3 +1188,9 @@ The [C116 normative contract](../60-specification/long-term-evolution/historical
 CP-121-1..4 retain their recommendations. The [build-system journal](../50-journal/2026-09-10-build-system.md#implementation-decisions) records twelve four-way decisions for discovery, profiles, graph order, verified acquisition, transitive cache identity, generators, offline execution, and publication.
 
 The [C121 normative contract](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md) makes those choices durable at `0.1.81`. Compiler PR 163 and the retained compiler path complete the selections without an override.
+
+## C136 execution links
+
+CP-136-1..3 retain their recommendations. The [compatibility-suite journal](../50-journal/2026-09-10-compatibility-suite.md#implementation-decisions) records sixteen four-way decisions for matrix representation, layer and outcome separation, retained sources, interfaces, graphs, data, signatures, exact hosts, runtime upgrades, bounds, and trust.
+
+The [C136 normative contract](../60-specification/compatibility-suite/layered-matrix-and-edition-policy.md) makes those choices durable at `0.1.82`. Compiler PR 164 and the integrated bounded matrix complete the selections without an override.
