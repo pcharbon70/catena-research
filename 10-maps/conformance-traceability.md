@@ -3051,3 +3051,26 @@ defines observable schedule and foreign-work limits at revision `0.1.78`.
 | SC-OBL-012 | Bounded exploration | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#reference-exploration-and-evidence) | scheduler_observability and c010: multiple schedules and exhausted bound | traced |
 | SC-OBL-013 | Evidence scope | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#reference-exploration-and-evidence) | explorer reports set/bounds without runtime timing claims | traced |
 | SC-OBL-014 | Profile and complete suite | [Rule](../60-specification/scheduler-observability/policy-classes-and-visible-limits.md#diagnostics-and-conformance) | scheduler_observability, c010, foreign_adapter, native_services and trust_boundary | traced |
+
+## C092 hot code upgrade
+
+The [upgrade contract](../60-specification/hot-code-upgrade/checked-migration-and-activation.md)
+defines checked migration and activation at revision `0.1.79`.
+
+| Obligation | Requirement | Normative anchor | Compiler evidence | Status |
+| --- | --- | --- | --- | --- |
+| HU-OBL-001 | Scope and revision | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#status-and-authority) | hot_code_upgrade and lifecycle exact revision | traced |
+| HU-OBL-002 | Exact descriptor | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#upgrade-descriptor-and-preflight) | upgrade descriptor shape and digest validation | traced |
+| HU-OBL-003 | Semantic compatibility | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#upgrade-descriptor-and-preflight) | Package.Compat integration and wrong-module refusal | traced |
+| HU-OBL-004 | Node version set | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#upgrade-descriptor-and-preflight) | unsupported third node version refused | traced |
+| HU-OBL-005 | Quiescence blockers | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#quiescence-and-coexistence) | live capability blocker and exact blocker inventory | traced |
+| HU-OBL-006 | Coexistence ceiling | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#quiescence-and-coexistence) | second upgrade refused while draining | traced |
+| HU-OBL-007 | Drain messages | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#quiescence-and-coexistence) | message queued and delivered after activation | traced |
+| HU-OBL-008 | Bounded typed migration | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#migration-and-activation) | success, failure, timeout and schema checks | traced |
+| HU-OBL-009 | Precommit restoration | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#migration-and-activation) | failed and exhausted migration restore old state | traced |
+| HU-OBL-010 | Atomic activation boundary | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#migration-and-activation) | artifact/interface/schema/state commit transition | traced |
+| HU-OBL-011 | Explicit reverse migration | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#migration-and-activation) | reverse succeeds; missing reverse refuses | traced |
+| HU-OBL-012 | Managed OTP path | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#otp-realization) | real sys suspend/change_code/resume fixture | traced |
+| HU-OBL-013 | OTP boundary | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#otp-realization) | source note and adapter exclude raw load/purge | traced |
+| HU-OBL-014 | Published limits | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#variability-and-limits) | conformance profile and bounded migration tests | traced |
+| HU-OBL-015 | Complete retained suite | [Rule](../60-specification/hot-code-upgrade/checked-migration-and-activation.md#diagnostics-and-conformance) | 1,063 tests, production build, escript and trust audit | traced |

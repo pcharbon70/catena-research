@@ -31,6 +31,7 @@ source notes.
 ### Documents
 
 - [Scheduler observability](2026-09-10-scheduler-observability.md) — C090 schedule nondeterminism, priority limits, foreign-work classification, and bounded worker evidence.
+- [Hot code upgrade](2026-09-10-hot-code-upgrade.md) — C092 preflight, quiescence, bounded migration, coexistence, OTP activation, and rollback evidence.
 - [Message semantics](2026-09-10-message-semantics.md) — C085 immutable values, checked admission, sender order, native authority, and remote-outcome integration.
 - [Distribution](2026-09-10-distribution.md) — C091 typed framing, mutual TLS, compatibility refusal, partition uncertainty, and duplicate evidence.
 - [Signed package registry](2026-09-10-signed-package-registry.md) — registry trust, immutable acquisition, offline replay, and attack-fixture evidence.
