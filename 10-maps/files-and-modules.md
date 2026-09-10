@@ -72,5 +72,5 @@ C020 is complete at revision `0.1.16`. P109 retains the
 concrete module-header syntax; G022 retains import/export syntax over the C021
 namespace rules;
 C025 has since fixed package assembly, with cross-file duplicate handling owned by its tooling consumers; C027
-has since fixed entry modules; P121/P128 retain build and reproducibility policy
+has since fixed entry modules; C121 fixes build orchestration while P128 retains reproducibility policy
 for generated inputs.

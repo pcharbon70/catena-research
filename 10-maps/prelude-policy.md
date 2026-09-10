@@ -64,5 +64,5 @@ owners of contents, protocols, and tooling.
 ## Open questions
 
 C026 is complete at revision `0.1.22`. P101 retains contents and the name freeze; P102
-retains collection protocols; P121 retains scaffolding defaults; C028
+retains collection protocols; C121 fixes explicit scaffolding defaults; C028
 and G136 own compatibility meanings of prelude version bumps.

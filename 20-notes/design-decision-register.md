@@ -1181,3 +1181,10 @@ The [C092 normative contract](../60-specification/hot-code-upgrade/checked-migra
 CP-116-1..3 retain their recommendations. The [evolution journal](../50-journal/2026-09-10-long-term-evolution.md#implementation-decisions) records twelve four-way decisions for interpreter dispatch, migration, provenance, signatures, historical roots, missing inputs, and archives.
 
 The [C116 normative contract](../60-specification/long-term-evolution/historical-replay-and-migration.md) makes those choices durable at `0.1.80`. Compiler PR 162 and the retained suite complete the selections without an override.
+
+
+## C121 execution links
+
+CP-121-1..4 retain their recommendations. The [build-system journal](../50-journal/2026-09-10-build-system.md#implementation-decisions) records twelve four-way decisions for discovery, profiles, graph order, verified acquisition, transitive cache identity, generators, offline execution, and publication.
+
+The [C121 normative contract](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md) makes those choices durable at `0.1.81`. Compiler PR 163 and the retained compiler path complete the selections without an override.
