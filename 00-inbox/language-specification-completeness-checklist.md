@@ -1706,8 +1706,21 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   to their exact node and source slice. The complete 1,143-test suite passes.
   P117 remains partial only because public parse and recovery diagnostics await
   P109's held grammar.
-- [ ] **G118 — Gap — formatter.** Define canonical formatting, comments, idempotence,
-  version coupling, and whether formatting is part of source compatibility.
+- [ ] **G118 — Partial — formatter.** Normative
+  [0.1.94](../60-specification/formatter/syntax-independent-document-algebra.md)
+  defines a syntax-independent document algebra, deterministic Unicode-scalar
+  width layout, exact tokenizer-bound comment and literal preservation, source
+  maps, canonical preimage-bound previews, fixed limits, and zero style
+  variability. Compiler
+  [PR 186](https://github.com/pcharbon70/catena/pull/186) implements the
+  preparatory printer, and corrective
+  [PR 187](https://github.com/pcharbon70/catena/pull/187) publishes and directly
+  exercises every byte bound. Six focused cases and the complete 1,166-test
+  suite, production build, escript, and trust audit pass. Preview application
+  remains nonmutating and explicitly held. G118 remains partial because
+  lossless public parsing, production-specific canonical layouts, semantic
+  round trips, whole-formatter idempotence, atomic source edits, and source
+  compatibility require P109's held grammar.
 - [ ] **P119 — Partial — documentation tool.** C016 specifies documentation
   attachment and normalized CommonMark bodies. Normative
   [0.1.92](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md)
