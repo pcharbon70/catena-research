@@ -447,6 +447,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 - [Debugging and observability](debugging-and-observability/README.md) — verified source breakpoints, bounded traces, process and message identity, profiles, crash reports, and erased-evidence navigation.
 - [Release readiness](release-readiness/README.md) — explicit release classes, canonical evidence manifests, proof admission, contradiction audits, and claim boundaries.
 - [Diagnostic contract](diagnostic-contract/README.md) — bounded source locations, causal explanations, generated origins, and preimage-bound repairs.
+- [Formatter](formatter/README.md) — deterministic syntax-independent layout, exact verbatim origins, source maps, canonical previews, and the P109 public-source hold.
 - [Supply-chain policy](supply-chain-policy/README.md) — signed registry roots, immutable releases, status and exact acquisition.
 - [Secret capabilities](secret-capabilities/README.md) — sealed credentials, protected observations and owned delivery.
 - [Trusted obligation policy](trusted-obligation-policy/README.md) — transitive foreign/native responsibilities and exact scoped admission.

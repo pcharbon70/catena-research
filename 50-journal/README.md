@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Formatter](2026-09-11-formatter.md) — G118 document algebra, deterministic layout, verbatim origin, preview, limit, trust, and public-source-hold decisions.
 - [Migration tool](2026-09-10-migration-tool.md) — P125 exact previews, explicit authorization, retained-JSON transactions, rollback, semantic rechecks, limits, and public-source hold.
 - [Documentation tool](2026-09-10-documentation-tool.md) — P119 interface graph, visibility, links, rendering, doctest isolation, and retained-input evidence decisions.
 - [Diagnostic contract](2026-09-10-diagnostic-contract.md) — P117 semantic locations, type and causal explanations, coverage evidence, generated origins, and repair decisions.

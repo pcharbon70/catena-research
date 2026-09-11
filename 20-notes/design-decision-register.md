@@ -1339,3 +1339,16 @@ rechecks, governance, audit, bounds, and exhaustion. The
 makes CP-125-1..3 and those implementation choices durable at `0.1.93`;
 compiler PRs 183–185 implement, correct, and fully exercise the retained-input slice without
 overriding a recommendation.
+
+## G118 execution links
+
+The [formatter journal](../50-journal/2026-09-11-formatter.md#implementation-decisions)
+records twenty four-way implementation decisions for document input, algebra,
+break selection, width, indentation, verbatim origins, comments, literals,
+source maps, preview identity, applicability, mutation, idempotence, limits,
+outcomes, and trust placement. The
+[G118 normative contract](../60-specification/formatter/syntax-independent-document-algebra.md)
+makes CP-118-1..3 and those implementation choices durable at `0.1.94`;
+compiler PRs 186–187 implement and directly exercise the grammar-independent
+slice without overriding a recommendation. Public tree construction and
+source edits remain held for P109.

@@ -3430,3 +3430,30 @@ API, and deprecated-syntax rewrites remain held for P109.
 | MT-OBL-014 | Complete machine-readable profile | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#diagnostics-and-conformance) | conformance-info assertions | traced |
 | MT-OBL-015 | Complete bounded retained-input evidence | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#diagnostics-and-conformance) | compiler PRs 183–185, 1,160 tests, production build, escript, and trust audit | traced |
 | MT-OBL-016 | Public source/API/deprecated-syntax migration | [Rule](../60-specification/migration-tool/transactional-retained-json-edits.md#diagnostics-and-conformance) | explicit `held_for_p109` profile value | partial |
+
+## G118 formatter
+
+The [formatter contract](../60-specification/formatter/syntax-independent-document-algebra.md)
+maps to the syntax-independent document algebra, deterministic Unicode-scalar
+layout, tokenizer-bound verbatim preservation, canonical previews, and fixed
+limits at revision `0.1.94`. Public tree construction, production layouts,
+semantic round trips, source edits, and source compatibility remain held for
+P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| FM-OBL-001 | Grammar-independent scope and public-source hold | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#status-and-authority) | lifecycle and profile assertions | traced |
+| FM-OBL-002 | Closed validated document algebra | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#document-algebra) | construction and structural-limit cases | traced |
+| FM-OBL-003 | Deterministic group, line, hard-line, and nest rendering | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#document-algebra) | wide/narrow and repeat-preview cases | traced |
+| FM-OBL-004 | Unicode-scalar width and fixed width range | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#document-algebra) | Greek scalar boundary and invalid-width cases | traced |
+| FM-OBL-005 | Exact tokenizer-origin admission | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#verbatim-origins-and-preservation) | forged and mislabeled origin refusal | traced |
+| FM-OBL-006 | Exact comment, attachment, and literal preservation | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#verbatim-origins-and-preservation) | multiline, trailing, raw-literal, and attachment cases | traced |
+| FM-OBL-007 | Exact source/output byte mappings | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#verbatim-origins-and-preservation) | per-mapping byte-equality assertions | traced |
+| FM-OBL-008 | Canonical complete deterministic preview | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#preview-identity-and-mutation-boundary) | repeated preview and digest verification | traced |
+| FM-OBL-009 | Nonmutation and explicit P109 applicability | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#preview-identity-and-mutation-boundary) | held application and unchanged-file assertions | traced |
+| FM-OBL-010 | Explicit authorization and exact preimage | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#preview-identity-and-mutation-boundary) | unauthorized and stale cases | traced |
+| FM-OBL-011 | Public round-trip, idempotence, edits, and compatibility | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#preview-identity-and-mutation-boundary) | explicit `held_for_p109` profile value | partial |
+| FM-OBL-012 | Fixed limits and preallocation refusal | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#limits-and-variability) | width, depth, attachment, and output-byte cases in PR 187 | traced |
+| FM-OBL-013 | Zero variability and no style options | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#limits-and-variability) | exact profile values | traced |
+| FM-OBL-014 | Complete machine-readable profile | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#conformance) | conformance-info assertions | traced |
+| FM-OBL-015 | Complete bounded preparatory evidence | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#conformance) | compiler PRs 186–187, 1,166 tests, production build, escript, and trust audit | traced |
