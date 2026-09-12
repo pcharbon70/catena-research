@@ -1986,14 +1986,21 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   lemmas without admitted assumptions, while its exact scope and the absent
   integrated Catena theorem keep complete and stable claims blocked. Passing
   assessment neither publishes nor automatically upgrades a release.
-- [ ] **G141 — Gap — compiler self-hosting.** Define the late-0.x milestone at
-  which Catena can implement its own compiler, including the required language
-  subset, parser and module facilities, tool effects, host interoperability,
-  bootstrap trust, stage-one and stage-two builds, fixed-point or semantic
-  equivalence checks, reproducibility, rollback, distribution, and the
-  retained OTP 29 Abstract Format boundary. Elixir remains the bootstrap
-  implementation at the audited `0.1.48` compiler; changing the implementation language
-  does not change Catena's BEAM-only target.
+- [ ] **G141 — Partial — compiler self-hosting.** Normative `0.1.98`'s
+  [staged bootstrap and fixed-point evidence contract](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md)
+  defines actual Catena-pass authorship, the retained pinned Elixir recovery
+  root, the BEAM through OTP 29 Abstract Format target, required application
+  subset, pure-pass-first port order, exact stage identities, byte or declared
+  semantic comparison, limited fixed-point meaning, dual-implementation suites,
+  offline reproduction, residual host-service inventory, signed distribution,
+  and a real rollback drill. Compiler
+  [PR 195](https://github.com/pcharbon70/catena/pull/195) implements the
+  canonical blocked preflight and rejects wrappers, fake stages, target drift,
+  hidden compiler-pass dependencies, port-order truncation, and premature
+  fixed-point or rollback claims. Six focused cases and the complete 1,194-test
+  suite pass. Actual Catena compiler source and stages remain absent until P109,
+  so G141 remains partial. See the
+  [implementation journal](../50-journal/2026-09-12-self-hosting.md).
 
 ## Suggested research order
 

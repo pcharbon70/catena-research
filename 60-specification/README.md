@@ -220,6 +220,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Compiler Self-Hosting](compiler-self-hosting/README.md) — G141 staged bootstrap, fixed-point evidence, dual implementation suites, offline rebuild, and rollback preflight at 0.1.98.
 - [Usability Gate](usability-gate/README.md) — G137 observed prediction, completion, transfer, and repair protocol with executable pre-study evidence at 0.1.97.
 - [Editor Protocol](editor-protocol/README.md) — G123 immutable retained-input snapshots, shared semantic queries, stable diagnostics, cancellation, and exact rename previews at 0.1.96.
 - [Migration Tool](migration-tool/README.md) — P125 exact retained-JSON previews, transactional application, rollback, semantic rechecks, and audit evidence at 0.1.93.
