@@ -3512,3 +3512,32 @@ edit application, and transport remain held for P109.
 | LS-OBL-014 | Zero variability and prohibited substitutes | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#limits-and-variability) | exact closed profile | traced |
 | LS-OBL-015 | Complete machine-readable profile | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#conformance) | conformance-info assertions | traced |
 | LS-OBL-016 | Complete bounded preparatory evidence | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#conformance) | compiler PR 192, 1,181 tests, production build, escript, and trust audit | traced |
+
+## G137 usability gate
+
+The [usability contract](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md)
+maps to observed human evidence, consent, minimized data, fixed pilot and main
+cohorts, counterbalancing, semantic tasks, preregistered thresholds, retained
+negative results, and exact package identity at revision `0.1.97`. The study
+package is implemented, but human results and P107/P109 public-language
+conditions remain absent.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| UG-OBL-001 | Preparation scope and public-condition hold | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#status-and-authority) | lifecycle, profile, and package assertions | traced |
+| UG-OBL-002 | Real observed programmer evidence | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#evidence-authority-and-consent) | explicit blocked evidence result; no observations exist | partial |
+| UG-OBL-003 | Separate outreach authority and voluntary consent | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#evidence-authority-and-consent) | outreach refusal and consent material | partial |
+| UG-OBL-004 | Minimized separated data and verified deletion | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#evidence-authority-and-consent) | exact data-policy validation; execution awaits study | partial |
+| UG-OBL-005 | Six-person pilot and separate 24-person main cohort | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#cohorts-and-counterbalancing) | exact phase validation and assignment bounds | traced |
+| UG-OBL-006 | Stratum-local counterbalancing and P107/P109 hold | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#cohorts-and-counterbalancing) | balanced assignment and held-condition assertions | traced |
+| UG-OBL-007 | Fixed facilitator conduct | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#cohorts-and-counterbalancing) | digest-bound facilitator guide; execution awaits study | partial |
+| UG-OBL-008 | Eight matched semantic task families | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#tasks-and-outcomes) | exact task inventory and semantic task book | partial |
+| UG-OBL-009 | Prediction, completion, transfer, and repair metrics | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#tasks-and-outcomes) | exact metric validation; observations absent | partial |
+| UG-OBL-010 | Fixed outcome codes and descriptive duration bands | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#tasks-and-outcomes) | digest-bound task book; observations absent | partial |
+| UG-OBL-011 | Pilot calibration then preregistered main thresholds | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#preregistration-and-analysis) | explicit null threshold state pending pilot | partial |
+| UG-OBL-012 | Complete stratified analysis and negative results | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#preregistration-and-analysis) | digest-bound analysis plan; observations absent | partial |
+| UG-OBL-013 | Three predefined exclusions only | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#preregistration-and-analysis) | exact exclusion validation | traced |
+| UG-OBL-014 | Canonical empty package and material identity | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#package-identity-and-gate-result) | package digest, five material SHA-256 checks, tamper refusal | traced |
+| UG-OBL-015 | Complete profile and blocked G139 evidence | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#package-identity-and-gate-result) | conformance profile and release-readiness required gate | traced |
+| UG-OBL-016 | Complete preparatory compiler evidence | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#package-identity-and-gate-result) | compiler PRs 193–194, 1,188 tests, production build, escript, and trust audit | traced |
+| UG-OBL-017 | Zero variability and no weakened gate | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#limits-and-variability) | exact package validation and blocked exhaustion policy | traced |
