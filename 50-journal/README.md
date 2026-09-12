@@ -30,6 +30,7 @@ source notes.
 
 ### Documents
 
+- [Compiler self-hosting](2026-09-12-self-hosting.md) — G141 staged bootstrap, target, pass order, identity, comparison, dual-suite, residual-service, recovery, distribution, and P109-hold decisions.
 - [Usability gate](2026-09-12-usability-gate.md) — G137 observed-evidence, consent, minimization, cohort, counterbalancing, task, scoring, preregistration, identity, and public-condition-hold decisions.
 - [Editor protocol](2026-09-12-editor-protocol.md) — G123 immutable snapshots, shared analysis, cancellation, stable diagnostics, semantic queries, rename, limits, trust, and public-protocol-hold decisions.
 - [Interactive environment](2026-09-12-interactive-environment.md) — G120 session ownership, capabilities, immutable generations, bounded evaluation, interruption, cleanup, history, governance, trust, and public-REPL-hold decisions.

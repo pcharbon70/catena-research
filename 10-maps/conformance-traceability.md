@@ -3541,3 +3541,34 @@ conditions remain absent.
 | UG-OBL-015 | Complete profile and blocked G139 evidence | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#package-identity-and-gate-result) | conformance profile and release-readiness required gate | traced |
 | UG-OBL-016 | Complete preparatory compiler evidence | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#package-identity-and-gate-result) | compiler PRs 193–194, 1,188 tests, production build, escript, and trust audit | traced |
 | UG-OBL-017 | Zero variability and no weakened gate | [Rule](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md#limits-and-variability) | exact package validation and blocked exhaustion policy | traced |
+
+## G141 compiler self-hosting
+
+The [self-hosting contract](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md)
+maps to actual Catena-authored compiler passes, a retained Elixir recovery root,
+the fixed BEAM/OTP 29 target, ordered staging, exact or semantic comparison,
+dual implementation suites, offline reproducibility, residual-service
+inventory, distribution, and rollback at revision `0.1.98`. The preflight is
+implemented; compiler source and bootstrap stages remain absent pending P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| SH-OBL-001 | Milestone definition and honest absent-stage status | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#status-and-authority) | lifecycle, profile, and blocked assessment | traced |
+| SH-OBL-002 | Actual Catena passes rather than wrappers | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#meaning-and-target) | wrapper-claim refusal; passes absent | partial |
+| SH-OBL-003 | BEAM through OTP 29 Abstract Format target | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#meaning-and-target) | exact target profile and drift refusal | traced |
+| SH-OBL-004 | Retained pinned stage-zero recovery root | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#meaning-and-target) | preflight role; exact future identity pending | partial |
+| SH-OBL-005 | Demonstrated compiler subset before source admission | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#required-language-subset-and-port-order) | P109 source hold; integrated demonstration pending | partial |
+| SH-OBL-006 | Ordered pass port with differential interfaces | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#required-language-subset-and-port-order) | exact order and truncation refusal; ports absent | partial |
+| SH-OBL-007 | Preserve C140 exclusions | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#required-language-subset-and-port-order) | C140 regression suite at current revision | traced |
+| SH-OBL-008 | Exact stage-zero/one/two identities | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#stages-and-comparisons) | fake-stage refusal; real stages absent | partial |
+| SH-OBL-009 | Exact bytes or declared semantic oracle | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#stages-and-comparisons) | comparison policy; artifacts absent | partial |
+| SH-OBL-010 | Fixed-point claim limitation | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#stages-and-comparisons) | published false trust implication | traced |
+| SH-OBL-011 | Stage drift blocks or requires further stage | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#stages-and-comparisons) | explicit fixed-point blocker; stages absent | partial |
+| SH-OBL-012 | Five dual-implementation suite families | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#cross-implementation-evidence) | exact suite inventory; Catena implementation absent | partial |
+| SH-OBL-013 | Clean offline reproduction and altered-identity refusal | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#cross-implementation-evidence) | explicit evidence blocker; drill pending | partial |
+| SH-OBL-014 | Four inventoried residual host-service classes | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#cross-implementation-evidence) | exact inventory and hidden-pass refusal | traced |
+| SH-OBL-015 | Interrupted upgrade and stage-zero rollback drill | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#recovery-and-distribution) | premature claim refusal; drill absent | partial |
+| SH-OBL-016 | Complete signed immutable distribution bundle | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#recovery-and-distribution) | P130 machinery exists; bundle absent | partial |
+| SH-OBL-017 | Canonical complete blocked preflight | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#preflight-limits-and-conformance) | package digest and eight exact blockers | traced |
+| SH-OBL-018 | Zero variability and no weakened blockers | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#preflight-limits-and-conformance) | exact closed profile | traced |
+| SH-OBL-019 | Complete preflight and eventual milestone evidence | [Rule](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md#preflight-limits-and-conformance) | compiler PR 195, 1,194 tests, production build, escript, and trust audit; stages partial | partial |

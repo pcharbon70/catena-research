@@ -1392,3 +1392,16 @@ makes CP-137-1..3 and those preparation choices durable at `0.1.97`; compiler
 PRs 193–194 implement the digest-bound study package and lifecycle integration
 without overriding a recommendation. Human observations remain absent, and
 public-language conditions remain held for P107/P109.
+
+## G141 execution links
+
+The [self-hosting journal](../50-journal/2026-09-12-self-hosting.md#implementation-decisions)
+records twenty-two four-way implementation decisions for timing, port shape,
+stages, recovery, target, source timing, subset evidence, pass order, identities,
+comparisons, fixed-point scope, suites, offline builds, residual services,
+rollback, distribution, and the executable preflight. The
+[G141 normative contract](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md)
+makes CP-141-1..4 and those preparation choices durable at `0.1.98`; compiler
+PR 195 implements and exercises the preflight without overriding a
+recommendation. Actual Catena compiler source, stages, and human-authored public
+syntax remain absent pending P109.

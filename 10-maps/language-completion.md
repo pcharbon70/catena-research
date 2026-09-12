@@ -61,6 +61,7 @@ Public vocabulary and the final grammar remain held for later joint design.
 - [Formatter](../60-specification/formatter/README.md) completes G118's grammar-independent document algebra, deterministic layout, verbatim origins, source maps, and preview identity while keeping public tree construction and edits visibly held for P109.
 - [Editor protocol](../60-specification/editor-protocol/README.md) supplies G123's immutable retained-input snapshots, shared semantic operations, stable diagnostics, cancellation, and exact rename previews while keeping public parsing, coordinates, formatting, and transport held for P109.
 - [Usability gate](../60-specification/usability-gate/README.md) supplies G137's consent, minimized data, fixed cohorts, counterbalancing, semantic tasks, scoring, and preregistration package while keeping the evidence gate blocked until an authorized human study follows P107/P109.
+- [Compiler self-hosting](../60-specification/compiler-self-hosting/README.md) supplies G141's retained recovery root, fixed target, staged port order, comparison, dual-suite, reproducibility, residual-service, distribution, and rollback preflight while actual Catena compiler source remains held for P109.
 - [Interactive environment](../60-specification/interactive-environment/README.md) completes G120's owned retained-input sessions, explicit capabilities, immutable generations, bounded evaluation, cleanup, and redacted history while keeping the public REPL visibly held for P109.
 
 ## Open questions
