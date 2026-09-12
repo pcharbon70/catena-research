@@ -1777,9 +1777,18 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   tests and keeps semantic fuel, schedule bounds, shrink bounds, and host
   timeout distinct. Public test notation remains held for P109/P107, and
   passing observations do not claim proof.
-- [ ] **G123 — Gap — editor protocol.** Define incremental parsing and typing, partial
-  programs, completion, hover, rename, formatting, semantic tokens, and stable
-  diagnostic identity.
+- [ ] **G123 — Partial — editor protocol.** Normative `0.1.96`'s
+  [immutable retained-input service](../60-specification/editor-protocol/immutable-retained-input-language-service.md)
+  now defines exact immutable snapshots, shared compiler diagnostics, stable
+  snapshot-bound diagnostic identity, request cancellation, exported
+  completion, hover, definition navigation, retained-path semantic tokens, and
+  conservative identity-based rename previews with exact recomputation before
+  application. Compiler [PR 192](https://github.com/pcharbon70/catena/pull/192)
+  passes the complete 1,181-test suite, production compilation, escript build,
+  and trust audit. Public incremental parsing and recovery, source coordinates,
+  edit application, formatting behavior, and editor transport remain held for
+  P109, so G123 remains partial. See the
+  [implementation evidence](../50-journal/2026-09-12-editor-protocol.md).
 - [x] **C124 — Complete — debugging and observability.** Normative `0.1.89`'s
   [source-aware bounded sessions](../60-specification/debugging-and-observability/source-aware-bounded-debug-sessions.md)
   verify executable and P100 sidecar identity before admitting owner-bound

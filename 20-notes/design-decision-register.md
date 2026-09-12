@@ -1364,3 +1364,18 @@ makes CP-120-1..3 and those implementation choices durable at `0.1.95`;
 compiler PRs 188–191 implement and directly exercise the grammar-independent
 slice without overriding a recommendation. Public input syntax, editing,
 recovery, display, and the command-line REPL remain held for P109.
+
+## G123 execution links
+
+The [editor-protocol journal](../50-journal/2026-09-12-editor-protocol.md#implementation-decisions)
+records twenty-two four-way implementation decisions for retained input,
+shared analysis, snapshot identity, changes, partial input, requests,
+cancellation, diagnostics, symbols, completion, hover, navigation, semantic
+tokens, rename selection and safety, previews, plan verification, formatting,
+limits, and trust placement. The
+[G123 normative contract](../60-specification/editor-protocol/immutable-retained-input-language-service.md)
+makes CP-123-1..3 and those implementation choices durable at `0.1.96`;
+compiler PR 192 implements and directly exercises the grammar-independent
+slice without overriding a recommendation. Public parsing, recovery, source
+coordinates, formatting behavior, edit application, and transport remain held
+for P109.
