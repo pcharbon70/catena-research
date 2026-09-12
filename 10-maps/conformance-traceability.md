@@ -3484,3 +3484,31 @@ recovery, display syntax, and the command-line REPL remain held for P109.
 | IS-OBL-014 | Zero variability and prohibited ambient substitutes | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#limits-and-variability) | exact closed session profile | traced |
 | IS-OBL-015 | Complete machine-readable profile | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#conformance) | conformance-info assertions including cleanup bound | traced |
 | IS-OBL-016 | Complete bounded preparatory evidence | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#conformance) | compiler PRs 188–191, 1,174 tests, production build, escript, and trust audit | traced |
+
+## G123 editor protocol
+
+The [language-service contract](../60-specification/editor-protocol/immutable-retained-input-language-service.md)
+maps to immutable retained-JSON snapshots, shared compiler analysis, exact
+freshness, request cancellation, stable diagnostics, semantic operations,
+conservative rename previews, and fixed limits at revision `0.1.96`. Public
+incremental parsing and recovery, source coordinates, formatting behavior,
+edit application, and transport remain held for P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| LS-OBL-001 | Grammar-independent scope and public-protocol hold | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#status-and-authority) | lifecycle and profile assertions | traced |
+| LS-OBL-002 | Retained JSON and shared compiler authority | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#snapshots-and-semantic-authority) | valid snapshot and shared semantic result case | traced |
+| LS-OBL-003 | Immutable monotonic changes and exact freshness | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#snapshots-and-semantic-authority) | previous digest, stale change, and stale request assertions | traced |
+| LS-OBL-004 | Partial input diagnostics without invented semantics | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#snapshots-and-semantic-authority) | malformed JSON and unavailable-analysis assertions | traced |
+| LS-OBL-005 | Request identity and bounded cancellation | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#requests-cancellation-and-diagnostics) | request-specific cancellation and 256-identity boundary | traced |
+| LS-OBL-006 | Stable snapshot-bound diagnostic identities | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#requests-cancellation-and-diagnostics) | repeated exact diagnostic assertion | traced |
+| LS-OBL-007 | Compiler-derived canonical symbols | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#semantic-operations) | symbol identity, type, visibility, path, and uses assertions | traced |
+| LS-OBL-008 | Export-only bounded deterministic completion | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#semantic-operations) | private exclusion, prefix, and prefix-bound assertions | traced |
+| LS-OBL-009 | Hover, definition, and retained-path semantic tokens | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#semantic-operations) | semantic-operation result assertions | traced |
+| LS-OBL-010 | Identity-selected valid collision-free rename | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#rename-previews) | selected-symbol and collision-refusal assertions | traced |
+| LS-OBL-011 | Conservative resolved-occurrence boundary | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#rename-previews) | unresolved top-level occurrence refusal | traced |
+| LS-OBL-012 | Exact preview and recomputed application | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#rename-previews) | successful, stale, altered, and self-consistent forged plans | traced |
+| LS-OBL-013 | Fixed bounds and distinct exhaustion | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#limits-and-variability) | profile and input, symbol, cancellation, prefix, edit, and result guards | traced |
+| LS-OBL-014 | Zero variability and prohibited substitutes | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#limits-and-variability) | exact closed profile | traced |
+| LS-OBL-015 | Complete machine-readable profile | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#conformance) | conformance-info assertions | traced |
+| LS-OBL-016 | Complete bounded preparatory evidence | [Rule](../60-specification/editor-protocol/immutable-retained-input-language-service.md#conformance) | compiler PR 192, 1,181 tests, production build, escript, and trust audit | traced |
