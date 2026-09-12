@@ -1379,3 +1379,16 @@ compiler PR 192 implements and directly exercises the grammar-independent
 slice without overriding a recommendation. Public parsing, recovery, source
 coordinates, formatting behavior, edit application, and transport remain held
 for P109.
+
+## G137 execution links
+
+The [usability-gate journal](../50-journal/2026-09-12-usability-gate.md#implementation-decisions)
+records twenty-two four-way implementation decisions for evidence authority,
+study timing, cohort size, strata, conditions, counterbalancing, tasks,
+prediction, transfer, repair, codes, timing, consent, data, retention,
+exclusions, thresholds, identity, status, versioning, and trust placement. The
+[G137 normative contract](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md)
+makes CP-137-1..3 and those preparation choices durable at `0.1.97`; compiler
+PRs 193–194 implement the digest-bound study package and lifecycle integration
+without overriding a recommendation. Human observations remain absent, and
+public-language conditions remain held for P107/P109.

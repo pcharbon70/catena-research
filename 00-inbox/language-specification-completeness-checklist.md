@@ -1947,9 +1947,22 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   preflight, explicit pass/fail/unsupported outcomes, published limits, and
   trust classification with 1,083 passing tests. Bounded fixtures make no
   ecosystem-wide or future-edition claim.
-- [ ] **G137 — Gap — usability gate.** Test whether programmers can predict `map`,
-  `map2`, `and_then`, traversal, handlers, guards, comprehensions, and
-  diagnostics without prerequisite mathematical vocabulary.
+- [ ] **G137 — Partial — usability gate.** Normative `0.1.97`'s
+  [observed prediction, transfer, and repair protocol](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md)
+  fixes voluntary consent, minimized data, a six-person pilot and 24-person
+  main cohort split across general and functional programmers, counterbalanced
+  semantic and future public-language conditions, eight task families, four
+  outcome metrics, predefined exclusions, pilot-then-preregister thresholds,
+  and negative-result retention. Compiler
+  [PR 193](https://github.com/pcharbon70/catena/pull/193) implements the
+  SHA-256-bound pre-study package and rejects fabricated results, participant
+  data, unauthorized outreach, and premature P107/P109 conditions;
+  [PR 194](https://github.com/pcharbon70/catena/pull/194) integrates revision
+  `0.1.97`. Seven focused cases and the complete 1,188-test suite pass. No
+  participant was contacted and no result was invented. G137 remains partial
+  until approved public vocabulary and grammar exist and an authorized pilot
+  and preregistered main study produce observed evidence. See the
+  [implementation journal](../50-journal/2026-09-12-usability-gate.md).
 - [x] **G138 — Complete — performance envelope.** The normative
   [0.1.88 supported-host contract](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
   requires fifteen workload families spanning calls, traits, data, control,
