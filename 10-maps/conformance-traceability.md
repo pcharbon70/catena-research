@@ -3457,3 +3457,30 @@ P109.
 | FM-OBL-013 | Zero variability and no style options | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#limits-and-variability) | exact profile values | traced |
 | FM-OBL-014 | Complete machine-readable profile | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#conformance) | conformance-info assertions | traced |
 | FM-OBL-015 | Complete bounded preparatory evidence | [Rule](../60-specification/formatter/syntax-independent-document-algebra.md#conformance) | compiler PRs 186–187, 1,166 tests, production build, escript, and trust audit | traced |
+
+## G120 interactive environment
+
+The [interactive-session contract](../60-specification/interactive-environment/owned-retained-input-sessions.md)
+maps to owned checked-input sessions, explicit capability admission, immutable
+module generations, bounded reference evaluation, managed workers, redacted
+history, and fixed limits at revision `0.1.95`. Public parsing, editing,
+recovery, display syntax, and the command-line REPL remain held for P109.
+
+| Obligation | Requirement | Normative rule | Evidence | Status |
+| --- | --- | --- | --- | --- |
+| IS-OBL-001 | Grammar-independent scope and public-REPL hold | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#status-and-authority) | lifecycle and profile assertions | traced |
+| IS-OBL-002 | Creating-process ownership and owner-bound handles | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#session-authority-and-ownership) | foreign-owner and handle assertions | traced |
+| IS-OBL-003 | Explicit capabilities and closed effect admission | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#session-authority-and-ownership) | invalid-capability and admission paths | traced |
+| IS-OBL-004 | Owner-death session and worker termination | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#session-authority-and-ownership) | direct session/worker monitor assertions in PR 189 | traced |
+| IS-OBL-005 | Checked retained JSON and kernel inputs with exact digest | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#retained-modules-and-generations) | both load paths and digest assertion | traced |
+| IS-OBL-006 | Explicit immutable successive replacement | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#retained-modules-and-generations) | replacement refusal and generation-zero/one results | traced |
+| IS-OBL-007 | Bounded retained generations and exact stale selection | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#retained-modules-and-generations) | pruning and stale/exact selection in PR 190; running replacement in PR 191 | traced |
+| IS-OBL-008 | Bounded reference evaluation and distinct outcomes | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#evaluation-jobs-and-interruption) | value/steps and divergent-kernel cases | traced |
+| IS-OBL-009 | Owner-bound async wait and confirmed interruption | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#evaluation-jobs-and-interruption) | early completion, interrupt, and completed-interrupt cases | traced |
+| IS-OBL-010 | Confirmed bounded close or retryable cleanup timeout | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#evaluation-jobs-and-interruption) | pending close, cleanup status, and unavailable-session assertions | traced |
+| IS-OBL-011 | Bounded ordered history with default and sensitive redaction | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#history-and-governance) | bounded default/captured history in PR 190 and sensitive override in PR 191 | traced |
+| IS-OBL-012 | No inherited governance authority | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#history-and-governance) | governed-load refusal and profile assertion | traced |
+| IS-OBL-013 | Published fixed limits and distinct exhaustion | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#limits-and-variability) | capability/budget validation and exact profile bounds | traced |
+| IS-OBL-014 | Zero variability and prohibited ambient substitutes | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#limits-and-variability) | exact closed session profile | traced |
+| IS-OBL-015 | Complete machine-readable profile | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#conformance) | conformance-info assertions including cleanup bound | traced |
+| IS-OBL-016 | Complete bounded preparatory evidence | [Rule](../60-specification/interactive-environment/owned-retained-input-sessions.md#conformance) | compiler PRs 188–191, 1,174 tests, production build, escript, and trust audit | traced |

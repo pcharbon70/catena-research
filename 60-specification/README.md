@@ -222,6 +222,7 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 - [Migration Tool](migration-tool/README.md) — P125 exact retained-JSON previews, transactional application, rollback, semantic rechecks, and audit evidence at 0.1.93.
 - [Documentation Tool](documentation-tool/README.md) — P119 verified interface graph, deterministic rendering, semantic links, and retained-input doctests at 0.1.92.
+- [Interactive Environment](interactive-environment/README.md) — G120 owned retained-input sessions, explicit capabilities, immutable generations, bounded evaluation, cleanup, and history at 0.1.95.
 
 - [Numeric library](numeric-library/README.md) — exact checked arithmetic, decimal rounding and verified compiled adoption.
 

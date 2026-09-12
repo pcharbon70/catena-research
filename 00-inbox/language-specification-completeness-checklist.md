@@ -1737,9 +1737,26 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   forged-graph refusal. The complete 1,149-test suite passes. P119 remains
   partial only because real public-source examples await P109's held parser
   and grammar.
-- [ ] **G120 — Gap — interactive environment.** Define REPL typing and effects,
-  declaration replacement, process lifetime, module loading, history, and
-  governance behavior.
+- [ ] **G120 — Partial — interactive environment.** Normative
+  [0.1.95](../60-specification/interactive-environment/owned-retained-input-sessions.md)
+  defines creating-process ownership, explicit closed capability admission,
+  checked retained JSON and semantic-kernel inputs, immutable successive module
+  generations, exact old-generation selection, bounded synchronous and
+  asynchronous reference evaluation, confirmed interruption and close cleanup,
+  owner-death cleanup, bounded redacted history, and an external governance
+  boundary. Compiler [PR 188](https://github.com/pcharbon70/catena/pull/188)
+  implements the session engine; corrective
+  [PR 189](https://github.com/pcharbon70/catena/pull/189) publishes the cleanup
+  bound and directly exercises owner-death termination; and
+  [PR 190](https://github.com/pcharbon70/catena/pull/190) directly exercises
+  capability denial, generation and history retention, dropped-entry
+  accounting, and the maximum evaluation budget; and
+  [PR 191](https://github.com/pcharbon70/catena/pull/191) directly verifies
+  running-generation replacement and sensitive-value redaction. Eight focused
+  cases and the complete 1,174-test suite, production build, escript, and trust
+  audit pass.
+  G120 remains partial only because public input parsing, recovery,
+  editing, display, and command syntax await P109's held grammar.
 - [x] **C121 — Complete — build system and package manager.** The normative
   [0.1.81 contract](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md)
   fixes deterministic discovery, named profiles, finite workspace DAGs,

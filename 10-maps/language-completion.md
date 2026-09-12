@@ -59,6 +59,7 @@ Public vocabulary and the final grammar remain held for later joint design.
 - [Documentation tool](../60-specification/documentation-tool/README.md) completes P119's interface graph, links, rendering, and retained-input doctests while keeping public-source examples visibly held for P109.
 - [Migration tool](../60-specification/migration-tool/README.md) completes P125's retained-JSON transaction, exact preview, rollback, semantic recheck, and audit slice while keeping source/API rewrites visibly held for P109.
 - [Formatter](../60-specification/formatter/README.md) completes G118's grammar-independent document algebra, deterministic layout, verbatim origins, source maps, and preview identity while keeping public tree construction and edits visibly held for P109.
+- [Interactive environment](../60-specification/interactive-environment/README.md) completes G120's owned retained-input sessions, explicit capabilities, immutable generations, bounded evaluation, cleanup, and redacted history while keeping the public REPL visibly held for P109.
 
 ## Open questions
 

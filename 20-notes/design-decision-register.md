@@ -1352,3 +1352,15 @@ makes CP-118-1..3 and those implementation choices durable at `0.1.94`;
 compiler PRs 186–187 implement and directly exercise the grammar-independent
 slice without overriding a recommendation. Public tree construction and
 source edits remain held for P109.
+
+## G120 execution links
+
+The [interactive-environment journal](../50-journal/2026-09-12-interactive-environment.md#implementation-decisions)
+records twenty-two four-way implementation decisions for retained input,
+ownership, capabilities, checking, generations, selection, evaluation, jobs,
+interrupts, cleanup, history, governance, limits, and trust placement. The
+[G120 normative contract](../60-specification/interactive-environment/owned-retained-input-sessions.md)
+makes CP-120-1..3 and those implementation choices durable at `0.1.95`;
+compiler PRs 188–191 implement and directly exercise the grammar-independent
+slice without overriding a recommendation. Public input syntax, editing,
+recovery, display, and the command-line REPL remain held for P109.
