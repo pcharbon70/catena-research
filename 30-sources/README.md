@@ -30,6 +30,23 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [An Empirical Investigation into Programming Language Syntax](stefik-siebert-2013-programming-language-syntax.md) — separates syntax-rating evidence from novice code-writing outcomes.
+- [A Replication Study on the Intuitiveness of Programming Language Syntax](lappi-et-al-2023-syntax-intuitiveness-replication.md) — records a Finnish-language replication of intuitiveness ratings and its limits.
+- [Studying the Language and Structure in Non-Programmers' Solutions to Programming Problems](pane-et-al-2001-non-programmer-problem-solutions.md) — examines how non-programmers describe solutions and aggregate operations.
+- [The Linguistics of Programming](gordon-2024-linguistics-of-programming.md) — applies linguistic concepts to programming notation and expectations.
+- [Identifying and Correcting Programming Language Behavior Misconceptions](lu-krishnamurthi-2024-language-behavior-misconceptions.md) — models incorrect interpretations and records mixed formative learning results.
+- [The Effect of Comments on Program Comprehension: An Eye-tracking Study](abdelsalam-et-al-2026-comments-and-comprehension.md) — reports context-dependent comprehension effects in an eye-tracking study.
+- [Improving API Usability](myers-stylos-2016-api-usability.md) — connects vocabulary to API discovery and use.
+- [Swift API Design Guidelines](swift-project-api-design-guidelines.md) — provides official call-site clarity and naming guidance.
+- [Elixir Kernel Pipelines and Their Pitfalls](elixir-project-2026-kernel-pipelines.md) — pins first-argument pipe insertion and documented parsing pitfalls.
+- [Elixir v1.6 Released: The Code Formatter](valim-2018-elixir-formatter.md) — records the formatter's original design goals as firsthand engineering evidence.
+- [Gleam Use Expressions](gleam-project-use-expressions.md) — explains continuation-shaped callback sugar and its guarantee limits.
+- [The Koka Programming Language: Surface Forms and Effect Handlers](leijen-koka-book-surface-and-handlers.md) — distinguishes general control from restricted reply-producing handler forms.
+- [Effekt Effect Safety and Contextual Effect Polymorphism](effekt-project-contextual-effect-polymorphism.md) — explains contextual block effects and why empty requirements need careful interpretation.
+- [Do Be Do Be Do](lindley-et-al-2017-frank.md) — records a formal language design for ambient abilities and implicit effect parameters.
+- [Parsing Expression Grammars: A Recognition-Based Syntactic Foundation](ford-2004-parsing-expression-grammars.md) — defines prioritized recognition separately from usability and recovery claims.
+- [Exploring the Design Space for a Pipeline Operator](revzin-2022-pipeline-operator-design-space.md) — compares alternative pipeline elaborations in a C++ proposal.
+
 - [Erlang/OTP 29 Code Loading and Release Handling](erlang-otp-29-code-loading-and-release-handling.md) — documents current/old module coexistence, managed code change, release workflow, and per-node coordination for C092.
 
 - [CORE-MATH correct-rounding kernels](core-math-correct-rounding-kernels.md) — upstream lead and limits of the current numeric admission evidence.

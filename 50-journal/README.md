@@ -30,6 +30,9 @@ source notes.
 
 ### Documents
 
+- [Grammar and Vocabulary Research](2026-09-12-grammar-and-vocabulary-research.md)
+  — records reading provenance, immutable pre-rewrite inputs, and the OTP 27
+  historical parser conflict-count experiment.
 - [Compiler self-hosting](2026-09-12-self-hosting.md) — G141 staged bootstrap, target, pass order, identity, comparison, dual-suite, residual-service, recovery, distribution, and P109-hold decisions.
 - [Usability gate](2026-09-12-usability-gate.md) — G137 observed-evidence, consent, minimization, cohort, counterbalancing, task, scoring, preregistration, identity, and public-condition-hold decisions.
 - [Editor protocol](2026-09-12-editor-protocol.md) — G123 immutable snapshots, shared analysis, cancellation, stable diagnostics, semantic queries, rename, limits, trust, and public-protocol-hold decisions.

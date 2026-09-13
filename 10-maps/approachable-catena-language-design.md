@@ -29,6 +29,10 @@ path should remain usable without them.
 
 ## Start here
 
+- [Grammar and Vocabulary for Approachable Catena](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
+  compares empirical syntax research, Elixir, effect-language designs, and
+  historical Catena. Its twelve four-way recommendations inform P107/P109
+  without adopting final spellings or claiming observed usability.
 - [Catena Literal Grammar](../20-notes/catena-literal-grammar.md) fixes the
   first programmer-visible value spellings, exact decoding, and source
   provenance while keeping numeric meaning and complete parsing separate.
@@ -55,7 +59,43 @@ path should remain usable without them.
   progressive evaluation.
 - The active
   [vocabulary inquiry](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
-  applies those questions to tasks and sets provisional evidence thresholds.
+  applies those questions to tasks. Its older thresholds are exploratory;
+  the [normative G137 protocol](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md)
+  governs actual cohorts, allowed data, and preregistration.
+
+### Compare expectations with observed performance
+
+- [Stefik and Siebert](../30-sources/stefik-siebert-2013-programming-language-syntax.md)
+  distinguish syntax ratings from novice code-writing tasks;
+  [Lappi and colleagues](../30-sources/lappi-et-al-2023-syntax-intuitiveness-replication.md)
+  replicate the rating line of work, not the programming-performance comparison.
+- [Pane and colleagues](../30-sources/pane-et-al-2001-non-programmer-problem-solutions.md)
+  examine naturally expressed solutions, while
+  [Gordon](../30-sources/gordon-2024-linguistics-of-programming.md) explains how
+  prior language and context can shape expectations.
+- [Lu and Krishnamurthi](../30-sources/lu-krishnamurthi-2024-language-behavior-misconceptions.md)
+  motivate discriminating examples for wrong interpretations.
+  [The 2026 comments study](../30-sources/abdelsalam-et-al-2026-comments-and-comprehension.md)
+  cautions against assuming more explanatory text always improves performance.
+
+### Learn from language designs without importing their semantics
+
+- [Elixir pipelines](../30-sources/elixir-project-2026-kernel-pipelines.md)
+  and [the formatter's introduction](../30-sources/valim-2018-elixir-formatter.md)
+  connect readable flow to actual call rules and deliberate layout.
+- [Koka](../30-sources/leijen-koka-book-surface-and-handlers.md),
+  [Effekt](../30-sources/effekt-project-contextual-effect-polymorphism.md),
+  and [Frank](../30-sources/lindley-et-al-2017-frank.md) offer different
+  arrangements of effect complexity; the Catena synthesis audits the boundaries.
+- [Gleam's use expressions](../30-sources/gleam-project-use-expressions.md)
+  supply callback sugar, whose existence alone promises neither cleanup nor
+  affine control.
+- [API usability](../30-sources/myers-stylos-2016-api-usability.md) and
+  [Swift's guidelines](../30-sources/swift-project-api-design-guidelines.md)
+  connect naming to discovery and clarity at actual use sites.
+- [The historical inspection](../50-journal/2026-09-12-grammar-and-vocabulary-research.md)
+  records Catena's earlier teaching examples, obsolete grammar assumptions,
+  and a reproducible parser observation.
 
 ### Make compiler explanations part of the language
 

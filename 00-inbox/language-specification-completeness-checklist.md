@@ -1604,6 +1604,9 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   canonical behavior-first trait and method ABI and confines formal names to
   reference metadata. Independent comprehension and usability validation is
   still required.
+  The [grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
+  supplies comparative research and candidate recommendations; it does not
+  provide observed comprehension results or complete P107.
 - [x] **P108 — Complete — stability and performance policy.** The normative
   [0.1.87 operation contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md)
   inventories every selected standard role's laws, order, callback
@@ -1653,6 +1656,10 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [decision register](../20-notes/design-decision-register.md)).
   Deferral pointers in shipped chapters that name P109 for declaration
   grammar resolve to this widened scope; none need re-pointing.
+  The [grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md#grammar-candidates-and-four-way-comparisons)
+  is research input to this capstone, including Elixir comparisons and an
+  immutable pre-rewrite Catena audit; its candidate recommendations do not
+  adopt a grammar or change this item's status.
 - [x] **C110 — Complete — checking language.** Normative 0.1.6 fixes an explicitly
   typed pure fragment, exact integer, Boolean, and nested-tuple examples,
   deterministic left-to-right evaluation, distinct failure outcomes, and a
