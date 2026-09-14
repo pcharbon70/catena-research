@@ -2008,6 +2008,12 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   suite pass. Actual Catena compiler source and stages remain absent until P109,
   so G141 remains partial. See the
   [implementation journal](../50-journal/2026-09-12-self-hosting.md).
+  The [feature evolution study](../20-notes/feature-evolution-in-a-self-hosted-catena-compiler.md)
+  supports the adopted [evolution plan](../20-notes/self-hosted-compiler-evolution-plan.md):
+  pinned Catena seeds, delayed internal feature adoption, and a retained Elixir
+  reconstruction chain. Only planning package E0 is complete; the successor
+  contract, actual initial port, seed tooling, and E4–E7 transition/recovery
+  evidence remain outstanding. Planning adoption does not change this partial status.
 
 ## Suggested research order
 

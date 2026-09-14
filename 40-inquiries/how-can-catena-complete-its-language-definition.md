@@ -60,6 +60,11 @@ and implementation gates make them durable.
 - Maintain an integrated corpus and the
   [formal-validation inquiry](what-should-a-greenfield-catena-type-system-guarantee.md#outcome)
   through every admission, rather than delaying assurance to a final phase.
+- Follow the adopted
+  [self-hosted compiler evolution plan](../20-notes/self-hosted-compiler-evolution-plan.md)
+  for G141 preparation and later seed promotion, feature self-adoption,
+  independent coverage, and recovery. Its planning decisions do not supply
+  initial-port or evolution-readiness evidence.
 
 ## Findings
 

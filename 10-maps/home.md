@@ -30,6 +30,14 @@ Elixir and effect-language comparisons, historical Catena observations, and
 four-way candidate recommendations. It preserves the distinction between
 design preparation and observed usability.
 
+The [self-hosted compiler evolution study](../20-notes/feature-evolution-in-a-self-hosted-catena-compiler.md)
+examines how later features can be implemented and adopted without losing a
+reproducible bootstrap. The adopted
+[evolution plan](../20-notes/self-hosted-compiler-evolution-plan.md)
+tracks pinned Catena seeds, delayed internal adoption, retained Elixir recovery,
+and the outstanding contract and implementation work. Its
+[topic map](self-hosted-compiler-evolution.md) connects the plan to the evidence.
+
 ## Active inquiries
 
 - [How can Catena complete its language definition?](../40-inquiries/how-can-catena-complete-its-language-definition.md)

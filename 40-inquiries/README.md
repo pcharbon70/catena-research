@@ -30,6 +30,9 @@ to `20-notes`.
 
 ### Documents
 
+- [How Should Catena Evolve After Self-Hosting?](how-should-catena-evolve-after-self-hosting.md)
+  — tracks seed floors, reconstruction chains, stage comparison, independent
+  evidence, and the normative and empirical validation of the adopted plan.
 - [How Can Catena Complete Its Language Definition?](how-can-catena-complete-its-language-definition.md)
   — tracks the full plan's cross-item dependencies, executable milestones
   and honest completion gates while vocabulary remains held.

@@ -66,6 +66,15 @@ Public vocabulary and the final grammar remain held for later joint design.
 
 ## Open questions
 
+The [self-hosted compiler evolution plan](../20-notes/self-hosted-compiler-evolution-plan.md)
+extends G141 with pinned Catena seeds, feature implementation before internal
+adoption, and retained Elixir reconstruction. Its E0–E7 ledger separates
+completed planning from pending normative and executable work. The
+[topic map](self-hosted-compiler-evolution.md) supplies the evidence route; its
+[inquiry](../40-inquiries/how-should-catena-evolve-after-self-hosting.md)
+keeps empirical and normative validation open without reopening the selected
+general direction.
+
 The [completion inquiry](../40-inquiries/how-can-catena-complete-its-language-definition.md)
 owns cross-item dependencies, proof disposition and the held public adoption
 gate. Focused inquiries continue to own their individual research questions;
