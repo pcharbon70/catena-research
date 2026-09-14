@@ -89,6 +89,12 @@ decisions and 12 cross-cutting decisions. Every decision row is preserved
 verbatim in the register. The initial implementation starts only after this
 coverage check and archive validation passed.
 
+The later [self-hosted compiler evolution plan](self-hosted-compiler-evolution-plan.md)
+adds ten separately registered decisions and forty alternatives for work after
+the initial G141 port. The user requested this planning adoption on 14 September
+2026 based on the completed study. It extends M9 without changing the original
+coverage counts, admitting public vocabulary, or claiming compiler completion.
+
 ## Category theory as a design constraint
 
 The [category-theory synthesis](category-theory-for-programming.md#executive-conclusion)
@@ -159,7 +165,7 @@ changing status prefixes.
 | M6 — tools before public adoption | Build semantic services for 117/119–125: structured diagnostics, docs attachment, sessions, package builds, tests, incremental analysis, debugging and migrations. Prepare 118's comment/formatting constraints. | Real retained-input workloads, deterministic diagnostics, reset/replay, safe edits, build/cache isolation and tooling protocol tests. | 118 and grammar-dependent portions of 119/120/123/125 remain partial until source adoption; no replacement public syntax. |
 | M7 — integrated assurance | Grow 133–136/138/139 throughout M1–M6; complete missing reference rules, generators/shrinkers, rewrite premises, historical compatibility, performance envelope and release criteria. | Cross-feature observations and failure traces, reproducible minimized counterexamples, measured costs, explicit proof ledger and readiness report. | C132 completes targets only. Tests do not prove the outstanding composition lemma. |
 | M8 — later joint vocabulary and grammar | After the user releases the hold, jointly settle 107/109; integrate existing semantics into the agreed parser and language tools, finish 118 and source-dependent services, and run 137. | Lossless parse/adoption and diagnostic corpus; round-trip/idempotent formatting; observed task-based usability; unchanged semantic observations. | This milestone cannot be executed under the present instruction to defer vocabulary. Its alternatives concern process/adoption, not selecting words now. |
-| M9 — release and bootstrap | Apply 139 to the admitted public language; later execute 141 over the sufficient compiler subset, compare stages and preserve rollback. | Published-scope readiness evidence, reproducible bootstrap stages, fixed-point or justified semantic equivalence and retained trusted bootstrap. | No implied publication authorization. Self-hosting does not change the BEAM target. 059/083 stay scoped by their separate inclusion/exclusion gates. |
+| M9 — release, initial bootstrap, and later evolution | Apply 139 to the admitted public language; execute the initial 141 port; then follow the [evolution plan](self-hosted-compiler-evolution-plan.md) for pinned Catena seeds, delayed feature self-adoption, and retained Elixir reconstruction. Source-independent contract and infrastructure preparation can begin before the port. | Initial G141 evidence and later E4–E7 evolution evidence remain separate: real stages, applicable independent suites, declared comparisons, full offline recovery, and measured feature transitions. | P109 and the sufficient subset gate compiler source. The successor evolution contract precedes any build that depends on it. No implied publication authorization or target change. 059/083 retain their own gates. |
 
 ### Breaking dependency cycles
 
@@ -240,7 +246,8 @@ decision alternatives above intact.
 | M1 receive resolution | Complete at 0.1.49 | Explicit amendment, exact lifecycle registration, and stepper/BEAM selection, residual-mailbox and waiting witnesses; see the September 8 journal. |
 | M2–M7 | Planned | Follow dependencies and per-item gates; no claim of implementation from planning. |
 | M8 vocabulary and grammar | Held by user scope | Keep preparation semantic; return to joint design only after the hold is released. |
-| M9 release and self-hosting | Planned with prerequisites | Complete public adoption and measured readiness first. |
+| M9 initial self-hosting | G141 partial; blocked preflight prepared | Actual Catena source, stages, complete dual suites, offline reconstruction, and rollback still depend on P109 and the required subset. See [item 141](language-completion-plan-delivery.md#item-141-compiler-self-hosting). |
+| M9 later compiler evolution | Planning adopted; implementation pending | Ten decisions and E0–E7 delivery packages in the [evolution plan](self-hosted-compiler-evolution-plan.md); E0 alone is complete. The normative successor, seed infrastructure, and measured transitions remain outstanding. |
 
 The first experiments refined M1's dependency order: C047's named exact
 kernel target cannot express its general repeated escaping-effect row.

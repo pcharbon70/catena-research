@@ -29,6 +29,9 @@ should explain why its links belong together rather than merely list files.
 
 ### Documents
 
+- [Self-Hosted Compiler Evolution](self-hosted-compiler-evolution.md)
+  — connects feature-development workflows, bootstrap evidence, primary sources,
+  and Catena's future seed and recovery policy.
 - [Language Completion](language-completion.md) — connects the audited
   checklist to the full implementation plan, decision register and evidence.
 - [Top-Level Effects](top-level-effects.md) — routes the G082

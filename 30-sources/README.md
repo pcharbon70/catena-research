@@ -30,6 +30,17 @@ mentions can remain as citations in the document that uses them.
 
 ### Documents
 
+- [Reflections on Trusting Trust](thompson-1984-reflections-on-trusting-trust.md) — introduces a feature before self-adoption and distinguishes repetition from trust.
+- [Rust Compiler Bootstrap Stages](rust-project-2026-compiler-bootstrap-stages.md) — traces compiler builders, stages, and library dependencies.
+- [Redesigning the Initial Bootstrap Sequence](xu-2025-rust-bootstrap-sequence.md) — documents Rust's compiler and standard-library staging redesign.
+- [Go Source Bootstrap Requirements](go-project-2026-source-bootstrap-requirements.md) — records published bootstrap floors and acquisition routes.
+- [OCaml Compiler Bootstrap Transitions](ocaml-project-2026-compiler-bootstrap.md) — covers runtime primitive and compiled-format transitions.
+- [Goodbye to the C++ Implementation of Zig](kelley-2022-zig-bootstrap.md) — explains a historical seed-artifact transition and its reconstruction tradeoff.
+- [GCC Bootstrap Builds and Stage Comparison](gcc-project-2026-bootstrap-builds.md) — documents native bootstrap comparisons and their scope.
+- [A Nanopass Framework for Commercial Compiler Development](keep-et-al-2013-nanopass-compiler-development.md) — connects explicit intermediate languages to compiler architecture and evaluation.
+- [The Verified CakeML Compiler Backend](tan-et-al-2019-verified-cakeml-backend.md) — records proof-producing bootstrap construction and translation obligations.
+- [A Minimalistic Verified Bootstrapped Compiler](myreen-2021-minimalistic-verified-bootstrap.md) — separates self-application from a mechanized correctness result.
+- [Fully Countering Trusting Trust through Diverse Double-Compiling](wheeler-2009-diverse-double-compiling.md) — states source-correspondence evidence and its assumptions.
 - [An Empirical Investigation into Programming Language Syntax](stefik-siebert-2013-programming-language-syntax.md) — separates syntax-rating evidence from novice code-writing outcomes.
 - [A Replication Study on the Intuitiveness of Programming Language Syntax](lappi-et-al-2023-syntax-intuitiveness-replication.md) — records a Finnish-language replication of intuitiveness ratings and its limits.
 - [Studying the Language and Structure in Non-Programmers' Solutions to Programming Problems](pane-et-al-2001-non-programmer-problem-solutions.md) — examines how non-programmers describe solutions and aggregate operations.

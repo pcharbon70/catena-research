@@ -30,6 +30,9 @@ source notes.
 
 ### Documents
 
+- [Self-Hosted Feature Evolution Research](2026-09-14-self-hosted-feature-evolution-research.md)
+  — records primary-source reading, a read-only G141 preflight audit, and the
+  subsequent adoption of ten planning decisions with outstanding work packages.
 - [Grammar and Vocabulary Research](2026-09-12-grammar-and-vocabulary-research.md)
   — records reading provenance, immutable pre-rewrite inputs, and the OTP 27
   historical parser conflict-count experiment.

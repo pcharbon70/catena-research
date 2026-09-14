@@ -32,6 +32,12 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Self-Hosted Compiler Evolution Plan](self-hosted-compiler-evolution-plan.md)
+  — adopts ten four-option decisions and eight tracked work packages for
+  initial-bootstrap preparation, later feature adoption, seed promotion, and recovery.
+- [Feature Evolution in a Self-Hosted Catena Compiler](feature-evolution-in-a-self-hosted-catena-compiler.md)
+  — compares feature implementation and self-adoption workflows, qualitative
+  difficulty, seed policies, evidence limits, and Catena's remaining decisions.
 - [Grammar and Vocabulary for Approachable Catena](grammar-and-vocabulary-for-approachable-catena.md)
   — compares empirical research, Elixir, effect-language designs, and historical
   Catena; develops twelve four-way research recommendations and a validation path.

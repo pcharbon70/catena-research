@@ -1320,6 +1320,16 @@ silently changes the admitted type system.
 
 ## Item 141 — Compiler self-hosting
 
+**Current planning update:** the user requested adoption of the
+[feature evolution study](feature-evolution-in-a-self-hosted-catena-compiler.md).
+The [follow-on implementation plan](self-hosted-compiler-evolution-plan.md)
+selects pinned Catena seeds for routine development, a conservative source
+floor, implementation before internal feature adoption, and an immutable chain
+back to Elixir. Its ten SHE decisions and E0–E7 work packages extend the original
+CP-141 decisions. Planning is adopted; G141 remains partial at the blocked
+`0.1.98` preflight, with no actual Catena stages. The current normative contract
+remains in force until an explicit successor admits the later evolution policy.
+
 **Baseline:** G141, an open **late-0.x** milestone. **Depends on:** usable P101–P106,
 P109/P117/P121, G095/G096, P099/P128/P133/P134/P136/G139.
 **Basis:** [language completion scope](../00-inbox/language-specification-completeness-checklist.md),
@@ -1344,8 +1354,19 @@ P109/P117/P121, G095/G096, P099/P128/P133/P134/P136/G139.
    and a further comparison stage when needed; compare compiler artifacts under
    P128's exact envelope or use an explicitly justified semantic oracle if bytes
    cannot yet match. Record every residual bootstrap component.
-4. Run the full conformance, differential, historical compatibility, and package
-   suites under both implementations; perform a real rollback/rebootstrap drill.
+4. Run the full conformance, differential, historical compatibility, packaging,
+   and representative application corpus suites under both implementations;
+   perform a real rollback/rebootstrap drill.
+5. In the [evolution plan's E1](self-hosted-compiler-evolution-plan.md#e1-evolution-contract),
+   specify the distinction between the initial recovery root and routine seed,
+   exact bootstrap edges, source floors, stage comparison, later independent
+   coverage, and host recovery. Prepare this independently of public source;
+   no build may rely on changed obligations before explicit applicability.
+6. After the initial G141 gate, execute
+   [E4–E7](self-hosted-compiler-evolution-plan.md#e4-promotion-and-recovery):
+   promote a reproducible Catena seed, implement a feature using its supported
+   subset, test the result, then promote again if needed before internal use.
+   Exercise semantic/runtime transitions and retain the complete recovery chain.
 
 **Acceptance:** the Catena implementation rebuilds the compiler and compiles the
 same application corpus; altered bootstrap/artifact identities and hidden Elixir
@@ -1354,6 +1375,13 @@ interrupted upgrades, and rollback are exercised. **Gate:** self-hosting means
 actual compiler passes are implemented in Catena with declared residual host
 services; it is not a wrapper, and it does not establish freedom from a malicious
 bootstrap merely by reaching a fixed point.
+
+**Later evolution acceptance:** the initial G141 evidence does not establish
+that future source-floor, library, or runtime changes can be bootstrapped.
+The companion plan separately requires candidate-bound seed promotion,
+independent extension evidence, declared stage comparisons, full offline chain
+replay, and actual rollback and feature-transition witnesses. E0's planning
+completion supplies none of those witnesses.
 
 ## Cross-item sequencing and open holds
 
