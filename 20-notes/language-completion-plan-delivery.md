@@ -443,6 +443,11 @@ P101–P106; coordinates G137/P109. **Basis:**
 [approachable vocabulary research](approachable-language-vocabulary.md) and
 [existing normative hierarchy](../60-specification/traits-and-categorical-operations/standard-hierarchy-and-vocabulary.md).
 
+The [grammar and vocabulary study](grammar-and-vocabulary-for-approachable-catena.md)
+adds empirical evidence, vocabulary risks, and candidate comparisons for this
+item. Its recommendations remain research inputs; existing ABI and completion
+status are unchanged.
+
 | Decision | Explored alternatives and tradeoffs | Selected recommendation and rationale |
 | --- | --- | --- |
 | CP-107-1 | A: rename existing ABI now, premature and breaking; B: retain existing ABI and record unnamed semantic gaps, disciplined; C: expose mathematical synonyms beside every name, doubles vocabulary; D: suppress the semantic ledger, loses rigor. | **B**, recommended and agent-selected: the user explicitly holds new vocabulary; existing normative names remain historical contracts. |
@@ -492,6 +497,11 @@ no constant-time or ABI guarantee is inferred from one benchmark.
 **Depends on:** settled semantic items, P107, P117; feeds G118/P119/G120/G123/G141.
 **Basis:** the [checklist's widened capstone scope](../00-inbox/language-specification-completeness-checklist.md)
 and [approachable-language design map](../10-maps/approachable-catena-language-design.md).
+
+The [grammar and vocabulary study](grammar-and-vocabulary-for-approachable-catena.md#grammar-candidates-and-four-way-comparisons)
+compares twelve four-way design forks, audits pre-rewrite syntax, and proposes
+candidate parser, formatter, diagnostic, and usability cases. These are
+unexecuted recommendations for later co-design, not adopted productions.
 
 | Decision | Explored alternatives and tradeoffs | Selected recommendation and rationale |
 | --- | --- | --- |

@@ -17,6 +17,18 @@ aliases:
 
 # How Should Catena Expose Mathematical Structure Without Mathematical Jargon?
 
+## Current protocol authority
+
+The [September grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
+extends this inquiry's evidence and design alternatives. The
+[normative G137 protocol](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md)
+now governs any study claiming that gate: six pilot and 24 main participants,
+two balanced strata, four metrics, restricted coded fields, and thresholds
+preregistered after the pilot. The richer participant descriptions,
+open-ended responses, and numerical targets below are earlier exploratory
+proposals, not the current authorized protocol. A different exploratory
+study or a protocol amendment would be needed to collect additional fields.
+
 ## Why this matters
 
 Catena aims to make strong compositional guarantees available to programmers
@@ -210,6 +222,15 @@ discover problems but cannot establish population-level success.
 
 ## Findings
 
+- The [grammar and vocabulary synthesis](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
+  separates ratings, task performance, formal mechanisms, and engineering
+  precedents. It recommends explicit dependency and effect boundaries with
+  progressive formal detail, while leaving candidate spelling and comparative
+  performance unresolved.
+- The [historical parser experiment](../50-journal/2026-09-12-grammar-and-vocabulary-research.md#historical-parser-experiment)
+  reproduces 38 shift/reduce conflicts under OTP 27 against a comment claiming
+  17. This is grammar-maintenance evidence, not a human-comprehension result
+  or proof of incorrect parsing.
 - Cognitive dimensions provide a structured way to inspect closeness,
   consistency, hidden dependencies, abstraction gradient, and progressive
   evaluation, but they do not validate any candidate name. See

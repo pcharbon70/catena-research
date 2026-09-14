@@ -32,6 +32,9 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Grammar and Vocabulary for Approachable Catena](grammar-and-vocabulary-for-approachable-catena.md)
+  — compares empirical research, Elixir, effect-language designs, and historical
+  Catena; develops twelve four-way research recommendations and a validation path.
 - [Catena Language Completion Plan](language-completion-plan.md) — sequences
   all 141 checklist items, delegated decisions, implementation milestones
   and evidence gates while keeping public vocabulary held.

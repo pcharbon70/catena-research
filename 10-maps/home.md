@@ -24,6 +24,12 @@ turns that ledger into per-item decisions and executable milestones. Its
 record to implementation evidence. Public vocabulary and the final grammar
 remain held for later joint design.
 
+The [grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
+supplies current research for that design: empirical comprehension evidence,
+Elixir and effect-language comparisons, historical Catena observations, and
+four-way candidate recommendations. It preserves the distinction between
+design preparation and observed usability.
+
 ## Active inquiries
 
 - [How can Catena complete its language definition?](../40-inquiries/how-can-catena-complete-its-language-definition.md)

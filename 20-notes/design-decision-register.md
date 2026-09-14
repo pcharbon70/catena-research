@@ -1405,3 +1405,15 @@ makes CP-141-1..4 and those preparation choices durable at `0.1.98`; compiler
 PR 195 implements and exercises the preflight without overriding a
 recommendation. Actual Catena compiler source, stages, and human-authored public
 syntax remain absent pending P109.
+
+## P107 and P109 research inputs
+
+The [grammar and vocabulary study](grammar-and-vocabulary-for-approachable-catena.md)
+and [research journal](../50-journal/2026-09-12-grammar-and-vocabulary-research.md)
+extend the evidence for CP-107-2/3 and CP-109-1/2/3. The study's GV-01 through
+GV-12 tables and lists enumerate four alternatives and a research
+recommendation for each question. None is implemented or adopted by this
+research change; the original selected CP decisions above remain in force.
+When a later plan executes a candidate, record its actual choice, any
+recommendation override, and durable specification and implementation links
+here in that same change. Research preparation does not close P107/P109/G137.
