@@ -29,6 +29,11 @@ path should remain usable without them.
 
 ## Start here
 
+- [Catena First-Version Grammar and Vocabulary](../20-notes/catena-first-version-grammar-and-vocabulary.md)
+  selects concrete candidate expressions, explains the choices, and shows
+  representative programs. The user authorized this design on 15 September
+  2026 and excluded participant studies during development. Normative adoption
+  and implementation remain pending; observed usability is not claimed.
 - [Grammar and Vocabulary for Approachable Catena](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
   compares empirical syntax research, Elixir, effect-language designs, and
   historical Catena. Its twelve four-way recommendations inform P107/P109
@@ -46,8 +51,8 @@ path should remain usable without them.
   proposes the behavior-first terms, operation families, capability names,
   internal semantic ledger, diagnostic shape, and learning sequence.
 - [How Should Catena Expose Mathematical Structure Without Mathematical Jargon?](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
-  turns the proposal into prediction, selection, transfer, repair, collision,
-  and semantic-audit tests.
+  tracks semantic questions and historical prediction, selection, transfer,
+  and repair research; participant-study paths are outside development scope.
 
 ## Trails
 
@@ -59,9 +64,10 @@ path should remain usable without them.
   progressive evaluation.
 - The active
   [vocabulary inquiry](../40-inquiries/how-should-catena-expose-mathematical-structure-without-mathematical-jargon.md)
-  applies those questions to tasks. Its older thresholds are exploratory;
+  applies those questions to tasks. Its participant paths and older thresholds
+  are historical research proposals outside current development;
   the [normative G137 protocol](../60-specification/usability-gate/observed-prediction-transfer-and-repair.md)
-  governs actual cohorts, allowed data, and preregistration.
+  governs any future claim under that retained contract and remains unpassed.
 
 ### Compare expectations with observed performance
 
@@ -135,11 +141,13 @@ path should remain usable without them.
 
 ### Move from prototypes to guides
 
-The next artifact should be a small set of controlled guide prototypes, not a
-complete documentation suite. The prototypes should test `map`, independent
+The first-version proposal now provides concrete forms and examples. The next
+development step is versioned adoption and a shared parser/elaborator, with
+semantic comparison, formatting, and diagnostic cases for `map`, independent
 `map2`, dependent `and_then`, structure-wide `collect_map`, trait guarantees,
-effects, and process failure in one continuing example. Results should feed
-back into the inquiry before names or syntax are stabilized.
+effects, and process failure. Explain successful cases and deliberate errors
+through the same rules. These development checks do not constitute participant
+observations or satisfy the historical G137 evidence gate.
 
 ## Open questions
 

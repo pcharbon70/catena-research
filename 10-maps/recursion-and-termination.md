@@ -20,8 +20,8 @@ guarantee, C029's divergence clause, C031's definitions-only boundary,
 and the three shipped meta-level regimes (C003 conditions, C006
 specification checking, C004 laws), to the C034 decision artifacts —
 the unrestricted stance, the cited separation table, the G038 entry
-rule — and the owners of compile-time evaluation, failure, and
-cancellation.
+rule, and the 0.1.99 opt-in totality amendment — and the owners of
+source adoption, compile-time evaluation, failure, and cancellation.
 
 ## Start here
 
@@ -30,7 +30,10 @@ cancellation.
 - [Resolved recursion inquiry](../40-inquiries/how-does-catena-separate-recursion-from-termination.md)
   records the operational question, hypotheses, and resolution.
 - [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
-  is the normative version 0.1.31 contract.
+  contains the normative version 0.1.31 contract and its 0.1.99 amendment.
+- [Opt-In Totality Validity Amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+  preserves ordinary unrestricted recursion while permitting a later explicit
+  total declaration to gate its own validity under a closed admission contract.
 - [C034 evidence record](../50-journal/2026-08-26-c034-recursion.md)
   records the witness evidence and verification.
 - [Functions and Calls map](functions-and-calls.md) fixes the tail
@@ -60,14 +63,17 @@ cancellation.
 ### Limits and traceability
 
 - [Conformance Traceability](conformance-traceability.md) registers
-  `RT-OBL-001` through `RT-OBL-008` against normative anchors and
-  immutable sibling compiler evidence.
+  the fully traced historical `RT-OBL-001`–`RT-OBL-008` set and the partial
+  0.1.99 amendment obligations `RT-OBL-009`–`RT-OBL-015`.
 - G038 compile-time evaluation under the gate; P109 syntax; G036
   failure taxonomy (divergence outside it); P084 process loops; G088
   cancellation remain the future owners.
 
 ## Open questions
 
-C034 is complete at revision `0.1.31`. G038 arrives total-or-bounded
-or not at all; any termination checker arrives as a gated opt-in
-analysis.
+C034 remains complete for its historical revision `0.1.31`. Revision `0.1.99`
+replaces the permanent ban on validity gating with a closed admission rule:
+ordinary recursion stays unrestricted, while a later explicitly marked total
+declaration can be rejected when its required proof is absent. P109 still owns
+the source form and implementation, and exact 0.1.99 compiler evidence remains
+pending. G038 continues to arrive total-or-bounded or not at all.

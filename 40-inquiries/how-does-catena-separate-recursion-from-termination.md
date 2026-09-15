@@ -99,3 +99,14 @@ and the forks in the [design decision
 register](../20-notes/design-decision-register.md). G038 compile-time
 evaluation design, P109 syntax, G036 failure taxonomy, and G088
 cancellation remain open with their owners.
+
+## Post-resolution amendment (2026-09-15)
+
+The user later approved an explicit checked `total transform`. That decision
+supersedes only Hypothesis 2's permanent exclusion of validity changes. The
+normative
+[0.1.99 opt-in totality amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+preserves every ordinary-recursion conclusion above while permitting a later
+source slice to reject an explicitly total declaration whose required proof is
+not established. The amendment itself admits no source form or checker; P109
+still owns that adoption and its executable evidence.

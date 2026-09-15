@@ -36,14 +36,24 @@ preserves the alternatives, recommendations, selections, and their provenance.
 Implementation discoveries requiring another decision get the same four-option
 treatment in the execution journal before the dependent change is made.
 
-**Public vocabulary is held.** Do not select new keywords, capability names,
-standard-library spellings, pedagogical names, or a complete source grammar
-during this work. P107 and P109 keep their later joint design gate. Existing
-normative names and retained JSON/kernel notation remain usable as historical
-and executable interfaces; using them to test semantics does not endorse them
-as the final public vocabulary. Tool internals and semantic models can be
-implemented before public naming is selected. A grammar-dependent item stays
-partial until its actual parser/adoption obligations can be met.
+**Current scope — 15 September 2026.** The user released the P107/P109 design
+hold, accepted the grammar research directions, and requested concrete
+first-version spellings with explanations and examples. The
+[first-version grammar and vocabulary](catena-first-version-grammar-and-vocabulary.md)
+records that candidate design. It is not yet a normative source revision or
+an implemented parser. Existing normative names and retained JSON/kernel
+interfaces keep their versioned meaning; source-dependent items remain
+partial until their actual adoption and implementation obligations are met.
+
+Human participant studies are outside language development by explicit user
+instruction. Use semantic audits, representative programs, adversarial grammar
+cases, formatting, diagnostics, and automated conformance during development.
+These checks do not establish observed human comprehension. G137's retained
+`0.1.97` evidence contract remains unpassed; changing G139's complete/stable
+release requirements needs a successor normative policy, migration, and
+readiness-profile update before making those claims. The original decision
+tables below preserve their historical alternatives; this scope update governs
+current work.
 
 The governing authority is
 [Specification Authority](../SPECIFICATION-AUTHORITY.md#conflict-resolution),
@@ -160,11 +170,11 @@ changing status prefixes.
 | M1 — repair recorded gaps | Execute 050/053/057 together; then resolve 086's scan/starvation contradiction with explicit normative applicability and fixtures. Run relevant 001–079 preservation cases as dependencies. | Exact effect order/multiplicity and failure-prefix agreement on reference/BEAM; receive scan and retained-message witnesses; honest registry/checklist updates. | No new vocabulary; no weakening normative requirements to satisfy existing code. |
 | M2 — lifetime and local concurrency | Specify 080 and 088's shared cancellation/cleanup interface; implement 084 and the local facets of 085, then 087/090 and 089's lifecycle adapter. Establish the outcome shape and 093/097 representation interfaces as needed. | Resource event traces, affine escape rejection, cancellation races, typed local delivery and supervised restart model agree with BEAM. | Ordinary ADTs can model outcomes before 103's named library. 089 needs a narrow checked OTP adapter; 085's remote facet waits for 091. |
 | M3 — checked host boundary | Co-design the shared 093–100/106/126/127/129/131 interfaces; implement checked ingress before foreign adapters, then complete the host-boundary integration jointly with M4. | Admission/rejection corpus, calling-convention and failure mapping, metadata and supported-OTP witnesses. | Initial adapters use explicit harness authority, never ambient services. Whole-item completion waits for the promised callback, provisioning and lifecycle integration. Native code remains an explicitly classified trust boundary. |
-| M4 — practical library semantics | Complete 101–106/108 with minimal coherent operations, explicit outcomes, numeric/text semantics and environmental capabilities. | Law-qualified data composition, operational order, invalid input and resource/failure tests; a capability-supplied tool computation runs. | 107 public names held. 106 must explicitly amend the current zero-argument entry boundary if capability parameters are admitted. |
+| M4 — practical library semantics | Complete 101–106/108 with minimal coherent operations, explicit outcomes, numeric/text semantics and environmental capabilities. | Law-qualified data composition, operational order, invalid input and resource/failure tests; a capability-supplied tool computation runs. | 107 public names require versioned adoption after the authorized design. 106 must explicitly amend the retained zero-argument entry boundary if capability parameters are admitted. |
 | M5 — distribution and operations | Complete 091/092 after local process, foreign identity, compatibility and migration interfaces; integrate 116/121/128/130. | Node/version disagreement, serialization, disconnect, upgrade/rollback and locked-build evidence. | Distribution and hot upgrades are admitted only through their own scope and failure contracts, never assumed from BEAM availability. |
 | M6 — tools before public adoption | Build semantic services for 117/119–125: structured diagnostics, docs attachment, sessions, package builds, tests, incremental analysis, debugging and migrations. Prepare 118's comment/formatting constraints. | Real retained-input workloads, deterministic diagnostics, reset/replay, safe edits, build/cache isolation and tooling protocol tests. | 118 and grammar-dependent portions of 119/120/123/125 remain partial until source adoption; no replacement public syntax. |
 | M7 — integrated assurance | Grow 133–136/138/139 throughout M1–M6; complete missing reference rules, generators/shrinkers, rewrite premises, historical compatibility, performance envelope and release criteria. | Cross-feature observations and failure traces, reproducible minimized counterexamples, measured costs, explicit proof ledger and readiness report. | C132 completes targets only. Tests do not prove the outstanding composition lemma. |
-| M8 — later joint vocabulary and grammar | After the user releases the hold, jointly settle 107/109; integrate existing semantics into the agreed parser and language tools, finish 118 and source-dependent services, and run 137. | Lossless parse/adoption and diagnostic corpus; round-trip/idempotent formatting; observed task-based usability; unchanged semantic observations. | This milestone cannot be executed under the present instruction to defer vocabulary. Its alternatives concern process/adoption, not selecting words now. |
+| M8 — first-version vocabulary and grammar | Develop the authorized [candidate](catena-first-version-grammar-and-vocabulary.md), then adopt 107/109 through versioned rules, a shared parser and language tools; finish 118 and source-dependent services. | Semantic audit, source/retained-input equivalence, adversarial parsing and diagnostic cases, round-trip/idempotent formatting, and unchanged semantic observations. | Design hold released on 15 September 2026. Human studies are excluded from development; observed usability remains unclaimed. Candidate prose alone does not complete source adoption. |
 | M9 — release, initial bootstrap, and later evolution | Apply 139 to the admitted public language; execute the initial 141 port; then follow the [evolution plan](self-hosted-compiler-evolution-plan.md) for pinned Catena seeds, delayed feature self-adoption, and retained Elixir reconstruction. Source-independent contract and infrastructure preparation can begin before the port. | Initial G141 evidence and later E4–E7 evolution evidence remain separate: real stages, applicable independent suites, declared comparisons, full offline recovery, and measured feature transitions. | P109 and the sufficient subset gate compiler source. The successor evolution contract precedes any build that depends on it. No implied publication authorization or target change. 059/083 retain their own gates. |
 
 ### Breaking dependency cycles
@@ -244,8 +254,8 @@ decision alternatives above intact.
 | M1 first implementation | Complete within its bounded scope | Backend call/handler repairs and real locally handled comprehension traces applied in `../catena`; 624 full-suite tests, clean compilation, formatting and escript build pass. The journal records the remaining general-effect boundary. |
 | M1 general comprehension effects | C050/C053/C057 complete | The 0.1.50 closed capability target now checks fragment rows, preserves enclosing handlers and emits distinct BEAM artifacts. Exact C010 remains unchanged. |
 | M1 receive resolution | Complete at 0.1.49 | Explicit amendment, exact lifecycle registration, and stepper/BEAM selection, residual-mailbox and waiting witnesses; see the September 8 journal. |
-| M2–M7 | Planned | Follow dependencies and per-item gates; no claim of implementation from planning. |
-| M8 vocabulary and grammar | Held by user scope | Keep preparation semantic; return to joint design only after the hold is released. |
+| M2–M7 | See current per-item evidence | The [live checklist](../00-inbox/language-specification-completeness-checklist.md) records completed semantic/runtime/tool foundations and remaining integration work. The historical milestone grouping is not a fresh implementation audit. |
+| M8 vocabulary and grammar | Candidate design authorized; implementation pending | The [first-version proposal](catena-first-version-grammar-and-vocabulary.md) selects concrete forms from the accepted research. P107/P109 remain partial until normative adoption, parser/elaborator work, and source-tooling evidence. Human studies are outside development scope. |
 | M9 initial self-hosting | G141 partial; blocked preflight prepared | Actual Catena source, stages, complete dual suites, offline reconstruction, and rollback still depend on P109 and the required subset. See [item 141](language-completion-plan-delivery.md#item-141-compiler-self-hosting). |
 | M9 later compiler evolution | Planning adopted; implementation pending | Ten decisions and E0–E7 delivery packages in the [evolution plan](self-hosted-compiler-evolution-plan.md); E0 alone is complete. The normative successor, seed infrastructure, and measured transitions remain outstanding. |
 

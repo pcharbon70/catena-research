@@ -4,6 +4,8 @@
 import json
 import unittest
 from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
 import jsonschema
 
@@ -12,12 +14,98 @@ from validate_archive import (
     PROTOTYPE_SPECIFICATION_VERSIONS,
     conformance_vocabulary_link_errors,
     implementation_limits_link_errors,
+    markdown_links,
     specification_authority_link_errors,
     specification_structure_errors,
     specification_vocabulary_errors,
     traceability_registry_errors,
     variability_register_errors,
+    validate,
 )
+
+
+class MarkdownLinkTests(unittest.TestCase):
+    def test_fenced_source_examples_are_not_links(self) -> None:
+        self.assertEqual(
+            [(8, "real.md")],
+            markdown_links(
+                "```catena\nidentity[Int](1)\n```\n"
+                "~~~text\n[example](missing.md)\n~~~\n\n[real](real.md)\n"
+            ),
+        )
+
+    def test_fence_closer_must_match_character_and_minimum_length(self) -> None:
+        self.assertEqual(
+            [(7, "real.md")],
+            markdown_links(
+                "````text\n```\n~~~\n```` not a closer\n"
+                "[example](missing.md)\n`````\n[real](real.md)\n"
+            ),
+        )
+
+    def test_quoted_indented_and_unclosed_fences_hide_literal_links(self) -> None:
+        for opening, closing in (("> ```", "> ```"), ("  ~~~", "  ~~~")):
+            with self.subTest(opening=opening):
+                self.assertEqual(
+                    [(4, "real.md")],
+                    markdown_links(f"{opening}\n[code](missing.md)\n{closing}\n[real](real.md)"),
+                )
+        self.assertEqual([], markdown_links("```\n[code](missing.md)\n"))
+
+    def test_inline_code_uses_matching_backtick_run_lengths(self) -> None:
+        self.assertEqual(
+            [(1, "real.md"), (2, "also-real.md")],
+            markdown_links(
+                "`identity[Int](1)` ``a ` [fake](missing.md)`` [real](real.md)\n"
+                "```inline [fake](missing.md) `` still code``` [also](also-real.md)\n"
+            ),
+        )
+
+    def test_multiline_code_spans_and_unmatched_delimiters(self) -> None:
+        self.assertEqual(
+            [(3, "real.md"), (5, "next.md")],
+            markdown_links(
+                "`a\n[fake](missing.md)`\n[real](real.md) `unmatched\n\n"
+                "[next](next.md) `also unmatched\n"
+            ),
+        )
+
+    def test_code_formatted_link_labels_remain_real_links(self) -> None:
+        self.assertEqual(
+            [(1, "file.md#heading"), (1, "nested.md"), (1, "image.png")],
+            markdown_links(
+                "[`file.py`](file.md#heading) [``type[Int]``](nested.md) "
+                "![`diagram`](image.png)\n"
+            ),
+        )
+
+    def test_escaped_backtick_is_not_a_code_span_opener(self) -> None:
+        self.assertEqual(
+            [(1, "real.md")],
+            markdown_links(r"\`[real](real.md) `unmatched"),
+        )
+
+    def test_validation_reports_real_broken_link_and_keeps_inventory_checks(self) -> None:
+        with TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "README.md").write_text(
+                "# Archive\n\n```catena\nidentity[Int](1)\n[hidden](child.txt)\n```\n"
+                "`[example](other-missing.md)`\n[`broken`](missing.md)\n"
+                "[`indexed child`](indexed.txt)\n",
+                encoding="utf-8",
+            )
+            (root / "child.txt").write_text("inventory child\n", encoding="utf-8")
+            (root / "indexed.txt").write_text("indexed child\n", encoding="utf-8")
+            with patch("validate_archive.ROOT", root), patch(
+                "validate_archive.ARCHIVE_DIRECTORIES", set()
+            ):
+                errors, _counts = validate()
+            self.assertEqual(
+                ["README.md:8: missing local link target: missing.md"],
+                [error for error in errors if "missing local link target" in error],
+            )
+            self.assertIn("README.md: unindexed direct child 'child.txt'", errors)
+            self.assertNotIn("README.md: unindexed direct child 'indexed.txt'", errors)
 
 
 class SpecificationStructureTests(unittest.TestCase):
@@ -207,6 +295,11 @@ class SpecificationVersionTests(unittest.TestCase):
                 "excluded-advanced-type-features": "0.1.44",
                 "progress-and-preservation": "0.1.45",
                 "selective-receive": "0.1.46",
+                "selective-receive-correction": "0.1.49",
+                "closed-capability-kernel": "0.1.50",
+                "resource-scopes": "0.1.51",
+                "process-lifetimes": "0.1.52",
+                "cancellation-and-time": "0.1.53",
                 "exception-boundary": "0.1.47",
                 "top-level-effects": "0.1.48",
             },

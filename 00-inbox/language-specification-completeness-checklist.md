@@ -80,13 +80,23 @@ use the status prefix below; historical promotion records, immutable test
 names, and machine-profile strings may retain their recorded prefix. Dated
 journals and snapshots are historical evidence, not current status summaries.
 
-The current checkboxes total **128 complete, 6 partial, 5 gaps, and 2
+The current checkboxes total **128 complete, 11 partial, 0 gaps, and 2
 deferred: 141 items**. Counts measure item coverage, not remaining effort.
 The audit reopened four formerly checked items (P050/P053/P057/P086); C086
 is restored by the 8 September correction at `0.1.49`. The current next unused
-semantic patch is `0.1.93`; the closed target at `0.1.50` restores C050. In the audit, 22 gaps
-are reclassified as partial because bounded work already exists. No new
+semantic patch is `0.1.100` after the C034 amendment at `0.1.99`; the closed target at `0.1.50`
+restores C050. In the audit, 22 gaps are reclassified as partial because
+bounded work already exists. No new
 item is marked complete by this audit.
+
+**Current design scope — 15 September 2026.** The user released P107/P109's
+design hold and requested the [first-version grammar and vocabulary](../20-notes/catena-first-version-grammar-and-vocabulary.md).
+The proposal is a concrete candidate, not normative adoption or compiler
+implementation. Human studies are outside language development; semantic and
+automated checks do not pass G137's historical observed-evidence gate. G139
+requires an explicit successor policy before its old complete/stable claim
+requirements can change. The totals above are reconciled from the item status
+labels, not a new implementation audit; no checkbox changes in this design step.
 
 | Section | Complete | Partial | Gap | Deferred | Total |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -104,10 +114,10 @@ item is marked complete by this audit.
 | 11. BEAM representation and Erlang interoperability | 7 | 1 | 0 | 0 | 8 |
 | 12. Standard library contract | 7 | 1 | 0 | 0 | 8 |
 | 13. Specifications, governance, and erasure | 7 | 1 | 0 | 0 | 8 |
-| 14. Diagnostics, tools, and developer experience | 3 | 3 | 3 | 0 | 9 |
+| 14. Diagnostics, tools, and developer experience | 3 | 6 | 0 | 0 | 9 |
 | 15. Security, reproducibility, and operational limits | 6 | 0 | 0 | 0 | 6 |
-| 16. Formal validation and release gates | 7 | 0 | 2 | 0 | 9 |
-| **Total** | **128** | **6** | **5** | **2** | **141** |
+| 16. Formal validation and release gates | 7 | 2 | 0 | 0 | 9 |
+| **Total** | **128** | **11** | **0** | **2** | **141** |
 
 ### Prototype numbering note
 
@@ -847,11 +857,15 @@ implementation evidence. Their remaining extensions have separate owners below.
   [resolved inquiry](../40-inquiries/how-does-catena-separate-recursion-from-termination.md),
   [topic map](../10-maps/recursion-and-termination.md), and
   [C034 record](../50-journal/2026-08-26-c034-recursion.md) fix
-  the separation: program recursion is unrestricted — divergence is
-  non-termination (never a trap, never undefined behavior), the tail
-  guarantee is the only stack promise, and no expression-level
-  totality checking exists, with any future checker gated as an
-  opt-in analysis; every meta-level evaluator is total-or-bounded by
+  the historical separation: program recursion is unrestricted — divergence
+  is non-termination (never a trap, never undefined behavior), and the tail
+  guarantee is the only general stack promise. The normative
+  [0.1.99 amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+  replaces only the permanent ban on validity-gating totality analysis. A
+  later explicitly total declaration may gate its own validity after its
+  admitting slice supplies the complete proof, independent-verification,
+  diagnostic, compatibility, limit, and evidence contract; unmarked recursion
+  remains unrestricted. Every meta-level evaluator remains total-or-bounded by
   its own shipped mechanism (conditions acyclic with `CND004`,
   specification examples under the fixed 20,000-step checker, laws
   with bounded samples); and any recursive-total fragment — C038
@@ -863,7 +877,10 @@ implementation evidence. Their remaining extensions have separate owners below.
   the stepper's budget-exhaustion divergence witness, tail
   termination, the `CND004` regression, and the bounded-regime
   matrix. Zero new diagnostic families. C038 subsequently applies the gate to compilation; C036 fixes the
-  failure taxonomy, with divergence outside it.
+  failure taxonomy, with divergence outside it. The original `0.1.31`
+  implementation evidence remains complete. Exact `0.1.99` lifecycle and
+  absence evidence is partial, and the amendment deliberately admits no source
+  form or totality checker; those remain P109 work.
 - [x] **C035 — Complete — equality and ordering of primitive values.**
   The normative
   [0.1.30 equality specification](../60-specification/equality-and-ordering/README.md),
@@ -1553,7 +1570,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   and lock replay. Opt-out supplies no standard interfaces or implicit names;
   importing services grants no authority. [Evidence](../50-journal/2026-09-09-minimum-prelude.md)
   includes foundation laws and compiled transformation, validation, numeric, text
-  and actual capability-using applications. Public vocabulary and grammar remain held.
+  and actual capability-using applications. Public vocabulary and grammar await adoption.
 - [x] **C102 — Complete — collection protocols.** The
   [0.1.65 contract](../60-specification/collection-protocols/finite-families-and-owned-pulls.md)
   defines ordinary finite families, semantic key order, strict duplicate failure,
@@ -1562,7 +1579,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   conversion and retained pull evidence; early stop, owner death and abandonment
   have mandatory bounded release. The [executed evidence](../50-journal/2026-09-09-collection-protocols.md)
   covers compiled dictionaries, independent laws, large lists, typed collisions,
-  callback refusal and pull/release traces. Public vocabulary remains held.
+  callback refusal and pull/release traces. Public vocabulary awaits adoption.
 - [x] **C103 — Complete — outcome types.** The
   [0.1.54 contract](../60-specification/outcome-contracts/values-sequencing-and-validation.md)
   defines ordinary optional and dependent values, nonempty accumulating
@@ -1590,7 +1607,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   widening old source grammar. [Evidence](../50-journal/2026-09-09-numeric-library.md)
   includes independent rational vectors and compiled/reference witnesses.
   Transcendentals remain absent behind named admission gate NL-T01, as the
-  reviewed plan permits; public vocabulary remains held.
+  reviewed plan permits; public vocabulary awaits adoption.
 - [x] **C106 — Complete — environmental effects.** Exact `0.1.68`
   [explicit authority and closed launches](../60-specification/environmental-effects/explicit-authority-and-closed-launches.md)
   amend C027/C082 for a typed service-authority parameter, preserving closed effects
@@ -1598,15 +1615,18 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   numeric-endpoint TCP, time, randomness, environment, logging and approved host
   processes. Attenuation, denied/expired/revoked authority, owned cleanup and
   deterministic models have [compiled/reference and real-host evidence](../50-journal/2026-09-09-environmental-effects.md).
-  Public names and launch syntax remain held; P096 callback composition remains
+  Public names and launch syntax await adoption; P096 callback composition remains
   separate, and approved host commands are trusted code rather than an OS sandbox.
 - [ ] **P107 — Partial — category-inspired API names.** Normative 0.1.4 chooses the
   canonical behavior-first trait and method ABI and confines formal names to
-  reference metadata. Independent comprehension and usability validation is
-  still required.
+  reference metadata. The user authorized concrete public design on
+  15 September 2026 and excluded participant studies during development.
   The [grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
-  supplies comparative research and candidate recommendations; it does not
-  provide observed comprehension results or complete P107.
+  supplies comparative research and candidate recommendations; the
+  [first-version proposal](../20-notes/catena-first-version-grammar-and-vocabulary.md)
+  selects concrete names with examples and semantic audits. P107 remains
+  partial pending versioned adoption and implementation. Observed comprehension
+  remains unclaimed and is not a development prerequisite.
 - [x] **P108 — Complete — stability and performance policy.** The normative
   [0.1.87 operation contract](../60-specification/standard-stability-and-performance/versioned-operation-contracts.md)
   inventories every selected standard role's laws, order, callback
@@ -1658,8 +1678,19 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   grammar resolve to this widened scope; none need re-pointing.
   The [grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md#grammar-candidates-and-four-way-comparisons)
   is research input to this capstone, including Elixir comparisons and an
-  immutable pre-rewrite Catena audit; its candidate recommendations do not
-  adopt a grammar or change this item's status.
+  immutable pre-rewrite Catena audit. On 15 September 2026 the user released
+  the design hold and accepted the research directions, with participant
+  studies excluded from development. The resulting
+  [first-version grammar and vocabulary](../20-notes/catena-first-version-grammar-and-vocabulary.md)
+  defines candidate expressions and examples; normative adoption, parser and
+  elaborator implementation, diagnostics, and tool input contracts remain
+  outstanding. The normative
+  [C034 opt-in totality amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+  removes the former policy conflict for the proposed `total transform`, but
+  intentionally adds no token, production, proof format, checker, or diagnostic.
+  P109 must admit those together and satisfy `RT-OBL-012`–`RT-OBL-015` before
+  totality syntax is implemented or claimed. This design step and policy
+  amendment do not complete P109.
 - [x] **C110 — Complete — checking language.** Normative 0.1.6 fixes an explicitly
   typed pure fragment, exact integer, Boolean, and nested-tuple examples,
   deterministic left-to-right evaluation, distinct failure outcomes, and a
@@ -1712,7 +1743,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [PR 179](https://github.com/pcharbon70/catena/pull/179) binds generated origins
   to their exact node and source slice. The complete 1,143-test suite passes.
   P117 remains partial only because public parse and recovery diagnostics await
-  P109's held grammar.
+  P109's outstanding source adoption.
 - [ ] **G118 — Partial — formatter.** Normative
   [0.1.94](../60-specification/formatter/syntax-independent-document-algebra.md)
   defines a syntax-independent document algebra, deterministic Unicode-scalar
@@ -1727,7 +1758,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   remains nonmutating and explicitly held. G118 remains partial because
   lossless public parsing, production-specific canonical layouts, semantic
   round trips, whole-formatter idempotence, atomic source edits, and source
-  compatibility require P109's held grammar.
+  compatibility require P109's implemented grammar.
 - [ ] **P119 — Partial — documentation tool.** C016 specifies documentation
   attachment and normalized CommonMark bodies. Normative
   [0.1.92](../60-specification/documentation-tool/interface-graph-rendering-and-doctests.md)
@@ -1742,7 +1773,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   dependency-module and missing-placeholder evidence; and
   [PR 182](https://github.com/pcharbon70/catena/pull/182) directly verifies
   forged-graph refusal. The complete 1,149-test suite passes. P119 remains
-  partial only because real public-source examples await P109's held parser
+  partial only because real public-source examples await P109's implemented parser
   and grammar.
 - [ ] **G120 — Partial — interactive environment.** Normative
   [0.1.95](../60-specification/interactive-environment/owned-retained-input-sessions.md)
@@ -1763,7 +1794,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   cases and the complete 1,174-test suite, production build, escript, and trust
   audit pass.
   G120 remains partial only because public input parsing, recovery,
-  editing, display, and command syntax await P109's held grammar.
+  editing, display, and command syntax await P109's source adoption.
 - [x] **C121 — Complete — build system and package manager.** The normative
   [0.1.81 contract](../60-specification/build-system/project-graphs-acquisition-and-offline-builds.md)
   fixes deterministic discovery, named profiles, finite workspace DAGs,
@@ -1782,7 +1813,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   accounting; runner-owned process cleanup; and portable finite reports.
   Compiler [PR 167](https://github.com/pcharbon70/catena/pull/167) passes 1,097
   tests and keeps semantic fuel, schedule bounds, shrink bounds, and host
-  timeout distinct. Public test notation remains held for P109/P107, and
+  timeout distinct. Public test notation awaits P109/P107 adoption, and
   passing observations do not claim proof.
 - [ ] **G123 — Partial — editor protocol.** Normative `0.1.96`'s
   [immutable retained-input service](../60-specification/editor-protocol/immutable-retained-input-language-service.md)
@@ -1793,7 +1824,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   application. Compiler [PR 192](https://github.com/pcharbon70/catena/pull/192)
   passes the complete 1,181-test suite, production compilation, escript build,
   and trust audit. Public incremental parsing and recovery, source coordinates,
-  edit application, formatting behavior, and editor transport remain held for
+  edit application, formatting behavior, and editor transport still depend on
   P109, so G123 remains partial. See the
   [implementation evidence](../50-journal/2026-09-12-editor-protocol.md).
 - [x] **C124 — Complete — debugging and observability.** Normative `0.1.89`'s
@@ -1826,7 +1857,7 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [PR 185](https://github.com/pcharbon70/catena/pull/185) directly covers every
   resource bound and occupied backup identities. The complete 1,160-test suite
   passes. Source
-  rewrites, API refactors, and deprecated-syntax handling remain held for P109,
+  rewrites, API refactors, and deprecated-syntax handling still depend on P109,
   so P125 remains partial. See the
   [implementation evidence](../50-journal/2026-09-10-migration-tool.md).
 
@@ -1967,8 +1998,10 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   [PR 194](https://github.com/pcharbon70/catena/pull/194) integrates revision
   `0.1.97`. Seven focused cases and the complete 1,188-test suite pass. No
   participant was contacted and no result was invented. G137 remains partial
-  until approved public vocabulary and grammar exist and an authorized pilot
-  and preregistered main study produce observed evidence. See the
+  under the retained observed-evidence contract. The user's 15 September 2026
+  instruction excludes participant studies from language development; this
+  historical gate is not a prerequisite for the authorized first-version
+  design or development. No observed-usability pass is claimed. See the
   [implementation journal](../50-journal/2026-09-12-usability-gate.md).
 - [x] **G138 — Complete — performance envelope.** The normative
   [0.1.88 supported-host contract](../60-specification/performance-envelope/supported-host-workloads-and-regression-policy.md)
@@ -1992,7 +2025,11 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
   open item. A pinned Rocq 9.2 workbench proves six bounded-core
   lemmas without admitted assumptions, while its exact scope and the absent
   integrated Catena theorem keep complete and stable claims blocked. Passing
-  assessment neither publishes nor automatically upgrades a release.
+  assessment neither publishes nor automatically upgrades a release. The
+  current development scope excludes participant studies. Removing G137 from
+  complete/stable release requirements therefore needs a successor normative
+  revision, explicit migration, and readiness-profile update; this plan does
+  not silently amend the retained `0.1.90` contract.
 - [ ] **G141 — Partial — compiler self-hosting.** Normative `0.1.98`'s
   [staged bootstrap and fixed-point evidence contract](../60-specification/compiler-self-hosting/staged-bootstrap-and-fixed-point-evidence.md)
   defines actual Catena-pass authorship, the retained pinned Elixir recovery
@@ -2020,8 +2057,10 @@ failure witnesses. Source adoption remains P109; D059 remains deferred.
 The [detailed implementation plan](../20-notes/language-completion-plan.md)
 covers every item with explored alternatives, recommended selections,
 dependencies and acceptance evidence. Its delegated decisions do not mark
-work complete. Public vocabulary and the final grammar remain held for later
-joint design; the plan begins with semantics over retained compiler inputs.
+work complete. The user released the public-vocabulary and grammar design hold
+on 15 September 2026. The [first-version candidate](../20-notes/catena-first-version-grammar-and-vocabulary.md)
+is the current design input; adoption and implementation continue from the
+existing semantics and retained compiler inputs without participant studies.
 
 The P109 scope note governs sequencing: semantics first over retained
 inputs, complete public grammar as the capstone. This order reflects the

@@ -99,6 +99,7 @@ language line is `0.1`; its registered semantic boundaries are:
 | C038 compile-time evaluation | `0.1.34` | normative |
 | C040 built-in data model | `0.1.35` | normative |
 | C041 structural records and variants | `0.1.36` | normative |
+| C034 opt-in totality validity amendment | `0.1.99` | normative |
 
 Governance milestones C007, C009, and C012 apply across the normative corpus
 and do not occupy language revisions. Normative C010 occupies `0.1.8`, and
@@ -301,3 +302,11 @@ C121 uses `0.1.81` for the [build system and package manager](60-specification/b
 C136 uses `0.1.82` for the [bounded compatibility suite](60-specification/compatibility-suite/layered-matrix-and-edition-policy.md), with separate source, interface, dependency, data, toolchain, historical-signature, and runtime-upgrade oracles and explicit finite claim scope.
 C133 uses `0.1.83` for [integrated reference observations](60-specification/reference-evaluator/common-observations-and-bounded-models.md), adapting independent semantic machines into one bounded value, terminal, event, lifetime, exhaustion, and unsupported-result contract without claiming proof.
 C122 uses `0.1.84` for [bounded testing tools](60-specification/testing-tools/isolated-seeded-and-scoped-runs.md), with subject-bound seeded plans, typed generation and shrinking, isolated runner-owned tasks, scoped evidence, and distinct semantic, schedule, shrink, and host-time bounds.
+
+The [C034 opt-in totality validity amendment](60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+occupies `0.1.99`. It explicitly replaces the permanent prohibition in the
+exact `0.1.31` totality paragraph while preserving unrestricted ordinary
+recursion. It admits a later validity gate only for an explicit declaration
+whose own slice supplies the complete proof, verifier, diagnostics,
+compatibility, limits, and evidence contract. The next unused semantic patch
+is `0.1.100`.

@@ -273,6 +273,83 @@ def local_link_target(source: Path, raw: str) -> tuple[Path, str] | None:
     return target.resolve(), unquote(parsed.fragment)
 
 
+def markdown_links(markdown: str) -> list[tuple[int, str]]:
+    """Extract inline links outside literal code, retaining source line numbers.
+
+    Mask code instead of deleting it: a code-formatted link label must still
+    leave the surrounding link visible, and diagnostics keep their coordinates.
+    This preserves the archive's existing inline-link grammar rather than
+    introducing a general Markdown renderer.
+    """
+
+    masked = list(markdown)
+
+    def hide(start: int, end: int) -> None:
+        for position in range(start, end):
+            if masked[position] not in "\r\n":
+                masked[position] = " "
+
+    fence_character = ""
+    fence_length = 0
+    offset = 0
+    for line in markdown.splitlines(keepends=True):
+        # Quote and list indentation do not make fenced examples into links.
+        content = re.sub(r"^[ \t]*(?:>[ \t]*)*", "", line).rstrip("\r\n")
+        fence = FENCE_START.match(content)
+        if fence_character:
+            hide(offset, offset + len(line))
+            if (
+                fence
+                and fence.group(1)[0] == fence_character
+                and len(fence.group(1)) >= fence_length
+                and not content[fence.end():].strip()
+            ):
+                fence_character = ""
+        elif fence and not (
+            fence.group(1)[0] == "`" and "`" in content[fence.end():]
+        ):
+            fence_character = fence.group(1)[0]
+            fence_length = len(fence.group(1))
+            hide(offset, offset + len(line))
+        offset += len(line)
+
+    # A code span may cross a soft newline, but never a blank paragraph break.
+    offset = 0
+    for paragraph in re.split(r"(\n[ \t]*\n)", "".join(masked)):
+        runs = list(re.finditer(r"`+", paragraph))
+        index = 0
+        while index < len(runs):
+            opening = runs[index]
+            prefix = paragraph[:opening.start()]
+            backslashes = len(prefix) - len(prefix.rstrip("\\"))
+            if backslashes % 2:
+                index += 1
+                continue
+            closing_index = next(
+                (
+                    candidate
+                    for candidate in range(index + 1, len(runs))
+                    if len(runs[candidate].group()) == len(opening.group())
+                ),
+                None,
+            )
+            if closing_index is None:
+                index += 1
+                continue
+            hide(offset + opening.start(), offset + runs[closing_index].end())
+            index = closing_index + 1
+        offset += len(paragraph)
+
+    links = []
+    original_lines = markdown.splitlines()
+    for line_number, line in enumerate("".join(masked).splitlines(), start=1):
+        for match in MARKDOWN_LINK.finditer(line):
+            # Recover the exact destination, including any literal backticks.
+            start, end = match.span(1)
+            links.append((line_number, original_lines[line_number - 1][start:end]))
+    return links
+
+
 def github_heading_anchors(markdown: str) -> set[str]:
     """Approximate GitHub's heading IDs, including duplicate suffixes."""
 
@@ -744,43 +821,42 @@ def validate() -> tuple[list[str], dict[str, int]]:
         if is_ignored(path):
             continue
         text = path.read_text(encoding="utf-8")
-        for line_number, line in enumerate(text.splitlines(), start=1):
-            for raw in MARKDOWN_LINK.findall(line):
-                resolved = local_link_target(path, raw)
-                if resolved is None:
-                    continue
-                target, fragment = resolved
-                counts["local_links"] += 1
-                if link_destination(raw).startswith("/"):
-                    errors.append(
-                        f"{relative(path)}:{line_number}: local link must be relative: {raw}"
-                    )
-                    continue
-                if not target.exists():
-                    errors.append(
-                        f"{relative(path)}:{line_number}: missing local link target: {raw}"
-                    )
-                    continue
-                links_by_source[path.resolve()].add(target)
-                if target.suffix.lower() == ".md" and fragment:
-                    anchors = github_heading_anchors(target.read_text(encoding="utf-8"))
-                    if fragment not in anchors:
-                        errors.append(
-                            f"{relative(path)}:{line_number}: missing heading fragment "
-                            f"#{fragment} in {relative(target)}"
-                        )
-
-                source_record = records.get(path.resolve())
-                source_is_conceptual = (
-                    path == ROOT / "README.md"
-                    or (
-                        source_record is not None
-                        and path.name != "README.md"
-                        and source_record[0].get("kind") == "map"
-                    )
+        for line_number, raw in markdown_links(text):
+            resolved = local_link_target(path, raw)
+            if resolved is None:
+                continue
+            target, fragment = resolved
+            counts["local_links"] += 1
+            if link_destination(raw).startswith("/"):
+                errors.append(
+                    f"{relative(path)}:{line_number}: local link must be relative: {raw}"
                 )
-                if source_is_conceptual:
-                    incoming_from_conceptual[target].add(path.resolve())
+                continue
+            if not target.exists():
+                errors.append(
+                    f"{relative(path)}:{line_number}: missing local link target: {raw}"
+                )
+                continue
+            links_by_source[path.resolve()].add(target)
+            if target.suffix.lower() == ".md" and fragment:
+                anchors = github_heading_anchors(target.read_text(encoding="utf-8"))
+                if fragment not in anchors:
+                    errors.append(
+                        f"{relative(path)}:{line_number}: missing heading fragment "
+                        f"#{fragment} in {relative(target)}"
+                    )
+
+            source_record = records.get(path.resolve())
+            source_is_conceptual = (
+                path == ROOT / "README.md"
+                or (
+                    source_record is not None
+                    and path.name != "README.md"
+                    and source_record[0].get("kind") == "map"
+                )
+            )
+            if source_is_conceptual:
+                incoming_from_conceptual[target].add(path.resolve())
 
     # Check every directory README's shape and direct-child inventory.
     for directory in archive_directories():

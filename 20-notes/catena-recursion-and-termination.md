@@ -23,9 +23,12 @@ recursion may reduce forever. Divergence is **non-termination**, a
 terminal non-outcome C029's contract already names: never a trap,
 never undefined behavior, never a failed conformance claim. The
 proper-tail-call guarantee (C032) remains the only stack-related
-promise. No expression-level totality checking exists or is planned;
-if a future era wants one, it enters as an edition-record-gated
-**opt-in analysis**, never as a validity change.
+promise for ordinary code. The historical 0.1.31 boundary admits no
+expression-level totality checker. The normative
+[0.1.99 amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+now replaces its permanent ban on validity changes: a later slice can make
+proof a validity condition only for a declaration that explicitly opts into
+totality. Unmarked recursion remains unrestricted.
 
 The meta layer — every evaluator that runs during compilation — is
 **total-or-bounded by its own shipped mechanism**: conditions are
@@ -148,6 +151,22 @@ unbounded.
 
 As enumerated in the resolved inquiry.
 
+## Revision 0.1.99 amendment
+
+The user-approved first-version design introduced a useful distinction that
+the 0.1.31 wording had ruled out too broadly: ordinary functions may diverge,
+while an explicit `total transform` should be rejected when totality cannot be
+established. Revision 0.1.99 repairs that policy conflict without adopting the
+source form prematurely.
+
+The amendment requires explicit opt-in, preserves the legality of the same
+ordinary unmarked recursive body, rejects tests and timeouts as universal
+proof, makes structural constructor descent the initial recursive discipline,
+requires an independently verified deterministic certificate, and keeps proof
+construction and verification total-or-bounded. It adds no source token,
+checker, diagnostic, interface field, or persisted format. Those belong to the
+later P109 admitting slice, which must satisfy the gate atomically.
+
 ## What C034 adds to the design
 
 Section 4's partials close one more. G038 receives its precondition;
@@ -163,11 +182,10 @@ syntax; G036 owns the failure taxonomy (divergence explicitly outside
 it); P084 owns process-loop termination beyond the kernel's receive
 clause; G088 owns cancellation of long evaluations.
 
-The model should be revisited if the 1.0 era's ecosystem demands
-whole-program termination assurance (the remedy is a gated opt-in
-analysis service, never a validity change), or if G038's design shows
-budgets inadequate (the remedy is a richer regime in G038's own
-slice, under the gate).
+The model should be revisited if the initial structural discipline rejects
+important total programs repeatedly; a richer well-founded relation then needs
+its own specified and independently checkable certificate. G038 continues to
+own any compile-time evaluator under its separate total-or-bounded gate.
 
 ## Connections
 
@@ -176,7 +194,7 @@ slice, under the gate).
 - The [Recursion and Termination map](../10-maps/recursion-and-termination.md)
   routes through the shipped regimes and the gated future.
 - The [Recursion and Termination Specification](../60-specification/recursion-and-termination/README.md)
-  defines the normative `0.1.31` contract this note argued for.
+  defines the normative `0.1.31` contract and its `0.1.99` amendment.
 - [Catena Functions and Calls](catena-functions-and-calls.md) fixes
   the tail guarantee this stance complements.
 - [Catena Bindings and Sequencing](catena-bindings-and-sequencing.md)

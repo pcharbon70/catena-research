@@ -32,6 +32,10 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
 
 ### Documents
 
+- [Catena First-Version Grammar and Vocabulary](catena-first-version-grammar-and-vocabulary.md)
+  — selects concrete candidate spellings, including pure transforms, checked
+  total transforms, and law guarantees; explains their semantic boundaries and
+  supplies examples and development checks without participant studies.
 - [Self-Hosted Compiler Evolution Plan](self-hosted-compiler-evolution-plan.md)
   — adopts ten four-option decisions and eight tracked work packages for
   initial-bootstrap preparation, later feature adoption, seed promotion, and recovery.
@@ -43,7 +47,8 @@ Source summaries belong in `30-sources`; unresolved workbenches belong in
   Catena; develops twelve four-way research recommendations and a validation path.
 - [Catena Language Completion Plan](language-completion-plan.md) — sequences
   all 141 checklist items, delegated decisions, implementation milestones
-  and evidence gates while keeping public vocabulary held.
+  and evidence gates, including the authorized first-version design and its
+  outstanding normative adoption and implementation.
 - [Language Completion Plan: Foundations](language-completion-plan-foundations.md)
   — gives item-specific alternatives, selections and integration gates for
   items 001–046.

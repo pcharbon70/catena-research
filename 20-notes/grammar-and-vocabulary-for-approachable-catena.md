@@ -39,11 +39,18 @@ incorrect model; mathematical precision can coexist with ordinary operation
 names; brevity can reduce typing while increasing interpretation work.
 A successful surface must be tested as an interacting system.
 
-This study informs the held P107 vocabulary and P109 grammar capstone.
-It does not adopt new keywords, replace existing normative spellings, or
-complete the usability gate. Recommendations below concern candidate design
-and evaluation. The [completion plan](language-completion-plan-delivery.md#item-109-surface-grammar-capstone)
-continues to govern adoption.
+**Current design status — 15 September 2026.** The user accepted this study's
+design directions, released the P107/P109 design hold, and excluded human
+participant studies during language development. The resulting
+[first-version grammar and vocabulary](catena-first-version-grammar-and-vocabulary.md)
+chooses concrete expressions and explains them through examples. It remains a
+candidate pending normative adoption and implementation. The study's original
+human-study recommendations and adoption sequence below are retained as
+research history, not current development prerequisites. Semantic audits and
+automated grammar/tooling checks replace those development activities; they
+do not establish observed comprehension or pass the retained G137 contract.
+The [completion plan](language-completion-plan-delivery.md#item-109-surface-grammar-capstone)
+tracks actual adoption.
 
 ## Scope and evidence
 
@@ -100,46 +107,46 @@ features execute correctly.
 Stefik and Siebert's four-study investigation distinguishes syntax ratings
 from novice programming performance. Its results give a reason to take
 surface design seriously, but its short tasks do not rank languages for
-professional development or settle effect-system notation.[^1]
+professional development or settle effect-system notation.[[1]](../30-sources/stefik-siebert-2013-programming-language-syntax.md)
 
 Lappi and colleagues replicated a syntax-intuitiveness rating study with
 Finnish-speaking participants. Several earlier patterns recurred, with
 important limits from English proficiency and the rating task itself.
 This replication concerns expectations about syntax; it is not a replication
-of the Randomo programming-performance comparison.[^2]
+of the Randomo programming-performance comparison.[[2]](../30-sources/lappi-et-al-2023-syntax-intuitiveness-replication.md)
 
 Pane and colleagues studied how people without programming training expressed
 solutions. Aggregate and set-oriented descriptions are relevant to the way
 Catena might introduce collection operations. Such descriptions also leave
 details implicit, so natural-language resemblance alone cannot supply an
-executable language's precision.[^3]
+executable language's precision.[[3]](../30-sources/pane-et-al-2001-non-programmer-problem-solutions.md)
 
 Gordon's linguistic analysis offers a complementary explanation: words and
 forms carry expectations shaped by earlier languages and context. This is
 a conceptual account rather than a controlled comparison of candidate
-grammars.[^4] For Catena, a plain term deserves the same scrutiny as an
+grammars.[[4]](../30-sources/gordon-2024-linguistics-of-programming.md) For Catena, a plain term deserves the same scrutiny as an
 unfamiliar symbol. A word that suggests concurrency, persistence, or
 automatic recovery creates a behavioral promise whether the designer
 intended one or not.
 
 Lu and Krishnamurthi model misconceptions as alternative executable
 interpretations and examine corrective instruction. Their formative study
-found mixed changes across misconceptions.[^5] The useful design inference
+found mixed changes across misconceptions.[[5]](../30-sources/lu-krishnamurthi-2024-language-behavior-misconceptions.md) The useful design inference
 is to write down likely wrong interpretations of Catena examples, then
 construct examples on which those interpretations produce different answers.
 Testing only examples where all interpretations agree conceals the problem.
 
 A 2026 comment-comprehension study also found that helpfulness was not
 uniform across snippets. Its small student sample and adapted Java materials
-limit generalization.[^6] Catena should consequently test the density and
+limit generalization.[[6]](../30-sources/abdelsalam-et-al-2026-comments-and-comprehension.md) Catena should consequently test the density and
 placement of explanatory text. More words around a difficult construct are
 not automatically a clearer interface.
 
 Cognitive dimensions supply a vocabulary for reviewing hidden dependencies,
-consistency, abstraction barriers, and the cost of change.[^7] API-usability
-work broadens the question from naming to discovery and use.[^8] Swift's
+consistency, abstraction barriers, and the cost of change.[[7]](../30-sources/green-petre-1996-cognitive-dimensions.md) API-usability
+work broadens the question from naming to discovery and use.[[8]](../30-sources/myers-stylos-2016-api-usability.md) Swift's
 official guidelines offer a concrete precedent for evaluating a declaration
-at its call sites.[^9] These sources motivate an integrated review of
+at its call sites.[[9]](../30-sources/swift-project-api-design-guidelines.md) These sources motivate an integrated review of
 Catena examples, library lookup, and edits; they do not establish which
 Catena keyword will win.
 
@@ -153,7 +160,8 @@ symbols as inherently harmful, or a familiar language as the default winner.
 Elixir is useful as a reference for a coherent programming experience on the
 BEAM. Its syntax documentation establishes concrete forms, while the
 formatter's introduction records explicit readability and consistency
-goals.[^10][^11] Neither source measures how much of Elixir's appeal is caused
+goals.[[10]](../30-sources/elixir-project-2026-elixir-syntax-and-unicode.md),
+[[11]](../30-sources/valim-2018-elixir-formatter.md) Neither source measures how much of Elixir's appeal is caused
 by syntax as opposed to its libraries, tools, community, or execution model.
 
 The appropriate comparison is therefore at the level of design choices and
@@ -174,7 +182,7 @@ application, effects, and governance contracts.
 
 Elixir's pipe inserts its left operand into the first argument position of a
 call on the right; the official documentation also describes precedence and
-anonymous-call pitfalls.[^12] Catena's current contract instead applies the
+anonymous-call pitfalls.[[12]](../30-sources/elixir-project-2026-kernel-pipelines.md) Catena's current contract instead applies the
 right-hand function to the left-hand value.
 
 Under Catena's [pipe rule](../60-specification/operators-and-punctuation/precedence-and-associativity.md#the-pipe),
@@ -192,7 +200,7 @@ interchangeable.
 
 The C++ pipeline design-space paper is useful because it compares several
 possible mechanisms rather than treating one glyph as one inevitable
-meaning.[^13] For Catena, the retained meaning is the constraint: use the
+meaning.[[13]](../30-sources/revzin-2022-pipeline-operator-design-space.md) For Catena, the retained meaning is the constraint: use the
 comparison to expose assumptions, not to reopen application semantics
 implicitly.
 
@@ -379,19 +387,19 @@ must remain legible at application boundaries.
 ### Borrow mechanisms selectively
 
 Koka illustrates a distinction between general control operations and more
-restricted reply-producing handler forms.[^14] This motivates a candidate
+restricted reply-producing handler forms.[[14]](../30-sources/leijen-koka-book-surface-and-handlers.md) This motivates a candidate
 Catena convenience layer for common replies. Its admissibility would require
 a precise translation preserving affine resumption, clause effects, and
 cleanup; Koka's syntax is not itself that proof.
 
 Effekt demonstrates why apparently simple annotations require careful reading:
 an empty contextual block requirement is not equivalent to an ordinary pure
-function.[^15] Frank provides another formal design for implicit ambient
-abilities.[^16] These are evidence that effect detail can be organized
+function.[[15]](../30-sources/effekt-project-contextual-effect-polymorphism.md) Frank provides another formal design for implicit ambient
+abilities.[[16]](../30-sources/lindley-et-al-2017-frank.md) These are evidence that effect detail can be organized
 differently, not permission to erase Catena's capability identities or
 reinterpret its retained empty rows.
 
-Gleam's `use` expression packages the rest of a block into a callback.[^17]
+Gleam's `use` expression packages the rest of a block into a callback.[[17]](../30-sources/gleam-project-use-expressions.md)
 That is a useful flattening technique to study. It does not by itself provide
 exactly-once execution, guaranteed cleanup, or algebraic effects.
 Catena's ordinary callback argument convention also differs, so source sugar
@@ -574,7 +582,7 @@ text should have a coherent interpretation in the compiler, formatter, and
 editor.
 
 PEGs demonstrate a precise ordered-choice parsing model; this does not settle
-human expectations or error recovery.[^18] Choosing PEG, LR, or a handwritten
+human expectations or error recovery.[[18]](../30-sources/ford-2004-parsing-expression-grammars.md) Choosing PEG, LR, or a handwritten
 parser is therefore an implementation decision made against the candidate
 grammar and tool requirements. Parser-generator conflict counts are useful
 engineering evidence, but neither zero conflicts nor deterministic recognition
@@ -587,8 +595,8 @@ scope it captures. Errors should point back to the programmer's construct,
 with the generated form available for investigation.
 
 Compiler-message research supports studying explanations as a designed
-interface.[^19] Elm provides a firsthand example of deliberate source-local
-message design.[^20] Catena's existing
+interface.[[19]](../30-sources/barik-et-al-2018-compiler-explanations.md) Elm provides a firsthand example of deliberate source-local
+message design.[[20]](../30-sources/czaplicki-2015-compiler-errors-for-humans.md) Catena's existing
 [diagnostic contract](../60-specification/diagnostic-contract/README.md) is the
 starting point. Grammar research should extend its concrete parse and
 incomplete-program cases rather than invent a competing diagnostic system.
@@ -710,26 +718,26 @@ findings, limitations, and links back to this synthesis. Online sources were
 accessed on 12 September 2026; living documentation versions are observations,
 not permanent version guarantees.
 
-[^1]: Andreas Stefik and Susanna Siebert. “[An Empirical Investigation into Programming Language Syntax](https://doi.org/10.1145/2534973).” ACM Transactions on Computing Education 13(4), Article 19, 2013. [Source note](../30-sources/stefik-siebert-2013-programming-language-syntax.md).
-[^2]: Vilma Lappi, Ville Tirronen, and Jonne Itkonen. “[A Replication Study on the Intuitiveness of Programming Language Syntax](https://link.springer.com/article/10.1007/s11219-023-09631-7).” Software Quality Journal 31, 1211–1240, 2023. [Source note](../30-sources/lappi-et-al-2023-syntax-intuitiveness-replication.md).
-[^3]: John F. Pane, Chotirat Ann Ratanamahatana, and Brad A. Myers. “[Studying the Language and Structure in Non-Programmers' Solutions to Programming Problems](https://john.pane.net/IJHCS.html).” International Journal of Human-Computer Studies 54(2), 237–264, 2001. [Source note](../30-sources/pane-et-al-2001-non-programmer-problem-solutions.md).
-[^4]: Colin S. Gordon. “[The Linguistics of Programming](https://csgordon.github.io/publications/onward24/).” Onward! 2024, 162–182. [Source note](../30-sources/gordon-2024-linguistics-of-programming.md).
-[^5]: Kuang-Chen Lu and Shriram Krishnamurthi. “[Identifying and Correcting Programming Language Behavior Misconceptions](https://cel.cs.brown.edu/paper/identifying-correcting-pl-misconceptions/).” Proceedings of the ACM on Programming Languages 8, OOPSLA1, Article 106, 2024. [Source note](../30-sources/lu-krishnamurthi-2024-language-behavior-misconceptions.md).
-[^6]: Youssef Abdelsalam, Norman Peitek, Annabelle Bergum, and Sven Apel. “[The Effect of Comments on Program Comprehension: An Eye-tracking Study](https://link.springer.com/article/10.1007/s10664-025-10721-2).” Empirical Software Engineering 31, Article 94, 2026. [Source note](../30-sources/abdelsalam-et-al-2026-comments-and-comprehension.md).
-[^7]: T. R. G. Green and M. Petre. “[Usability Analysis of Visual Programming Environments: A Cognitive Dimensions Framework](https://doi.org/10.1006/jvlc.1996.0009).” Journal of Visual Languages and Computing 7(2), 131–174, 1996. [Source note](../30-sources/green-petre-1996-cognitive-dimensions.md).
-[^8]: Brad A. Myers and Jeffrey Stylos. “[Improving API Usability](https://doi.org/10.1145/2896587).” Communications of the ACM 59(6), 62–69, 2016. [Source note](../30-sources/myers-stylos-2016-api-usability.md).
-[^9]: Swift project. “[API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/).” Living project guidance, undated. [Source note](../30-sources/swift-project-api-design-guidelines.md).
-[^10]: Elixir project. “[Syntax Reference](https://elixir.hexdocs.pm/syntax-reference.html).” Documentation observed at 1.20.4. [Source note](../30-sources/elixir-project-2026-elixir-syntax-and-unicode.md).
-[^11]: José Valim. “[Elixir v1.6 Released](https://elixir-lang.org/blog/2018/01/17/elixir-v1-6-0-released/).” 17 January 2018, formatter section. [Source note](../30-sources/valim-2018-elixir-formatter.md).
-[^12]: Elixir project. “[Kernel](https://elixir.hexdocs.pm/Kernel.html).” Documentation observed at 1.20.4, pipe and pitfalls sections. [Source note](../30-sources/elixir-project-2026-kernel-pipelines.md).
-[^13]: Barry Revzin. “[Exploring the Design Space for a Pipeline Operator](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2672r0.html).” WG21 P2672R0, 13 October 2022; proposal, not an adopted standard. [Source note](../30-sources/revzin-2022-pipeline-operator-design-space.md).
-[^14]: Daan Leijen. “[The Koka Programming Language](https://koka-lang.github.io/koka/doc/book.html).” Sections 3.4.2–3.4.3; embedded draft grammar identifies v3.2.3. [Source note](../30-sources/leijen-koka-book-surface-and-handlers.md).
-[^15]: Effekt research team. “[Effect Polymorphism](https://effekt-lang.org/docs/concepts/effect-polymorphism)” and “[Effect Safety](https://effekt-lang.org/docs/concepts/effect-safety).” Living documentation, undated. [Source note](../30-sources/effekt-project-contextual-effect-polymorphism.md).
-[^16]: Sam Lindley, Conor McBride, and Craig McLaughlin. “[Do Be Do Be Do](https://arxiv.org/abs/1611.09259).” POPL 2017, 500–514; arXiv revision 2, 2017. [Source note](../30-sources/lindley-et-al-2017-frank.md).
-[^17]: Gleam project. “[Use](https://tour.gleam.run/advanced-features/use/).” Language tour, undated. [Source note](../30-sources/gleam-project-use-expressions.md).
-[^18]: Bryan Ford. “[Parsing Expression Grammars: A Recognition-Based Syntactic Foundation](https://pdos.csail.mit.edu/~baford/packrat/popl04/).” POPL 2004, 111–122. [Source note](../30-sources/ford-2004-parsing-expression-grammars.md).
-[^19]: Titus Barik, Denae Ford, Emerson Murphy-Hill, and Chris Parnin. “[How Should Compilers Explain Problems to Developers?](https://doi.org/10.1145/3236024.3236040)” ESEC/FSE 2018. [Source note](../30-sources/barik-et-al-2018-compiler-explanations.md).
-[^20]: Evan Czaplicki. “[Compiler Errors for Humans](https://elm-lang.org/news/compiler-errors-for-humans).” 2015. [Source note](../30-sources/czaplicki-2015-compiler-errors-for-humans.md).
+1. Andreas Stefik and Susanna Siebert. “[An Empirical Investigation into Programming Language Syntax](https://doi.org/10.1145/2534973).” ACM Transactions on Computing Education 13(4), Article 19, 2013. [Source note](../30-sources/stefik-siebert-2013-programming-language-syntax.md).
+2. Vilma Lappi, Ville Tirronen, and Jonne Itkonen. “[A Replication Study on the Intuitiveness of Programming Language Syntax](https://link.springer.com/article/10.1007/s11219-023-09631-7).” Software Quality Journal 31, 1211–1240, 2023. [Source note](../30-sources/lappi-et-al-2023-syntax-intuitiveness-replication.md).
+3. John F. Pane, Chotirat Ann Ratanamahatana, and Brad A. Myers. “[Studying the Language and Structure in Non-Programmers' Solutions to Programming Problems](https://john.pane.net/IJHCS.html).” International Journal of Human-Computer Studies 54(2), 237–264, 2001. [Source note](../30-sources/pane-et-al-2001-non-programmer-problem-solutions.md).
+4. Colin S. Gordon. “[The Linguistics of Programming](https://csgordon.github.io/publications/onward24/).” Onward! 2024, 162–182. [Source note](../30-sources/gordon-2024-linguistics-of-programming.md).
+5. Kuang-Chen Lu and Shriram Krishnamurthi. “[Identifying and Correcting Programming Language Behavior Misconceptions](https://cel.cs.brown.edu/paper/identifying-correcting-pl-misconceptions/).” Proceedings of the ACM on Programming Languages 8, OOPSLA1, Article 106, 2024. [Source note](../30-sources/lu-krishnamurthi-2024-language-behavior-misconceptions.md).
+6. Youssef Abdelsalam, Norman Peitek, Annabelle Bergum, and Sven Apel. “[The Effect of Comments on Program Comprehension: An Eye-tracking Study](https://link.springer.com/article/10.1007/s10664-025-10721-2).” Empirical Software Engineering 31, Article 94, 2026. [Source note](../30-sources/abdelsalam-et-al-2026-comments-and-comprehension.md).
+7. T. R. G. Green and M. Petre. “[Usability Analysis of Visual Programming Environments: A Cognitive Dimensions Framework](https://doi.org/10.1006/jvlc.1996.0009).” Journal of Visual Languages and Computing 7(2), 131–174, 1996. [Source note](../30-sources/green-petre-1996-cognitive-dimensions.md).
+8. Brad A. Myers and Jeffrey Stylos. “[Improving API Usability](https://doi.org/10.1145/2896587).” Communications of the ACM 59(6), 62–69, 2016. [Source note](../30-sources/myers-stylos-2016-api-usability.md).
+9. Swift project. “[API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/).” Living project guidance, undated. [Source note](../30-sources/swift-project-api-design-guidelines.md).
+10. Elixir project. “[Syntax Reference](https://elixir.hexdocs.pm/syntax-reference.html).” Documentation observed at 1.20.4. [Source note](../30-sources/elixir-project-2026-elixir-syntax-and-unicode.md).
+11. José Valim. “[Elixir v1.6 Released](https://elixir-lang.org/blog/2018/01/17/elixir-v1-6-0-released/).” 17 January 2018, formatter section. [Source note](../30-sources/valim-2018-elixir-formatter.md).
+12. Elixir project. “[Kernel](https://elixir.hexdocs.pm/Kernel.html).” Documentation observed at 1.20.4, pipe and pitfalls sections. [Source note](../30-sources/elixir-project-2026-kernel-pipelines.md).
+13. Barry Revzin. “[Exploring the Design Space for a Pipeline Operator](https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2022/p2672r0.html).” WG21 P2672R0, 13 October 2022; proposal, not an adopted standard. [Source note](../30-sources/revzin-2022-pipeline-operator-design-space.md).
+14. Daan Leijen. “[The Koka Programming Language](https://koka-lang.github.io/koka/doc/book.html).” Sections 3.4.2–3.4.3; embedded draft grammar identifies v3.2.3. [Source note](../30-sources/leijen-koka-book-surface-and-handlers.md).
+15. Effekt research team. “[Effect Polymorphism](https://effekt-lang.org/docs/concepts/effect-polymorphism)” and “[Effect Safety](https://effekt-lang.org/docs/concepts/effect-safety).” Living documentation, undated. [Source note](../30-sources/effekt-project-contextual-effect-polymorphism.md).
+16. Sam Lindley, Conor McBride, and Craig McLaughlin. “[Do Be Do Be Do](https://arxiv.org/abs/1611.09259).” POPL 2017, 500–514; arXiv revision 2, 2017. [Source note](../30-sources/lindley-et-al-2017-frank.md).
+17. Gleam project. “[Use](https://tour.gleam.run/advanced-features/use/).” Language tour, undated. [Source note](../30-sources/gleam-project-use-expressions.md).
+18. Bryan Ford. “[Parsing Expression Grammars: A Recognition-Based Syntactic Foundation](https://pdos.csail.mit.edu/~baford/packrat/popl04/).” POPL 2004, 111–122. [Source note](../30-sources/ford-2004-parsing-expression-grammars.md).
+19. Titus Barik, Denae Ford, Emerson Murphy-Hill, and Chris Parnin. “[How Should Compilers Explain Problems to Developers?](https://doi.org/10.1145/3236024.3236040)” ESEC/FSE 2018. [Source note](../30-sources/barik-et-al-2018-compiler-explanations.md).
+20. Evan Czaplicki. “[Compiler Errors for Humans](https://elm-lang.org/news/compiler-errors-for-humans).” 2015. [Source note](../30-sources/czaplicki-2015-compiler-errors-for-humans.md).
 
 ## Connections
 

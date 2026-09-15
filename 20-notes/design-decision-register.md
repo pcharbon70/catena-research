@@ -39,8 +39,9 @@ here in the same change as that plan's Phase 1 research bundle.
 
 **Notation:** in each Options column, `(rec)` marks the option the plan
 recommended; `†` on the Chosen column marks a developer override of that
-recommendation. Two overrides exist so far — the `.cat` extension (C020)
-and admitting module recursion (C024) — and both proved durable.
+recommendation. The initial overrides were the `.cat` extension (C020)
+and admitting module recursion (C024). Later dated sections record additional
+user directions and their explicitly scoped overrides.
 
 ## Language completion plan (2026-09-06)
 
@@ -1412,11 +1413,13 @@ The [grammar and vocabulary study](grammar-and-vocabulary-for-approachable-caten
 and [research journal](../50-journal/2026-09-12-grammar-and-vocabulary-research.md)
 extend the evidence for CP-107-2/3 and CP-109-1/2/3. The study's GV-01 through
 GV-12 tables and lists enumerate four alternatives and a research
-recommendation for each question. None is implemented or adopted by this
-research change; the original selected CP decisions above remain in force.
-When a later plan executes a candidate, record its actual choice, any
-recommendation override, and durable specification and implementation links
-here in that same change. Research preparation does not close P107/P109/G137.
+recommendation for each question. The 12 September research change adopted
+or implemented none of those alternatives. On 15 September the user accepted
+the directions, authorized concrete vocabulary/grammar design, and excluded
+participant studies during development. The dated adoption section below
+records those choices and the explicit override. P107/P109 remain partial
+until normative adoption and implementation; G137's historical observed
+contract remains unpassed.
 
 ## G141 feature evolution research inputs
 
@@ -1457,3 +1460,138 @@ The original 392-decision baseline remains a dated planning fact.
 | SHE-08 — recovery and distribution | A: Rebuild the entire historical chain for every developer invocation. B: Use an immutable seed bundle for routine builds and replay the full retained root-to-candidate chain for each seed promotion and release. C: Replace the historical root with a fresh translator whenever the source floor rises. D: Replace the bootstrap with an independently maintained stable-subset interpreter. | B: Retain every required bridge, toolchain, library, and recovery environment. Promotion and release gates expose broken history without imposing full replay on each edit. | B — agent-selected under the user's planning request | None | [Work package](self-hosted-compiler-evolution-plan.md#e4-promotion-and-recovery) |
 | SHE-09 — development and release checks | A: Run every bootstrap stage and release suite for each edit. B: Use focused affected-pass and feature checks during development, with full applicable suites, stage comparison, offline replay, and rollback at promotion and release. C: Reuse the latest passing full-suite result without binding it to the candidate. D: Rely on manually chosen tests for each release. | B: Fast feedback is distinct from release evidence. Every promotion and release binds its exact candidate and complete required evidence. | B — agent-selected under the user's planning request | None | [Work package](self-hosted-compiler-evolution-plan.md#e7-evolution-readiness) |
 | SHE-10 — adoption sequence | A: Replace the initial G141 contract with the new process before attempting the first port. B: Preserve G141's initial milestone and specify the evolution contract before the first build that depends on the new policy. C: Let build scripts settle the policy when the first incompatibility occurs. D: Postpone any compiler self-use of new facilities until a stable 1.0 release. | B: Keeps retained obligations intact, allows source-independent preparation, and prevents later bootstrap behavior from outrunning its authority. | B — agent-selected under the user's planning request | None | [Work package](self-hosted-compiler-evolution-plan.md#e1-evolution-contract) |
+
+
+## First-version source design (2026-09-15)
+
+The user accepted the grammar study's directions and asked the agent to select
+actual grammar and vocabulary from the two research syntheses. The user also
+explicitly excluded human participant studies during language development.
+The [source proposal](catena-first-version-grammar-and-vocabulary.md) makes the
+choices durable as design; it is not normative adoption or parser evidence.
+The [journal](../50-journal/2026-09-15-first-version-source-design.md) records
+scope, semantic checks, remaining integration work, and archive validation.
+
+**Provenance:** GV directions were accepted by the user; the agent selected the
+leading A forms for GV-01/GV-04 and supplied concrete realizations. GV-12's
+participant-study component is explicitly overridden. The original four
+alternatives are reproduced as posed, including their historical evaluation
+language. Current development uses engineering evidence without an observed
+human-comprehension claim. Existing G137/G139 revisions are not rewritten or
+marked passed; the successor release-policy work is named in the proposal.
+
+| Fork | Options as posed | Research recommendation | Selected direction | Override or qualification | Durable design |
+| --- | --- | --- | --- | --- | --- |
+| GV-01 | A: Uniform delimited calls and explicit blocks. Makes argument and scope boundaries easy to inspect; adds punctuation and may need careful layouts for partial application.<br>B: Curried whitespace calls and keyword blocks. Fits functional expression flow; nesting and mixed operators require disciplined precedence and examples.<br>C: Broad optional parentheses and interchangeable block forms. Offers local stylistic freedom; increases the number of interactions readers and tools must handle.<br>D: Extensible phrase-oriented or macro-defined grammars. Accommodates domain expression; makes recognition and diagnostics depend on local extensions. | A leading; B comparator | A | Leading candidate selected now; no participant comparison gate. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-02 | A: Change calls to fixed host arity. Familiar to some audiences; conflicts with Catena's semantic-unary model.<br>B: Offer one consistent call grammar elaborating to repeated unary application. Preserves partial application; requires an explicit rule for argument grouping.<br>C: Require a special partial-application marker. Makes some intentions visible; changes the retained rule that prefix application is an ordinary value.<br>D: Guess grouping or saturation from inferred types. Can shorten examples; makes parsing and reading depend on later semantic information. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-03 | A: First-argument insertion. Suits some APIs; conflicts with the retained pipe and subject-last convention.<br>B: Apply the right-hand function to the left-hand value. Preserves current semantics and ordinary function values.<br>C: An implicit placeholder chooses an argument position. Flexible; adds binding and nesting questions.<br>D: Dispatch pipe behavior by type or library. Enables local conventions; makes the same notation carry different structural meanings. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-04 | A: Braces with canonical formatting. Gives visible boundaries; nested constructs can accumulate punctuation.<br>B: Keyword-delimited blocks. Offers verbal structure; repeated closing words may obscure the opening construct.<br>C: Significant indentation. Removes explicit terminators; would reopen the retained non-semantic indentation policy.<br>D: Several equivalent block styles. Supports preferences; multiplies recovery and formatting cases. | A leading; B comparator | A | Leading candidate selected now; no participant comparison gate. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-05 | A: Formal mathematical terms everywhere. Precise for specialists; imposes prerequisite vocabulary.<br>B: Behavior-oriented methods with linked formal metadata. Supports task discovery and audit; names still need empirical testing.<br>C: Friendly and formal aliases accepted equally in source. Aids transition; doubles the public reading vocabulary.<br>D: Symbolic operators as the primary interface. Concise for fluent users; makes discovery and verbal explanation harder to evaluate. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-06 | A: Introduce every trait before using its methods. Complete but front-loads abstractions.<br>B: Teach concrete operations, then generalization, then the formal hierarchy. Supports incremental models; requires carefully chosen transfer examples.<br>C: Hide all constraints even in diagnostics. Looks simple until a call is rejected.<br>D: Replace shared traits with unrelated datatype-specific methods. Locally concrete; conceals useful common structure and increases duplication. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-07 | A: Make requests indistinguishable from all calls. Compact; hides a consequential boundary.<br>B: One explicit request cue with optional capability qualification when unambiguous. Makes the operation role visible while preserving unique resolution.<br>C: Write the entire handler and effect row at every request. Explicit but repetitive and difficult to edit.<br>D: Use punctuation varying by effect family. Compact within one domain; fragments the language-wide model. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-08 | A: Infer everything, including exported contracts. Minimal declarations; obscures stable dependency changes.<br>B: Annotate every internal expression. Exposes the model; overwhelms ordinary calculations.<br>C: Explicit public boundaries with inference inside and optional explanations. Concentrates declarations where readers and compatibility checks need them.<br>D: Omit effects from types and rely on documentation. Easy-looking signatures; loses checked obligations. | C | C | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-09 | A: Expose raw continuation machinery everywhere. Uniformly expressive; burdens ordinary service implementations.<br>B: Restricted reply-oriented convenience plus an explicit advanced control layer. Reduces common-case ceremony; needs a proven elaboration.<br>C: Always resume implicitly, with no advanced form. Short; cannot express all retained handler behavior.<br>D: Reintroduce arbitrary shallow and multi-shot modes immediately. Broad expressiveness; changes the admitted control and lifetime model. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-10 | A: Only nested calls and bindings. Small grammar; can make long dependent workflows awkward.<br>B: One constrained sequencing form with published expansion. Can flatten common work while keeping dependency explicit.<br>C: One overloaded form selecting monadic, asynchronous, resource, or exception behavior implicitly. Concise examples; too many hidden policies.<br>D: A separate block language for every library. Locally tailored; multiplies forms to learn and tool. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-11 | A: Add them after grammar acceptance. Fast parser prototype; delays evidence about ordinary mistakes.<br>B: Ship each candidate with canonical layout, incomplete-input cases, and layered diagnostics. More work per candidate; tests the experience people actually use.<br>C: Delegate all behavior to individual editors. Flexible; fragments the language's explanations.<br>D: Show full internal terms as the default. Exact implementation detail; often obscures the source-level repair. | B | B | None; conditional directions receive explicit source rules and pending adoption checks. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+| GV-12 | A: Designer preference and attractive demonstrations. Fast selection; weak evidence of transfer.<br>B: Popularity or community polls. Broad opinions; substantial selection and familiarity effects.<br>C: Semantic audit, adversarial grammar examples, and preregistered observed tasks. Slower; separates correctness, comprehension, and preference.<br>D: Automated agents acting as participants. Cheap repetition; does not establish human comprehension. | C | C with user override | User excludes participant studies; retain semantic audit and adversarial examples, with no observed-comprehension claim. | [Source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices) |
+
+### Concrete source selections
+
+Each FV row records four alternatives explored for a concrete realization.
+The initial selected A options carried the agent's recommendation under the
+user's delegation, with no separate per-spelling user approval claimed and no
+recommendation override at that point. The following table preserves those
+original alternatives; FV-12 is superseded by the user-approved revision below.
+The other rows still reproduce the proposal's option wording. Every row is made durable in the
+[first-version source design](catena-first-version-grammar-and-vocabulary.md#why-these-choices);
+its relevant explanatory section supplies examples, semantics, and adoption
+limits. Normative and compiler evidence remain pending, not inferred from this table.
+
+| Fork | Four concrete alternatives considered | Recommended and selected option, rationale |
+| --- | --- | --- |
+| FV-01 | A `fn`; B `def`; C `transform`; D separate `fn` and `action` declarations | **A** for the general callable declaration. One short word covers named and anonymous functions; effects stay in the type rather than creating an incompatible function species. The later FV-25 decision adds `transform` as a checked restriction that elaborates to this same callable model. |
+| FV-02 | A round calls and square type arguments; B round brackets for both; C whitespace for both; D angle type brackets | **A**. `f(x)` and `List[a]` have different visible roles, and `<` retains its comparison meaning. |
+| FV-03 | A `let` plus final expression; B bare assignment; C mandatory `return`; D mutable declarations by default | **A**. Introduces a name explicitly, preserves expression-oriented control, and does not suggest reassignment. |
+| FV-04 | A brace constructor families with exact payload lists; B equals-and-bar declarations; C classes with constructor methods; D implicit structural alternatives | **A**. Reuses block structure while retaining nominal identity; no new bar operator or class model. |
+| FV-05 | A `record` and `update` forms with value-headed field access; B bare braces for records and blocks; C tuple-only products; D method-style mutable fields | **A**. The opener distinguishes data from executable blocks before type checking. |
+| FV-06 | A plain-name parameters/bindings and explicit `match`; B all patterns everywhere; C implicit failing destructuring; D programmable patterns | **A**. Keeps retained binding rules and makes the place for branching visible; comprehensions retain their separate irrefutable-pattern rule. |
+| FV-07 | A `export` on declarations and explicit category-tagged imports; B everything public; C wildcards and aliases; D inferred exports | **A**. Readable ownership with private defaults and no import-order convention. |
+| FV-08 | A canonical `Module.member` including constructors; B `Module.Type.Constructor`; C nested modules; D type-directed qualification guessing | **A**. Follows the newer namespace contract, with constructor owner identity retained in metadata. |
+| FV-09 | A current 17 trait names; B restore every earlier exploratory name; C mathematical names; D dual source aliases | **A**. Keeps the retained ABI and its improvements to ambiguous older names. |
+| FV-10 | A `Option[a]`, `Result[e,a]`, `Validation[e,a]`; B value-first outcomes; C exceptions for expected failure; D one universal nullable outcome | **A**. Names absence, fail-fast outcomes, and accumulation distinctly; the success parameter remains available for unary mapping. |
+| FV-11 | A `request`; B `perform`; C ordinary invisible calls; D different cue per service | **A**. Names the application author's action without implying how a handler implements it. |
+| FV-12 | A `uses {}` on every exported function, private inference; B all inference; C every local expression annotated; D documentation-only effects | **A, initial selection; superseded** by the [optional-empty-annotation revision](#fv-12-revision-optional-empty-effect-annotations). The initial rationale was to make public purity or service requirements explicit and reviewable. |
+| FV-13 | A named capability entries plus `using` evidence at calls; B nearest-handler selection; C manually passed runtime dictionaries; D global service lookup | **A**. Expresses retained identity selection without making capabilities storable values. |
+| FV-14 | A named `handler`, explicit `handle`, terminal `reply`, advanced `resume`; B implicit reply everywhere; C callbacks only; D raw continuations everywhere | **A**. The common clause reads as a response while control-changing clauses remain explicit. |
+| FV-15 | A `chain Family` with `bind` and `yield`; B overloaded `do`; C implicit error propagation after every call; D new symbolic bind operators | **A**. The selected outcome family determines sequencing; ordinary requests and resource scopes keep their own forms. |
+| FV-16 | A `scope ... acquire ... release ... within ...` with explicit handle reads; B generic `defer`; C garbage-collection cleanup; D automatic foreign-handle ownership | **A**. Names the retained bounded ownership operation without promising broader resource semantics. |
+| FV-17 | A `trait`, `implementation`, `requires`, `derives`, linked `guarantee`; B classes/inheritance; C implicit duck typing; D formal symbols | **A**. Checked behavior stays discoverable, and a named guarantee does not masquerade as proof. |
+| FV-18 | A existing `for`/`in`/`case`/`when`/`yield` in one brace form; B SQL clauses; C list-first bar notation; D a generic target-selecting comprehension | **A**. Preserves the settled result-last, lists-only contract. |
+| FV-19 | A ordinary typed library operations for processes/services; B an actor sublanguage; C `async`/`await` over all effects; D shell-like commands | **A**. Avoids confusing dependency with concurrency or inventing a second effect system. |
+| FV-20 | A source `specification` claims and external canonical governance bundles; B governance mixed into executable blocks; C prose comments as authority; D a new general policy language | **A**. Gives claims a visible source form while retaining exact signed identities and the closed policy evaluator. |
+| FV-21 | A closed initial effect annotations and pure anonymous functions, with explicit later row extension; B silently admit effectful callbacks; C infer higher-rank rows; D remove effect checking | **A**. The first surface is honest about the integrated kernel's boundary; richer retained contracts need separately tracked integration. |
+| FV-22 | A fixed operators and canonical formatter; B user fixities; C several block styles; D editor-defined formatting | **A**. Keeps reading and diagnostics independent of local syntax extensions. |
+| FV-23 | A explicit discard with `let _ = expression`; B implicit discard of any non-final expression; C implicit discard only for Unit; D mandatory statement terminators choosing discard | **A**. Preserves the existing sequencing idiom and makes ignored outcomes visible without introducing a second discard policy. |
+| FV-24 | A contextual `value` members for zero-argument trait methods; B Unit-taking wrappers as the ABI; C call every member a constant; D omit empty/identity methods | **A**. Preserves retained method arity and distinguishes an implementation-supplied method slot from an associated constant. |
+| FV-25 | A make `transform` a separate runtime callable type; B make it a pure declaration that elaborates to an ordinary function; C accept it as an unchecked synonym for `fn`; D keep it only as documentation prose | **B, approved by the user**. It visibly asserts an empty effect row without duplicating calling, currying, closure, or runtime representation rules. |
+| FV-26 | A make `total transform` an opt-in checked declaration rejected when totality cannot be established; B issue an advisory termination warning; C accept bounded tests as totality; D trust an author annotation | **A, approved by the user**. Totality becomes useful evidence only when checked; this requires a versioned amendment to the retained no-totality-validity-gate rule. |
+| FV-27 | A link `guarantee` to stable typed claims with separate evidence status; B embed arbitrary Boolean law bodies directly in declarations; C treat comments as laws; D let a promise immediately authorize optimization | **A, approved by the user**. Stable claims preserve identity and evidence provenance; the word alone is never proof or optimizer authority. |
+
+### FV-12 revision: optional empty effect annotations
+
+After questioning the unnecessary empty annotation, the user explicitly asked
+to apply the agent's revised recommendation. This supersedes FV-12's original
+mandatory public annotation, without changing the accepted GV-08 boundary:
+public contracts remain checked and nonempty requirements remain declared.
+
+| Fork | Four concrete alternatives considered | Recommended and selected option, rationale |
+| --- | --- | --- |
+| FV-12 | A omitted `uses` means pure at exported boundaries, private inference, optional explicit purity; B mandatory `uses` on every exported function; C infer exported and private effects; D documentation-only effects | **A, revised at the user's request**. Pure public functions need no empty annotation; nonempty requirements remain explicit and checked, while `uses {}` can assert purity where useful. |
+
+**Selection provenance:** revised agent recommendation explicitly accepted by
+the user's request to modify the document. The original alternative wording
+remains above as history. The
+[effect-default rules](catena-first-version-grammar-and-vocabulary.md#effect-annotation-defaults)
+and [journal](../50-journal/2026-09-15-first-version-source-design.md#follow-up-optional-empty-effect-annotations)
+make this design refinement durable. Public omission elaborates to an explicit
+closed empty interface row; private omission permits inference and explicit
+empty annotations constrain it. Bodyless trait signatures and handler contracts
+default to pure, with no inference from their implementations. Verification and
+anonymous functions keep their initial purity restrictions. The proposal names
+the future C005 source-adoption amendment; no retained normative revision or
+compiler behavior is changed by this edit.
+
+### Transform, totality, and guarantees
+
+The user then approved the recommended progression expressed in the discussion:
+ordinary `fn`, pure `transform`, checked `total transform`, and
+`total transform ... guarantee ...` for additional named laws. FV-25–FV-27
+above preserve four alternatives for each concrete addition. The selected
+options are the agent's recommendations explicitly accepted by the user; no
+override is present.
+
+The [source design](catena-first-version-grammar-and-vocabulary.md#functions-transforms-totality-and-guarantees)
+defines the boundaries:
+
+- `transform` elaborates to an ordinary function with a checked empty effect
+  row and has no distinct runtime callable identity;
+- `total transform` additionally requires termination and absence of
+  language-level traps for all admitted inputs in the abstract model, without
+  promising finite-machine completion;
+- function-level `guarantee` references stable typed claims and is initially
+  restricted to total transforms; evidence remains `promised`, `tested`, or
+  `derived`, and grants no optimizer permission by itself; and
+- traits may name their existing law schemas through the separate guarantee
+  member form.
+
+This selection exposed a required normative conflict rather than rewriting it
+silently: C034 `0.1.31` prohibited validity-gating totality analysis and said a
+future checker was report-only. The normative
+[0.1.99 amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+now permits an opt-in validity gate only under a complete admitting slice and
+preserves unrestricted ordinary recursion. The proof/evidence representation,
+parser, totality checker, independent verifier, diagnostics, interface changes,
+and executable evidence remain future P109 adoption work.
+The current law model already owns standard schemas and evidence tiers but has
+no general user source law language; `guarantee` is the proposed source bridge.
+No normative revision or compiler behavior is changed by this design entry.

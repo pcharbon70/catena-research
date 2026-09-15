@@ -33,12 +33,14 @@ checkbox. Any conflict with an existing rule needs an explicit versioned
 amendment before implementation. Exact semantic revision numbers are allocated
 when slices land, not reserved by this planning document.
 
-No row adopts a new public keyword, library name, declaration spelling, or grammar.
-Existing names identify already-defined interfaces. New functionality is described
-by meaning and first exercised through retained semantic inputs or private test
-fixtures. P107's public naming and P109's grammar adoption remain held for later
-user co-design. A held public tool can have a working semantic core without being
-reported complete. G141 is an open late-0.x milestone, not a deferred item.
+The original decision rows preserve the semantics-first plan and its former
+public-vocabulary hold. On 15 September 2026 the user released that design hold,
+accepted the research directions, and excluded participant studies during
+language development. The [first-version candidate](catena-first-version-grammar-and-vocabulary.md)
+now supplies concrete forms. Normative adoption, parser implementation, and
+source-tool completion remain outstanding. Historical study recommendations
+below do not authorize or require participant work during development; G137's
+retained evidence gate remains unpassed. G141 remains an open late-0.x milestone.
 
 All compiler paths below are relative to `/home/ducky/code/catena`; research links
 are relative to this document. Existing target files identify real integration
@@ -152,7 +154,7 @@ and [Float boundary probes](../50-journal/2026-08-31-beam-float-boundary-probes.
 improper list, malformed UTF-8, forged handle, and non-finite Float are refused;
 zero-length values and depth/size thresholds behave deterministically.
 **Gate:** no unchecked ingress exists, with an independently tested preservation
-argument; public declaration spelling remains held by P109.
+argument; public declaration spelling awaits P109 adoption.
 
 ## Item 096 — Foreign calls and callbacks
 
@@ -325,7 +327,7 @@ and [categorical operational laws](../60-specification/traits-and-categorical-op
 inconsistent ordering evidence, duplicate-policy violations, and effectful pure
 callbacks are refused; empty/large inputs, early stop, and abandoned iterators
 exercise stack and cleanup rules. **Gate:** every promised family executes with
-laws, cost, and lifetime evidence; syntax adoption remains separately held.
+laws, cost, and lifetime evidence; syntax adoption remains separate work.
 
 ## Item 103 — Outcome types
 
@@ -434,19 +436,22 @@ capabilities and unhandled requests fail; shutdown/cancellation races, empty
 capability sets, and deterministic fake services agree with reference traces.
 **Gate:** usable adapters and amended rules with retained-revision regression
 coverage; forged descriptors, escaped lexical names, and implicit handler lookup
-are negative cases. Public names and launch syntax remain held.
+are negative cases. Public names and launch syntax await versioned adoption.
 
 ## Item 107 — Category-inspired API names
 
-**Baseline:** P107, **public vocabulary held by the user**. **Depends on:** C004,
-P101–P106; coordinates G137/P109. **Basis:**
+**Baseline:** P107; public vocabulary was held at the original planning date.
+**Current scope:** concrete design authorized on 15 September 2026.
+**Depends on:** C004, P101–P106; coordinates P109. **Basis:**
 [approachable vocabulary research](approachable-language-vocabulary.md) and
 [existing normative hierarchy](../60-specification/traits-and-categorical-operations/standard-hierarchy-and-vocabulary.md).
 
 The [grammar and vocabulary study](grammar-and-vocabulary-for-approachable-catena.md)
 adds empirical evidence, vocabulary risks, and candidate comparisons for this
-item. Its recommendations remain research inputs; existing ABI and completion
-status are unchanged.
+item. The [first-version proposal](catena-first-version-grammar-and-vocabulary.md)
+selects from those directions. The original decisions below retain their
+historical provenance; the current user instruction removes participant-study
+requirements from development. Existing ABI and completion status are unchanged.
 
 | Decision | Explored alternatives and tradeoffs | Selected recommendation and rationale |
 | --- | --- | --- |
@@ -454,18 +459,20 @@ status are unchanged.
 | CP-107-2 | A: designer intuition chooses new terms, fast but weak evidence; B: later task-based comparative comprehension studies, slower but direct; C: popularity polling alone, easy but measures taste; D: copy another language wholesale, familiar but untested for Catena. | **B**, recommended and agent-selected: the research defines approachability through behavioral predictions and repair success. |
 | CP-107-3 | A: make theory prerequisites, precise but inaccessible; B: evaluate dependency/shape/order behavior first with optional formal metadata, accessible and rigorous; C: hide effects and cost for simplicity, misleading; D: teach two naming layers simultaneously, burdens learners. | **B**, recommended and agent-selected: category theory guides laws and coherent implementation without becoming required user vocabulary. |
 
-1. Maintain semantic operation inventory and usability tasks using existing ABI or
-   neutral research labels; add no new exports or grammar tokens now.
+1. Complete the candidate operation inventory, concrete names, semantic mapping,
+   and representative examples in the first-version proposal.
 2. Audit `priv/stdlib/catena-standard-0.1.4.json`,
    `lib/catena/categorical/standard.ex`, and diagnostics for accidental synonyms.
-3. After the user releases the hold, run G137's study, choose names jointly, and
-   version any ABI changes through C008/C028 rather than rewriting history.
+3. Audit dependency, shape, order, multiplicity, and cost distinctions through
+   semantic examples and automated checks. Adopt selected public names and
+   version any ABI changes through C008/C028 without rewriting history.
 
 **Acceptance:** present operations remain digest-compatible; accidental public
 aliases are caught; distinctions among mapping, independent combination, and
-sequencing survive transfer across containers. **Gate:** remains partial while
-vocabulary selection and independent comprehension evidence are held; the
-semantic inventory can be completed now without completing P107.
+sequencing retain their meaning across containers. **Gate:** remains partial
+until versioned vocabulary adoption and implementation evidence exist. Human
+studies are outside development scope; automated checks do not claim observed
+comprehension or satisfy the historical G137 evidence gate.
 
 ## Item 108 — Stability and performance policy
 
@@ -493,15 +500,19 @@ no constant-time or ABI guarantee is inferred from one benchmark.
 
 ## Item 109 — Surface grammar capstone
 
-**Baseline:** P109, **implementation of public grammar held by the user**.
+**Baseline:** P109; public grammar was held at the original planning date.
+**Current scope:** concrete design authorized; adoption and implementation pending.
 **Depends on:** settled semantic items, P107, P117; feeds G118/P119/G120/G123/G141.
 **Basis:** the [checklist's widened capstone scope](../00-inbox/language-specification-completeness-checklist.md)
 and [approachable-language design map](../10-maps/approachable-catena-language-design.md).
 
 The [grammar and vocabulary study](grammar-and-vocabulary-for-approachable-catena.md#grammar-candidates-and-four-way-comparisons)
 compares twelve four-way design forks, audits pre-rewrite syntax, and proposes
-candidate parser, formatter, diagnostic, and usability cases. These are
-unexecuted recommendations for later co-design, not adopted productions.
+candidate parser, formatter, diagnostic, and usability cases. The
+[first-version proposal](catena-first-version-grammar-and-vocabulary.md)
+now selects concrete candidate forms under the updated user scope. These are
+not yet normative productions or implemented parser behavior. The original
+decision table remains a historical record.
 
 | Decision | Explored alternatives and tradeoffs | Selected recommendation and rationale |
 | --- | --- | --- |
@@ -512,19 +523,24 @@ unexecuted recommendations for later co-design, not adopted productions.
 1. Catalogue source-adoption obligations from all slices: modules/imports,
    declarations, values, functions, patterns, effects, processes, governance,
    source origins, comments, diagnostics, and tool recovery.
-2. Now maintain interfaces around `lib/catena/tokenizer.ex`,
-   `lib/catena/ast/decoder.ex`, `lib/catena/kernel/parser.ex`, and
-   `lib/catena/compiler.ex`; introduce no new public productions.
-3. Only after the hold is lifted, compare at least four answers for each actual
-   grammar decision, jointly select them, implement a shared parser, and test the
-   same semantic corpus through public source.
+2. Specify the selected forms and their elaborations against interfaces around
+   `lib/catena/tokenizer.ex`, `lib/catena/ast/decoder.ex`, `lib/catena/kernel/parser.ex`, and
+   `lib/catena/compiler.ex`; identify each required normative amendment. The
+   [C034 0.1.99 amendment](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md)
+   now supplies the opt-in totality validity gate; source adoption must satisfy
+   its proof, verifier, diagnostics, compatibility, limit, and evidence clauses.
+3. Record the accepted research choices and any additional four-way decisions,
+   then adopt versioned rules, implement a shared parser, and test the same
+   semantic corpus through public source. Include incomplete programs,
+   formatting, and diagnostics; require no participant studies in development.
 
-**Acceptance now:** semantic obligations are complete and parser-independent
-fixtures remain executable; unapproved source syntax is not accepted accidentally.
+**Acceptance now:** a concrete candidate covers programming and governance,
+explains semantic mappings, and identifies remaining adoption obligations;
+parser-independent fixtures remain executable.
 **Later acceptance:** source/retained-IR equivalence, malformed/partial-program
 recovery, comment round trips, and lexical boundary cases across every form.
 **Gate:** remains partial until the full capstone and its tool input contract are
-implemented after user co-design; a planning matrix is not grammar completion.
+implemented; a candidate document or planning matrix is not grammar completion.
 
 ## Item 110 — Checking language
 
@@ -1191,8 +1207,15 @@ matrix evidence, never an ecosystem-wide claim from a few pairwise fixtures.
 
 ## Item 137 — Usability gate
 
-**Baseline:** G137. **Depends on:** P107/P109/P117/P119/G120; semantic study
-preparation can start now. **Basis:** [approachability criteria](approachable-language-vocabulary.md),
+**Baseline:** G137. **Current scope:** historical study program excluded from
+language development by the user's 15 September 2026 instruction; no participant
+work is scheduled or authorized. The retained `0.1.97` contract and preparation
+evidence remain valid for their original scope, and the gate remains unpassed.
+The [first-version proposal](catena-first-version-grammar-and-vocabulary.md)
+uses semantic and automated development checks without claiming observed
+usability. The decisions and study steps below preserve the former program,
+not current development requirements. **Historical dependencies:**
+P107/P109/P117/P119/G120. **Basis:** [approachability criteria](approachable-language-vocabulary.md),
 [cognitive-dimensions research](../30-sources/green-petre-1996-cognitive-dimensions.md),
 and [compiler-explanation research](../30-sources/barik-et-al-2018-compiler-explanations.md).
 
@@ -1202,8 +1225,9 @@ and [compiler-explanation research](../30-sources/barik-et-al-2018-compiler-expl
 | CP-137-2 | A: recruit/contact participants automatically, convenient but unauthorized; B: prepare protocol/materials now and obtain authorization before outreach, staged; C: invent plausible participant results, unacceptable; D: abandon usability until release, too late. | **B**, recommended and agent-selected: present user authorization covers planning/implementation, not contacting people or fabricating studies. |
 | CP-137-3 | A: choose thresholds after seeing results, biased; B: pilot then preregister tasks, cohort, thresholds, and exclusions before the main study, accountable; C: one successful expert proves accessibility, weak; D: require universal perfect performance, impractical. | **B**, recommended and agent-selected: nominate a six-person pilot and a 24-person main study split between general and functional programmers, then justify adequacy and limits before interpreting results. |
 
-1. Prepare consent/data-minimization materials, neutral instructions, task scripts,
-   coding rubric, error-repair tasks, and analysis plan; do not select new terms.
+1. Under the historical study program, prepare consent/data-minimization
+   materials, neutral instructions, task scripts, coding rubric, error-repair
+   tasks, and analysis plan; do not select new terms.
 2. Exercise existing mapping/independent combination/sequencing/traversal semantics,
    handlers, guards, comprehensions, and diagnostics; add public-source conditions
    only after vocabulary/grammar co-design.
@@ -1215,8 +1239,10 @@ and [compiler-explanation research](../30-sources/barik-et-al-2018-compiler-expl
 operations across types, and repair errors against preregistered criteria;
 misconceptions and unsuccessful tasks are retained, not excluded for convenience;
 novice/expert differences and small-sample uncertainty are reported.
-**Gate:** remains open until human evidence exists; prepared materials, agent
-simulations, and imagined scores cannot close it.
+**Historical gate:** remains open until human evidence exists; prepared
+materials, agent simulations, and imagined scores cannot close it. This gate
+does not block the authorized first-version development. A successor G139
+release policy is required before changing the old complete/stable claim rules.
 
 ## Item 138 — Performance envelope
 
@@ -1246,11 +1272,19 @@ regression policy, not invented target numbers or one favorable example.
 
 ## Item 139 — Release-readiness definition
 
-**Baseline:** G139. **Depends on:** all admitted semantic items, P107/P109 holds,
-items 126–136, G137/G138; G141 has a separate late-0.x gate.
+**Baseline:** G139. **Depends on:** all admitted semantic items, P107/P109 adoption,
+items 126–136 and the applicable evidence policy; G141 has a separate late-0.x gate.
 **Basis:** [completion checklist](../00-inbox/language-specification-completeness-checklist.md),
 [authority policy](../SPECIFICATION-AUTHORITY.md), and
 [unproved composition obligation](../60-specification/progress-and-preservation/the-integrated-theorem.md).
+
+**Current scope:** participant studies are outside development. The retained
+[0.1.90 release contract](../60-specification/release-readiness/evidence-gates-and-release-claims.md)
+still requires G137 for complete/stable claims. Its gate inventory can change
+only through a successor normative revision, explicit migration, and readiness
+profile update. Plan that work before making a complete/stable claim under a
+revised policy; do not report the old observed-usability requirement as passed.
+The original decision rows below preserve their historical selections.
 
 | Decision | Explored alternatives and tradeoffs | Selected recommendation and rationale |
 | --- | --- | --- |
@@ -1406,13 +1440,17 @@ The main potential cycles are resolved by contract-first boundaries: define
 capability/lifetime/foreign interfaces before building adapters; establish build
 input and registry trust contracts before network acquisition; write common
 observations before broad differential generators; and collect parser adoption
-requirements without implementing public grammar. A prerequisite can be a settled
-internal contract when explicitly stated; that never changes its checklist item
+requirements before their versioned public implementation. A prerequisite can
+be a settled internal contract when explicitly stated; that never changes its checklist item
 to complete prematurely.
 
-P107/P109 remain user-held design gates. G137 requires actual human observations
-and authorization before participant outreach. G139 distinguishes completing a
-release gate definition from passing it; incomplete experimental releases cannot
+P107/P109's design hold is released; their normative adoption and implementation
+remain open. The first-version proposal follows the accepted research with
+semantic and automated checks. Participant studies are outside development;
+G137's historical observed-evidence gate remains unpassed. G139 needs an explicit
+successor policy before its complete/stable requirements can change, and
+distinguishes completing a release gate definition from passing it;
+incomplete experimental releases cannot
 claim a complete public language. Proof development must discharge the real
 component and composition obligations before any proof claim. G141 remains an
 open late-0.x implementation program and follows, rather than drives, the public

@@ -21,8 +21,14 @@ The later [grammar and vocabulary study](grammar-and-vocabulary-for-approachable
 extends this proposal with empirical research, language comparisons, and a
 historical Catena audit. This note retains its exploratory candidate names;
 the [normative 0.1.4 ABI](../60-specification/traits-and-categorical-operations/standard-hierarchy-and-vocabulary.md)
-governs that retained revision. Future adoption and observed validation
-remain P107/P109/G137 work.
+governs that retained revision. On 15 September 2026 the user authorized a
+concrete [first-version grammar and vocabulary](catena-first-version-grammar-and-vocabulary.md)
+based on both notes and excluded human studies during language development.
+That candidate supplies the current naming choices; normative adoption and
+implementation remain P107/P109 work. This note's study prerequisites below
+are historical recommendations, not the current development gate. Automated
+and semantic checks do not constitute observed usability evidence or pass
+G137's retained `0.1.97` contract.
 
 ## Executive conclusion
 

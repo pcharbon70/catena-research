@@ -107,7 +107,7 @@ seed's subset is the bootstrap question.
 Thompson's classic paper provides a particularly clear example. Its Stage II
 first implements a new escape using a numeric representation the old compiler
 already knows; after rebuilding, the compiler source can use the new escape.
-The feature precedes its own use in the implementation.[^1]
+The feature precedes its own use in the implementation.[[1]](../30-sources/thompson-1984-reflections-on-trusting-trust.md)
 
 For a hypothetical Catena convenience construct, the analogous sequence is:
 
@@ -231,11 +231,11 @@ that binary already installed.
 Use a known earlier Catena release or accepted seed artifact for routine
 development, and advance that floor deliberately. Go demonstrates that a
 self-hosted project can publish an advancing minimum bootstrap version rather
-than keep the first language implementation sufficient forever.[^4]
+than keep the first language implementation sufficient forever.[[4]](../30-sources/go-project-2026-source-bootstrap-requirements.md)
 
 For example, its published table says Go 1.24 and 1.25 require Go 1.22 or later
 as the bootstrap. This illustrates a documented floor; those numbers are not
-a claim about the latest Go release.[^4]
+a claim about the latest Go release.[[4]](../30-sources/go-project-2026-source-bootstrap-requirements.md)
 
 For Catena, the exact seed digest should accompany the compatibility floor.
 A declaration such as “supports the required source facilities” explains the
@@ -258,7 +258,7 @@ responsibly. Begin with need-driven promotions and measure their frequency.
 A source tree can sometimes support both old and new builders through narrowly
 scoped alternatives. Rust's bootstrap documentation illustrates stage-specific
 configuration, while also making clear that enabling unstable behavior only
-helps when the builder already implements it.[^2]
+helps when the builder already implements it.[[2]](../30-sources/rust-project-2026-compiler-bootstrap-stages.md)
 
 A flag cannot teach an old parser new syntax. Depending on the language,
 conditional code may still be parsed or checked before it is discarded.
@@ -286,7 +286,7 @@ Runtime changes require tracking what executes the compiler separately from
 what its output executes. A new compiler may initially run with the seed's
 matching libraries while compiling a different library revision for new
 programs. Rust's 2025 redesign of its initial build sequence is a direct
-engineering example of separating those roles.[^3]
+engineering example of separating those roles.[[3]](../30-sources/xu-2025-rust-bootstrap-sequence.md)
 
 For a Catena runtime operation, the proposed transition is:
 
@@ -301,7 +301,7 @@ For a Catena runtime operation, the proposed transition is:
 
 OCaml's bootstrap instructions document this kind of sequencing for primitives:
 renaming temporarily retains an old-name stub, and removal first eliminates
-uses. Its compiled-format changes also require explicit bootstrap handling.[^5]
+uses. Its compiled-format changes also require explicit bootstrap handling.[[5]](../30-sources/ocaml-project-2026-compiler-bootstrap.md)
 
 Not every interface can coexist safely. If value representation or authority
 semantics make mixed versions invalid, use isolated, matched build worlds and
@@ -331,7 +331,7 @@ historical chain on every checkout.
 Zig's 2022 transition replaced its second C++ implementation with a retained
 WebAssembly seed and a C-based reconstruction route. The account explicitly
 recognizes the tradeoff between simpler ongoing maintenance and fixed-step,
-source-only bootstrapping.[^6]
+source-only bootstrapping.[[6]](../30-sources/kelley-2022-zig-bootstrap.md)
 
 For Catena, this suggests distributing a verified, digest-bound BEAM seed and
 its exact dependency envelope. It does **not** suggest adopting Zig's output
@@ -381,8 +381,8 @@ advancing subset plus targeted independent evidence.
 Mechanized bootstrap proofs can establish more than ordinary self-builds.
 CakeML combines a theorem about its source implementation with verified
 compilation; its account also describes additional translation work when
-supported operations change.[^9] Myreen's smaller proof pearl separates the
-compiler correctness result from the fact of self-application.[^10]
+supported operations change.[[9]](../30-sources/tan-et-al-2019-verified-cakeml-backend.md) Myreen's smaller proof pearl separates the
+compiler correctness result from the fact of self-application.[[10]](../30-sources/myreen-2021-minimalistic-verified-bootstrap.md)
 
 This is a possible long-term assurance path for Catena, not a prerequisite
 for adding the next feature. It would require a suitable formal compiler
@@ -407,7 +407,7 @@ The Nanopass work provides evidence that explicit intermediate languages and
 small passes can support a substantial production compiler. Its evaluation
 also reports slower compilation alongside improvements in generated code, so
 pass decomposition should not be treated as costless or as a measured
-feature-productivity guarantee.[^8]
+feature-productivity guarantee.[[8]](../30-sources/keep-et-al-2013-nanopass-compiler-development.md)
 
 For Catena, the practical research recommendation is to give each pass a
 declared input language, output language, invariants, and observation tests.
@@ -551,7 +551,7 @@ compiler's algorithms, while `C2` was generated by the new algorithms running
 inside `C1`. A deliberate code-generation change can therefore make their
 bytes differ. Under suitable deterministic conditions, `C2` and `C3`
 are the more informative fixed-point pair. GCC's normal native bootstrap
-compares its second and third stages.[^7] This is a rationale for specifying
+compares its second and third stages.[[7]](../30-sources/gcc-project-2026-bootstrap-builds.md) This is a rationale for specifying
 the actual pair, not a universal guarantee that any third stage must match.
 
 Catena has an additional distinction: complete packages carry provenance about
@@ -578,10 +578,10 @@ Several checks answer different questions:
 | Mechanized compiler theorem | Its formal correctness statement under stated assumptions | Unmodeled host, linking, or deployment behavior |
 | Diverse double-compiling | Source–executable correspondence under its assumptions | That the source specification or implementation is itself correct |
 
-Thompson shows why self-reproduction is insufficient for trust.[^1] Wheeler's
+Thompson shows why self-reproduction is insufficient for trust.[[1]](../30-sources/thompson-1984-reflections-on-trusting-trust.md) Wheeler's
 generalized diverse double-compiling method uses a diverse compiler on the
 parent source, then uses that result to compile the candidate source and
-compares the output.[^11] The diverse compiler must actually support the
+compares the output.[[11]](../30-sources/wheeler-2009-diverse-double-compiling.md) The diverse compiler must actually support the
 parent source's required semantics.
 
 Consequently, retaining Elixir does not automatically provide diverse
@@ -654,19 +654,20 @@ questions in the linked inquiry.
 
 ## Sources
 
-Each footnote links both the primary work and its local reading note. Source
-notes distinguish reported findings, method, limitations, and Catena relevance.
+Each linked number opens its local reading note, while the numbered bibliography
+links both the primary work and that note. Source notes distinguish reported
+findings, method, limitations, and Catena relevance.
 The topic map provides a [guided reading
 route](../10-maps/self-hosted-compiler-evolution.md).
 
-[^1]: Ken Thompson, *Reflections on Trusting Trust*, CACM 27(8), 761–763, 1984, Stages II–III. [Paper](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf); [source note](../30-sources/thompson-1984-reflections-on-trusting-trust.md).
-[^2]: Rust project, *What Bootstrapping Does*, living compiler development guide, accessed 2026-09-14. [Guide](https://rustc-dev-guide.rust-lang.org/building/bootstrapping/what-bootstrapping-does.html); [source note](../30-sources/rust-project-2026-compiler-bootstrap-stages.md).
-[^3]: Jieyou Xu, *Redesigning the Initial Bootstrap Sequence*, Inside Rust, 2025-05-29, with 2025-05-30 clarification. [Article](https://blog.rust-lang.org/inside-rust/2025/05/29/redesigning-the-initial-bootstrap-sequence/); [source note](../30-sources/xu-2025-rust-bootstrap-sequence.md).
-[^4]: Go project, *Installing Go from Source*, bootstrap requirements, accessed 2026-09-14. [Documentation](https://go.dev/doc/install/source); [source note](../30-sources/go-project-2026-source-bootstrap-requirements.md).
-[^5]: OCaml project, *BOOTSTRAP.adoc*, accessed 2026-09-14. [Maintainer instructions](https://github.com/ocaml/ocaml/blob/trunk/BOOTSTRAP.adoc); [source note](../30-sources/ocaml-project-2026-compiler-bootstrap.md).
-[^6]: Andrew Kelley, *Goodbye to the C++ Implementation of Zig*, 2022-12-07. [Engineering article](https://ziglang.org/news/goodbye-cpp/); [source note](../30-sources/kelley-2022-zig-bootstrap.md).
-[^7]: GCC project, *Building GCC*, native bootstrap section, accessed 2026-09-14. [Build manual](https://gcc.gnu.org/install/build.html); [source note](../30-sources/gcc-project-2026-bootstrap-builds.md).
-[^8]: Andrew W. Keep and R. Kent Dybvig, *A Nanopass Framework for Commercial Compiler Development*, ICFP 2013, 343–350. [Paper](https://www.cs.tufts.edu/comp/150FP/archive/icfp13.pdf); [DOI](https://doi.org/10.1145/2500365.2500618); [source note](../30-sources/keep-et-al-2013-nanopass-compiler-development.md).
-[^9]: Yong Kiam Tan et al., *The Verified CakeML Compiler Backend*, JFP 29, e2, 2019, especially §11. [Author manuscript](https://cakeml.org/jfp19.pdf); [DOI](https://doi.org/10.1017/S0956796818000229); [source note](../30-sources/tan-et-al-2019-verified-cakeml-backend.md).
-[^10]: Magnus O. Myreen, *A Minimalistic Verified Bootstrapped Compiler (Proof Pearl)*, CPP 2021, 32–45. [Author manuscript](https://www.cse.chalmers.se/~myreen/cpp2021-bootstrap-myreen.pdf); [DOI](https://doi.org/10.1145/3437992.3439915); [source note](../30-sources/myreen-2021-minimalistic-verified-bootstrap.md).
-[^11]: David A. Wheeler, *Fully Countering Trusting Trust through Diverse Double-Compiling*, PhD dissertation, George Mason University, 2009, §§4.2–4.5 and 5.6.4. [Dissertation](https://dwheeler.com/trusting-trust/dissertation/); [errata](https://dwheeler.com/trusting-trust/dissertation-errata.html); [source note](../30-sources/wheeler-2009-diverse-double-compiling.md).
+1. Ken Thompson, *Reflections on Trusting Trust*, CACM 27(8), 761–763, 1984, Stages II–III. [Paper](https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf); [source note](../30-sources/thompson-1984-reflections-on-trusting-trust.md).
+2. Rust project, *What Bootstrapping Does*, living compiler development guide, accessed 2026-09-14. [Guide](https://rustc-dev-guide.rust-lang.org/building/bootstrapping/what-bootstrapping-does.html); [source note](../30-sources/rust-project-2026-compiler-bootstrap-stages.md).
+3. Jieyou Xu, *Redesigning the Initial Bootstrap Sequence*, Inside Rust, 2025-05-29, with 2025-05-30 clarification. [Article](https://blog.rust-lang.org/inside-rust/2025/05/29/redesigning-the-initial-bootstrap-sequence/); [source note](../30-sources/xu-2025-rust-bootstrap-sequence.md).
+4. Go project, *Installing Go from Source*, bootstrap requirements, accessed 2026-09-14. [Documentation](https://go.dev/doc/install/source); [source note](../30-sources/go-project-2026-source-bootstrap-requirements.md).
+5. OCaml project, *BOOTSTRAP.adoc*, accessed 2026-09-14. [Maintainer instructions](https://github.com/ocaml/ocaml/blob/trunk/BOOTSTRAP.adoc); [source note](../30-sources/ocaml-project-2026-compiler-bootstrap.md).
+6. Andrew Kelley, *Goodbye to the C++ Implementation of Zig*, 2022-12-07. [Engineering article](https://ziglang.org/news/goodbye-cpp/); [source note](../30-sources/kelley-2022-zig-bootstrap.md).
+7. GCC project, *Building GCC*, native bootstrap section, accessed 2026-09-14. [Build manual](https://gcc.gnu.org/install/build.html); [source note](../30-sources/gcc-project-2026-bootstrap-builds.md).
+8. Andrew W. Keep and R. Kent Dybvig, *A Nanopass Framework for Commercial Compiler Development*, ICFP 2013, 343–350. [Paper](https://www.cs.tufts.edu/comp/150FP/archive/icfp13.pdf); [DOI](https://doi.org/10.1145/2500365.2500618); [source note](../30-sources/keep-et-al-2013-nanopass-compiler-development.md).
+9. Yong Kiam Tan et al., *The Verified CakeML Compiler Backend*, JFP 29, e2, 2019, especially §11. [Author manuscript](https://cakeml.org/jfp19.pdf); [DOI](https://doi.org/10.1017/S0956796818000229); [source note](../30-sources/tan-et-al-2019-verified-cakeml-backend.md).
+10. Magnus O. Myreen, *A Minimalistic Verified Bootstrapped Compiler (Proof Pearl)*, CPP 2021, 32–45. [Author manuscript](https://www.cse.chalmers.se/~myreen/cpp2021-bootstrap-myreen.pdf); [DOI](https://doi.org/10.1145/3437992.3439915); [source note](../30-sources/myreen-2021-minimalistic-verified-bootstrap.md).
+11. David A. Wheeler, *Fully Countering Trusting Trust through Diverse Double-Compiling*, PhD dissertation, George Mason University, 2009, §§4.2–4.5 and 5.6.4. [Dissertation](https://dwheeler.com/trusting-trust/dissertation/); [errata](https://dwheeler.com/trusting-trust/dissertation-errata.html); [source note](../30-sources/wheeler-2009-diverse-double-compiling.md).

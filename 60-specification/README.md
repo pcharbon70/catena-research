@@ -146,6 +146,11 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   unrestricted stance, separation table, entry rule, and executable
   evidence are recorded in the
   [C034 conformance journal](../50-journal/2026-08-26-c034-recursion.md).
+  The normative `0.1.99`
+  [opt-in totality amendment](opt-in-totality-validity/README.md) replaces only
+  its permanent validity-gate prohibition; the
+  [amendment journal](../50-journal/2026-09-15-c034-totality-amendment.md)
+  records the pending implementation boundary.
   The normative C036 failure boundary is version `0.1.32`; its single
   outcome, category mapping, entry rule, and executable evidence are
   recorded in the
@@ -220,6 +225,10 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
 
 ### Subdirectories
 
+- [Opt-In Totality Validity](opt-in-totality-validity/README.md) — the C034
+  0.1.99 policy amendment preserving ordinary recursion and gating any later
+  explicit-total declaration behind proof, verification, compatibility,
+  diagnostics, limits, and evidence.
 - [Compiler Self-Hosting](compiler-self-hosting/README.md) — G141 staged bootstrap, fixed-point evidence, dual implementation suites, offline rebuild, and rollback preflight at 0.1.98.
 - [Usability Gate](usability-gate/README.md) — G137 observed prediction, completion, transfer, and repair protocol with executable pre-study evidence at 0.1.97.
 - [Editor Protocol](editor-protocol/README.md) — G123 immutable retained-input snapshots, shared semantic queries, stable diagnostics, cancellation, and exact rename previews at 0.1.96.
@@ -318,8 +327,9 @@ the [C018 conformance journal](../50-journal/2026-08-21-c018-numeric-literal-sem
   the normative version 0.1.32 single trap outcome with kinded
   reasons, the six-category mapping, and the per-producer entry rule.
 - [Recursion and Termination](recursion-and-termination/README.md) —
-  the normative version 0.1.31 unrestricted recursion stance with the
-  cited separation table and the G038 entry rule.
+  the normative version 0.1.31 unrestricted recursion stance with the cited
+  separation table and G038 entry rule; its later totality-policy replacement
+  is indexed separately above.
 - [Equality and Ordering](equality-and-ordering/README.md) — the
   normative version 0.1.30 closed comparable set with bit-exact float
   equality, structural recursion, monomorphic comparison, and the

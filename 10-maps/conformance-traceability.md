@@ -1809,6 +1809,13 @@ gate:
 - **c034 #6** *enforces the entry rule: no unbounded meta-level evaluator may be claimed*
 - **c034 #7** *keeps recursive conditions rejecting as `CND004` unchanged*
 - **c034 #8** *keeps the classification deterministic and outside G036/G038/P084/G088/P109 claims with zero new families*
+- **c034 amendment #9** *registers exact revision 0.1.99 and its lifecycle correction*
+- **c034 amendment #10** *preserves unrestricted ordinary recursion and divergence*
+- **c034 amendment #11** *confines future validity gating to an explicit opt-in declaration*
+- **c034 amendment #12** *requires the complete totality admission contract in the admitting slice*
+- **c034 amendment #13** *rejects bounded observation and author assertion as universal proof*
+- **c034 amendment #14** *keeps certificate work total-or-bounded with distinct exhaustion*
+- **c034 amendment #15** *adds no source form, checker, diagnostic, interface, or persisted format at 0.1.99*
 
 Anchors point at the normative 0.1.31 chapters; `RT-OBL-*` obligations
 are fully traced against the immutable compiler commit.
@@ -1823,10 +1830,19 @@ are fully traced against the immutable compiler commit.
 | RT-OBL-006 | Enforce the entry rule: no unbounded meta-level evaluator may be claimed | [`the-separation-table.md#the-entry-rule`](../60-specification/recursion-and-termination/the-separation-table.md#the-entry-rule) | c034 #6 | traced |
 | RT-OBL-007 | Keep recursive conditions rejecting as `CND004` unchanged | [`the-separation-table.md#the-separation`](../60-specification/recursion-and-termination/the-separation-table.md#the-separation) | c034 #7; CND004 | traced |
 | RT-OBL-008 | Keep the classification deterministic and outside G036/G038/P084/G088/P109 claims with zero new families | [`diagnostics-and-conformance.md#abstract-public-boundaries`](../60-specification/recursion-and-termination/diagnostics-and-conformance.md#abstract-public-boundaries) | c034 #8 | traced |
+| RT-OBL-009 | Register exact revision 0.1.99, the stable gate feature, and its compatible-correction lifecycle record | [`explicit-total-declaration-gate.md#lifecycle-and-migration`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#lifecycle-and-migration) | c034 amendment #9; implementation pending | partial |
+| RT-OBL-010 | Preserve unrestricted ordinary recursion and divergence as non-termination | [`explicit-total-declaration-gate.md#amended-program-recursion-stance`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#amended-program-recursion-stance) | c034 #2–3 retained; exact 0.1.99 selection pending | partial |
+| RT-OBL-011 | Confine every future totality validity gate to an explicit declaration opt-in | [`explicit-total-declaration-gate.md#amended-program-recursion-stance`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#amended-program-recursion-stance) | c034 amendment #11; implementation pending | partial |
+| RT-OBL-012 | Require a later admitting slice to define every listed totality contract component together | [`explicit-total-declaration-gate.md#gate-for-an-explicit-total-declaration`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#gate-for-an-explicit-total-declaration) | c034 amendment #12; future-slice evidence pending | partial |
+| RT-OBL-013 | Reject tests, timeouts, profiling, and author assertion as universal totality proof | [`explicit-total-declaration-gate.md#evidence-and-finite-resources`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#evidence-and-finite-resources) | c034 amendment #13; future-slice evidence pending | partial |
+| RT-OBL-014 | Keep construction and verification total-or-bounded and classify exhaustion separately from a counterexample | [`explicit-total-declaration-gate.md#evidence-and-finite-resources`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#evidence-and-finite-resources) | c034 amendment #14; future-slice evidence pending | partial |
+| RT-OBL-015 | Add no source, diagnostic, checker, proof format, interface field, executable frontend, or persisted-format change at 0.1.99 | [`explicit-total-declaration-gate.md#no-premature-source-or-checker-adoption`](../60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md#no-premature-source-or-checker-adoption) | c034 amendment #15; implementation absence tests pending | partial |
 
-C034 coverage is 8 `traced` and 0 untraced obligations. The dedicated
-gate rejects unknown identifiers and fails if any `RT-OBL-*` identifier
-lacks a focused tag.
+C034's historical 0.1.31 coverage is 8 `traced` obligations. The 0.1.99
+amendment adds 7 `partial` obligations pending lifecycle-registry and absence
+evidence in the compiler; its later source-admission requirements remain
+pending with P109. The dedicated historical gate rejects unknown identifiers
+and fails if any original `RT-OBL-*` identifier lacks a focused tag.
 
 ## Runtime failure taxonomy registry (`FT`, 0.1.32)
 

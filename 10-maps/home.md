@@ -13,16 +13,24 @@ This is the selective entry point to the archive. See the
 [archive guide](../README.md) for its structure and authoring conventions.
 
 The [current completion ledger](../00-inbox/language-specification-completeness-checklist.md#audited-status-and-evidence-boundary)
-and [6 September audit](../50-journal/2026-09-06-checklist-completion-audit.md)
-record four reopened items: P050/P053/P057 need required comprehension
-runtime evidence, and P086 needs its normative starvation conflict resolved.
-Historical status reports retain their dated counts.
+records present item states and evidence. The
+[6 September audit](../50-journal/2026-09-06-checklist-completion-audit.md)
+records the earlier reopening of P050/P053/P057 for comprehension runtime
+evidence and P086 for its normative starvation conflict; the live ledger
+records their subsequent completion. Historical status reports retain their
+dated counts.
 
 The [language completion plan](../20-notes/language-completion-plan.md)
 turns that ledger into per-item decisions and executable milestones. Its
 [map](language-completion.md) connects the complete four-option decision
-record to implementation evidence. Public vocabulary and the final grammar
-remain held for later joint design.
+record to implementation evidence. The user released the public-vocabulary
+and grammar design hold on 15 September 2026.
+
+The [first-version grammar and vocabulary](../20-notes/catena-first-version-grammar-and-vocabulary.md)
+now supplies concrete candidate forms, rationale, and examples. Adoption and
+implementation remain outstanding. Development uses semantic and automated
+grammar/tooling checks; participant studies are outside the current scope,
+and observed usability remains unclaimed.
 
 The [grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
 supplies current research for that design: empirical comprehension evidence,
@@ -42,7 +50,7 @@ and the outstanding contract and implementation work. Its
 
 - [How can Catena complete its language definition?](../40-inquiries/how-can-catena-complete-its-language-definition.md)
   — tracks cross-item dependencies, implementation evidence, integrated
-  assurance and the held public adoption gate.
+  assurance and the outstanding public adoption gate.
 - [How should Catena version editions and language features?](../40-inquiries/how-should-catena-version-editions-and-language-features.md)
   — carries edition `0.1`, exact retained revisions, named previews,
   compatibility, migration, and selection-bound artifacts through normative

@@ -32,9 +32,11 @@ For a consolidated view of the proposed language architecture, read the
 This repository is a research and exploratory archive: a place for ideas to
 develop without losing their provenance, relationships, or open questions.
 
-Start at the [home map](10-maps/home.md). The current language-accessibility
-work begins with
-[An Approachable Vocabulary for Catena](20-notes/approachable-language-vocabulary.md).
+Start at the [home map](10-maps/home.md). The current public-language design is
+[Catena First-Version Grammar and Vocabulary](20-notes/catena-first-version-grammar-and-vocabulary.md),
+a concrete candidate with explained choices and examples drawn from the
+vocabulary research. Normative adoption and compiler implementation remain
+outstanding; human studies are outside the current development scope.
 The normative compatibility model begins with
 [Language Editions and Feature Lifecycle](20-notes/language-editions-and-feature-lifecycle.md).
 The normative C010 route begins at the
@@ -122,6 +124,9 @@ The normative C034 recursion boundary begins at the
 [Recursion and Termination map](10-maps/recursion-and-termination.md)
 and its exact
 [0.1.31 specification](60-specification/recursion-and-termination/README.md).
+The [0.1.99 C034 amendment](60-specification/opt-in-totality-validity/README.md)
+preserves that ordinary-recursion stance while opening a checked gate for a
+later explicit-total declaration.
 The normative C036 failure boundary begins at the
 [Runtime Failure Taxonomy map](10-maps/runtime-failure-taxonomy.md)
 and its exact
@@ -270,9 +275,10 @@ normative C132 uses `0.1.45` for progress and preservation;
 normative C086 uses `0.1.46` for selective receive;
 normative C081 uses `0.1.47` for the exception boundary;
 normative C082 uses `0.1.48` for top-level effects;
-and the next
-unused semantic patch is `0.1.52`; the selective-receive correction uses
-`0.1.49`, and the closed capability-kernel target uses `0.1.50`. C008 defines package-local editions,
+the selective-receive correction uses `0.1.49`; the closed capability-kernel
+target uses `0.1.50`; subsequent registered slices continue through G141 at
+`0.1.98`; and the C034 opt-in totality validity amendment uses `0.1.99`.
+The next unused semantic patch is `0.1.100`. C008 defines package-local editions,
 exact revisions, previews, compatibility, and migration. These identifiers
 are distinct from the sibling compiler's package release, external tool
 versions, and the historical labels preserved in conformance journals.
@@ -348,3 +354,9 @@ C084 uses `0.1.52` for [owned tasks and managed relationships](60-specification/
 C088 uses `0.1.53` for [cancellation and time](60-specification/cancellation-and-time/deadlines-waits-and-cancellation.md), with exact local deadlines and bounded cancellable waits.
 
 C103 uses `0.1.54` for [outcome contracts](60-specification/outcome-contracts/values-sequencing-and-validation.md), delivered through an explicitly selected ordinary library package.
+
+The C034 amendment uses `0.1.99` for the
+[opt-in totality validity gate](60-specification/opt-in-totality-validity/explicit-total-declaration-gate.md),
+preserving ordinary unrestricted recursion while allowing a later explicit
+total declaration to gate its own validity after satisfying the complete
+admission contract.

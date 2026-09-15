@@ -30,6 +30,12 @@ source notes.
 
 ### Documents
 
+- [C034 Opt-In Totality Amendment](2026-09-15-c034-totality-amendment.md)
+  — records the normative 0.1.99 correction, its explicit-only validity gate,
+  structural proof baseline, and pending compiler/source evidence.
+- [First-Version Source Design](2026-09-15-first-version-source-design.md)
+  — records concrete grammar/vocabulary selections, the development-policy
+  override, semantic review corrections, and remaining source-adoption work.
 - [Self-Hosted Feature Evolution Research](2026-09-14-self-hosted-feature-evolution-research.md)
   — records primary-source reading, a read-only G141 preflight audit, and the
   subsequent adoption of ten planning decisions with outstanding work packages.

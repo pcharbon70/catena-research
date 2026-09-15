@@ -17,7 +17,16 @@ aliases:
 
 # How Should Catena Expose Mathematical Structure Without Mathematical Jargon?
 
-## Current protocol authority
+## Current design scope and historical protocol
+
+On 15 September 2026 the user accepted the research directions, released the
+public-language design hold, and excluded human studies during language
+development. [Catena First-Version Grammar and Vocabulary](../20-notes/catena-first-version-grammar-and-vocabulary.md)
+now selects concrete candidate forms with explanations and examples.
+Development checks cover semantic fidelity, ordinary programs, adversarial
+grammar cases, formatting, and diagnostics. Candidate design is not normative
+adoption or compiler implementation, and these checks do not establish
+observed human comprehension.
 
 The [September grammar and vocabulary study](../20-notes/grammar-and-vocabulary-for-approachable-catena.md)
 extends this inquiry's evidence and design alternatives. The
@@ -28,6 +37,9 @@ preregistered after the pilot. The richer participant descriptions,
 open-ended responses, and numerical targets below are earlier exploratory
 proposals, not the current authorized protocol. A different exploratory
 study or a protocol amendment would be needed to collect additional fields.
+All participant-study paths below are retained research history and are
+outside the current development scope. G137 remains unpassed; a successor
+release policy is needed before changing G139's complete/stable requirements.
 
 ## Why this matters
 
@@ -37,10 +49,11 @@ formal names with familiar English words. A familiar word can mislead, two
 friendly names can conceal the most important distinction, and an apparently
 simple API can hide effects or evaluation cost.
 
-The language therefore needs evidence that its public vocabulary helps people
-predict and use behavior while retaining an exact connection to the formal
-model. Stabilizing names or publishing a complete guide set before collecting
-that evidence would make the eventual surface expensive to change.
+The design needs an exact connection between public vocabulary and the formal
+model. During development, explicit examples and semantic audits expose
+misleading names and hidden distinctions. Whether those choices improve human
+performance remains an unanswered research question; it is not a prerequisite
+for the authorized first-version design.
 
 ## Operational question
 
@@ -55,8 +68,9 @@ sequence let programmers without category-theory training correctly:
 - understand and repair capability and derivation errors; and
 - write code whose behavior still satisfies Catena's formal semantic ledger?
 
-An answer requires task evidence from representative programmers and a
-separate semantic audit. Preference surveys alone cannot answer it.
+An observed-comprehension answer would require task evidence from representative
+programmers as well as a separate semantic audit. Current development answers
+the design and semantic questions without making that empirical claim.
 
 ## Working hypotheses
 
@@ -243,14 +257,15 @@ discover problems but cannot establish population-level success.
   Catena-specific testing. Follow the
   [topic map](../10-maps/approachable-catena-language-design.md) for these
   source notes.
-- The current candidate list contains several foreseeable naming collisions.
-  No complete seventeen-name surface should be considered approved until the
-  prediction and operation-selection studies are run.
+- The earlier candidate list contains foreseeable naming collisions. The
+  first-version proposal now resolves concrete names through explained design
+  choices and a semantic audit; participant studies are not required during
+  development, and comprehension improvements remain unverified.
 
 ## Outcome
 
-Open. The present result is a testable vocabulary proposal and research
-protocol, not a stable guide vocabulary. Resolution requires both programmer
-evidence and a completed semantic audit. The outcome should record retained,
-renamed, merged, advanced-only, and rejected capabilities; the final operation
-families; diagnostic conventions; and the validated guide sequence.
+Open. The first-version proposal supplies the current design answer and
+records concrete vocabulary, operation families, and diagnostic conventions.
+Normative adoption and implementation remain pending. The empirical question
+about programmer comprehension is unresolved and outside development scope;
+its unresolved status does not reinstate a participant-study prerequisite.
